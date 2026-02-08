@@ -1,0 +1,9 @@
+============================================================
+DIAGRAM BILL OF MATERIALS (Source: icons.yaml)
+============================================================
+SYMBOL     | LABEL                | NOTES
+-----------+----------------------+-------------------------
+edge       | Maryland Plant Edge  | HiveMQ Edge GW
+broker     | AWS East Cluster     | Primary Cloud Broker
+kafka      | Data Lake            | Confluent Integration
+============================================================

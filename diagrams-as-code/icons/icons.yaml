@@ -1,0 +1,6 @@
+- symbol: edge
+  path: ./icons/hmq-edge.png
+  notes: Used for Baltimore Plant
+- symbol: broker
+  path: ./icons/hmq-cluster.png
+  notes: Central AWS Cluster

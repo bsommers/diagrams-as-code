@@ -1,0 +1,6 @@
+symbol,path,notes
+edge,./icons/hmq-edge.png,Industrial Edge Gateway logo
+broker,./icons/hmq-broker.png,Enterprise Broker Cluster logo
+cloud,./icons/hmq-cloud.png,Managed Cloud instance logo
+kafka,./icons/kafka.png,Confluent Kafka integration
+influx,./icons/influx.png,Time-series database for historian
