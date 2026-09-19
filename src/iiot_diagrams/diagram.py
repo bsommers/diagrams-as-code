@@ -7,7 +7,7 @@ from typing import Any, Literal, Optional, Sequence, Union
 from iiot_diagrams.connections import Edge, Port, Routing
 from iiot_diagrams.constraints import ConstraintSolver
 from iiot_diagrams.elements import Element, Shape
-from iiot_diagrams.geometry import Anchor
+from iiot_diagrams.geometry import Anchor, Size, UnitBasis
 from iiot_diagrams.groups import Group
 from iiot_diagrams.renderer_svg import SVGRenderer
 from iiot_diagrams.theme import Theme, get_theme
@@ -57,6 +57,11 @@ class _EdgeBuilder:
 
         sources: list[Element]
         if isinstance(self.source, (list, tuple)):
+            for s in self.source:
+                if not isinstance(s, Element):
+                    raise TypeError(
+                        f"Expected Element in sources, got {type(s).__name__}"
+                    )
             sources = list(self.source)
         elif isinstance(self.source, Element):
             sources = [self.source]
@@ -67,6 +72,11 @@ class _EdgeBuilder:
 
         targets: list[Element]
         if isinstance(target, (list, tuple)):
+            for t in target:
+                if not isinstance(t, Element):
+                    raise TypeError(
+                        f"Expected Element in targets, got {type(t).__name__}"
+                    )
             targets = list(target)
         elif isinstance(target, Element):
             targets = [target]
@@ -120,6 +130,7 @@ class _EdgeBuilder:
                         metadata=self.metadata,
                     )
 
+        self.source = None
         return target
 
 
@@ -236,6 +247,11 @@ class Diagram:
         self.solver = ConstraintSolver()
         self._active_group: Optional[Group] = None
         self._counter: int = 0
+
+    @property
+    def unit_basis(self) -> UnitBasis:
+        """UnitBasis coordinate converter for this diagram canvas."""
+        return UnitBasis(Size(self.width, self.height))
 
     def __enter__(self) -> Diagram:
         Diagram._active_stack.append(self)
@@ -366,44 +382,61 @@ class Diagram:
         self.edges.append(e)
         return e
 
-    def add(self, *elements: Union[Element, Sequence[Element]]) -> Any:
-        """Add pre-instantiated Shape(s) or Group(s) to diagram."""
-        flat: list[Element] = []
+    def add(
+        self, *elements: Union[Element, Edge, Sequence[Union[Element, Edge]]]
+    ) -> Any:
+        """Add pre-instantiated Shape(s), Group(s), or Edge(s) to diagram."""
+        flat: list[Union[Element, Edge]] = []
         for item in elements:
             if isinstance(item, (list, tuple)):
                 flat.extend(item)
-            elif isinstance(item, Element):
+            elif isinstance(item, (Element, Edge)):
                 flat.append(item)
             else:
                 raise TypeError(
-                    f"Expected Element or sequence of Elements, got {type(item).__name__}"
+                    f"Expected Element, Edge, or sequence, got {type(item).__name__}"
                 )
 
-        for el in flat:
+        def _register_element(el: Element) -> None:
             el._diagram = self
+            if not any(existing.id == el.id for existing in self.solver.elements):
+                self.solver.add(el)
             if isinstance(el, Group):
                 if el not in self.groups:
                     self.groups.append(el)
-                self.solver.add(el)
                 for child in el.children:
-                    child._diagram = self
-                    if isinstance(child, Shape) and child not in self.shapes:
-                        self.shapes.append(child)
+                    _register_element(child)
             elif isinstance(el, Shape):
                 if el not in self.shapes:
                     self.shapes.append(el)
-                self.solver.add(el)
                 if self._active_group is not None and el.parent is None:
                     self._active_group.add(el)
+
+        for item in flat:
+            if isinstance(item, Edge):
+                if item not in self.edges:
+                    self.edges.append(item)
+            elif isinstance(item, Element):
+                _register_element(item)
 
         if len(flat) == 1:
             return flat[0]
         return flat
 
     def solve(self) -> None:
-        """Solve all layout constraints and update group bounding boxes."""
+        """Solve all layout constraints and update group bounding boxes in bottom-up depth order."""
         self.solver.solve()
-        for g in self.groups:
+
+        def _depth(g: Group) -> int:
+            d = 0
+            curr = g.parent
+            while curr is not None:
+                d += 1
+                curr = curr.parent
+            return d
+
+        sorted_groups = sorted(self.groups, key=_depth, reverse=True)
+        for g in sorted_groups:
             if g.is_auto_sized and g.children:
                 g.calculate_bounds()
 

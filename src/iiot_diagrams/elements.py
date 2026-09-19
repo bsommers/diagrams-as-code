@@ -14,6 +14,7 @@ class Element:
         width: float = 120.0,
         height: float = 60.0,
         metadata: Optional[dict[str, Any]] = None,
+        **kwargs: Any,
     ) -> None:
         self.id = id
         self.label = label
@@ -22,6 +23,7 @@ class Element:
         self.bounds: Rect = Rect(0.0, 0.0, self.width, self.height)
         self.parent: Optional[Element] = None
         self.metadata: dict[str, Any] = dict(metadata) if metadata is not None else {}
+        self.metadata.update(kwargs)
         self.constraints: list[dict[str, Any]] = []
         self._diagram: Optional[Any] = None
 
@@ -65,11 +67,13 @@ class Element:
                 Edge(self, other)
             return other
         elif isinstance(other, (list, tuple)):
+            # Atomically validate all targets before initiating connections
             for target in other:
                 if not isinstance(target, Element):
                     raise TypeError(
                         f"Target must be Element, got {type(target).__name__}"
                     )
+            for target in other:
                 if diag is not None:
                     diag.connect(self, target)
                 else:
@@ -82,11 +86,13 @@ class Element:
     def __rrshift__(self, other: Any) -> Any:
         """Support list fan-in: [s1, s2] >> self."""
         if isinstance(other, (list, tuple)):
+            # Atomically validate all sources before initiating connections
             for source in other:
                 if not isinstance(source, Element):
                     raise TypeError(
                         f"Source must be Element, got {type(source).__name__}"
                     )
+            for source in other:
                 diag = self._find_diagram(source)
                 if diag is not None:
                     diag.connect(source, self)
@@ -119,8 +125,16 @@ class Shape(Element):
         kind: str = "box",
         icon: Optional[str] = None,
         metadata: Optional[dict[str, Any]] = None,
+        **kwargs: Any,
     ) -> None:
-        super().__init__(id, label, width, height, metadata)
+        super().__init__(
+            id,
+            label,
+            width=width,
+            height=height,
+            metadata=metadata,
+            **kwargs,
+        )
         self.kind = kind
         self.icon = icon
 

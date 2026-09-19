@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 from iiot_diagrams import Diagram, Shape, Group, Edge
-from iiot_diagrams.geometry import Rect, Anchor
+from iiot_diagrams.geometry import Rect, Anchor, Point
 
 
 def test_fluent_diagram_api(tmp_path):
@@ -286,3 +286,74 @@ def test_auto_id_avoids_duplicate_explicit_id():
         assert s1.id == "shape_1"
         assert s2.id == "shape_2"
         assert s1.id != s2.id
+
+
+def test_diag_add_nested_groups_and_edges():
+    """Verify diag.add() recursively registers nested groups, child shapes, and edges."""
+    parent = Group("g_parent", "Parent Group")
+    child = Group("g_child", "Child Group")
+    s1 = Shape("s1", "Sensor 1")
+    s2 = Shape("s2", "Sensor 2")
+    child.add(s1)
+    parent.add(child, s2)
+    edge = Edge(s1, s2, label="Direct")
+
+    with Diagram("Recursive Add Test") as diag:
+        diag.add(parent, edge)
+
+    assert parent in diag.groups
+    assert child in diag.groups
+    assert s1 in diag.shapes
+    assert s2 in diag.shapes
+    assert edge in diag.edges
+    assert parent in diag.solver.elements
+    assert child in diag.solver.elements
+    assert s1 in diag.solver.elements
+    assert s2 in diag.solver.elements
+
+
+def test_shape_extra_kwargs_and_clone_metadata():
+    """Verify diag.shape and shape.clone accept arbitrary kwargs into metadata."""
+    with Diagram("Extra Kwargs Test") as diag:
+        db = diag.shape("DB", fill="blue", vendor="postgres")
+        assert db.metadata["fill"] == "blue"
+        assert db.metadata["vendor"] == "postgres"
+
+        db2 = db.clone("db2", fill="red")
+        assert db2.id == "db2"
+        assert db2.metadata["fill"] == "red"
+        assert db2.metadata["vendor"] == "postgres"
+
+
+def test_unit_basis_property_on_diagram():
+    """Verify unit_basis property returns valid UnitBasis sized to canvas."""
+    with Diagram("Unit Basis Canvas", width=800, height=400) as diag:
+        ub = diag.unit_basis
+        assert ub.reference_size.width == 800.0
+        assert ub.reference_size.height == 400.0
+        pt = ub.to_absolute(0.5, 0.25)
+        assert pt == Point(400.0, 100.0)
+
+
+def test_atomic_validation_in_operator_lists():
+    """Verify operator list connections fail atomically without partial side effects."""
+    with Diagram("Atomic Validation") as diag:
+        s1 = diag.shape("S1")
+        s2 = diag.shape("S2")
+        initial_edges = len(diag.edges)
+
+        with pytest.raises(TypeError, match="Target must be Element"):
+            s1 >> [s2, "invalid"]  # type: ignore
+        assert len(diag.edges) == initial_edges
+
+        with pytest.raises(TypeError, match="Source must be Element"):
+            [s2, "invalid"] >> s1  # type: ignore
+        assert len(diag.edges) == initial_edges
+
+        with pytest.raises(TypeError, match="Expected Element in targets"):
+            s1 >> diag.edge("Test") >> [s2, "invalid"]  # type: ignore
+        assert len(diag.edges) == initial_edges
+
+        with pytest.raises(TypeError, match="Expected Element in sources"):
+            [s2, "invalid"] >> diag.edge("Test") >> s1  # type: ignore
+        assert len(diag.edges) == initial_edges
