@@ -3,7 +3,7 @@ from diagrams.custom import Custom
 from diagrams.onprem.iot import Sensor
 from diagrams.onprem.network import Internet
 
-# Custom attributes for the HiveMQ Black and Gold theme
+# Custom attributes for the IIoT Black and Gold theme
 graph_attr = {
     "bgcolor": "#000000",
     "fontcolor": "#F3B01C",
@@ -17,23 +17,23 @@ node_attr = {
     "shape": "box",
 }
 
-with Diagram("Industrial IoT: HiveMQ Edge to Cloud", show=False, direction="LR", graph_attr=graph_attr):
+with Diagram("Industrial IoT: IIoT Edge to Cloud", show=False, direction="LR", graph_attr=graph_attr):
     
     with Cluster("Industrial Floor (Edge)", graph_attr={"bgcolor": "#1A1A1A", "fontcolor": "#F3B01C"}):
         sensors = [Sensor("PLC / Modbus", **node_attr),
                    Sensor("OPC UA Server", **node_attr)]
         
-        # HiveMQ Edge acting as the local gateway
-        edge_gateway = Custom("HiveMQ Edge", "./hivemq_logo.png", **{"fontcolor": "#F3B01C"}) 
+        # IIoT Edge acting as the local gateway
+        edge_gateway = Custom("IIoT Edge", "./iiot_logo.png", **{"fontcolor": "#F3B01C"}) 
         # Note: If you don't have a local png, use a standard icon:
         # from diagrams.onprem.edge import Server
-        # edge_gateway = Server("HiveMQ Edge", **node_attr)
+        # edge_gateway = Server("IIoT Edge", **node_attr)
 
         sensors >> Edge(color="#F3B01C", style="dashed") >> edge_gateway
 
     with Cluster("Enterprise / Cloud", graph_attr={"bgcolor": "#1A1A1A", "fontcolor": "#F3B01C"}):
-        # Central HiveMQ Broker
-        central_broker = Custom("HiveMQ Broker", "./hivemq_logo.png", **{"fontcolor": "#F3B01C"})
+        # Central IIoT Broker
+        central_broker = Custom("IIoT Broker", "./iiot_logo.png", **{"fontcolor": "#F3B01C"})
         
         # Consumers
         analytics = Custom("Data Lake", "", **node_attr)

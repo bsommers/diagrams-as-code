@@ -1,24 +1,24 @@
 import csv
 from diagrams.custom import Custom
 
-# HiveMQ Branding
-HIVEMQ_YELLOW = "#FFC000"
-HIVEMQ_BLACK = "#000000"
+# IIoT Branding
+IIOT_YELLOW = "#FFC000"
+IIOT_BLACK = "#000000"
 DARK_GREY = "#1A1A1A"
 
 GLOBAL_ATTR = {
-    "bgcolor": HIVEMQ_BLACK,
-    "fontcolor": HIVEMQ_YELLOW,
+    "bgcolor": IIOT_BLACK,
+    "fontcolor": IIOT_YELLOW,
     "fontsize": "32",
 }
 
 BASE_NODE_ATTR = {
-    "fontcolor": HIVEMQ_BLACK,
-    "fillcolor": HIVEMQ_YELLOW,
+    "fontcolor": IIOT_BLACK,
+    "fillcolor": IIOT_YELLOW,
     "style": "filled",
 }
 
-class HiveMQPalette:
+class IIoTPalette:
     def __init__(self, csv_path='icons.csv'):
         self.icon_map = {}
         self.load_icons(csv_path)

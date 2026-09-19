@@ -21,7 +21,7 @@ pip install gitpython boto3
 ###  turn this into requirements.txt
 
 ### run
-`python hivemq_diagram.py`
+`python iiot_diagram.py`
 
 ## How to use Github Actions:
 

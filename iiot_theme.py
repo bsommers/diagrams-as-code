@@ -7,12 +7,12 @@ import yaml
 from diagrams.custom import Custom
 from git import Repo
 
-# HiveMQ Branding
-HIVEMQ_YELLOW = "#FFC000"
-HIVEMQ_BLACK = "#000000"
+# IIoT Branding
+IIOT_YELLOW = "#FFC000"
+IIOT_BLACK = "#000000"
 
 
-class HiveMQPalette:
+class IIoTPalette:
     def __init__(self, config_path="icons.yaml"):
         self.config_path = config_path
         self.icon_data = {}
@@ -29,7 +29,7 @@ class HiveMQPalette:
                 {
                     "symbol": "edge",
                     "path": "./icons/edge.png",
-                    "notes": "HiveMQ Edge Gateway",
+                    "notes": "IIoT Edge Gateway",
                 }
             ]
             with open(self.config_path, "w") as f:

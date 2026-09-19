@@ -1,7 +1,7 @@
 from diagrams import Diagram
-from hivemq_theme import HiveMQPalette, GLOBAL_ATTR
+from iiot_theme import IIoTPalette, GLOBAL_ATTR
 
-palette = HiveMQPalette('icons.yaml')
+palette = IIoTPalette('icons.yaml')
 
 with Diagram("Baltimore Industrial UNS", show=False, outformat="svg", graph_attr=GLOBAL_ATTR):
     edge = palette.get_node("edge", "Maryland Plant Edge")

@@ -1,6 +1,6 @@
 from diagrams import Cluster, Diagram, Edge
 from diagrams.onprem.iot import Sensor
-import hivemq_theme as theme  # Import your separate module
+import iiot_theme as theme  # Import your separate module
 
 with Diagram("Multi-Region Global Architecture",
              show=False,
@@ -13,7 +13,7 @@ with Diagram("Multi-Region Global Architecture",
         us_broker = theme.get_icon("broker", "US Broker Cluster")
 
         Sensor("Factory Assets", **theme.BASE_NODE_ATTR) >> us_edge
-        us_edge >> Edge(color=theme.HIVEMQ_YELLOW, label="spB / TLS") >> us_broker
+        us_edge >> Edge(color=theme.IIOT_YELLOW, label="spB / TLS") >> us_broker
 
     with Cluster("EU-West (Disaster Recovery)", graph_attr={"bgcolor": theme.DARK_GREY, "fontcolor": "white"}):
         eu_broker = theme.get_icon("cloud", "EU DR Cluster")
@@ -21,7 +21,7 @@ with Diagram("Multi-Region Global Architecture",
     # Multi-Region Bridge
     us_broker >> Edge(
         label="Cloud-to-Cloud Bridge",
-        color=theme.HIVEMQ_YELLOW,
+        color=theme.IIOT_YELLOW,
         style="dashed",
-        fontcolor=theme.HIVEMQ_YELLOW
+        fontcolor=theme.IIOT_YELLOW
     ) >> eu_broker

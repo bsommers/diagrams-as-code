@@ -1,31 +1,31 @@
 from diagrams.custom import Custom
 
-# HiveMQ Brand Constants
-HIVEMQ_YELLOW = "#FFC000"
-HIVEMQ_BLACK = "#000000"
+# IIoT Brand Constants
+IIOT_YELLOW = "#FFC000"
+IIOT_BLACK = "#000000"
 DARK_GREY = "#1A1A1A"
 
 # Global Diagram Attributes
 GLOBAL_ATTR = {
-    "bgcolor": HIVEMQ_BLACK,
-    "fontcolor": HIVEMQ_YELLOW,
+    "bgcolor": IIOT_BLACK,
+    "fontcolor": IIOT_YELLOW,
     "fontsize": "32",
     "pad": "1.0"
 }
 
 # Shared Node Attributes
 BASE_NODE_ATTR = {
-    "fontcolor": HIVEMQ_BLACK,
-    "fillcolor": HIVEMQ_YELLOW,
+    "fontcolor": IIOT_BLACK,
+    "fillcolor": IIOT_YELLOW,
     "style": "filled",
 }
 
 # Icon Mapping Table
 # Maps a simple key to the local file path
 ICON_MAP = {
-    "edge": "./icons/hivemq_edge.png",
-    "broker": "./icons/hivemq_broker.png",
-    "cloud": "./icons/hivemq_cloud.png",
+    "edge": "./icons/iiot_edge.png",
+    "broker": "./icons/iiot_broker.png",
+    "cloud": "./icons/iiot_cloud.png",
     "kafka": "./icons/kafka_gold.png",
 }
 

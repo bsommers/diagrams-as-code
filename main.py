@@ -1,4 +1,4 @@
-from hivemq_theme import HiveMQPalette
+from iiot_theme import IIoTPalette
 
 # This will now automatically create your /icons/ folder and icons.csv if missing
-palette = HiveMQPalette('icons.csv')
+palette = IIoTPalette('icons.csv')
