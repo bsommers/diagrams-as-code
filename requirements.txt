@@ -1,0 +1,4 @@
+diagrams
+pyyaml
+gitpython
+boto3

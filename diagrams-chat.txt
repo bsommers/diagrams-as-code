@@ -1,0 +1,1383 @@
+Using the diagrams library in Python, make code draw a diagram of HiveMQ edge and HiveMQ broker in an industrial setting. Use black and gold themes from HiveMQ.com
+
+To create a diagram representing a typical industrial IoT architecture with HiveMQ Edge and HiveMQ Broker, we can use the diagrams library in Python.
+
+Since you requested a Black and Gold theme, we can customize the nodes using hex codes from HiveMQ's branding (typically #000000 for backgrounds and #FFD700 or #F3B01C for gold accents).
+
+Python Code for the Diagram
+You will need the diagrams library installed (pip install diagrams) and Graphviz installed on your system to render the image.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.custom import Custom
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.network import Internet
+
+# Custom attributes for the HiveMQ Black and Gold theme
+graph_attr = {
+    "bgcolor": "#000000",
+    "fontcolor": "#F3B01C",
+    "fontsize": "20",
+}
+
+node_attr = {
+    "fontcolor": "#000000",
+    "fillcolor": "#F3B01C",
+    "style": "filled",
+    "shape": "box",
+}
+
+with Diagram("Industrial IoT: HiveMQ Edge to Cloud", show=False, direction="LR", graph_attr=graph_attr):
+    
+    with Cluster("Industrial Floor (Edge)", graph_attr={"bgcolor": "#1A1A1A", "fontcolor": "#F3B01C"}):
+        sensors = [Sensor("PLC / Modbus", **node_attr),
+                   Sensor("OPC UA Server", **node_attr)]
+        
+        # HiveMQ Edge acting as the local gateway
+        edge_gateway = Custom("HiveMQ Edge", "./hivemq_logo.png", **{"fontcolor": "#F3B01C"}) 
+        # Note: If you don't have a local png, use a standard icon:
+        # from diagrams.onprem.edge import Server
+        # edge_gateway = Server("HiveMQ Edge", **node_attr)
+
+        sensors >> Edge(color="#F3B01C", style="dashed") >> edge_gateway
+
+    with Cluster("Enterprise / Cloud", graph_attr={"bgcolor": "#1A1A1A", "fontcolor": "#F3B01C"}):
+        # Central HiveMQ Broker
+        central_broker = Custom("HiveMQ Broker", "./hivemq_logo.png", **{"fontcolor": "#F3B01C"})
+        
+        # Consumers
+        analytics = Custom("Data Lake", "", **node_attr)
+        dashboard = Custom("ERP/MES", "", **node_attr)
+
+    # Connection from Edge to Central Broker via MQTT
+    edge_gateway >> Edge(label="MQTT over TLS", color="#F3B01C", fontcolor="#F3B01C") >> central_broker
+    
+    central_broker >> Edge(color="#F3B01C") >> [analytics, dashboard]
+How this Architecture Works
+Industrial Floor: HiveMQ Edge sits close to the data source. It converts legacy protocols (like Modbus, ADS, or OPC UA) into MQTT.
+
+The Edge Gateway: It provides "Offline Buffering." If the factory loses internet connection, HiveMQ Edge stores the data locally and pushes it to the cloud once the connection is restored.
+
+HiveMQ Broker: This is your central "Single Source of Truth." It handles massive throughput from thousands of Edge gateways and distributes that data to your enterprise applications (ERP, Scada, or Cloud Lakes).
+
+Visual Style Tips
+Colors: The code uses #F3B01C (HiveMQ Gold) for lines and nodes, contrasted against a #000000 (Black) background.
+
+Icons: The Custom class is used above. For the best look, download the HiveMQ logo as a transparent PNG and reference it in the Custom node path.
+
+Would you like me to refine the code to include specific industrial protocols like Sparkplug B or Unified Namespace (UNS) logic?
+
+Yes
+
+To build on that, since we are looking at an industrial setup, it's often helpful to visualize the Unified Namespace (UNS) approach that HiveMQ enables.
+
+In this model, HiveMQ Edge acts as the protocol converter at the manufacturing site, while the HiveMQ Broker serves as the central hub for the entire enterprise.
+
+Refined Python Code
+This version adds a more granular look at the industrial protocols and the bridge to the cloud.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.onprem.compute import Server
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.database import SQL
+from diagrams.programming.language import Python
+
+# HiveMQ Brand Colors
+HIVEMQ_GOLD = "#F3B01C"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#242424"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_GOLD,
+    "fontsize": "25",
+    "pad": "0.5"
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_GOLD,
+    "fillcolor": DARK_GREY,
+    "color": HIVEMQ_GOLD,
+    "style": "filled",
+}
+
+with Diagram("Industrial MQTT Architecture", show=False, direction="LR", graph_attr=graph_attr):
+    
+    with Cluster("Production Site (Plant Floor)", graph_attr={"bgcolor": "#111111", "fontcolor": HIVEMQ_GOLD}):
+        with Cluster("Legacy Assets"):
+            assets = [Sensor("PLCs (Modbus)", **node_attr),
+                      Sensor("OPC UA Nodes", **node_attr)]
+        
+        # HiveMQ Edge
+        edge = Server("HiveMQ Edge \n Gateway", **node_attr)
+        
+        assets >> Edge(color=HIVEMQ_GOLD, label="Protocol Translation") >> edge
+
+    with Cluster("Enterprise Cloud / Data Center", graph_attr={"bgcolor": "#111111", "fontcolor": HIVEMQ_GOLD}):
+        # Central Broker
+        broker = Server("HiveMQ Broker \n (Cluster)", **node_attr)
+        
+        # Consumers
+        storage = SQL("TimescaleDB / Influx", **node_attr)
+        ml_app = Python("ML Analytics", **node_attr)
+
+    # The Bridge
+    edge >> Edge(label="MQTT Bridge (TLS)", color=HIVEMQ_GOLD, fontcolor=HIVEMQ_GOLD) >> broker
+    broker >> Edge(color=HIVEMQ_GOLD) >> [storage, ml_app]
+Key Components in this Diagram
+The Edge Bridge: HiveMQ Edge doesn't just forward data; it uses a Bridge to the central broker. This is critical for industrial environments with intermittent connectivity, as it handles the "Store and Forward" logic.
+
+Protocol Mapping: You’ll notice the PLCs and Sensors connect to Edge via their native protocols. HiveMQ Edge maps these data points into a standardized MQTT topic structure (like site/area/line/cell/sensor).
+
+Central Broker: This is typically where your HiveMQ Extension SDK would live, allowing you to integrate with Kafka or enterprise databases.
+
+A Quick Tip for Rendering
+If you find the text in the boxes is too small, you can adjust the fontsize attribute within the node_attr dictionary. Also, make sure your Graphviz installation is in your system PATH, or Python won't be able to "draw" the file.
+
+Would you like me to add a Kafka or InfluxDB extension to the cloud side of the diagram?
+
+Yes
+
+Since you are bridging the gap between the operational floor and the enterprise stack, adding a Kafka or InfluxDB extension highlights how HiveMQ acts as the "data glue" for your entire infrastructure.
+
+In this updated architecture, we include the HiveMQ Enterprise Extension for Kafka, which is a common pattern for Technical Account Managers to showcase when high-throughput stream processing is required.
+
+Python Code with Kafka and InfluxDB Extensions
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.onprem.compute import Server
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.database import Influxdb
+from diagrams.onprem.queue import Kafka
+from diagrams.onprem.monitoring import Grafana
+
+# HiveMQ Brand Colors
+HIVEMQ_GOLD = "#F3B01C"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#242424"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_GOLD,
+    "fontsize": "25",
+    "pad": "0.5"
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_GOLD,
+    "fillcolor": DARK_GREY,
+    "color": HIVEMQ_GOLD,
+    "style": "filled",
+}
+
+with Diagram("Industrial Data Pipeline: Edge to Enterprise", show=False, direction="LR", graph_attr=graph_attr):
+    
+    with Cluster("Plant Floor", graph_attr={"bgcolor": "#111111", "fontcolor": HIVEMQ_GOLD}):
+        field_devices = [Sensor("Modbus TCP", **node_attr),
+                         Sensor("OPC UA", **node_attr)]
+        
+        edge_gateway = Server("HiveMQ Edge", **node_attr)
+        field_devices >> Edge(color=HIVEMQ_GOLD) >> edge_gateway
+
+    with Cluster("Enterprise Cloud / Cluster", graph_attr={"bgcolor": "#111111", "fontcolor": HIVEMQ_GOLD}):
+        broker_cluster = Server("HiveMQ Enterprise", **node_attr)
+        
+        with Cluster("Data Consumers"):
+            kafka_stream = Kafka("Confluent/Kafka", **node_attr)
+            time_series = Influxdb("InfluxDB", **node_attr)
+            dashboard = Grafana("Real-time Stats", **node_attr)
+
+    # MQTT Bridge with TLS
+    edge_gateway >> Edge(label="MQTT Bridge (TLS)", color=HIVEMQ_GOLD, fontcolor=HIVEMQ_GOLD) >> broker_cluster
+    
+    # Extensions logic
+    broker_cluster >> Edge(label="Kafka Extension", color=HIVEMQ_GOLD, fontcolor=HIVEMQ_GOLD) >> kafka_stream
+    broker_cluster >> Edge(label="InfluxDB Extension", color=HIVEMQ_GOLD, fontcolor=HIVEMQ_GOLD) >> time_series
+    time_series >> Edge(color=HIVEMQ_GOLD) >> dashboard
+Why this is a "Gold Standard" Industrial Stack:
+HiveMQ Kafka Extension: This allows you to map MQTT topics directly to Kafka topics. It’s bi-directional, so you can also send commands from Kafka back down to the Edge devices.
+
+Time-Series Storage: Industrial data is almost always time-stamped. Connecting to InfluxDB via the HiveMQ extension ensures that high-frequency sensor data is stored efficiently for historical analysis.
+
+Decoupling: By using HiveMQ as the central broker, your data producers (the machines) don't need to know anything about your data consumers (Kafka/Influx). You can swap out your database or add a new analytics tool without ever touching the factory floor configuration.
+
+Would you like to see how to implement a Sparkplug B topic structure in the Python code labels to make it a true "Unified Namespace" (UNS) diagram?
+
+Yes
+
+Implementing Sparkplug B is the final piece of the puzzle for a professional industrial architecture. It adds a standardized payload and topic structure—providing "context" to the data so that systems like Kafka or InfluxDB know exactly what a value represents without manual mapping.
+
+In this diagram, we'll update the labels to reflect the Unified Namespace (UNS) hierarchy: namespace/group_id/message_type/edge_node_id/device_id.
+
+Python Code: Sparkplug B & UNS Architecture
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.onprem.compute import Server
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.database import Influxdb
+from diagrams.onprem.queue import Kafka
+from diagrams.generic.device import Tablet
+
+# HiveMQ Brand Colors
+HIVEMQ_GOLD = "#F3B01C"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#242424"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_GOLD,
+    "fontsize": "28",
+    "pad": "0.7"
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_GOLD,
+    "fillcolor": DARK_GREY,
+    "color": HIVEMQ_GOLD,
+    "style": "filled",
+}
+
+with Diagram("HiveMQ Unified Namespace (UNS) with Sparkplug B", show=False, direction="LR", graph_attr=graph_attr):
+    
+    with Cluster("Manufacturing Cell", graph_attr={"bgcolor": "#111111", "fontcolor": HIVEMQ_GOLD}):
+        plc_assets = Sensor("Sensors & PLCs\n(Raw Data)", **node_attr)
+        
+        # HiveMQ Edge - The "EoN" (Edge of Network) Node
+        eon_node = Server("HiveMQ Edge\n(Sparkplug B Host)", **node_attr)
+        
+        plc_assets >> Edge(color=HIVEMQ_GOLD, label="Modbus/OPC UA") >> eon_node
+
+    with Cluster("Enterprise UNS (Central HiveMQ)", graph_attr={"bgcolor": "#111111", "fontcolor": HIVEMQ_GOLD}):
+        uns_broker = Server("HiveMQ Broker\n(State Provider)", **node_attr)
+        
+        with Cluster("State Consumers"):
+            kafka = Kafka("Kafka\n(Data Lake)", **node_attr)
+            influx = Influxdb("InfluxDB\n(Historian)", **node_attr)
+            scada = Tablet("Ignition / SCADA\n(Primary App)", **node_attr)
+
+    # The Sparkplug B Communication
+    # Topic: spBv1.0/Plant1/DDATA/Line1/Cell1
+    eon_node >> Edge(label="spBv1.0 Payload", color=HIVEMQ_GOLD, fontcolor=HIVEMQ_GOLD) >> uns_broker
+    
+    # Decoupled consumption via Extensions
+    uns_broker >> Edge(label="Extension", color=HIVEMQ_GOLD) >> kafka
+    uns_broker >> Edge(label="Extension", color=HIVEMQ_GOLD) >> influx
+    uns_broker >> Edge(label="MQTT Subscription", color=HIVEMQ_GOLD) >> scada
+Why this setup wins in an Industrial Environment:
+State Management: Sparkplug B uses "Birth" and "Death" certificates. If a machine on the Baltimore plant floor loses power, the HiveMQ Broker immediately knows via the "Last Will and Testament" and updates the state for the entire enterprise.
+
+Payload Efficiency: It uses Google Protocol Buffers (Protobuf) to compress data. This is critical when you're sending thousands of sensor updates per second from the Edge to the Cloud.
+
+The UNS Concept: By using this structure, any new application (like a new Grafana dashboard or an AI model) can simply "plug in" to the HiveMQ Broker and find the data it needs by browsing the topic tree—no custom coding required.
+
+Would you like me to help you draft a Python script that actually simulates a Sparkplug B "Birth" message to test this architecture?
+
+How do I run this?
+
+To run the code and generate your HiveMQ-themed diagrams, you need two things: the Python library for the logic and the Graphviz engine to handle the actual rendering.
+
+1. Install System Dependencies
+The diagrams library is a wrapper for Graphviz. You must install the Graphviz executable on your machine for the Python code to work.
+
+Windows: Download the installer from the Graphviz website and, crucially, check the box to "Add Graphviz to the system PATH" during installation.
+
+macOS: Run brew install graphviz in your terminal.
+
+Linux (Ubuntu/Debian): Run sudo apt-get install graphviz.
+
+2. Install the Python Library
+Open your terminal or command prompt and run:
+
+Bash
+pip install diagrams
+3. Save and Execute
+Copy any of the Python scripts provided in our previous messages.
+
+Save the file as hivemq_diagram.py.
+
+Run the script from your terminal:
+
+Bash
+python hivemq_diagram.py
+Troubleshooting & Tips
+Where is the image? By default, the script creates a file named hivemq_unified_namespace_uns_with_sparkplug_b.png (or similar, depending on the title used in the with Diagram(...) line) in the same folder where your script is located.
+
+"Executable not found" Error: If you get an error saying graphviz.backend.executable.ExecutableNotFound, it means Graphviz is installed but not in your System PATH. You may need to restart your IDE (like VS Code or PyCharm) or your computer after installing Graphviz for the PATH changes to take effect.
+
+Viewing without saving: If you want the image to pop up immediately after running the script, change show=False to show=True in the with Diagram(...) line.
+
+Since you’re a Technical Account Manager at HiveMQ, would you like me to show you how to swap out the generic Server icons for actual HiveMQ logos to make these diagrams look "client-ready"?
+
+Yes
+
+To make these diagrams client-ready, we’ll use the Custom node class from the diagrams library. This allows you to reference the official HiveMQ branding directly.
+
+1. Prepare your Assets
+To get the best result, you’ll need a local copy of the HiveMQ logo. Based on their official brand guidelines, the primary brand colors are Yellow (#FFC000) and Black (#000000).
+
+Download the HiveMQ logo (ideally a transparent PNG).
+
+Save it in the same folder as your Python script as hivemq_logo.png.
+
+2. The Professional Python Script
+This script swaps generic icons for the HiveMQ logo and uses the precise brand hex codes for a sleek, dark-mode presentation.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.custom import Custom
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.queue import Kafka
+from diagrams.onprem.database import Influxdb
+
+# Official HiveMQ Brand Palette
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+OFF_WHITE = "#FFFFFF"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "30",
+    "pad": "1.0"
+}
+
+# Standard style for non-HiveMQ nodes
+node_attr = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+with Diagram("HiveMQ Industrial Data Fabric", show=False, direction="LR", graph_attr=graph_attr):
+    
+    with Cluster("The Edge (OT)", graph_attr={"bgcolor": "#1A1A1A", "fontcolor": OFF_WHITE}):
+        plcs = Sensor("Factory Assets", **node_attr)
+        
+        # Using the official logo for HiveMQ Edge
+        edge = Custom("HiveMQ Edge", "./hivemq_logo.png")
+        
+        plcs >> Edge(color=HIVEMQ_YELLOW, label="Modbus/OPC UA") >> edge
+
+    with Cluster("Enterprise Core (IT)", graph_attr={"bgcolor": "#1A1A1A", "fontcolor": OFF_WHITE}):
+        # Using the official logo for the Broker
+        broker = Custom("HiveMQ Platform", "./hivemq_logo.png")
+        
+        with Cluster("Analytics Stack"):
+            kafka = Kafka("Kafka Stream", **node_attr)
+            influx = Influxdb("Historian", **node_attr)
+
+    # Bridge with high-contrast labeling
+    edge >> Edge(label="Sparkplug B / TLS", color=HIVEMQ_YELLOW, fontcolor=HIVEMQ_YELLOW) >> broker
+    broker >> Edge(color=HIVEMQ_YELLOW) >> [kafka, influx]
+Pro-Tips for the Technical Account Manager
+Logo Consistency: If you want different icons for "Edge" vs "Platform," you can use the HiveMQ "Bee" icon for the Edge and the full wordmark for the Platform.
+
+Clarity at Scale: For large enterprise pitches, you can use the Cluster labels to denote specific geographic sites (e.g., "Baltimore Plant" vs "AWS East Hub").
+
+Vector Output: If you need to put this in a high-res slide deck, change the outformat in the Diagram constructor to pdf or svg.
+
+Would you like me to add a section for a Cloud-to-Cloud bridge, such as connecting your Baltimore edge to a HiveMQ Cloud instance?
+
+Yes
+
+To round out the architecture, we'll bridge the on-premise industrial data into HiveMQ Cloud. This is a classic hybrid-cloud scenario: HiveMQ Edge handles the local protocol conversion in your neck of the woods (like a plant in Baltimore), and bridges that data to a managed HiveMQ Cloud instance for global visibility.
+
+Python Code: Hybrid Cloud Bridge
+This version uses the Yellow and Black theme and assumes you have the hivemq_logo.png ready in your directory.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.custom import Custom
+from diagrams.onprem.iot import Sensor
+from diagrams.aws.compute import EC2
+from diagrams.onprem.monitoring import Grafana
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "30",
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+with Diagram("HiveMQ: Edge-to-Cloud Bridge", show=False, direction="LR", graph_attr=graph_attr):
+    
+    with Cluster("On-Premise (Baltimore Plant)", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        factory_data = Sensor("OPC UA / Modbus", **node_attr)
+        # Local Edge Instance
+        edge_node = Custom("HiveMQ Edge", "./hivemq_logo.png")
+        
+        factory_data >> Edge(color=HIVEMQ_YELLOW) >> edge_node
+
+    with Cluster("HiveMQ Cloud (Managed)", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        # The Cloud Broker
+        cloud_broker = Custom("HiveMQ Cloud", "./hivemq_logo.png")
+        
+    with Cluster("Remote Monitoring", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        hq_dashboard = Grafana("Executive View", **node_attr)
+
+    # Secure Bridge connection
+    edge_node >> Edge(label="Secure MQTT Bridge", color=HIVEMQ_YELLOW, fontcolor=HIVEMQ_YELLOW) >> cloud_broker
+    cloud_broker >> Edge(color=HIVEMQ_YELLOW) >> hq_dashboard
+Why This Hybrid Model Works for Your Clients:
+Security: By using the HiveMQ Bridge, you don't need to open any inbound firewall ports on the factory floor. The Edge node initiates an outbound connection to HiveMQ Cloud.
+
+Bandwidth Optimization: You can use Topic Filters to only send "critical" data to the cloud while keeping high-resolution raw data on-site.
+
+Latency: Critical control loops stay at the Edge (low latency), while telemetry is sent to the Cloud for long-term AI/ML analysis.
+
+Next Steps
+Since you're working with Python and Java at HiveMQ, would you like me to generate a Java snippet using the HiveMQ MQTT Client library that mimics an industrial sensor connecting to this cloud instance?
+
+No. Can you show me sample diagram output from the code
+
+Since I am a text-based AI, I cannot "render" the final .png file directly into this chat, but I can show you exactly what the visual layout and structure will look like when you run the script.
+
+The diagrams library uses Graphviz to create a clean, professional "flow" from left to right. Here is a representation of the output you'll get from the Hybrid Cloud Bridge script:
+
+Visual Structure (Mockup)
+Plaintext
+  _________________________          _________________________          _________________________
+ |  On-Premise (Baltimore) |        | HiveMQ Cloud (Managed)  |        |    Remote Monitoring    |
+ |  _____________________  |        |  _____________________  |        |  _____________________  |
+ | |       [Asset]       | |        | |                     | |        | |                     | |
+ | |   OPC UA / Modbus   | |        | |    [HiveMQ Logo]    | |        | |      [Grafana]      | |
+ | |_____________________| |        | |    HiveMQ Cloud     | |        | |   Executive View    | |
+ |            |            |        | |_____________________| |        | |_____________________| |
+ |      (Yellow Line)      |        |            ^            |        |            ^            |
+ |            v            |        |            |            |        |            |            |
+ |  _____________________  |        |            |            |        |            |            |
+ | |    [HiveMQ Logo]    | |        |            |            |        |            |            |
+ | |     HiveMQ Edge     | |--------|--- Secure MQTT Bridge --|--------|------------|            |
+ | |_____________________| |        |                         |        |                         |
+ |_________________________|        |_________________________|        |_________________________|
+Aesthetic Features of the Output:
+Background: The entire image will have a solid Black background.
+
+Nodes: The "Asset" and "Grafana" boxes will be HiveMQ Yellow with black text.
+
+HiveMQ Nodes: Instead of boxes, you will see the HiveMQ Logo (if you provided the PNG) or a high-quality server icon.
+
+Lines (Edges): All connecting arrows will be Yellow.
+
+Labels: Text like "Secure MQTT Bridge" will appear in yellow font directly above the connecting line.
+
+Example of how the diagrams library renders:
+The final output is a high-resolution, anti-aliased image (PNG, SVG, or PDF) that looks much more professional than a hand-drawn slide, making it perfect for your technical account reviews.
+
+Would you like me to adjust the code to produce an SVG format instead of PNG? (SVG is better for high-quality zooming in customer presentations.)
+
+Yes
+
+To switch the output to SVG, we simply add the outformat="svg" parameter to the Diagram constructor. SVGs are excellent for customer presentations because they are vector-based, meaning they won't pixelate regardless of how much you zoom in on a slide.
+
+Updated Code for SVG Output
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.custom import Custom
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.monitoring import Grafana
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "30",
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+# Added outformat="svg" below
+with Diagram("HiveMQ_Architecture_Vector", 
+             show=False, 
+             direction="LR", 
+             outformat="svg", 
+             graph_attr=graph_attr):
+    
+    with Cluster("On-Premise (Baltimore Plant)", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        factory_data = Sensor("OPC UA / Modbus", **node_attr)
+        edge_node = Custom("HiveMQ Edge", "./hivemq_logo.png")
+        factory_data >> Edge(color=HIVEMQ_YELLOW) >> edge_node
+
+    with Cluster("HiveMQ Cloud", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        cloud_broker = Custom("Managed Broker", "./hivemq_logo.png")
+        
+    hq_dashboard = Grafana("Executive View", **node_attr)
+
+    edge_node >> Edge(label="Secure MQTT Bridge", color=HIVEMQ_YELLOW, fontcolor=HIVEMQ_YELLOW) >> cloud_broker
+    cloud_broker >> Edge(color=HIVEMQ_YELLOW) >> hq_dashboard
+Advantages of SVG for a Technical Account Manager:
+Infinite Scalability: You can put this on a 4K monitor during a client demo and the lines will stay perfectly crisp.
+
+Editable: If you open the SVG in a tool like Illustrator or Inkscape, you can move individual elements around manually if needed.
+
+Smaller File Size: Often smaller than high-res PNGs, making them easier to embed in technical documentation.
+
+Important Note on Icons
+When using Custom nodes with SVG output, ensure your hivemq_logo.png is a high-resolution file. Even though the diagram is a vector, the custom image inside it remains a raster unless you provide a .svg version of the logo as well.
+
+Would you like me to help you create a specific "Architecture Slide" version that includes a legend or specific MQTT topic examples in the labels?
+
+Yes
+
+Adding a legend and topic examples transforms this from a simple flow chart into a functional technical reference. For a client, seeing the actual Unified Namespace (UNS) topic structure helps them visualize how their data will be organized.
+
+I've updated the script to include a dedicated Legend cluster and specific MQTT Topic labels on the connection lines.
+
+Python Code: Professional Architecture with Legend
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.custom import Custom
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.monitoring import Grafana
+from diagrams.generic.blank import Blank
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "32",
+    "pad": "1.0"
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+with Diagram("HiveMQ_Client_Reference_UNS", 
+             show=False, 
+             direction="LR", 
+             outformat="svg", 
+             graph_attr=graph_attr):
+    
+    # Legend Section
+    with Cluster("Diagram Legend", graph_attr={"bgcolor": "#333333", "fontcolor": "white"}):
+        Legend_MQTT = Blank("Gold Line = MQTT TLS", **{"fontcolor": HIVEMQ_YELLOW, "width": "2"})
+        Legend_Data = Blank("Thin Line = Raw Data", **{"fontcolor": "white", "width": "2"})
+
+    # On-Premise Section
+    with Cluster("Production Site (Baltimore)", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        plc = Sensor("Allen-Bradley PLC", **node_attr)
+        edge = Custom("HiveMQ Edge", "./hivemq_logo.png")
+        
+        # Raw data flow
+        plc >> Edge(color="white", label="Modbus/TCP") >> edge
+
+    # Cloud Section
+    with Cluster("Enterprise UNS (HiveMQ Cloud)", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        cloud_broker = Custom("Central Broker", "./hivemq_logo.png")
+        
+    # Consumer
+    hq_dashboard = Grafana("Grafana Cloud", **node_attr)
+
+    # Labeled Topic Flow
+    edge >> Edge(
+        label="spBv1.0/Baltimore/DDATA/Line1/Cell1", 
+        color=HIVEMQ_YELLOW, 
+        fontcolor=HIVEMQ_YELLOW
+    ) >> cloud_broker
+    
+    cloud_broker >> Edge(
+        label="Subscribe: #", 
+        color=HIVEMQ_YELLOW, 
+        fontcolor=HIVEMQ_YELLOW
+    ) >> hq_dashboard
+Key Additions for your Presentation:
+The Legend: This defines the "Gold" lines as secure MQTT/TLS traffic and "White" lines as local protocol traffic, which helps security-conscious stakeholders instantly understand where encryption is applied.
+
+Topic Strings: By labeling the line with spBv1.0/Baltimore/DDATA/Line1/Cell1, you're demonstrating the Sparkplug B standard. This shows the client exactly how their Baltimore site's data is contextualized once it hits the Cloud.
+
+Wildcard Subscription: The Subscribe: # label on the dashboard connection highlights how easy it is for IT tools to consume the entire namespace once HiveMQ has centralized it.
+
+Would you like me to add a "High Availability" (HA) cluster representation for the HiveMQ Cloud side to show how the broker handles failover?
+
+Yes
+
+Adding a High Availability (HA) cluster to the diagram is a great way to show how the HiveMQ Platform ensures zero downtime. For your clients, this visualizes the "Broker Cluster"—where multiple nodes share the load and provide redundancy. If one node fails, the others take over without losing the client's session or data.
+
+Python Code: HA Cluster with Load Balancer
+In this version, I've grouped the HiveMQ nodes within a cluster to represent a distributed system and added a Load Balancer as the entry point.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.custom import Custom
+from diagrams.onprem.iot import Sensor
+from diagrams.onprem.network import Internet
+from diagrams.aws.network import ELB # Using AWS ELB as a Load Balancer example
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+graph_attr = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "32",
+    "pad": "1.0"
+}
+
+node_attr = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+with Diagram("HiveMQ_High_Availability_UNS", 
+             show=False, 
+             direction="LR", 
+             outformat="svg", 
+             graph_attr=graph_attr):
+
+    with Cluster("Production Site (Baltimore)", graph_attr={"bgcolor": DARK_GREY, "fontcolor": "white"}):
+        edge_node = Custom("HiveMQ Edge", "./hivemq_logo.png")
+        sensors = Sensor("Plant Assets", **node_attr)
+        sensors >> Edge(color="white") >> edge_node
+
+    # Entry Point
+    lb = ELB("Load Balancer", **node_attr)
+
+    with Cluster("HiveMQ HA Cluster (Control Plane)", graph_attr={"bgcolor": "#333333", "fontcolor": HIVEMQ_YELLOW}):
+        # Multiple nodes to show redundancy
+        nodes = [Custom("Node 1", "./hivemq_logo.png"),
+                 Custom("Node 2", "./hivemq_logo.png"),
+                 Custom("Node 3", "./hivemq_logo.png")]
+
+    # Data Flow
+    edge_node >> Edge(label="MQTT / TLS", color=HIVEMQ_YELLOW, fontcolor=HIVEMQ_YELLOW) >> lb
+    lb >> Edge(color=HIVEMQ_YELLOW) >> nodes
+
+    # Representation of State Sharing
+    nodes[0] - Edge(color=HIVEMQ_YELLOW, style="dotted", label="Cluster Discovery") - nodes[1]
+    nodes[1] - Edge(color=HIVEMQ_YELLOW, style="dotted") - nodes[2]
+Talking Points for your Technical Review:
+The Load Balancer: This is the "Front Door." It distributes incoming MQTT connections from your Baltimore Edge nodes across the cluster.
+
+Cluster Discovery: The dotted lines represent the nodes communicating with each other (via the HiveMQ Cluster Discovery extension). They share information about which clients are connected where.
+
+Zero-Loss Failover: If "Node 1" goes offline for maintenance, the Load Balancer directs traffic to Nodes 2 and 3. Because HiveMQ handles session state globally across the cluster, the Edge node can reconnect and resume right where it left off.
+
+Professional Formatting Tip
+Since you are an expert with Python and Java, you might find that as these diagrams get more complex, the direction="LR" (Left-to-Right) can make them very wide. If you have many consumers, you can switch to direction="TB" (Top-to-Bottom) to create a more vertical "stack" look that fits better on a standard 4:3 slide.
+
+Would you like me to show you how to add a Cloud Bridge to a second geographic region, like a disaster recovery (DR) site in Europe?
+
+Yes
+
+Image of 
+
+Adapt this code so I can use a mapping table of symbols to external icon files. Make it so this code module is separate from the other but includeable
+
+To make your architecture diagrams scalable and "client-ready," it’s a great idea to separate the branding (icons and themes) from the logic. This allows you to update your logos or colors in one place without touching your main architecture scripts.
+
+Below is a two-file setup. The first file acts as your Theme & Icon Mapping Engine, and the second is your Diagram Logic.
+
+1. The Configuration Module (hivemq_theme.py)
+Save this file in your working directory. It contains the hex codes and the mapping of short-hand keys to your external PNG/SVG files.
+
+Python
+from diagrams.custom import Custom
+
+# HiveMQ Brand Constants
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+# Global Diagram Attributes
+GLOBAL_ATTR = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "32",
+    "pad": "1.0"
+}
+
+# Shared Node Attributes
+BASE_NODE_ATTR = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+# Icon Mapping Table
+# Maps a simple key to the local file path
+ICON_MAP = {
+    "edge": "./icons/hivemq_edge.png",
+    "broker": "./icons/hivemq_broker.png",
+    "cloud": "./icons/hivemq_cloud.png",
+    "kafka": "./icons/kafka_gold.png",
+}
+
+def get_icon(key, label):
+    """Returns a Custom node using the mapping table."""
+    path = ICON_MAP.get(key.lower(), "./icons/default.png")
+    return Custom(label, path)
+2. The Main Diagram Script (main.py)
+This script imports your theme module. Notice how much cleaner the logic becomes when you aren't hard-coding paths.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.onprem.iot import Sensor
+import hivemq_theme as theme  # Import your separate module
+
+with Diagram("Multi-Region Global Architecture", 
+             show=False, 
+             direction="LR", 
+             outformat="svg", 
+             graph_attr=theme.GLOBAL_ATTR):
+
+    with Cluster("US-East (Primary)", graph_attr={"bgcolor": theme.DARK_GREY, "fontcolor": "white"}):
+        us_edge = theme.get_icon("edge", "Baltimore Edge")
+        us_broker = theme.get_icon("broker", "US Broker Cluster")
+        
+        Sensor("Factory Assets", **theme.BASE_NODE_ATTR) >> us_edge
+        us_edge >> Edge(color=theme.HIVEMQ_YELLOW, label="spB / TLS") >> us_broker
+
+    with Cluster("EU-West (Disaster Recovery)", graph_attr={"bgcolor": theme.DARK_GREY, "fontcolor": "white"}):
+        eu_broker = theme.get_icon("cloud", "EU DR Cluster")
+
+    # Multi-Region Bridge
+    us_broker >> Edge(
+        label="Cloud-to-Cloud Bridge", 
+        color=theme.HIVEMQ_YELLOW, 
+        style="dashed",
+        fontcolor=theme.HIVEMQ_YELLOW
+    ) >> eu_broker
+Why this approach works:
+Centralized Branding: If HiveMQ updates their logo or you want to switch to a "Light Mode" for a specific client, you only edit hivemq_theme.py.
+
+Abstraction: Using theme.get_icon("edge", "Label") makes the code readable for other TAMs or engineers who might need to use your scripts.
+
+Error Handling: The get_icon function can be expanded to include a default icon so your code doesn't crash if a specific file is missing.
+
+Folder Structure Tip
+For this to work cleanly, I recommend a structure like this:
+
+project_root/
+
+main.py
+
+hivemq_theme.py
+
+icons/
+
+hivemq_edge.png
+
+hivemq_broker.png
+
+Would you like me to add a YAML or JSON parser to the theme module so you can load these icon mappings from a simple text file instead?
+
+Yes. Also added option so that I can import these mappings from a simple CSV file. Add a notes field to the CSV files I can have descriptive text
+
+This is a great way to handle large-scale enterprise architectures. By moving the mapping to a CSV, you can manage dozens of icons and metadata without ever touching the Python code—perfect for a Technical Account Manager maintaining different "kits" for different clients.
+
+1. The Mapping File (icons.csv)
+Create this file in your root folder. The notes field is useful for documentation, though we won't render it in the diagram itself to keep it clean.
+
+Code snippet
+symbol,path,notes
+edge,./icons/hmq-edge.png,Industrial Edge Gateway logo
+broker,./icons/hmq-broker.png,Enterprise Broker Cluster logo
+cloud,./icons/hmq-cloud.png,Managed Cloud instance logo
+kafka,./icons/kafka.png,Confluent Kafka integration
+influx,./icons/influx.png,Time-series database for historian
+2. The Updated Theme Module (hivemq_theme.py)
+This module now includes a CSV parser to build your ICON_MAP dynamically.
+
+Python
+import csv
+from diagrams.custom import Custom
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+GLOBAL_ATTR = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "32",
+}
+
+BASE_NODE_ATTR = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+class HiveMQPalette:
+    def __init__(self, csv_path='icons.csv'):
+        self.icon_map = {}
+        self.load_icons(csv_path)
+
+    def load_icons(self, path):
+        try:
+            with open(path, mode='r') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    # Maps the symbol key to the file path
+                    self.icon_map[row['symbol'].lower()] = row['path']
+        except FileNotFoundError:
+            print(f"Warning: {path} not found. Using empty icon map.")
+
+    def get_node(self, symbol, label):
+        path = self.icon_map.get(symbol.lower(), "./icons/default.png")
+        return Custom(label, path)
+3. The Main Logic (main.py)
+Now your main script is purely about the architecture, while the CSV handles the assets.
+
+Python
+from diagrams import Cluster, Diagram, Edge
+from diagrams.onprem.iot import Sensor
+from hivemq_theme import HiveMQPalette, GLOBAL_ATTR, BASE_NODE_ATTR
+
+# Initialize our palette from the CSV
+palette = HiveMQPalette('icons.csv')
+
+with Diagram("Global Data Fabric", show=False, outformat="svg", graph_attr=GLOBAL_ATTR):
+
+    with Cluster("US-East (Baltimore Plant)", graph_attr={"bgcolor": "#222", "fontcolor": "white"}):
+        # Using keys from our CSV
+        baltimore_edge = palette.get_node("edge", "HiveMQ Edge")
+        Sensor("PLC / Sensors", **BASE_NODE_ATTR) >> baltimore_edge
+
+    with Cluster("EU-West (Frankfurt Hub)", graph_attr={"bgcolor": "#222", "fontcolor": "white"}):
+        eu_broker = palette.get_node("broker", "Enterprise Broker")
+
+    # Bridge connection
+    baltimore_edge >> Edge(label="Bridge: spBv1.0/...", color="#FFC000") >> eu_broker
+How to use the 'Notes' field
+While the notes field in the CSV isn't used by the diagrams library for rendering, you could easily modify the get_node function to use that text as a "Tooltip" if you were exporting to an interactive format, or print it to the console during the build process to verify your configuration.
+
+Pro-Tip for TAMs
+Since you live in the Baltimore area, you could even create separate CSVs for different regions (e.g., icons_us.csv, icons_eu.csv) and load the one that matches the specific customer project you're working on.
+
+Would you like me to show you how to add a Python function that automatically creates the icons/ folder and a dummy icons.csv if they don't exist?
+
+Yes
+
+Integrating a setup check into your module is a pro move—it ensures that when you share these scripts with other TAMs or colleagues, they don't run into file-path errors immediately.
+
+Here is the updated Theme Module with a bootstrap method. This method will check for the directory and the CSV, and if they are missing, it will generate a template for you.
+
+1. The Enhanced Theme Module (hivemq_theme.py)
+Python
+import csv
+import os
+from diagrams.custom import Custom
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+GLOBAL_ATTR = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "32",
+}
+
+BASE_NODE_ATTR = {
+    "fontcolor": HIVEMQ_BLACK,
+    "fillcolor": HIVEMQ_YELLOW,
+    "style": "filled",
+}
+
+class HiveMQPalette:
+    def __init__(self, csv_path='icons.csv'):
+        self.csv_path = csv_path
+        self.icon_map = {}
+        self._bootstrap()
+        self.load_icons()
+
+    def _bootstrap(self):
+        """Ensures the directory structure and CSV template exist."""
+        # Create icons folder if missing
+        if not os.path.exists('icons'):
+            os.makedirs('icons')
+            print("Created directory: /icons")
+
+        # Create template CSV if missing
+        if not os.path.exists(self.csv_path):
+            with open(self.csv_path, mode='w', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(['symbol', 'path', 'notes'])
+                writer.writerow(['edge', './icons/hivemq_edge.png', 'Industrial Edge Gateway'])
+                writer.writerow(['broker', './icons/hivemq_broker.png', 'Enterprise Broker Cluster'])
+            print(f"Generated template file: {self.csv_path}")
+
+    def load_icons(self):
+        with open(self.csv_path, mode='r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                self.icon_map[row['symbol'].lower()] = row['path']
+
+    def get_node(self, symbol, label):
+        path = self.icon_map.get(symbol.lower(), "./icons/default.png")
+        # Log the note if you want to see metadata in the console
+        return Custom(label, path)
+2. Implementation in your Main Script
+You don't need to change much in your main.py. Just initializing the class will now trigger the check:
+
+Python
+from hivemq_theme import HiveMQPalette
+
+# This will now automatically create your /icons/ folder and icons.csv if missing
+palette = HiveMQPalette('icons.csv')
+Why this is helpful for your workflow:
+Portability: You can send your .py files to a client or peer, and the script will set up its own environment on the first run.
+
+Documentation: Since you have the notes field in the CSV, you can use it to keep track of which version of a logo you are using (e.g., "Use high-res SVG for v2.0 pitch").
+
+Error Prevention: It prevents the FileNotFoundError that often plagues scripts relying on external assets.
+
+Since you've built a robust, data-driven diagramming engine, would you like me to help you create a batch script wrapper that can generate multiple diagrams (e.g., "Current State" vs. "Future State") by swapping out different CSV files automatically?
+
+Add options to the theme module to handle JSON and yamil as well as CSV
+
+To make your theme module truly versatile for a Technical Account Manager's toolkit, we can add a simple detection logic that looks at the file extension of your mapping file.
+
+This updated HiveMQPalette class will now handle CSV, JSON, and YAML (using PyYAML) interchangeably.
+
+1. Prerequisites
+Since Python doesn't include YAML support in its standard library, you will need to install it:
+
+Bash
+pip install pyyaml
+2. The Multi-Format Theme Module (hivemq_theme.py)
+Python
+import csv
+import json
+import os
+import yaml
+from diagrams.custom import Custom
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+DARK_GREY = "#1A1A1A"
+
+GLOBAL_ATTR = {
+    "bgcolor": HIVEMQ_BLACK,
+    "fontcolor": HIVEMQ_YELLOW,
+    "fontsize": "32",
+}
+
+class HiveMQPalette:
+    def __init__(self, config_path='icons.yaml'):
+        self.config_path = config_path
+        self.icon_map = {}
+        self._bootstrap()
+        self.load_icons()
+
+    def _bootstrap(self):
+        """Ensures icons folder and a default config exist."""
+        if not os.path.exists('icons'):
+            os.makedirs('icons')
+
+        if not os.path.exists(self.config_path):
+            ext = os.path.splitext(self.config_path)[1].lower()
+            default_data = [
+                {"symbol": "edge", "path": "./icons/edge.png", "notes": "HiveMQ Edge"},
+                {"symbol": "broker", "path": "./icons/broker.png", "notes": "HiveMQ Broker"}
+            ]
+            
+            with open(self.config_path, 'w') as f:
+                if ext == '.json':
+                    json.dump(default_data, f, indent=4)
+                elif ext in ['.yaml', '.yml']:
+                    yaml.dump(default_data, f)
+                else: # Default to CSV
+                    writer = csv.DictWriter(f, fieldnames=['symbol', 'path', 'notes'])
+                    writer.writeheader()
+                    writer.writerows(default_data)
+            print(f"Created template: {self.config_path}")
+
+    def load_icons(self):
+        """Detects file extension and parses accordingly."""
+        ext = os.path.splitext(self.config_path)[1].lower()
+        
+        with open(self.config_path, 'r') as f:
+            if ext == '.json':
+                data = json.load(f)
+            elif ext in ['.yaml', '.yml']:
+                data = yaml.safe_load(f)
+            else: # CSV path
+                data = list(csv.DictReader(f))
+
+            # Normalize list of dicts into a flat symbol-to-path map
+            for entry in data:
+                self.icon_map[entry['symbol'].lower()] = entry['path']
+
+    def get_node(self, symbol, label):
+        path = self.icon_map.get(symbol.lower(), "./icons/default.png")
+        return Custom(label, path)
+3. Example Format Structures
+You can now use any of these file types for your mappings:
+
+YAML (icons.yaml) — Recommended for readability
+
+YAML
+- symbol: edge
+  path: ./icons/hmq-edge.png
+  notes: Used for Baltimore Plant
+- symbol: broker
+  path: ./icons/hmq-cluster.png
+  notes: Central AWS Cluster
+JSON (icons.json)
+
+JSON
+[
+    {
+        "symbol": "edge",
+        "path": "./icons/hmq-edge.png",
+        "notes": "Baltimore Industrial Edge"
+    }
+]
+Why this is powerful for your role:
+Interoperability: If you're pulling asset data from a larger HiveMQ DevOps pipeline, it’s likely already in JSON or YAML. You can now point your script directly at those files.
+
+Complex Metadata: YAML and JSON allow for nested data structures. If you eventually want to store color overrides or specific font sizes per icon, these formats handle that much better than CSV.
+
+Environment Switching: You can initialize the palette with different files depending on the environment: dev_palette = HiveMQPalette('dev_assets.json') prod_palette = HiveMQPalette('prod_assets.yaml')
+
+Would you like me to add a logging feature so the script prints a "BOM" (Bill of Materials) of all symbols used in a diagram after it's generated?
+
+Yes
+
+Adding a Bill of Materials (BOM) or a "Symbol Manifest" is a great way to close the loop on a professional deliverable. It provides a clear audit trail of what icons were used and the metadata (notes) associated with them.
+
+I have updated the module to include a manifest list that tracks every symbol requested during a script's execution. I've also added a print_bom() method to output a clean table to the console.
+
+1. Updated Multi-Format Theme Module (hivemq_theme.py)
+Python
+import csv
+import json
+import os
+import yaml
+from diagrams.custom import Custom
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+
+class HiveMQPalette:
+    def __init__(self, config_path='icons.yaml'):
+        self.config_path = config_path
+        self.icon_data = {}  # Stores the full dict (path + notes)
+        self.used_symbols = [] # Tracks what actually gets used in the diagram
+        self._bootstrap()
+        self.load_icons()
+
+    def _bootstrap(self):
+        if not os.path.exists('icons'):
+            os.makedirs('icons')
+        if not os.path.exists(self.config_path):
+            ext = os.path.splitext(self.config_path)[1].lower()
+            default = [{"symbol": "edge", "path": "./icons/edge.png", "notes": "HiveMQ Edge GW"}]
+            with open(self.config_path, 'w') as f:
+                if ext == '.json': json.dump(default, f, indent=4)
+                elif ext in ['.yaml', '.yml']: yaml.dump(default, f)
+                else:
+                    writer = csv.DictWriter(f, fieldnames=['symbol', 'path', 'notes'])
+                    writer.writeheader(); writer.writerows(default)
+
+    def load_icons(self):
+        ext = os.path.splitext(self.config_path)[1].lower()
+        with open(self.config_path, 'r') as f:
+            if ext == '.json': data = json.load(f)
+            elif ext in ['.yaml', '.yml']: data = yaml.safe_load(f)
+            else: data = list(csv.DictReader(f))
+            
+            # Map symbol to the full dictionary of info
+            for entry in data:
+                self.icon_data[entry['symbol'].lower()] = entry
+
+    def get_node(self, symbol, label):
+        sym_key = symbol.lower()
+        node_info = self.icon_data.get(sym_key, {"path": "./icons/default.png", "notes": "Unknown"})
+        
+        # Track usage for the BOM
+        if sym_key not in [s['symbol'] for s in self.used_symbols]:
+            self.used_symbols.append({"symbol": sym_key, "label": label, "notes": node_info.get('notes', '')})
+            
+        return Custom(label, node_info['path'])
+
+    def print_bom(self):
+        """Prints a Bill of Materials to the console."""
+        print(f"\n{'='*60}")
+        print(f"DIAGRAM BILL OF MATERIALS (Source: {self.config_path})")
+        print(f"{'='*60}")
+        print(f"{'SYMBOL':<10} | {'LABEL':<20} | {'NOTES'}")
+        print(f"{'-'*10}-+-{'-'*20}-+-{'-'*25}")
+        for item in self.used_symbols:
+            print(f"{item['symbol']:<10} | {item['label']:<20} | {item['notes']}")
+        print(f"{'='*60}\n")
+2. How to use it in your workflow
+In your main.py, you simply call palette.print_bom() at the end of the script:
+
+Python
+from diagrams import Diagram
+from hivemq_theme import HiveMQPalette, GLOBAL_ATTR
+
+palette = HiveMQPalette('icons.yaml')
+
+with Diagram("Baltimore Industrial UNS", show=False, outformat="svg", graph_attr=GLOBAL_ATTR):
+    edge = palette.get_node("edge", "Maryland Plant Edge")
+    # ... rest of your logic ...
+
+# Generate the manifest in the console
+palette.print_bom()
+Example Console Output:
+Plaintext
+============================================================
+DIAGRAM BILL OF MATERIALS (Source: icons.yaml)
+============================================================
+SYMBOL     | LABEL                | NOTES
+-----------+----------------------+-------------------------
+edge       | Maryland Plant Edge  | HiveMQ Edge GW
+broker     | AWS East Cluster     | Primary Cloud Broker
+kafka      | Data Lake            | Confluent Integration
+============================================================
+Why this is a "TAM Power User" feature:
+Validation: You can quickly verify that the script is pulling the correct "Baltimore" specific assets rather than a generic template.
+
+Documentation Generation: You can pipe this console output into a text file or your project notes to provide a key for the icons used in the .svg.
+
+Note Field Utility: Your notes field in the CSV/YAML now serves a dual purpose: documentation for you, and a reference for anyone reading the console log.
+
+Since you’re managing complex technical accounts, would you like me to show you how to automate the generation of a README.md that embeds the diagram image and this BOM table together?
+
+Yes
+
+This is the final step to making your diagramming tool a true "one-click" documentation engine. By automating the README.md generation, you ensure that your diagrams, their technical context, and the Bill of Materials (BOM) are always in sync.
+
+I have added a generate_readme() method to the HiveMQPalette class. It will create a Markdown file that includes the image and a formatted table of the components used.
+
+1. The Completed Theme Module (hivemq_theme.py)
+Python
+import csv
+import json
+import os
+import yaml
+from diagrams.custom import Custom
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+
+class HiveMQPalette:
+    def __init__(self, config_path='icons.yaml'):
+        self.config_path = config_path
+        self.icon_data = {}
+        self.used_symbols = []
+        self._bootstrap()
+        self.load_icons()
+
+    def _bootstrap(self):
+        if not os.path.exists('icons'):
+            os.makedirs('icons')
+        if not os.path.exists(self.config_path):
+            ext = os.path.splitext(self.config_path)[1].lower()
+            default = [{"symbol": "edge", "path": "./icons/edge.png", "notes": "HiveMQ Edge Gateway"}]
+            with open(self.config_path, 'w') as f:
+                if ext == '.json': json.dump(default, f, indent=4)
+                elif ext in ['.yaml', '.yml']: yaml.dump(default, f)
+                else:
+                    writer = csv.DictWriter(f, fieldnames=['symbol', 'path', 'notes'])
+                    writer.writeheader(); writer.writerows(default)
+
+    def load_icons(self):
+        ext = os.path.splitext(self.config_path)[1].lower()
+        with open(self.config_path, 'r') as f:
+            if ext == '.json': data = json.load(f)
+            elif ext in ['.yaml', '.yml']: data = yaml.safe_load(f)
+            else: data = list(csv.DictReader(f))
+            for entry in data:
+                self.icon_data[entry['symbol'].lower()] = entry
+
+    def get_node(self, symbol, label):
+        sym_key = symbol.lower()
+        node_info = self.icon_data.get(sym_key, {"path": "./icons/default.png", "notes": "Unknown"})
+        if sym_key not in [s['symbol'] for s in self.used_symbols]:
+            self.used_symbols.append({"symbol": sym_key, "label": label, "notes": node_info.get('notes', '')})
+        return Custom(label, node_info['path'])
+
+    def generate_readme(self, diagram_name, image_file):
+        """Generates a README.md with the diagram and BOM table."""
+        with open("README.md", "w") as f:
+            f.write(f"# {diagram_name.replace('_', ' ')}\n\n")
+            f.write(f"![Architecture Diagram](./{image_file})\n\n")
+            f.write("## Bill of Materials\n\n")
+            f.write("| Symbol | Label | Technical Notes |\n")
+            f.write("| :--- | :--- | :--- |\n")
+            for item in self.used_symbols:
+                f.write(f"| {item['symbol']} | {item['label']} | {item['notes']} |\n")
+            f.write(f"\n*Generated automatically from {self.config_path}*")
+        print(f"Successfully generated README.md for {diagram_name}")
+2. Implementation in your Main Script
+You call this after the with Diagram(...) block closes to ensure the image file has been written to disk.
+
+Python
+from diagrams import Diagram, Edge
+from hivemq_theme import HiveMQPalette, GLOBAL_ATTR
+
+palette = HiveMQPalette('icons.yaml')
+diag_name = "Baltimore_Plant_UNS"
+img_file = f"{diag_name}.svg"
+
+with Diagram(diag_name, show=False, outformat="svg", filename=diag_name, graph_attr=GLOBAL_ATTR):
+    edge = palette.get_node("edge", "Maryland Edge")
+    broker = palette.get_node("broker", "HiveMQ Cloud")
+    edge >> Edge(label="MQTT/TLS", color="#FFC000") >> broker
+
+# Call this to wrap everything up
+palette.generate_readme(diag_name, img_file)
+Why this is the "TAM Gold Standard":
+Version Control Ready: When you push this folder to a Git repository, the README.md will automatically render the diagram and the table on the front page.
+
+Client Deliverables: You can send a zip file of the folder to a customer, and they have an instant, professional "System Architecture Document."
+
+Baltimore Local Context: You can easily add local notes to your icons.yaml (e.g., "Baltimore Site A - Primary Gateway") and they will appear in the Markdown table automatically.
+
+Would you like me to add a Python function that automatically pushes these updates to a specific GitHub repository or S3 bucket for live sharing?
+
+Yes
+
+To wrap up your automation pipeline, let's add a distribution layer. This ensures that once your diagram and README.md are generated, they are immediately available to your clients or colleagues.
+
+I have updated the HiveMQPalette class with two new methods: push_to_github() and upload_to_s3().
+
+Prerequisites
+You will need to install the following libraries:
+
+Bash
+pip install gitpython boto3
+1. The Full Automation Module (hivemq_theme.py)
+Python
+import csv, json, os, yaml, boto3
+from diagrams.custom import Custom
+from git import Repo
+
+# HiveMQ Branding
+HIVEMQ_YELLOW = "#FFC000"
+HIVEMQ_BLACK = "#000000"
+
+class HiveMQPalette:
+    def __init__(self, config_path='icons.yaml'):
+        self.config_path = config_path
+        self.icon_data = {}
+        self.used_symbols = []
+        self._bootstrap()
+        self.load_icons()
+
+    def _bootstrap(self):
+        if not os.path.exists('icons'): os.makedirs('icons')
+        if not os.path.exists(self.config_path):
+            ext = os.path.splitext(self.config_path)[1].lower()
+            default = [{"symbol": "edge", "path": "./icons/edge.png", "notes": "HiveMQ Edge Gateway"}]
+            with open(self.config_path, 'w') as f:
+                if ext == '.json': json.dump(default, f, indent=4)
+                elif ext in ['.yaml', '.yml']: yaml.dump(default, f)
+                else:
+                    writer = csv.DictWriter(f, fieldnames=['symbol', 'path', 'notes'])
+                    writer.writeheader(); writer.writerows(default)
+
+    def load_icons(self):
+        ext = os.path.splitext(self.config_path)[1].lower()
+        with open(self.config_path, 'r') as f:
+            if ext == '.json': data = json.load(f)
+            elif ext in ['.yaml', '.yml']: data = yaml.safe_load(f)
+            else: data = list(csv.DictReader(f))
+            for entry in data: self.icon_data[entry['symbol'].lower()] = entry
+
+    def get_node(self, symbol, label):
+        sym_key = symbol.lower()
+        node_info = self.icon_data.get(sym_key, {"path": "./icons/default.png", "notes": "Unknown"})
+        if sym_key not in [s['symbol'] for s in self.used_symbols]:
+            self.used_symbols.append({"symbol": sym_key, "label": label, "notes": node_info.get('notes', '')})
+        return Custom(label, node_info['path'])
+
+    def generate_readme(self, diagram_name, image_file):
+        with open("README.md", "w") as f:
+            f.write(f"# {diagram_name.replace('_', ' ')}\n\n")
+            f.write(f"![Architecture Diagram](./{image_file})\n\n")
+            f.write("## Bill of Materials\n\n")
+            f.write("| Symbol | Label | Technical Notes |\n| :--- | :--- | :--- |\n")
+            for item in self.used_symbols:
+                f.write(f"| {item['symbol']} | {item['label']} | {item['notes']} |\n")
+        print("Generated README.md locally.")
+
+    def push_to_github(self, repo_path, commit_msg="Automated diagram update"):
+        """Commits and pushes changes to the current Git repository."""
+        try:
+            repo = Repo(repo_path)
+            repo.git.add(all=True)
+            repo.index.commit(commit_msg)
+            origin = repo.remote(name='origin')
+            origin.push()
+            print("Successfully pushed to GitHub.")
+        except Exception as e:
+            print(f"Git Error: {e}")
+
+    def upload_to_s3(self, file_list, bucket_name, region='us-east-1'):
+        """Uploads the generated files to an S3 bucket for hosting."""
+        s3 = boto3.client('s3', region_name=region)
+        for file in file_list:
+            try:
+                s3.upload_file(file, bucket_name, file)
+                print(f"Uploaded {file} to S3 bucket: {bucket_name}")
+            except Exception as e:
+                print(f"S3 Error: {e}")
+2. The Final "One-Click" Main Script
+Python
+from diagrams import Diagram
+from hivemq_theme import HiveMQPalette, HIVEMQ_YELLOW
+
+palette = HiveMQPalette('icons.yaml')
+diag_name = "Baltimore_UNS_Standard"
+img_file = f"{diag_name}.svg"
+
+with Diagram(diag_name, show=False, outformat="svg", filename=diag_name):
+    # Your logic here
+    edge = palette.get_node("edge", "Maryland Plant")
+    # ...
+    
+palette.generate_readme(diag_name, img_file)
+
+# Choice 1: Push to your HiveMQ GitHub repo
+# palette.push_to_github('.')
+
+# Choice 2: Upload to your S3 Documentation bucket
+# palette.upload_to_s3([img_file, 'README.md'], 'my-hivemq-docs-bucket')
+Why this is a complete solution for you:
+GitHub Integration: Perfect for maintaining a central "Source of Truth" for all customer architectures.
+
+S3 Hosting: Ideal if you want to provide a "live link" to a diagram that a customer can bookmark.
+
+Professional Consistency: Every diagram you produce from your home office in Baltimore will now follow the exact same branding, metadata, and distribution standards.
+
+Pushing your first Python script to a Git repository This video provides a solid foundation for understanding the Git workflow you've just automated, ensuring your code and diagrams are properly version-controlled.
