@@ -7,6 +7,7 @@ directed placement engine with hierarchical group flow and orthogonal routing.
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 from iiot_diagrams import Diagram, Port
 
 
@@ -126,4 +127,5 @@ def generate_mockup_slide(output_dir: Path | str = "output") -> Diagram:
 
 
 if __name__ == "__main__":
-    generate_mockup_slide()
+    out_dir = sys.argv[1] if len(sys.argv) > 1 else "output"
+    generate_mockup_slide(out_dir)

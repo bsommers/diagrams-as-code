@@ -7,6 +7,7 @@ with load balancing, redundant cluster nodes, and dotted peer discovery.
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 from iiot_diagrams import Diagram, Port
 
 
@@ -121,10 +122,20 @@ def generate_high_availability(output_dir: Path | str = "output") -> Diagram:
         ) >> node3
 
     svg_path = out_dir / "high_availability.svg"
+    readme_path = out_dir / "high_availability_README.md"
+
     diag.render_svg(svg_path)
+    diag.generate_readme(
+        image_file="high_availability.svg",
+        output_path=readme_path,
+        include_connections=True,
+    )
+
     print(f"Generated: {svg_path}")
+    print(f"Generated: {readme_path}")
     return diag
 
 
 if __name__ == "__main__":
-    generate_high_availability()
+    out_dir = sys.argv[1] if len(sys.argv) > 1 else "output"
+    generate_high_availability(out_dir)

@@ -7,6 +7,7 @@ with hierarchical nested groups, protocol badges, and multi-consumer fanout.
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 from iiot_diagrams import Diagram, Port
 
 
@@ -124,10 +125,20 @@ def generate_sparkplug_pipeline(output_dir: Path | str = "output") -> Diagram:
         ) >> scada
 
     svg_path = out_dir / "sparkplug_pipeline.svg"
+    readme_path = out_dir / "sparkplug_pipeline_README.md"
+
     diag.render_svg(svg_path)
+    diag.generate_readme(
+        image_file="sparkplug_pipeline.svg",
+        output_path=readme_path,
+        include_connections=True,
+    )
+
     print(f"Generated: {svg_path}")
+    print(f"Generated: {readme_path}")
     return diag
 
 
 if __name__ == "__main__":
-    generate_sparkplug_pipeline()
+    out_dir = sys.argv[1] if len(sys.argv) > 1 else "output"
+    generate_sparkplug_pipeline(out_dir)

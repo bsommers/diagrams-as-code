@@ -12,9 +12,9 @@ import pytest
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
-def _run_script(script_rel_path: str) -> subprocess.CompletedProcess[str]:
+def _run_script(script_rel_path: str, *args: str) -> subprocess.CompletedProcess[str]:
     script_path = REPO_ROOT / script_rel_path
-    cmd = [sys.executable, str(script_path)]
+    cmd = [sys.executable, str(script_path), *args]
     env = dict(os.environ)
     src_dir = str(REPO_ROOT / "src")
     existing_pythonpath = env.get("PYTHONPATH", "")
@@ -29,12 +29,12 @@ def _run_script(script_rel_path: str) -> subprocess.CompletedProcess[str]:
     return result
 
 
-def test_01_mockup_slide_execution() -> None:
-    result = _run_script("examples/01_mockup_slide.py")
+def test_01_mockup_slide_execution(tmp_path: Path) -> None:
+    result = _run_script("examples/01_mockup_slide.py", str(tmp_path))
     assert result.returncode == 0, f"Script failed with stderr:\n{result.stderr}"
 
-    svg_path = REPO_ROOT / "output" / "mockup_slide.svg"
-    assert svg_path.exists(), "Expected output/mockup_slide.svg to be generated"
+    svg_path = tmp_path / "mockup_slide.svg"
+    assert svg_path.exists(), "Expected mockup_slide.svg in tmp_path"
 
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
@@ -54,20 +54,20 @@ def test_01_mockup_slide_execution() -> None:
     markers = root.findall(".//{http://www.w3.org/2000/svg}marker")
     assert len(markers) > 0, "Expected SVG marker elements for arrowheads"
 
-    # Assert living documentation README was generated
-    readme_path = REPO_ROOT / "output" / "mockup_slide_README.md"
-    assert readme_path.exists(), "Expected output/mockup_slide_README.md to be generated"
+    # Assert living documentation README was generated in tmp_path
+    readme_path = tmp_path / "mockup_slide_README.md"
+    assert readme_path.exists(), "Expected mockup_slide_README.md in tmp_path"
     readme_content = readme_path.read_text(encoding="utf-8")
     assert "Bill of Materials" in readme_content
     assert "Connections" in readme_content
 
 
-def test_02_high_availability_execution() -> None:
-    result = _run_script("examples/02_high_availability.py")
+def test_02_high_availability_execution(tmp_path: Path) -> None:
+    result = _run_script("examples/02_high_availability.py", str(tmp_path))
     assert result.returncode == 0, f"Script failed with stderr:\n{result.stderr}"
 
-    svg_path = REPO_ROOT / "output" / "high_availability.svg"
-    assert svg_path.exists(), "Expected output/high_availability.svg to be generated"
+    svg_path = tmp_path / "high_availability.svg"
+    assert svg_path.exists(), "Expected high_availability.svg in tmp_path"
 
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
@@ -87,13 +87,20 @@ def test_02_high_availability_execution() -> None:
     assert "Cluster Discovery" in svg_content
     assert 'stroke-dasharray="2,2"' in svg_content or 'stroke-dasharray="5,5"' in svg_content
 
+    # Assert living documentation README was generated in tmp_path
+    readme_path = tmp_path / "high_availability_README.md"
+    assert readme_path.exists(), "Expected high_availability_README.md in tmp_path"
+    readme_content = readme_path.read_text(encoding="utf-8")
+    assert "Bill of Materials" in readme_content
+    assert "Connections" in readme_content
 
-def test_03_sparkplug_pipeline_execution() -> None:
-    result = _run_script("examples/03_sparkplug_pipeline.py")
+
+def test_03_sparkplug_pipeline_execution(tmp_path: Path) -> None:
+    result = _run_script("examples/03_sparkplug_pipeline.py", str(tmp_path))
     assert result.returncode == 0, f"Script failed with stderr:\n{result.stderr}"
 
-    svg_path = REPO_ROOT / "output" / "sparkplug_pipeline.svg"
-    assert svg_path.exists(), "Expected output/sparkplug_pipeline.svg to be generated"
+    svg_path = tmp_path / "sparkplug_pipeline.svg"
+    assert svg_path.exists(), "Expected sparkplug_pipeline.svg in tmp_path"
 
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
@@ -109,14 +116,37 @@ def test_03_sparkplug_pipeline_execution() -> None:
     assert "spBv1.0" in svg_content
     assert "Modbus" in svg_content or "OPC UA" in svg_content
 
+    # Assert living documentation README was generated in tmp_path
+    readme_path = tmp_path / "sparkplug_pipeline_README.md"
+    assert readme_path.exists(), "Expected sparkplug_pipeline_README.md in tmp_path"
+    readme_content = readme_path.read_text(encoding="utf-8")
+    assert "Bill of Materials" in readme_content
+    assert "Connections" in readme_content
 
-def test_main_execution() -> None:
-    result = _run_script("main.py")
+
+def test_main_execution(tmp_path: Path) -> None:
+    result = _run_script("main.py", str(tmp_path))
     assert result.returncode == 0, f"Script failed with stderr:\n{result.stderr}"
 
-    svg_path = REPO_ROOT / "output" / "main_architecture.svg"
-    assert svg_path.exists(), "Expected output/main_architecture.svg to be generated"
+    svg_path = tmp_path / "main_architecture.svg"
+    assert svg_path.exists(), "Expected main_architecture.svg in tmp_path"
 
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
     assert root.tag.endswith("svg")
+
+    # Assert group and node labels in main diagram
+    assert "Plant Floor (Edge Tier)" in svg_content
+    assert "Cloud Platform (UNS Tier)" in svg_content
+    assert "Enterprise Operations" in svg_content
+    assert "Automation PLC" in svg_content
+    assert "Enterprise MQTT Broker" in svg_content
+
+    # Assert living documentation README was generated in tmp_path
+    readme_path = tmp_path / "main_README.md"
+    assert readme_path.exists(), "Expected main_README.md in tmp_path"
+    readme_content = readme_path.read_text(encoding="utf-8")
+    assert "Bill of Materials" in readme_content
+    assert "Connections" in readme_content
+    assert "Enterprise MQTT Broker Cluster" in readme_content
+    assert "HiveMQ" not in readme_content

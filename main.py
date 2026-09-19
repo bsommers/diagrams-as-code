@@ -57,7 +57,7 @@ def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
                 height=65.0,
                 kind="server_rack",
                 icon="broker",
-                metadata={"engine": "HiveMQ Enterprise Cluster", "ha": "3-Node Multi-AZ"},
+                metadata={"engine": "Enterprise MQTT Broker Cluster", "ha": "3-Node Multi-AZ"},
             )
 
             db = diag.shape(
@@ -115,11 +115,84 @@ def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
 
     print(f"Generated: {svg_file}")
     print(f"Generated: {readme_file}")
+
+    # Regenerate root README.md when building to default output directory
+    if str(output_dir) == "output":
+        generate_root_readme(diag, "README.md")
+
     return diag
 
 
+def generate_root_readme(diag: Diagram, output_path: Path | str = "README.md") -> str:
+    """Generate repository root README with project overview, quickstart, and BOM."""
+    p = Path(output_path)
+    img_rel = "output/main_architecture.svg"
+    bom_md = diag.bom.to_markdown(title="Bill of Materials (BOM)")
+    conns_md = diag.bom.connections_to_markdown(title="Connections & Telemetry Protocols")
+
+    content = f"""# Industrial IoT (IIoT) Diagrams-as-Code
+
+A pure-Python, zero-Graphviz directed diagrams engine tailored for Industrial IoT, edge computing, and enterprise Unified Namespace (UNS) architectures.
+
+## Reference Architecture
+
+![Architecture Diagram]({img_rel})
+
+## Key Features
+
+- **Pure-Python & Lightweight**: No Graphviz, Cairo, or external C-library runtime dependencies required for SVG generation.
+- **Decoupled Architecture**: Elements exist independently of canvas layout; position constraints (`at`, `below`, `right_of`, `align`) can be applied late or dynamically updated.
+- **Hierarchical Auto-Bounding**: Container groups dynamically calculate bounds enclosing child shapes with configurable padding and header room.
+- **Orthogonal Manhattan Routing**: Smart directional routing between element ports (`Port.NORTH`, `Port.EAST`, etc.) with collision avoidance and embedded protocol badges.
+- **Automated Living Documentation**: Instant generation of Markdown Bill of Materials (BOM), connection tables, and JSON metadata.
+- **Vector Shape & Icon Library**: Built-in crisp SVG primitives (box, cylinder, server rack, database, diamond) and IIoT vector icons (sensor, gateway, broker, queue, database, dashboard).
+
+## Quickstart
+
+### Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+### Generating Diagrams
+
+Generate the reference architecture diagram and living documentation:
+
+```bash
+PYTHONPATH=src python3 main.py
+```
+
+### Running Examples
+
+```bash
+PYTHONPATH=src python3 examples/01_mockup_slide.py
+PYTHONPATH=src python3 examples/02_high_availability.py
+PYTHONPATH=src python3 examples/03_sparkplug_pipeline.py
+```
+
+### Running Test Suite
+
+```bash
+PYTHONPATH=src pytest tests/ -v
+```
+
+---
+
+{bom_md}
+
+---
+
+{conns_md}
+"""
+    p.write_text(content, encoding="utf-8")
+    print(f"Generated root README: {p}")
+    return content
+
+
 def main() -> int:
-    generate_main_architecture()
+    out_dir = sys.argv[1] if len(sys.argv) > 1 else "output"
+    generate_main_architecture(out_dir)
     return 0
 
 
