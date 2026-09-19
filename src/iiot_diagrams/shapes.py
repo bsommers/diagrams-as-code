@@ -31,6 +31,10 @@ class ShapeLibrary:
         "dashboard/grafana": "dashboard",
     }
 
+    def _validate_dimensions(self, w: float, h: float) -> None:
+        if w <= 0 or h <= 0:
+            raise ValueError(f"Width and height must be positive, got w={w}, h={h}")
+
     def render_box(
         self,
         x: float,
@@ -43,6 +47,7 @@ class ShapeLibrary:
         radius: float = 6.0,
     ) -> str:
         """Render a rounded rectangular box."""
+        self._validate_dimensions(w, h)
         return (
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" '
             f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" />'
@@ -59,6 +64,7 @@ class ShapeLibrary:
         stroke_width: float = 2.0,
     ) -> str:
         """Render a 3D isometric cylinder (data storage, tank, silo)."""
+        self._validate_dimensions(w, h)
         ry = min(12.0, h / 4.0)
         rx = w / 2.0
         return (
@@ -80,6 +86,7 @@ class ShapeLibrary:
         stroke_width: float = 2.0,
     ) -> str:
         """Render a diamond / rhombus decision shape."""
+        self._validate_dimensions(w, h)
         cx = x + w / 2.0
         cy = y + h / 2.0
         d = f"M {cx} {y} L {x + w} {cy} L {cx} {y + h} L {x} {cy} Z"
@@ -99,6 +106,7 @@ class ShapeLibrary:
         stroke_width: float = 2.0,
     ) -> str:
         """Render a scalable cloud container shape."""
+        self._validate_dimensions(w, h)
         d = (
             f"M {x + 0.25 * w} {y + 0.85 * h} "
             f"L {x + 0.75 * w} {y + 0.85 * h} "
@@ -112,6 +120,112 @@ class ShapeLibrary:
             f'<path d="{d}" fill="{fill}" stroke="{stroke}" '
             f'stroke-width="{stroke_width}"/>'
         )
+
+    def render_server_rack(
+        self,
+        x: float,
+        y: float,
+        w: float,
+        h: float,
+        fill: str,
+        stroke: str,
+        stroke_width: float = 2.0,
+        num_units: int = 4,
+    ) -> str:
+        """Render an industrial server rack chassis with blade units and LED indicators."""
+        self._validate_dimensions(w, h)
+        units = max(1, int(num_units))
+        margin = 4.0
+        blade_w = max(4.0, w - 2 * margin)
+        avail_h = max(4.0, h - 2 * margin)
+        gap = 3.0
+        blade_h = max(2.0, (avail_h - (units - 1) * gap) / units)
+
+        parts = [
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="3" '
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" />'
+        ]
+
+        # Mounting flanges
+        flange_w = min(4.0, w / 8.0)
+        parts.append(
+            f'<line x1="{x + flange_w}" y1="{y + 2}" x2="{x + flange_w}" y2="{y + h - 2}" '
+            f'stroke="{stroke}" stroke-width="1" stroke-dasharray="2,3" />'
+        )
+        parts.append(
+            f'<line x1="{x + w - flange_w}" y1="{y + 2}" x2="{x + w - flange_w}" y2="{y + h - 2}" '
+            f'stroke="{stroke}" stroke-width="1" stroke-dasharray="2,3" />'
+        )
+
+        for i in range(units):
+            uy = y + margin + i * (blade_h + gap)
+            ux = x + margin
+            parts.append(
+                f'<rect x="{ux}" y="{uy}" width="{blade_w}" height="{blade_h}" rx="1.5" '
+                f'fill="{fill}" stroke="{stroke}" stroke-width="1" />'
+            )
+            # Drive bays / vents line
+            vent_x1 = ux + 6.0
+            vent_x2 = max(vent_x1 + 4.0, ux + blade_w - 20.0)
+            vent_y = uy + blade_h / 2.0
+            if blade_w > 30.0:
+                parts.append(
+                    f'<line x1="{vent_x1}" y1="{vent_y}" x2="{vent_x2}" y2="{vent_y}" '
+                    f'stroke="{stroke}" stroke-width="1" />'
+                )
+            # Activity LEDs
+            led_x1 = ux + blade_w - 12.0
+            led_x2 = ux + blade_w - 6.0
+            if blade_w > 20.0 and blade_h >= 6.0:
+                parts.append(f'<circle cx="{led_x1}" cy="{vent_y}" r="1.2" fill="{stroke}" />')
+                parts.append(f'<circle cx="{led_x2}" cy="{vent_y}" r="1.2" fill="{stroke}" />')
+
+        return "\n".join(parts)
+
+    def render_database(
+        self,
+        x: float,
+        y: float,
+        w: float,
+        h: float,
+        fill: str,
+        stroke: str,
+        stroke_width: float = 2.0,
+        num_tiers: int = 3,
+    ) -> str:
+        """Render a multi-tier database cylinder stack container shape."""
+        self._validate_dimensions(w, h)
+        tiers = max(1, int(num_tiers))
+        ry = min(12.0, h / (tiers * 2.0))
+        rx = w / 2.0
+
+        # Body outline with curved bottom cap
+        body_d = (
+            f"M {x} {y + ry} "
+            f"L {x} {y + h - ry} "
+            f"A {rx} {ry} 0 0 0 {x + w} {y + h - ry} "
+            f"L {x + w} {y + ry} "
+            f"A {rx} {ry} 0 0 1 {x} {y + ry} Z"
+        )
+        parts = [
+            f'<path d="{body_d}" fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}"/>'
+        ]
+
+        # Intermediate tier shelf curves
+        tier_span = (h - 2 * ry) / tiers
+        for k in range(1, tiers):
+            tier_y = y + ry + k * tier_span
+            parts.append(
+                f'<path d="M {x} {tier_y} A {rx} {ry} 0 0 0 {x + w} {tier_y}" '
+                f'fill="none" stroke="{stroke}" stroke-width="{stroke_width}"/>'
+            )
+
+        # Top rim ellipse
+        parts.append(
+            f'<ellipse cx="{x + rx}" cy="{y + ry}" rx="{rx}" ry="{ry}" '
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}"/>'
+        )
+        return "\n".join(parts)
 
     def render_badge(
         self,
@@ -128,17 +242,23 @@ class ShapeLibrary:
         ),
     ) -> str:
         """Render a status or protocol badge pill with centered text."""
+        if font_size <= 0:
+            raise ValueError(f"font_size must be positive, got {font_size}")
+        if height <= 0:
+            raise ValueError(f"height must be positive, got {height}")
+
         char_w = font_size * 0.62
         badge_w = max(len(text) * char_w + 2 * padding_x, 24.0)
         rx = height / 2.0
         text_x = x + badge_w / 2.0
         text_y = y + height / 2.0 + font_size * 0.35
         escaped_text = html.escape(text)
+        escaped_font_family = html.escape(font_family, quote=True)
         return (
             f'<g class="badge">\n'
             f'  <rect x="{x}" y="{y}" width="{badge_w}" height="{height}" rx="{rx}" fill="{fill}" />\n'
             f'  <text x="{text_x}" y="{text_y}" fill="{text_color}" font-size="{font_size}" '
-            f'font-family="{font_family}" font-weight="600" text-anchor="middle">{escaped_text}</text>\n'
+            f'font-family="{escaped_font_family}" font-weight="600" text-anchor="middle">{escaped_text}</text>\n'
             f'</g>'
         )
 
@@ -234,6 +354,8 @@ class ShapeLibrary:
         stroke_width: float = 2.0,
     ) -> str:
         """Render an IIoT component icon inside a positioned and scaled SVG group."""
+        if size <= 0:
+            raise ValueError(f"size must be positive, got {size}")
         canonical = self._canonical_icon_name(name)
         scale = size / 24.0
         content = self._render_icon_content(canonical, color, stroke_width)
@@ -243,7 +365,7 @@ class ShapeLibrary:
             f'</g>'
         )
 
-    # Convenience icon renderers
+    # Dedicated icon convenience methods
     def render_sensor(
         self,
         x: float,
@@ -284,7 +406,7 @@ class ShapeLibrary:
     ) -> str:
         return self.render_icon("broker", x, y, size, color, stroke_width)
 
-    def render_database(
+    def render_database_icon(
         self,
         x: float,
         y: float,
@@ -294,7 +416,7 @@ class ShapeLibrary:
     ) -> str:
         return self.render_icon("database", x, y, size, color, stroke_width)
 
-    def render_influx(
+    def render_influx_icon(
         self,
         x: float,
         y: float,
@@ -303,6 +425,9 @@ class ShapeLibrary:
         stroke_width: float = 2.0,
     ) -> str:
         return self.render_icon("influx", x, y, size, color, stroke_width)
+
+    # Legacy/convenience alias
+    render_influx = render_database_icon
 
     def render_queue(
         self,

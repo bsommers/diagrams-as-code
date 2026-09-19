@@ -1,3 +1,4 @@
+from dataclasses import FrozenInstanceError
 import xml.etree.ElementTree as ET
 import pytest
 from iiot_diagrams import (
@@ -11,6 +12,7 @@ from iiot_diagrams import (
     Theme,
     get_theme,
     register_theme,
+    reset_themes,
 )
 
 
@@ -19,6 +21,7 @@ def test_package_exports() -> None:
     assert Theme is not None
     assert get_theme is not None
     assert register_theme is not None
+    assert reset_themes is not None
     assert THEMES is not None
     assert IIOT_DARK_GOLD is not None
     assert IIOT_LIGHT is not None
@@ -82,8 +85,8 @@ def test_theme_fallback_on_unknown() -> None:
     assert fallback == default_theme
 
 
-def test_theme_registration_and_retrieval() -> None:
-    """Verify registering a custom theme and retrieving it."""
+def test_theme_registration_retrieval_and_reset() -> None:
+    """Verify registering a custom theme, isolation, and reset_themes()."""
     custom = Theme(
         name="industrial_amber",
         background="#121212",
@@ -104,6 +107,19 @@ def test_theme_registration_and_retrieval() -> None:
 
     fetched_upper = get_theme("INDUSTRIAL_AMBER")
     assert fetched_upper.name == "industrial_amber"
+
+    # Verify reset_themes removes custom themes and preserves default presets
+    reset_themes()
+    assert "industrial_amber" not in THEMES
+    fallback = get_theme("industrial_amber")
+    assert fallback.name == "iiot_dark_gold"
+
+
+def test_theme_immutability() -> None:
+    """Verify Theme dataclass is frozen and prevents attribute mutation."""
+    dark = get_theme("iiot_dark_gold")
+    with pytest.raises(FrozenInstanceError):
+        dark.background = "#FF0000"  # type: ignore[misc]
 
 
 def test_theme_type_validation() -> None:
@@ -213,11 +229,56 @@ def test_render_cloud_svg() -> None:
     assert path.attrib["stroke"] == "#60A5FA"
 
 
+def test_render_server_rack_svg() -> None:
+    """Verify render_server_rack chassis, blade units, and LED indicators."""
+    lib = ShapeLibrary()
+    rack_svg = lib.render_server_rack(
+        10.0, 20.0, 120.0, 160.0, fill="#1E1E24", stroke="#FFC000", num_units=4
+    )
+
+    root = ET.fromstring(f"<svg>{rack_svg}</svg>")
+    rects = root.findall("rect")
+    # Outer rack frame + 4 blade units = 5 rects
+    assert len(rects) == 5
+    assert rects[0].attrib["width"] == "120.0"
+    assert rects[0].attrib["height"] == "160.0"
+
+    circles = root.findall("circle")
+    # 2 LEDs per blade * 4 blades = 8 LED circles
+    assert len(circles) == 8
+
+    lines = root.findall("line")
+    # Flange lines (2) + vent lines (4) = 6 lines
+    assert len(lines) >= 6
+
+
+def test_render_database_container_svg() -> None:
+    """Verify multi-tier database container shape rendering and XML validity."""
+    lib = ShapeLibrary()
+    db_svg = lib.render_database(
+        10.0, 10.0, 100.0, 120.0, fill="#24242A", stroke="#00E5A3", num_tiers=3
+    )
+
+    root = ET.fromstring(f"<svg>{db_svg}</svg>")
+    paths = root.findall("path")
+    # Body path + 2 intermediate tier shelf curves = 3 paths
+    assert len(paths) == 3
+    ellipse = root.find("ellipse")
+    assert ellipse is not None
+    assert ellipse.attrib["cx"] == "60.0"
+    assert ellipse.attrib["rx"] == "50.0"
+
+
 def test_render_badge_svg_and_escaping() -> None:
     """Verify render_badge pill container, text positioning, and XML entity escaping."""
     lib = ShapeLibrary()
     badge_svg = lib.render_badge(
-        50.0, 100.0, "MQTT & TLS > v1.3", fill="#FFC000", text_color="#000000"
+        50.0,
+        100.0,
+        "MQTT & TLS > v1.3",
+        fill="#FFC000",
+        text_color="#000000",
+        font_family="\"Fira Code\", 'Consolas', <sans-serif>&",
     )
 
     root = ET.fromstring(f"<svg>{badge_svg}</svg>")
@@ -234,6 +295,51 @@ def test_render_badge_svg_and_escaping() -> None:
     assert text is not None
     assert text.text == "MQTT & TLS > v1.3"
     assert text.attrib["fill"] == "#000000"
+    # Font family should have escaped quotes/tags
+    assert "&lt;" not in text.attrib["font-family"] or "<" not in badge_svg
+
+
+def test_shape_dimension_guards() -> None:
+    """Verify non-positive dimensions raise ValueError across all shape primitives."""
+    lib = ShapeLibrary()
+
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_box(0, 0, 0, 50, "#000", "#fff")
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_box(0, 0, 100, -10, "#000", "#fff")
+
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_cylinder(0, 0, -5, 50, "#000", "#fff")
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_cylinder(0, 0, 50, 0, "#000", "#fff")
+
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_diamond(0, 0, 0, 50, "#000", "#fff")
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_diamond(0, 0, 50, -5, "#000", "#fff")
+
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_cloud(0, 0, -20, 50, "#000", "#fff")
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_cloud(0, 0, 50, 0, "#000", "#fff")
+
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_server_rack(0, 0, 0, 100, "#000", "#fff")
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_server_rack(0, 0, 100, -10, "#000", "#fff")
+
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_database(0, 0, -1, 100, "#000", "#fff")
+    with pytest.raises(ValueError, match="Width and height must be positive"):
+        lib.render_database(0, 0, 100, 0, "#000", "#fff")
+
+    with pytest.raises(ValueError, match="font_size must be positive"):
+        lib.render_badge(0, 0, "test", font_size=0)
+    with pytest.raises(ValueError, match="height must be positive"):
+        lib.render_badge(0, 0, "test", height=-5)
+
+    with pytest.raises(ValueError, match="size must be positive"):
+        lib.render_icon("sensor", 0, 0, size=0)
 
 
 def test_builtin_vector_icons_availability_and_aliases() -> None:
@@ -291,7 +397,7 @@ def test_builtin_vector_icons_convenience_methods() -> None:
     assert "icon-gateway" in edge
     b = lib.render_broker(0, 0)
     assert "icon-broker" in b
-    db = lib.render_database(0, 0)
+    db = lib.render_database_icon(0, 0)
     assert "icon-database" in db
     inf = lib.render_influx(0, 0)
     assert "icon-database" in inf

@@ -15,6 +15,7 @@ from iiot_diagrams.theme import (
     Theme,
     get_theme,
     register_theme,
+    reset_themes,
 )
 
 __version__ = "0.1.0"
@@ -42,4 +43,5 @@ __all__ = [
     "UnitBasis",
     "get_theme",
     "register_theme",
+    "reset_themes",
 ]
