@@ -1,6 +1,7 @@
 """IIoT Diagrams as Code framework."""
 from iiot_diagrams.connections import Edge, Port, Routing
 from iiot_diagrams.constraints import ConstraintSolver
+from iiot_diagrams.diagram import Diagram
 from iiot_diagrams.elements import Element, Shape
 from iiot_diagrams.geometry import Anchor, Point, Rect, Size, UnitBasis
 from iiot_diagrams.groups import Group
@@ -25,6 +26,7 @@ __all__ = [
     "BLUEPRINT",
     "CYBER_SLATE",
     "ConstraintSolver",
+    "Diagram",
     "Edge",
     "Element",
     "Group",

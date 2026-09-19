@@ -70,12 +70,12 @@ class ConstraintSolver:
                     solved.add(el)
                     break
 
-        # Step 2: Unconstrained children default to origin in parent's local space
+        # Step 2: Unconstrained elements retain initial bounds without error
         for el in all_elements:
             if el in solved:
                 continue
             has_children = isinstance(el, Group) and bool(el.children)
-            if el.parent is not None and not el.constraints and not has_children:
+            if not el.constraints and not has_children:
                 solved.add(el)
 
         # Step 3: Multi-pass iterative resolution for relative constraints and group auto-bounds

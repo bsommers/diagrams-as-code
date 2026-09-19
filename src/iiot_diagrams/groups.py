@@ -123,6 +123,13 @@ class Group(Element):
         self.translate(dx, dy)
         return self
 
+    def move_to(
+        self, x: float, y: float, anchor: Union[Anchor, str] = Anchor.TOP_LEFT
+    ) -> Group:
+        """Clear existing constraints and relocate group absolutely."""
+        self.clear_constraints()
+        return self.at(x, y, anchor=anchor)
+
     def right_of(
         self,
         other: Element,
