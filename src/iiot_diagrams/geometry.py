@@ -95,16 +95,22 @@ class Rect:
         max_y = max(self.bottom, other.bottom)
         return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
 
-    def expand(self, padding: Union[float, tuple[float, float], tuple[float, float, float, float]]) -> Rect:
+    def expand(
+        self,
+        padding: Union[float, int, tuple[float, ...], list[float]],
+    ) -> Rect:
         if isinstance(padding, (int, float)):
             top = right = bottom = left = float(padding)
-        elif len(padding) == 2:
-            top = bottom = float(padding[0])
-            left = right = float(padding[1])
-        elif len(padding) == 4:
-            top, right, bottom, left = (float(v) for v in padding)
+        elif isinstance(padding, (tuple, list)):
+            if len(padding) == 2:
+                top = bottom = float(padding[0])
+                left = right = float(padding[1])
+            elif len(padding) == 4:
+                top, right, bottom, left = (float(v) for v in padding)
+            else:
+                raise ValueError("Padding must be 1, 2, or 4 values.")
         else:
-            raise ValueError("Padding must be 1, 2, or 4 values.")
+            raise TypeError(f"Unsupported padding type: {type(padding).__name__}")
         return Rect(
             x=self.x - left,
             y=self.y - top,
@@ -113,7 +119,12 @@ class Rect:
         )
 
 class UnitBasis:
-    def __init__(self, reference_size: Size | None = None, *, canvas_size: Size | None = None):
+    def __init__(
+        self,
+        reference_size: Size | None = None,
+        *,
+        canvas_size: Size | None = None,
+    ) -> None:
         size = canvas_size if canvas_size is not None else reference_size
         if size is None:
             raise ValueError("A Size reference or canvas_size must be provided.")
