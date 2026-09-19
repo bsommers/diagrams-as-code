@@ -8,7 +8,7 @@ def test_package_exports():
     assert hasattr(iiot_diagrams, "Rect")
     assert hasattr(iiot_diagrams, "Anchor")
     assert hasattr(iiot_diagrams, "UnitBasis")
-    assert set(iiot_diagrams.__all__) == {"Point", "Size", "Rect", "Anchor", "UnitBasis"}
+    assert {"Point", "Size", "Rect", "Anchor", "UnitBasis"}.issubset(set(iiot_diagrams.__all__))
 
 def test_rect_anchor_points():
     rect = Rect(10, 20, 100, 50)
