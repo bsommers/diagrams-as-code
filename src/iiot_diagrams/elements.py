@@ -24,6 +24,15 @@ class Element:
         self.metadata: dict[str, Any] = dict(metadata) if metadata is not None else {}
         self.constraints: list[dict[str, Any]] = []
 
+    def translate(self, dx: float, dy: float) -> None:
+        """Translate element bounds by delta (dx, dy)."""
+        self.bounds = Rect(
+            self.bounds.x + float(dx),
+            self.bounds.y + float(dy),
+            self.bounds.width,
+            self.bounds.height,
+        )
+
 
 class Shape(Element):
     """Visual shape element with absolute or relative positioning constraints."""

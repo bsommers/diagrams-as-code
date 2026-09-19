@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-from typing import Sequence, Union
+from typing import Any, Sequence, Union
 from iiot_diagrams.elements import Element
 from iiot_diagrams.geometry import Anchor, Rect
+from iiot_diagrams.groups import Group
 
 
 class ConstraintSolver:
@@ -31,34 +32,85 @@ class ConstraintSolver:
             raise ValueError(f"Duplicate element id '{el.id}' detected in solver")
         self.elements.append(el)
 
+    def _collect_all_elements(self) -> list[Element]:
+        """Collect all elements including nested children of groups."""
+        result: list[Element] = []
+        seen: dict[str, Element] = {}
+
+        def visit(el: Element) -> None:
+            if not isinstance(el, Element):
+                raise TypeError(f"Expected Element, got {type(el).__name__}")
+            if el.id in seen:
+                if seen[el.id] is not el:
+                    raise ValueError(f"Duplicate element id '{el.id}' detected in solver")
+                return
+            seen[el.id] = el
+            result.append(el)
+            if isinstance(el, Group):
+                for child in el.children:
+                    visit(child)
+
+        for root in self.elements:
+            visit(root)
+        return result
+
     def solve(self) -> None:
-        """Resolve all element constraints iteratively."""
+        """Resolve all element constraints iteratively with hierarchical group support."""
+        all_elements = self._collect_all_elements()
         solved: set[Element] = set()
 
-        # Resolve absolute constraints first
-        for el in self.elements:
+        # Step 1: Resolve absolute constraints for non-group elements or empty groups
+        for el in all_elements:
+            has_children = isinstance(el, Group) and bool(el.children)
+            if has_children:
+                continue
             for c in el.constraints:
                 if c["type"] == "absolute":
-                    x = float(c["x"])
-                    y = float(c["y"])
-                    anchor = c.get("anchor", Anchor.TOP_LEFT)
-                    if isinstance(anchor, str):
-                        try:
-                            anchor = Anchor(anchor)
-                        except ValueError:
-                            anchor = Anchor(anchor.lower())
-                    offset = Rect(0.0, 0.0, el.width, el.height).get_anchor(anchor)
-                    el.bounds = Rect(x - offset.x, y - offset.y, el.width, el.height)
+                    self._apply_absolute(el, c)
                     solved.add(el)
                     break
 
-        # Iteratively resolve relative constraints
-        max_iters = len(self.elements) * 2 + 10
+        # Step 2: Unconstrained children default to origin in parent's local space
+        for el in all_elements:
+            if el in solved:
+                continue
+            has_children = isinstance(el, Group) and bool(el.children)
+            if el.parent is not None and not el.constraints and not has_children:
+                solved.add(el)
+
+        # Step 3: Multi-pass iterative resolution for relative constraints and group auto-bounds
+        max_iters = len(all_elements) * 4 + 20
         for _ in range(max_iters):
             progress = False
-            for el in self.elements:
+
+            # 3a: Auto-bound any group whose children are all solved
+            for el in all_elements:
+                if not isinstance(el, Group) or not el.children:
+                    continue
+                if all(ch in solved for ch in el.children):
+                    if el not in solved:
+                        el.calculate_bounds()
+                        abs_constraints = [
+                            c for c in el.constraints if c["type"] == "absolute"
+                        ]
+                        rel_constraints = [
+                            c for c in el.constraints if c["type"] == "relative_dir"
+                        ]
+                        if abs_constraints:
+                            self._apply_absolute(el, abs_constraints[0])
+                            solved.add(el)
+                            progress = True
+                        elif not rel_constraints:
+                            solved.add(el)
+                            progress = True
+
+            # 3b: Resolve relative directional constraints
+            for el in all_elements:
                 if el in solved:
                     continue
+                if isinstance(el, Group) and el.children:
+                    if not all(ch in solved for ch in el.children):
+                        continue
                 for c in el.constraints:
                     if c["type"] == "relative_dir":
                         target = c["target"]
@@ -73,12 +125,30 @@ class ConstraintSolver:
                             solved.add(el)
                             progress = True
                             break
+
             if not progress:
                 break
 
-        unsolved = [e.id for e in self.elements if e not in solved]
+        unsolved = [e.id for e in all_elements if e not in solved]
         if unsolved:
             raise RuntimeError(f"Unresolved constraints for elements: {unsolved}")
+
+    def _apply_absolute(self, el: Element, c: dict[str, Any]) -> None:
+        """Apply absolute positioning constraint with anchor offset."""
+        x = float(c["x"])
+        y = float(c["y"])
+        anchor = c.get("anchor", Anchor.TOP_LEFT)
+        if isinstance(anchor, str):
+            try:
+                anchor = Anchor(anchor)
+            except ValueError:
+                anchor = Anchor(anchor.lower())
+        offset = Rect(0.0, 0.0, el.bounds.width, el.bounds.height).get_anchor(anchor)
+        target_x = x - offset.x
+        target_y = y - offset.y
+        dx = target_x - el.bounds.x
+        dy = target_y - el.bounds.y
+        el.translate(dx, dy)
 
     def _apply_relative(
         self,
@@ -88,9 +158,9 @@ class ConstraintSolver:
         margin: float,
         align: str,
     ) -> None:
-        """Calculate element bounds relative to a target element."""
+        """Calculate element bounds relative to a target element and translate."""
         tb = target.bounds
-        w, h = el.width, el.height
+        w, h = el.bounds.width, el.bounds.height
 
         if direction == "right":
             x = tb.right + margin
@@ -135,4 +205,6 @@ class ConstraintSolver:
         else:
             raise ValueError(f"Unknown direction: {direction}")
 
-        el.bounds = Rect(x, y, w, h)
+        dx = x - el.bounds.x
+        dy = y - el.bounds.y
+        el.translate(dx, dy)
