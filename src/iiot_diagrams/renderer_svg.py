@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import html
 import re
-from typing import Optional, Sequence
+from typing import Any, Optional, Sequence
 
 from iiot_diagrams.connections import Edge
 from iiot_diagrams.elements import Element, Shape
@@ -27,8 +27,12 @@ class SVGRenderer:
         slug = re.sub(r"[^a-zA-Z0-9_-]", "", color)
         return f"arrow-{slug}"
 
-    def _contrast_color(self, hex_color: str) -> str:
-        clean = hex_color.lstrip("#")
+    def _contrast_color(self, hex_color: Any) -> str:
+        if not isinstance(hex_color, str):
+            return self.theme.text
+        clean = hex_color.strip().lstrip("#")
+        if len(clean) == 3:
+            clean = "".join(ch * 2 for ch in clean)
         if len(clean) == 6:
             try:
                 r = int(clean[0:2], 16)
@@ -117,10 +121,13 @@ class SVGRenderer:
         for g in sorted_groups:
             b = g.bounds
             escaped_g_id = html.escape(g.id, quote=True)
+            g_meta = getattr(g, "metadata", {}) or {}
+            g_fill = g_meta.get("fill", self.theme.group_bg)
+            g_stroke = g_meta.get("stroke", self.theme.group_stroke)
             lines.append(f'  <g id="{escaped_g_id}">')
             lines.append(
                 f'    <rect x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" rx="8" '
-                f'fill="{self.theme.group_bg}" stroke="{self.theme.group_stroke}" stroke-width="1.5" />'
+                f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
             )
             if g.label:
                 lines.append(

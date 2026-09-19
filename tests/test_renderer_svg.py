@@ -273,3 +273,71 @@ def test_multiple_themes_rendering() -> None:
         svg = renderer.render(elements=[s], width=300, height=200)
         assert f'fill="{expected_bg}"' in svg
         assert theme.font_family in svg
+
+
+def test_contrast_color_calculation() -> None:
+    """Verify _contrast_color with light/dark fills, 3-char shorthand, and invalid/None inputs."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    # 6-char hex light -> dark text
+    assert renderer._contrast_color("#FFFFFF") == "#000000"
+    assert renderer._contrast_color("#F0F0F0") == "#000000"
+    assert renderer._contrast_color("#FFFF00") == "#000000"
+
+    # 6-char hex dark -> light text
+    assert renderer._contrast_color("#000000") == "#FFFFFF"
+    assert renderer._contrast_color("#1A1A1E") == "#FFFFFF"
+    assert renderer._contrast_color("#24242A") == "#FFFFFF"
+
+    # 3-char hex shorthand
+    assert renderer._contrast_color("#FFF") == "#000000"
+    assert renderer._contrast_color("#fff") == "#000000"
+    assert renderer._contrast_color("#000") == "#FFFFFF"
+    assert renderer._contrast_color("#222") == "#FFFFFF"
+
+    # Invalid and non-string inputs fallback to theme.text
+    assert renderer._contrast_color(None) == theme.text
+    assert renderer._contrast_color(12345) == theme.text
+    assert renderer._contrast_color("invalid_hex") == theme.text
+    assert renderer._contrast_color("") == theme.text
+    assert renderer._contrast_color("#GGGGGG") == theme.text
+
+
+def test_group_metadata_custom_fill_and_stroke() -> None:
+    """Verify group fill and stroke overrides via metadata."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    g = Group(
+        "custom_g",
+        label="Custom Security Zone",
+        metadata={"fill": "#2D3748", "stroke": "#4FD1C5"},
+    ).at(10, 10)
+    s = Shape("node", label="Secure Node").at(30, 40)
+    g.add(s)
+
+    svg = renderer.render(elements=[s], groups=[g], width=500, height=300)
+    assert 'fill="#2D3748"' in svg
+    assert 'stroke="#4FD1C5"' in svg
+
+
+def test_edge_metadata_and_badge_customization() -> None:
+    """Verify Edge metadata stores attributes and customizes protocol badge styling."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("a", label="A").at(50, 50)
+    s2 = Shape("b", label="B").at(250, 50)
+    edge = Edge(
+        s1,
+        s2,
+        label="Custom Protocol",
+        metadata={"badge_fill": "#4A5568", "badge_text_color": "#E2E8F0"},
+    )
+    assert edge.metadata == {"badge_fill": "#4A5568", "badge_text_color": "#E2E8F0"}
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=500, height=200)
+    assert 'fill="#4A5568"' in svg
+    assert 'fill="#E2E8F0"' in svg
+

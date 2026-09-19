@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Optional, Type, TypeVar, Union
+from typing import Any, Optional, Type, TypeVar, Union
 
 from iiot_diagrams.elements import Element
 from iiot_diagrams.geometry import Anchor
@@ -74,6 +74,7 @@ class Edge:
         arrow_head: bool = True,
         arrow_tail: bool = False,
         routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        metadata: Optional[dict[str, Any]] = None,
     ) -> None:
         if not isinstance(source, Element):
             raise TypeError(
@@ -103,3 +104,4 @@ class Edge:
 
         self.arrow_head = bool(arrow_head)
         self.arrow_tail = bool(arrow_tail)
+        self.metadata: dict[str, Any] = dict(metadata) if metadata else {}
