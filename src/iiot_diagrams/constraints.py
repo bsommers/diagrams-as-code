@@ -16,11 +16,20 @@ class ConstraintSolver:
         for item in elements:
             if isinstance(item, (list, tuple)):
                 for el in item:
-                    if el not in self.elements:
-                        self.elements.append(el)
+                    self._add_single(el)
             elif isinstance(item, Element):
-                if item not in self.elements:
-                    self.elements.append(item)
+                self._add_single(item)
+            else:
+                raise TypeError(
+                    f"Expected Element or sequence of Elements, got {type(item).__name__}"
+                )
+
+    def _add_single(self, el: Element) -> None:
+        if not isinstance(el, Element):
+            raise TypeError(f"Expected Element, got {type(el).__name__}")
+        if any(existing.id == el.id for existing in self.elements):
+            raise ValueError(f"Duplicate element id '{el.id}' detected in solver")
+        self.elements.append(el)
 
     def solve(self) -> None:
         """Resolve all element constraints iteratively."""
@@ -34,7 +43,10 @@ class ConstraintSolver:
                     y = float(c["y"])
                     anchor = c.get("anchor", Anchor.TOP_LEFT)
                     if isinstance(anchor, str):
-                        anchor = Anchor(anchor)
+                        try:
+                            anchor = Anchor(anchor)
+                        except ValueError:
+                            anchor = Anchor(anchor.lower())
                     offset = Rect(0.0, 0.0, el.width, el.height).get_anchor(anchor)
                     el.bounds = Rect(x - offset.x, y - offset.y, el.width, el.height)
                     solved.add(el)

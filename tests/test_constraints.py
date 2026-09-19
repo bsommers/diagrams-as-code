@@ -166,3 +166,47 @@ def test_invalid_align_raises_value_error():
     solver.add(s1, s2)
     with pytest.raises(ValueError, match="Unknown align"):
         solver.solve()
+
+def test_solver_add_sequence_input():
+    solver = ConstraintSolver()
+    s1 = Shape("s1", "S1", 100, 50).at(0, 0)
+    s2 = Shape("s2", "S2", 100, 50).right_of(s1)
+    s3 = Shape("s3", "S3", 100, 50).below(s1)
+    s4 = Shape("s4", "S4", 100, 50).right_of(s3)
+
+    # Test list and tuple inputs
+    solver.add([s1, s2])
+    solver.add((s3, s4))
+    solver.solve()
+
+    assert s1.bounds.x == 0
+    assert s2.bounds.x == 120
+    assert s3.bounds.y == 70
+    assert s4.bounds.x == 120
+
+def test_absolute_placement_with_string_anchor():
+    solver = ConstraintSolver()
+    s = Shape("s1", "S1", 100, 50)
+    s.at(100, 100, anchor="top_right")
+    solver.add(s)
+    solver.solve()
+
+    # top_right at (100, 100) means x = 100 - 100 = 0, y = 100 - 0 = 100
+    assert s.bounds.x == 0
+    assert s.bounds.y == 100
+
+def test_solver_add_type_validation():
+    solver = ConstraintSolver()
+    with pytest.raises(TypeError, match="Expected Element or sequence of Elements"):
+        solver.add("invalid_element")  # type: ignore
+
+    with pytest.raises(TypeError, match="Expected Element"):
+        solver.add([Shape("s1", "S1"), 123])  # type: ignore
+
+def test_solver_add_duplicate_id_raises_value_error():
+    solver = ConstraintSolver()
+    s1 = Shape("s1", "S1", 100, 50)
+    s2 = Shape("s1", "S1 Duplicate", 100, 50)
+    solver.add(s1)
+    with pytest.raises(ValueError, match="Duplicate element id"):
+        solver.add(s2)

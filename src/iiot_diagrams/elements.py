@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any, Literal, Optional, Union
 from iiot_diagrams.geometry import Anchor, Rect
 
 
@@ -42,7 +42,9 @@ class Shape(Element):
         self.kind = kind
         self.icon = icon
 
-    def at(self, x: float, y: float, anchor: Anchor = Anchor.TOP_LEFT) -> Shape:
+    def at(
+        self, x: float, y: float, anchor: Union[Anchor, str] = Anchor.TOP_LEFT
+    ) -> Shape:
         """Position element absolutely with an anchor point."""
         self.constraints.append(
             {"type": "absolute", "x": float(x), "y": float(y), "anchor": anchor}
@@ -50,7 +52,10 @@ class Shape(Element):
         return self
 
     def right_of(
-        self, other: Element, margin: float = 20.0, align: str = "center"
+        self,
+        other: Element,
+        margin: float = 20.0,
+        align: Literal["center", "top", "bottom"] = "center",
     ) -> Shape:
         """Position element to the right of another element."""
         self.constraints.append(
@@ -65,7 +70,10 @@ class Shape(Element):
         return self
 
     def left_of(
-        self, other: Element, margin: float = 20.0, align: str = "center"
+        self,
+        other: Element,
+        margin: float = 20.0,
+        align: Literal["center", "top", "bottom"] = "center",
     ) -> Shape:
         """Position element to the left of another element."""
         self.constraints.append(
@@ -80,7 +88,10 @@ class Shape(Element):
         return self
 
     def below(
-        self, other: Element, margin: float = 20.0, align: str = "center"
+        self,
+        other: Element,
+        margin: float = 20.0,
+        align: Literal["center", "left", "right"] = "center",
     ) -> Shape:
         """Position element below another element."""
         self.constraints.append(
@@ -95,7 +106,10 @@ class Shape(Element):
         return self
 
     def above(
-        self, other: Element, margin: float = 20.0, align: str = "center"
+        self,
+        other: Element,
+        margin: float = 20.0,
+        align: Literal["center", "left", "right"] = "center",
     ) -> Shape:
         """Position element above another element."""
         self.constraints.append(
