@@ -47,13 +47,31 @@ class Group(Element):
     def _add_child(self, el: Element) -> None:
         if not isinstance(el, Element):
             raise TypeError(f"Expected Element, got {type(el).__name__}")
+        if el is self:
+            raise ValueError(f"Cannot add group '{self.id}' to itself")
+        curr = self.parent
+        while curr is not None:
+            if curr is el:
+                raise ValueError(
+                    f"Cyclic group hierarchy detected: '{el.id}' is an ancestor of '{self.id}'"
+                )
+            curr = curr.parent
+
+        if (
+            el.parent is not None
+            and el.parent is not self
+            and isinstance(el.parent, Group)
+        ):
+            if el in el.parent.children:
+                el.parent.children.remove(el)
+
         el.parent = self
         if el not in self.children:
             self.children.append(el)
 
     def calculate_bounds(self) -> Rect:
         """Calculate and update bounding box enclosing all children with padding and header room."""
-        if not self.children:
+        if not self.is_auto_sized or not self.children:
             return self.bounds
 
         union_rect = self.children[0].bounds

@@ -431,3 +431,54 @@ def test_three_level_deep_nested_groups() -> None:
     # item inside leaf
     assert item.bounds.left == leaf_g.bounds.left + 10.0
     assert item.bounds.top == leaf_g.bounds.top + 10.0 + 20.0
+
+
+def test_group_self_addition_raises_value_error() -> None:
+    g = Group("g_self", "Self Group")
+    with pytest.raises(ValueError, match="Cannot add group 'g_self' to itself"):
+        g.add(g)
+
+
+def test_group_cyclic_ancestry_raises_value_error() -> None:
+    g_parent = Group("g_parent", "Parent Group")
+    g_child = Group("g_child", "Child Group")
+    g_grandchild = Group("g_grandchild", "Grandchild Group")
+
+    g_parent.add(g_child)
+    g_child.add(g_grandchild)
+
+    # Attempting to add g_parent to g_grandchild creates an ancestry cycle
+    with pytest.raises(ValueError, match="Cyclic group hierarchy detected"):
+        g_grandchild.add(g_parent)
+
+
+def test_group_reparenting_detaches_from_old_parent() -> None:
+    g1 = Group("g1", "Old Group")
+    g2 = Group("g2", "New Group")
+    s = Shape("s", "Item")
+
+    g1.add(s)
+    assert s in g1.children
+    assert s.parent is g1
+
+    g2.add(s)
+    assert s in g2.children
+    assert s.parent is g2
+    assert s not in g1.children
+
+
+def test_group_manual_sizing_with_is_auto_sized_false() -> None:
+    g = Group("g_fixed", "Fixed Group", padding=20.0, header_height=30.0)
+    g.bounds = Rect(50.0, 50.0, 300.0, 200.0)
+    g.width = 300.0
+    g.height = 200.0
+    g.is_auto_sized = False
+
+    s = Shape("s", "Item", width=50.0, height=30.0).at(0.0, 0.0)
+    s.bounds = Rect(0.0, 0.0, 50.0, 30.0)
+    g.add(s)
+
+    b = g.calculate_bounds()
+    # Should not recalculate bounds from children when is_auto_sized=False
+    assert b == Rect(50.0, 50.0, 300.0, 200.0)
+    assert g.bounds == Rect(50.0, 50.0, 300.0, 200.0)
