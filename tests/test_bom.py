@@ -207,8 +207,8 @@ def test_bom_generate_readme_file_output(tmp_path: Path):
 
     bom = BOMGenerator(diag)
     content = bom.generate_readme(
-        diagram_name="Plant_Architecture",
         image_file="plant.svg",
+        diagram_name="Plant_Architecture",
         output_path=str(out_file),
     )
 
@@ -222,6 +222,53 @@ def test_bom_generate_readme_file_output(tmp_path: Path):
     assert "Drive Controller" in file_text
     assert "Shop Floor" in file_text
     assert "ABB" in file_text
+    assert "## Connections" in file_text
+    assert "EtherNet/IP" in file_text
+
+
+def test_bom_generate_readme_defaults_and_options(tmp_path: Path):
+    """Verify generate_readme with default diagram_name=None and include_connections flag."""
+    out_with_conns = tmp_path / "README_conns.md"
+    out_without_conns = tmp_path / "README_no_conns.md"
+    with Diagram("Default Title Diag") as diag:
+        s1 = diag.shape("Node1").at(0, 0)
+        s2 = diag.shape("Node2").at(100, 0)
+        s1 >> diag.edge("CAN Bus") >> s2
+
+    bom = BOMGenerator(diag)
+    # 1. Default diagram_name=None picks up diag.title, include_connections defaults to True
+    md1 = bom.generate_readme(
+        image_file="system.png",
+        output_path=out_with_conns,
+    )
+    assert "# Default Title Diag" in md1
+    assert "## Connections" in md1
+    assert "CAN Bus" in md1
+    assert out_with_conns.exists()
+
+    # 2. include_connections=False omits the connections section
+    md2 = bom.generate_readme(
+        image_file="system.png",
+        output_path=out_without_conns,
+        include_connections=False,
+    )
+    assert "## Connections" not in md2
+    assert "CAN Bus" not in md2
+    assert "## Bill of Materials" in md2
+
+
+def test_bom_connections_empty_label_fallback():
+    """Verify connections falls back to node ID when element label is empty string."""
+    with Diagram("Fallback Topo") as diag:
+        s1 = diag.shape("", id="node_alpha").at(0, 0)
+        s2 = diag.shape("", id="node_beta").at(100, 0)
+        s1 >> diag.edge("SPI") >> s2
+
+    bom = BOMGenerator(diag)
+    conns = bom.connections()
+    assert len(conns) == 1
+    assert conns[0]["source_label"] == "node_alpha"
+    assert conns[0]["target_label"] == "node_beta"
 
 
 def test_diagram_bom_property_and_generate_readme(tmp_path: Path):
@@ -238,13 +285,15 @@ def test_diagram_bom_property_and_generate_readme(tmp_path: Path):
 
         # Verify diag.generate_readme()
         returned_md = diag.generate_readme(
-            image_file="scada.png", output_path=readme_path
+            image_file="scada.png",
+            output_path=readme_path,
+            include_connections=False,
         )
 
     assert readme_path.exists()
     assert "# Distributed SCADA" in returned_md
     assert "![Architecture Diagram](./scada.png)" in returned_md
-    assert "DNP3" not in returned_md  # DNP3 is on the edge, BOM table lists components
+    assert "DNP3" not in returned_md  # include_connections=False
     assert "RTU" in returned_md
     assert "MTU" in returned_md
 

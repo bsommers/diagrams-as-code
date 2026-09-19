@@ -493,11 +493,15 @@ class Diagram:
         return BOMGenerator(self)
 
     def generate_readme(
-        self, image_file: str, output_path: Union[str, Path] = "README.md"
+        self,
+        image_file: str,
+        output_path: Union[str, Path] = "README.md",
+        include_connections: bool = True,
     ) -> str:
         """Generate living documentation README with diagram graphic link and BOM table."""
         return self.bom.generate_readme(
-            diagram_name=self.title,
             image_file=image_file,
+            diagram_name=self.title,
             output_path=output_path,
+            include_connections=include_connections,
         )

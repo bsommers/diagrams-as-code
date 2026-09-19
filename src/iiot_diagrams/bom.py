@@ -50,9 +50,9 @@ class BOMGenerator:
         result: list[dict[str, Any]] = []
         for e in getattr(self.diagram, "edges", []):
             source_id = getattr(e.source, "id", str(e.source))
-            source_label = getattr(e.source, "label", source_id)
+            source_label = getattr(e.source, "label", None) or source_id
             target_id = getattr(e.target, "id", str(e.target))
-            target_label = getattr(e.target, "label", target_id)
+            target_label = getattr(e.target, "label", None) or target_id
 
             routing_val = (
                 e.routing.value if hasattr(e.routing, "value") else str(e.routing)
@@ -215,15 +215,20 @@ class BOMGenerator:
 
     def generate_readme(
         self,
-        diagram_name: str,
         image_file: str,
+        diagram_name: Optional[str] = None,
         output_path: Union[str, Path] = "README.md",
+        include_connections: bool = True,
     ) -> str:
         """Generate living documentation README with graphic link and BOM table."""
         p = Path(output_path)
         p.parent.mkdir(parents=True, exist_ok=True)
 
-        clean_name = diagram_name.replace("_", " ")
+        name_val = diagram_name or getattr(
+            self.diagram, "title", "IIoT Architecture"
+        )
+        name_str = str(name_val) if name_val is not None else "IIoT Architecture"
+        clean_name = name_str.replace("_", " ")
         img_src = (
             image_file
             if (
@@ -241,6 +246,9 @@ class BOMGenerator:
             "",
             self.to_markdown(title="Bill of Materials"),
         ]
+        if include_connections and getattr(self.diagram, "edges", None):
+            sections.extend(["", self.connections_to_markdown(title="Connections")])
+
         md_content = "\n".join(sections) + "\n"
         p.write_text(md_content, encoding="utf-8")
         return md_content
