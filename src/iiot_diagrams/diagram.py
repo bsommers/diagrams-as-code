@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
+from iiot_diagrams.bom import BOMGenerator
 from iiot_diagrams.connections import Edge, Port, Routing
 from iiot_diagrams.constraints import ConstraintSolver
 from iiot_diagrams.elements import Element, Shape
@@ -484,4 +485,19 @@ class Diagram:
         raise RuntimeError(
             "PNG rendering requires either 'cairosvg' or 'resvg-py' to be installed. "
             "Install with: pip install cairosvg"
+        )
+
+    @property
+    def bom(self) -> BOMGenerator:
+        """Bill of Materials generator for this diagram."""
+        return BOMGenerator(self)
+
+    def generate_readme(
+        self, image_file: str, output_path: Union[str, Path] = "README.md"
+    ) -> str:
+        """Generate living documentation README with diagram graphic link and BOM table."""
+        return self.bom.generate_readme(
+            diagram_name=self.title,
+            image_file=image_file,
+            output_path=output_path,
         )

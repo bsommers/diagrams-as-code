@@ -1,4 +1,5 @@
 """IIoT Diagrams as Code framework."""
+from iiot_diagrams.bom import BOMGenerator
 from iiot_diagrams.connections import Edge, Port, Routing
 from iiot_diagrams.constraints import ConstraintSolver
 from iiot_diagrams.diagram import Diagram
@@ -24,6 +25,7 @@ __version__ = "0.1.0"
 __all__ = [
     "Anchor",
     "BLUEPRINT",
+    "BOMGenerator",
     "CYBER_SLATE",
     "ConstraintSolver",
     "Diagram",
