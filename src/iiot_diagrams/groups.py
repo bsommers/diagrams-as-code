@@ -106,6 +106,21 @@ class Group(Element):
         self.constraints.append(
             {"type": "absolute", "x": float(x), "y": float(y), "anchor": anchor}
         )
+        if isinstance(anchor, str):
+            try:
+                anchor_enum = Anchor(anchor)
+            except ValueError:
+                anchor_enum = Anchor(anchor.lower())
+        else:
+            anchor_enum = anchor
+        offset = Rect(0.0, 0.0, self.bounds.width, self.bounds.height).get_anchor(
+            anchor_enum
+        )
+        target_x = float(x) - offset.x
+        target_y = float(y) - offset.y
+        dx = target_x - self.bounds.x
+        dy = target_y - self.bounds.y
+        self.translate(dx, dy)
         return self
 
     def right_of(

@@ -58,6 +58,22 @@ class Shape(Element):
         self.constraints.append(
             {"type": "absolute", "x": float(x), "y": float(y), "anchor": anchor}
         )
+        if isinstance(anchor, str):
+            try:
+                anchor_enum = Anchor(anchor)
+            except ValueError:
+                anchor_enum = Anchor(anchor.lower())
+        else:
+            anchor_enum = anchor
+        offset = Rect(0.0, 0.0, self.bounds.width, self.bounds.height).get_anchor(
+            anchor_enum
+        )
+        self.bounds = Rect(
+            float(x) - offset.x,
+            float(y) - offset.y,
+            self.bounds.width,
+            self.bounds.height,
+        )
         return self
 
     def right_of(
