@@ -1,10 +1,35 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Optional, Union
+from typing import Optional, Type, TypeVar, Union
 
 from iiot_diagrams.elements import Element
 from iiot_diagrams.geometry import Anchor
+
+E = TypeVar("E", bound=Enum)
+
+
+def _coerce_enum(
+    val: Union[E, str, None],
+    enum_cls: Type[E],
+    name: str,
+    allow_none: bool = False,
+) -> Optional[E]:
+    """Coerce string or enum instance to expected enum type."""
+    if val is None:
+        if allow_none:
+            return None
+        raise TypeError(f"{name} cannot be None")
+    if isinstance(val, enum_cls):
+        return val
+    if isinstance(val, str):
+        try:
+            return enum_cls(val)
+        except ValueError:
+            return enum_cls(val.lower())
+    raise TypeError(
+        f"{name} must be {enum_cls.__name__} or str, got {type(val).__name__}"
+    )
 
 
 class Port(Enum):
@@ -65,39 +90,16 @@ class Edge:
         self.color = color
         self.style = style
 
-        if isinstance(source_port, str):
-            try:
-                self.source_port: Optional[Port] = Port(source_port)
-            except ValueError:
-                self.source_port = Port(source_port.lower())
-        elif isinstance(source_port, Port) or source_port is None:
-            self.source_port = source_port
-        else:
-            raise TypeError(
-                f"source_port must be Port or str, got {type(source_port).__name__}"
-            )
+        self.source_port = _coerce_enum(
+            source_port, Port, "source_port", allow_none=True
+        )
+        self.target_port = _coerce_enum(
+            target_port, Port, "target_port", allow_none=True
+        )
 
-        if isinstance(target_port, str):
-            try:
-                self.target_port: Optional[Port] = Port(target_port)
-            except ValueError:
-                self.target_port = Port(target_port.lower())
-        elif isinstance(target_port, Port) or target_port is None:
-            self.target_port = target_port
-        else:
-            raise TypeError(
-                f"target_port must be Port or str, got {type(target_port).__name__}"
-            )
-
-        if isinstance(routing, str):
-            try:
-                self.routing: Routing = Routing(routing)
-            except ValueError:
-                self.routing = Routing(routing.lower())
-        elif isinstance(routing, Routing):
-            self.routing = routing
-        else:
-            raise TypeError(f"routing must be Routing or str, got {type(routing).__name__}")
+        coerced_routing = _coerce_enum(routing, Routing, "routing", allow_none=False)
+        assert coerced_routing is not None
+        self.routing: Routing = coerced_routing
 
         self.arrow_head = bool(arrow_head)
         self.arrow_tail = bool(arrow_tail)

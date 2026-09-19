@@ -285,6 +285,12 @@ def test_routing_with_groups() -> None:
     g1 = Group("g1", "Plant Group", padding=20.0).at(0.0, 0.0)
     s1 = Shape("s1", "Controller", 100, 50).at(20, 40)
     g1.add(s1)
+    g1.calculate_bounds()
+
+    assert g1.bounds.left == 0.0
+    assert g1.bounds.top == -15.0
+    assert g1.bounds.right == 140.0
+    assert g1.bounds.bottom == 110.0
 
     s2 = Shape("s2", "Cloud Gateway", 100, 50).at(400, 0)
     edge = Edge(g1, s2, label="OPC UA")
@@ -296,3 +302,27 @@ def test_routing_with_groups() -> None:
     assert len(waypoints) == 4
     assert waypoints[0] == g1.bounds.get_anchor(Port.EAST.to_anchor())
     assert waypoints[-1] == s2.bounds.get_anchor(Port.WEST.to_anchor())
+
+
+def test_collinear_straight_line_simplification() -> None:
+    """Verify collinear horizontal or vertical alignment simplifies to 2 points."""
+    router = OrthogonalRouter()
+
+    # Perfectly aligned horizontally
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(300, 0)
+    edge_h = Edge(s1, s2)
+    waypoints_h = router.route(edge_h)
+    assert len(waypoints_h) == 2
+    assert waypoints_h[0] == Point(100.0, 25.0)
+    assert waypoints_h[1] == Point(300.0, 25.0)
+
+    # Perfectly aligned vertically
+    s3 = Shape("s3", "C", 100, 50).at(0, 0)
+    s4 = Shape("s4", "D", 100, 50).at(0, 300)
+    edge_v = Edge(s3, s4)
+    waypoints_v = router.route(edge_v)
+    assert len(waypoints_v) == 2
+    assert waypoints_v[0] == Point(50.0, 50.0)
+    assert waypoints_v[1] == Point(50.0, 300.0)
+

@@ -34,14 +34,27 @@ class OrthogonalRouter:
         if edge.routing == Routing.DIRECT:
             return [p_start, p_end]
 
-        # Step Manhattan midpoint
+        # Step Manhattan midpoint with collinear straight-line simplification
         if src_port in (Port.EAST, Port.WEST) and tgt_port in (Port.EAST, Port.WEST):
-            mid_x = (p_start.x + p_end.x) / 2.0
-            return [p_start, Point(mid_x, p_start.y), Point(mid_x, p_end.y), p_end]
+            if p_start.y == p_end.y:
+                raw_pts = [p_start, p_end]
+            else:
+                mid_x = (p_start.x + p_end.x) / 2.0
+                raw_pts = [p_start, Point(mid_x, p_start.y), Point(mid_x, p_end.y), p_end]
         elif src_port in (Port.NORTH, Port.SOUTH) and tgt_port in (Port.NORTH, Port.SOUTH):
-            mid_y = (p_start.y + p_end.y) / 2.0
-            return [p_start, Point(p_start.x, mid_y), Point(p_end.x, mid_y), p_end]
+            if p_start.x == p_end.x:
+                raw_pts = [p_start, p_end]
+            else:
+                mid_y = (p_start.y + p_end.y) / 2.0
+                raw_pts = [p_start, Point(p_start.x, mid_y), Point(p_end.x, mid_y), p_end]
         elif src_port in (Port.NORTH, Port.SOUTH):
-            return [p_start, Point(p_start.x, p_end.y), p_end]
+            raw_pts = [p_start, Point(p_start.x, p_end.y), p_end]
         else:
-            return [p_start, Point(p_end.x, p_start.y), p_end]
+            raw_pts = [p_start, Point(p_end.x, p_start.y), p_end]
+
+        # Deduplicate consecutive identical waypoints
+        deduped: list[Point] = []
+        for p in raw_pts:
+            if not deduped or p != deduped[-1]:
+                deduped.append(p)
+        return deduped
