@@ -90,6 +90,54 @@ def _build_default_themes() -> dict[str, Theme]:
             subtext="#94A3B8",
             edge_color="#00E5A3",
         ),
+        "nord": Theme(
+            name="nord",
+            background="#2E3440",
+            group_bg="#3B4252",
+            group_stroke="#4C566A",
+            node_fill="#434C5E",
+            node_stroke="#88C0D0",
+            accent="#88C0D0",
+            text="#ECEFF4",
+            subtext="#D8DEE9",
+            edge_color="#81A1C1",
+        ),
+        "emerald": Theme(
+            name="emerald",
+            background="#0B1713",
+            group_bg="#11241E",
+            group_stroke="#1D3D32",
+            node_fill="#163028",
+            node_stroke="#10B981",
+            accent="#10B981",
+            text="#ECFDF5",
+            subtext="#6EE7B7",
+            edge_color="#10B981",
+        ),
+        "crimson": Theme(
+            name="crimson",
+            background="#1A0F14",
+            group_bg="#26171E",
+            group_stroke="#3F2432",
+            node_fill="#331E29",
+            node_stroke="#F43F5E",
+            accent="#F43F5E",
+            text="#FFF1F2",
+            subtext="#FDA4AF",
+            edge_color="#FB7185",
+        ),
+        "monochrome": Theme(
+            name="monochrome",
+            background="#FAFAFA",
+            group_bg="#F4F4F5",
+            group_stroke="#E4E4E7",
+            node_fill="#FFFFFF",
+            node_stroke="#18181B",
+            accent="#18181B",
+            text="#09090B",
+            subtext="#71717A",
+            edge_color="#27272A",
+        ),
     }
     defaults["dark"] = defaults["iiot_dark_gold"]
     defaults["light"] = defaults["iiot_light"]
@@ -102,6 +150,10 @@ IIOT_DARK_GOLD = THEMES["iiot_dark_gold"]
 IIOT_LIGHT = THEMES["iiot_light"]
 BLUEPRINT = THEMES["blueprint"]
 CYBER_SLATE = THEMES["cyber_slate"]
+NORD = THEMES["nord"]
+EMERALD = THEMES["emerald"]
+CRIMSON = THEMES["crimson"]
+MONOCHROME = THEMES["monochrome"]
 
 
 def reset_themes() -> None:

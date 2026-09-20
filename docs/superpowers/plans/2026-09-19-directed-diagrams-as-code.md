@@ -70,7 +70,7 @@ def test_unit_basis_conversion():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `pytest tests/test_geometry.py -v`
+Run: `uv run pytest tests/test_geometry.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams'`
 
 - [ ] **Step 3: Implement geometry module**
@@ -201,7 +201,7 @@ class UnitBasis:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_geometry.py -v`
+Run: `uv run pytest tests/test_geometry.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -265,7 +265,7 @@ def test_shape_to_shape_relative_placement():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_constraints.py -v`
+Run: `uv run pytest tests/test_constraints.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.elements'`
 
 - [ ] **Step 3: Implement elements and constraint solver**
@@ -408,7 +408,7 @@ class ConstraintSolver:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_constraints.py -v`
+Run: `uv run pytest tests/test_constraints.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -476,7 +476,7 @@ def test_group_to_group_flow_placement():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_groups.py -v`
+Run: `uv run pytest tests/test_groups.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.groups'`
 
 - [ ] **Step 3: Implement Group class and auto-bounds resolution**
@@ -531,7 +531,7 @@ Update `src/iiot_diagrams/constraints.py` to support two-pass solving (resolving
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_groups.py -v`
+Run: `uv run pytest tests/test_groups.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -588,7 +588,7 @@ def test_orthogonal_manhattan_waypoints():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_routing.py -v`
+Run: `uv run pytest tests/test_routing.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.connections'`
 
 - [ ] **Step 3: Implement connections and orthogonal router**
@@ -677,7 +677,7 @@ class OrthogonalRouter:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_routing.py -v`
+Run: `uv run pytest tests/test_routing.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -727,7 +727,7 @@ def test_shape_library_svg():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_theme.py -v`
+Run: `uv run pytest tests/test_theme.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.theme'`
 
 - [ ] **Step 3: Implement Theme and ShapeLibrary**
@@ -799,7 +799,7 @@ class ShapeLibrary:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_theme.py -v`
+Run: `uv run pytest tests/test_theme.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -854,7 +854,7 @@ def test_svg_render_contains_elements():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_renderer_svg.py -v`
+Run: `uv run pytest tests/test_renderer_svg.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.renderer_svg'`
 
 - [ ] **Step 3: Implement SVGRenderer**
@@ -928,7 +928,7 @@ class SVGRenderer:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_renderer_svg.py -v`
+Run: `uv run pytest tests/test_renderer_svg.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -986,7 +986,7 @@ def test_fluent_diagram_api(tmp_path):
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_diagram_api.py -v`
+Run: `uv run pytest tests/test_diagram_api.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.diagram'`
 
 - [ ] **Step 3: Implement Diagram Context Manager**
@@ -1079,7 +1079,7 @@ Hook up `Shape.__rshift__` to support `s1 >> s2` and `s1 >> diag.edge(...) >> s2
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_diagram_api.py -v`
+Run: `uv run pytest tests/test_diagram_api.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -1129,7 +1129,7 @@ def test_generate_bom():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `PYTHONPATH=src pytest tests/test_bom.py -v`
+Run: `uv run pytest tests/test_bom.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'iiot_diagrams.bom'`
 
 - [ ] **Step 3: Implement BOMGenerator**
@@ -1170,7 +1170,7 @@ class BOMGenerator:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_bom.py -v`
+Run: `uv run pytest tests/test_bom.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -1212,7 +1212,7 @@ def test_mockup_slide_execution(tmp_path):
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `pytest tests/test_examples.py -v`
+Run: `uv run pytest tests/test_examples.py -v`
 Expected: FAIL with missing `examples/01_mockup_slide.py`
 
 - [ ] **Step 3: Implement example scripts**
@@ -1226,7 +1226,7 @@ Implement `examples/02_high_availability.py`:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `PYTHONPATH=src pytest tests/test_examples.py -v`
+Run: `uv run pytest tests/test_examples.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**

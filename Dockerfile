@@ -1,23 +1,26 @@
-# Use a slim Python image
-FROM python:3.11-slim
+# Use official uv image with Python 3.12 slim
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
-# Install Graphviz system dependencies
-RUN apt-get update && apt-get install -y \
-    graphviz \
-    libgraphviz-dev \
-    pkg-config \
-    git \
-    && rm -rf /var/lib/apt/lists/*
-
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy requirements and install
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Enable bytecode compilation and optimize uv for container builds
+ENV UV_COMPILE_BYTECODE=1 \
+    UV_LINK_MODE=copy \
+    PYTHONUNBUFFERED=1
 
-# Copy the rest of your code and assets
+# Install project dependencies using frozen lockfile first for optimal layer caching
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-install-project
+
+# Copy application source code and assets
 COPY . .
 
-# Command to run your main script
-CMD ["python", "main.py"]
+# Sync the root project into virtualenv
+RUN uv sync --frozen
+
+# Place the virtualenv on PATH
+ENV PATH="/app/.venv/bin:$PATH"
+
+# Default command runs the main architecture diagram generator
+CMD ["uv", "run", "python", "main.py"]

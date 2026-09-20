@@ -1,0 +1,10 @@
+.venv
+.git
+__pycache__
+*.py[cod]
+*$py.class
+.pytest_cache
+.mypy_cache
+output
+Google Gemini.html
+.planning/graphs

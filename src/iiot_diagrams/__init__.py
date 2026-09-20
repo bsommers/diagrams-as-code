@@ -11,9 +11,13 @@ from iiot_diagrams.router import OrthogonalRouter
 from iiot_diagrams.shapes import ShapeLibrary, ShapeRenderer
 from iiot_diagrams.theme import (
     BLUEPRINT,
+    CRIMSON,
     CYBER_SLATE,
+    EMERALD,
     IIOT_DARK_GOLD,
     IIOT_LIGHT,
+    MONOCHROME,
+    NORD,
     THEMES,
     Theme,
     get_theme,
@@ -21,19 +25,23 @@ from iiot_diagrams.theme import (
     reset_themes,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = [
     "Anchor",
     "BLUEPRINT",
     "BOMGenerator",
+    "CRIMSON",
     "CYBER_SLATE",
     "ConstraintSolver",
     "Diagram",
+    "EMERALD",
     "Edge",
     "Element",
     "Group",
     "IIOT_DARK_GOLD",
     "IIOT_LIGHT",
+    "MONOCHROME",
+    "NORD",
     "OrthogonalRouter",
     "Point",
     "Port",

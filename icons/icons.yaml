@@ -1,6 +1,208 @@
-- symbol: edge
-  path: ./icons/iiot-edge.png
-  notes: Used for Baltimore Plant
-- symbol: broker
-  path: ./icons/iiot-cluster.png
-  notes: Central AWS Cluster
+# Comprehensive Open-Source Domain Icon Catalog
+# Domains: cloud, ai, computer, datacenter, business_process
+
+- symbol: cloud
+  domain: cloud
+  path: ./icons/cloud/cloud.svg
+  notes: Cloud infrastructure platform / global network
+- symbol: vpc
+  domain: cloud
+  path: ./icons/cloud/vpc.svg
+  notes: Isolated Virtual Private Cloud network boundary
+- symbol: serverless
+  domain: cloud
+  path: ./icons/cloud/serverless.svg
+  notes: Event-driven compute / Lambda micro-functions
+- symbol: storage
+  domain: cloud
+  path: ./icons/cloud/storage.svg
+  notes: Distributed object store / S3 storage bucket
+- symbol: api_gateway
+  domain: cloud
+  path: ./icons/cloud/api_gateway.svg
+  notes: API Gateway ingress proxy & route dispatcher
+- symbol: cdn
+  domain: cloud
+  path: ./icons/cloud/cdn.svg
+  notes: Content Delivery Network global edge pop
+- symbol: firewall
+  domain: cloud
+  path: ./icons/cloud/firewall.svg
+  notes: Stateful network perimeter firewall / WAF
+- symbol: dns
+  domain: cloud
+  path: ./icons/cloud/dns.svg
+  notes: Domain Name System authoritative resolver
+- symbol: brain
+  domain: ai
+  path: ./icons/ai/brain.svg
+  notes: Deep learning neural network / cognitive model
+- symbol: model
+  domain: ai
+  path: ./icons/ai/model.svg
+  notes: Large language model / generative AI foundation
+- symbol: agent
+  domain: ai
+  path: ./icons/ai/agent.svg
+  notes: Autonomous AI agent / multi-step orchestrator
+- symbol: chip
+  domain: ai
+  path: ./icons/ai/chip.svg
+  notes: Hardware accelerator / GPU / NPU tensor core
+- symbol: vector_db
+  domain: ai
+  path: ./icons/ai/vector_db.svg
+  notes: High-dimensional vector embedding database
+- symbol: vision
+  domain: ai
+  path: ./icons/ai/vision.svg
+  notes: Computer vision perception & object detector
+- symbol: workflow
+  domain: ai
+  path: ./icons/ai/workflow.svg
+  notes: Automated pipeline DAG / training workflow
+- symbol: server
+  domain: computer
+  path: ./icons/computer/server.svg
+  notes: Standard compute host server / worker node
+- symbol: terminal
+  domain: computer
+  path: ./icons/computer/terminal.svg
+  notes: Developer CLI / terminal console environment
+- symbol: laptop
+  domain: computer
+  path: ./icons/computer/laptop.svg
+  notes: Client workstation / engineer laptop
+- symbol: mobile
+  domain: computer
+  path: ./icons/computer/mobile.svg
+  notes: Mobile smartphone / field tablet client
+- symbol: plc
+  domain: computer
+  path: ./icons/computer/plc.svg
+  notes: Programmable Logic Controller / industrial IPC
+- symbol: router
+  domain: computer
+  path: ./icons/computer/router.svg
+  notes: Network switch / wireless edge router
+- symbol: sensor
+  domain: computer
+  path: ./icons/computer/sensor.svg
+  notes: IoT telemetry sensor transducer
+- symbol: server_rack
+  domain: datacenter
+  path: ./icons/datacenter/server_rack.svg
+  notes: High-density 42U equipment rack enclosure
+- symbol: cluster
+  domain: datacenter
+  path: ./icons/datacenter/cluster.svg
+  notes: High-availability multi-node cluster
+- symbol: storage_array
+  domain: datacenter
+  path: ./icons/datacenter/storage_array.svg
+  notes: Enterprise SAN / NAS storage shelf
+- symbol: cooling
+  domain: datacenter
+  path: ./icons/datacenter/cooling.svg
+  notes: HVAC in-row precision cooling & airflow
+- symbol: ups
+  domain: datacenter
+  path: ./icons/datacenter/ups.svg
+  notes: Uninterruptible Power Supply & battery backup
+- symbol: container
+  domain: datacenter
+  path: ./icons/datacenter/container.svg
+  notes: OCI container runtime / microservice unit
+- symbol: kubernetes
+  domain: datacenter
+  path: ./icons/datacenter/kubernetes.svg
+  notes: Kubernetes container orchestration cluster
+- symbol: user
+  domain: business_process
+  path: ./icons/business_process/user.svg
+  notes: Human stakeholder / operator / actor
+- symbol: document
+  domain: business_process
+  path: ./icons/business_process/document.svg
+  notes: Business contract / structured document / record
+- symbol: decision
+  domain: business_process
+  path: ./icons/business_process/decision.svg
+  notes: Business rule decision gateway / approval fork
+- symbol: message
+  domain: business_process
+  path: ./icons/business_process/message.svg
+  notes: Notification dispatch / event message queue
+- symbol: shield
+  domain: business_process
+  path: ./icons/business_process/shield.svg
+  notes: Regulatory compliance & security audit gate
+- symbol: analytics
+  domain: business_process
+  path: ./icons/business_process/analytics.svg
+  notes: KPI reporting / business intelligence analytics
+- symbol: lock
+  domain: cybersecurity
+  path: ./icons/cybersecurity/lock.svg
+  notes: Cryptographic lock / data encryption at rest & in transit
+- symbol: key
+  domain: cybersecurity
+  path: ./icons/cybersecurity/key.svg
+  notes: Secret key / PKI private key & certificate token
+- symbol: shield_check
+  domain: cybersecurity
+  path: ./icons/cybersecurity/shield_check.svg
+  notes: Verified security posture / compliance gate
+- symbol: siem
+  domain: cybersecurity
+  path: ./icons/cybersecurity/siem.svg
+  notes: SIEM radar telemetry & security analytics engine
+- symbol: soc
+  domain: cybersecurity
+  path: ./icons/cybersecurity/soc.svg
+  notes: Security Operations Center monitoring console
+- symbol: malware_scan
+  domain: cybersecurity
+  path: ./icons/cybersecurity/malware_scan.svg
+  notes: Antivirus / EDR malware scanning & threat hunter
+- symbol: vault
+  domain: cybersecurity
+  path: ./icons/cybersecurity/vault.svg
+  notes: Hardware Security Module (HSM) / secrets vault
+- symbol: honeypot
+  domain: cybersecurity
+  path: ./icons/cybersecurity/honeypot.svg
+  notes: Deception honeypot trap & decoy sensor
+- symbol: switch
+  domain: network_engineering
+  path: ./icons/network_engineering/switch.svg
+  notes: Layer 2/3 Ethernet network switch
+- symbol: core_router
+  domain: network_engineering
+  path: ./icons/network_engineering/core_router.svg
+  notes: Autonomous system core router / BGP gateway
+- symbol: bgp
+  domain: network_engineering
+  path: ./icons/network_engineering/bgp.svg
+  notes: Border Gateway Protocol mesh / Autonomous System
+- symbol: mpls
+  domain: network_engineering
+  path: ./icons/network_engineering/mpls.svg
+  notes: Multi-Protocol Label Switching (MPLS) provider network
+- symbol: firewall_ha
+  domain: network_engineering
+  path: ./icons/network_engineering/firewall_ha.svg
+  notes: High-Availability redundant stateful firewall pair
+- symbol: load_balancer
+  domain: network_engineering
+  path: ./icons/network_engineering/load_balancer.svg
+  notes: Traffic distribution load balancer appliance
+- symbol: patch_panel
+  domain: network_engineering
+  path: ./icons/network_engineering/patch_panel.svg
+  notes: 19-inch structured cabling patch panel
+- symbol: fiber_optic
+  domain: network_engineering
+  path: ./icons/network_engineering/fiber_optic.svg
+  notes: High-speed optical fiber backbone link
+

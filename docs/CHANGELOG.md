@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.2.0] - 2026-09-19
+
+### Added
+- Standardized project packaging via `pyproject.toml` with `hatchling` backend and `uv` dependency management.
+- Pinned dependency lockfile `uv.lock` for deterministic, reproducible builds.
+- Official Astral `uv:python3.12-bookworm-slim` multi-stage `Dockerfile` and container runner `docker-build-n-run.sh`.
+- GitHub Actions CI workflow (`.github/workflows/ci.yml`) testing matrix across Python 3.10-3.13 with `astral-sh/setup-uv`.
+- Universal repository agent guidelines (`AGENTS.md`, `.cursor/rules/uv.md`) enforcing `uv` across all workflows.
+- **Domain Vector Icon Catalog (`icons/`):** 51 handcrafted 24x24 open-source W3C SVG icons spanning 7 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`), cataloged in `icons/icons.yaml` and `icons/icons.csv`.
+- **Native Shape Library Icon Integration (`src/iiot_diagrams/shapes.py`):** Subsumed all 51 icons natively into `ShapeLibrary` and implemented `register_svg_icon()`, `load_icon_file()`, and `load_icons_from_directory()`.
+- **Expanded Color Theme Presets (`src/iiot_diagrams/theme.py`):** Added 4 new presets (`nord`, `emerald`, `crimson`, `monochrome`), expanding the palette to 8 distinct themes.
+- **70 Executable Domain Reference Diagrams (`examples/`):** 10 architectural diagrams per domain across 7 domains of varying complexity, generating SVG vector diagrams and Markdown BOM tables in `output/`, cataloged in `examples/README.md`.
+- **Domain Examples Test Suite (`tests/test_domain_examples.py`):** Automated parametrized test suite verifying execution, XML structure, and BOM generation across all 70 domain examples.
+
+### Changed
+- Migrated all execution, testing, and documentation commands across plans and manifests to `uv run pytest` and `uv sync`.
+- **Root Directory Cleanup:** Relocated orphaned exploratory/scratch scripts and chat notes to `legacy/`.
+
 ## [v0.1.0] - 2026-09-19
 
 ### Added
@@ -50,5 +68,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Scrubbed all proprietary/vendor branding in favor of generic, customizable Industrial IoT (IIoT) terminology.
 
 ### Verification Evidence
-- `PYTHONPATH=src pytest tests/ -v`: 139 passed in 0.21s.
+- `uv run pytest`: 139 passed in 0.35s.
 - `mypy src/ tests/ examples/ main.py`: Success: no issues found in 26 source files.

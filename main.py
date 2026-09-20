@@ -152,7 +152,8 @@ A pure-Python, zero-Graphviz directed diagrams engine tailored for Industrial Io
 ### Installation
 
 ```bash
-pip install -r requirements.txt
+# Provision virtualenv and install dependencies
+uv sync
 ```
 
 ### Generating Diagrams
@@ -160,22 +161,23 @@ pip install -r requirements.txt
 Generate the reference architecture diagram and living documentation:
 
 ```bash
-PYTHONPATH=src python3 main.py
+uv run python main.py
 ```
 
 ### Running Examples
 
 ```bash
-PYTHONPATH=src python3 examples/01_mockup_slide.py
-PYTHONPATH=src python3 examples/02_high_availability.py
-PYTHONPATH=src python3 examples/03_sparkplug_pipeline.py
+uv run python examples/01_mockup_slide.py
+uv run python examples/02_high_availability.py
+uv run python examples/03_sparkplug_pipeline.py
 ```
 
 ### Running Test Suite
 
 ```bash
-PYTHONPATH=src pytest tests/ -v
+uv run pytest
 ```
+
 
 ---
 

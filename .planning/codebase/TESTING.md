@@ -15,16 +15,21 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 - No formal test runner configuration or CI test harness currently present in root
 
 **Target Framework:**
-- `pytest` (standard Python test runner)
+- `pytest` (executed via `uv run pytest`)
 - Standard `assert` statements for geometry, constraint solving, and SVG structure validation
+- Configuration declared in `pyproject.toml` (`testpaths = ["tests"]`, `pythonpath = ["src"]`)
 
 **Run Commands:**
 ```bash
-# Running ad-hoc verification scripts
-python test_docs_bom.py
+# Provision environment
+uv sync
 
-# Running planned test suite
-pytest tests/ -v
+# Run complete test suite
+uv run pytest
+
+# Run individual test modules
+uv run pytest tests/test_geometry.py
+uv run pytest tests/test_routing.py
 ```
 
 ## Test File Organization

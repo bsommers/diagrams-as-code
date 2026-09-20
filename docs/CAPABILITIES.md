@@ -31,7 +31,7 @@
 - **Python API:** `iiot_diagrams.geometry`
 - **Exports:** `Point`, `Size`, `Rect`, `Anchor`, `UnitBasis`
 - **Features:** Immutable 2D primitives, 9-point cardinal/intercardinal rect anchors (`TOP_LEFT`, `CENTER`, `BOTTOM_RIGHT`), rect expansion/union, and normalized canvas unit-basis coordinate conversion (`0.0`-`1.0` and percentage strings).
-- **Verification:** `pytest tests/test_geometry.py`
+- **Verification:** `uv run pytest tests/test_geometry.py`
 
 ---
 
@@ -43,7 +43,7 @@
 - **Python API:** `iiot_diagrams.constraints.ConstraintSolver`
 - **Exports:** `Element`, `Shape`, `ConstraintSolver`
 - **Features:** Directional shape-to-shape placement (`right_of`, `left_of`, `below`, `above`) with alignment (`center`, `top`, `bottom`, `left`, `right`) and margin padding. Evaluates dependency DAGs with cycle detection and unconstrained element retention.
-- **Verification:** `pytest tests/test_constraints.py`
+- **Verification:** `uv run pytest tests/test_constraints.py`
 
 ---
 
@@ -55,7 +55,7 @@
 - **Python API:** `iiot_diagrams.groups.Group`
 - **Exports:** `Group`
 - **Features:** Hierarchical container elements with bottom-up recursive auto-bounding, child coordinate delta propagation, cycle prevention in ancestry, and group-to-group flow placement.
-- **Verification:** `pytest tests/test_groups.py`
+- **Verification:** `uv run pytest tests/test_groups.py`
 
 ---
 
@@ -67,7 +67,7 @@
 - **Python API:** `iiot_diagrams.router.OrthogonalRouter`
 - **Exports:** `Edge`, `Port`, `Routing`, `OrthogonalRouter`
 - **Features:** Intelligent edge connection model with automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`), orthogonal Manhattan waypoints calculation, and collinear straight-line simplification.
-- **Verification:** `pytest tests/test_routing.py`
+- **Verification:** `uv run pytest tests/test_routing.py`
 
 ---
 
@@ -78,8 +78,9 @@
 - **Target Release:** `v0.1.0`
 - **Python API:** `iiot_diagrams.theme`, `iiot_diagrams.shapes`
 - **Exports:** `Theme`, `ShapeLibrary`, `ShapeRenderer`, `get_theme`, `register_theme`
-- **Features:** Immutable theme presets (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`) and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`) with built-in IIoT vector icons.
-- **Verification:** `pytest tests/test_theme.py`
+- **Features:** 8 immutable theme presets (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`), 51 built-in domain vector icons across 7 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
+- **Verification:** `uv run pytest tests/test_theme.py`
+
 
 ---
 
@@ -91,7 +92,7 @@
 - **Python API:** `iiot_diagrams.renderer_svg.SVGRenderer`
 - **Exports:** `SVGRenderer`
 - **Features:** Produces valid, standalone W3C SVG XML documents featuring responsive `viewBox` scaling, arrowhead markers, drop shadow filters, ordered group rendering, and automated luminance contrast text coloring.
-- **Verification:** `pytest tests/test_renderer_svg.py`
+- **Verification:** `uv run pytest tests/test_renderer_svg.py`
 
 ---
 
@@ -103,7 +104,7 @@
 - **Python API:** `iiot_diagrams.diagram.Diagram`
 - **Exports:** `Diagram`
 - **Features:** Pythonic context manager with bitshift connection operator overloading (`s1 >> s2`, `s1 >> diag.edge(...) >> s2`, fan-in/fan-out lists), automatic group scoping, decoupled shape lifecycles, and prototype cloning.
-- **Verification:** `pytest tests/test_diagram_api.py`
+- **Verification:** `uv run pytest tests/test_diagram_api.py`
 
 ---
 
@@ -115,14 +116,27 @@
 - **Python API:** `iiot_diagrams.bom.BOMGenerator`
 - **Exports:** `BOMGenerator`
 - **Features:** Extracts diagram inventory, parent groups, connection routes, and technical metadata into Markdown tables and JSON catalogs, with automated `README.md` synchronization.
-- **Verification:** `pytest tests/test_bom.py`
+- **Verification:** `uv run pytest tests/test_bom.py`
 
 ---
 
-### 2.9 Planned Capabilities
+### 2.9 Domain Architectural Reference Suite
+
+#### `CAP-DIAG-DOMAINS`: Multi-Domain Reference Topologies & Automated Test Suite
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.1.0`
+- **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`)
+- **Exports:** 70 self-contained executable diagram scripts and documentation artifacts
+- **Features:** 10 topologies per domain demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across 8 presets, automated SVG and Markdown BOM generation in `output/`, and gallery documentation in `examples/README.md`.
+- **Verification:** `uv run pytest tests/test_domain_examples.py`
+
+---
+
+### 2.10 Planned Capabilities
 
 #### `CAP-DIAG-INTERACTIVE`: Interactive SVG Pan-Zoom and Collapsible Groups
 - **Status:** `PLANNED`
 - **Target Release:** `v0.2.0`
 - **Details:** Client-side lightweight JavaScript injection into SVG output for interactive panning, zooming, and group fold/unfold toggles.
 - **Verification:** Pending Milestone 2
+

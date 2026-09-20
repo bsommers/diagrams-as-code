@@ -1,35 +1,46 @@
 # Diagrams as Code - How to Run
 
-## installing and running
+## Prerequisites & Installation
 
-### virtual env
+This project uses [`uv`](https://docs.astral.sh/uv/) for Python environment management, dependency resolution, and script execution.
 
-python -m venv venv
-source venv/bin/activate
-
-### pip install requiremnents
-pip install -r requirements.txt
-
-### or indivudally:
-
-### install
+### Install `uv` (if not already installed)
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
-pip install diagrams
-pip install pyyaml
-pip install gitpython boto3
+
+### Sync Environment
+```bash
+uv sync
 ```
-###  turn this into requirements.txt
+This automatically provisions the virtual environment (`.venv/`) and installs `iiot-diagrams` in editable mode with development dependencies.
 
-### run
-`python iiot_diagram.py`
+## Running Diagrams and Examples
 
-## How to use Github Actions:
+Generate the primary reference architecture and living documentation:
+```bash
+uv run python main.py
+```
 
-# How to use this as a Technical Account Manager
-Imagine you are at a client site or working from home in Baltimore. You realize the customer needs a new Kafka consumer added to the architecture.
+Run specific example architectures:
+```bash
+uv run python examples/01_mockup_slide.py
+uv run python examples/02_high_availability.py
+uv run python examples/03_sparkplug_pipeline.py
+```
 
-- Edit `icons.yaml`: Add the Kafka symbol if it's not there.
-- Edit `main.py`: Add one line: `broker >> palette.get_node("kafka", "Enterprise Data Lake")`.
-- Git Push: Push the change to GitHub.
+## Running the Test Suite
+```bash
+uv run pytest
+```
 
-Within 60 seconds, the GitHub repository's front page (README.md) will refresh with the updated high-res diagram and a new entry in the Bill of Materials table. No manual rendering required.
+## Running with Docker
+Build and run containerized diagram generation using the official Astral `uv` Docker image:
+```bash
+./docker-build-n-run.sh
+```
+
+Or via Docker Compose:
+```bash
+docker compose run --rm diagram-gen
+```

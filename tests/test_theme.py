@@ -1,4 +1,5 @@
 from dataclasses import FrozenInstanceError
+from pathlib import Path
 import xml.etree.ElementTree as ET
 import pytest
 from iiot_diagrams import (
@@ -418,3 +419,93 @@ def test_builtin_vector_icons_unknown_raises_key_error() -> None:
     lib = ShapeLibrary()
     with pytest.raises(KeyError, match="Unknown icon 'unsupported_gadget'"):
         lib.render_icon("unsupported_gadget", 0, 0)
+
+
+def test_domain_icons_and_aliases() -> None:
+    """Verify domain icons across Cloud, AI, Computer, Datacenter, Business Process, Cybersecurity, and Network Engineering."""
+    lib = ShapeLibrary()
+    domain_icons = [
+        "vpc", "serverless", "storage", "api_gateway", "cdn", "firewall", "dns",
+        "brain", "model", "agent", "chip", "vector_db", "vision", "workflow",
+        "server", "terminal", "laptop", "mobile", "plc", "router",
+        "cluster", "storage_array", "cooling", "ups", "container", "kubernetes",
+        "user", "document", "decision", "message", "shield", "analytics",
+        # Cybersecurity
+        "lock", "key", "shield_check", "siem", "soc", "malware_scan", "vault", "honeypot",
+        # Network Engineering
+        "switch", "core_router", "bgp", "mpls", "firewall_ha", "load_balancer", "patch_panel", "fiber_optic",
+    ]
+    for icon in domain_icons:
+        assert lib.has_icon(icon)
+        rendered = lib.render_icon(icon, 10.0, 20.0, size=24.0, color="#10B981")
+        assert f"icon-{icon}" in rendered
+        root = ET.fromstring(f"<svg>{rendered}</svg>")
+        assert root.find("g") is not None
+
+    # Verify key aliases
+    aliases = {
+        "lambda": "serverless",
+        "s3": "storage",
+        "llm": "model",
+        "gpu": "chip",
+        "k8s": "kubernetes",
+        "actor": "user",
+        "audit": "shield",
+        # Cybersecurity aliases
+        "crypto": "lock",
+        "pki": "key",
+        "radar": "siem",
+        "hsm": "vault",
+        # Network engineering aliases
+        "l3_switch": "switch",
+        "lb": "load_balancer",
+        "fiber": "fiber_optic",
+    }
+    for alias, canonical in aliases.items():
+        assert lib.has_icon(alias)
+        rendered = lib.render_icon(alias, 0, 0)
+        assert f"icon-{canonical}" in rendered
+
+
+def test_custom_icon_file_and_directory_loading(tmp_path: Path) -> None:
+    """Verify dynamic loading of custom external SVG icons."""
+    lib = ShapeLibrary()
+    custom_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>'
+    svg_file = tmp_path / "custom_spark.svg"
+    svg_file.write_text(custom_svg, encoding="utf-8")
+
+    name = lib.load_icon_file(svg_file)
+    assert name == "custom_spark"
+    assert lib.has_icon("custom_spark")
+
+    rendered = lib.render_icon("custom_spark", 5.0, 5.0, size=30.0, color="#FF0055")
+    assert "icon-custom_spark" in rendered
+    assert '<circle cx="12" cy="12" r="10"/>' in rendered
+
+    # Directory loading
+    sub_dir = tmp_path / "extra_icons"
+    sub_dir.mkdir()
+    (sub_dir / "spark_a.svg").write_text(custom_svg, encoding="utf-8")
+    (sub_dir / "spark_b.svg").write_text(custom_svg, encoding="utf-8")
+    loaded = lib.load_icons_from_directory(sub_dir)
+    assert "spark_a" in loaded
+    assert "spark_b" in loaded
+    assert lib.has_icon("spark_a")
+    assert lib.has_icon("spark_b")
+
+
+def test_new_theme_presets_evaluation() -> None:
+    """Verify newly added themes (nord, emerald, crimson, monochrome)."""
+    from iiot_diagrams.theme import CRIMSON, EMERALD, MONOCHROME, NORD, get_theme
+
+    for theme_name in ("nord", "emerald", "crimson", "monochrome"):
+        t = get_theme(theme_name)
+        assert t.name == theme_name
+        assert t.background.startswith("#")
+        assert t.accent.startswith("#")
+        assert t.node_stroke.startswith("#")
+
+    assert NORD.name == "nord"
+    assert EMERALD.name == "emerald"
+    assert CRIMSON.name == "crimson"
+    assert MONOCHROME.name == "monochrome"

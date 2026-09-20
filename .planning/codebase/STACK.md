@@ -19,12 +19,12 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 ## Runtime
 
 **Environment:**
-- Python 3.11+ runtime (`python:3.11-slim` in container)
-- Graphviz system engine (`/usr/bin/dot`, `libgraphviz-dev`, `pkg-config`)
+- Python 3.10+ runtime (`ghcr.io/astral-sh/uv:python3.12-bookworm-slim` in container)
+- Zero external binary dependencies (no Graphviz, Cairo, or ImageMagick required)
 
-**Package Manager:**
-- `pip` with `requirements.txt`
-- No lockfile present (unpinned dependencies in `requirements.txt`)
+**Package Manager & Execution Tool:**
+- `uv` (Astral) managing virtual environment (`.venv/`), lockfile (`uv.lock`), and execution (`uv run`)
+- PEP 517 build backend via `hatchling` declared in `pyproject.toml`
 
 ## Frameworks
 
@@ -37,12 +37,13 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 - `boto3` - AWS SDK for uploading generated diagram SVG/PNG and documentation to S3
 
 **Testing:**
-- Ad-hoc test scripts (`test_bom.py`, `test_docs_bom.py`)
-- Standard runner: `pytest` (compatible with test suite)
+- Test suite runner: `uv run pytest` configured via `pyproject.toml`
+- 139 automated tests in `tests/` covering geometry, constraints, routing, SVG rendering, and BOM.
 
 **Build/Dev:**
-- Docker (`Dockerfile`) - Multi-stage or slim container packaging system Graphviz and Python deps
-- Docker Compose (`docker_compose.yml`) - Container orchestration passing AWS credentials
+- `uv` - Dependency resolution, environment virtualization, and execution runner
+- Docker (`Dockerfile`) - Multi-stage container packaging Astral `uv:python3.12-bookworm-slim`
+- Docker Compose (`docker_compose.yml`) - Container orchestration mounting output volume
 
 ## Key Dependencies
 
