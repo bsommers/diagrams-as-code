@@ -1,0 +1,5 @@
+services:
+  diagram-gen:
+    build: .
+    volumes:
+      - ./output:/app/output

@@ -9,6 +9,11 @@ ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     PYTHONUNBUFFERED=1
 
+# Install standard DejaVu fonts for crisp SVG/PNG font rendering
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    fonts-dejavu-core \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install project dependencies using frozen lockfile first for optimal layer caching
 COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-install-project
