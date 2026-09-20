@@ -14,6 +14,7 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 | [**How-To Recipes & Troubleshooting**](file:///home/bill/src/ai/diagrams-as-code/docs/how-to.md) | Step-by-step recipes for custom themes, text layout optimization, standalone vector icons, living documentation, and troubleshooting matrix. |
 | [**Visual Architecture Diagrams**](file:///home/bill/src/ai/diagrams-as-code/docs/diagrams/README.md) | Visual model catalog containing terminal ASCII text, standalone Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML. |
 | [**Layout Root Cause Post-Mortem**](file:///home/bill/src/ai/diagrams-as-code/docs/LAYOUT_ROOT_CAUSE.md) | Diagnostic analysis and resolution of context-manager lifecycle coordinate resolution and negative bounding box clipping. |
+| [**Open-Source Sources & Provenance**](file:///home/bill/src/ai/diagrams-as-code/docs/sources.md) | Upstream repositories, specifications, design systems, and permissive open-source licenses for all icons and tooling. |
 | [**Changelog & Version History**](file:///home/bill/src/ai/diagrams-as-code/docs/CHANGELOG.md) | Release notes, version history, feature additions, and bug fixes across all versions. |
 
 ---

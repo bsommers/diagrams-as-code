@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **5 Theme Varieties per Domain (80 Diagrams):** Updated all 80 reference architecture scripts across all 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`) to showcase 5 distinct theme varieties per domain, with widened group margins (`margin=90`) to prevent protocol badge line overlap.
 - **Complete Documentation Suite (`docs/` & `docs/diagrams/`):**
   - Authoring of `docs/README.md`, `docs/purpose.md`, `docs/architecture.md`, `docs/running.md`, and `docs/how-to.md`.
+  - Authoring of `docs/sources.md` and `icons/README.md` cataloging upstream provenance, design systems, and permissive open-source licenses for all 59 vector icons and build dependencies.
   - Authored multi-format visual architecture diagrams in `docs/diagrams/`: terminal ASCII schematic (`ascii_architecture.txt`), Mermaid flowchart (`architecture.mmd`), Mermaid sequence lifecycle (`execution_lifecycle.mmd`), and native Draw.io XML (`architecture.drawio`).
   - Updated root `README.md` with badges, 8-domain showcase, and documentation hub links.
 - **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers` (228 automated tests passing).

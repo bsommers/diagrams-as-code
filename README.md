@@ -113,6 +113,7 @@ Comprehensive architectural, operational, and how-to guides are available in [`d
 - [**How-To Recipes & Troubleshooting**](file:///home/bill/src/ai/diagrams-as-code/docs/how-to.md): Practical recipes for themes, icons, text layouts, CI/CD integration, and troubleshooting.
 - [**Visual Architecture Diagrams**](file:///home/bill/src/ai/diagrams-as-code/docs/diagrams/README.md): Visual models in ASCII plain text, Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML.
 - [**Layout Root Cause Post-Mortem**](file:///home/bill/src/ai/diagrams-as-code/docs/LAYOUT_ROOT_CAUSE.md): Context manager coordinate resolution and negative auto-framing post-mortem.
+- [**Open-Source Sources & Provenance**](file:///home/bill/src/ai/diagrams-as-code/docs/sources.md): Upstream repositories, specifications, and open-source licenses for all icons and tooling.
 - [**Changelog**](file:///home/bill/src/ai/diagrams-as-code/docs/CHANGELOG.md): Version history, new capabilities, and release notes.
 
 ---
