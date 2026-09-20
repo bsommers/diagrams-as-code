@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "0.1.0",
+  "project_name": "Diagrams as Code - Directed IIoT Engine",
+  "repository": "ai/diagrams-as-code",
+  "last_updated": "2026-09-19T20:10:00Z",
+  "summary": {
+    "total_capabilities": 9,
+    "operational": 8,
+    "beta": 0,
+    "planned": 1,
+    "categories": [
+      "Geometry & Layout",
+      "Constraint Resolution",
+      "Containers & Grouping",
+      "Connection Routing",
+      "Vector Theming & Shapes",
+      "SVG Vector Rendering",
+      "Diagram-as-Code API",
+      "Living Documentation & BOM"
+    ]
+  },
+  "quick_answers": {
+    "can_render_without_graphviz": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-SVG",
+      "python_api": "Diagram.render_svg()",
+      "details": "Renders high-fidelity SVG diagrams directly using pure Python standard library string formatting without external Graphviz, Cairo, or binary dependencies."
+    },
+    "can_position_shapes_relatively": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-CONSTR",
+      "python_api": "shape2.right_of(shape1, margin=40)",
+      "details": "Directional placement (right_of, left_of, below, above) with margin padding and alignment constraints resolved via iterative topological DAG solver."
+    },
+    "can_position_shapes_with_unit_basis": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-GEOM",
+      "python_api": "diag.unit_basis.to_absolute(0.5, 0.25)",
+      "details": "Normalized coordinate placement across 0.0-1.0 unit-basis or percentage strings ('50%', '25%') mapped to canvas dimensions."
+    },
+    "can_decouple_shape_definition_from_location": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-API",
+      "python_api": "Shape(id, label) / diag.add(s) / s.move_to(x, y)",
+      "details": "Complete decoupling of shape instantiation, existence, and spatial placement. Shapes can be defined unplaced, placed late, relocated, or cloned from prototypes."
+    },
+    "can_generate_living_bom_documentation": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-BOM",
+      "python_api": "diag.generate_readme(image_file, output_path)",
+      "details": "Extracts diagram inventory, group affiliations, connection topology, and technical metadata into Markdown tables and JSON catalogs."
+    }
+  },
+  "capabilities": [
+    {
+      "id": "CAP-DIAG-GEOM",
+      "name": "Core Geometry and Unit-Basis Coordinate Engine",
+      "category": "Geometry & Layout",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.geometry",
+      "classes": ["Point", "Size", "Rect", "Anchor", "UnitBasis"],
+      "details": "Immutable 2D geometric primitives, 9-point cardinal/intercardinal rect anchors, rect expansion/union, and normalized canvas unit-basis coordinate conversion.",
+      "verification": "pytest tests/test_geometry.py"
+    },
+    {
+      "id": "CAP-DIAG-CONSTR",
+      "name": "Decoupled Elements and Iterative DAG Constraint Solver",
+      "category": "Constraint Resolution",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.constraints.ConstraintSolver",
+      "classes": ["Element", "Shape", "ConstraintSolver"],
+      "details": "Directed shape-to-shape relative positioning (right_of, left_of, below, above) with alignment and margin padding. Evaluates dependency DAGs with cycle detection and unconstrained element retention.",
+      "verification": "pytest tests/test_constraints.py"
+    },
+    {
+      "id": "CAP-DIAG-GROUP",
+      "name": "Hierarchical Grouping, Auto-Bounding, and Group Flow",
+      "category": "Containers & Grouping",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.groups.Group",
+      "classes": ["Group"],
+      "details": "Hierarchical container elements with bottom-up recursive auto-bounding, child coordinate delta propagation, cycle prevention, and group-to-group flow placement.",
+      "verification": "pytest tests/test_groups.py"
+    },
+    {
+      "id": "CAP-DIAG-ROUTER",
+      "name": "Orthogonal Manhattan Routing and Port Deduction",
+      "category": "Connection Routing",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.router.OrthogonalRouter",
+      "classes": ["Edge", "Port", "Routing", "OrthogonalRouter"],
+      "details": "Intelligent edge connection model with automatic port deduction (North, South, East, West), orthogonal Manhattan waypoints calculation, and collinear straight-line simplification.",
+      "verification": "pytest tests/test_routing.py"
+    },
+    {
+      "id": "CAP-DIAG-THEME",
+      "name": "Vector Theming Engine and Vector Shape Library",
+      "category": "Vector Theming & Shapes",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.theme",
+      "classes": ["Theme", "ShapeLibrary", "ShapeRenderer"],
+      "details": "Immutable theme presets (iiot_dark_gold, iiot_light, blueprint, cyber_slate) and standalone SVG vector primitives (box, cylinder, database, server_rack, cloud, diamond, badge) with built-in IIoT vector icons.",
+      "verification": "pytest tests/test_theme.py"
+    },
+    {
+      "id": "CAP-DIAG-SVG",
+      "name": "Pure-Python Zero-Binary SVG Vector Renderer",
+      "category": "SVG Vector Rendering",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.renderer_svg.SVGRenderer",
+      "classes": ["SVGRenderer"],
+      "details": "Produces valid, standalone W3C SVG XML documents featuring responsive viewBox scaling, arrowhead markers, drop shadow filters, ordered group rendering, and automated luminance contrast text coloring.",
+      "verification": "pytest tests/test_renderer_svg.py"
+    },
+    {
+      "id": "CAP-DIAG-API",
+      "name": "Fluent Diagram Context Manager and Operator Syntax",
+      "category": "Diagram-as-Code API",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.diagram.Diagram",
+      "classes": ["Diagram"],
+      "details": "Pythonic context manager with bitshift connection operator overloading (s1 >> s2, s1 >> diag.edge(...) >> s2, fan-in/fan-out lists), automatic group scoping, decoupled shape lifecycles, and prototype cloning.",
+      "verification": "pytest tests/test_diagram_api.py"
+    },
+    {
+      "id": "CAP-DIAG-BOM",
+      "name": "Living Documentation & Bill of Materials (BOM) Engine",
+      "category": "Living Documentation & BOM",
+      "status": "OPERATIONAL",
+      "target_release": "v0.1.0",
+      "python_api": "iiot_diagrams.bom.BOMGenerator",
+      "classes": ["BOMGenerator"],
+      "details": "Extracts diagram inventory, parent groups, connection routes, and technical metadata into Markdown tables and JSON catalogs, with automated README.md synchronization.",
+      "verification": "pytest tests/test_bom.py"
+    },
+    {
+      "id": "CAP-DIAG-INTERACTIVE",
+      "name": "Interactive SVG Pan-Zoom and Collapsible Groups",
+      "category": "SVG Vector Rendering",
+      "status": "PLANNED",
+      "target_release": "v0.2.0",
+      "details": "Client-side lightweight JavaScript injection into SVG output for interactive panning, zooming, and group fold/unfold toggles.",
+      "verification": "Pending Milestone 2"
+    }
+  ]
+}
