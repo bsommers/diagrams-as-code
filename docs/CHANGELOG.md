@@ -1,6 +1,6 @@
 # Consolidated Master Changelog: Diagrams as Code (IIoT Engine)
 
-All notable changes, architectural milestones, and capability updates to the pure-Python Directed Diagrams as Code framework (`iiot_diagrams`) are documented in this file.
+All notable changes, architectural milestones, and capability updates to the pure-Python Directed Diagrams as Code framework (`diagrams_as_code`) are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
@@ -15,11 +15,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **5 Theme Varieties per Domain (80 Diagrams):** Updated all 80 reference architecture scripts across all 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`) to showcase 5 distinct theme varieties per domain, with widened group margins (`margin=90`) to prevent protocol badge line overlap.
 - **Complete Documentation Suite (`docs/` & `docs/diagrams/`):**
   - Authoring of `docs/README.md`, `docs/purpose.md`, `docs/architecture.md`, `docs/running.md`, and `docs/how-to.md`.
-  - Authoring of `docs/sources.md` and `icons/README.md` cataloging upstream provenance, design systems, and permissive open-source licenses for all 59 vector icons and build dependencies.
+  - Authoring of `docs/sources.md` and `icons/README.md` cataloging upstream provenance, design systems, and permissive open-source licenses for all 60 vector icons and build dependencies.
   - Authored multi-format visual architecture diagrams in `docs/diagrams/`: terminal ASCII schematic (`ascii_architecture.txt`), Mermaid flowchart (`architecture.mmd`), Mermaid sequence lifecycle (`execution_lifecycle.mmd`), and native Draw.io XML (`architecture.drawio`).
   - Updated root `README.md` with badges, 8-domain showcase, and documentation hub links.
-- **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers` (228 automated tests passing).
+- **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers` (304 automated tests passing).
 
+### Changed
+- **Generated Icon Catalog (`tools/generate_icons.py`, `src/diagrams_as_code/shapes.py`):** `ShapeLibrary._ICON_CATALOG` is now the single source of truth for icons, mapping each of the 60 canonical names to one domain directory and one description; `_CANONICAL_ICONS` is derived from it. The entire `icons/` tree, `icons/icons.csv`, `icons/icons.yaml`, and `icons/README.md` are emitted from that catalog by `tools/generate_icons.py`, which also provides `--check` for CI. Standalone icon files and the glyphs the renderer draws are now the same artwork by construction.
+- **Icon Tree Reconciled (59 → 60 files):** Added the missing `dashboard`, `database`, and `queue` icon files, which the engine rendered but the catalog never shipped. Removed the duplicate `computer/sensor.svg` and `iiot/plc.svg`, so each icon has exactly one domain home.
+- **Relative Documentation Links:** Replaced 127 `file:///home/bill/...` absolute links across `README.md`, `docs/`, `examples/README.md`, and `icons/README.md` with repository-relative paths that resolve for every reader and on GitHub.
+- **Dependency Provenance Corrected (`docs/sources.md`):** `resvg-py` is credited to `baseplate-admin/resvg-py` under MIT (verified against the installed distribution metadata) and recategorized from "Dev Dependency" to "Optional Runtime", since `Diagram.render_png()` imports it at runtime.
+
+### Fixed
+- **`main.py` No Longer Overwrites `README.md`:** `generate_root_readme()` rebuilt the repository README from a hardcoded template that had fallen 91 lines behind the maintained file, so every `uv run python main.py` — including the CI "Verify diagram generation" step — silently reverted edits to it. The function and its call were removed; the Bill of Materials continues to be emitted to `output/main_README.md`.
+- **CI Guards Generated Artifacts (`.github/workflows/ci.yml`):** A new step runs `tools/generate_icons.py --check` and `git diff --exit-code -- README.md docs/ icons/` after diagram generation, failing the build if a generator rewrites a tracked file or if the committed icon tree drifts from the catalog.
+- **Project License Published:** Added the `LICENSE` file (MIT) that `pyproject.toml` declared and `README.md` linked to but which was never committed.
+- **Stale Dependency Manifest Removed:** Deleted `requirements.txt`, which listed `diagrams`, `pyyaml`, `gitpython`, and `boto3` — none imported anywhere in the tree — and contradicted `dependencies = []` in `pyproject.toml`. `pyproject.toml` with `uv.lock` is the single source of truth.
+- **Documentation Counts and Stroke Claims:** Corrected the icon total from 59 to 60 in `README.md`, `docs/sources.md`, and this changelog. `docs/sources.md` no longer claims uniform round line-caps and line-joins across the set; `icons/README.md` now measures and reports stroke weights from the emitted files.
+- **Package Version Synchronized:** `pyproject.toml` and `src/diagrams_as_code/__init__.py` report `0.3.0`, matching this changelog section.
+
+### Verification
+- `tests/test_icon_catalog.py` adds 76 tests binding the catalog, the generated tree, the manifests, the alias table, and the documented totals together. Drift in any of them fails the suite.
 
 ## [v0.2.0] - 2026-09-19
 

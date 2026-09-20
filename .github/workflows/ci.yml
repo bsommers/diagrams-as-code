@@ -36,6 +36,14 @@ jobs:
       - name: Verify diagram generation
         run: uv run python main.py
 
+      - name: Verify generated artifacts are committed and current
+        run: |
+          uv run python tools/generate_icons.py --check
+          # main.py and the generators must never rewrite a tracked, hand-
+          # maintained file. README.md used to be clobbered by main.py, which
+          # silently reverted every edit made to it.
+          git diff --exit-code -- README.md docs/ icons/
+
   docker:
     name: Docker Container Build & Run
     runs-on: ubuntu-latest

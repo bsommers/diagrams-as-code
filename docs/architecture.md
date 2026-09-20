@@ -41,7 +41,7 @@
 +---------------------------------------+ +-----------------------------------------+
 |            SVGRenderer                | |             BOMGenerator                |
 |  - Theme Palette Injection            | |  - Component Inventory Assembly         |
-|  - Standalone Vector Icons (59)       | |  - Metadata Attribute Extraction        |
+|  - Standalone Vector Icons (60)       | |  - Metadata Attribute Extraction        |
 |  - Dynamic SVG Defs & Shadow Filters  | |  - Protocol & Connection Mapping        |
 |  - Multi-line <tspan> Anti-Spill Wrap | |  - Markdown Table & JSON Serialization  |
 |  - Text-Below-Graphic Support         | +-----------------------------------------+
@@ -71,7 +71,7 @@
 
 ### 2.3 Vector Shape & Icon Library (`diagrams_as_code.shapes`)
 - Pure SVG path emitters for boxes (with customizable corner radii), database cylinders (multi-tiered storage drums), server racks (individual blade unit partitions), decision diamonds, and clouds.
-- Built-in library of 59 handcrafted 24x24 open-source vector icons spanning 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`).
+- Built-in library of 60 handcrafted 24x24 open-source vector icons spanning 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`).
 - Extensible custom icon loading via SVG files or entire directories.
 
 ### 2.4 Hierarchical Grouping (`diagrams_as_code.groups`)

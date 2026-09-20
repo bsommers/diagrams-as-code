@@ -8,14 +8,14 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 
 | Document | Topic & Focus |
 |---|---|
-| [**Purpose & Threat Model**](file:///home/bill/src/ai/diagrams-as-code/docs/purpose.md) | Problem statement, architectural motivation, pure standard library philosophy, and security threat model. |
-| [**System Architecture**](file:///home/bill/src/ai/diagrams-as-code/docs/architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal router, SVG renderer, and living BOM pipeline. |
-| [**Running & Installation Guide**](file:///home/bill/src/ai/diagrams-as-code/docs/running.md) | Prerequisites, virtual environment provisioning with `uv`, CLI commands, test execution, and Docker setup. |
-| [**How-To Recipes & Troubleshooting**](file:///home/bill/src/ai/diagrams-as-code/docs/how-to.md) | Step-by-step recipes for custom themes, text layout optimization, standalone vector icons, living documentation, and troubleshooting matrix. |
-| [**Visual Architecture Diagrams**](file:///home/bill/src/ai/diagrams-as-code/docs/diagrams/README.md) | Visual model catalog containing terminal ASCII text, standalone Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML. |
-| [**Layout Root Cause Post-Mortem**](file:///home/bill/src/ai/diagrams-as-code/docs/LAYOUT_ROOT_CAUSE.md) | Diagnostic analysis and resolution of context-manager lifecycle coordinate resolution and negative bounding box clipping. |
-| [**Open-Source Sources & Provenance**](file:///home/bill/src/ai/diagrams-as-code/docs/sources.md) | Upstream repositories, specifications, design systems, and permissive open-source licenses for all icons and tooling. |
-| [**Changelog & Version History**](file:///home/bill/src/ai/diagrams-as-code/docs/CHANGELOG.md) | Release notes, version history, feature additions, and bug fixes across all versions. |
+| [**Purpose & Threat Model**](purpose.md) | Problem statement, architectural motivation, pure standard library philosophy, and security threat model. |
+| [**System Architecture**](architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal router, SVG renderer, and living BOM pipeline. |
+| [**Running & Installation Guide**](running.md) | Prerequisites, virtual environment provisioning with `uv`, CLI commands, test execution, and Docker setup. |
+| [**How-To Recipes & Troubleshooting**](how-to.md) | Step-by-step recipes for custom themes, text layout optimization, standalone vector icons, living documentation, and troubleshooting matrix. |
+| [**Visual Architecture Diagrams**](diagrams/README.md) | Visual model catalog containing terminal ASCII text, standalone Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML. |
+| [**Layout Root Cause Post-Mortem**](LAYOUT_ROOT_CAUSE.md) | Diagnostic analysis and resolution of context-manager lifecycle coordinate resolution and negative bounding box clipping. |
+| [**Open-Source Sources & Provenance**](sources.md) | Upstream repositories, specifications, design systems, and permissive open-source licenses for all icons and tooling. |
+| [**Changelog & Version History**](CHANGELOG.md) | Release notes, version history, feature additions, and bug fixes across all versions. |
 
 ---
 
@@ -50,7 +50,7 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 ┌─────────────────────────────────────┐ ┌────────────────────────────────┐
 │             SVGRenderer             │ │          BOMGenerator          │
 │  - 13 Themes (Light/Dark/A11y)      │ │  - Markdown Tables             │
-│  - 59 Built-in Vector Icons         │ │  - Machine-Readable JSON       │
+│  - 60 Built-in Vector Icons         │ │  - Machine-Readable JSON       │
 │  - Multi-line <tspan> Wrap          │ └────────────────────────────────┘
 │  - Text-Below-Graphic Tiles         │
 └──────────────────┬──────────────────┘
@@ -62,4 +62,4 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 └─────────────────────────────────────┘
 ```
 
-For higher resolution ASCII schematics, view [`docs/diagrams/ascii_architecture.txt`](file:///home/bill/src/ai/diagrams-as-code/docs/diagrams/ascii_architecture.txt).
+For higher resolution ASCII schematics, view [`docs/diagrams/ascii_architecture.txt`](diagrams/ascii_architecture.txt).

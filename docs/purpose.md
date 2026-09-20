@@ -18,7 +18,7 @@ Traditional architecture diagramming tools present substantial friction to moder
 - **Living Documentation & BOM Generation**: Diagrams automatically yield structured Bill of Materials (BOM) in both Markdown table format and machine-readable JSON schemas, documenting component inventories, hardware specifications, protocols, and metadata alongside the visual graphic.
 - **Fluent Pythonic Domain-Specific Language (DSL)**: Clean context-manager syntax (`with Diagram(...) as diag:`, `with diag.group(...) as g:`) with intuitive operator overloads (`shape_a >> diag.edge("Protocol") >> shape_b`).
 - **Deterministic Geometric Solving**: Decouples shape instantiation from placement. Elements can be anchored absolutely, positioned relatively (`right_of`, `below`, `above`, `left_of`), or flow-arranged within hierarchically auto-bounding groups.
-- **Production Visual Polish**: Built-in 13 dark, light, and accessibility themes with automatic contrast ratio calculation, 59 custom SVG vector icons, anti-spill multi-line text wrapping (`<tspan>`), and text-below-graphic layout options.
+- **Production Visual Polish**: Built-in 13 dark, light, and accessibility themes with automatic contrast ratio calculation, 60 custom SVG vector icons, anti-spill multi-line text wrapping (`<tspan>`), and text-below-graphic layout options.
 
 ---
 

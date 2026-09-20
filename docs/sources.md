@@ -6,7 +6,7 @@ This document details the origins, specifications, upstream repositories, and op
 
 ## 1. Domain Vector Icon Catalog (`icons/` and `src/diagrams_as_code/shapes.py`)
 
-The engine provides 59 handcrafted, resolution-independent vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, and `iiot`). All icons conform to a standard 24×24 pixel grid with consistent 2px stroke weight, round line-caps, and round line-joins, adapted from the following permissive open-source design systems:
+The engine provides 60 handcrafted, resolution-independent vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, and `iiot`). All icons conform to a standard 24×24 pixel grid and are stroked at 2px in `currentColor` (`historian` and `vector_db` add a lighter interior accent stroke). The tree under `icons/` and its manifests are generated from `ShapeLibrary._ICON_CATALOG` by `tools/generate_icons.py`, so a file and the glyph the renderer draws are the same artwork. The glyph set is adapted from the following permissive open-source design systems:
 
 | Icon Library / Source | Upstream Repository / Reference | License | Glyphs & Domains Derived |
 | :--- | :--- | :--- | :--- |
@@ -19,8 +19,8 @@ The engine provides 59 handcrafted, resolution-independent vector icons across 8
 | **[W3C Scalable Vector Graphics (SVG)](https://www.w3.org/TR/SVG2/)** | [W3C SVG 1.1 / 2.0 Recommendation](https://www.w3.org/TR/SVG2/) | [W3C Software and Document Notice](https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document) | Vector path definitions, marker definitions (`marker-end`), drop shadow filters (`feDropShadow`), and `<tspan>` multiline text wrapping. |
 
 All icon assets are cataloged in machine-readable manifests:
-- YAML manifest: [`icons/icons.yaml`](file:///home/bill/src/ai/diagrams-as-code/icons/icons.yaml)
-- CSV manifest: [`icons/icons.csv`](file:///home/bill/src/ai/diagrams-as-code/icons/icons.csv)
+- YAML manifest: [`icons/icons.yaml`](../icons/icons.yaml)
+- CSV manifest: [`icons/icons.csv`](../icons/icons.csv)
 
 ---
 
@@ -34,4 +34,4 @@ The core engine is deliberately designed with zero runtime third-party dependenc
 | **Astral `uv`** | [astral-sh/uv](https://github.com/astral-sh/uv) | [Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) / [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT) | Tooling & Packaging | High-performance virtual environment provisioning, lockfile resolution (`uv.lock`), and script/test execution runner. |
 | **Hatchling** | [pypa/hatch](https://github.com/pypa/hatch) | [MIT License](https://github.com/pypa/hatch/blob/master/LICENSE.txt) | Build Backend | Standard PEP 517/621 wheel packaging backend configured in `pyproject.toml`. |
 | **pytest** | [pytest-dev/pytest](https://github.com/pytest-dev/pytest) | [MIT License](https://github.com/pytest-dev/pytest/blob/main/LICENSE) | Dev / Test Runner | Test execution suite covering unit, integration, and end-to-end diagram verification in `tests/`. |
-| **resvg-py** | [messense/resvg-py](https://github.com/messense/resvg-py) | [Apache-2.0](https://github.com/messense/resvg-py/blob/main/LICENSE) / [MPL-2.0](https://github.com/RazrFalcon/resvg/blob/master/LICENSE.txt) | Dev Dependency | Headless, Rust-based SVG-to-PNG rasterizer used in `main.py` and example generation scripts. Zero C-dependency runtime. |
+| **resvg-py** | [baseplate-admin/resvg-py](https://github.com/baseplate-admin/resvg-py) | [MIT License](https://github.com/baseplate-admin/resvg-py/blob/master/LICENSE) | Optional Runtime | Headless, Rust-based SVG-to-PNG rasterizer. Imported at runtime by `Diagram.render_png()` (`src/diagrams_as_code/diagram.py`) as the first of four PNG backends; not required for SVG output, which stays pure standard library. Installed as a dev dependency via `uv add --dev resvg-py`. |

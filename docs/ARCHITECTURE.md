@@ -6,7 +6,7 @@ The repository is organized around a clean separation of concerns:
 - **Canonical Engine (`src/diagrams_as_code/`):** Pure-Python standard library directed diagrams engine. Zero C-dependencies (no Graphviz, Cairo, or ImageMagick required for vector SVG generation).
 - **Backward-Compatibility Layer (`src/iiot_diagrams/`):** Re-exports canonical symbols from `diagrams_as_code` for non-breaking API evolution.
 - **Domain Galleries & Test Cases (`examples/`):** 80 production reference architectures across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, and `iiot`).
-- **Vector Icon Catalog (`icons/`):** 59 handcrafted 24x24 open-source W3C SVG vector assets.
+- **Vector Icon Catalog (`icons/`):** 60 handcrafted 24x24 open-source W3C SVG vector assets.
 - **Automated Verification (`tests/`):** 223 parametrized unit, integration, and E2E tests validating layout solving, vector generation, and Living Documentation BOM tables.
 
 ---

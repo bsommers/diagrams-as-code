@@ -34,11 +34,11 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 - Root cause: `print_bom()` was present in an earlier draft or different version of the script but was omitted from `iiot_theme.py`.
 - Fix approach: Add `print_bom()` to `IIoTPalette` or transition to the new `BOMGenerator` class.
 
-**Unpinned Requirements:**
-- Symptoms: Inconsistent builds across environments.
-- Trigger: Running `pip install -r requirements.txt`.
-- Root cause: `requirements.txt` contains unpinned package names (`diagrams`, `pyyaml`, `gitpython`, `boto3`).
-- Fix approach: Pin exact versions and use a lockfile or `pip-tools`.
+**Unpinned Requirements:** *(resolved 2026-09-20)*
+- `requirements.txt` was removed. It listed `diagrams`, `pyyaml`, `gitpython` and
+  `boto3`, none of which are imported anywhere in the tree, and it contradicted
+  `pyproject.toml`'s `dependencies = []`. `pyproject.toml` plus `uv.lock` are now
+  the single source of truth for dependencies.
 
 ## Security Considerations
 

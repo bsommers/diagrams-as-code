@@ -5,7 +5,7 @@
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
 [![Themes](https://img.shields.io/badge/themes-13%20palettes-orange)](src/diagrams_as_code/theme.py)
-[![Vector Icons](https://img.shields.io/badge/icons-59%20SVG-informational)](icons/)
+[![Vector Icons](https://img.shields.io/badge/icons-60%20SVG-informational)](icons/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 A pure-Python declarative vector diagramming framework. Generate publication-quality architecture diagrams, high-resolution rasterized images, and living Bill of Materials (BOM) documentation from code — with **zero Graphviz**, **zero Cairo**, and **zero external C-library runtime dependencies**.
@@ -27,27 +27,27 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
   - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`.
   - **Accessibility Themes:** `high_contrast` (WCAG AAA compliant).
 - **Zero-Clipping Text Engine**: Multi-line word-wrapping via SVG `<tspan>` elements, dynamic font scaling, and support for `label_position="bottom"` (text below graphic tiles).
-- **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 59 handcrafted 24x24 open-source vector icons across 8 domains, with support for `kind="icon"` (borderless icon graphics).
+- **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 60 handcrafted 24x24 open-source vector icons across 8 domains, with support for `kind="icon"` (borderless icon graphics).
 - **Living Documentation & Automated BOM**: Instant emission of Markdown component tables and machine-readable JSON schemas tracking hardware, protocols, and infrastructure specs.
 - **Topological Constraint Solving**: Decouples shape instantiation from placement. Elements can be positioned with relative constraints (`right_of`, `below`, `above`, `left_of`) and negative coordinate auto-framing.
-- **80 Production Reference Architectures**: 10 comprehensive reference diagrams across 8 architectural domains in [`examples/`](file:///home/bill/src/ai/diagrams-as-code/examples/).
+- **80 Production Reference Architectures**: 10 comprehensive reference diagrams across 8 architectural domains in [`examples/`](examples/).
 
 ---
 
 ## 8 Architectural Domains Gallery
 
-Explore 80 fully implemented diagrams in [`examples/`](file:///home/bill/src/ai/diagrams-as-code/examples/README.md) and [`output/`](file:///home/bill/src/ai/diagrams-as-code/output/):
+Explore 80 fully implemented diagrams in [`examples/`](examples/README.md) and [`output/`](output/):
 
 | Domain | Focus & Architectures | Key Built-in Icons |
 |---|---|---|
-| [**Cloud**](file:///home/bill/src/ai/diagrams-as-code/examples/cloud/) | Multi-region VPCs, serverless event pipelines, edge CDNs, hybrid VPNs, service meshes. | `vpc`, `serverless`, `storage`, `api_gateway`, `cdn`, `firewall`, `dns` |
-| [**AI / Machine Learning**](file:///home/bill/src/ai/diagrams-as-code/examples/ai/) | RAG pipelines, multimodal vision inference, agent swarms, distributed GPU training, GraphRAG. | `brain`, `model`, `agent`, `chip`, `vector_db`, `vision`, `workflow` |
-| [**Computer & Systems**](file:///home/bill/src/ai/diagrams-as-code/examples/computer/) | Workstations, embedded RTOS, developer toolchains, mobile offline sync, thin client VDI. | `server`, `terminal`, `laptop`, `mobile`, `plc`, `router` |
-| [**Datacenter**](file:///home/bill/src/ai/diagrams-as-code/examples/datacenter/) | Leaf-Spine Clos fabrics, Fibre Channel SANs, 2N UPS power, in-row CRAC cooling, bare-metal K8s. | `server_rack`, `cluster`, `storage_array`, `cooling`, `ups`, `container`, `kubernetes` |
-| [**Business Process**](file:///home/bill/src/ai/diagrams-as-code/examples/business_process/) | Order-to-Cash, Procure-to-Pay, regulatory audits, release gates, incident escalations. | `user`, `document`, `decision`, `message`, `shield`, `analytics` |
-| [**Cybersecurity**](file:///home/bill/src/ai/diagrams-as-code/examples/cybersecurity/) | DMZ perimeter defense, SOC SIEM pipelines, ZTNA, PKI CA hierarchy, optical airgap vaults. | `lock`, `key`, `shield_check`, `siem`, `malware_scan`, `vault` |
-| [**Network Engineering**](file:///home/bill/src/ai/diagrams-as-code/examples/network_engineering/) | Campus 3-tier LAN, dual eBGP WAN, MPLS VPN, EVPN-VXLAN, DWDM optical rings, Anycast DNS. | `switch`, `optical`, `wan`, `vpn`, `dns_mesh`, `auth_server` |
-| [**Industrial IoT (IIoT)**](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/) | Plant-to-cloud, broker HA clusters, Sparkplug B UNS, OPC UA TSN, predictive maintenance, SCADA. | `sensor`, `gateway`, `broker`, `plc`, `scada`, `hmi`, `historian`, `robot` |
+| [**Cloud**](examples/cloud/) | Multi-region VPCs, serverless event pipelines, edge CDNs, hybrid VPNs, service meshes. | `vpc`, `serverless`, `storage`, `api_gateway`, `cdn`, `firewall`, `dns` |
+| [**AI / Machine Learning**](examples/ai/) | RAG pipelines, multimodal vision inference, agent swarms, distributed GPU training, GraphRAG. | `brain`, `model`, `agent`, `chip`, `vector_db`, `vision`, `workflow` |
+| [**Computer & Systems**](examples/computer/) | Workstations, embedded RTOS, developer toolchains, mobile offline sync, thin client VDI. | `server`, `terminal`, `laptop`, `mobile`, `plc`, `router` |
+| [**Datacenter**](examples/datacenter/) | Leaf-Spine Clos fabrics, Fibre Channel SANs, 2N UPS power, in-row CRAC cooling, bare-metal K8s. | `server_rack`, `cluster`, `storage_array`, `cooling`, `ups`, `container`, `kubernetes` |
+| [**Business Process**](examples/business_process/) | Order-to-Cash, Procure-to-Pay, regulatory audits, release gates, incident escalations. | `user`, `document`, `decision`, `message`, `shield`, `analytics` |
+| [**Cybersecurity**](examples/cybersecurity/) | DMZ perimeter defense, SOC SIEM pipelines, ZTNA, PKI CA hierarchy, optical airgap vaults. | `lock`, `key`, `shield_check`, `siem`, `malware_scan`, `vault` |
+| [**Network Engineering**](examples/network_engineering/) | Campus 3-tier LAN, dual eBGP WAN, MPLS VPN, EVPN-VXLAN, DWDM optical rings, Anycast DNS. | `switch`, `optical`, `wan`, `vpn`, `dns_mesh`, `auth_server` |
+| [**Industrial IoT (IIoT)**](examples/iiot/) | Plant-to-cloud, broker HA clusters, Sparkplug B UNS, OPC UA TSN, predictive maintenance, SCADA. | `sensor`, `gateway`, `broker`, `plc`, `scada`, `hmi`, `historian`, `robot` |
 
 ---
 
@@ -97,7 +97,7 @@ diag.generate_readme("output/quickstart.svg", "output/quickstart_README.md")
 # Run reference architecture
 uv run python main.py
 
-# Run test suite (227 tests passing)
+# Run the full test suite (304 tests)
 uv run pytest
 ```
 
@@ -105,16 +105,16 @@ uv run pytest
 
 ## Documentation Hub
 
-Comprehensive architectural, operational, and how-to guides are available in [`docs/`](file:///home/bill/src/ai/diagrams-as-code/docs/README.md):
+Comprehensive architectural, operational, and how-to guides are available in [`docs/`](docs/README.md):
 
-- [**Purpose & Threat Model**](file:///home/bill/src/ai/diagrams-as-code/docs/purpose.md): Architectural motivation, pure Python philosophy, and security posture.
-- [**System Architecture**](file:///home/bill/src/ai/diagrams-as-code/docs/architecture.md): Technical specifications on solver, router, SVG renderer, and BOM engine.
-- [**Running & Installation Guide**](file:///home/bill/src/ai/diagrams-as-code/docs/running.md): Virtualenv setup with `uv`, CLI commands, Docker execution, and exit codes.
-- [**How-To Recipes & Troubleshooting**](file:///home/bill/src/ai/diagrams-as-code/docs/how-to.md): Practical recipes for themes, icons, text layouts, CI/CD integration, and troubleshooting.
-- [**Visual Architecture Diagrams**](file:///home/bill/src/ai/diagrams-as-code/docs/diagrams/README.md): Visual models in ASCII plain text, Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML.
-- [**Layout Root Cause Post-Mortem**](file:///home/bill/src/ai/diagrams-as-code/docs/LAYOUT_ROOT_CAUSE.md): Context manager coordinate resolution and negative auto-framing post-mortem.
-- [**Open-Source Sources & Provenance**](file:///home/bill/src/ai/diagrams-as-code/docs/sources.md): Upstream repositories, specifications, and open-source licenses for all icons and tooling.
-- [**Changelog**](file:///home/bill/src/ai/diagrams-as-code/docs/CHANGELOG.md): Version history, new capabilities, and release notes.
+- [**Purpose & Threat Model**](docs/purpose.md): Architectural motivation, pure Python philosophy, and security posture.
+- [**System Architecture**](docs/architecture.md): Technical specifications on solver, router, SVG renderer, and BOM engine.
+- [**Running & Installation Guide**](docs/running.md): Virtualenv setup with `uv`, CLI commands, Docker execution, and exit codes.
+- [**How-To Recipes & Troubleshooting**](docs/how-to.md): Practical recipes for themes, icons, text layouts, CI/CD integration, and troubleshooting.
+- [**Visual Architecture Diagrams**](docs/diagrams/README.md): Visual models in ASCII plain text, Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML.
+- [**Layout Root Cause Post-Mortem**](docs/LAYOUT_ROOT_CAUSE.md): Context manager coordinate resolution and negative auto-framing post-mortem.
+- [**Open-Source Sources & Provenance**](docs/sources.md): Upstream repositories, specifications, and open-source licenses for all icons and tooling.
+- [**Changelog**](docs/CHANGELOG.md): Version history, new capabilities, and release notes.
 
 ---
 
