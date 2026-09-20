@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     png_file = out / "08_supply_chain_rfq_fulfillment.png"
     readme_file = out / "08_supply_chain_rfq_fulfillment_README.md"
 
-    with Diagram("Global Supply Chain RFQ & Sourcing", theme="emerald") as diag:
+    with Diagram("Global Supply Chain RFQ & Sourcing", theme="blueprint") as diag:
         with diag.group("Supply Planning") as g_1:
             demand_plan = diag.add(Shape("demand_plan", "Material Demand Forecast", icon="analytics", horizon="Quarterly Plan"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         demand_plan >> diag.edge("Trigger Requisition", style="solid") >> rfq_portal

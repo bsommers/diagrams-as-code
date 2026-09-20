@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     png_file = out / "10_enterprise_change_management.png"
     readme_file = out / "10_enterprise_change_management_README.md"
 
-    with Diagram("ITSM Enterprise Change Advisory Board (CAB)", theme="blueprint") as diag:
+    with Diagram("ITSM Enterprise Change Advisory Board (CAB)", theme="emerald") as diag:
         with diag.group("RFC Initiation") as g_1:
             engineer = diag.add(Shape("engineer", "Systems Engineer", icon="user", role="Cloud Platform Lead"))
             rfc_doc = diag.add(Shape("rfc_doc", "Request for Change (RFC)", icon="document", type="Critical Kernel Patch"))
@@ -37,9 +37,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         engineer >> diag.edge("Draft RFC Proposal", style="solid") >> rfc_doc

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     png_file = out / "03_mpls_vpn_backbone.png"
     readme_file = out / "03_mpls_vpn_backbone_README.md"
 
-    with Diagram("MPLS Layer 3 VPN Service Provider Backbone", theme="iiot_dark_gold") as diag:
+    with Diagram("MPLS Layer 3 VPN Service Provider Backbone", theme="nord") as diag:
         with diag.group("Customer Site Alpha") as g_1:
             ce1 = diag.add(Shape("ce1", "Customer Router Alpha", icon="router", vrf="VRF-Finance"))
 
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         ce1 >> diag.edge("BGP Peering", style="solid") >> pe1

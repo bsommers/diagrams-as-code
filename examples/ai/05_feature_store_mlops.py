@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     png_file = out / "05_feature_store_mlops.png"
     readme_file = out / "05_feature_store_mlops_README.md"
 
-    with Diagram("Enterprise Feature Store & MLOps Pipeline", theme="blueprint") as diag:
+    with Diagram("Enterprise Feature Store & MLOps Pipeline", theme="cyber_slate") as diag:
         with diag.group("Data Ingestion") as g_1:
             stream_in = diag.add(Shape("stream_in", "Streaming Kafka Topics", icon="queue", rate="250,000 evt/s"))
             batch_in = diag.add(Shape("batch_in", "Batch Parquet Dumps", icon="storage", frequency="Hourly ETL"))
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         stream_in >> diag.edge("Materialize Features", style="solid") >> feast

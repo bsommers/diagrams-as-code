@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "10_high_performance_workstation_storage.png"
     readme_file = out / "10_high_performance_workstation_storage_README.md"
 
-    with Diagram("High-Performance Compute Storage Pipeline", theme="crimson") as diag:
+    with Diagram("High-Performance Compute Storage Pipeline", theme="cyber_slate") as diag:
         with diag.group("Compute Subsystem") as g_1:
             cpu_host = diag.add(Shape("cpu_host", "AMD Threadripper PRO 64-Core", icon="chip", pcie="128 Lanes PCIe Gen5"))
             gpu_accel = diag.add(Shape("gpu_accel", "NVIDIA RTX 6000 Ada GPU", icon="chip", vram="48GB ECC GDDR6"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         cpu_host >> diag.edge("PCIe 5.0 x16", style="solid") >> gpu_accel

@@ -44,6 +44,31 @@ class SVGRenderer:
                 pass
         return self.theme.text
 
+    @staticmethod
+    def wrap_text(text: str, max_chars: int = 15) -> list[str]:
+        """Break label text into visually balanced lines at word boundaries."""
+        if not text:
+            return []
+        words = text.split()
+        if not words:
+            return []
+        lines: list[str] = []
+        curr: list[str] = []
+        curr_len = 0
+        for w in words:
+            addition = len(w) + (1 if curr else 0)
+            if curr_len + addition <= max_chars:
+                curr.append(w)
+                curr_len += addition
+            else:
+                if curr:
+                    lines.append(" ".join(curr))
+                curr = [w]
+                curr_len = len(w)
+        if curr:
+            lines.append(" ".join(curr))
+        return lines
+
     def render(
         self,
         elements: Optional[Sequence[Element]] = None,
@@ -52,51 +77,50 @@ class SVGRenderer:
         width: float = 1200.0,
         height: float = 800.0,
     ) -> str:
-        """Render elements, groups, and edges into an SVG document string."""
+        """Render complete SVG string for provided diagram elements and connections."""
         element_list = list(elements) if elements is not None else []
         group_list = list(groups) if groups is not None else []
         edge_list = list(edges) if edges is not None else []
 
-        # 1. Collect markers for defs
-        arrow_markers: dict[str, str] = {"arrow": self.theme.accent}
-        tail_markers: dict[str, str] = {}
-
-        for e in edge_list:
-            edge_color = e.color or self.theme.edge_color
-            m_id = self._marker_id_for_color(edge_color)
-            if e.arrow_head and m_id not in arrow_markers:
-                arrow_markers[m_id] = edge_color
-            if e.arrow_tail:
-                tail_id = f"{m_id}-tail"
-                tail_markers[tail_id] = edge_color
+        w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
+        h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
 
         lines: list[str] = [
-            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">',
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_val} {h_val}" width="{w_val}" height="{h_val}">',
+
+
             "  <defs>",
+            '    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">',
+            f'      <path d="M 0 1 L 10 5 L 0 9 z" fill="{self.theme.accent}"/>',
+            "    </marker>",
+            '    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">',
+            f'      <path d="M 10 1 L 0 5 L 10 9 z" fill="{self.theme.accent}"/>',
+            "    </marker>",
         ]
 
-        # Render arrowhead markers
-        for m_id, m_color in arrow_markers.items():
-            lines.append(
-                f'    <marker id="{m_id}" viewBox="0 0 10 10" refX="8" refY="5" '
-                f'markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
-            )
-            lines.append(f'      <path d="M 0 1 L 10 5 L 0 9 z" fill="{m_color}"/>')
-            lines.append("    </marker>")
+        # Register dynamic colored arrow markers for distinct edge styles
+        registered_colors = {self.theme.accent}
+        for e in edge_list:
+            c = e.color or self.theme.edge_color
+            if c not in registered_colors:
+                registered_colors.add(c)
+                m_id = self._marker_id_for_color(c)
+                lines.append(
+                    f'    <marker id="{m_id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+                )
+                lines.append(
+                    f'      <path d="M 0 1 L 10 5 L 0 9 z" fill="{c}"/>'
+                )
+                lines.append("    </marker>")
+                lines.append(
+                    f'    <marker id="{m_id}-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">'
+                )
+                lines.append(
+                    f'      <path d="M 10 1 L 0 5 L 10 9 z" fill="{c}"/>'
+                )
+                lines.append("    </marker>")
 
-        # Render arrowtail markers
-        for t_id, t_color in tail_markers.items():
-            lines.append(
-                f'    <marker id="{t_id}" viewBox="0 0 10 10" refX="2" refY="5" '
-                f'markerWidth="6" markerHeight="6" orient="auto">'
-            )
-            lines.append(f'      <path d="M 10 1 L 0 5 L 10 9 z" fill="{t_color}"/>')
-            lines.append("    </marker>")
-
-        # Render shadow filter
-        lines.append(
-            '    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">'
-        )
+        lines.append('    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">')
         lines.append(
             '      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>'
         )
@@ -199,11 +223,20 @@ class SVGRenderer:
             kind_raw = getattr(el, "kind", "box")
             kind = (kind_raw or "box").lower().replace("-", "_")
 
+            label_pos = getattr(el, "label_position", "auto")
+            if label_pos == "auto":
+                label_pos = "bottom" if kind == "icon" else "inside"
+            elif label_pos == "below":
+                label_pos = "bottom"
+
             fill = el.metadata.get("fill", self.theme.node_fill)
             stroke = el.metadata.get("stroke", self.theme.node_stroke)
             stroke_width = float(el.metadata.get("stroke_width", 2.0))
 
-            if kind == "box":
+            if kind == "icon":
+                # Pure icon: no container background box
+                pass
+            elif kind == "box":
                 radius = float(el.metadata.get("radius", 6.0))
                 lines.append(
                     f"    {self.shapes.render_box(b.x, b.y, b.width, b.height, fill, stroke, stroke_width, radius=radius)}"
@@ -238,46 +271,137 @@ class SVGRenderer:
             # Determine text color with proper contrast
             text_color = el.metadata.get("text_color")
             if text_color is None:
-                if fill != self.theme.node_fill:
+                if label_pos == "bottom" or kind == "icon":
+                    text_color = self.theme.text
+                elif fill != self.theme.node_fill:
                     text_color = self._contrast_color(fill)
                 else:
                     text_color = self.theme.text
 
-            # Render embedded icon and label
             icon_name = getattr(el, "icon", None)
-            if icon_name:
+
+            if kind == "icon":
+                # Render pure vector icon centered in bounds
                 icon_size = float(
-                    el.metadata.get(
-                        "icon_size", min(24.0, max(16.0, b.height * 0.4))
-                    )
+                    el.metadata.get("icon_size", min(36.0, max(24.0, min(b.width, b.height) * 0.6)))
                 )
-                icon_color = str(
-                    el.metadata.get("icon_color", self.theme.accent)
-                )
-                if el.label:
-                    icon_x = b.center.x - icon_size / 2.0
-                    icon_y = b.y + max(4.0, (b.height - icon_size - 18.0) / 2.0)
+                icon_color = str(el.metadata.get("icon_color", self.theme.accent))
+                icon_x = b.center.x - icon_size / 2.0
+                icon_y = b.y + max(2.0, (b.height - icon_size) / 2.0)
+                if icon_name:
                     lines.append(
                         f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
                     )
-                    text_y = icon_y + icon_size + 14.0
+                if el.label:
+                    text_y = b.y + b.height + 14.0
                     lines.append(
                         f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
                         f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                        f'font-size="12" font-weight="500">{html.escape(el.label)}</text>'
+                        f'font-size="12" font-weight="600">{html.escape(el.label)}</text>'
                     )
-                else:
+            elif label_pos == "bottom":
+                # Render icon centered inside the container tile, with label below the container
+                if icon_name:
+                    icon_size = float(
+                        el.metadata.get("icon_size", min(28.0, max(18.0, b.height * 0.45)))
+                    )
+                    icon_color = str(el.metadata.get("icon_color", self.theme.accent))
                     icon_x = b.center.x - icon_size / 2.0
                     icon_y = b.center.y - icon_size / 2.0
                     lines.append(
                         f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
                     )
-            elif el.label:
-                lines.append(
-                    f'    <text x="{b.center.x}" y="{b.center.y + 4}" text-anchor="middle" '
-                    f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                    f'font-size="13" font-weight="500">{html.escape(el.label)}</text>'
-                )
+                if el.label:
+                    text_y = b.y + b.height + 14.0
+                    char_budget = max(14, int(max(b.width, 100.0) / 7.0))
+                    label_lines = self.wrap_text(el.label, max_chars=char_budget)
+                    if len(label_lines) <= 1:
+                        lines.append(
+                            f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
+                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
+                            f'font-size="12" font-weight="600">{html.escape(el.label)}</text>'
+                        )
+                    else:
+                        font_size = 11.0
+                        line_h = font_size * 1.25
+                        tspan_parts = [
+                            f'<tspan x="{b.center.x}" dy="{0 if i == 0 else line_h}">{html.escape(line)}</tspan>'
+                            for i, line in enumerate(label_lines)
+                        ]
+                        lines.append(
+                            f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
+                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
+                            f'font-size="{font_size}" font-weight="600">{" ".join(tspan_parts)}</text>'
+                        )
+            else:
+                # label_pos == "inside": Render embedded icon and wrapped label inside the card
+                if icon_name:
+                    icon_size = float(
+                        el.metadata.get("icon_size", min(24.0, max(16.0, b.height * 0.38)))
+                    )
+                    icon_color = str(el.metadata.get("icon_color", self.theme.accent))
+                    if el.label:
+                        char_budget = max(10, int(b.width / 7.2))
+                        label_lines = self.wrap_text(el.label, max_chars=char_budget)
+                        if len(label_lines) <= 1:
+                            icon_x = b.center.x - icon_size / 2.0
+                            icon_y = b.y + max(4.0, (b.height - icon_size - 18.0) / 2.0)
+                            lines.append(
+                                f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
+                            )
+                            text_y = icon_y + icon_size + 14.0
+                            lines.append(
+                                f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
+                                f'fill="{text_color}" font-family="{self.theme.font_family}" '
+                                f'font-size="12" font-weight="500">{html.escape(el.label)}</text>'
+                            )
+                        else:
+                            font_size = 11.0 if len(label_lines) == 2 else 10.0
+                            line_h = font_size * 1.25
+                            total_text_h = len(label_lines) * line_h
+                            icon_x = b.center.x - icon_size / 2.0
+                            icon_y = b.y + max(3.0, (b.height - icon_size - total_text_h - 2.0) / 2.0)
+                            lines.append(
+                                f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
+                            )
+                            text_start_y = icon_y + icon_size + font_size + 1.0
+                            tspan_parts = [
+                                f'<tspan x="{b.center.x}" dy="{0 if i == 0 else line_h}">{html.escape(line)}</tspan>'
+                                for i, line in enumerate(label_lines)
+                            ]
+                            lines.append(
+                                f'    <text x="{b.center.x}" y="{text_start_y}" text-anchor="middle" '
+                                f'fill="{text_color}" font-family="{self.theme.font_family}" '
+                                f'font-size="{font_size}" font-weight="500">{" ".join(tspan_parts)}</text>'
+                            )
+                    else:
+                        icon_x = b.center.x - icon_size / 2.0
+                        icon_y = b.center.y - icon_size / 2.0
+                        lines.append(
+                            f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
+                        )
+                elif el.label:
+                    char_budget = max(10, int(b.width / 7.2))
+                    label_lines = self.wrap_text(el.label, max_chars=char_budget)
+                    if len(label_lines) <= 1:
+                        lines.append(
+                            f'    <text x="{b.center.x}" y="{b.center.y + 4}" text-anchor="middle" '
+                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
+                            f'font-size="13" font-weight="500">{html.escape(el.label)}</text>'
+                        )
+                    else:
+                        font_size = 11.5
+                        line_h = font_size * 1.25
+                        start_y = b.center.y - ((len(label_lines) - 1) * line_h) / 2.0 + 4.0
+                        tspan_parts = [
+                            f'<tspan x="{b.center.x}" dy="{0 if i == 0 else line_h}">{html.escape(line)}</tspan>'
+                            for i, line in enumerate(label_lines)
+                        ]
+                        lines.append(
+                            f'    <text x="{b.center.x}" y="{start_y}" text-anchor="middle" '
+                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
+                            f'font-size="{font_size}" font-weight="500">{" ".join(tspan_parts)}</text>'
+                        )
 
             lines.append("  </g>")
 

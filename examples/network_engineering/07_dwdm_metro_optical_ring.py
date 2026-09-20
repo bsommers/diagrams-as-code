@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     png_file = out / "07_dwdm_metro_optical_ring.png"
     readme_file = out / "07_dwdm_metro_optical_ring_README.md"
 
-    with Diagram("Metro DWDM Optical Transport Ring", theme="blueprint") as diag:
+    with Diagram("Metro DWDM Optical Transport Ring", theme="iiot_light") as diag:
         with diag.group("West Datacenter Node") as g_1:
             roadm_w = diag.add(Shape("roadm_w", "ROADM Metro West", icon="fiber_optic", waves="96 C-Band Channels"))
 
@@ -33,9 +33,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         roadm_w >> diag.edge("Dark Fiber 45km", style="solid") >> roadm_e

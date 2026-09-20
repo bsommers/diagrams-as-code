@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     png_file = out / "08_high_density_ai_compute_pod.png"
     readme_file = out / "08_high_density_ai_compute_pod_README.md"
 
-    with Diagram("High-Density AI Supercomputing Pod", theme="iiot_dark_gold") as diag:
+    with Diagram("High-Density AI Supercomputing Pod", theme="crimson") as diag:
         with diag.group("SuperPOD Racks") as g_1:
             dgx_rack1 = diag.add(Shape("dgx_rack1", "DGX H100 Rack 01", icon="server_rack", compute="8x H100 SXM5 640GB"))
             dgx_rack2 = diag.add(Shape("dgx_rack2", "DGX H100 Rack 02", icon="server_rack", compute="8x H100 SXM5 640GB"))
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         dgx_rack1 >> diag.edge("NVLink 4.0", style="solid") >> nvlink_switch

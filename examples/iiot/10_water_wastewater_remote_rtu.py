@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
     png_file = out / "10_water_wastewater_remote_rtu.png"
     readme_file = out / "10_water_wastewater_remote_rtu_README.md"
 
-    with Diagram("Water & Wastewater Remote RTU Mesh", theme="blueprint") as diag:
+    with Diagram("Water & Wastewater Remote RTU Mesh", theme="cyber_slate") as diag:
         with diag.group("Remote Lift Stations") as g_1:
             pump_sens = diag.add(Shape("pump_sens", "Well Level & Flow Sensor", icon="sensor", sensor="Submersible 4-20mA"))
             solar_rtu = diag.add(Shape("solar_rtu", "Solar Powered RTU", icon="plc", power="Solar / 24V Batt"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         pump_sens >> diag.edge("Analog Input", style="solid") >> solar_rtu

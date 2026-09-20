@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#00E5A3"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
@@ -13,105 +16,105 @@
     <text x="76.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Attacker Vector</text>
   </g>
   <g id="group_2">
-    <rect x="280.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="296.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Decoy VLAN Subnet</text>
+    <rect x="310.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="326.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Decoy VLAN Subnet</text>
   </g>
   <g id="group_3">
-    <rect x="500.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="516.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Deception Controller</text>
+    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="576.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Deception Controller</text>
   </g>
   <g id="group_4">
-    <rect x="720.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="736.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Automated Defense</text>
+    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="826.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Automated Defense</text>
   </g>
-  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="188.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="255.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Brute Force Attempt</text>
+  <rect x="203.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="270.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Brute Force Attempt</text>
 </g>
-  <path d="M 205.0 170.0 L 255.0 170.0 L 255.0 260.0 L 305.0 260.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 170.0 L 270.0 170.0 L 270.0 260.0 L 335.0 260.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="185.0" y="206.0" width="140.0" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="255.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">HTTP Exploit Attempt</text>
+  <rect x="200.0" y="206.0" width="140.0" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="270.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">HTTP Exploit Attempt</text>
 </g>
-  <path d="M 205.0 170.0 L 255.0 170.0 L 255.0 350.0 L 305.0 350.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 170.0 L 270.0 170.0 L 270.0 350.0 L 335.0 350.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="206.7" y="251.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="255.0" y="263.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL Injection</text>
+  <rect x="221.7" y="251.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="270.0" y="263.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL Injection</text>
 </g>
-  <path d="M 425.0 170.0 L 525.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="429.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="475.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Session PCAP</text>
+  <rect x="474.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="520.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Session PCAP</text>
 </g>
-  <path d="M 425.0 260.0 L 475.0 260.0 L 475.0 170.0 L 525.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 260.0 L 520.0 260.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="429.8" y="206.0" width="90.4" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="475.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Payload Dump</text>
+  <rect x="474.8" y="206.0" width="90.4" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="520.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Payload Dump</text>
 </g>
-  <path d="M 425.0 350.0 L 475.0 350.0 L 475.0 170.0 L 525.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="408.1" y="251.0" width="133.8" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="475.0" y="263.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Honeytoken Tripwire</text>
+  <rect x="453.1" y="251.0" width="133.8" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="520.0" y="263.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Honeytoken Tripwire</text>
 </g>
-  <path d="M 645.0 170.0 L 745.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="646.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="695.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Trigger Block</text>
+  <rect x="721.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="770.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Trigger Block</text>
 </g>
   <g id="adversary" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-terminal" transform="translate(133.0, 149.0) scale(1.0)">
+    <g class="icon icon-terminal" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="15" x2="17" y2="15" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="187.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Adversary Terminal</text>
+    <text x="145.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Adversary</tspan> <tspan x="145.0" dy="13.75">Terminal</tspan></text>
   </g>
   <g id="decoy_ssh" filter="url(#shadow)">
-    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-honeypot" transform="translate(353.0, 149.0) scale(1.0)">
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-honeypot" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
   <ellipse cx="12" cy="5" rx="6" ry="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 6 5 C 4 10 4 17 7 20 C 9 22 15 22 17 20 C 20 17 20 10 18 5" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 9 10 C 11 12 13 12 15 10" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
 </g>
-    <text x="365.0" y="187.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Decoy SSH Bastion</text>
+    <text x="395.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Decoy SSH</tspan> <tspan x="395.0" dy="13.75">Bastion</tspan></text>
   </g>
   <g id="decoy_web" filter="url(#shadow)">
-    <rect x="305.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-honeypot" transform="translate(353.0, 239.0) scale(1.0)">
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-honeypot" transform="translate(383.6, 233.85) scale(0.9500000000000001)">
   <ellipse cx="12" cy="5" rx="6" ry="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 6 5 C 4 10 4 17 7 20 C 9 22 15 22 17 20 C 20 17 20 10 18 5" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 9 10 C 11 12 13 12 15 10" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
 </g>
-    <text x="365.0" y="277.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Decoy Admin Portal</text>
+    <text x="395.0" y="268.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Decoy Admin</tspan> <tspan x="395.0" dy="13.75">Portal</tspan></text>
   </g>
   <g id="decoy_db" filter="url(#shadow)">
-    <rect x="305.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-honeypot" transform="translate(353.0, 329.0) scale(1.0)">
+    <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-honeypot" transform="translate(383.6, 323.85) scale(0.9500000000000001)">
   <ellipse cx="12" cy="5" rx="6" ry="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 6 5 C 4 10 4 17 7 20 C 9 22 15 22 17 20 C 20 17 20 10 18 5" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 9 10 C 11 12 13 12 15 10" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
 </g>
-    <text x="365.0" y="367.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Honeytoken SQL DB</text>
+    <text x="395.0" y="358.65000000000003" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Honeytoken SQL</tspan> <tspan x="395.0" dy="13.75">DB</tspan></text>
   </g>
   <g id="honey_siem" filter="url(#shadow)">
-    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-siem" transform="translate(573.0, 149.0) scale(1.0)">
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-siem" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <circle cx="12" cy="12" r="5" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-dasharray="2 2"/>
   <line x1="12" y1="12" x2="18" y2="8" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <circle cx="12" cy="12" r="2" fill="#00E5A3"/>
 </g>
-    <text x="585.0" y="187.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Deception Telemetry</text>
+    <text x="645.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Deception</tspan> <tspan x="645.0" dy="13.75">Telemetry</tspan></text>
   </g>
   <g id="blackhole" filter="url(#shadow)">
-    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-lock" transform="translate(793.0, 149.0) scale(1.0)">
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-lock" transform="translate(883.6, 143.85) scale(0.9500000000000001)">
   <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <circle cx="12" cy="16" r="1.5" fill="#00E5A3"/>
 </g>
-    <text x="805.0" y="187.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">BGP Flowspec Sinkhole</text>
+    <text x="895.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">BGP Flowspec</tspan> <tspan x="895.0" dy="13.75">Sinkhole</tspan></text>
   </g>
 </svg>

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "08_vdi_thin_client_fleet.png"
     readme_file = out / "08_vdi_thin_client_fleet_README.md"
 
-    with Diagram("Enterprise Virtual Desktop Infrastructure (VDI)", theme="blueprint") as diag:
+    with Diagram("Enterprise Virtual Desktop Infrastructure (VDI)", theme="monochrome") as diag:
         with diag.group("Office Floor") as g_1:
             thin1 = diag.add(Shape("thin1", "Dell Wyse Thin Client 01", icon="laptop", os="ThinOS"))
             thin2 = diag.add(Shape("thin2", "Dell Wyse Thin Client 02", icon="laptop", os="ThinOS"))
@@ -34,8 +34,8 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         thin1 >> diag.edge("Blast Extreme :443", style="solid") >> broker

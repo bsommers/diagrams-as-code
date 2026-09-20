@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     png_file = out / "02_san_storage_fabric.png"
     readme_file = out / "02_san_storage_fabric_README.md"
 
-    with Diagram("Fibre Channel Storage Area Network (SAN)", theme="blueprint") as diag:
+    with Diagram("Fibre Channel Storage Area Network (SAN)", theme="iiot_dark_gold") as diag:
         with diag.group("Compute Hosts") as g_1:
             host_app = diag.add(Shape("host_app", "Enterprise Application Host", icon="server", hba="Dual 32G FC HBAs"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         host_app >> diag.edge("32G FC Link", style="solid") >> fc_switch_a

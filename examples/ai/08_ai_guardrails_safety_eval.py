@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     png_file = out / "08_ai_guardrails_safety_eval.png"
     readme_file = out / "08_ai_guardrails_safety_eval_README.md"
 
-    with Diagram("AI Safety Guardrails & Jailbreak Defense", theme="cyber_slate") as diag:
+    with Diagram("AI Safety Guardrails & Jailbreak Defense", theme="pastel_light") as diag:
         with diag.group("Ingress Gate") as g_1:
             user_input = diag.add(Shape("user_input", "Untrusted User Prompt", icon="user", risk="Potential Jailbreak"))
 
@@ -36,10 +36,10 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
-        g_5.right_of(g_4, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
+        g_5.right_of(g_4, margin=80)
 
         # Establish inter-element connections with protocol annotations
         user_input >> diag.edge("Raw Prompt", style="solid") >> guard_in

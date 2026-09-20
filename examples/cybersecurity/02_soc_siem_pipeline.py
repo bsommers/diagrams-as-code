@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "02_soc_siem_pipeline.png"
     readme_file = out / "02_soc_siem_pipeline_README.md"
 
-    with Diagram("SOC & SIEM Telemetry Analytics Pipeline", theme="cyber_slate") as diag:
+    with Diagram("SOC & SIEM Telemetry Analytics Pipeline", theme="crimson") as diag:
         with diag.group("Telemetry Sources") as g_1:
             edr = diag.add(Shape("edr", "Endpoint EDR Fleet", icon="malware_scan", agents="5000 Nodes"))
             net_fw = diag.add(Shape("net_fw", "Firewall Syslog", icon="firewall", protocol="Syslog/TLS"))
@@ -36,8 +36,8 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         edr >> diag.edge("gRPC Telemetry", style="solid") >> aggregator

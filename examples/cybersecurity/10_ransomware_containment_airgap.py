@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "10_ransomware_containment_airgap.png"
     readme_file = out / "10_ransomware_containment_airgap_README.md"
 
-    with Diagram("Ransomware Defense & Optical Air-Gapped Vault", theme="crimson") as diag:
+    with Diagram("Ransomware Defense & Optical Air-Gapped Vault", theme="monochrome") as diag:
         with diag.group("Primary Datacenter") as g_1:
             prod_san = diag.add(Shape("prod_san", "Production SAN Volume", icon="storage_array", storage="NVMe-oF"))
             backup_mgr = diag.add(Shape("backup_mgr", "Backup Master Node", icon="server", job="Continuous Snapshot"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         prod_san >> diag.edge("Snapshot Export", style="solid") >> backup_mgr

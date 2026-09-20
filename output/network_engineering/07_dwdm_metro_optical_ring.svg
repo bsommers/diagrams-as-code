@@ -1,104 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0066CC"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#0066CC"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
     </filter>
   </defs>
-  <rect width="100%" height="100%" fill="#0B1E36"/>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">West Datacenter Node</text>
+    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">West Datacenter Node</text>
   </g>
   <g id="group_2">
-    <rect x="280.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="296.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">East Datacenter Node</text>
+    <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <text x="326.0" y="104.0" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">East Datacenter Node</text>
   </g>
   <g id="group_3">
-    <rect x="500.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="516.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">South Aggregation Hub</text>
+    <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <text x="576.0" y="104.0" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">South Aggregation Hub</text>
   </g>
   <g id="group_4">
-    <rect x="720.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="736.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Client Framing Tier</text>
+    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <text x="826.0" y="104.0" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Client Framing Tier</text>
   </g>
-  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="200.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="255.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Dark Fiber 45km</text>
+  <rect x="215.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="270.0" y="173.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Dark Fiber 45km</text>
 </g>
-  <path d="M 425.0 170.0 L 525.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="420.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="475.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Dark Fiber 60km</text>
+  <rect x="465.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="520.0" y="173.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Dark Fiber 60km</text>
 </g>
-  <path d="M 525.0 170.0 L 205.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 585.0 170.0 L 205.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="310.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="365.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Dark Fiber 38km</text>
+  <rect x="340.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="395.0" y="173.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Dark Fiber 38km</text>
 </g>
-  <path d="M 585.0 200.0 L 585.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="518.1" y="206.0" width="133.8" height="18.0" rx="9.0" fill="#133663" />
-  <text x="585.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Structured Patching</text>
+  <rect x="578.1" y="206.0" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="645.0" y="218.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Structured Patching</text>
 </g>
-  <path d="M 645.0 260.0 L 695.0 260.0 L 695.0 170.0 L 745.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705.0 260.0 L 770.0 260.0 L 770.0 170.0 L 835.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="640.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="695.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Client Hand-off</text>
+  <rect x="715.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="770.0" y="218.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Client Hand-off</text>
 </g>
   <g id="roadm_w" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-fiber_optic" transform="translate(133.0, 149.0) scale(1.0)">
-  <path d="M 2 17 C 8 17 9 7 15 7 H 22" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M 2 20 C 10 20 11 12 17 12 H 22" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <circle cx="21" cy="7" r="1.5" fill="#00D2FF"/>
-  <circle cx="21" cy="12" r="1.2" fill="#00D2FF"/>
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <g class="icon icon-fiber_optic" transform="translate(133.6, 149.6) scale(0.9500000000000001)">
+  <path d="M 2 17 C 8 17 9 7 15 7 H 22" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 2 20 C 10 20 11 12 17 12 H 22" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="21" cy="7" r="1.5" fill="#0066CC"/>
+  <circle cx="21" cy="12" r="1.2" fill="#0066CC"/>
 </g>
-    <text x="145.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">ROADM Metro West</text>
+    <text x="145.0" y="186.4" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">ROADM Metro West</text>
   </g>
   <g id="roadm_e" filter="url(#shadow)">
-    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-fiber_optic" transform="translate(353.0, 149.0) scale(1.0)">
-  <path d="M 2 17 C 8 17 9 7 15 7 H 22" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M 2 20 C 10 20 11 12 17 12 H 22" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <circle cx="21" cy="7" r="1.5" fill="#00D2FF"/>
-  <circle cx="21" cy="12" r="1.2" fill="#00D2FF"/>
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <g class="icon icon-fiber_optic" transform="translate(383.6, 149.6) scale(0.9500000000000001)">
+  <path d="M 2 17 C 8 17 9 7 15 7 H 22" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 2 20 C 10 20 11 12 17 12 H 22" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="21" cy="7" r="1.5" fill="#0066CC"/>
+  <circle cx="21" cy="12" r="1.2" fill="#0066CC"/>
 </g>
-    <text x="365.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">ROADM Metro East</text>
+    <text x="395.0" y="186.4" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">ROADM Metro East</text>
   </g>
   <g id="roadm_s" filter="url(#shadow)">
-    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-fiber_optic" transform="translate(573.0, 149.0) scale(1.0)">
-  <path d="M 2 17 C 8 17 9 7 15 7 H 22" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M 2 20 C 10 20 11 12 17 12 H 22" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <circle cx="21" cy="7" r="1.5" fill="#00D2FF"/>
-  <circle cx="21" cy="12" r="1.2" fill="#00D2FF"/>
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <g class="icon icon-fiber_optic" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+  <path d="M 2 17 C 8 17 9 7 15 7 H 22" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 2 20 C 10 20 11 12 17 12 H 22" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="21" cy="7" r="1.5" fill="#0066CC"/>
+  <circle cx="21" cy="12" r="1.2" fill="#0066CC"/>
 </g>
-    <text x="585.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">ROADM Metro South</text>
+    <text x="645.0" y="178.65" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">ROADM Metro</tspan> <tspan x="645.0" dy="13.75">South</tspan></text>
   </g>
   <g id="patch_bay" filter="url(#shadow)">
-    <rect x="525.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-patch_panel" transform="translate(573.0, 239.0) scale(1.0)">
-  <rect x="2" y="7" width="20" height="10" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <rect x="4" y="10" width="3" height="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <rect x="8.5" y="10" width="3" height="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <rect x="13" y="10" width="3" height="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <rect x="17" y="10" width="3" height="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <g class="icon icon-patch_panel" transform="translate(633.6, 233.85) scale(0.9500000000000001)">
+  <rect x="2" y="7" width="20" height="10" rx="1" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+  <rect x="4" y="10" width="3" height="4" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+  <rect x="8.5" y="10" width="3" height="4" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+  <rect x="13" y="10" width="3" height="4" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+  <rect x="17" y="10" width="3" height="4" fill="none" stroke="#0066CC" stroke-width="2.0"/>
 </g>
-    <text x="585.0" y="277.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Optical Patch Panel</text>
+    <text x="645.0" y="268.65" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Optical Patch</tspan> <tspan x="645.0" dy="13.75">Panel</tspan></text>
   </g>
   <g id="transponder" filter="url(#shadow)">
-    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(793.0, 149.0) scale(1.0)">
-  <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <g class="icon icon-switch" transform="translate(883.6, 149.6) scale(0.9500000000000001)">
+  <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+  <line x1="6" y1="10" x2="13" y2="10" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="11,8 13,10 11,12" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="18" y1="14" x2="11" y2="14" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="13,12 11,14 13,16" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="805.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">100G Muxponder</text>
+    <text x="895.0" y="186.4" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">100G Muxponder</text>
   </g>
 </svg>

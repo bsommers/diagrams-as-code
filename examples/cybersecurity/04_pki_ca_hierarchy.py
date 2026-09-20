@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "04_pki_ca_hierarchy.png"
     readme_file = out / "04_pki_ca_hierarchy_README.md"
 
-    with Diagram("Public Key Infrastructure (PKI) Certificate Hierarchy", theme="blueprint") as diag:
+    with Diagram("Public Key Infrastructure (PKI) Certificate Hierarchy", theme="high_contrast") as diag:
         with diag.group("Tier 0 Root Trust") as g_1:
             root_ca = diag.add(Shape("root_ca", "Offline Root CA", icon="vault", key="RSA 4096 / HSM", state="Air-Gapped"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         root_ca >> diag.edge("Signs Sub-CA", style="solid") >> tls_ca

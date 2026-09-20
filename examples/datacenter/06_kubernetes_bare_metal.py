@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     png_file = out / "06_kubernetes_bare_metal.png"
     readme_file = out / "06_kubernetes_bare_metal_README.md"
 
-    with Diagram("Bare-Metal Kubernetes High Availability", theme="emerald") as diag:
+    with Diagram("Bare-Metal Kubernetes High Availability", theme="nord") as diag:
         with diag.group("Load Balancers") as g_1:
             vip_lb = diag.add(Shape("vip_lb", "Keepalived / HAProxy VIP", icon="api_gateway", virtual_ip="10.0.0.10:6443"))
 
@@ -37,9 +37,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         vip_lb >> diag.edge("API Request", style="solid") >> master1

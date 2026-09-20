@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "03_zero_trust_ztna.png"
     readme_file = out / "03_zero_trust_ztna_README.md"
 
-    with Diagram("Zero Trust Network Access (ZTNA) Architecture", theme="nord") as diag:
+    with Diagram("Zero Trust Network Access (ZTNA) Architecture", theme="high_contrast") as diag:
         with diag.group("Endpoint Tier") as g_1:
             employee = diag.add(Shape("employee", "Remote Employee", icon="user", auth="MFA Challenge"))
             device = diag.add(Shape("device", "Managed Laptop", icon="laptop", posture="EDR Healthy"))
@@ -34,8 +34,8 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         employee >> diag.edge("Sign-In Request", style="solid") >> idp

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "03_plc_industrial_io.png"
     readme_file = out / "03_plc_industrial_io_README.md"
 
-    with Diagram("Industrial PLC Hardware & IO Subsystem", theme="iiot_dark_gold") as diag:
+    with Diagram("Industrial PLC Hardware & IO Subsystem", theme="blueprint") as diag:
         with diag.group("Control CPU") as g_1:
             plc_cpu = diag.add(Shape("plc_cpu", "Siemens S7-1500 PLC", icon="plc", firmware="v3.1", cycle="2ms Scan"))
 
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         di_module >> diag.edge("Backplane Bus", style="solid") >> plc_cpu

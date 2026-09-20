@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     png_file = out / "07_disaster_recovery_datacenter_pair.png"
     readme_file = out / "07_disaster_recovery_datacenter_pair_README.md"
 
-    with Diagram("Metro Disaster Recovery Datacenter Pair", theme="monochrome") as diag:
+    with Diagram("Metro Disaster Recovery Datacenter Pair", theme="crimson") as diag:
         with diag.group("East Datacenter (Active)") as g_1:
             dc_east_compute = diag.add(Shape("dc_east_compute", "Primary DC Compute Farm", icon="cluster", vms="2,500 Production VMs"))
             dc_east_san = diag.add(Shape("dc_east_san", "Primary All-Flash Array", icon="storage_array", rpo="Zero Data Loss"))
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         dc_east_compute >> diag.edge("SAN Fiber Channel", style="solid") >> dc_east_san

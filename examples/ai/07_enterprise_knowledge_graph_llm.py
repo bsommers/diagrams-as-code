@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     png_file = out / "07_enterprise_knowledge_graph_llm.png"
     readme_file = out / "07_enterprise_knowledge_graph_llm_README.md"
 
-    with Diagram("GraphRAG & Knowledge Graph Augmented LLM", theme="monochrome") as diag:
+    with Diagram("GraphRAG & Knowledge Graph Augmented LLM", theme="pastel_light") as diag:
         with diag.group("Source Corpus") as g_1:
             raw_corpus = diag.add(Shape("raw_corpus", "Unstructured PDF / Confluence", icon="document", volume="100,000 Documents"))
 
@@ -36,10 +36,10 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
-        g_5.right_of(g_4, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
+        g_5.right_of(g_4, margin=80)
 
         # Establish inter-element connections with protocol annotations
         raw_corpus >> diag.edge("Document Chunks", style="solid") >> extractor

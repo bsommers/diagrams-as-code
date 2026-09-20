@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "06_mobile_client_sync.png"
     readme_file = out / "06_mobile_client_sync_README.md"
 
-    with Diagram("Mobile Offline-First Database Sync", theme="emerald") as diag:
+    with Diagram("Mobile Offline-First Database Sync", theme="nord") as diag:
         with diag.group("Mobile Client") as g_1:
             mobile_app = diag.add(Shape("mobile_app", "Field Technician App", icon="mobile", os="iOS / Android React Native"))
             sqlite = diag.add(Shape("sqlite", "Encrypted SQLite DB (SQLCipher)", icon="database", encryption="256-bit AES"))
@@ -31,7 +31,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
+        g_2.right_of(g_1, margin=80)
 
         # Establish inter-element connections with protocol annotations
         mobile_app >> diag.edge("Local CRUD Queries", style="solid") >> sqlite

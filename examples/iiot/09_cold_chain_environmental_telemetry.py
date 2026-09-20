@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
     png_file = out / "09_cold_chain_environmental_telemetry.png"
     readme_file = out / "09_cold_chain_environmental_telemetry_README.md"
 
-    with Diagram("Cold Chain Environmental Monitoring", theme="nord") as diag:
+    with Diagram("Cold Chain Environmental Monitoring", theme="cyber_slate") as diag:
         with diag.group("Refrigerated Zones") as g_1:
             temp_probe1 = diag.add(Shape("temp_probe1", "Freezer Probe (-30C)", icon="sensor", accuracy="+-0.1C"))
             temp_probe2 = diag.add(Shape("temp_probe2", "Chiller Probe (+4C)", icon="sensor", accuracy="+-0.2C"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         temp_probe1 >> diag.edge("LoRa Wireless", style="solid") >> lora_gw

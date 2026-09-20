@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     png_file = out / "05_microservices_service_mesh.png"
     readme_file = out / "05_microservices_service_mesh_README.md"
 
-    with Diagram("Microservices Service Mesh Architecture", theme="iiot_dark_gold") as diag:
+    with Diagram("Microservices Service Mesh Architecture", theme="nord") as diag:
         with diag.group("Edge Routing") as g_1:
             ingress = diag.add(Shape("ingress", "Ingress Envoy Gateway", icon="api_gateway", protocol="HTTP/2 gRPC"))
 
@@ -34,8 +34,8 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         ingress >> diag.edge("Validate JWT", style="solid") >> auth_svc

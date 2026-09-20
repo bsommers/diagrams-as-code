@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "04_dual_homed_edge_gateway.png"
     readme_file = out / "04_dual_homed_edge_gateway_README.md"
 
-    with Diagram("Dual-Homed Industrial Edge Gateway", theme="cyber_slate") as diag:
+    with Diagram("Dual-Homed Industrial Edge Gateway", theme="blueprint") as diag:
         with diag.group("OT Factory Floor") as g_1:
             field_sensors = diag.add(Shape("field_sensors", "RS-485 Modbus RTU Slaves", icon="sensor", baud="115200 bps"))
 
@@ -33,9 +33,9 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         field_sensors >> diag.edge("Serial RS-485", style="solid") >> edge_ipc

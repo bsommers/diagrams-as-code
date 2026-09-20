@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     png_file = out / "09_radius_802_1x_nac.png"
     readme_file = out / "09_radius_802_1x_nac_README.md"
 
-    with Diagram("802.1X Network Access Control (NAC) & RADIUS", theme="nord") as diag:
+    with Diagram("802.1X Network Access Control (NAC) & RADIUS", theme="cyber_slate") as diag:
         with diag.group("Supplicant Endpoint") as g_1:
             supplicant = diag.add(Shape("supplicant", "Corporate Laptop", icon="laptop", auth="EAP-TLS Certificate"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         supplicant >> diag.edge("EAPoL-Start", style="solid") >> auth_sw

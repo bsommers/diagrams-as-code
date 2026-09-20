@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "08_ids_ips_inline_inspection.png"
     readme_file = out / "08_ids_ips_inline_inspection_README.md"
 
-    with Diagram("Inline IDS/IPS Deep Packet Inspection", theme="iiot_dark_gold") as diag:
+    with Diagram("Inline IDS/IPS Deep Packet Inspection", theme="cyber_slate") as diag:
         with diag.group("Perimeter Ingress") as g_1:
             border_rtr = diag.add(Shape("border_rtr", "Border Transit Router", icon="core_router", bandwidth="100 Gbps"))
 
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         border_rtr >> diag.edge("Raw Ingress", style="solid") >> npb

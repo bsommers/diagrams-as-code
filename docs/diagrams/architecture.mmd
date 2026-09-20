@@ -1,0 +1,50 @@
+flowchart TD
+    classDef client fill:#3B4252,stroke:#88C0D0,stroke-width:2px,color:#ECEFF4
+    classDef core fill:#2E3440,stroke:#81A1C1,stroke-width:2px,color:#ECEFF4
+    classDef solver fill:#434C5E,stroke:#EBCB8B,stroke-width:2px,color:#ECEFF4
+    classDef output fill:#4C566A,stroke:#A3BE8C,stroke-width:2px,color:#ECEFF4
+
+    subgraph UserSpace["User Layer"]
+        Script["User Architecture Script<br/>(main.py / examples/*.py)"]:::client
+    end
+
+    subgraph DOM["Declarative Object Model"]
+        Diagram["Diagram Context Manager<br/>(diagram.py)"]:::core
+        Elements["Shapes & Elements<br/>(elements.py)"]:::core
+        Groups["Hierarchical Groups<br/>(groups.py)"]:::core
+        Edges["Directed Edges & Ports<br/>(connections.py)"]:::core
+    end
+
+    subgraph SolverEngine["Layout & Routing Engine"]
+        Solver["Topological Constraint Solver<br/>(constraints.py)"]:::solver
+        AutoFrame["Viewport Auto-Framing<br/>(Diagram.solve)"]:::solver
+        Router["Orthogonal Manhattan Router<br/>(router.py)"]:::solver
+    end
+
+    subgraph RenderEngine["Output Generation"]
+        SVGRenderer["SVG Vector Renderer<br/>(renderer_svg.py)"]:::output
+        ThemeEngine["Theme Palette Engine<br/>(theme.py)"]:::output
+        ShapeLib["Shape & Icon Library<br/>(shapes.py)"]:::output
+        BOM["Living BOM Generator<br/>(bom.py)"]:::output
+        Resvg["resvg-py Rasterizer<br/>(render_png)"]:::output
+    end
+
+    Script --> Diagram
+    Diagram --> Elements
+    Diagram --> Groups
+    Diagram --> Edges
+
+    Diagram --> Solver
+    Solver --> AutoFrame
+    AutoFrame --> Router
+
+    Router --> SVGRenderer
+    ThemeEngine --> SVGRenderer
+    ShapeLib --> SVGRenderer
+    Diagram --> BOM
+
+    SVGRenderer --> SVGFile["SVG Vector (.svg)"]
+    SVGRenderer --> Resvg
+    Resvg --> PNGFile["Rasterized PNG (.png)"]
+    BOM --> MDFile["Markdown BOM (_README.md)"]
+    BOM --> JSONFile["JSON BOM (.json)"]

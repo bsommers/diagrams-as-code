@@ -1,115 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
     </marker>
-    <marker id="arrow-27272A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#27272A"/>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#00D2FF"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
     </filter>
   </defs>
-  <rect width="100%" height="100%" fill="#FAFAFA"/>
+  <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Customer Portal</text>
+    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Customer Portal</text>
   </g>
   <g id="group_2">
-    <rect x="280.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="296.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Underwriting Core</text>
+    <rect x="310.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="326.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Underwriting Core</text>
   </g>
   <g id="group_3">
-    <rect x="500.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="516.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Contract Stage</text>
+    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="576.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Contract Stage</text>
   </g>
   <g id="group_4">
-    <rect x="720.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="736.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Disbursement</text>
+    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="826.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Disbursement</text>
   </g>
-  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="191.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="255.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Submit Application</text>
+  <rect x="206.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <text x="270.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Submit Application</text>
 </g>
-  <path d="M 365.0 200.0 L 365.0 230.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="310.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="365.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verify Identity</text>
+  <rect x="340.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#133663" />
+  <text x="395.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verify Identity</text>
 </g>
-  <path d="M 365.0 290.0 L 365.0 320.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 395.0 290.0 L 395.0 320.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="307.4" y="296.0" width="115.2" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="365.0" y="308.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Feed Credit Data</text>
+  <rect x="337.4" y="296.0" width="115.2" height="18.0" rx="9.0" fill="#133663" />
+  <text x="395.0" y="308.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Feed Credit Data</text>
 </g>
-  <path d="M 425.0 350.0 L 475.0 350.0 L 475.0 170.0 L 525.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="395.7" y="251.0" width="158.6" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="475.0" y="263.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Generate Approved Terms</text>
+  <rect x="440.7" y="251.0" width="158.6" height="18.0" rx="9.0" fill="#133663" />
+  <text x="520.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Generate Approved Terms</text>
 </g>
-  <path d="M 645.0 170.0 L 745.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="631.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="695.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Executed Signature</text>
+  <rect x="706.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <text x="770.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Executed Signature</text>
 </g>
-  <path d="M 745.0 170.0 L 205.0 170.0" fill="none" stroke="#27272A" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-27272A)" />
+  <path d="M 835.0 170.0 L 205.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="429.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="475.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fund Account</text>
+  <rect x="474.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#133663" />
+  <text x="520.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fund Account</text>
 </g>
   <g id="applicant" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-user" transform="translate(133.0, 149.0) scale(1.0)">
-  <circle cx="12" cy="7" r="4" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-user" transform="translate(133.6, 149.6) scale(0.9500000000000001)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="187.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Loan Applicant</text>
+    <text x="145.0" y="186.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Loan Applicant</text>
   </g>
   <g id="kyc_aml" filter="url(#shadow)">
-    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-shield" transform="translate(353.0, 149.0) scale(1.0)">
-  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linejoin="round"/>
-  <polyline points="9,12 11,14 15,10" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-shield" transform="translate(383.6, 143.0) scale(0.9500000000000001)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="365.0" y="187.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Identity Verification (KYC)</text>
+    <text x="395.0" y="176.8" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.0" font-weight="500"><tspan x="395.0" dy="0">Identity</tspan> <tspan x="395.0" dy="12.5">Verification</tspan> <tspan x="395.0" dy="12.5">(KYC)</tspan></text>
   </g>
   <g id="credit_score" filter="url(#shadow)">
-    <rect x="305.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-analytics" transform="translate(353.0, 239.0) scale(1.0)">
-  <line x1="4" y1="20" x2="20" y2="20" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="4" y1="4" x2="4" y2="20" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="7" y="12" width="3" height="8" rx="0.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <rect x="12" y="8" width="3" height="12" rx="0.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <rect x="17" y="4" width="3" height="16" rx="0.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-analytics" transform="translate(383.6, 233.85) scale(0.9500000000000001)">
+  <line x1="4" y1="20" x2="20" y2="20" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="4" y1="4" x2="4" y2="20" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="7" y="12" width="3" height="8" rx="0.5" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <rect x="12" y="8" width="3" height="12" rx="0.5" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <rect x="17" y="4" width="3" height="16" rx="0.5" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
 </g>
-    <text x="365.0" y="277.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Credit Bureau Pull</text>
+    <text x="395.0" y="268.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Credit Bureau</tspan> <tspan x="395.0" dy="13.75">Pull</tspan></text>
   </g>
   <g id="rule_engine" filter="url(#shadow)">
-    <rect x="305.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-decision" transform="translate(353.0, 329.0) scale(1.0)">
-  <path d="M 12 2 L 21 12 L 12 22 L 3 12 Z" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="12" y1="8" x2="12" y2="13" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <circle cx="12" cy="16" r="1" fill="#18181B"/>
+    <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-decision" transform="translate(383.6, 323.85) scale(0.9500000000000001)">
+  <path d="M 12 2 L 21 12 L 12 22 L 3 12 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
+  <line x1="12" y1="8" x2="12" y2="13" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="12" cy="16" r="1" fill="#00D2FF"/>
 </g>
-    <text x="365.0" y="367.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Automated Decision Engine</text>
+    <text x="395.0" y="358.65000000000003" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Automated</tspan> <tspan x="395.0" dy="13.75">Decision Engine</tspan></text>
   </g>
   <g id="esign" filter="url(#shadow)">
-    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-document" transform="translate(573.0, 149.0) scale(1.0)">
-  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linejoin="round"/>
-  <polyline points="14,2 14,8 20,8" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <line x1="8" y1="13" x2="16" y2="13" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="8" y1="17" x2="14" y2="17" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-document" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="585.0" y="187.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">DocuSign Digital Promissory Note</text>
+    <text x="645.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">DocuSign Digital</tspan> <tspan x="645.0" dy="13.75">Promissory Note</tspan></text>
   </g>
   <g id="ach_wire" filter="url(#shadow)">
-    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-storage" transform="translate(793.0, 149.0) scale(1.0)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#18181B" stroke-width="2.0"/>
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(883.6, 143.85) scale(0.9500000000000001)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
 </g>
-    <text x="805.0" y="187.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Core Banking ACH Disbursement</text>
+    <text x="895.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">Core Banking ACH</tspan> <tspan x="895.0" dy="13.75">Disbursement</tspan></text>
   </g>
 </svg>

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     png_file = out / "03_cdn_multi_region_edge.png"
     readme_file = out / "03_cdn_multi_region_edge_README.md"
 
-    with Diagram("Global Edge CDN & Origin Distribution", theme="nord") as diag:
+    with Diagram("Global Edge CDN & Origin Distribution", theme="solarized_light") as diag:
         with diag.group("Global Users") as g_1:
             user_na = diag.add(Shape("user_na", "North America Clients", icon="user", latency="<15ms"))
             user_eu = diag.add(Shape("user_eu", "Europe Clients", icon="user", latency="<20ms"))
@@ -37,9 +37,9 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         user_na >> diag.edge("DNS Query", style="solid") >> dns

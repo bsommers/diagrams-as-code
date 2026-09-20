@@ -124,6 +124,7 @@ class Shape(Element):
         height: float = 60.0,
         kind: str = "box",
         icon: Optional[str] = None,
+        label_position: str = "auto",
         metadata: Optional[dict[str, Any]] = None,
         **kwargs: Any,
     ) -> None:
@@ -137,6 +138,8 @@ class Shape(Element):
         )
         self.kind = kind
         self.icon = icon
+        self.label_position = label_position
+
 
     def at(
         self, x: float, y: float, anchor: Union[Anchor, str] = Anchor.TOP_LEFT

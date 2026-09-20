@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "05_edr_threat_hunting.png"
     readme_file = out / "05_edr_threat_hunting_README.md"
 
-    with Diagram("Endpoint Detection & Threat Hunting Grid", theme="crimson") as diag:
+    with Diagram("Endpoint Detection & Threat Hunting Grid", theme="dracula") as diag:
         with diag.group("Managed Endpoints") as g_1:
             win_host = diag.add(Shape("win_host", "Finance Desktop", icon="laptop", os="Windows 11"))
             linux_srv = diag.add(Shape("linux_srv", "Production Server", icon="server", os="RHEL 9"))
@@ -36,8 +36,8 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         win_host >> diag.edge("Process Events", style="solid") >> sensor_hub

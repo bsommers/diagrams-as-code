@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "09_scada_hmi_control_station.png"
     readme_file = out / "09_scada_hmi_control_station_README.md"
 
-    with Diagram("SCADA Dual-Console Operator Control Station", theme="iiot_dark_gold") as diag:
+    with Diagram("SCADA Dual-Console Operator Control Station", theme="cyber_slate") as diag:
         with diag.group("Control Room") as g_1:
             hmi_left = diag.add(Shape("hmi_left", "Primary Operator Touchscreen", icon="dashboard", display="32-inch Industrial Touch"))
             hmi_right = diag.add(Shape("hmi_right", "Secondary Alarm Monitor", icon="dashboard", display="32-inch High Contrast"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         hmi_left >> diag.edge("OPC UA Graphics", style="solid") >> scada_pri

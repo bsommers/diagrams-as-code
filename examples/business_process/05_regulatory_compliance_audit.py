@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     png_file = out / "05_regulatory_compliance_audit.png"
     readme_file = out / "05_regulatory_compliance_audit_README.md"
 
-    with Diagram("Continuous SOC2 & ISO 27001 Audit Process", theme="blueprint") as diag:
+    with Diagram("Continuous SOC2 & ISO 27001 Audit Process", theme="pastel_light") as diag:
         with diag.group("Audit Boundary") as g_1:
             cloud_env = diag.add(Shape("cloud_env", "AWS / Azure Infrastructure", icon="cloud", accounts="12 Production Accounts"))
 
@@ -36,10 +36,10 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
-        g_5.right_of(g_4, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
+        g_5.right_of(g_4, margin=80)
 
         # Establish inter-element connections with protocol annotations
         cloud_env >> diag.edge("Read API Configs", style="solid") >> evidence_bot

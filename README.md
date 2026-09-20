@@ -1,71 +1,122 @@
-# Industrial IoT (IIoT) Diagrams-as-Code
+# Diagrams-as-Code
 
-A pure-Python, zero-Graphviz directed diagrams engine tailored for Industrial IoT, edge computing, and enterprise Unified Namespace (UNS) architectures.
+[![Tests Passing](https://img.shields.io/badge/tests-227%20passed-success)](tests/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
+[![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
+[![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
+[![Themes](https://img.shields.io/badge/themes-13%20palettes-orange)](src/diagrams_as_code/theme.py)
+[![Vector Icons](https://img.shields.io/badge/icons-59%20SVG-informational)](icons/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-## Reference Architecture
+A pure-Python declarative vector diagramming framework. Generate publication-quality architecture diagrams, high-resolution rasterized images, and living Bill of Materials (BOM) documentation from code — with **zero Graphviz**, **zero Cairo**, and **zero external C-library runtime dependencies**.
 
-![Architecture Diagram](output/main_architecture.svg)
+---
+
+## Reference Architecture Preview
+
+![Reference Architecture](output/main_architecture.svg)
+
+---
 
 ## Key Features
 
-- **Pure-Python & Lightweight**: No Graphviz, Cairo, or external C-library runtime dependencies required for SVG generation.
-- **Decoupled Architecture**: Elements exist independently of canvas layout; position constraints (`at`, `below`, `right_of`, `align`) can be applied late or dynamically updated.
-- **Hierarchical Auto-Bounding**: Container groups dynamically calculate bounds enclosing child shapes with configurable padding and header room.
-- **Orthogonal Manhattan Routing**: Smart directional routing between element ports (`Port.NORTH`, `Port.EAST`, etc.) with collision avoidance and embedded protocol badges.
-- **Automated Living Documentation**: Instant generation of Markdown Bill of Materials (BOM), connection tables, and JSON metadata.
-- **Vector Shape & Icon Library**: Built-in crisp SVG primitives (box, cylinder, server rack, database, diamond) and IIoT vector icons (sensor, gateway, broker, queue, database, dashboard).
+- **Pure Python Standard Library Core**: The vector rendering engine, geometric calculations, constraint solver, orthogonal Manhattan router, and SVG generation require zero external C-dependencies.
+- **Always Powered by `uv`**: Fast, deterministic package management, virtual environment provisioning, and test runs via [`uv`](https://docs.astral.sh/uv/).
+- **13 Built-in Theme Palettes**:
+  - **Dark Themes:** `iiot_dark_gold`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `dracula`, `synthwave`.
+  - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`.
+  - **Accessibility Themes:** `high_contrast` (WCAG AAA compliant).
+- **Zero-Clipping Text Engine**: Multi-line word-wrapping via SVG `<tspan>` elements, dynamic font scaling, and support for `label_position="bottom"` (text below graphic tiles).
+- **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 59 handcrafted 24x24 open-source vector icons across 8 domains, with support for `kind="icon"` (borderless icon graphics).
+- **Living Documentation & Automated BOM**: Instant emission of Markdown component tables and machine-readable JSON schemas tracking hardware, protocols, and infrastructure specs.
+- **Topological Constraint Solving**: Decouples shape instantiation from placement. Elements can be positioned with relative constraints (`right_of`, `below`, `above`, `left_of`) and negative coordinate auto-framing.
+- **80 Production Reference Architectures**: 10 comprehensive reference diagrams across 8 architectural domains in [`examples/`](file:///home/bill/src/ai/diagrams-as-code/examples/).
+
+---
+
+## 8 Architectural Domains Gallery
+
+Explore 80 fully implemented diagrams in [`examples/`](file:///home/bill/src/ai/diagrams-as-code/examples/README.md) and [`output/`](file:///home/bill/src/ai/diagrams-as-code/output/):
+
+| Domain | Focus & Architectures | Key Built-in Icons |
+|---|---|---|
+| [**Cloud**](file:///home/bill/src/ai/diagrams-as-code/examples/cloud/) | Multi-region VPCs, serverless event pipelines, edge CDNs, hybrid VPNs, service meshes. | `vpc`, `serverless`, `storage`, `api_gateway`, `cdn`, `firewall`, `dns` |
+| [**AI / Machine Learning**](file:///home/bill/src/ai/diagrams-as-code/examples/ai/) | RAG pipelines, multimodal vision inference, agent swarms, distributed GPU training, GraphRAG. | `brain`, `model`, `agent`, `chip`, `vector_db`, `vision`, `workflow` |
+| [**Computer & Systems**](file:///home/bill/src/ai/diagrams-as-code/examples/computer/) | Workstations, embedded RTOS, developer toolchains, mobile offline sync, thin client VDI. | `server`, `terminal`, `laptop`, `mobile`, `plc`, `router` |
+| [**Datacenter**](file:///home/bill/src/ai/diagrams-as-code/examples/datacenter/) | Leaf-Spine Clos fabrics, Fibre Channel SANs, 2N UPS power, in-row CRAC cooling, bare-metal K8s. | `server_rack`, `cluster`, `storage_array`, `cooling`, `ups`, `container`, `kubernetes` |
+| [**Business Process**](file:///home/bill/src/ai/diagrams-as-code/examples/business_process/) | Order-to-Cash, Procure-to-Pay, regulatory audits, release gates, incident escalations. | `user`, `document`, `decision`, `message`, `shield`, `analytics` |
+| [**Cybersecurity**](file:///home/bill/src/ai/diagrams-as-code/examples/cybersecurity/) | DMZ perimeter defense, SOC SIEM pipelines, ZTNA, PKI CA hierarchy, optical airgap vaults. | `lock`, `key`, `shield_check`, `siem`, `malware_scan`, `vault` |
+| [**Network Engineering**](file:///home/bill/src/ai/diagrams-as-code/examples/network_engineering/) | Campus 3-tier LAN, dual eBGP WAN, MPLS VPN, EVPN-VXLAN, DWDM optical rings, Anycast DNS. | `switch`, `optical`, `wan`, `vpn`, `dns_mesh`, `auth_server` |
+| [**Industrial IoT (IIoT)**](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/) | Plant-to-cloud, broker HA clusters, Sparkplug B UNS, OPC UA TSN, predictive maintenance, SCADA. | `sensor`, `gateway`, `broker`, `plc`, `scada`, `hmi`, `historian`, `robot` |
+
+---
 
 ## Quickstart
 
-### Installation
+### 1. Installation
 
 ```bash
-# Provision virtualenv and install dependencies
+# Clone and sync with uv
+git clone https://github.com/bsommers/diagrams-as-code.git
+cd diagrams-as-code
 uv sync
 ```
 
-### Generating Diagrams
+### 2. Generate a Diagram
 
-Generate the reference architecture diagram and living documentation:
+```python
+from diagrams_as_code import Diagram, Shape
+
+with Diagram("Zero Trust Microservices", theme="nord") as diag:
+    with diag.group("Security Perimeter") as g_ingress:
+        client = diag.add(Shape("client", "Web Client", icon="mobile"))
+        waf = diag.add(Shape("waf", "WAF / Edge Shield", icon="firewall"))
+        waf.below(client, margin=30)
+
+    with diag.group("Internal Mesh") as g_mesh:
+        api = diag.add(Shape("api", "API Gateway", icon="api_gateway"))
+        auth = diag.add(Shape("auth", "Auth Service", icon="key"))
+        auth.below(api, margin=30)
+
+    g_ingress.at(60.0, 80.0)
+    g_mesh.right_of(g_ingress, margin=90)
+
+    client >> diag.edge("HTTPS :443") >> waf
+    waf >> diag.edge("mTLS :8443") >> api
+    api >> diag.edge("Verify Token") >> auth
+
+# Render vector SVG, high-DPI PNG, and Bill of Materials
+diag.render_svg("output/quickstart.svg")
+diag.render_png("output/quickstart.png")
+diag.generate_readme("output/quickstart.svg", "output/quickstart_README.md")
+```
+
+### 3. Run and Verify
 
 ```bash
+# Run reference architecture
 uv run python main.py
-```
 
-### Running Examples
-
-```bash
-uv run python examples/01_mockup_slide.py
-uv run python examples/02_high_availability.py
-uv run python examples/03_sparkplug_pipeline.py
-```
-
-### Running Test Suite
-
-```bash
+# Run test suite (227 tests passing)
 uv run pytest
 ```
 
+---
+
+## Documentation Hub
+
+Comprehensive architectural, operational, and how-to guides are available in [`docs/`](file:///home/bill/src/ai/diagrams-as-code/docs/README.md):
+
+- [**Purpose & Threat Model**](file:///home/bill/src/ai/diagrams-as-code/docs/purpose.md): Architectural motivation, pure Python philosophy, and security posture.
+- [**System Architecture**](file:///home/bill/src/ai/diagrams-as-code/docs/architecture.md): Technical specifications on solver, router, SVG renderer, and BOM engine.
+- [**Running & Installation Guide**](file:///home/bill/src/ai/diagrams-as-code/docs/running.md): Virtualenv setup with `uv`, CLI commands, Docker execution, and exit codes.
+- [**How-To Recipes & Troubleshooting**](file:///home/bill/src/ai/diagrams-as-code/docs/how-to.md): Practical recipes for themes, icons, text layouts, CI/CD integration, and troubleshooting.
+- [**Visual Architecture Diagrams**](file:///home/bill/src/ai/diagrams-as-code/docs/diagrams/README.md): Visual models in ASCII plain text, Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML.
+- [**Layout Root Cause Post-Mortem**](file:///home/bill/src/ai/diagrams-as-code/docs/LAYOUT_ROOT_CAUSE.md): Context manager coordinate resolution and negative auto-framing post-mortem.
+- [**Changelog**](file:///home/bill/src/ai/diagrams-as-code/docs/CHANGELOG.md): Version history, new capabilities, and release notes.
 
 ---
 
-## Bill of Materials (BOM)
+## License
 
-| Symbol / ID | Label | Kind | Group | Technical Notes / Metadata |
-| :--- | :--- | :--- | :--- | :--- |
-| `shape_2` | **Automation PLC** | box | Plant Floor (Edge Tier) | vendor: Siemens S7-1500, protocol: OPC UA |
-| `shape_3` | **IIoT Edge Gateway** | box | Plant Floor (Edge Tier) | software: Node-RED / Ignition Edge, specs: 4-Core IPC |
-| `shape_5` | **Enterprise MQTT Broker** | server_rack | Cloud Platform (UNS Tier) | engine: Enterprise MQTT Broker Cluster, ha: 3-Node Multi-AZ |
-| `shape_6` | **Time-Series Database** | database | Cloud Platform (UNS Tier) | engine: InfluxDB Enterprise, retention: 365 Days |
-| `shape_8` | **Executive Dashboard** | box | Enterprise Operations | platform: Grafana Enterprise, kpis: OEE / MTBF / Scada |
-
----
-
-## Connections & Telemetry Protocols
-
-| Source | Target | Protocol / Label | Style | Routing |
-| :--- | :--- | :--- | :--- | :--- |
-| **Automation PLC** (`shape_2`) | **IIoT Edge Gateway** (`shape_3`) | OPC UA / Modbus | solid | orthogonal |
-| **Enterprise MQTT Broker** (`shape_5`) | **Time-Series Database** (`shape_6`) | Historian Ingest | solid | orthogonal |
-| **IIoT Edge Gateway** (`shape_3`) | **Enterprise MQTT Broker** (`shape_5`) | Secure TLS Bridge | solid | orthogonal |
-| **Enterprise MQTT Broker** (`shape_5`) | **Executive Dashboard** (`shape_8`) | Analytics Stream | solid | orthogonal |
+MIT License. See [LICENSE](LICENSE) for details.

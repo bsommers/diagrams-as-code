@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     png_file = out / "06_ha_firewall_cluster_carp_sync.png"
     readme_file = out / "06_ha_firewall_cluster_carp_sync_README.md"
 
-    with Diagram("High-Availability Active/Passive Firewall Cluster", theme="crimson") as diag:
+    with Diagram("High-Availability Active/Passive Firewall Cluster", theme="emerald") as diag:
         with diag.group("Public Ingress Zone") as g_1:
             wan_sw = diag.add(Shape("wan_sw", "WAN Ingress Switch", icon="switch", vip="198.51.100.1 VIP"))
 
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         wan_sw >> diag.edge("Active Ingress", style="solid") >> fw_pri

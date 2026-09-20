@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     png_file = out / "08_ospf_multi_area_enterprise.png"
     readme_file = out / "08_ospf_multi_area_enterprise_README.md"
 
-    with Diagram("OSPF Multi-Area Enterprise Routing", theme="monochrome") as diag:
+    with Diagram("OSPF Multi-Area Enterprise Routing", theme="iiot_light") as diag:
         with diag.group("Area 0 Backbone") as g_1:
             bb_rtr1 = diag.add(Shape("bb_rtr1", "Backbone Router A", icon="core_router", role="Backbone Router"))
             bb_rtr2 = diag.add(Shape("bb_rtr2", "Backbone Router B", icon="core_router", role="Backbone Router"))
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         bb_rtr1 >> diag.edge("Area 0 Mesh", style="solid") >> bb_rtr2

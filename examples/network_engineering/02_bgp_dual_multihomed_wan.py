@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     png_file = out / "02_bgp_dual_multihomed_wan.png"
     readme_file = out / "02_bgp_dual_multihomed_wan_README.md"
 
-    with Diagram("Dual-Homed eBGP Enterprise WAN Peering", theme="cyber_slate") as diag:
+    with Diagram("Dual-Homed eBGP Enterprise WAN Peering", theme="blueprint") as diag:
         with diag.group("Upstream Transit Providers") as g_1:
             isp1 = diag.add(Shape("isp1", "Tier-1 ISP A (AS 174)", icon="bgp", routes="Full BGP Table"))
             isp2 = diag.add(Shape("isp2", "Tier-1 ISP B (AS 2914)", icon="bgp", routes="Full BGP Table"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         isp1 >> diag.edge("eBGP Peering", style="solid") >> edge1

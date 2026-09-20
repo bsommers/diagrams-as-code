@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     png_file = out / "07_customer_loan_origination.png"
     readme_file = out / "07_customer_loan_origination_README.md"
 
-    with Diagram("Digital Consumer Loan Origination", theme="monochrome") as diag:
+    with Diagram("Digital Consumer Loan Origination", theme="blueprint") as diag:
         with diag.group("Customer Portal") as g_1:
             applicant = diag.add(Shape("applicant", "Loan Applicant", icon="user", credit="Consumer Retail"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         applicant >> diag.edge("Submit Application", style="solid") >> kyc_aml

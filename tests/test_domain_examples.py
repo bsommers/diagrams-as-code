@@ -101,3 +101,22 @@ def test_example_diagram_execution(script_path: Path) -> None:
     assert "## Bill of Materials" in readme_content
     assert "## Connections" in readme_content
     assert f"./{stem}.svg" in readme_content
+
+
+def test_domain_theme_variety() -> None:
+    """Verify that each domain showcases at least 3 to 5 distinct theme varieties across its examples."""
+    import re
+
+    domain_themes: dict[str, set[str]] = {}
+    for p in EXAMPLE_SCRIPTS:
+        domain = p.parent.name
+        content = p.read_text(encoding="utf-8")
+        match = re.search(r'theme="([^"]+)"', content)
+        if match:
+            theme_name = match.group(1)
+            domain_themes.setdefault(domain, set()).add(theme_name)
+
+    for domain in EXPECTED_DOMAINS:
+        themes = domain_themes.get(domain, set())
+        assert len(themes) >= 3, f"Domain '{domain}' has only {len(themes)} themes ({themes}), expected at least 3-5 varieties."
+

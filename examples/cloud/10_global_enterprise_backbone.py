@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     png_file = out / "10_global_enterprise_backbone.png"
     readme_file = out / "10_global_enterprise_backbone_README.md"
 
-    with Diagram("Global Enterprise Multi-Region Network Backbone", theme="blueprint") as diag:
+    with Diagram("Global Enterprise Multi-Region Network Backbone", theme="iiot_dark_gold") as diag:
         with diag.group("Americas Region") as g_1:
             us_dc = diag.add(Shape("us_dc", "Americas On-Prem DC", icon="router", location="Chicago, IL"))
             us_vpc = diag.add(Shape("us_vpc", "AWS US-East VPC", icon="vpc", cidr="10.10.0.0/16"))
@@ -38,10 +38,10 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
-        g_5.right_of(g_4, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
+        g_5.right_of(g_4, margin=80)
 
         # Establish inter-element connections with protocol annotations
         us_dc >> diag.edge("DirectConnect 10G", style="solid") >> us_vpc

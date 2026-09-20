@@ -9,9 +9,11 @@ This directory contains 80 production-grade architecture and workflow diagrams s
 - **Total Diagrams:** 80
 - **Domains Covered:** 8 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`)
 - **Diagrams per Domain:** 10
-- **Themes Demonstrated:** 8 (`nord`, `emerald`, `crimson`, `monochrome`, `iiot_dark_gold`, `blueprint`, `cyber_slate`, `iiot_light`)
+- **Themes Demonstrated:** 13 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`)
+- **Theme Variety per Domain:** 5 distinct varieties per domain (3-5 required)
 - **Built-in Domain Vector Icons:** 59 custom open-source SVG vector icons
 - **Zero External Dependencies:** 100% Python standard library core engine execution
+
 
 ---
 

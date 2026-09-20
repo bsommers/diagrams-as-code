@@ -509,3 +509,52 @@ def test_new_theme_presets_evaluation() -> None:
     assert EMERALD.name == "emerald"
     assert CRIMSON.name == "crimson"
     assert MONOCHROME.name == "monochrome"
+
+
+def test_theme_expansion_and_helpers() -> None:
+    """Verify new themes (solarized_light, pastel_light, dracula, synthwave, high_contrast) and helpers."""
+    from diagrams_as_code.theme import (
+        DRACULA,
+        HIGH_CONTRAST,
+        PASTEL_LIGHT,
+        SOLARIZED_LIGHT,
+        SYNTHWAVE,
+        create_theme,
+        get_dark_themes,
+        get_light_themes,
+        get_theme,
+        list_themes,
+    )
+
+    all_names = list_themes()
+    assert "solarized_light" in all_names
+    assert "pastel_light" in all_names
+    assert "dracula" in all_names
+    assert "synthwave" in all_names
+    assert "high_contrast" in all_names
+
+    # Check light/dark classification
+    light_names = get_light_themes()
+    assert "iiot_light" in light_names
+    assert "monochrome" in light_names
+    assert "solarized_light" in light_names
+    assert "pastel_light" in light_names
+
+    dark_names = get_dark_themes()
+    assert "iiot_dark_gold" in dark_names
+    assert "blueprint" in dark_names
+    assert "cyber_slate" in dark_names
+    assert "nord" in dark_names
+    assert "dracula" in dark_names
+    assert "synthwave" in dark_names
+
+    # Check theme instance passed to get_theme
+    t_solar = get_theme("solarized_light")
+    assert get_theme(t_solar) == t_solar
+
+    # Check create_theme
+    custom = create_theme("my_brand", base="solarized_light", accent="#FF4400")
+    assert custom.name == "my_brand"
+    assert custom.accent == "#FF4400"
+    assert custom.background == t_solar.background
+

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
     png_file = out / "06_opc_ua_edge_aggregation.png"
     readme_file = out / "06_opc_ua_edge_aggregation_README.md"
 
-    with Diagram("OPC UA TSN Edge Aggregator", theme="cyber_slate") as diag:
+    with Diagram("OPC UA TSN Edge Aggregator", theme="iiot_light") as diag:
         with diag.group("Cell Devices") as g_1:
             plc_cell1 = diag.add(Shape("plc_cell1", "Assembly Cell PLC", icon="plc", vendor="Siemens"))
             plc_cell2 = diag.add(Shape("plc_cell2", "Packaging Cell PLC", icon="plc", vendor="Rockwell"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         plc_cell1 >> diag.edge("OPC UA Client", style="solid") >> agg_gw

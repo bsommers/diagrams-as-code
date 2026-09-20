@@ -1,137 +1,137 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#88C0D0"/>
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
     </marker>
-    <marker id="arrow-81A1C1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#81A1C1"/>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#10B981"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
     </filter>
   </defs>
-  <rect width="100%" height="100%" fill="#2E3440"/>
+  <rect width="100%" height="100%" fill="#0B1713"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Sensor Array</text>
+    <rect x="60.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Sensor Array</text>
   </g>
   <g id="group_2">
-    <rect x="280.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="296.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Perception Compute</text>
+    <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
+    <text x="326.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Perception Compute</text>
   </g>
   <g id="group_3">
-    <rect x="500.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="516.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Navigation Core</text>
+    <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
+    <text x="576.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Navigation Core</text>
   </g>
   <g id="group_4">
-    <rect x="720.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="736.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Actuation Tier</text>
+    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
+    <text x="826.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Actuation Tier</text>
   </g>
-  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="197.4" y="161.0" width="115.2" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="255.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Point Cloud Data</text>
+  <rect x="212.4" y="161.0" width="115.2" height="18.0" rx="9.0" fill="#163028" />
+  <text x="270.0" y="173.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Point Cloud Data</text>
 </g>
-  <path d="M 205.0 260.0 L 255.0 260.0 L 255.0 170.0 L 305.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="209.8" y="206.0" width="90.4" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="255.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Depth Frames</text>
+  <rect x="224.8" y="206.0" width="90.4" height="18.0" rx="9.0" fill="#163028" />
+  <text x="270.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Depth Frames</text>
 </g>
-  <path d="M 205.0 350.0 L 255.0 350.0 L 255.0 170.0 L 305.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205.0 350.0 L 270.0 350.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="194.3" y="251.0" width="121.4" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="255.0" y="263.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Inertial Odometry</text>
+  <rect x="209.3" y="251.0" width="121.4" height="18.0" rx="9.0" fill="#163028" />
+  <text x="270.0" y="263.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Inertial Odometry</text>
 </g>
-  <path d="M 425.0 170.0 L 525.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="411.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="475.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fused State Vector</text>
+  <rect x="456.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#163028" />
+  <text x="520.0" y="173.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fused State Vector</text>
 </g>
-  <path d="M 585.0 200.0 L 585.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="505.7" y="206.0" width="158.6" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="585.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Robot Pose &amp; Global Map</text>
+  <rect x="565.7" y="206.0" width="158.6" height="18.0" rx="9.0" fill="#163028" />
+  <text x="645.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Robot Pose &amp; Global Map</text>
 </g>
-  <path d="M 645.0 260.0 L 695.0 260.0 L 695.0 170.0 L 745.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 705.0 260.0 L 770.0 260.0 L 770.0 170.0 L 835.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="609.5" y="206.0" width="171.0" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="695.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Velocity Commands (Twist)</text>
+  <rect x="684.5" y="206.0" width="171.0" height="18.0" rx="9.0" fill="#163028" />
+  <text x="770.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Velocity Commands (Twist)</text>
 </g>
   <g id="lidar" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-sensor" transform="translate(133.0, 149.0) scale(1.0)">
-  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="8" y1="17" x2="16" y2="17" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-sensor" transform="translate(133.6, 149.6) scale(0.9500000000000001)">
+  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="8" y1="17" x2="16" y2="17" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">3D Flash LiDAR</text>
+    <text x="145.0" y="186.4" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">3D Flash LiDAR</text>
   </g>
   <g id="camera" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-vision" transform="translate(133.0, 239.0) scale(1.0)">
-  <path d="M 2 12 C 5 6 19 6 22 12 C 19 18 5 18 2 12 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="3.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <circle cx="12" cy="12" r="1.5" fill="#88C0D0"/>
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-vision" transform="translate(133.6, 233.85) scale(0.9500000000000001)">
+  <path d="M 2 12 C 5 6 19 6 22 12 C 19 18 5 18 2 12 Z" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="3.5" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <circle cx="12" cy="12" r="1.5" fill="#10B981"/>
 </g>
-    <text x="145.0" y="277.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Stereo Depth Camera</text>
+    <text x="145.0" y="268.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Stereo Depth</tspan> <tspan x="145.0" dy="13.75">Camera</tspan></text>
   </g>
   <g id="imu" filter="url(#shadow)">
-    <rect x="85.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-sensor" transform="translate(133.0, 329.0) scale(1.0)">
-  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="8" y1="17" x2="16" y2="17" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-sensor" transform="translate(133.6, 323.85) scale(0.9500000000000001)">
+  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="8" y1="17" x2="16" y2="17" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="367.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">High-Precision IMU</text>
+    <text x="145.0" y="358.65000000000003" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">High-Precision</tspan> <tspan x="145.0" dy="13.75">IMU</tspan></text>
   </g>
   <g id="ekf" filter="url(#shadow)">
-    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-chip" transform="translate(353.0, 149.0) scale(1.0)">
-  <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="9" y1="2" x2="9" y2="5" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="15" y1="2" x2="15" y2="5" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="9" y1="19" x2="9" y2="22" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="15" y1="19" x2="15" y2="22" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="2" y1="9" x2="5" y2="9" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="2" y1="15" x2="5" y2="15" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="19" y1="9" x2="22" y2="9" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="19" y1="15" x2="22" y2="15" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-chip" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+  <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="9" y1="2" x2="9" y2="5" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="15" y1="2" x2="15" y2="5" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="9" y1="19" x2="9" y2="22" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="15" y1="19" x2="15" y2="22" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="2" y1="9" x2="5" y2="9" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="2" y1="15" x2="5" y2="15" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="19" y1="9" x2="22" y2="9" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="19" y1="15" x2="22" y2="15" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="365.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Sensor Fusion EKF</text>
+    <text x="395.0" y="178.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Sensor Fusion</tspan> <tspan x="395.0" dy="13.75">EKF</tspan></text>
   </g>
   <g id="slam" filter="url(#shadow)">
-    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-brain" transform="translate(573.0, 149.0) scale(1.0)">
-  <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="12" y1="4" x2="12" y2="20" stroke="#88C0D0" stroke-width="2.0" stroke-dasharray="2,2"/>
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-brain" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+  <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linejoin="round"/>
+  <line x1="12" y1="4" x2="12" y2="20" stroke="#10B981" stroke-width="2.0" stroke-dasharray="2,2"/>
 </g>
-    <text x="585.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Cartographer 3D SLAM</text>
+    <text x="645.0" y="178.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Cartographer 3D</tspan> <tspan x="645.0" dy="13.75">SLAM</tspan></text>
   </g>
   <g id="planner" filter="url(#shadow)">
-    <rect x="525.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-workflow" transform="translate(573.0, 239.0) scale(1.0)">
-  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-workflow" transform="translate(633.6, 233.85) scale(0.9500000000000001)">
+  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#10B981" stroke-width="2.0"/>
 </g>
-    <text x="585.0" y="277.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">TEB Local Planner</text>
+    <text x="645.0" y="268.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">TEB Local</tspan> <tspan x="645.0" dy="13.75">Planner</tspan></text>
   </g>
   <g id="motors" filter="url(#shadow)">
-    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-plc" transform="translate(793.0, 149.0) scale(1.0)">
-  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="4" y1="9" x2="20" y2="9" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="8" y1="4" x2="8" y2="9" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="12" y1="4" x2="12" y2="9" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="16" y1="4" x2="16" y2="9" stroke="#88C0D0" stroke-width="2.0"/>
-  <circle cx="8" cy="15" r="1.5" fill="#88C0D0"/>
-  <circle cx="12" cy="15" r="1.5" fill="#88C0D0"/>
-  <circle cx="16" cy="15" r="1.5" fill="#88C0D0"/>
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
+    <g class="icon icon-plc" transform="translate(883.6, 143.85) scale(0.9500000000000001)">
+  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="4" y1="9" x2="20" y2="9" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="8" y1="4" x2="8" y2="9" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="12" y1="4" x2="12" y2="9" stroke="#10B981" stroke-width="2.0"/>
+  <line x1="16" y1="4" x2="16" y2="9" stroke="#10B981" stroke-width="2.0"/>
+  <circle cx="8" cy="15" r="1.5" fill="#10B981"/>
+  <circle cx="12" cy="15" r="1.5" fill="#10B981"/>
+  <circle cx="16" cy="15" r="1.5" fill="#10B981"/>
 </g>
-    <text x="805.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">CAN Motor Controller</text>
+    <text x="895.0" y="178.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">CAN Motor</tspan> <tspan x="895.0" dy="13.75">Controller</tspan></text>
   </g>
 </svg>

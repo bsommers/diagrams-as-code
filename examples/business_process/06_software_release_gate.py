@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     png_file = out / "06_software_release_gate.png"
     readme_file = out / "06_software_release_gate_README.md"
 
-    with Diagram("Continuous Deployment & Release Gating", theme="cyber_slate") as diag:
+    with Diagram("Continuous Deployment & Release Gating", theme="pastel_light") as diag:
         with diag.group("Engineering") as g_1:
             developer = diag.add(Shape("developer", "Software Engineer", icon="user", git="feature-branch"))
             pr_merge = diag.add(Shape("pr_merge", "Pull Request Peer Review", icon="document", approvals="2 Senior Engineers"))
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         developer >> diag.edge("Open Pull Request", style="solid") >> pr_merge

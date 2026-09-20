@@ -34,8 +34,9 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=90)
+        g_3.right_of(g_2, margin=90)
+
 
         # Establish inter-element connections with protocol annotations
         user_node >> diag.edge("SSO Login Request", style="solid") >> idp_cloud

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     png_file = out / "01_order_to_cash.png"
     readme_file = out / "01_order_to_cash_README.md"
 
-    with Diagram("Order-to-Cash (O2C) Business Process", theme="emerald") as diag:
+    with Diagram("Order-to-Cash (O2C) Business Process", theme="monochrome") as diag:
         with diag.group("Customer Realm") as g_1:
             customer = diag.add(Shape("customer", "Purchasing Customer", icon="user", channel="B2B Ecommerce"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         customer >> diag.edge("Submit Purchase Order", style="solid") >> order_entry

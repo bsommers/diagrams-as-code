@@ -341,3 +341,52 @@ def test_edge_metadata_and_badge_customization() -> None:
     assert 'fill="#4A5568"' in svg
     assert 'fill="#E2E8F0"' in svg
 
+
+def test_text_wrapping_multiline_tspan() -> None:
+    """Verify long labels wrap with <tspan> elements when rendered inside nodes."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s = Shape("s_long", label="Cloud IdP (Okta/Entra)", icon="key", width=120, height=60).at(50, 50)
+    svg = renderer.render(elements=[s], width=400, height=300)
+    assert "<tspan" in svg
+    assert "Cloud IdP" in svg
+    assert "(Okta/Entra)" in svg
+
+
+def test_label_position_bottom() -> None:
+    """Verify label_position='bottom' places text below the graphic tile."""
+    theme = get_theme("monochrome")
+    renderer = SVGRenderer(theme)
+
+    s = Shape(
+        "s_bottom",
+        label="Hardware Security Key",
+        icon="mobile",
+        width=80,
+        height=60,
+        label_position="bottom",
+    ).at(50, 50)
+    svg = renderer.render(elements=[s], width=400, height=300)
+    assert 'class="icon icon-mobile"' in svg
+    assert "Hardware" in svg
+    assert "Security Key" in svg
+    # The text y coordinate must be strictly below the graphic tile (50 + 60 = 110)
+    assert 'y="124.0"' in svg or 'y="125.0"' in svg or 'y="126.0"' in svg or 'y="128.0"' in svg
+
+
+
+def test_kind_icon_pure_rendering() -> None:
+    """Verify kind='icon' renders standalone vector icon without bounding card box."""
+    theme = get_theme("cyber_slate")
+    renderer = SVGRenderer(theme)
+
+    s = Shape("s_icon", label="Border Gateway", kind="icon", icon="router").at(100, 100)
+    svg = renderer.render(elements=[s], width=400, height=300)
+    assert 'class="icon icon-router"' in svg
+    assert "Border Gateway" in svg
+    # Should NOT have card rectangle box
+    assert '<rect x="100.0" y="100.0"' not in svg
+
+
+

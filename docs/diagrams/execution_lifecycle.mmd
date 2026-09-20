@@ -1,0 +1,61 @@
+sequenceDiagram
+    autonumber
+    actor User as User Script
+    participant Diag as Diagram Context
+    participant Group as Group Context
+    participant Solver as ConstraintSolver
+    participant Router as OrthogonalRouter
+    participant SVG as SVGRenderer
+    participant Resvg as resvg-py
+    participant BOM as BOMGenerator
+
+    User->>Diag: with Diagram("Arch", theme="nord") as diag
+    activate Diag
+    Diag->>Diag: Push context to active stack
+
+    User->>Group: with diag.group("Zone") as g
+    activate Group
+    User->>Diag: Shape("node1", "Client", icon="mobile")
+    User->>Diag: Shape("node2", "Server", icon="server")
+    User->>Group: Position and arrange children
+    deactivate Group
+
+    User->>Diag: node1 >> diag.edge("HTTPS") >> node2
+    User->>Diag: Exit with context block
+    deactivate Diag
+
+    User->>Diag: diag.render_svg("out.svg")
+    activate Diag
+    Diag->>Diag: Check _is_solved dirty flag
+    Diag->>Solver: diag.solve()
+    activate Solver
+    Solver->>Solver: Topological sort constraints
+    Solver->>Solver: Recalculate group bounding boxes
+    Solver->>Solver: Auto-frame negative coordinates to (60, 80)
+    Solver-->>Diag: Layout normalized
+    deactivate Solver
+
+    Diag->>Router: Route edge connections
+    activate Router
+    Router->>Router: Select cardinal ports (N/S/E/W)
+    Router->>Router: Generate orthogonal waypoints
+    Router-->>Diag: Waypoints list
+    deactivate Router
+
+    Diag->>SVG: render(elements, groups, edges)
+    activate SVG
+    SVG->>SVG: Inject theme palette & SVG defs
+    SVG->>SVG: Multi-line wrap labels (<tspan>)
+    SVG-->>Diag: Complete XML SVG string
+    deactivate SVG
+    Diag->>User: Write out.svg
+
+    User->>Diag: diag.render_png("out.png")
+    Diag->>Resvg: svg_to_bytes(svg_string)
+    Resvg-->>Diag: PNG byte buffer
+    Diag->>User: Write out.png
+
+    User->>Diag: diag.generate_readme("out.svg", "README.md")
+    Diag->>BOM: generate_markdown("out.svg")
+    BOM-->>Diag: Markdown tables
+    Diag->>User: Write README.md

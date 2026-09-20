@@ -1,0 +1,70 @@
+========================================================================================
+                      DIAGRAMS-AS-CODE: SYSTEM ARCHITECTURE
+========================================================================================
+
++--------------------------------------------------------------------------------------+
+|                                   USER PYTHON SCRIPT                                 |
+|                                                                                      |
+|   from diagrams_as_code import Diagram, Shape                                        |
+|   with Diagram("Architecture", theme="nord") as diag:                                |
+|       s1 = diag.add(Shape("app", "App Service", icon="server"))                      |
+|       s2 = diag.add(Shape("db", "PostgreSQL", icon="database", kind="cylinder"))     |
+|       s2.right_of(s1, margin=80)                                                     |
+|       s1 >> diag.edge("TCP :5432") >> s2                                             |
++--------------------------------------------------------------------------------------+
+                                           │
+                                           ▼
++--------------------------------------------------------------------------------------+
+|                           DIAGRAM ENGINE CONTEXT & DOM                               |
+|                                                                                      |
+|   +-----------------------+   +-----------------------+   +----------------------+   |
+|   |        Diagram        |   |       Element         |   |        Group         |   |
+|   |  - Active context     |   |  - Bounds (Rect)      |   |  - Auto-bounding     |   |
+|   |  - Theme registry     |   |  - Constraints list   |   |  - Internal layouts  |   |
+|   |  - Node counter       |   |  - Metadata payload   |   |  - Padding & header  |   |
+|   +-----------------------+   +-----------------------+   +----------------------+   |
++--------------------------------------------------------------------------------------+
+                                           │
+                                           ▼
++--------------------------------------------------------------------------------------+
+|                         TOPOLOGICAL CONSTRAINT SOLVER                                |
+|                                                                                      |
+|   - Dependency DAG Construction                                                      |
+|   - Cycle Detection (RuntimeError on circular links)                                 |
+|   - Directional Translations (right_of, below, above, left_of)                       |
+|   - Bottom-Up Group Bounds Calculation                                               |
+|   - Viewport Auto-Framing (translates negative bounds to 60.0, 80.0)                 |
++--------------------------------------------------------------------------------------+
+                                           │
+                                           ▼
++--------------------------------------------------------------------------------------+
+|                         ORTHOGONAL MANHATTAN ROUTER                                  |
+|                                                                                      |
+|   - Automatic Cardinal Port Selection (North, South, East, West)                     |
+|   - 90-Degree Orthogonal Waypoints with Obstacle Avoidance                           |
+|   - Redundant Collinear Segment Simplification                                       |
+|   - Protocol Badge Centering (calculates badge rect to prevent line collisions)      |
++--------------------------------------------------------------------------------------+
+                                           │
+                     ┌─────────────────────┴─────────────────────┐
+                     ▼                                           ▼
++-----------------------------------------+ +------------------------------------------+
+|              SVG RENDERER               | |              BOM GENERATOR               |
+|                                         | |                                          |
+|  - Theme Palette Injection (13 themes)  | |  - Component Inventory Assembly          |
+|  - 59 Built-in Vector Icons (icons/)    | |  - Metadata Attributes Table Extraction  |
+|  - Shape Primitives (box, cylinder, etc)| |  - Protocol Edge Connection Inventory    |
+|  - Multi-line <tspan> Label Wrapping    | |  - Living Markdown Document (.md)        |
+|  - Text-Below-Graphic Support (tiles)   | |  - Machine-Readable JSON Schema (.json)  |
+|  - Dynamic XML Escaping & Defs Markers  | +------------------------------------------+
++-----------------------------------------+
+                     │
+                     ▼
++-----------------------------------------+
+|           resvg-py RASTERIZER           |
+|                                         |
+|  - Pure Python Wheel Binding            |
+|  - Zero C-Dependency Execution          |
+|  - High-DPI Crisp PNG Output (.png)     |
++-----------------------------------------+
+========================================================================================

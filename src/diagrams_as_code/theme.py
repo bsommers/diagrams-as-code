@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import copy
 from dataclasses import dataclass
-from typing import Optional
+from typing import Any, Optional, Union
 
 
 @dataclass(frozen=True)
@@ -138,6 +138,66 @@ def _build_default_themes() -> dict[str, Theme]:
             subtext="#71717A",
             edge_color="#27272A",
         ),
+        "solarized_light": Theme(
+            name="solarized_light",
+            background="#FDF6E3",
+            group_bg="#EEE8D5",
+            group_stroke="#93A1A1",
+            node_fill="#FFFFFF",
+            node_stroke="#268BD2",
+            accent="#268BD2",
+            text="#073642",
+            subtext="#586E75",
+            edge_color="#268BD2",
+        ),
+        "pastel_light": Theme(
+            name="pastel_light",
+            background="#EFF1F5",
+            group_bg="#E6E9EF",
+            group_stroke="#CCD0DA",
+            node_fill="#FFFFFF",
+            node_stroke="#7287FD",
+            accent="#7287FD",
+            text="#4C4F69",
+            subtext="#6C6F85",
+            edge_color="#1E66F5",
+        ),
+        "dracula": Theme(
+            name="dracula",
+            background="#282A36",
+            group_bg="#343746",
+            group_stroke="#44475A",
+            node_fill="#383A59",
+            node_stroke="#BD93F9",
+            accent="#FF79C6",
+            text="#F8F8F2",
+            subtext="#6272A4",
+            edge_color="#BD93F9",
+        ),
+        "synthwave": Theme(
+            name="synthwave",
+            background="#1A1B26",
+            group_bg="#24283B",
+            group_stroke="#414868",
+            node_fill="#292E42",
+            node_stroke="#BB9AF7",
+            accent="#7DCFFF",
+            text="#C0CAF5",
+            subtext="#7AA2F7",
+            edge_color="#F7768E",
+        ),
+        "high_contrast": Theme(
+            name="high_contrast",
+            background="#000000",
+            group_bg="#121212",
+            group_stroke="#FFFFFF",
+            node_fill="#000000",
+            node_stroke="#FFFF00",
+            accent="#FFFF00",
+            text="#FFFFFF",
+            subtext="#E0E0E0",
+            edge_color="#FFFF00",
+        ),
     }
     defaults["dark"] = defaults["iiot_dark_gold"]
     defaults["light"] = defaults["iiot_light"]
@@ -154,6 +214,28 @@ NORD = THEMES["nord"]
 EMERALD = THEMES["emerald"]
 CRIMSON = THEMES["crimson"]
 MONOCHROME = THEMES["monochrome"]
+SOLARIZED_LIGHT = THEMES["solarized_light"]
+PASTEL_LIGHT = THEMES["pastel_light"]
+DRACULA = THEMES["dracula"]
+SYNTHWAVE = THEMES["synthwave"]
+HIGH_CONTRAST = THEMES["high_contrast"]
+
+_LIGHT_THEME_NAMES = {"iiot_light", "monochrome", "solarized_light", "pastel_light", "light"}
+
+
+def list_themes() -> list[str]:
+    """Return sorted list of all unique registered theme names."""
+    return sorted(list(set(THEMES.keys()) - {"dark", "light"}))
+
+
+def get_light_themes() -> list[str]:
+    """Return list of registered light-palette theme names."""
+    return sorted([k for k in list_themes() if k in _LIGHT_THEME_NAMES])
+
+
+def get_dark_themes() -> list[str]:
+    """Return list of registered dark-palette theme names."""
+    return sorted([k for k in list_themes() if k not in _LIGHT_THEME_NAMES])
 
 
 def reset_themes() -> None:
@@ -163,13 +245,18 @@ def reset_themes() -> None:
     THEMES.update(_build_default_themes())
 
 
-def get_theme(name: str = "iiot_dark_gold") -> Theme:
-    """Retrieve theme by name with case-insensitivity and default fallback."""
-    if not isinstance(name, str):
-        raise TypeError(f"Theme name must be a str, got {type(name).__name__}")
-    key = name.strip().lower()
+def get_theme(name_or_theme: Union[Theme, str] = "iiot_dark_gold") -> Theme:
+    """Retrieve theme by name or return copy of Theme instance."""
+    if isinstance(name_or_theme, Theme):
+        return copy.copy(name_or_theme)
+    if not isinstance(name_or_theme, str):
+        raise TypeError(
+            f"Theme name must be a str or Theme instance, got {type(name_or_theme).__name__}"
+        )
+    key = name_or_theme.strip().lower()
     selected = THEMES.get(key, THEMES["iiot_dark_gold"])
     return copy.copy(selected)
+
 
 
 def register_theme(theme: Theme) -> None:
@@ -181,3 +268,30 @@ def register_theme(theme: Theme) -> None:
     key = theme.name.strip().lower()
     THEMES[key] = copy.copy(theme)
     THEMES[theme.name] = copy.copy(theme)
+
+
+def create_theme(
+    name: str,
+    base: Union[Theme, str] = "iiot_dark_gold",
+    **overrides: Any,
+) -> Theme:
+    """Create a new Theme derived from a base preset with custom overrides."""
+    base_theme = get_theme(base)
+    fields = {
+        "name": name,
+        "background": base_theme.background,
+        "group_bg": base_theme.group_bg,
+        "group_stroke": base_theme.group_stroke,
+        "node_fill": base_theme.node_fill,
+        "node_stroke": base_theme.node_stroke,
+        "accent": base_theme.accent,
+        "text": base_theme.text,
+        "subtext": base_theme.subtext,
+        "edge_color": base_theme.edge_color,
+        "font_family": base_theme.font_family,
+    }
+    fields.update(overrides)
+    new_theme = Theme(**fields)
+    register_theme(new_theme)
+    return new_theme
+

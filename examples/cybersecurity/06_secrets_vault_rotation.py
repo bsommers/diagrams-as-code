@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     png_file = out / "06_secrets_vault_rotation.png"
     readme_file = out / "06_secrets_vault_rotation_README.md"
 
-    with Diagram("Automated Secrets Vault & Credential Rotation", theme="emerald") as diag:
+    with Diagram("Automated Secrets Vault & Credential Rotation", theme="dracula") as diag:
         with diag.group("Workload Layer") as g_1:
             k8s_app = diag.add(Shape("k8s_app", "Kubernetes Workload", icon="container", identity="SPIFFE / JWT"))
 
@@ -33,9 +33,9 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         k8s_app >> diag.edge("Authenticate Pod", style="solid") >> vault_srv

@@ -4,17 +4,21 @@ All notable changes, architectural milestones, and capability updates to the pur
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
-## [Unreleased]
+## [v0.3.0] - 2026-09-19
 
 ### Added
-- **Canonical Root Package (`src/diagrams_as_code/`):** Renamed root module hierarchy from `iiot_diagrams` to `diagrams_as_code`. Established `src/iiot_diagrams/` as a non-breaking backward compatibility facade.
-- **Dedicated IIoT Domain (`examples/iiot/`, `icons/iiot/`):** Promoted Industrial IoT to a first-class domain with 10 reference diagrams and 8 vector icons (`sensor`, `gateway`, `broker`, `plc`, `scada`, `hmi`, `historian`, `robot`). Total gallery expanded to 80 diagrams across 8 domains and 59 vector icons.
-- **Architecture & Layout Documentation (`docs/ARCHITECTURE.md`, `docs/LAYOUT_ROOT_CAUSE.md`):** Comprehensive documentation of the source hierarchy and post-mortem analysis of the layout solving bug.
-- **Multi-Engine PNG Rasterization (`Diagram.render_png()`):** High-speed vector-to-raster rendering supporting `resvg-py` with fallbacks to `cairosvg`, Inkscape, and ImageMagick.
-- **Container Font Packaging & Compose:** Integrated `fonts-dejavu-core` into `Dockerfile` for crisp rasterized typography and added standard `docker-compose.yml` for zero-configuration `docker compose run --rm diagram-gen`.
+- **Expanded Theme Engine (`src/diagrams_as_code/theme.py`):** Added 5 new built-in themes (`solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`), expanding the palette to 13 themes (8 dark, 4 light, 1 accessibility WCAG AAA). Added `list_themes()`, `get_light_themes()`, `get_dark_themes()`, `create_theme()`, and direct `Theme` instance or `theme_overrides` injection in `Diagram.__init__`.
+- **Anti-Spill Label Wrapping & Text-Below-Graphic (`src/diagrams_as_code/renderer_svg.py`, `elements.py`):**
+  - Implemented multi-line text wrapping via SVG `<tspan>` tags and dynamic font scaling (10px–12px) to permanently prevent labels from spilling outside shape boundaries.
+  - Implemented `label_position="bottom"` (or `"below"`) to place labels cleanly underneath compact graphic tiles.
+  - Implemented `kind="icon"` for borderless standalone vector icon nodes (like Cisco / AWS architecture schematics).
+- **5 Theme Varieties per Domain (80 Diagrams):** Updated all 80 reference architecture scripts across all 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`) to showcase 5 distinct theme varieties per domain, with widened group margins (`margin=90`) to prevent protocol badge line overlap.
+- **Complete Documentation Suite (`docs/` & `docs/diagrams/`):**
+  - Authoring of `docs/README.md`, `docs/purpose.md`, `docs/architecture.md`, `docs/running.md`, and `docs/how-to.md`.
+  - Authored multi-format visual architecture diagrams in `docs/diagrams/`: terminal ASCII schematic (`ascii_architecture.txt`), Mermaid flowchart (`architecture.mmd`), Mermaid sequence lifecycle (`execution_lifecycle.mmd`), and native Draw.io XML (`architecture.drawio`).
+  - Updated root `README.md` with badges, 8-domain showcase, and documentation hub links.
+- **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers` (228 automated tests passing).
 
-### Fixed
-- **Layout Stacking & Negative Coordinate Clipping:** Fixed critical issue where diagrams were rendered at `(0, 0)` due to un-invoked constraint solving inside context managers. Implemented auto-solve dirty tracking in `render_svg()` and `render_png()`, automatic canvas framing for negative coordinate bounds, and explicit initial group anchoring (`g_1.at(60.0, 80.0)`). Added automated anti-stacking test assertions to `tests/test_domain_examples.py`.
 
 ## [v0.2.0] - 2026-09-19
 

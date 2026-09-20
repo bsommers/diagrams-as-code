@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     png_file = out / "03_agentic_tool_orchestration.png"
     readme_file = out / "03_agentic_tool_orchestration_README.md"
 
-    with Diagram("Autonomous Agent Tool Orchestration", theme="emerald") as diag:
+    with Diagram("Autonomous Agent Tool Orchestration", theme="dracula") as diag:
         with diag.group("User Tier") as g_1:
             user = diag.add(Shape("user", "Enterprise Operator", icon="user", auth="SSO RBAC"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         user >> diag.edge("Task Request", style="solid") >> agent

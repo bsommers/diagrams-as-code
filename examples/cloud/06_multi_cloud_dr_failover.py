@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     png_file = out / "06_multi_cloud_dr_failover.png"
     readme_file = out / "06_multi_cloud_dr_failover_README.md"
 
-    with Diagram("Multi-Cloud Active-Passive Disaster Recovery", theme="crimson") as diag:
+    with Diagram("Multi-Cloud Active-Passive Disaster Recovery", theme="nord") as diag:
         with diag.group("Traffic Routing") as g_1:
             dns_mgr = diag.add(Shape("dns_mgr", "Global Traffic Manager", icon="dns", check="5s Probe"))
 
@@ -36,8 +36,8 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         dns_mgr >> diag.edge("Active (Weight 100)", style="solid") >> aws_alb

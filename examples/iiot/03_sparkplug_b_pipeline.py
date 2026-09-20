@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
     png_file = out / "03_sparkplug_b_pipeline.png"
     readme_file = out / "03_sparkplug_b_pipeline_README.md"
 
-    with Diagram("Sparkplug B Unified Namespace", theme="iiot_dark_gold") as diag:
+    with Diagram("Sparkplug B Unified Namespace", theme="blueprint") as diag:
         with diag.group("Field Sensors") as g_1:
             sensors = diag.add(Shape("sensors", "Sensors & PLCs", icon="sensor", io="4-20mA / Modbus"))
 
@@ -31,9 +31,9 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         sensors >> diag.edge("Modbus RTU", style="solid") >> eon

@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
     png_file = out / "08_automated_guided_vehicle_fleet.png"
     readme_file = out / "08_automated_guided_vehicle_fleet_README.md"
 
-    with Diagram("AGV Fleet Telemetry & Traffic Management", theme="nord") as diag:
+    with Diagram("AGV Fleet Telemetry & Traffic Management", theme="emerald") as diag:
         with diag.group("AGV Vehicles") as g_1:
             agv_1 = diag.add(Shape("agv_1", "AGV Unit 01 (Forklift)", icon="robot", battery="LiFePO4 48V"))
             agv_2 = diag.add(Shape("agv_2", "AGV Unit 02 (Tugger)", icon="robot", payload="1000kg"))
@@ -32,8 +32,8 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
 
         # Establish inter-element connections with protocol annotations
         agv_1 >> diag.edge("Wi-Fi Telemetry", style="solid") >> ap_mesh

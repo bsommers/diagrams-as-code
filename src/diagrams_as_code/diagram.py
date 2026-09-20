@@ -236,12 +236,33 @@ class Diagram:
         title: str = "IIoT Architecture",
         width: float = 1200.0,
         height: float = 800.0,
-        theme: str = "iiot_dark_gold",
+        theme: Union[Theme, str] = "iiot_dark_gold",
+        theme_overrides: Optional[dict[str, str]] = None,
+        label_position: str = "inside",
     ) -> None:
         self.title = title
         self.width = float(width)
         self.height = float(height)
-        self.theme: Theme = get_theme(theme)
+        base_t = get_theme(theme)
+        if theme_overrides:
+            fields = {
+                "name": f"{base_t.name}_custom",
+                "background": base_t.background,
+                "group_bg": base_t.group_bg,
+                "group_stroke": base_t.group_stroke,
+                "node_fill": base_t.node_fill,
+                "node_stroke": base_t.node_stroke,
+                "accent": base_t.accent,
+                "text": base_t.text,
+                "subtext": base_t.subtext,
+                "edge_color": base_t.edge_color,
+                "font_family": base_t.font_family,
+            }
+            fields.update(theme_overrides)
+            self.theme = Theme(**fields)
+        else:
+            self.theme = base_t
+        self.label_position = label_position
         self.shapes: list[Shape] = []
         self.groups: list[Group] = []
         self.edges: list[Edge] = []
@@ -249,6 +270,7 @@ class Diagram:
         self._active_group: Optional[Group] = None
         self._counter: int = 0
         self._is_solved: bool = False
+
 
     @property
     def unit_basis(self) -> UnitBasis:

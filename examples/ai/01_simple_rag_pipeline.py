@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     png_file = out / "01_simple_rag_pipeline.png"
     readme_file = out / "01_simple_rag_pipeline_README.md"
 
-    with Diagram("Simple Retrieval Augmented Generation (RAG)", theme="nord") as diag:
+    with Diagram("Simple Retrieval Augmented Generation (RAG)", theme="synthwave") as diag:
         with diag.group("Interface Tier") as g_1:
             user = diag.add(Shape("user", "User Query Client", icon="user", channel="Chat UI"))
 
@@ -33,9 +33,9 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         user >> diag.edge("Input Query", style="solid") >> embed

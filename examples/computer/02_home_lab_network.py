@@ -14,7 +14,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     png_file = out / "02_home_lab_network.png"
     readme_file = out / "02_home_lab_network_README.md"
 
-    with Diagram("Home Lab Self-Hosted Infrastructure", theme="blueprint") as diag:
+    with Diagram("Home Lab Self-Hosted Infrastructure", theme="iiot_light") as diag:
         with diag.group("WAN Demarcation") as g_1:
             ont = diag.add(Shape("ont", "Fiber ONT Internet", icon="router", speed="1 Gbps Symmetrical"))
 
@@ -35,9 +35,9 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         g_1.at(60.0, 80.0)
 
         # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=50)
-        g_3.right_of(g_2, margin=50)
-        g_4.right_of(g_3, margin=50)
+        g_2.right_of(g_1, margin=80)
+        g_3.right_of(g_2, margin=80)
+        g_4.right_of(g_3, margin=80)
 
         # Establish inter-element connections with protocol annotations
         ont >> diag.edge("PPPoE 1Gbps", style="solid") >> opnsense
