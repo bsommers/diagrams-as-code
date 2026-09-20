@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "01_simple_rag_pipeline.svg"
+    png_file = out / "01_simple_rag_pipeline.png"
     readme_file = out / "01_simple_rag_pipeline_README.md"
 
     with Diagram("Simple Retrieval Augmented Generation (RAG)", theme="nord") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         llm >> diag.edge("Synthesized Answer", style="dashed") >> user
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("01_simple_rag_pipeline.svg", readme_file)
 
     return svg_file

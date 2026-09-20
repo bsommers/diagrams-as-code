@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_regulatory_compliance_audit.svg"
+    png_file = out / "05_regulatory_compliance_audit.png"
     readme_file = out / "05_regulatory_compliance_audit_README.md"
 
     with Diagram("Continuous SOC2 & ISO 27001 Audit Process", theme="blueprint") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         auditor >> diag.edge("Issue Clean Opinion", style="solid") >> attestation
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_regulatory_compliance_audit.svg", readme_file)
 
     return svg_file

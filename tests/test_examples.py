@@ -36,6 +36,11 @@ def test_01_mockup_slide_execution(tmp_path: Path) -> None:
     svg_path = tmp_path / "mockup_slide.svg"
     assert svg_path.exists(), "Expected mockup_slide.svg in tmp_path"
 
+    png_path = tmp_path / "mockup_slide.png"
+    assert png_path.exists(), "Expected mockup_slide.png in tmp_path"
+    assert png_path.stat().st_size > 0
+    assert png_path.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
     assert root.tag.endswith("svg")
@@ -68,6 +73,11 @@ def test_02_high_availability_execution(tmp_path: Path) -> None:
 
     svg_path = tmp_path / "high_availability.svg"
     assert svg_path.exists(), "Expected high_availability.svg in tmp_path"
+
+    png_path = tmp_path / "high_availability.png"
+    assert png_path.exists(), "Expected high_availability.png in tmp_path"
+    assert png_path.stat().st_size > 0
+    assert png_path.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
 
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
@@ -102,6 +112,11 @@ def test_03_sparkplug_pipeline_execution(tmp_path: Path) -> None:
     svg_path = tmp_path / "sparkplug_pipeline.svg"
     assert svg_path.exists(), "Expected sparkplug_pipeline.svg in tmp_path"
 
+    png_path = tmp_path / "sparkplug_pipeline.png"
+    assert png_path.exists(), "Expected sparkplug_pipeline.png in tmp_path"
+    assert png_path.stat().st_size > 0
+    assert png_path.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)
     assert root.tag.endswith("svg")
@@ -130,6 +145,11 @@ def test_main_execution(tmp_path: Path) -> None:
 
     svg_path = tmp_path / "main_architecture.svg"
     assert svg_path.exists(), "Expected main_architecture.svg in tmp_path"
+
+    png_path = tmp_path / "main_architecture.png"
+    assert png_path.exists(), "Expected main_architecture.png in tmp_path"
+    assert png_path.stat().st_size > 0
+    assert png_path.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
 
     svg_content = svg_path.read_text(encoding="utf-8")
     root = ET.fromstring(svg_content)

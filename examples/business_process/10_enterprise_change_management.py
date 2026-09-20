@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_enterprise_change_management.svg"
+    png_file = out / "10_enterprise_change_management.png"
     readme_file = out / "10_enterprise_change_management_README.md"
 
     with Diagram("ITSM Enterprise Change Advisory Board (CAB)", theme="blueprint") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         health_verify >> diag.edge("Abnormal Signals Detected", style="dashed") >> rollback
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_enterprise_change_management.svg", readme_file)
 
     return svg_file

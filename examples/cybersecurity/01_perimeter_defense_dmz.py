@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "01_perimeter_defense_dmz.svg"
+    png_file = out / "01_perimeter_defense_dmz.png"
     readme_file = out / "01_perimeter_defense_dmz_README.md"
 
     with Diagram("Enterprise DMZ Perimeter Defense", theme="crimson") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         app >> diag.edge("TCP TLS :5432", style="solid") >> db
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("01_perimeter_defense_dmz.svg", readme_file)
 
     return svg_file

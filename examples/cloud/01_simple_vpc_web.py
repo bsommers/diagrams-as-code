@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "01_simple_vpc_web.svg"
+    png_file = out / "01_simple_vpc_web.png"
     readme_file = out / "01_simple_vpc_web_README.md"
 
     with Diagram("Simple VPC Web Application", theme="blueprint") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         web2 >> diag.edge("TCP :5432", style="solid") >> db
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("01_simple_vpc_web.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_ids_ips_inline_inspection.svg"
+    png_file = out / "08_ids_ips_inline_inspection.png"
     readme_file = out / "08_ids_ips_inline_inspection_README.md"
 
     with Diagram("Inline IDS/IPS Deep Packet Inspection", theme="iiot_dark_gold") as diag:
@@ -39,6 +40,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         npb >> diag.edge("Permitted Packets", style="solid") >> core_sw
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_ids_ips_inline_inspection.svg", readme_file)
 
     return svg_file

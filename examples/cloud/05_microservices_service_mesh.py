@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_microservices_service_mesh.svg"
+    png_file = out / "05_microservices_service_mesh.png"
     readme_file = out / "05_microservices_service_mesh_README.md"
 
     with Diagram("Microservices Service Mesh Architecture", theme="iiot_dark_gold") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         order_svc >> diag.edge("Persist Order", style="solid") >> db_orders
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_microservices_service_mesh.svg", readme_file)
 
     return svg_file

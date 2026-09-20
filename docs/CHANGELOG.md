@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- **Multi-Engine PNG Rasterization (`Diagram.render_png()`):** High-speed vector-to-raster rendering supporting `resvg-py` with fallbacks to `cairosvg`, Inkscape, and ImageMagick.
+- **Rendered Output Assets Catalog (`output/`):** Tracked SVG, PNG, and Markdown BOM output artifacts (222 files) for all 70 domain example diagrams and core architectures in repository.
+- **Dev Tooling Dependency:** Added `resvg-py` to optional dev dependencies for pure-wheel PNG compilation without external C-dependencies.
+- **PNG Verification Test Suite:** Added assertions in `tests/test_domain_examples.py` and `tests/test_examples.py` validating PNG file existence, non-zero size, and `\x89PNG\r\n\x1a\n` magic bytes.
+
 ## [v0.2.0] - 2026-09-19
 
 ### Added

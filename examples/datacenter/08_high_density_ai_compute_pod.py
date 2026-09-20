@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_high_density_ai_compute_pod.svg"
+    png_file = out / "08_high_density_ai_compute_pod.png"
     readme_file = out / "08_high_density_ai_compute_pod_README.md"
 
     with Diagram("High-Density AI Supercomputing Pod", theme="iiot_dark_gold") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         dgx_rack1 >> diag.edge("IPMI / BMC Telemetry", style="dotted") >> telemetry_node
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_high_density_ai_compute_pod.svg", readme_file)
 
     return svg_file

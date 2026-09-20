@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_global_enterprise_backbone.svg"
+    png_file = out / "10_global_enterprise_backbone.png"
     readme_file = out / "10_global_enterprise_backbone_README.md"
 
     with Diagram("Global Enterprise Multi-Region Network Backbone", theme="blueprint") as diag:
@@ -48,6 +49,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         cloud_wan >> diag.edge("VPC Flow Logs", style="dashed") >> sec_hub
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_global_enterprise_backbone.svg", readme_file)
 
     return svg_file

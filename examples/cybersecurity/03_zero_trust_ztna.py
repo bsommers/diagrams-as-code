@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "03_zero_trust_ztna.svg"
+    png_file = out / "03_zero_trust_ztna.png"
     readme_file = out / "03_zero_trust_ztna_README.md"
 
     with Diagram("Zero Trust Network Access (ZTNA) Architecture", theme="nord") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         app_gw >> diag.edge("Local Proxy", style="solid") >> corp_crm
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("03_zero_trust_ztna.svg", readme_file)
 
     return svg_file

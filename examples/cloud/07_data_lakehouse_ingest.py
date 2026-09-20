@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_data_lakehouse_ingest.svg"
+    png_file = out / "07_data_lakehouse_ingest.png"
     readme_file = out / "07_data_lakehouse_ingest_README.md"
 
     with Diagram("Enterprise Cloud Data Lakehouse Ingest", theme="monochrome") as diag:
@@ -48,6 +49,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         athena >> diag.edge("Direct SQL", style="solid") >> s3_curated
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_data_lakehouse_ingest.svg", readme_file)
 
     return svg_file

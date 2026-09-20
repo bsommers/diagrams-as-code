@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "02_soc_siem_pipeline.svg"
+    png_file = out / "02_soc_siem_pipeline.png"
     readme_file = out / "02_soc_siem_pipeline_README.md"
 
     with Diagram("SOC & SIEM Telemetry Analytics Pipeline", theme="cyber_slate") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         soar >> diag.edge("Status Report", style="dashed") >> soc
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("02_soc_siem_pipeline.svg", readme_file)
 
     return svg_file

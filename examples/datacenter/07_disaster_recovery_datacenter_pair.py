@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_disaster_recovery_datacenter_pair.svg"
+    png_file = out / "07_disaster_recovery_datacenter_pair.png"
     readme_file = out / "07_disaster_recovery_datacenter_pair_README.md"
 
     with Diagram("Metro Disaster Recovery Datacenter Pair", theme="monochrome") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         dr_orchestrator >> diag.edge("Promote LUNs", style="dashed") >> dc_west_san
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_disaster_recovery_datacenter_pair.svg", readme_file)
 
     return svg_file

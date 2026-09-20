@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_procure_to_pay.svg"
+    png_file = out / "04_procure_to_pay.png"
     readme_file = out / "04_procure_to_pay_README.md"
 
     with Diagram("Procure-to-Pay (P2P) Sourcing Process", theme="iiot_dark_gold") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         match_3way >> diag.edge("Approve Payment", style="solid") >> ap_disburse
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_procure_to_pay.svg", readme_file)
 
     return svg_file

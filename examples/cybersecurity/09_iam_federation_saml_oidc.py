@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_iam_federation_saml_oidc.svg"
+    png_file = out / "09_iam_federation_saml_oidc.png"
     readme_file = out / "09_iam_federation_saml_oidc_README.md"
 
     with Diagram("Enterprise IAM Federation & SSO Pipeline", theme="monochrome") as diag:
@@ -42,6 +43,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         idp_cloud >> diag.edge("ID Token / PKCE", style="solid") >> portal_app
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_iam_federation_saml_oidc.svg", readme_file)
 
     return svg_file

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFC000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#000000"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">SuperPOD Racks</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Fabric Network</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Storage Cluster</text>
+  </g>
+  <g id="group_4">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Management</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="21.0" y="21.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">NVLink 4.0</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="21.0" y="21.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">NVLink 4.0</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-3.8000000000000043" y="21.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">8x 400G InfiniBand</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-3.8000000000000043" y="21.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">8x 400G InfiniBand</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-3.8000000000000043" y="21.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">RDMA Storage Mount</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-10.0" y="21.0" width="140.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">IPMI / BMC Telemetry</text>
+</g>
+  <g id="dgx_rack1" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-server_rack" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="7" x2="20" y2="7" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="12" x2="20" y2="12" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="17" x2="20" y2="17" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="7" cy="4.5" r="0.8" fill="#FFC000"/>
+  <circle cx="7" cy="9.5" r="0.8" fill="#FFC000"/>
+  <circle cx="7" cy="14.5" r="0.8" fill="#FFC000"/>
+  <circle cx="7" cy="19.5" r="0.8" fill="#FFC000"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">DGX H100 Rack 01</text>
+  </g>
+  <g id="dgx_rack2" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-server_rack" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="7" x2="20" y2="7" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="12" x2="20" y2="12" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="17" x2="20" y2="17" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="7" cy="4.5" r="0.8" fill="#FFC000"/>
+  <circle cx="7" cy="9.5" r="0.8" fill="#FFC000"/>
+  <circle cx="7" cy="14.5" r="0.8" fill="#FFC000"/>
+  <circle cx="7" cy="19.5" r="0.8" fill="#FFC000"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">DGX H100 Rack 02</text>
+  </g>
+  <g id="ib_spine" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-router" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="17" y1="12" x2="17" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="7" cy="4" r="1.2" fill="#FFC000"/>
+  <circle cx="17" cy="4" r="1.2" fill="#FFC000"/>
+  <circle cx="8" cy="16" r="1.2" fill="#FFC000"/>
+  <circle cx="12" cy="16" r="1.2" fill="#FFC000"/>
+  <circle cx="16" cy="16" r="1.2" fill="#FFC000"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Quantum-2 InfiniBand Switch</text>
+  </g>
+  <g id="nvlink_switch" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-router" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="17" y1="12" x2="17" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="7" cy="4" r="1.2" fill="#FFC000"/>
+  <circle cx="17" cy="4" r="1.2" fill="#FFC000"/>
+  <circle cx="8" cy="16" r="1.2" fill="#FFC000"/>
+  <circle cx="12" cy="16" r="1.2" fill="#FFC000"/>
+  <circle cx="16" cy="16" r="1.2" fill="#FFC000"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">NVLink Network Switch Tray</text>
+  </g>
+  <g id="storage_appliance" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-storage_array" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="3" y1="9" x2="21" y2="9" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="6" cy="6" r="1.2" fill="#FFC000"/>
+  <circle cx="6" cy="12" r="1.2" fill="#FFC000"/>
+  <circle cx="6" cy="18" r="1.2" fill="#FFC000"/>
+  <line x1="10" y1="6" x2="18" y2="6" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="10" y1="12" x2="18" y2="12" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="10" y1="18" x2="18" y2="18" stroke="#FFC000" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AI Lustre Parallel File Appliance</text>
+  </g>
+  <g id="telemetry_node" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-dashboard" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="3" y1="8" x2="21" y2="8" stroke="#FFC000" stroke-width="2.0"/>
+  <polyline points="6,15 10,11 13,13 17,9" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="9" y1="21" x2="15" y2="21" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="12" y1="18" x2="12" y2="21" stroke="#FFC000" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Cluster Health &amp; Thermal Monitor</text>
+  </g>
+</svg>

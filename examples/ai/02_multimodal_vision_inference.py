@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "02_multimodal_vision_inference.svg"
+    png_file = out / "02_multimodal_vision_inference.png"
     readme_file = out / "02_multimodal_vision_inference_README.md"
 
     with Diagram("Multimodal Vision Inference Pipeline", theme="cyber_slate") as diag:
@@ -40,6 +41,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         yolo >> diag.edge("Hazard Detected", style="solid") >> alert
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("02_multimodal_vision_inference.svg", readme_file)
 
     return svg_file

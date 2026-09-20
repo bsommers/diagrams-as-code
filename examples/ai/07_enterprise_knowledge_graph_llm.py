@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_enterprise_knowledge_graph_llm.svg"
+    png_file = out / "07_enterprise_knowledge_graph_llm.png"
     readme_file = out / "07_enterprise_knowledge_graph_llm_README.md"
 
     with Diagram("GraphRAG & Knowledge Graph Augmented LLM", theme="monochrome") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         synth_llm >> diag.edge("Grounded Graph Synthesis", style="dashed") >> analyst
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_enterprise_knowledge_graph_llm.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "03_agentic_tool_orchestration.svg"
+    png_file = out / "03_agentic_tool_orchestration.png"
     readme_file = out / "03_agentic_tool_orchestration_README.md"
 
     with Diagram("Autonomous Agent Tool Orchestration", theme="emerald") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         agent >> diag.edge("Verified Plan & Result", style="dashed") >> user
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("03_agentic_tool_orchestration.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_scada_hmi_control_station.svg"
+    png_file = out / "09_scada_hmi_control_station.png"
     readme_file = out / "09_scada_hmi_control_station_README.md"
 
     with Diagram("SCADA Dual-Console Operator Control Station", theme="iiot_dark_gold") as diag:
@@ -38,6 +39,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         scada_pri >> diag.edge("Serial DNP3 Over IP", style="solid") >> field_rtu
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_scada_hmi_control_station.svg", readme_file)
 
     return svg_file

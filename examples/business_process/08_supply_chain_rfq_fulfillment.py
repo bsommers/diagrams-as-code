@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_supply_chain_rfq_fulfillment.svg"
+    png_file = out / "08_supply_chain_rfq_fulfillment.png"
     readme_file = out / "08_supply_chain_rfq_fulfillment_README.md"
 
     with Diagram("Global Supply Chain RFQ & Sourcing", theme="emerald") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         customs >> diag.edge("Release Cargo to Racks", style="solid") >> dc_intake
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_supply_chain_rfq_fulfillment.svg", readme_file)
 
     return svg_file

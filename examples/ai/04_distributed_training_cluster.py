@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_distributed_training_cluster.svg"
+    png_file = out / "04_distributed_training_cluster.png"
     readme_file = out / "04_distributed_training_cluster_README.md"
 
     with Diagram("Distributed Multi-GPU Training Cluster", theme="iiot_dark_gold") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         lustre >> diag.edge("Sharded Batch Feed", style="solid") >> gpu1
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_distributed_training_cluster.svg", readme_file)
 
     return svg_file

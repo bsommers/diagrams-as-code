@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#88C0D0"/>
+    </marker>
+    <marker id="arrow-81A1C1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#81A1C1"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#2E3440"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Talent Acquisition</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Human Resources</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">IT Operations</text>
+  </g>
+  <g id="group_4">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Physical Security</text>
+  </g>
+  <g id="group_5">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Finance &amp; Payroll</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <g class="badge">
+  <rect x="-6.900000000000006" y="21.0" width="133.8" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Signed Offer Letter</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <g class="badge">
+  <rect x="-28.60000000000001" y="21.0" width="177.20000000000002" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Trigger Equipment Dispatch</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <g class="badge">
+  <rect x="-10.0" y="21.0" width="140.0" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Create Cloud Account</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <g class="badge">
+  <rect x="-6.900000000000006" y="21.0" width="133.8" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Issue Security Card</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <g class="badge">
+  <rect x="5.5" y="21.0" width="109.0" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Enroll Benefits</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
+  <g class="badge">
+  <rect x="-6.900000000000006" y="21.0" width="133.8" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Deliver Workstation</text>
+</g>
+  <g id="candidate" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-user" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">New Hire Employee</text>
+  </g>
+  <g id="hr_intake" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-document" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">HR Workday System</text>
+  </g>
+  <g id="it_provision" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-laptop" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="4" y="5" width="16" height="11" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+  <path d="M 2 19 H 22 L 20 16 H 4 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">IT Asset Provisioning</text>
+  </g>
+  <g id="iam_setup" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-shield" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Okta Identity &amp; Groups</text>
+  </g>
+  <g id="badge_access" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-sensor" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+  <line x1="8" y1="17" x2="16" y2="17" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Facilities Physical Badge</text>
+  </g>
+  <g id="payroll" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">ADP Payroll Enrolment</text>
+  </g>
+</svg>

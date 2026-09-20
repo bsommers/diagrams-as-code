@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "06_software_release_gate.svg"
+    png_file = out / "06_software_release_gate.png"
     readme_file = out / "06_software_release_gate_README.md"
 
     with Diagram("Continuous Deployment & Release Gating", theme="cyber_slate") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         canary >> diag.edge("Promote Release", style="solid") >> prod_fleet
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("06_software_release_gate.svg", readme_file)
 
     return svg_file

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFC000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#000000"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Control CPU</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Signal Modules</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Actuator Modules</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="11.699999999999996" y="21.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Backplane Bus</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="11.699999999999996" y="21.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Backplane Bus</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="5.5" y="21.0" width="109.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Control Signals</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-0.7000000000000028" y="21.0" width="121.4" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">PTO Motion Pulses</text>
+</g>
+  <g id="plc_cpu" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-plc" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="9" x2="20" y2="9" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="8" y1="4" x2="8" y2="9" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="12" y1="4" x2="12" y2="9" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="16" y1="4" x2="16" y2="9" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="8" cy="15" r="1.5" fill="#FFC000"/>
+  <circle cx="12" cy="15" r="1.5" fill="#FFC000"/>
+  <circle cx="16" cy="15" r="1.5" fill="#FFC000"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Siemens S7-1500 PLC</text>
+  </g>
+  <g id="di_module" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-sensor" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="8" y1="17" x2="16" y2="17" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">16-Channel Digital Input</text>
+  </g>
+  <g id="ai_module" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-sensor" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="8" y1="17" x2="16" y2="17" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">8-Channel Analog Input</text>
+  </g>
+  <g id="relay_out" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-terminal" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <polyline points="7,9 10,12 7,15" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="15" x2="17" y2="15" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Relay Output Driver</text>
+  </g>
+  <g id="stepper" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-chip" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="9" y1="2" x2="9" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="15" y1="2" x2="15" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="9" y1="19" x2="9" y2="22" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="15" y1="19" x2="15" y2="22" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="2" y1="9" x2="5" y2="9" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="2" y1="15" x2="5" y2="15" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="19" y1="9" x2="22" y2="9" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="19" y1="15" x2="22" y2="15" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Stepper Motor Drive Module</text>
+  </g>
+</svg>

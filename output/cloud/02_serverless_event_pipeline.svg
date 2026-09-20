@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#181B20"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Client Tier</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Ingress Layer</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Compute Tier</text>
+  </g>
+  <g id="group_4">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Messaging Tier</text>
+  </g>
+  <g id="group_5">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Data Layer</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="21.0" y="21.0" width="78.0" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">HTTPS REST</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="8.600000000000001" y="21.0" width="102.8" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Event Dispatch</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="11.699999999999996" y="21.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Enqueue Event</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="17.9" y="21.0" width="84.2" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Write State</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="14.799999999999997" y="21.0" width="90.4" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Parquet Dump</text>
+</g>
+  <g id="app" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-mobile" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <line x1="10" y1="18" x2="14" y2="18" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="10" y1="5" x2="14" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Mobile App Client</text>
+  </g>
+  <g id="apigw" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-api_gateway" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">REST API Gateway</text>
+  </g>
+  <g id="worker" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-serverless" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 4 20 L 10 7 L 14 16 L 20 4" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="12" x2="18" y2="20" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Lambda Ingest Worker</text>
+  </g>
+  <g id="queue" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-queue" transform="translate(48.0, 9.0) scale(1.0)">
+  <line x1="2" y1="6" x2="18" y2="6" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="2" y1="18" x2="18" y2="18" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="6" y1="6" x2="6" y2="18" stroke="#00E5A3" stroke-width="2.0"/>
+  <line x1="11" y1="6" x2="11" y2="18" stroke="#00E5A3" stroke-width="2.0"/>
+  <line x1="16" y1="6" x2="16" y2="18" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 18 12 H 22 M 20 9 L 23 12 L 20 15" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">SQS Buffer Queue</text>
+  </g>
+  <g id="dynamo" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">DynamoDB Real-Time State</text>
+  </g>
+  <g id="s3" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">S3 Archive Lake</text>
+  </g>
+</svg>

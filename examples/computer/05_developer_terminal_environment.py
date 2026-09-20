@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_developer_terminal_environment.svg"
+    png_file = out / "05_developer_terminal_environment.png"
     readme_file = out / "05_developer_terminal_environment_README.md"
 
     with Diagram("Modern Developer Terminal Toolchain", theme="nord") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         docker_sock >> diag.edge("Spin Up DB", style="solid") >> local_db
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_developer_terminal_environment.svg", readme_file)
 
     return svg_file

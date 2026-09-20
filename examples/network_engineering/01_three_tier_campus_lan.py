@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "01_three_tier_campus_lan.svg"
+    png_file = out / "01_three_tier_campus_lan.png"
     readme_file = out / "01_three_tier_campus_lan_README.md"
 
     with Diagram("Three-Tier Hierarchical Campus LAN", theme="blueprint") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         dist2 >> diag.edge("10G Trunk", style="solid") >> acc2
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("01_three_tier_campus_lan.svg", readme_file)
 
     return svg_file

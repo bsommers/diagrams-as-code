@@ -458,33 +458,68 @@ class Diagram:
         return svg
 
     def render_png(self, path: Union[str, Path]) -> bytes:
-        """Render diagram to PNG file using cairosvg or resvg-py if installed."""
+        """Render diagram to PNG file using resvg-py, cairosvg, or system converters."""
         svg_content = self.render_svg()
         p = Path(path)
         p.parent.mkdir(parents=True, exist_ok=True)
 
         try:
-            import cairosvg  # type: ignore
-
-            png_bytes: bytes = cairosvg.svg2png(
-                bytestring=svg_content.encode("utf-8"), write_to=str(p)
-            )
-            return png_bytes
-        except ImportError:
-            pass
-
-        try:
             import resvg_py  # type: ignore
 
-            png_bytes = resvg_py.svg_to_bytes(svg_content)
+            png_bytes: bytes = resvg_py.svg_to_bytes(svg_content)
             p.write_bytes(png_bytes)
             return png_bytes
         except ImportError:
             pass
 
+        try:
+            import cairosvg  # type: ignore
+
+            cairo_bytes: bytes = cairosvg.svg2png(
+                bytestring=svg_content.encode("utf-8"), write_to=str(p)
+            )
+            return cairo_bytes
+        except ImportError:
+            pass
+
+        import shutil
+        import subprocess
+
+        # Try system inkscape
+        inkscape_bin = shutil.which("inkscape")
+        if inkscape_bin:
+            temp_svg = p.with_suffix(".temp.svg")
+            try:
+                temp_svg.write_text(svg_content, encoding="utf-8")
+                res = subprocess.run(
+                    [inkscape_bin, str(temp_svg), "-o", str(p)],
+                    capture_output=True,
+                )
+                if res.returncode == 0 and p.exists():
+                    return p.read_bytes()
+            finally:
+                if temp_svg.exists():
+                    temp_svg.unlink()
+
+        # Try system ImageMagick
+        magick_bin = shutil.which("magick") or shutil.which("convert")
+        if magick_bin:
+            temp_svg = p.with_suffix(".temp.svg")
+            try:
+                temp_svg.write_text(svg_content, encoding="utf-8")
+                res = subprocess.run(
+                    [magick_bin, str(temp_svg), str(p)],
+                    capture_output=True,
+                )
+                if res.returncode == 0 and p.exists():
+                    return p.read_bytes()
+            finally:
+                if temp_svg.exists():
+                    temp_svg.unlink()
+
         raise RuntimeError(
-            "PNG rendering requires either 'cairosvg' or 'resvg-py' to be installed. "
-            "Install with: pip install cairosvg"
+            "PNG rendering requires 'resvg-py', 'cairosvg', or system utilities ('inkscape'/'magick'). "
+            "Install with: uv add --dev resvg-py"
         )
 
     @property

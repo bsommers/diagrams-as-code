@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "02_bgp_dual_multihomed_wan.svg"
+    png_file = out / "02_bgp_dual_multihomed_wan.png"
     readme_file = out / "02_bgp_dual_multihomed_wan_README.md"
 
     with Diagram("Dual-Homed eBGP Enterprise WAN Peering", theme="cyber_slate") as diag:
@@ -39,6 +40,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         edge2 >> diag.edge("OSPF Internal", style="solid") >> core_fabric
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("02_bgp_dual_multihomed_wan.svg", readme_file)
 
     return svg_file

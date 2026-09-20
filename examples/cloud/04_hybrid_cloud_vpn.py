@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_hybrid_cloud_vpn.svg"
+    png_file = out / "04_hybrid_cloud_vpn.png"
     readme_file = out / "04_hybrid_cloud_vpn_README.md"
 
     with Diagram("Hybrid Cloud IPSec & Transit Gateway", theme="emerald") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         tgw >> diag.edge("Attachment B", style="solid") >> stage_vpc
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_hybrid_cloud_vpn.svg", readme_file)
 
     return svg_file

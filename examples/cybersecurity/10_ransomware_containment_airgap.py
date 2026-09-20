@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_ransomware_containment_airgap.svg"
+    png_file = out / "10_ransomware_containment_airgap.png"
     readme_file = out / "10_ransomware_containment_airgap_README.md"
 
     with Diagram("Ransomware Defense & Optical Air-Gapped Vault", theme="crimson") as diag:
@@ -38,6 +39,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         immutable_vault >> diag.edge("Read-Only Mount", style="solid") >> clean_vm
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_ransomware_containment_airgap.svg", readme_file)
 
     return svg_file

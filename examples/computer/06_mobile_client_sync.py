@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "06_mobile_client_sync.svg"
+    png_file = out / "06_mobile_client_sync.png"
     readme_file = out / "06_mobile_client_sync_README.md"
 
     with Diagram("Mobile Offline-First Database Sync", theme="emerald") as diag:
@@ -36,6 +37,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         ws_gateway >> diag.edge("Commit Resolved Transactions", style="solid") >> cloud_db
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("06_mobile_client_sync.svg", readme_file)
 
     return svg_file

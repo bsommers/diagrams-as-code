@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "02_home_lab_network.svg"
+    png_file = out / "02_home_lab_network.png"
     readme_file = out / "02_home_lab_network_README.md"
 
     with Diagram("Home Lab Self-Hosted Infrastructure", theme="blueprint") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         poe_switch >> diag.edge("2.5GbE LAN", style="solid") >> proxmox
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("02_home_lab_network.svg", readme_file)
 
     return svg_file

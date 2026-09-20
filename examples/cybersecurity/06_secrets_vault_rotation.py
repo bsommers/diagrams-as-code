@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "06_secrets_vault_rotation.svg"
+    png_file = out / "06_secrets_vault_rotation.png"
     readme_file = out / "06_secrets_vault_rotation_README.md"
 
     with Diagram("Automated Secrets Vault & Credential Rotation", theme="emerald") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         rotator >> diag.edge("Commit New Secret", style="solid") >> vault_srv
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("06_secrets_vault_rotation.svg", readme_file)
 
     return svg_file

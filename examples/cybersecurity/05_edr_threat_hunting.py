@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_edr_threat_hunting.svg"
+    png_file = out / "05_edr_threat_hunting.png"
     readme_file = out / "05_edr_threat_hunting_README.md"
 
     with Diagram("Endpoint Detection & Threat Hunting Grid", theme="crimson") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         quarantine >> diag.edge("Isolate NIC", style="dashed") >> win_host
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_edr_threat_hunting.svg", readme_file)
 
     return svg_file

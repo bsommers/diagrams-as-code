@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "02_san_storage_fabric.svg"
+    png_file = out / "02_san_storage_fabric.png"
     readme_file = out / "02_san_storage_fabric_README.md"
 
     with Diagram("Fibre Channel Storage Area Network (SAN)", theme="blueprint") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         ctrl_b >> diag.edge("SAS-4 24G Loop", style="dashed") >> disk_shelf
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("02_san_storage_fabric.svg", readme_file)
 
     return svg_file

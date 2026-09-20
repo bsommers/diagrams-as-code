@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#181B20"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Ingress Gate</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Security Filter</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Model Execution</text>
+  </g>
+  <g id="group_4">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Egress Filter</text>
+  </g>
+  <g id="group_5">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Compliance Store</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="21.0" y="21.0" width="78.0" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Raw Prompt</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="5.5" y="21.0" width="109.0" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Sanitized Input</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-0.7000000000000028" y="21.0" width="121.4" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Anonymized Prompt</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="8.600000000000001" y="21.0" width="102.8" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Draft Response</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-19.299999999999997" y="21.0" width="158.6" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Log Prompt &amp; Evaluation</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-16.200000000000003" y="21.0" width="152.4" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="60.0" y="33.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verified Safe Response</text>
+</g>
+  <g id="user_input" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-user" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Untrusted User Prompt</text>
+  </g>
+  <g id="guard_in" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-firewall" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
+  <line x1="8" y1="11" x2="16" y2="11" stroke="#00E5A3" stroke-width="2.0"/>
+  <line x1="12" y1="7" x2="12" y2="15" stroke="#00E5A3" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">NeMo Input Guardrail</text>
+  </g>
+  <g id="pii_mask" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-shield" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">PII Redaction Engine</text>
+  </g>
+  <g id="llm_core" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-model" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Core Reasoning LLM</text>
+  </g>
+  <g id="guard_out" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-shield" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Toxicity &amp; Hallucination Filter</text>
+  </g>
+  <g id="audit_log" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Security Audit Log</text>
+  </g>
+</svg>

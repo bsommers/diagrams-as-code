@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_high_performance_workstation_storage.svg"
+    png_file = out / "10_high_performance_workstation_storage.png"
     readme_file = out / "10_high_performance_workstation_storage_README.md"
 
     with Diagram("High-Performance Compute Storage Pipeline", theme="crimson") as diag:
@@ -39,6 +40,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         nic_100g >> diag.edge("100GbE Fiber Link", style="solid") >> nvme_over_fabrics
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_high_performance_workstation_storage.svg", readme_file)
 
     return svg_file

@@ -112,9 +112,11 @@ def generate_mockup_slide(output_dir: Path | str = "output") -> Diagram:
         ) >> dashboard
 
     svg_path = out_dir / "mockup_slide.svg"
+    png_path = out_dir / "mockup_slide.png"
     readme_path = out_dir / "mockup_slide_README.md"
 
     diag.render_svg(svg_path)
+    diag.render_png(png_path)
     diag.generate_readme(
         image_file="mockup_slide.svg",
         output_path=readme_path,
@@ -122,6 +124,7 @@ def generate_mockup_slide(output_dir: Path | str = "output") -> Diagram:
     )
 
     print(f"Generated: {svg_path}")
+    print(f"Generated: {png_path}")
     print(f"Generated: {readme_path}")
     return diag
 

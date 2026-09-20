@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_pki_ca_hierarchy.svg"
+    png_file = out / "04_pki_ca_hierarchy.png"
     readme_file = out / "04_pki_ca_hierarchy_README.md"
 
     with Diagram("Public Key Infrastructure (PKI) Certificate Hierarchy", theme="blueprint") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         code_ca >> diag.edge("Issues Signing Cert", style="solid") >> dev_ws
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_pki_ca_hierarchy.svg", readme_file)
 
     return svg_file

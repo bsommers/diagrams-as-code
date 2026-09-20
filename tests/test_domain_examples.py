@@ -58,11 +58,17 @@ def test_example_diagram_execution(script_path: Path) -> None:
     output_dir = REPO_ROOT / "output" / domain
 
     svg_file = output_dir / f"{stem}.svg"
+    png_file = output_dir / f"{stem}.png"
     readme_file = output_dir / f"{stem}_README.md"
 
     # Verify SVG file exists and has non-zero size
     assert svg_file.exists(), f"SVG output missing: {svg_file}"
     assert svg_file.stat().st_size > 0
+
+    # Verify PNG file exists and has valid magic bytes
+    assert png_file.exists(), f"PNG output missing: {png_file}"
+    assert png_file.stat().st_size > 0
+    assert png_file.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n", f"Invalid PNG magic bytes in {png_file}"
 
     # Verify SVG XML validity
     svg_content = svg_file.read_text(encoding="utf-8")

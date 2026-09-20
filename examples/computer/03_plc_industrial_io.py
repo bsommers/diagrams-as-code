@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "03_plc_industrial_io.svg"
+    png_file = out / "03_plc_industrial_io.png"
     readme_file = out / "03_plc_industrial_io_README.md"
 
     with Diagram("Industrial PLC Hardware & IO Subsystem", theme="iiot_dark_gold") as diag:
@@ -38,6 +39,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         plc_cpu >> diag.edge("PTO Motion Pulses", style="solid") >> stepper
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("03_plc_industrial_io.svg", readme_file)
 
     return svg_file

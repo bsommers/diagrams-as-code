@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFC000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#000000"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Perimeter Ingress</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Inspection Network</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Internal Core Fabric</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="17.9" y="21.0" width="84.2" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Raw Ingress</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="8.600000000000001" y="21.0" width="102.8" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Encrypted Copy</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="2.3999999999999986" y="21.0" width="115.2" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Decrypted Stream</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="11.699999999999996" y="21.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-0.7000000000000028" y="21.0" width="121.4" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Permitted Packets</text>
+</g>
+  <g id="border_rtr" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-core_router" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="12" r="9.5" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#FFC000" stroke-width="2.0"/>
+  <polyline points="9.5,7 12,4.5 14.5,7" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="9.5,17 12,19.5 14.5,17" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="4.5" y1="12" x2="19.5" y2="12" stroke="#FFC000" stroke-width="2.0"/>
+  <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Border Transit Router</text>
+  </g>
+  <g id="npb" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-switch" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="6" y1="10" x2="13" y2="10" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="11,8 13,10 11,12" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="18" y1="14" x2="11" y2="14" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="13,12 11,14 13,16" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Packet Broker TAP</text>
+  </g>
+  <g id="decryptor" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-key" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="8" cy="14" r="5" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="12" y1="10" x2="21" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="17" y1="5" x2="19" y2="7" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="19" y1="7" x2="21" y2="9" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">SSL/TLS Decryptor</text>
+  </g>
+  <g id="suricata_ips" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-malware_scan" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 4 8 V 4 H 8" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 16 4 H 20 V 8" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 4 16 V 20 H 8" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M 16 20 H 20 V 16" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="4" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="8" y1="12" x2="6" y2="12" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="16" y1="12" x2="18" y2="12" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="12" y1="8" x2="12" y2="6" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="12" y1="16" x2="12" y2="18" stroke="#FFC000" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Suricata IPS Cluster</text>
+  </g>
+  <g id="core_sw" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-switch" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="6" y1="10" x2="13" y2="10" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="11,8 13,10 11,12" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="18" y1="14" x2="11" y2="14" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="13,12 11,14 13,16" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Campus Core Switch</text>
+  </g>
+</svg>

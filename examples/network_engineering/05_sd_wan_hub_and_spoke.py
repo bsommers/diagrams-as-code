@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_sd_wan_hub_and_spoke.svg"
+    png_file = out / "05_sd_wan_hub_and_spoke.png"
     readme_file = out / "05_sd_wan_hub_and_spoke_README.md"
 
     with Diagram("Enterprise SD-WAN Hub-and-Spoke Topology", theme="emerald") as diag:
@@ -39,6 +40,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         hub >> diag.edge("IPsec Tunnel", style="solid") >> branch2
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_sd_wan_hub_and_spoke.svg", readme_file)
 
     return svg_file

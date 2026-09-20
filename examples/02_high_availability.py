@@ -122,9 +122,11 @@ def generate_high_availability(output_dir: Path | str = "output") -> Diagram:
         ) >> node3
 
     svg_path = out_dir / "high_availability.svg"
+    png_path = out_dir / "high_availability.png"
     readme_path = out_dir / "high_availability_README.md"
 
     diag.render_svg(svg_path)
+    diag.render_png(png_path)
     diag.generate_readme(
         image_file="high_availability.svg",
         output_path=readme_path,
@@ -132,6 +134,7 @@ def generate_high_availability(output_dir: Path | str = "output") -> Diagram:
     )
 
     print(f"Generated: {svg_path}")
+    print(f"Generated: {png_path}")
     print(f"Generated: {readme_path}")
     return diag
 

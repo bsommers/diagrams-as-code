@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_customer_loan_origination.svg"
+    png_file = out / "07_customer_loan_origination.png"
     readme_file = out / "07_customer_loan_origination_README.md"
 
     with Diagram("Digital Consumer Loan Origination", theme="monochrome") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         ach_wire >> diag.edge("Fund Account", style="dashed") >> applicant
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_customer_loan_origination.svg", readme_file)
 
     return svg_file

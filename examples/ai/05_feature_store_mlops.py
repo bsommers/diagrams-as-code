@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_feature_store_mlops.svg"
+    png_file = out / "05_feature_store_mlops.png"
     readme_file = out / "05_feature_store_mlops_README.md"
 
     with Diagram("Enterprise Feature Store & MLOps Pipeline", theme="blueprint") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         warehouse >> diag.edge("Offline Training Features", style="dashed") >> feast
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_feature_store_mlops.svg", readme_file)
 
     return svg_file

@@ -104,9 +104,11 @@ def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
         ) >> scada
 
     svg_file = out_dir / "main_architecture.svg"
+    png_file = out_dir / "main_architecture.png"
     readme_file = out_dir / "main_README.md"
 
     diag.render_svg(svg_file)
+    diag.render_png(png_file)
     diag.generate_readme(
         image_file="main_architecture.svg",
         output_path=readme_file,
@@ -114,6 +116,7 @@ def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
     )
 
     print(f"Generated: {svg_file}")
+    print(f"Generated: {png_file}")
     print(f"Generated: {readme_file}")
 
     # Regenerate root README.md when building to default output directory

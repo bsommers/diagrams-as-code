@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_self_hosted_vllm_cluster.svg"
+    png_file = out / "10_self_hosted_vllm_cluster.png"
     readme_file = out / "10_self_hosted_vllm_cluster_README.md"
 
     with Diagram("Self-Hosted vLLM Ray Cluster with PagedAttention", theme="emerald") as diag:
@@ -49,6 +50,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         vllm_router >> diag.edge("Report Latency & TTFT", style="dashed") >> metrics
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_self_hosted_vllm_cluster.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_dual_homed_edge_gateway.svg"
+    png_file = out / "04_dual_homed_edge_gateway.png"
     readme_file = out / "04_dual_homed_edge_gateway_README.md"
 
     with Diagram("Dual-Homed Industrial Edge Gateway", theme="cyber_slate") as diag:
@@ -40,6 +41,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         it_nic >> diag.edge("TLS MQTT / Sparkplug", style="solid") >> corp_server
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_dual_homed_edge_gateway.svg", readme_file)
 
     return svg_file

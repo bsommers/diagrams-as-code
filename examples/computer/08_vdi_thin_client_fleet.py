@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_vdi_thin_client_fleet.svg"
+    png_file = out / "08_vdi_thin_client_fleet.png"
     readme_file = out / "08_vdi_thin_client_fleet_README.md"
 
     with Diagram("Enterprise Virtual Desktop Infrastructure (VDI)", theme="blueprint") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         esxi_cluster >> diag.edge("VMDK Disk I/O", style="solid") >> san_storage
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_vdi_thin_client_fleet.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_embedded_rtos_system.svg"
+    png_file = out / "07_embedded_rtos_system.png"
     readme_file = out / "07_embedded_rtos_system_README.md"
 
     with Diagram("Embedded Real-Time Operating System (RTOS)", theme="monochrome") as diag:
@@ -38,6 +39,7 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         task_comms >> diag.edge("Sign Outgoing Packet", style="dashed") >> crypto
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_embedded_rtos_system.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_power_distribution_ups.svg"
+    png_file = out / "04_power_distribution_ups.png"
     readme_file = out / "04_power_distribution_ups_README.md"
 
     with Diagram("Datacenter Power Distribution & 2N UPS", theme="crimson") as diag:
@@ -53,6 +54,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         pdu_b >> diag.edge("PDU Whip B", style="dashed") >> rack_feed
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_power_distribution_ups.svg", readme_file)
 
     return svg_file

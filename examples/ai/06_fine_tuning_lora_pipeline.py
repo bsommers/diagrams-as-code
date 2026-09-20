@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "06_fine_tuning_lora_pipeline.svg"
+    png_file = out / "06_fine_tuning_lora_pipeline.png"
     readme_file = out / "06_fine_tuning_lora_pipeline_README.md"
 
     with Diagram("Foundation Model LoRA Fine-Tuning Pipeline", theme="crimson") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         quantizer >> diag.edge("Register Model Package", style="solid") >> registry
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("06_fine_tuning_lora_pipeline.svg", readme_file)
 
     return svg_file

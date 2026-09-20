@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#0B1E36"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Data Ingestion</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Feature Engineering</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Serving Tier</text>
+  </g>
+  <g id="group_4">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Training Tier</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-10.0" y="21.0" width="140.0" height="18.0" rx="9.0" fill="#133663" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Materialize Features</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="14.799999999999997" y="21.0" width="90.4" height="18.0" rx="9.0" fill="#133663" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Load History</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="2.3999999999999986" y="21.0" width="115.2" height="18.0" rx="9.0" fill="#133663" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Sync Hot Vectors</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-16.200000000000003" y="21.0" width="152.4" height="18.0" rx="9.0" fill="#133663" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Retrieve Entity Vector</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="-25.5" y="21.0" width="171.0" height="18.0" rx="9.0" fill="#133663" />
+  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Offline Training Features</text>
+</g>
+  <g id="stream_in" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-queue" transform="translate(48.0, 9.0) scale(1.0)">
+  <line x1="2" y1="6" x2="18" y2="6" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="2" y1="18" x2="18" y2="18" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="6" y1="6" x2="6" y2="18" stroke="#00D2FF" stroke-width="2.0"/>
+  <line x1="11" y1="6" x2="11" y2="18" stroke="#00D2FF" stroke-width="2.0"/>
+  <line x1="16" y1="6" x2="16" y2="18" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 18 12 H 22 M 20 9 L 23 12 L 20 15" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Streaming Kafka Topics</text>
+  </g>
+  <g id="batch_in" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Batch Parquet Dumps</text>
+  </g>
+  <g id="feast" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-workflow" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Feast Feature Registry</text>
+  </g>
+  <g id="redis_online" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Online Low-Latency Redis</text>
+  </g>
+  <g id="model_svc" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-model" transform="translate(48.0, 9.0) scale(1.0)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Online Prediction Service</text>
+  </g>
+  <g id="warehouse" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-database" transform="translate(48.0, 9.0) scale(1.0)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#00D2FF" stroke-width="2.0"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#00D2FF" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Offline BigQuery Lakehouse</text>
+  </g>
+</svg>

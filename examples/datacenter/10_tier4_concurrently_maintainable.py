@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_tier4_concurrently_maintainable.svg"
+    png_file = out / "10_tier4_concurrently_maintainable.png"
     readme_file = out / "10_tier4_concurrently_maintainable_README.md"
 
     with Diagram("Tier IV Concurrently Maintainable Datacenter", theme="blueprint") as diag:
@@ -50,6 +51,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         crac_loop_b >> diag.edge("Underfloor Supply B", style="dashed") >> mission_rack
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_tier4_concurrently_maintainable.svg", readme_file)
 
     return svg_file

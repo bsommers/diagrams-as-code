@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200.0 800.0" width="1200.0" height="800.0">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
+    </marker>
+    <marker id="arrow-27272A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#27272A"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FAFAFA"/>
+  <g id="group_1">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Area 0 Backbone</text>
+  </g>
+  <g id="group_2">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Area 10 Campus Spoke</text>
+  </g>
+  <g id="group_3">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Area 20 Datacenter</text>
+  </g>
+  <g id="group_4">
+    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <text x="-9.0" y="-36.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">External Autonomous System</text>
+  </g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <g class="badge">
+  <rect x="17.9" y="21.0" width="84.2" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="60.0" y="33.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 0 Mesh</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <g class="badge">
+  <rect x="14.799999999999997" y="21.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="60.0" y="33.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 0 Trunk</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <g class="badge">
+  <rect x="2.3999999999999986" y="21.0" width="115.2" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="60.0" y="33.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 10 Internal</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <g class="badge">
+  <rect x="14.799999999999997" y="21.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="60.0" y="33.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 0 Trunk</text>
+</g>
+  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <g class="badge">
+  <rect x="-6.900000000000006" y="21.0" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="60.0" y="33.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">eBGP Redistribution</text>
+</g>
+  <g id="bb_rtr1" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <g class="icon icon-core_router" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="12" r="9.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="9.5,7 12,4.5 14.5,7" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="9.5,17 12,19.5 14.5,17" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="4.5" y1="12" x2="19.5" y2="12" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Backbone Router A</text>
+  </g>
+  <g id="bb_rtr2" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <g class="icon icon-core_router" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="12" r="9.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="9.5,7 12,4.5 14.5,7" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="9.5,17 12,19.5 14.5,17" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="4.5" y1="12" x2="19.5" y2="12" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Backbone Router B</text>
+  </g>
+  <g id="abr_campus" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <g class="icon icon-core_router" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="12" r="9.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="9.5,7 12,4.5 14.5,7" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="9.5,17 12,19.5 14.5,17" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="4.5" y1="12" x2="19.5" y2="12" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Area 10 ABR</text>
+  </g>
+  <g id="campus_sw" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <g class="icon icon-switch" transform="translate(48.0, 9.0) scale(1.0)">
+  <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="6" y1="10" x2="13" y2="10" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="11,8 13,10 11,12" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="18" y1="14" x2="11" y2="14" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+  <polyline points="13,12 11,14 13,16" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Campus Distribution</text>
+  </g>
+  <g id="asbr_dc" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <g class="icon icon-core_router" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="12" cy="12" r="9.5" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="9.5,7 12,4.5 14.5,7" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="9.5,17 12,19.5 14.5,17" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="4.5" y1="12" x2="19.5" y2="12" stroke="#18181B" stroke-width="2.0"/>
+  <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Datacenter ASBR</text>
+  </g>
+  <g id="bgp_peer" filter="url(#shadow)">
+    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <g class="icon icon-bgp" transform="translate(48.0, 9.0) scale(1.0)">
+  <circle cx="6" cy="7" r="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <circle cx="18" cy="7" r="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <circle cx="12" cy="18" r="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="9" y1="7" x2="15" y2="7" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="8" y1="9.5" x2="10.5" y2="15.5" stroke="#18181B" stroke-width="2.0"/>
+  <line x1="16" y1="9.5" x2="13.5" y2="15.5" stroke="#18181B" stroke-width="2.0"/>
+</g>
+    <text x="60.0" y="47.0" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">External BGP Peer</text>
+  </g>
+</svg>

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_honeynet_deception_grid.svg"
+    png_file = out / "07_honeynet_deception_grid.png"
     readme_file = out / "07_honeynet_deception_grid_README.md"
 
     with Diagram("Deception Technology Honeynet Grid", theme="cyber_slate") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         honey_siem >> diag.edge("Trigger Block", style="solid") >> blackhole
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_honeynet_deception_grid.svg", readme_file)
 
     return svg_file

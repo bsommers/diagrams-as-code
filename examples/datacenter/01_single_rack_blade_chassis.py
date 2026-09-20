@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "01_single_rack_blade_chassis.svg"
+    png_file = out / "01_single_rack_blade_chassis.png"
     readme_file = out / "01_single_rack_blade_chassis_README.md"
 
     with Diagram("High-Density Blade Server Enclosure", theme="iiot_dark_gold") as diag:
@@ -40,6 +41,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         chassis_mgmt >> diag.edge("Telemetry Bus", style="dotted") >> blade2
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("01_single_rack_blade_chassis.svg", readme_file)
 
     return svg_file

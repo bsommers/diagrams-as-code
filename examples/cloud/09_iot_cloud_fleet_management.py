@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_iot_cloud_fleet_management.svg"
+    png_file = out / "09_iot_cloud_fleet_management.png"
     readme_file = out / "09_iot_cloud_fleet_management_README.md"
 
     with Diagram("Cloud IoT Fleet Telemetry & Management", theme="iiot_dark_gold") as diag:
@@ -52,6 +53,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         timescale >> diag.edge("SQL Query", style="solid") >> dash
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_iot_cloud_fleet_management.svg", readme_file)
 
     return svg_file

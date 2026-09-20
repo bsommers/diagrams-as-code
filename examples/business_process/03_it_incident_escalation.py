@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "03_it_incident_escalation.svg"
+    png_file = out / "03_it_incident_escalation.png"
     readme_file = out / "03_it_incident_escalation_README.md"
 
     with Diagram("ITSM Major Incident Escalation & Response", theme="crimson") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         war_room >> diag.edge("Resolve & File RCA", style="solid") >> postmortem
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("03_it_incident_escalation.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_edge_micro_datacenter.svg"
+    png_file = out / "09_edge_micro_datacenter.png"
     readme_file = out / "09_edge_micro_datacenter_README.md"
 
     with Diagram("Modular Edge Micro-Datacenter Container", theme="cyber_slate") as diag:
@@ -40,6 +41,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         env_sensors >> diag.edge("Telemetry Telemetry", style="dashed") >> cellular_oob
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_edge_micro_datacenter.svg", readme_file)
 
     return svg_file

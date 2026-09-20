@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "06_kubernetes_bare_metal.svg"
+    png_file = out / "06_kubernetes_bare_metal.png"
     readme_file = out / "06_kubernetes_bare_metal_README.md"
 
     with Diagram("Bare-Metal Kubernetes High Availability", theme="emerald") as diag:
@@ -47,6 +48,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         worker1 >> diag.edge("RBD Mount", style="dashed") >> ceph
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("06_kubernetes_bare_metal.svg", readme_file)
 
     return svg_file

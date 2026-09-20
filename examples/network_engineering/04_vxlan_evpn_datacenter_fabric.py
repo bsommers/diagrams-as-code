@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "04_vxlan_evpn_datacenter_fabric.svg"
+    png_file = out / "04_vxlan_evpn_datacenter_fabric.png"
     readme_file = out / "04_vxlan_evpn_datacenter_fabric_README.md"
 
     with Diagram("EVPN-VXLAN Datacenter Spine-Leaf Fabric", theme="nord") as diag:
@@ -42,6 +43,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         leaf2 >> diag.edge("25G MLAG", style="solid") >> host2
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("04_vxlan_evpn_datacenter_fabric.svg", readme_file)
 
     return svg_file

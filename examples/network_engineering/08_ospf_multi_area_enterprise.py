@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_ospf_multi_area_enterprise.svg"
+    png_file = out / "08_ospf_multi_area_enterprise.png"
     readme_file = out / "08_ospf_multi_area_enterprise_README.md"
 
     with Diagram("OSPF Multi-Area Enterprise Routing", theme="monochrome") as diag:
@@ -43,6 +44,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         asbr_dc >> diag.edge("eBGP Redistribution", style="solid") >> bgp_peer
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_ospf_multi_area_enterprise.svg", readme_file)
 
     return svg_file

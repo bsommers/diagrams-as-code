@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "10_dns_anycast_authoritative_mesh.svg"
+    png_file = out / "10_dns_anycast_authoritative_mesh.png"
     readme_file = out / "10_dns_anycast_authoritative_mesh_README.md"
 
     with Diagram("Global Anycast Authoritative DNS Network", theme="cyber_slate") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         master_db >> diag.edge("Zone Replication", style="solid") >> dns_eu
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("10_dns_anycast_authoritative_mesh.svg", readme_file)
 
     return svg_file

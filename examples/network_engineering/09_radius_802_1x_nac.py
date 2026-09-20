@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_radius_802_1x_nac.svg"
+    png_file = out / "09_radius_802_1x_nac.png"
     readme_file = out / "09_radius_802_1x_nac_README.md"
 
     with Diagram("802.1X Network Access Control (NAC) & RADIUS", theme="nord") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         auth_sw >> diag.edge("Assign Quarantine", style="dashed") >> vlan_iso
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_radius_802_1x_nac.svg", readme_file)
 
     return svg_file

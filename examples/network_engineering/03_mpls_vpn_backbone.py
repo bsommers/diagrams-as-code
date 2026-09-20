@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "03_mpls_vpn_backbone.svg"
+    png_file = out / "03_mpls_vpn_backbone.png"
     readme_file = out / "03_mpls_vpn_backbone_README.md"
 
     with Diagram("MPLS Layer 3 VPN Service Provider Backbone", theme="iiot_dark_gold") as diag:
@@ -38,6 +39,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         pe2 >> diag.edge("MPLS Label Pop", style="solid") >> ce2
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("03_mpls_vpn_backbone.svg", readme_file)
 
     return svg_file

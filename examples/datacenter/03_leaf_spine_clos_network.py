@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "03_leaf_spine_clos_network.svg"
+    png_file = out / "03_leaf_spine_clos_network.png"
     readme_file = out / "03_leaf_spine_clos_network_README.md"
 
     with Diagram("Leaf-Spine Clos Datacenter Network", theme="cyber_slate") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         pod2 >> diag.edge("TOR Trunk", style="solid") >> leaf2
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("03_leaf_spine_clos_network.svg", readme_file)
 
     return svg_file

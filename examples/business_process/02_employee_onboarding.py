@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "02_employee_onboarding.svg"
+    png_file = out / "02_employee_onboarding.png"
     readme_file = out / "02_employee_onboarding_README.md"
 
     with Diagram("Corporate Employee Onboarding Lifecycle", theme="nord") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         it_provision >> diag.edge("Deliver Workstation", style="dashed") >> candidate
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("02_employee_onboarding.svg", readme_file)
 
     return svg_file

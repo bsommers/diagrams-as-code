@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "07_dwdm_metro_optical_ring.svg"
+    png_file = out / "07_dwdm_metro_optical_ring.png"
     readme_file = out / "07_dwdm_metro_optical_ring_README.md"
 
     with Diagram("Metro DWDM Optical Transport Ring", theme="blueprint") as diag:
@@ -41,6 +42,7 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         patch_bay >> diag.edge("Client Hand-off", style="solid") >> transponder
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("07_dwdm_metro_optical_ring.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_ai_guardrails_safety_eval.svg"
+    png_file = out / "08_ai_guardrails_safety_eval.png"
     readme_file = out / "08_ai_guardrails_safety_eval_README.md"
 
     with Diagram("AI Safety Guardrails & Jailbreak Defense", theme="cyber_slate") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         guard_out >> diag.edge("Verified Safe Response", style="solid") >> user_input
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_ai_guardrails_safety_eval.svg", readme_file)
 
     return svg_file

@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_claims_processing_fraud_detection.svg"
+    png_file = out / "09_claims_processing_fraud_detection.png"
     readme_file = out / "09_claims_processing_fraud_detection_README.md"
 
     with Diagram("Insurance Claims Processing & AI Fraud Scoring", theme="crimson") as diag:
@@ -45,6 +46,7 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         payment >> diag.edge("Disburse Funds", style="solid") >> claimant
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_claims_processing_fraud_detection.svg", readme_file)
 
     return svg_file

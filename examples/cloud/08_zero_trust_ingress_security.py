@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "08_zero_trust_ingress_security.svg"
+    png_file = out / "08_zero_trust_ingress_security.png"
     readme_file = out / "08_zero_trust_ingress_security_README.md"
 
     with Diagram("Zero-Trust Perimeter & DMZ Security Ingress", theme="cyber_slate") as diag:
@@ -50,6 +51,7 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         backend >> diag.edge("Fetch Secret", style="dashed") >> vault
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("08_zero_trust_ingress_security.svg", readme_file)
 
     return svg_file

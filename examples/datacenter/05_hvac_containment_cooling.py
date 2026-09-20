@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "05_hvac_containment_cooling.svg"
+    png_file = out / "05_hvac_containment_cooling.png"
     readme_file = out / "05_hvac_containment_cooling_README.md"
 
     with Diagram("Datacenter In-Row CRAC & Cooling Loops", theme="nord") as diag:
@@ -44,6 +45,7 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         chiller >> diag.edge("Condenser Water Loop", style="solid") >> towers
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("05_hvac_containment_cooling.svg", readme_file)
 
     return svg_file

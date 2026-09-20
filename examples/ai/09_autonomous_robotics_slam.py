@@ -11,6 +11,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     svg_file = out / "09_autonomous_robotics_slam.svg"
+    png_file = out / "09_autonomous_robotics_slam.png"
     readme_file = out / "09_autonomous_robotics_slam_README.md"
 
     with Diagram("Autonomous Mobile Robot (AMR) SLAM Engine", theme="nord") as diag:
@@ -46,6 +47,7 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         planner >> diag.edge("Velocity Commands (Twist)", style="solid") >> motors
 
         diag.render_svg(svg_file)
+        diag.render_png(png_file)
         diag.generate_readme("09_autonomous_robotics_slam.svg", readme_file)
 
     return svg_file
