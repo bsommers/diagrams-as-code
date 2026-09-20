@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/computer") -> Path:
@@ -29,6 +29,9 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         with diag.group("Corporate IT Network") as g_4:
             corp_server = diag.add(Shape("corp_server", "Enterprise SCADA Host", icon="server", database="PostgreSQL Timescale"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -40,9 +43,10 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         edge_ipc >> diag.edge("Firewall NAT", style="dashed") >> it_nic
         it_nic >> diag.edge("TLS MQTT / Sparkplug", style="solid") >> corp_server
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("04_dual_homed_edge_gateway.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("04_dual_homed_edge_gateway.svg", readme_file)
 
     return svg_file
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/computer") -> Path:
@@ -27,6 +27,9 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
             cloud_db = diag.add(Shape("cloud_db", "Master PostgreSQL DB", icon="storage", ha="Multi-Region Read-Write"))
             cloud_db.below(ws_gateway, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
 
@@ -36,9 +39,10 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         sync_mgr >> diag.edge("TLS WebSocket Sync", style="solid") >> ws_gateway
         ws_gateway >> diag.edge("Commit Resolved Transactions", style="solid") >> cloud_db
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("06_mobile_client_sync.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("06_mobile_client_sync.svg", readme_file)
 
     return svg_file
 

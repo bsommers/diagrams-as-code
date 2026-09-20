@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
@@ -32,6 +32,9 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
             azure_db = diag.add(Shape("azure_db", "Azure Postgres Replica", icon="database", role="Read Standby"))
             azure_db.below(azure_app, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -45,9 +48,10 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         azure_app >> diag.edge("Read Query", style="dashed") >> azure_db
         aws_db >> diag.edge("Cross-Cloud Replication", style="dotted") >> azure_db
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("06_multi_cloud_dr_failover.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("06_multi_cloud_dr_failover.svg", readme_file)
 
     return svg_file
 

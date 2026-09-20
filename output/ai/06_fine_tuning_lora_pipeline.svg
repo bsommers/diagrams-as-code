@@ -12,67 +12,67 @@
   </defs>
   <rect width="100%" height="100%" fill="#1A0F14"/>
   <g id="group_1">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Input Artifacts</text>
+    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Input Artifacts</text>
   </g>
   <g id="group_2">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Training Compute</text>
+    <rect x="280.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="296.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Training Compute</text>
   </g>
   <g id="group_3">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Trained Artifacts</text>
+    <rect x="500.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="516.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Trained Artifacts</text>
   </g>
   <g id="group_4">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Packaging Tier</text>
+    <rect x="720.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="736.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Packaging Tier</text>
   </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-6.900000000000006" y="21.0" width="133.8" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Load Frozen Weights</text>
+  <rect x="188.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="255.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Load Frozen Weights</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 205.0 260.0 L 255.0 260.0 L 255.0 170.0 L 305.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-22.400000000000006" y="21.0" width="164.8" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Instruction Tuning Batch</text>
+  <rect x="172.6" y="206.0" width="164.8" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="255.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Instruction Tuning Batch</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 425.0 170.0 L 525.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-10.0" y="21.0" width="140.0" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Export Delta Weights</text>
+  <rect x="405.0" y="161.0" width="140.0" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="475.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Export Delta Weights</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 645.0 170.0 L 745.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="5.5" y="21.0" width="109.0" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fuse &amp; Quantize</text>
+  <rect x="640.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="695.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fuse &amp; Quantize</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 805.0 200.0 L 805.0 230.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-16.200000000000003" y="21.0" width="152.4" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Register Model Package</text>
+  <rect x="728.8" y="206.0" width="152.4" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="805.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Register Model Package</text>
 </g>
   <g id="base_model" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-model" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-model" transform="translate(133.0, 149.0) scale(1.0)">
   <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linejoin="round"/>
   <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linejoin="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Base Llama-3 70B Weights</text>
+    <text x="145.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Base Llama-3 70B Weights</text>
   </g>
   <g id="dataset" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-document" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-document" transform="translate(133.0, 239.0) scale(1.0)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="14,2 14,8 20,8" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="8" y1="13" x2="16" y2="13" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="8" y1="17" x2="14" y2="17" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Curated Instruction Corpus</text>
+    <text x="145.0" y="277.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Curated Instruction Corpus</text>
   </g>
   <g id="lora_trainer" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-chip" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-chip" transform="translate(353.0, 149.0) scale(1.0)">
   <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="9" y1="2" x2="9" y2="5" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
@@ -84,33 +84,33 @@
   <line x1="19" y1="9" x2="22" y2="9" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="19" y1="15" x2="22" y2="15" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">LoRA PEFT Trainer</text>
+    <text x="365.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">LoRA PEFT Trainer</text>
   </g>
   <g id="adapter" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-brain" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-brain" transform="translate(573.0, 149.0) scale(1.0)">
   <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linejoin="round"/>
   <line x1="12" y1="4" x2="12" y2="20" stroke="#F43F5E" stroke-width="2.0" stroke-dasharray="2,2"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">LoRA Adapter Checkpoint</text>
+    <text x="585.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">LoRA Adapter Checkpoint</text>
   </g>
   <g id="quantizer" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-workflow" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-workflow" transform="translate(793.0, 149.0) scale(1.0)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWQ / GGUF Quantizer</text>
+    <text x="805.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWQ / GGUF Quantizer</text>
   </g>
   <g id="registry" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-storage" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="745.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-storage" transform="translate(793.0, 239.0) scale(1.0)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Hugging Face Model Registry</text>
+    <text x="805.0" y="277.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Hugging Face Model Registry</text>
   </g>
 </svg>

@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/ai") -> Path:
@@ -34,6 +34,9 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         with diag.group("Observability") as g_5:
             metrics = diag.add(Shape("metrics", "Prometheus Performance Metrics", icon="dashboard", kpi="Tokens/sec, TTFT, ITL"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -49,9 +52,10 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         worker2 >> diag.edge("Paged Attention Blocks", style="dashed") >> kv_cache
         vllm_router >> diag.edge("Report Latency & TTFT", style="dashed") >> metrics
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("10_self_hosted_vllm_cluster.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("10_self_hosted_vllm_cluster.svg", readme_file)
 
     return svg_file
 

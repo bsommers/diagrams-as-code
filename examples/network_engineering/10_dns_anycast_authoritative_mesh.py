@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
@@ -31,6 +31,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         with diag.group("Control Plane") as g_4:
             master_db = diag.add(Shape("master_db", "Hidden Master Database", icon="database", sync="TSIG AXFR / IXFR"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -44,9 +47,10 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         master_db >> diag.edge("Zone Replication", style="solid") >> dns_us
         master_db >> diag.edge("Zone Replication", style="solid") >> dns_eu
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("10_dns_anycast_authoritative_mesh.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("10_dns_anycast_authoritative_mesh.svg", readme_file)
 
     return svg_file
 

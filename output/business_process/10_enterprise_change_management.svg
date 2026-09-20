@@ -9,111 +9,111 @@
   </defs>
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">RFC Initiation</text>
+    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">RFC Initiation</text>
   </g>
   <g id="group_2">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Governance Gates</text>
+    <rect x="280.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="296.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Governance Gates</text>
   </g>
   <g id="group_3">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Execution Phase</text>
+    <rect x="500.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="516.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Execution Phase</text>
   </g>
   <g id="group_4">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Verification</text>
+    <rect x="720.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="736.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Verification</text>
   </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="-3.8000000000000043" y="21.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#133663" />
-  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Draft RFC Proposal</text>
+  <rect x="81.19999999999999" y="206.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <text x="145.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Draft RFC Proposal</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 260.0 L 255.0 260.0 L 255.0 170.0 L 305.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="-16.200000000000003" y="21.0" width="152.4" height="18.0" rx="9.0" fill="#133663" />
-  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Calculate Impact Score</text>
+  <rect x="178.8" y="206.0" width="152.4" height="18.0" rx="9.0" fill="#133663" />
+  <text x="255.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Calculate Impact Score</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 365.0 200.0 L 365.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="-13.100000000000009" y="21.0" width="146.20000000000002" height="18.0" rx="9.0" fill="#133663" />
-  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Present to CAB Review</text>
+  <rect x="291.9" y="206.0" width="146.20000000000002" height="18.0" rx="9.0" fill="#133663" />
+  <text x="365.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Present to CAB Review</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 425.0 260.0 L 475.0 260.0 L 475.0 170.0 L 525.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="-22.400000000000006" y="21.0" width="164.8" height="18.0" rx="9.0" fill="#133663" />
-  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Approve Execution Window</text>
+  <rect x="392.6" y="206.0" width="164.8" height="18.0" rx="9.0" fill="#133663" />
+  <text x="475.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Approve Execution Window</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 645.0 170.0 L 745.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="-34.8" y="21.0" width="189.6" height="18.0" rx="9.0" fill="#133663" />
-  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Run Post-Change Verification</text>
+  <rect x="600.2" y="161.0" width="189.6" height="18.0" rx="9.0" fill="#133663" />
+  <text x="695.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Run Post-Change Verification</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 805.0 200.0 L 805.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="-25.5" y="21.0" width="171.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="60.0" y="33.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Abnormal Signals Detected</text>
+  <rect x="719.5" y="206.0" width="171.0" height="18.0" rx="9.0" fill="#133663" />
+  <text x="805.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Abnormal Signals Detected</text>
 </g>
   <g id="engineer" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-user" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-user" transform="translate(133.0, 149.0) scale(1.0)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Systems Engineer</text>
+    <text x="145.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Systems Engineer</text>
   </g>
   <g id="rfc_doc" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-document" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-document" transform="translate(133.0, 239.0) scale(1.0)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="14,2 14,8 20,8" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="8" y1="13" x2="16" y2="13" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="8" y1="17" x2="14" y2="17" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Request for Change (RFC)</text>
+    <text x="145.0" y="277.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Request for Change (RFC)</text>
   </g>
   <g id="risk_calc" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-decision" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-decision" transform="translate(353.0, 149.0) scale(1.0)">
   <path d="M 12 2 L 21 12 L 12 22 L 3 12 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
   <line x1="12" y1="8" x2="12" y2="13" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <circle cx="12" cy="16" r="1" fill="#00D2FF"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Risk &amp; Impact Matrix</text>
+    <text x="365.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Risk &amp; Impact Matrix</text>
   </g>
   <g id="cab_board" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-user" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-user" transform="translate(353.0, 239.0) scale(1.0)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Change Advisory Board (CAB)</text>
+    <text x="365.0" y="277.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Change Advisory Board (CAB)</text>
   </g>
   <g id="maint_window" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-terminal" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-terminal" transform="translate(573.0, 149.0) scale(1.0)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="15" x2="17" y2="15" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Maintenance Window Execution</text>
+    <text x="585.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Maintenance Window Execution</text>
   </g>
   <g id="health_verify" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-shield" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-shield" transform="translate(793.0, 149.0) scale(1.0)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Automated Post-Change Health Check</text>
+    <text x="805.0" y="187.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Automated Post-Change Health Check</text>
   </g>
   <g id="rollback" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-workflow" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="745.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <g class="icon icon-workflow" transform="translate(793.0, 239.0) scale(1.0)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Automated Rollback Safeguard</text>
+    <text x="805.0" y="277.0" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Automated Rollback Safeguard</text>
   </g>
 </svg>

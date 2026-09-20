@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
@@ -31,6 +31,9 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         with diag.group("Automated Defense") as g_4:
             blackhole = diag.add(Shape("blackhole", "BGP Flowspec Sinkhole", icon="lock", action="Null-Route IP"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -45,9 +48,10 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         decoy_db >> diag.edge("Honeytoken Tripwire", style="solid") >> honey_siem
         honey_siem >> diag.edge("Trigger Block", style="solid") >> blackhole
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("07_honeynet_deception_grid.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("07_honeynet_deception_grid.svg", readme_file)
 
     return svg_file
 

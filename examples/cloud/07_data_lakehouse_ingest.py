@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
@@ -34,6 +34,9 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         with diag.group("Analytics Tier") as g_5:
             athena = diag.add(Shape("athena", "Athena Serverless SQL", icon="terminal", engine="Trino SQL"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -48,9 +51,10 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         glue >> diag.edge("ETL Transform", style="solid") >> s3_curated
         athena >> diag.edge("Direct SQL", style="solid") >> s3_curated
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("07_data_lakehouse_ingest.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("07_data_lakehouse_ingest.svg", readme_file)
 
     return svg_file
 

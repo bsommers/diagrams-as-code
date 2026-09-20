@@ -21,12 +21,13 @@ EXPECTED_DOMAINS = {
     "business_process",
     "cybersecurity",
     "network_engineering",
+    "iiot",
 }
 
 
 def test_example_script_discovery() -> None:
-    """Verify that exactly 70 example scripts exist across 7 domains."""
-    assert len(EXAMPLE_SCRIPTS) == 70
+    """Verify that exactly 80 example scripts exist across 8 domains."""
+    assert len(EXAMPLE_SCRIPTS) == 80
     domain_counts: dict[str, int] = {}
     for p in EXAMPLE_SCRIPTS:
         domain = p.parent.name
@@ -82,6 +83,17 @@ def test_example_diagram_execution(script_path: Path) -> None:
     # Verify defs exists (markers, gradients, styles)
     defs = [elem for elem in tree.iter() if elem.tag.endswith("defs")]
     assert len(defs) >= 1, f"Missing <defs> section in {svg_file}"
+
+    # Verify that shapes are not all stacked at (0, 0)
+    rects = []
+    for g in tree.findall(".//{http://www.w3.org/2000/svg}g"):
+        gid = g.attrib.get("id", "")
+        if gid and not gid.startswith("group_") and gid != "shadow":
+            r = g.find("{http://www.w3.org/2000/svg}rect")
+            if r is not None:
+                rects.append((float(r.attrib.get("x", 0)), float(r.attrib.get("y", 0))))
+    if len(rects) > 1:
+        assert not all(x == 0.0 and y == 0.0 for x, y in rects), f"Shapes stacked at (0,0) in {svg_file}"
 
     # Verify README BOM exists and contains required sections
     assert readme_file.exists(), f"README output missing: {readme_file}"

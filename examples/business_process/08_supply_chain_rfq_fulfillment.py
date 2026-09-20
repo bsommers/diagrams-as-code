@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
@@ -31,6 +31,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         with diag.group("Warehouse Fulfillment") as g_4:
             dc_intake = diag.add(Shape("dc_intake", "Central Distribution Center", icon="storage_array", pallet="Automated AS/RS Intake"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -43,9 +46,10 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         freight >> diag.edge("Present Bill of Lading", style="solid") >> customs
         customs >> diag.edge("Release Cargo to Racks", style="solid") >> dc_intake
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("08_supply_chain_rfq_fulfillment.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("08_supply_chain_rfq_fulfillment.svg", readme_file)
 
     return svg_file
 

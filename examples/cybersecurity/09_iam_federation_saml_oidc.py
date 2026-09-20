@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
@@ -30,6 +30,9 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
             portal_app = diag.add(Shape("portal_app", "Internal Microservice", icon="server", auth="OAuth2 / OIDC JWT"))
             portal_app.below(saas_app, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -42,9 +45,10 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         idp_cloud >> diag.edge("SAML Assertion Post", style="solid") >> saas_app
         idp_cloud >> diag.edge("ID Token / PKCE", style="solid") >> portal_app
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("09_iam_federation_saml_oidc.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("09_iam_federation_saml_oidc.svg", readme_file)
 
     return svg_file
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
@@ -36,6 +36,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         with diag.group("Server Floor") as g_7:
             rack_feed = diag.add(Shape("rack_feed", "Dual-Corded Server Racks", icon="server_rack", power="2x 30A 208V Feeds"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -53,9 +56,10 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         pdu_a >> diag.edge("PDU Whip A", style="solid") >> rack_feed
         pdu_b >> diag.edge("PDU Whip B", style="dashed") >> rack_feed
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("04_power_distribution_ups.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("04_power_distribution_ups.svg", readme_file)
 
     return svg_file
 

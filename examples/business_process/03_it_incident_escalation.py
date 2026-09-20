@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
@@ -32,6 +32,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         with diag.group("Post-Incident") as g_5:
             postmortem = diag.add(Shape("postmortem", "Blameless RCA Postmortem", icon="document", template="Corrective Action Plan"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -45,9 +48,10 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         war_room >> diag.edge("Publish Degradation", style="dashed") >> status_page
         war_room >> diag.edge("Resolve & File RCA", style="solid") >> postmortem
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("03_it_incident_escalation.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("03_it_incident_escalation.svg", readme_file)
 
     return svg_file
 

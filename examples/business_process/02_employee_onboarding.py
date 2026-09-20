@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
@@ -32,6 +32,9 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         with diag.group("Finance & Payroll") as g_5:
             payroll = diag.add(Shape("payroll", "ADP Payroll Enrolment", icon="storage", direct_deposit="Active"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -46,9 +49,10 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         hr_intake >> diag.edge("Enroll Benefits", style="solid") >> payroll
         it_provision >> diag.edge("Deliver Workstation", style="dashed") >> candidate
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("02_employee_onboarding.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("02_employee_onboarding.svg", readme_file)
 
     return svg_file
 

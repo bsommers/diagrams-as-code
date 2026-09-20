@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/ai") -> Path:
@@ -30,6 +30,9 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         with diag.group("Dataset Storage") as g_3:
             lustre = diag.add(Shape("lustre", "Lustre Parallel Storage", icon="storage_array", throughput="2.5 TB/s"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -44,9 +47,10 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         gpu3 >> diag.edge("Ring AllReduce", style="dashed") >> gpu4
         lustre >> diag.edge("Sharded Batch Feed", style="solid") >> gpu1
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("04_distributed_training_cluster.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("04_distributed_training_cluster.svg", readme_file)
 
     return svg_file
 

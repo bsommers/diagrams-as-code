@@ -1,17 +1,17 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 50 production-grade architecture and workflow diagrams spanning 5 primary domains, built entirely using the pure standard-library `iiot_diagrams` engine. Each example generates both an SVG diagram and a Bill of Materials (BOM) markdown document in `output/<domain>/`.
+This directory contains 80 production-grade architecture and workflow diagrams spanning 8 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `output/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Diagrams:** 70
-- **Domains Covered:** 7 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`)
+- **Total Diagrams:** 80
+- **Domains Covered:** 8 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`)
 - **Diagrams per Domain:** 10
 - **Themes Demonstrated:** 8 (`nord`, `emerald`, `crimson`, `monochrome`, `iiot_dark_gold`, `blueprint`, `cyber_slate`, `iiot_light`)
-- **Built-in Domain Vector Icons:** 51 custom open-source SVG vector icons
-- **Zero External Dependencies:** 100% Python standard library execution
+- **Built-in Domain Vector Icons:** 59 custom open-source SVG vector icons
+- **Zero External Dependencies:** 100% Python standard library core engine execution
 
 ---
 
@@ -145,6 +145,25 @@ Campus LAN switching, multihomed BGP peering, provider MPLS L3VPN, EVPN-VXLAN da
 | 08 | [`08_ospf_multi_area_enterprise.py`](file:///home/bill/src/ai/diagrams-as-code/examples/network_engineering/08_ospf_multi_area_enterprise.py) | OSPF Multi-Area Enterprise Routing | `monochrome` | Advanced | Area 0 Backbone Core Routers, Area 10 Campus ABR, Datacenter ASBR, BGP Redistribution |
 | 09 | [`09_radius_802_1x_nac.py`](file:///home/bill/src/ai/diagrams-as-code/examples/network_engineering/09_radius_802_1x_nac.py) | 802.1X Network Access Control (NAC) & RADIUS | `nord` | Moderate | Supplicant Laptop, 802.1X Authenticator Switch, FreeRADIUS/ISE, Active Directory, Dynamic VLANs |
 | 10 | [`10_dns_anycast_authoritative_mesh.py`](file:///home/bill/src/ai/diagrams-as-code/examples/network_engineering/10_dns_anycast_authoritative_mesh.py) | Global Anycast Authoritative DNS Network | `cyber_slate` | Enterprise | Global DNS Clients, US-East & EU-Central BGP Anycast PoPs, Knot/BIND Resolvers, Master Zone DB |
+
+---
+
+## 8. Industrial IoT & Automation (`examples/iiot/`)
+
+Edge-to-cloud UNS architectures, high-availability broker clusters, Sparkplug B pipelines, predictive maintenance, redundant SCADA, and AGV fleet telemetry.
+
+| # | Script & Output | Title | Theme | Complexity | Key Components / Icons |
+|---|---|---|---|---|---|
+| 01 | [`01_baltimore_plant_to_cloud.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/01_baltimore_plant_to_cloud.py) | Baltimore Plant to Managed Cloud | `iiot_dark_gold` | Moderate | Siemens S7 PLC, IIoT Edge Gateway, Central MQTT Broker, Grafana Dashboard |
+| 02 | [`02_high_availability_broker.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/02_high_availability_broker.py) | High Availability Broker Cluster | `iiot_dark_gold` | Advanced | Load Balancer VIP, 3-Node Active MQTT Cluster, Clustered Storage |
+| 03 | [`03_sparkplug_b_pipeline.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/03_sparkplug_b_pipeline.py) | Sparkplug B Unified Namespace | `iiot_dark_gold` | Advanced | Sensors & PLCs, Sparkplug B Edge Node, UNS Central Broker, Host SCADA |
+| 04 | [`04_predictive_maintenance_vibration.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/04_predictive_maintenance_vibration.py) | Predictive Maintenance Vibration Analysis | `blueprint` | Moderate | 3-Axis Accelerometer, Bearing Thermocouple, DSP Anomaly Detector, Historian |
+| 05 | [`05_scada_historian_redundancy.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/05_scada_historian_redundancy.py) | SCADA & Historian Dual Redundancy | `iiot_light` | Enterprise | Redundant Plant PLC, Active/Standby SCADA Pair, Replicated Historian Archive |
+| 06 | [`06_opc_ua_edge_aggregation.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/06_opc_ua_edge_aggregation.py) | OPC UA TSN Edge Aggregator | `cyber_slate` | Advanced | Multi-Vendor PLCs, Robot Controller, OPC UA Aggregator, Enterprise MES |
+| 07 | [`07_smart_factory_mes_integration.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/07_smart_factory_mes_integration.py) | Smart Factory MES & ERP Integration | `emerald` | Enterprise | Line Operator HMI, Pallet RFID Scanner, IPC Controller, Core MES, SAP ERP |
+| 08 | [`08_automated_guided_vehicle_fleet.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/08_automated_guided_vehicle_fleet.py) | AGV Fleet Telemetry & Traffic Management | `nord` | Advanced | AGV Forklift & Tugger Units, Industrial Wi-Fi Mesh, Fleet Traffic Manager |
+| 09 | [`09_cold_chain_environmental_telemetry.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/09_cold_chain_environmental_telemetry.py) | Cold Chain Environmental Monitoring | `nord` | Moderate | Freezer & Chiller Probes, LoRaWAN Gateway, 21 CFR Part 11 Audit Datastore |
+| 10 | [`10_water_wastewater_remote_rtu.py`](file:///home/bill/src/ai/diagrams-as-code/examples/iiot/10_water_wastewater_remote_rtu.py) | Water & Wastewater Remote RTU Mesh | `blueprint` | Advanced | Submersible Level Sensors, Solar-Powered RTU, Cellular LTE-M, Central SCADA |
 
 ---
 

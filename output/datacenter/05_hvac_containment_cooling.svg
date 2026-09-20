@@ -12,97 +12,97 @@
   </defs>
   <rect width="100%" height="100%" fill="#2E3440"/>
   <g id="group_1">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Containment Zone</text>
+    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Containment Zone</text>
   </g>
   <g id="group_2">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Cooling Units</text>
+    <rect x="280.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="296.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Cooling Units</text>
   </g>
   <g id="group_3">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Central Plant</text>
+    <rect x="500.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="516.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Central Plant</text>
   </g>
   <g id="group_4">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">External Plant</text>
+    <rect x="720.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="736.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">External Plant</text>
   </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="17.9" y="21.0" width="84.2" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Duct Intake</text>
+  <rect x="212.9" y="161.0" width="84.2" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="255.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Duct Intake</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205.0 170.0 L 255.0 170.0 L 255.0 260.0 L 305.0 260.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="17.9" y="21.0" width="84.2" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Duct Intake</text>
+  <rect x="212.9" y="206.0" width="84.2" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="255.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Duct Intake</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 425.0 170.0 L 525.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="11.699999999999996" y="21.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Heat Exchange</text>
+  <rect x="426.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="475.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Heat Exchange</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 425.0 260.0 L 475.0 260.0 L 475.0 170.0 L 525.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="11.699999999999996" y="21.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Heat Exchange</text>
+  <rect x="426.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="475.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Heat Exchange</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 585.0 200.0 L 585.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="-3.8000000000000043" y="21.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Chilled Water Feed</text>
+  <rect x="521.2" y="206.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="585.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Chilled Water Feed</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 645.0 260.0 L 695.0 260.0 L 695.0 170.0 L 745.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="-10.0" y="21.0" width="140.0" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="60.0" y="33.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Condenser Water Loop</text>
+  <rect x="625.0" y="206.0" width="140.0" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="695.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Condenser Water Loop</text>
 </g>
   <g id="hot_aisle" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-cooling" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-cooling" transform="translate(133.0, 149.0) scale(1.0)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Hot Aisle Enclosure (38°C)</text>
+    <text x="145.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Hot Aisle Enclosure (38°C)</text>
   </g>
   <g id="crac1" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-cooling" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-cooling" transform="translate(353.0, 149.0) scale(1.0)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">In-Row CRAC Unit 01</text>
+    <text x="365.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">In-Row CRAC Unit 01</text>
   </g>
   <g id="crac2" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-cooling" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-cooling" transform="translate(353.0, 239.0) scale(1.0)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">In-Row CRAC Unit 02</text>
+    <text x="365.0" y="277.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">In-Row CRAC Unit 02</text>
   </g>
   <g id="water_loop" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-cooling" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-cooling" transform="translate(573.0, 149.0) scale(1.0)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Chilled Water Primary Loop</text>
+    <text x="585.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Chilled Water Primary Loop</text>
   </g>
   <g id="chiller" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-cooling" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-cooling" transform="translate(573.0, 239.0) scale(1.0)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Variable Speed Centrifugal Chiller</text>
+    <text x="585.0" y="277.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Variable Speed Centrifugal Chiller</text>
   </g>
   <g id="towers" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-cooling" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="745.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-cooling" transform="translate(793.0, 149.0) scale(1.0)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Rooftop Evaporative Cooling Towers</text>
+    <text x="805.0" y="187.0" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Rooftop Evaporative Cooling Towers</text>
   </g>
 </svg>

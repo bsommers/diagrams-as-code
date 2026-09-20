@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
@@ -28,6 +28,9 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         with diag.group("Internal Core Fabric") as g_3:
             core_sw = diag.add(Shape("core_sw", "Campus Core Switch", icon="switch", segment="Clean Corporate LAN"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -39,9 +42,10 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         suricata_ips >> diag.edge("Scrubbed Flow", style="solid") >> npb
         npb >> diag.edge("Permitted Packets", style="solid") >> core_sw
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("08_ids_ips_inline_inspection.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("08_ids_ips_inline_inspection.svg", readme_file)
 
     return svg_file
 

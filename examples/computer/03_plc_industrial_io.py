@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/computer") -> Path:
@@ -28,6 +28,9 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
             stepper = diag.add(Shape("stepper", "Stepper Motor Drive Module", icon="chip", protocol="Pulse / Direction 200kHz"))
             stepper.below(relay_out, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -38,9 +41,10 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         plc_cpu >> diag.edge("Control Signals", style="solid") >> relay_out
         plc_cpu >> diag.edge("PTO Motion Pulses", style="solid") >> stepper
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("03_plc_industrial_io.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("03_plc_industrial_io.svg", readme_file)
 
     return svg_file
 

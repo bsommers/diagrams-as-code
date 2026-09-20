@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
@@ -31,6 +31,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         with diag.group("Management") as g_4:
             telemetry_node = diag.add(Shape("telemetry_node", "Cluster Health & Thermal Monitor", icon="dashboard", sensors="Cooling / Leak Detect"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -44,9 +47,10 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         ib_spine >> diag.edge("RDMA Storage Mount", style="solid") >> storage_appliance
         dgx_rack1 >> diag.edge("IPMI / BMC Telemetry", style="dotted") >> telemetry_node
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("08_high_density_ai_compute_pod.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("08_high_density_ai_compute_pod.svg", readme_file)
 
     return svg_file
 

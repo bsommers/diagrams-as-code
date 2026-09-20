@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
@@ -29,6 +29,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         with diag.group("Client Framing Tier") as g_4:
             transponder = diag.add(Shape("transponder", "100G Muxponder", icon="switch", client="10x 10GbE into 100G OTU4"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -41,9 +44,10 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         roadm_s >> diag.edge("Structured Patching", style="solid") >> patch_bay
         patch_bay >> diag.edge("Client Hand-off", style="solid") >> transponder
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("07_dwdm_metro_optical_ring.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("07_dwdm_metro_optical_ring.svg", readme_file)
 
     return svg_file
 

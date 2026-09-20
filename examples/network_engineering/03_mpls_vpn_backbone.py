@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
@@ -28,6 +28,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         with diag.group("Customer Site Beta") as g_3:
             ce2 = diag.add(Shape("ce2", "Customer Router Beta", icon="router", vrf="VRF-Finance"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -38,9 +41,10 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         p_core >> diag.edge("MPLS Label Swap", style="solid") >> pe2
         pe2 >> diag.edge("MPLS Label Pop", style="solid") >> ce2
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("03_mpls_vpn_backbone.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("03_mpls_vpn_backbone.svg", readme_file)
 
     return svg_file
 

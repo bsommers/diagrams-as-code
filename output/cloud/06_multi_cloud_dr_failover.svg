@@ -12,55 +12,55 @@
   </defs>
   <rect width="100%" height="100%" fill="#1A0F14"/>
   <g id="group_1">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Traffic Routing</text>
+    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="76.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Traffic Routing</text>
   </g>
   <g id="group_2">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">AWS Primary (Active)</text>
+    <rect x="280.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="296.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">AWS Primary (Active)</text>
   </g>
   <g id="group_3">
-    <rect x="-25.0" y="-60.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="-9.0" y="-36.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Azure Disaster Recovery</text>
+    <rect x="500.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
+    <text x="516.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Azure Disaster Recovery</text>
   </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 205.0 170.0 L 305.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-6.900000000000006" y="21.0" width="133.8" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Active (Weight 100)</text>
+  <rect x="188.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="255.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Active (Weight 100)</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
+  <path d="M 205.0 170.0 L 525.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-3.8000000000000043" y="21.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Standby (Weight 0)</text>
+  <rect x="301.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="365.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Standby (Weight 0)</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 365.0 200.0 L 365.0 230.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="17.9" y="21.0" width="84.2" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Proxy Route</text>
+  <rect x="322.9" y="206.0" width="84.2" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="365.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Proxy Route</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 365.0 290.0 L 365.0 320.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="30.3" y="21.0" width="59.4" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL R/W</text>
+  <rect x="335.3" y="296.0" width="59.4" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="365.0" y="308.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL R/W</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
+  <path d="M 585.0 200.0 L 585.0 230.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="2.3999999999999986" y="21.0" width="115.2" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Failover Traffic</text>
+  <rect x="527.4" y="206.0" width="115.2" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="585.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Failover Traffic</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
+  <path d="M 585.0 290.0 L 585.0 320.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="21.0" y="21.0" width="78.0" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Read Query</text>
+  <rect x="546.0" y="296.0" width="78.0" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="585.0" y="308.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Read Query</text>
 </g>
-  <path d="M 0.0 30.0 L 120.0 30.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 425.0 350.0 L 525.0 350.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="-19.299999999999997" y="21.0" width="158.6" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="60.0" y="33.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Cross-Cloud Replication</text>
+  <rect x="395.7" y="341.0" width="158.6" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="475.0" y="353.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Cross-Cloud Replication</text>
 </g>
   <g id="dns_mgr" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-dns" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-dns" transform="translate(133.0, 149.0) scale(1.0)">
   <rect x="3" y="4" width="18" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <circle cx="7" cy="7" r="1.2" fill="#F43F5E"/>
@@ -68,58 +68,58 @@
   <line x1="14" y1="7" x2="18" y2="7" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="14" y1="17" x2="18" y2="17" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Global Traffic Manager</text>
+    <text x="145.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Global Traffic Manager</text>
   </g>
   <g id="aws_alb" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-api_gateway" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-api_gateway" transform="translate(353.0, 149.0) scale(1.0)">
   <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Primary AWS Ingress</text>
+    <text x="365.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Primary AWS Ingress</text>
   </g>
   <g id="aws_app" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-container" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-container" transform="translate(353.0, 239.0) scale(1.0)">
   <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linejoin="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWS ECS Application</text>
+    <text x="365.0" y="277.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWS ECS Application</text>
   </g>
   <g id="aws_db" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-database" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="305.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-database" transform="translate(353.0, 329.0) scale(1.0)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="4" y1="6" x2="4" y2="18" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="20" y1="6" x2="20" y2="18" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWS Aurora Master</text>
+    <text x="365.0" y="367.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWS Aurora Master</text>
   </g>
   <g id="azure_agw" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-api_gateway" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-api_gateway" transform="translate(573.0, 149.0) scale(1.0)">
   <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Secondary Azure Gateway</text>
+    <text x="585.0" y="187.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Secondary Azure Gateway</text>
   </g>
   <g id="azure_app" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-container" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-container" transform="translate(573.0, 239.0) scale(1.0)">
   <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#F43F5E" stroke-width="2.0" stroke-linejoin="round"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Azure Container App</text>
+    <text x="585.0" y="277.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Azure Container App</text>
   </g>
   <g id="azure_db" filter="url(#shadow)">
-    <rect x="0.0" y="0.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-database" transform="translate(48.0, 9.0) scale(1.0)">
+    <rect x="525.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <g class="icon icon-database" transform="translate(573.0, 329.0) scale(1.0)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="4" y1="6" x2="4" y2="18" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="20" y1="6" x2="20" y2="18" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="60.0" y="47.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Azure Postgres Replica</text>
+    <text x="585.0" y="367.0" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Azure Postgres Replica</text>
   </g>
 </svg>

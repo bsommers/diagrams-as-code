@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from iiot_diagrams import Diagram, Port
+from diagrams_as_code import Diagram, Port
 
 
 def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:

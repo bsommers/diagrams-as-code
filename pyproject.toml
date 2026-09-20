@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "iiot-diagrams"
+name = "diagrams-as-code"
 version = "0.2.0"
 description = "Pure-Python directed diagrams as code framework with Manhattan routing and living BOM documentation"
 readme = "README.md"
@@ -35,7 +35,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/iiot_diagrams"]
+packages = ["src/diagrams_as_code", "src/iiot_diagrams"]
 
 [tool.pytest.ini_options]
 minversion = "8.0"

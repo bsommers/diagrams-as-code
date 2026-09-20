@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
@@ -30,6 +30,9 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
             db_orders = diag.add(Shape("db_orders", "Orders Database", icon="database", engine="Aurora Postgres"))
             db_orders.below(redis, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -41,9 +44,10 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         auth_svc >> diag.edge("Cache Session", style="solid") >> redis
         order_svc >> diag.edge("Persist Order", style="solid") >> db_orders
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("05_microservices_service_mesh.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("05_microservices_service_mesh.svg", readme_file)
 
     return svg_file
 

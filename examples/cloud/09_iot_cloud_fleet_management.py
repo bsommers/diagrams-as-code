@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
@@ -36,6 +36,9 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         with diag.group("Visualization") as g_7:
             dash = diag.add(Shape("dash", "Grafana Live Telemetry", icon="dashboard", refresh="1s Stream"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -52,9 +55,10 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         kinesis >> diag.edge("Batch Insert", style="solid") >> timescale
         timescale >> diag.edge("SQL Query", style="solid") >> dash
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("09_iot_cloud_fleet_management.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("09_iot_cloud_fleet_management.svg", readme_file)
 
     return svg_file
 

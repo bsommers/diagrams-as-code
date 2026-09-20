@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
@@ -35,6 +35,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         with diag.group("White Space Floor") as g_6:
             mission_rack = diag.add(Shape("mission_rack", "Mission-Critical Server Cabinets", icon="server_rack", sla="99.995% Availability"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -50,9 +53,10 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         crac_loop_a >> diag.edge("Underfloor Supply A", style="solid") >> mission_rack
         crac_loop_b >> diag.edge("Underfloor Supply B", style="dashed") >> mission_rack
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("10_tier4_concurrently_maintainable.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("10_tier4_concurrently_maintainable.svg", readme_file)
 
     return svg_file
 

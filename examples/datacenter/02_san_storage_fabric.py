@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
@@ -31,6 +31,9 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
             disk_shelf = diag.add(Shape("disk_shelf", "24x NVMe SSD Drive Shelf", icon="storage", capacity="153 TB Raw"))
             disk_shelf.below(ctrl_b, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -44,9 +47,10 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         ctrl_a >> diag.edge("SAS-4 24G Loop", style="solid") >> disk_shelf
         ctrl_b >> diag.edge("SAS-4 24G Loop", style="dashed") >> disk_shelf
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("02_san_storage_fabric.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("02_san_storage_fabric.svg", readme_file)
 
     return svg_file
 

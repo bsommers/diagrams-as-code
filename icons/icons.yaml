@@ -206,3 +206,35 @@
   path: ./icons/network_engineering/fiber_optic.svg
   notes: High-speed optical fiber backbone link
 
+- symbol: sensor
+  domain: iiot
+  path: ./icons/iiot/sensor.svg
+  notes: Field instrumentation transducer / IoT sensor node
+- symbol: gateway
+  domain: iiot
+  path: ./icons/iiot/gateway.svg
+  notes: Industrial IoT edge gateway / protocol converter
+- symbol: broker
+  domain: iiot
+  path: ./icons/iiot/broker.svg
+  notes: Enterprise MQTT broker cluster / UNS message broker
+- symbol: plc
+  domain: iiot
+  path: ./icons/iiot/plc.svg
+  notes: Programmable Logic Controller / industrial controller
+- symbol: scada
+  domain: iiot
+  path: ./icons/iiot/scada.svg
+  notes: Supervisory Control and Data Acquisition host
+- symbol: hmi
+  domain: iiot
+  path: ./icons/iiot/hmi.svg
+  notes: Human-Machine Interface touch panel operator console
+- symbol: historian
+  domain: iiot
+  path: ./icons/iiot/historian.svg
+  notes: Process telemetry time-series enterprise historian
+- symbol: robot
+  domain: iiot
+  path: ./icons/iiot/robot.svg
+  notes: Industrial robotic manipulator / automated assembly cell

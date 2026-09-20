@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
@@ -28,6 +28,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         with diag.group("Internal Core Fabric") as g_3:
             lan_sw = diag.add(Shape("lan_sw", "Protected LAN Switch", icon="switch", gateway="10.0.0.1 VIP"))
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -40,9 +43,10 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         fw_pri >> diag.edge("Active Gateway", style="solid") >> lan_sw
         fw_sec >> diag.edge("Standby Gateway", style="dashed") >> lan_sw
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("06_ha_firewall_cluster_carp_sync.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("06_ha_firewall_cluster_carp_sync.svg", readme_file)
 
     return svg_file
 

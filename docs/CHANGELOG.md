@@ -7,11 +7,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
+- **Canonical Root Package (`src/diagrams_as_code/`):** Renamed root module hierarchy from `iiot_diagrams` to `diagrams_as_code`. Established `src/iiot_diagrams/` as a non-breaking backward compatibility facade.
+- **Dedicated IIoT Domain (`examples/iiot/`, `icons/iiot/`):** Promoted Industrial IoT to a first-class domain with 10 reference diagrams and 8 vector icons (`sensor`, `gateway`, `broker`, `plc`, `scada`, `hmi`, `historian`, `robot`). Total gallery expanded to 80 diagrams across 8 domains and 59 vector icons.
+- **Architecture & Layout Documentation (`docs/ARCHITECTURE.md`, `docs/LAYOUT_ROOT_CAUSE.md`):** Comprehensive documentation of the source hierarchy and post-mortem analysis of the layout solving bug.
 - **Multi-Engine PNG Rasterization (`Diagram.render_png()`):** High-speed vector-to-raster rendering supporting `resvg-py` with fallbacks to `cairosvg`, Inkscape, and ImageMagick.
-- **Rendered Output Assets Catalog (`output/`):** Tracked SVG, PNG, and Markdown BOM output artifacts (222 files) for all 70 domain example diagrams and core architectures in repository.
-- **Dev Tooling Dependency:** Added `resvg-py` to optional dev dependencies for pure-wheel PNG compilation without external C-dependencies.
-- **PNG Verification Test Suite:** Added assertions in `tests/test_domain_examples.py` and `tests/test_examples.py` validating PNG file existence, non-zero size, and `\x89PNG\r\n\x1a\n` magic bytes.
 - **Container Font Packaging & Compose:** Integrated `fonts-dejavu-core` into `Dockerfile` for crisp rasterized typography and added standard `docker-compose.yml` for zero-configuration `docker compose run --rm diagram-gen`.
+
+### Fixed
+- **Layout Stacking & Negative Coordinate Clipping:** Fixed critical issue where diagrams were rendered at `(0, 0)` due to un-invoked constraint solving inside context managers. Implemented auto-solve dirty tracking in `render_svg()` and `render_png()`, automatic canvas framing for negative coordinate bounds, and explicit initial group anchoring (`g_1.at(60.0, 80.0)`). Added automated anti-stacking test assertions to `tests/test_domain_examples.py`.
 
 ## [v0.2.0] - 2026-09-19
 

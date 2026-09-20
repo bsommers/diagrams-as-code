@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from iiot_diagrams import Diagram, Edge, Group, Shape
+from diagrams_as_code import Diagram, Edge, Group, Shape
 
 
 def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
@@ -31,6 +31,9 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
             vlan_iso = diag.add(Shape("vlan_iso", "Quarantine VLAN 666", icon="switch", policy="Remediation Only"))
             vlan_iso.below(vlan_corp, margin=30)
 
+        # Position starting group
+        g_1.at(60.0, 80.0)
+
         # Arrange groups in horizontal sequence
         g_2.right_of(g_1, margin=50)
         g_3.right_of(g_2, margin=50)
@@ -44,9 +47,10 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         auth_sw >> diag.edge("Assign VLAN 100", style="solid") >> vlan_corp
         auth_sw >> diag.edge("Assign Quarantine", style="dashed") >> vlan_iso
 
-        diag.render_svg(svg_file)
-        diag.render_png(png_file)
-        diag.generate_readme("09_radius_802_1x_nac.svg", readme_file)
+    # Render outputs after diagram context resolves layout constraints
+    diag.render_svg(svg_file)
+    diag.render_png(png_file)
+    diag.generate_readme("09_radius_802_1x_nac.svg", readme_file)
 
     return svg_file
 

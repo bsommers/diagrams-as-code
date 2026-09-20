@@ -51,3 +51,11 @@ load_balancer,network_engineering,./icons/network_engineering/load_balancer.svg,
 patch_panel,network_engineering,./icons/network_engineering/patch_panel.svg,"19-inch structured cabling patch panel"
 fiber_optic,network_engineering,./icons/network_engineering/fiber_optic.svg,"High-speed optical fiber backbone link"
 
+sensor,iiot,./icons/iiot/sensor.svg,Field instrumentation transducer / IoT sensor node
+gateway,iiot,./icons/iiot/gateway.svg,Industrial IoT edge gateway / protocol converter
+broker,iiot,./icons/iiot/broker.svg,Enterprise MQTT broker cluster / UNS message broker
+plc,iiot,./icons/iiot/plc.svg,Programmable Logic Controller / industrial controller
+scada,iiot,./icons/iiot/scada.svg,Supervisory Control and Data Acquisition host
+hmi,iiot,./icons/iiot/hmi.svg,Human-Machine Interface touch panel operator console
+historian,iiot,./icons/iiot/historian.svg,Process telemetry time-series enterprise historian
+robot,iiot,./icons/iiot/robot.svg,Industrial robotic manipulator / automated assembly cell
