@@ -99,6 +99,7 @@ JSON, UTF-8, sorted keys, 2-space indent, trailing newline (stable diffs):
 
 - **Key** = the element's explicit `id=` if one was passed, else its label path: ancestor group labels and its own label joined by `/`. (`Element` records whether its id was explicit.)
 - Coordinates are absolute top-left, after framing — what you see in the SVG.
+- **Groups move as a unit.** Shape entries are applied first; a group entry then translates the group's whole subtree so the group's top-left lands on its coordinates. Editing one group entry moves everything inside it. For a freshly exported file the translation is zero, which is what makes the round-trip hold.
 - **Load** (`layout_file=` or `--layout-file`): missing file → no-op; malformed JSON or unknown `version` → `ValueError` naming the file; a key matching no element → `LayoutWarning` ("stale layout entry: …").
 - **Export** (`export_layout(diagram, path)` / `diagrams-as-code layout export`): writes positions for every shape and group after a full solve. If two elements share a key → `ValueError` listing them, advising `id=`.
 - Round-trip property: export, then render with that file, gives identical coordinates.
