@@ -43,6 +43,13 @@ jobs:
           # maintained file. README.md used to be clobbered by main.py, which
           # silently reverted every edit made to it.
           git diff --exit-code -- README.md docs/ icons/
+          # The "Run test suite" step executes every example with cwd=<repo
+          # root>, so it has already re-rendered all 84 diagrams in place. The
+          # committed SVG and BOM markdown must therefore match what this
+          # commit's engine emits; both are byte-identical across Python
+          # 3.10-3.13. Rendered PNGs are gitignored and so never appear here:
+          # their bytes depend on which rasterizer backend is installed.
+          git diff --exit-code -- output/
 
   docker:
     name: Docker Container Build & Run
