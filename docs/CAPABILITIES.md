@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-09-19 20:10:00 UTC  
+**Last Updated:** 2026-09-21 (v0.3.0)  
 
 ---
 
@@ -28,7 +28,7 @@
 #### `CAP-DIAG-GEOM`: Core Geometry and Unit-Basis Coordinate Engine
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.geometry`
+- **Python API:** `diagrams_as_code.geometry`
 - **Exports:** `Point`, `Size`, `Rect`, `Anchor`, `UnitBasis`
 - **Features:** Immutable 2D primitives, 9-point cardinal/intercardinal rect anchors (`TOP_LEFT`, `CENTER`, `BOTTOM_RIGHT`), rect expansion/union, and normalized canvas unit-basis coordinate conversion (`0.0`-`1.0` and percentage strings).
 - **Verification:** `uv run pytest tests/test_geometry.py`
@@ -40,7 +40,7 @@
 #### `CAP-DIAG-CONSTR`: Decoupled Elements and Iterative DAG Constraint Solver
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.constraints.ConstraintSolver`
+- **Python API:** `diagrams_as_code.constraints.ConstraintSolver`
 - **Exports:** `Element`, `Shape`, `ConstraintSolver`
 - **Features:** Directional shape-to-shape placement (`right_of`, `left_of`, `below`, `above`) with alignment (`center`, `top`, `bottom`, `left`, `right`) and margin padding. Evaluates dependency DAGs with cycle detection and unconstrained element retention.
 - **Verification:** `uv run pytest tests/test_constraints.py`
@@ -52,7 +52,7 @@
 #### `CAP-DIAG-GROUP`: Hierarchical Grouping, Auto-Bounding, and Group Flow
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.groups.Group`
+- **Python API:** `diagrams_as_code.groups.Group`
 - **Exports:** `Group`
 - **Features:** Hierarchical container elements with bottom-up recursive auto-bounding, child coordinate delta propagation, cycle prevention in ancestry, and group-to-group flow placement.
 - **Verification:** `uv run pytest tests/test_groups.py`
@@ -64,7 +64,7 @@
 #### `CAP-DIAG-ROUTER`: Orthogonal Manhattan Routing and Port Deduction
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.router.OrthogonalRouter`
+- **Python API:** `diagrams_as_code.router.OrthogonalRouter`
 - **Exports:** `Edge`, `Port`, `Routing`, `OrthogonalRouter`
 - **Features:** Intelligent edge connection model with automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`), orthogonal Manhattan waypoints calculation, and collinear straight-line simplification.
 - **Verification:** `uv run pytest tests/test_routing.py`
@@ -76,9 +76,9 @@
 #### `CAP-DIAG-THEME`: Vector Theming Engine and Vector Shape Library
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.theme`, `iiot_diagrams.shapes`
+- **Python API:** `diagrams_as_code.theme`, `diagrams_as_code.shapes`
 - **Exports:** `Theme`, `ShapeLibrary`, `ShapeRenderer`, `get_theme`, `register_theme`
-- **Features:** 8 immutable theme presets (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`), 51 built-in domain vector icons across 7 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
+- **Features:** 13 theme presets (8 dark, 4 light, 1 high-contrast) (list them with `list_themes()`), 60 built-in vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
 - **Verification:** `uv run pytest tests/test_theme.py`
 
 
@@ -89,7 +89,7 @@
 #### `CAP-DIAG-SVG`: Pure-Python Zero-Binary SVG Vector Renderer
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.renderer_svg.SVGRenderer`
+- **Python API:** `diagrams_as_code.renderer_svg.SVGRenderer`
 - **Exports:** `SVGRenderer`
 - **Features:** Produces valid, standalone W3C SVG XML documents featuring responsive `viewBox` scaling, arrowhead markers, drop shadow filters, ordered group rendering, and automated luminance contrast text coloring.
 - **Verification:** `uv run pytest tests/test_renderer_svg.py`
@@ -101,7 +101,7 @@
 #### `CAP-DIAG-API`: Fluent Diagram Context Manager and Operator Syntax
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.diagram.Diagram`
+- **Python API:** `diagrams_as_code.diagram.Diagram`
 - **Exports:** `Diagram`
 - **Features:** Pythonic context manager with bitshift connection operator overloading (`s1 >> s2`, `s1 >> diag.edge(...) >> s2`, fan-in/fan-out lists), automatic group scoping, decoupled shape lifecycles, and prototype cloning.
 - **Verification:** `uv run pytest tests/test_diagram_api.py`
@@ -113,7 +113,7 @@
 #### `CAP-DIAG-BOM`: Living Documentation & Bill of Materials (BOM) Engine
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `iiot_diagrams.bom.BOMGenerator`
+- **Python API:** `diagrams_as_code.bom.BOMGenerator`
 - **Exports:** `BOMGenerator`
 - **Features:** Extracts diagram inventory, parent groups, connection routes, and technical metadata into Markdown tables and JSON catalogs, with automated `README.md` synchronization.
 - **Verification:** `uv run pytest tests/test_bom.py`
@@ -125,9 +125,9 @@
 #### `CAP-DIAG-DOMAINS`: Multi-Domain Reference Topologies & Automated Test Suite
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
-- **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`)
+- **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`, `examples/iiot`)
 - **Exports:** 70 self-contained executable diagram scripts and documentation artifacts
-- **Features:** 10 topologies per domain demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across 8 presets, automated SVG and Markdown BOM generation in `output/`, and gallery documentation in `examples/README.md`.
+- **Features:** 10 topologies per domain demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 13 presets, automated SVG and Markdown BOM generation in `output/`, and gallery documentation in `examples/README.md`.
 - **Verification:** `uv run pytest tests/test_domain_examples.py`
 
 ---
@@ -136,7 +136,7 @@
 
 #### `CAP-DIAG-INTERACTIVE`: Interactive SVG Pan-Zoom and Collapsible Groups
 - **Status:** `PLANNED`
-- **Target Release:** `v0.2.0`
+- **Target Release:** unscheduled
 - **Details:** Client-side lightweight JavaScript injection into SVG output for interactive panning, zooming, and group fold/unfold toggles.
 - **Verification:** Pending Milestone 2
 

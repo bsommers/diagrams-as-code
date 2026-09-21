@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-09-19T20:10:00Z",
+  "last_updated": "2026-09-21T00:00:00Z",
   "summary": {
     "total_capabilities": 10,
     "operational": 9,
@@ -60,7 +60,7 @@
       "category": "Geometry & Layout",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.geometry",
+      "python_api": "diagrams_as_code.geometry",
       "classes": ["Point", "Size", "Rect", "Anchor", "UnitBasis"],
       "details": "Immutable 2D geometric primitives, 9-point cardinal/intercardinal rect anchors, rect expansion/union, and normalized canvas unit-basis coordinate conversion.",
       "verification": "uv run pytest tests/test_geometry.py"
@@ -71,7 +71,7 @@
       "category": "Constraint Resolution",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.constraints.ConstraintSolver",
+      "python_api": "diagrams_as_code.constraints.ConstraintSolver",
       "classes": ["Element", "Shape", "ConstraintSolver"],
       "details": "Directed shape-to-shape relative positioning (right_of, left_of, below, above) with alignment and margin padding. Evaluates dependency DAGs with cycle detection and unconstrained element retention.",
       "verification": "uv run pytest tests/test_constraints.py"
@@ -82,7 +82,7 @@
       "category": "Containers & Grouping",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.groups.Group",
+      "python_api": "diagrams_as_code.groups.Group",
       "classes": ["Group"],
       "details": "Hierarchical container elements with bottom-up recursive auto-bounding, child coordinate delta propagation, cycle prevention, and group-to-group flow placement.",
       "verification": "uv run pytest tests/test_groups.py"
@@ -93,7 +93,7 @@
       "category": "Connection Routing",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.router.OrthogonalRouter",
+      "python_api": "diagrams_as_code.router.OrthogonalRouter",
       "classes": ["Edge", "Port", "Routing", "OrthogonalRouter"],
       "details": "Intelligent edge connection model with automatic port deduction (North, South, East, West), orthogonal Manhattan waypoints calculation, and collinear straight-line simplification.",
       "verification": "uv run pytest tests/test_routing.py"
@@ -104,9 +104,9 @@
       "category": "Vector Theming & Shapes",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.theme",
+      "python_api": "diagrams_as_code.theme",
       "classes": ["Theme", "ShapeLibrary", "ShapeRenderer"],
-      "details": "8 immutable theme presets (iiot_dark_gold, iiot_light, blueprint, cyber_slate, nord, emerald, crimson, monochrome), 51 built-in domain vector icons across 7 domains (including cybersecurity and network engineering), dynamic icon loading from SVG files/directories, and standalone SVG vector primitives.",
+      "details": "13 theme presets (8 dark, 4 light, 1 high-contrast), 60 built-in vector icons across 8 domains, dynamic icon loading from SVG files/directories, and standalone SVG vector primitives.",
       "verification": "uv run pytest tests/test_theme.py"
     },
     {
@@ -117,7 +117,7 @@
       "target_release": "v0.1.0",
       "python_api": "examples/",
       "classes": ["Diagram"],
-      "details": "70 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, and network_engineering demonstrating multi-theme styling, BOM generation, and automated test verification.",
+      "details": "80 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, and iiot demonstrating multi-theme styling, BOM generation, and automated test verification.",
       "verification": "uv run pytest tests/test_domain_examples.py"
     },
     {
@@ -126,7 +126,7 @@
       "category": "SVG Vector Rendering",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.renderer_svg.SVGRenderer",
+      "python_api": "diagrams_as_code.renderer_svg.SVGRenderer",
       "classes": ["SVGRenderer"],
       "details": "Produces valid, standalone W3C SVG XML documents featuring responsive viewBox scaling, arrowhead markers, drop shadow filters, ordered group rendering, and automated luminance contrast text coloring.",
       "verification": "uv run pytest tests/test_renderer_svg.py"
@@ -137,7 +137,7 @@
       "category": "Diagram-as-Code API",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.diagram.Diagram",
+      "python_api": "diagrams_as_code.diagram.Diagram",
       "classes": ["Diagram"],
       "details": "Pythonic context manager with bitshift connection operator overloading (s1 >> s2, s1 >> diag.edge(...) >> s2, fan-in/fan-out lists), automatic group scoping, decoupled shape lifecycles, and prototype cloning.",
       "verification": "uv run pytest tests/test_diagram_api.py"
@@ -148,7 +148,7 @@
       "category": "Living Documentation & BOM",
       "status": "OPERATIONAL",
       "target_release": "v0.1.0",
-      "python_api": "iiot_diagrams.bom.BOMGenerator",
+      "python_api": "diagrams_as_code.bom.BOMGenerator",
       "classes": ["BOMGenerator"],
       "details": "Extracts diagram inventory, parent groups, connection routes, and technical metadata into Markdown tables and JSON catalogs, with automated README.md synchronization.",
       "verification": "uv run pytest tests/test_bom.py"
@@ -158,7 +158,7 @@
       "name": "Interactive SVG Pan-Zoom and Collapsible Groups",
       "category": "SVG Vector Rendering",
       "status": "PLANNED",
-      "target_release": "v0.2.0",
+      "target_release": "unscheduled",
       "details": "Client-side lightweight JavaScript injection into SVG output for interactive panning, zooming, and group fold/unfold toggles.",
       "verification": "Pending Milestone 2"
     }

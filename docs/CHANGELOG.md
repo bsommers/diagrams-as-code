@@ -4,9 +4,13 @@ All notable changes, architectural milestones, and capability updates to the pur
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
-## [v0.3.0] - 2026-09-19
+## [v0.3.0] - 2026-09-21
 
 ### Added
+- **Canonical Package `diagrams_as_code` (`src/diagrams_as_code/`):** The engine moved from `iiot_diagrams` to `diagrams_as_code`. `src/iiot_diagrams/` remains as a facade that re-exports every public symbol, so existing `import iiot_diagrams` code keeps working.
+- **IIoT Domain Gallery (`examples/iiot/`):** IIoT became the eighth example domain, bringing the gallery to 80 diagrams.
+- **PNG and BOM Output for Every Example:** Each example script writes an SVG, a PNG, and a Markdown Bill of Materials to `output/<domain>/`.
+- **Container Fonts and Compose File:** The Docker image installs `fonts-dejavu-core` so rasterized labels render with a real font, and `docker-compose.yml` defines the `diagram-gen` service with `output/` mounted.
 - **Expanded Theme Engine (`src/diagrams_as_code/theme.py`):** Added 5 new built-in themes (`solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`), expanding the palette to 13 themes (8 dark, 4 light, 1 accessibility WCAG AAA). Added `list_themes()`, `get_light_themes()`, `get_dark_themes()`, `create_theme()`, and direct `Theme` instance or `theme_overrides` injection in `Diagram.__init__`.
 - **Anti-Spill Label Wrapping & Text-Below-Graphic (`src/diagrams_as_code/renderer_svg.py`, `elements.py`):**
   - Implemented multi-line text wrapping via SVG `<tspan>` tags and dynamic font scaling (10px–12px) to permanently prevent labels from spilling outside shape boundaries.
@@ -18,7 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Authoring of `docs/sources.md` and `icons/README.md` cataloging upstream provenance, design systems, and the license of each of the 60 vector icons and every build dependency.
   - Authored multi-format visual architecture diagrams in `docs/diagrams/`: terminal ASCII schematic (`ascii_architecture.txt`), Mermaid flowchart (`architecture.mmd`), Mermaid sequence lifecycle (`execution_lifecycle.mmd`), and native Draw.io XML (`architecture.drawio`).
   - Updated root `README.md` with badges, 8-domain showcase, and documentation hub links.
-- **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers` (304 automated tests passing).
+- **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers`.
 
 ### Changed
 - **Generated Icon Catalog (`tools/generate_icons.py`, `src/diagrams_as_code/shapes.py`):** `ShapeLibrary._ICON_CATALOG` is now the single source of truth for icons, mapping each of the 60 canonical names to one domain directory and one description; `_CANONICAL_ICONS` is derived from it. The entire `icons/` tree, `icons/icons.csv`, `icons/icons.yaml`, and `icons/README.md` are emitted from that catalog by `tools/generate_icons.py`, which also provides `--check` for CI. Standalone icon files and the glyphs the renderer draws are now the same artwork by construction.
@@ -29,6 +33,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Dependency Provenance Corrected (`docs/sources.md`):** `resvg-py` is credited to `baseplate-admin/resvg-py` under MIT (verified against the installed distribution metadata) and recategorized from "Dev Dependency" to "Optional Runtime", since `Diagram.render_png()` imports it at runtime.
 
 ### Fixed
+- **Diagrams Collapsing to the Origin:** Rendering inside the `with Diagram(...)` block ran before layout was solved, and unanchored groups with negative coordinates were clipped, so shapes stacked at `(0, 0)`. `render_svg()`, `render_png()`, and `generate_readme()` now solve any unsolved layout first, the canvas is translated to frame negative bounds, and the examples render after the context manager exits. See `docs/LAYOUT_ROOT_CAUSE.md`.
+- **Rendered Output Verified in CI:** The 84 rendered PNGs are no longer tracked (their bytes depend on the rasterizer backend) and are gitignored. The SVGs and BOM Markdown in `output/` stay tracked, and CI fails if the suite's re-render of them differs from the commit.
+- **Duplicated Files Removed:** `docker_compose.yml` (a copy of `docker-compose.yml`) was deleted; `RUNNING.md` became a symlink to `docs/running.md`; `docs/ARCHITECTURE.md`, which collided with `docs/architecture.md` on case-insensitive filesystems, was merged into it. `tests/test_repo_hygiene.py` rejects case collisions and byte-identical copies.
 - **`main.py` No Longer Overwrites `README.md`:** `generate_root_readme()` rebuilt the repository README from a hardcoded template that had fallen 91 lines behind the maintained file, so every `uv run python main.py` — including the CI "Verify diagram generation" step — silently reverted edits to it. The function and its call were removed; the Bill of Materials continues to be emitted to `output/main_README.md`.
 - **CI Guards Generated Artifacts (`.github/workflows/ci.yml`):** A new step runs `tools/generate_icons.py --check` and `git diff --exit-code -- README.md docs/ icons/` after diagram generation, failing the build if a generator rewrites a tracked file or if the committed icon tree drifts from the catalog.
 - **Project License Published:** Added the `LICENSE` file (MIT) that `pyproject.toml` declared and `README.md` linked to but which was never committed.
