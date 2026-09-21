@@ -48,7 +48,7 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 - Mitigation: Require explicit file staging and sanitize outputs before commit.
 
 **AWS Credentials Exposure:**
-- Risk: `docker_compose.yml` mounts AWS environment variables directly into the container.
+- Risk: `docker-compose.yml` mounts AWS environment variables directly into the container.
 - Impact: If container logs or environment dumps are captured, credentials could leak.
 - Mitigation: Use AWS IAM roles or secrets manager when running in production pipelines.
 

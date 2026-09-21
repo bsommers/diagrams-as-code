@@ -160,7 +160,6 @@ DOC_ICON_CLAIMS: dict[str, list[str]] = {
         "library of {n} handcrafted 24x24 open-source vector icons",
         "Standalone Vector Icons ({n})",
     ],
-    "docs/ARCHITECTURE.md": ["{n} handcrafted 24x24 open-source W3C SVG vector assets"],
     "examples/README.md": ["{n} custom open-source SVG vector icons"],
 }
 

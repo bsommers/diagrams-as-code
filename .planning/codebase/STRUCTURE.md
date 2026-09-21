@@ -19,7 +19,7 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 │   ├── icons.csv                       # Tabular icon symbol-path definitions
 │   └── icons.yaml                      # YAML icon symbol-path definitions
 ├── Dockerfile                          # Container environment specification
-├── docker_compose.yml                  # Container execution configuration
+├── docker-compose.yml                  # Container execution configuration
 ├── docker-build-n-run.sh               # Container build and launch script
 ├── RUNNING.md                          # Operational instructions and guide
 ├── main.py                             # Primary entry point

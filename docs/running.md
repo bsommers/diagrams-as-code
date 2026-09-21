@@ -62,6 +62,14 @@ uv run python examples/ai/01_simple_rag_pipeline.py
 uv run python examples/cybersecurity/09_iam_federation_saml_oidc.py
 ```
 
+The three top-level examples recreate the original IIoT reference diagrams:
+
+```bash
+uv run python examples/01_mockup_slide.py
+uv run python examples/02_high_availability.py
+uv run python examples/03_sparkplug_pipeline.py
+```
+
 ### 3.3 Batch Regenerate All 80 Domain Examples
 
 ```bash

@@ -12,7 +12,7 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 - AWS S3 - Hosting and distribution of generated diagram graphics (`*.svg`, `*.png`) and markdown documentation
   - SDK/Client: `boto3` v1.x (`boto3.client('s3')`)
   - Implementation: `upload_to_s3()` in `iiot_theme.py`
-  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` environment variables (configured via `docker_compose.yml`)
+  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` environment variables (configured via `docker-compose.yml`)
 
 **Version Control Services:**
 - GitHub / Remote Git - Automated synchronization of generated diagrams and README Bill of Materials

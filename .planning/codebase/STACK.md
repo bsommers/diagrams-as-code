@@ -13,7 +13,7 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 
 **Secondary:**
 - Shell (Bash) - Container build and execution scripts (`docker-build-n-run.sh`)
-- YAML - Icon metadata and Docker Compose definitions (`icons/icons.yaml`, `docker_compose.yml`)
+- YAML - Icon metadata and Docker Compose definitions (`icons/icons.yaml`, `docker-compose.yml`)
 - CSV - Tabular icon mappings (`icons/icons.csv`)
 
 ## Runtime
@@ -43,7 +43,7 @@ last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
 **Build/Dev:**
 - `uv` - Dependency resolution, environment virtualization, and execution runner
 - Docker (`Dockerfile`) - Multi-stage container packaging Astral `uv:python3.12-bookworm-slim`
-- Docker Compose (`docker_compose.yml`) - Container orchestration mounting output volume
+- Docker Compose (`docker-compose.yml`) - Container orchestration mounting output volume
 
 ## Key Dependencies
 

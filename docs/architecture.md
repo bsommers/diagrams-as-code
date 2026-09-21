@@ -119,3 +119,67 @@
 5. **Path Routing**: Orthogonal router determines port waypoints and protocol badge locations.
 6. **SVG Assembly**: SVGRenderer generates XML document with markers, filters, groups, paths, icons, and multi-line wrapped labels.
 7. **PNG Rasterization & BOM Emission**: `resvg-py` renders high-resolution PNG; `BOMGenerator` emits structured living documentation.
+
+---
+
+## 4. Source Code Hierarchy (`src/`)
+
+The engine lives in `src/diagrams_as_code/`; `src/iiot_diagrams/` is a backward-compatibility facade that re-exports it.
+
+```
+src/
+├── diagrams_as_code/               # Canonical Root Module
+│   ├── __init__.py                 # Public API exports & package version
+│   ├── geometry.py                 # Geometric primitives (Point, Size, Rect, Anchor, UnitBasis)
+│   ├── elements.py                 # Core Element base model and Shape node
+│   ├── shapes.py                   # Vector ShapeLibrary & embedded SVG icon renderers
+│   ├── groups.py                   # Group container with dynamic auto-bounding and flow layouts
+│   ├── constraints.py              # Topological DAG ConstraintSolver with cycle detection
+│   ├── router.py                   # Orthogonal Manhattan routing with obstacle avoidance
+│   ├── connections.py              # Edge connection models & fluent >> operator overloading
+│   ├── renderer_svg.py             # SVGRenderer with theme integration and defs generation
+│   ├── theme.py                    # 13 built-in palette themes (nord, emerald, crimson, …)
+│   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation
+│   └── diagram.py                  # Diagram canvas context manager, render_svg, render_png
+│
+└── iiot_diagrams/                  # Backward Compatibility Facade
+    ├── __init__.py                 # Re-exports diagrams_as_code symbols and __all__
+    ├── bom.py                      # Forwards to diagrams_as_code.bom
+    ├── connections.py              # Forwards to diagrams_as_code.connections
+    ├── constraints.py              # Forwards to diagrams_as_code.constraints
+    ├── diagram.py                  # Forwards to diagrams_as_code.diagram
+    ├── elements.py                 # Forwards to diagrams_as_code.elements
+    ├── geometry.py                 # Forwards to diagrams_as_code.geometry
+    ├── groups.py                   # Forwards to diagrams_as_code.groups
+    ├── renderer_svg.py             # Forwards to diagrams_as_code.renderer_svg
+    ├── router.py                   # Forwards to diagrams_as_code.router
+    ├── shapes.py                   # Forwards to diagrams_as_code.shapes
+    └── theme.py                    # Forwards to diagrams_as_code.theme
+```
+
+---
+
+## 5. Domain Hierarchy
+
+IIoT is treated as one of eight first-class architectural domains:
+
+```
+examples/
+├── cloud/                          # 10 Cloud architecture diagrams
+├── ai/                             # 10 AI / ML pipeline diagrams
+├── computer/                       # 10 Computer & endpoint diagrams
+├── datacenter/                     # 10 Datacenter & infrastructure diagrams
+├── business_process/               # 10 Business workflow & BPMN diagrams
+├── cybersecurity/                  # 10 Cybersecurity & Zero-Trust diagrams
+├── network_engineering/            # 10 Campus & WAN network diagrams
+└── iiot/                           # 10 Industrial IoT & automation diagrams
+```
+
+---
+
+## 6. Key Architectural Invariants
+
+1. **Deterministic Core:** Zero external runtime dependencies required for SVG generation.
+2. **Always Use `uv`:** All environment setup, script runs, and testing must use `uv run`.
+3. **Decoupled Lifecycle:** Elements exist independently of positioning constraints; positions can be declared late or updated dynamically.
+4. **Guaranteed Solve:** Rendering functions (`render_svg`, `render_png`, `generate_readme`) automatically resolve layout constraints and normalize bounds before emitting output.
