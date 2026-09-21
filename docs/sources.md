@@ -1,26 +1,45 @@
 # Open-Source Libraries, Icons, and Specifications Provenance
 
-This document details the origins, specifications, upstream repositories, and open-source licenses for all icons, standards, and software dependencies subsumed or utilized within `diagrams-as-code`.
+This document records the origin and license of everything `diagrams-as-code` ships or invokes: the icons it draws, the specifications it implements, the tools it is built and tested with, and the contents of its container image. Where a component is original work of this project, it says so; where it is third-party, it names the real license.
 
 ---
 
 ## 1. Domain Vector Icon Catalog (`icons/` and `src/diagrams_as_code/shapes.py`)
 
-The engine provides 60 handcrafted, resolution-independent vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, and `iiot`). All icons conform to a standard 24×24 pixel grid and are stroked at 2px in `currentColor` (`historian` and `vector_db` add a lighter interior accent stroke). The tree under `icons/` and its manifests are generated from `ShapeLibrary._ICON_CATALOG` by `tools/generate_icons.py`, so a file and the glyph the renderer draws are the same artwork. The glyph set is adapted from the following permissive open-source design systems:
+The engine provides 60 handcrafted, resolution-independent vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, and `iiot`). All icons conform to a standard 24x24 pixel grid and are stroked at 2px in `currentColor` (`historian` and `vector_db` add a lighter interior accent stroke). The tree under `icons/` and its manifests are generated from `ShapeLibrary._ICON_CATALOG` by `tools/generate_icons.py`, so a file and the glyph the renderer draws are the same artwork.
 
-| Icon Library / Source | Upstream Repository / Reference | License | Glyphs & Domains Derived |
+### Authorship
+
+**Every glyph is original geometry written for this project**, covered by this repository's [MIT license](../LICENSE). No third-party icon set is vendored, traced, or redistributed here, and no upstream icon license obligations attach to this repository.
+
+The artwork is not exported from a design tool. Each glyph is emitted as SVG primitives — `line`, `circle`, `rect`, `path`, `polyline`, `ellipse`, `polygon` — by `ShapeLibrary._render_icon_content` in [`src/diagrams_as_code/shapes.py`](../src/diagrams_as_code/shapes.py), placed on whole-number coordinates of the 24x24 grid. [`icons/datacenter/kubernetes.svg`](../icons/datacenter/kubernetes.svg), for instance, is a circle with eight straight spokes; it neither derives from nor resembles the seven-sided CNCF helm.
+
+### Visual conventions (not sources)
+
+The catalog follows the conventions shared by modern open-source icon sets: a 24x24 viewBox, a uniform stroke weight, and `currentColor` inheritance so an icon takes its color from the embedding document. That idiom was popularized by [Feather](https://feathericons.com) and is shared by [Lucide](https://lucide.dev) and [Tabler](https://tabler.io/icons).
+
+**A convention is not artwork.** Nothing is copied from those projects, none of their licenses applies to this repository, and no attribution to them is owed or claimed. They are named here only so a reader who likes the style knows where the idiom comes from.
+
+### Vendor and product names
+
+`ShapeLibrary` accepts aliases such as `grafana`, `kafka`, `s3`, and `docker`. These are naming conveniences that resolve to generic glyphs; see the alias table in [`icons/README.md`](../icons/README.md). **No vendor logo, wordmark, or trademarked symbol is reproduced anywhere in this repository**, and all product names remain the property of their respective owners.
+
+If you want a vendor's own symbol set in your diagrams, obtain it from the vendor and read their terms directly — for example [Cisco's network topology icons](https://www.cisco.com/c/en/us/about/brand-center/network-topology-icons.html) or the [AWS Architecture Icons](https://aws.amazon.com/architecture/icons/) terms of use. Both are conditional brand-asset programs, not open-source licenses. This project neither bundles nor relicenses them.
+
+### Specifications implemented
+
+| Specification | Reference | License / Notice | Used for |
 | :--- | :--- | :--- | :--- |
-| **[Lucide Icons](https://lucide.dev)** | [`lucide-icons/lucide`](https://github.com/lucide-icons/lucide) | [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE) | Foundational compute, device, and structural primitives: `server`, `terminal`, `laptop`, `mobile`, `cloud`, `database`, `user`, `document`, `message`, `lock`, `key`, `shield`. |
-| **[Feather Icons](https://feathericons.com)** | [`feathericons/feather`](https://github.com/feathericons/feather) | [MIT License](https://github.com/feathericons/feather/blob/master/LICENSE) | Foundational 24×24 viewBox layout, 2px stroke width, and rounded geometric path styling conventions. |
-| **[Tabler Icons](https://tabler.io/icons)** | [`tabler/tabler-icons`](https://github.com/tabler/tabler-icons) | [MIT License](https://github.com/tabler/tabler-icons/blob/master/LICENSE) | Infrastructure, hardware, and analytics glyphs: `brain`, `chip`, `vector_db`, `cooling`, `ups`, `cluster`, `vault`, `siem`, `soc`, `analytics`. |
-| **[Cisco Network Topology Icons](https://www.cisco.com/c/en/us/about/brand-center/network-topology-icons.html)** | [Cisco Network Topology Stencils](https://www.cisco.com/c/en/us/about/brand-center/network-topology-icons.html) | Public Domain / Open Stencil Use | Network engineering symbols: `switch`, `router`, `core_router`, `bgp`, `mpls`, `firewall_ha`, `load_balancer`, `patch_panel`, `fiber_optic`. |
-| **[CNCF Artwork](https://github.com/cncf/artwork)** | [`cncf/artwork`](https://github.com/cncf/artwork) | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) / [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Cloud-native containerization and orchestration symbols: `kubernetes`, `container`, `cluster`. |
-| **[AWS & Cloud Architecture Stencils](https://aws.amazon.com/architecture/icons/)** | [AWS Architecture Icons](https://aws.amazon.com/architecture/icons/) | Permissive Architectural Diagramming Use | Cloud network abstractions and boundary markers: `vpc`, `api_gateway`, `cdn`, `serverless`, `storage`, `dns`, `firewall`. |
-| **[W3C Scalable Vector Graphics (SVG)](https://www.w3.org/TR/SVG2/)** | [W3C SVG 1.1 / 2.0 Recommendation](https://www.w3.org/TR/SVG2/) | [W3C Software and Document Notice](https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document) | Vector path definitions, marker definitions (`marker-end`), drop shadow filters (`feDropShadow`), and `<tspan>` multiline text wrapping. |
+| **W3C Scalable Vector Graphics (SVG)** | [SVG 1.1 / 2.0 Recommendation](https://www.w3.org/TR/SVG2/) | [W3C Software and Document Notice](https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document) | Vector path definitions, marker definitions (`marker-end`), drop-shadow filters (`feDropShadow`), and `<tspan>` multi-line text wrapping. |
 
-All icon assets are cataloged in machine-readable manifests:
+### Machine-readable manifests
+
+Every icon is cataloged in both manifests, which are generated alongside the tree:
 - YAML manifest: [`icons/icons.yaml`](../icons/icons.yaml)
 - CSV manifest: [`icons/icons.csv`](../icons/icons.csv)
+
+> **Correction (2026-09-21).** Revisions of this document before commit `826c227` credited these icons to Lucide, Feather, Tabler, Cisco, CNCF, and AWS with per-glyph derivation claims, and named two licenses that do not exist ("Public Domain / Open Stencil Use" and "Permissive Architectural Diagramming Use"). The glyphs were original work throughout; the attribution was incorrect and is retracted here.
+
 
 ---
 

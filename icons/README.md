@@ -9,6 +9,14 @@ the glyphs the renderer draws are the same artwork by construction.
 
 Every icon is stroked at 2px on the 24x24 grid and uses `currentColor`, so it inherits its color from the embedding document. 2 of 60 add a lighter accent stroke for interior detail: `historian` (1.5px), `vector_db` (1.2px).
 
+## Authorship and licensing
+
+Every glyph is original geometry written for this project and is covered
+by the repository's [MIT license](../LICENSE). No third-party icon set is
+vendored, traced, or redistributed here, and no upstream icon license
+obligations attach to it. See [`docs/sources.md`](../docs/sources.md) for
+the full provenance statement.
+
 ## Domains
 
 ### `ai/` (7 icons)
