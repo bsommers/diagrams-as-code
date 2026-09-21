@@ -1,133 +1,49 @@
-# Checkpoint — code review remediation (2026-09-20)
+# Checkpoint — code review remediation (2026-09-20 → 2026-09-21)
 
-Written before `/compact`. Everything below is verified on disk, not remembered.
+**STATUS: COMPLETE. No work is pending.** Everything below was verified on disk before `/clear`.
+Do not start work from this file; wait for a new request.
 
-## Goal (user's words)
+## State (verified 2026-09-21)
 
-1. `/code-review high. write a report in form of script. well written commands to write github issue. do not file issues, just make script for review`
-2. `uncomment the three severity labels so gh label create works. then run script with --file option`
-3. Triage of a 3-batch proposal: `1 - do this / 2 - skip for now. now. license and source tracing was more of a curiosity, not a requirement / 3 - do it`
-4. `yeah. fix that README.md issue with ci.yml, root case as #9. tell me what you fixed`
-5. `refresh all documentation, links, example outputs and rerun test suite`
-6. `commit` (via `/commit`), then `close them` (the resolved issues)
+- Branch `master`, clean, in sync with `origin/master`. 0 stashes, no background processes.
+- HEAD = the commit that added this checkpoint update; the last code commit is `e12027d`.
+- `uv run pytest -q` → **314 passed**. `uv run python tools/generate_icons.py --check` → up to date (63 files).
+- CI green on all jobs (Python 3.10–3.13 + Docker) for `e12027d`.
+- **GitHub issues: 0 open.** All 12 from the review (#1–#12) are closed, each with a verification comment.
 
-**All six are complete.** There is no work in flight.
+## What shipped (oldest → newest)
 
-## Decisions and corrections (verbatim, do not re-litigate)
+| Commit | What |
+|---|---|
+| `de33502` | Icons generated from `ShapeLibrary._ICON_CATALOG` by `tools/generate_icons.py`; `main.py` no longer clobbers `README.md`; CI guard; LICENSE; relative links; version 0.3.0 (#2–5, #7–12) |
+| `826c227` | `docs/sources.md` catalogs all four PNG backends + container image; `tests/test_dependency_catalog.py` (#6) |
+| `81dad9e` | `.claude/` tracked in git (user's choice) |
+| `7075434` | Test count dropped from `README.md` — it drifted 3 times; removed rather than guarded |
+| `da2dbd4` | 84 rendered PNGs untracked + gitignored; CI now `git diff --exit-code -- output/` |
+| `e12027d` | Fabricated icon attribution retracted; icons stated as original MIT work; `tests/test_icon_provenance.py` (#1) |
 
-- **#1 (icon provenance table) is deliberately NOT fixed.** User: *"skip for now. now. license and
-  source tracing was more of a curiosity, not a requirement"*. `docs/sources.md` still attributes
-  icons to Lucide/Feather/Tabler/Cisco/CNCF/AWS and still names two licenses that do not exist
-  ("Public Domain / Open Stencil Use", "Permissive Architectural Diagramming Use").
-  **Do not edit that table unless the user reopens it.**
-- **#6 (dependency catalog omits cairosvg, Inkscape, ImageMagick, DejaVu) was never chosen.**
-  Not a decision against it — it simply was not in either approved batch.
-- Both remain OPEN on GitHub by intent.
+## Gates now in place (a future change must satisfy these)
 
-## State (verified at checkpoint time)
+- `tools/generate_icons.py --check` + `tests/test_icon_catalog.py` — icon tree, manifests, doc icon totals.
+- `tests/test_dependency_catalog.py` — every `render_png` backend, base image and apt package is in `docs/sources.md`.
+- `tests/test_icon_provenance.py` — no fabricated license names; an upstream attribution claim needs license text under `icons/licenses/`.
+- CI: `git diff --exit-code -- README.md docs/ icons/ output/` after the suite runs.
+- **Workflow consequence:** the test suite re-renders all 84 diagrams in place (`tests/test_domain_examples.py` runs with `cwd=<repo root>`). An engine change that alters SVG output fails CI until you run `uv run pytest` and commit `output/`.
 
-- Branch `master`, clean, in sync with `origin/master`. 0 stashes, 1 worktree (the repo itself).
-- HEAD = `de33502` "fix: make icons and docs generated and verifiable, not hand-maintained"
-  (59 files, +1906/−697). **Committed AND pushed** to `bsommers/diagrams-as-code` (private).
-- Baseline: `uv run pytest -q` → **304 passed**; `uv run python tools/generate_icons.py --check`
-  → "icons/ is up to date (63 files)"; link check → 188 resolved / 0 broken.
-- No background processes, no open ports.
+## Decisions (verbatim where it matters)
 
-## What shipped in de33502
+- Provenance: first deferred (*"skip for now … a curiosity, not a requirement"*), then reversed a day later: *"fix issue #1"*. Done. See memory `provenance-tracing-is-optional`.
+- `.claude/`: user chose to commit it (*"add .claude"*).
+- `output/`: user approved untracking PNGs and gating SVG + BOM (*"do both"*).
+- #6 deviation: the SBOM-diff CI criterion was replaced by a source-derived test (base-layer noise). Documented on the issue.
 
-Single source of truth for icons:
-- `ShapeLibrary._ICON_CATALOG` (`src/diagrams_as_code/shapes.py`) — 60 icons, each mapped to one
-  domain and one description. `_CANONICAL_ICONS = frozenset(_ICON_CATALOG)` derived from it.
-- `tools/generate_icons.py` emits the whole `icons/` tree + `icons.csv` + `icons.yaml` +
-  `icons/README.md`. `--check` lists missing/stale/extra and exits 1.
-- Tree 59 → 60 files: added `iiot/{dashboard,database,queue}.svg`; removed duplicate
-  `computer/sensor.svg` and `iiot/plc.svg` (one domain home per icon).
-- `tests/test_icon_catalog.py` — 76 tests. Negative-tested: hand-edit an icon → 2 fail;
-  delete an icon file → 6 fail; revert a doc count → count guard fails.
+## Gotchas worth keeping
 
-Other fixes: `LICENSE` (MIT) added; 127 `file:///home/bill/...` links → relative; `requirements.txt`
-removed; `resvg-py` row corrected to baseplate-admin/MIT and recategorized "Optional Runtime";
-version synced to 0.3.0; false uniform-stroke claim replaced with a measured one; icon total
-corrected to 60 in ten documents; all 83 example diagrams re-rendered (6 outputs were stale).
+- GitHub closing keywords bind only to the first reference: write `Resolves #2, resolves #3`, not `Resolves #2, #3`.
+- `gh issue close -c` silently drops the comment on an already-closed issue; use `gh issue comment`.
+- Avoid `perl -0777 -pe` for multi-line replacement here (it once blanked a section). Use Python or head/tail.
+- `/commit` skill template says `Claude Sonnet 4.6`; commits in this repo use the attribution of the model that actually did the work.
 
-README/CI root cause (same shape as #9):
-- `main.py`'s `generate_root_readme()` **deleted**. It rebuilt `README.md` from a hardcoded template
-  91 lines behind the maintained file, silently reverting every edit — including in CI.
-- `.github/workflows/ci.yml` gained a guard step: `tools/generate_icons.py --check` then
-  `git diff --exit-code -- README.md docs/ icons/`. **`output/` is excluded on purpose** —
-  PNG bytes are not guaranteed reproducible across runners and a flaky gate gets disabled.
+## Authorizations
 
-## Issue tracker
-
-- CLOSED with verification comments citing `de33502`: #2 #3 #4 #5 #7 #8 #9 #10 #11 #12
-- OPEN by intent: **#1** (provenance, user-skipped), **#6** (dependency catalog rows)
-- `.issues/draft-2026-09-20.sh` is committed — the script that filed #1–12. Re-runnable;
-  `--file` creates, bare is a dry run.
-
-## Dead ends / gotchas (do not repeat)
-
-- **GitHub closing keywords bind only to the first reference.** `Resolves #2, #3, #4` closed only #2.
-  Write `resolves #2, resolves #3, ...`. Also: `gh issue close -c` **silently drops the comment** if
-  the issue is already closed — use `gh issue comment` separately.
-- **perl `-0777 -pe` for multi-line block replacement is hazardous here.** `${VAR}` gets interpreted
-  by perl, and `$ENV{X}` read in a `BEGIN` block once produced an EMPTY replacement that deleted a
-  whole `CONCERNS.md` section. Use `head`/`tail` + heredoc splicing instead.
-- `grep "import diagrams"` false-positives on `diagrams_as_code`; use `(?!_as_code)`.
-- A **regex** guard for doc icon counts kept false-positiving on sentences like "13 themes … 60 icons".
-  Replaced with `DOC_ICON_CLAIMS` — an exact advertised phrase pinned per document.
-- The test-count claim in `README.md:100` went stale **twice in one session** (227 → 299 → 304).
-  It is currently correct at 304 but is **unguarded** and will drift again.
-
-## Authorizations (scope, and what needs re-confirming)
-
-- User authorized filing issues (`--file`) and `/commit` (which stages all, commits, pushes to
-  upstream `master`). Both were **used and are spent**.
-- **Any further push, issue filing, or issue close needs fresh confirmation.** Do not treat the
-  above as standing permission.
-- Note: `/commit` pushes directly to `master`. Its skill template says to attribute
-  `Claude Sonnet 4.6`; this session used `Claude Opus 5` because that is the model that did the work.
-
-## Next command
-
-No work is pending. If the user picks up the remaining items, start with:
-
-```bash
-cd /home/bill/src/ai/diagrams-as-code && git log --oneline -1 && uv run pytest -q | tail -2
-```
-
-Then one of, in the order recommended to the user:
-1. **#6** — add cairosvg (LGPL-3.0), Inkscape (GPL-3.0), ImageMagick, the Docker base image and
-   `fonts-dejavu-core` rows to the `docs/sources.md` dependency table.
-2. **Guard the test-count number** in `README.md:100` and `docs/CHANGELOG.md` the way
-   `DOC_ICON_CLAIMS` guards the icon total, or drop the number from the prose.
-3. **`output/`** — 252 checked-in files nothing verifies. Either add to the CI guard (requires
-   answering PNG determinism first) or stop committing rendered outputs.
-4. **#1** — only if the user reopens the provenance question.
-
----
-
-## UPDATE — issue #6 done, NOT COMMITTED (2026-09-20)
-
-User picked option 1 (#6, dependency catalog). Uncommitted work now in the tree:
-- `docs/sources.md`: §2 gained CairoSVG (LGPL-3.0), Inkscape (GPL-3.0), ImageMagick rows;
-  intro reworded to "not uniformly permissive"; new §3 catalogs the container image
-  (base image, Debian 12 layer, `fonts-dejavu-core`) + an SBOM pointer.
-- `tests/test_dependency_catalog.py` (NEW, 4 tests): parses `render_png`'s real fallback chain
-  via `inspect.getsource` and the real `Dockerfile`; fails if a backend, base image, or apt
-  package is missing from the catalog. All 4 negative-tested.
-- `docs/CHANGELOG.md`: v0.3.0 Changed + Verification entries; "permissive" claim softened.
-
-Baseline now: **308 passed**; icons --check clean; 274 links resolved / 0 broken;
-`main.py` leaves README/docs/icons untouched (md5-verified).
-
-**DEVIATION from issue #6's acceptance criteria:** criterion 4 asked for a CI SBOM diff
-(`syft`/`docker sbom`). Not done — it would flag every Debian base-layer package and needs a
-network tool in CI. Replaced with the source-derived test above. Say so when closing #6.
-
-NEXT: needs user approval to commit/push and to close #6. Nothing is authorized yet.
-
-### UPDATE 2026-09-21 — #6 committed, pushed, closed
-HEAD = `826c227` "docs: catalog every PNG backend and what the container ships", pushed
-(`de33502..826c227`). #6 auto-closed via `Resolves #6.`; verification comment added separately
-(`gh issue comment`, since `-c` on an already-closed issue is dropped). Tree clean except
-untracked `.claude/`. **Only #1 remains open, by user decision.** Nothing pending.
+All spent. Any future push, issue filing or issue close needs fresh confirmation.
