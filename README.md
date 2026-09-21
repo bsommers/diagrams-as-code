@@ -97,7 +97,7 @@ diag.generate_readme("output/quickstart.svg", "output/quickstart_README.md")
 # Run reference architecture
 uv run python main.py
 
-# Run the full test suite (304 tests)
+# Run the full test suite
 uv run pytest
 ```
 
