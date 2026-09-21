@@ -15,7 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **5 Theme Varieties per Domain (80 Diagrams):** Updated all 80 reference architecture scripts across all 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`) to showcase 5 distinct theme varieties per domain, with widened group margins (`margin=90`) to prevent protocol badge line overlap.
 - **Complete Documentation Suite (`docs/` & `docs/diagrams/`):**
   - Authoring of `docs/README.md`, `docs/purpose.md`, `docs/architecture.md`, `docs/running.md`, and `docs/how-to.md`.
-  - Authoring of `docs/sources.md` and `icons/README.md` cataloging upstream provenance, design systems, and permissive open-source licenses for all 60 vector icons and build dependencies.
+  - Authoring of `docs/sources.md` and `icons/README.md` cataloging upstream provenance, design systems, and the license of each of the 60 vector icons and every build dependency.
   - Authored multi-format visual architecture diagrams in `docs/diagrams/`: terminal ASCII schematic (`ascii_architecture.txt`), Mermaid flowchart (`architecture.mmd`), Mermaid sequence lifecycle (`execution_lifecycle.mmd`), and native Draw.io XML (`architecture.drawio`).
   - Updated root `README.md` with badges, 8-domain showcase, and documentation hub links.
 - **Automated Verification:** Added `test_domain_theme_variety`, `test_text_wrapping_multiline_tspan`, `test_label_position_bottom`, `test_kind_icon_pure_rendering`, and `test_theme_expansion_and_helpers` (304 automated tests passing).
@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Generated Icon Catalog (`tools/generate_icons.py`, `src/diagrams_as_code/shapes.py`):** `ShapeLibrary._ICON_CATALOG` is now the single source of truth for icons, mapping each of the 60 canonical names to one domain directory and one description; `_CANONICAL_ICONS` is derived from it. The entire `icons/` tree, `icons/icons.csv`, `icons/icons.yaml`, and `icons/README.md` are emitted from that catalog by `tools/generate_icons.py`, which also provides `--check` for CI. Standalone icon files and the glyphs the renderer draws are now the same artwork by construction.
 - **Icon Tree Reconciled (59 → 60 files):** Added the missing `dashboard`, `database`, and `queue` icon files, which the engine rendered but the catalog never shipped. Removed the duplicate `computer/sensor.svg` and `iiot/plc.svg`, so each icon has exactly one domain home.
 - **Relative Documentation Links:** Replaced 127 `file:///home/bill/...` absolute links across `README.md`, `docs/`, `examples/README.md`, and `icons/README.md` with repository-relative paths that resolve for every reader and on GitHub.
+- **Dependency Catalog Completed (`docs/sources.md`):** The catalog listed only the first of the four PNG backends `Diagram.render_png()` tries. CairoSVG (LGPL-3.0-or-later), Inkscape (GPL-3.0-or-later), and ImageMagick are now listed with their real licenses and with how each is used — imported into the process, or located on `PATH` and run as a subprocess. A new section catalogs what the container image redistributes: the `ghcr.io/astral-sh/uv:python3.12-bookworm-slim` base image, the Debian 12 layer, and `fonts-dejavu-core`. The blanket claim of "permissive" licensing was removed, since two of the backends are copyleft.
 - **Dependency Provenance Corrected (`docs/sources.md`):** `resvg-py` is credited to `baseplate-admin/resvg-py` under MIT (verified against the installed distribution metadata) and recategorized from "Dev Dependency" to "Optional Runtime", since `Diagram.render_png()` imports it at runtime.
 
 ### Fixed
@@ -35,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Package Version Synchronized:** `pyproject.toml` and `src/diagrams_as_code/__init__.py` report `0.3.0`, matching this changelog section.
 
 ### Verification
+- `tests/test_dependency_catalog.py` adds 4 tests that read the real `render_png()` fallback chain and the real `Dockerfile`, failing if a rasterizer, a base image, or an `apt`-installed package is absent from `docs/sources.md`.
 - `tests/test_icon_catalog.py` adds 76 tests binding the catalog, the generated tree, the manifests, the alias table, and the documented totals together. Drift in any of them fails the suite.
 
 ## [v0.2.0] - 2026-09-19
