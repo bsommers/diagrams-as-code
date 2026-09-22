@@ -85,3 +85,29 @@ def test_invalid_arguments() -> None:
         LayeredLayout(direction="RL")
     with pytest.raises(ValueError, match="non-negative"):
         LayeredLayout(rank_gap=-1)
+
+
+@pytest.mark.parametrize("direction", ["LR", "TB"])
+def test_rank_order_respected_for_forward_edges(direction: str) -> None:
+    """For every forward edge u→v (source index < target index), rank(u) < rank(v)."""
+    g = _messy()
+    # Extract only forward edges (source index < target index)
+    node_index = {n.id: n.index for n in g.nodes}
+    forward_edges = [
+        (e.source, e.target)
+        for e in g.edges
+        if node_index[e.source] < node_index[e.target]
+    ]
+    # Create graph with only forward edges
+    acyclic = LayoutGraph(
+        nodes=g.nodes,
+        edges=tuple(LayoutEdge(s, t) for s, t in forward_edges),
+    )
+    pos = LayeredLayout(direction=direction).arrange(acyclic)
+
+    # For LR: rank order is x order; for TB: rank order is y order
+    axis = "x" if direction == "LR" else "y"
+    for source, target in forward_edges:
+        source_pos = getattr(pos[source], axis)
+        target_pos = getattr(pos[target], axis)
+        assert source_pos < target_pos, f"Edge {source}→{target}: {source} at {source_pos} not < {target} at {target_pos}"
