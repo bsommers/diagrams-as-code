@@ -239,16 +239,34 @@ Render with the edited file layered on top of the script's own layout:
 uv run diagrams-as-code render my_diagram.py --layout-file my_diagram.layout.json
 ```
 
-or, from Python, pass it to the constructor directly:
+or, from Python, pass it to the constructor directly. Pass the same `layout=`
+mode the script itself uses — the file records positions, not the layout mode,
+and `layout` still defaults to `"manual"`:
 
 ```python
-with Diagram("My Diagram", layout_file="my_diagram.layout.json") as diag:
+with Diagram("My Diagram", layout="auto", layout_file="my_diagram.layout.json") as diag:
     ...
 ```
 
 A layout file entry always wins over both manual constraints and the auto
 engine's placement for that key; a stale entry that matches no element in
 the current script emits a `LayoutWarning` and is otherwise ignored.
+
+Whenever a layout file positions at least one element, the canvas grows to fit
+the result plus the framing margin, in `manual` mode as well as `auto` — an
+edited coordinate past the declared `width`/`height` widens the SVG instead of
+being clipped. A `manual` diagram with no layout file keeps the `width` and
+`height` you passed, unchanged.
+
+### Changing settings after construction
+
+`diag.configure(layout=..., direction=..., theme=..., layout_file=...,
+rank_gap=..., node_gap=...)` updates the settings you name and re-solves on the
+next render. `None` means "leave this one alone", so **`configure(layout_file=None)`
+does not clear a layout file** that was set earlier — there is no way to go back
+to "no layout file" on an existing `Diagram`; build a new one instead. For the
+same reason `configure(theme=...)` re-resolves the named theme and drops any
+`theme_overrides` passed to the constructor.
 
 ---
 

@@ -15,7 +15,7 @@
 - `Diagram(layout=...)` defaults to `"manual"`. **Every existing diagram renders byte-identically.** The CI guard (`git diff --exit-code -- output/`) is the proof, and it applies to every refactor in this spec.
 - Default element ids (`shape_N`, `group_N`) do not change.
 - `build_diagram(output_dir)` keeps its signature and return value in all examples; `tests/test_domain_examples.py` passes unmodified.
-- `iiot_diagrams` facade re-exports every new public symbol.
+- `iiot_diagrams` facade re-exports every new public symbol. Concretely, `diagrams_as_code.__all__` gains `LayeredLayout`, `LayoutWarning`, `export_layout`, `load_layout_file` and `render_all`, and the facade mirrors `__all__`; `tests/test_public_api.py` asserts both packages resolve every advertised name.
 
 ## 3. Architecture
 
@@ -25,7 +25,7 @@ New and changed modules under `src/diagrams_as_code/`:
 layout/
   __init__.py      public: LayoutEngine, LayeredLayout, LayoutWarning, load_layout_file, export_layout
   base.py          LayoutEngine protocol, LayoutGraph/LayoutNode/LayoutEdge dataclasses
-  graph.py         build_layout_graph(diagram) -> LayoutGraph
+  graph.py         build_scope_graph(diagram, group, pinned) -> LayoutGraph
   layered.py       LayeredLayout engine
   sidecar.py       layout-file keys, load, apply, export
   pipeline.py      run_layout(diagram): the ordered solve pipeline (§4.3)
@@ -50,27 +50,27 @@ Diagram(title, ..., layout="manual" | "auto", direction="LR" | "TB",
 ```
 
 - `layout="auto"` enables §4.3 step 1. `direction` is the rank axis (LR: ranks are columns, flow left→right).
-- With `layout="auto"`, the canvas `width`/`height` grow to fit content plus the framing margin; they never shrink below the values passed.
+- The canvas `width`/`height` grow to fit content plus the framing margin whenever auto-layout ran **or** a layout file positioned at least one element; they never shrink below the values passed. A `manual` diagram with no layout file keeps the canvas it was given.
 - Invalid `layout`/`direction` values raise `ValueError` at construction.
 
 ### 4.2 Layout graph
 
-`build_layout_graph` produces, for each *scope* (the diagram root and each group), the direct children of that scope as nodes (a child group is one node with its laid-out size) and the edges between them. An edge whose endpoints sit in different subtrees is **lifted**: at each scope it becomes an edge between the two ancestors that are direct children of that scope; lifted edges inside the same node are dropped. Parallel lifted edges collapse into one with a weight.
+`build_scope_graph(diagram, group, pinned)` produces, for one *scope* (the diagram root and each group), the direct children of that scope as nodes (a child group is one node with its laid-out size) and the edges between them. An edge whose endpoints sit in different subtrees is **lifted**: at each scope it becomes an edge between the two ancestors that are direct children of that scope; lifted edges inside the same node are dropped. Parallel lifted edges collapse into one with a weight.
 
-A node is **pinned** if its element has any constraint (`.at`, `.move_to`, `.right_of`, etc.) or a layout-file entry. Pinned nodes are excluded from auto-placement and edges touching them are ignored by the engine.
+A node is **pinned** if its element has any constraint (`.at`, `.move_to`, `.right_of`, etc.) or a layout-file entry. A **group** is additionally pinned when a descendant carries a user absolute constraint, or a user relative constraint whose target sits outside that group — auto-placing the group would translate the descendant away from what it was anchored to. Pinned nodes are excluded from auto-placement and edges touching them are ignored by the engine.
 
 ### 4.3 Solve pipeline (`layout/pipeline.py`)
 
 `Diagram.solve()` delegates to `run_layout(diagram)`, which runs:
 
-1. **Auto-place** (only if `layout="auto"`): scopes are processed bottom-up (deepest groups first). For each scope, `engine.arrange(graph)` returns `{node_id: Point}` for unpinned nodes relative to the scope origin; the pipeline stores each as an absolute constraint tagged `"source": "auto"`, translated by the group's padding and header height. Group sizes feed the parent scope. Auto-tagged constraints are cleared at the start of every run, so `solve()` is idempotent and auto-placed nodes never count as pinned.
-2. **Layout-file overrides**: each matching entry replaces the element's constraints with an absolute one (§4.5).
+1. **Layout-file overrides**: each matching entry is inserted as the element's *leading* absolute constraint (§4.5). This runs **before** auto-placement so that file entries are visible to the pin rule and auto-layout leaves those elements alone.
+2. **Auto-place** (only if `layout="auto"`): scopes are processed bottom-up (deepest groups first). For each scope, `engine.arrange(graph)` returns `{node_id: Point}` for unpinned nodes relative to the scope origin; the pipeline stores each as an absolute constraint tagged `"source": "auto"`, translated by the group's padding and header height. Group sizes feed the parent scope; the size estimate is skipped for pinned groups, whose descendants may reference elements outside the group. Auto-tagged constraints are cleared at the start of every run, so `solve()` is idempotent and auto-placed nodes never count as pinned.
 3. **Constraint solve**: existing `ConstraintSolver.solve()`, unchanged. Relative constraints may target auto-placed elements.
 4. **Group bounds**: bottom-up `calculate_bounds()`, as today.
-5. **Framing**: the negative-bounds translation currently in `Diagram.solve()` moves here, unchanged in behavior. With `layout="auto"`, canvas growth (§4.1) is applied after framing.
+5. **Framing**: the negative-bounds translation currently in `Diagram.solve()` moves here, unchanged in behavior. Canvas growth (§4.1) is applied after framing, whenever auto-layout ran or a layout file supplied a position.
 6. **Overlap check**: any overlap between a pinned element and an auto-placed sibling emits `LayoutWarning` (a `UserWarning` subclass) naming both labels. Overlaps between two auto-placed nodes cannot occur (§4.4 invariant) and are asserted in tests, not checked at runtime.
 
-With `layout="manual"` and no layout file, steps 1, 2 and 6 are no-ops, and the pipeline produces exactly today's coordinates.
+With `layout="manual"` and no layout file, steps 1, 2 and 6 are no-ops, the canvas is left alone, and the pipeline produces exactly today's coordinates.
 
 ### 4.4 `LayeredLayout` engine
 
@@ -100,7 +100,7 @@ JSON, UTF-8, sorted keys, 2-space indent, trailing newline (stable diffs):
 - **Key** = the element's explicit `id=` if one was passed, else its label path: ancestor group labels and its own label joined by `/`. (`Element` records whether its id was explicit.)
 - Coordinates are absolute top-left, after framing — what you see in the SVG.
 - **Groups move as a unit.** Shape entries are applied first; a group entry then translates the group's whole subtree so the group's top-left lands on its coordinates. Editing one group entry moves everything inside it. For a freshly exported file the translation is zero, which is what makes the round-trip hold.
-- **Load** (`layout_file=` or `--layout-file`): missing file → no-op; malformed JSON or unknown `version` → `ValueError` naming the file; a key matching no element → `LayoutWarning` ("stale layout entry: …").
+- **Load** (`layout_file=` or `--layout-file`): an entry is inserted as the element's leading absolute constraint, so it wins over anything the script declared (the solver takes the first absolute constraint and stops, leaving a relative constraint behind it inert). Missing file → no-op; malformed JSON or unknown `version` → `ValueError` naming the file; a key matching no element → `LayoutWarning` ("stale layout entry: …").
 - **Export** (`export_layout(diagram, path)` / `diagrams-as-code layout export`): writes positions for every shape and group after a full solve. If two elements share a key → `ValueError` listing them, advising `id=`.
 - Round-trip property: export, then render with that file, gives identical coordinates.
 
@@ -125,7 +125,7 @@ diagrams-as-code icons [--domain NAME]
 ```
 
 - `PATH` is a script or a directory (recursed for `*.py` defining `diagram()`, sorted). Scripts are loaded with `importlib` under a unique module name; one failing script does not stop the others.
-- Flags override the returned diagram's settings before solving (`Diagram` gains a `configure(layout=, direction=, theme=, layout_file=)` method that raises if already solved).
+- Flags override the returned diagram's settings before solving (`Diagram` gains a `configure(layout=, direction=, theme=, layout_file=, rank_gap=, node_gap=)` method). `configure` does not raise on an already-solved diagram: it clears `_is_solved` so the next render re-solves, which is what lets the CLI override a script that solved itself inside its own `with` block. `None` means "leave unchanged", so `configure(layout_file=None)` cannot clear a layout file.
 - `--out` defaults to `output/`; for a directory input, outputs mirror the input's subdirectories (so `render examples/` reproduces today's `output/<domain>/`).
 - **Exit codes:** 0 all succeeded; 1 any script failed to load or render; 2 usage error (argparse). Failures print `error: <script>: <message>` to stderr; `--debug` adds the traceback.
 - `layout export` defaults `-o` to `<script stem>.layout.json` beside the script and uses the script's own `layout` setting unless `--layout` is given.
@@ -165,3 +165,25 @@ Each step lands green with `output/` unchanged, except step 6, which adds only n
 4. Pipeline + `Diagram(layout=...)` (§4.1, §4.3).
 5. Layout file (§4.5).
 6. CLI (§6), `main.py`, auto-layout examples, docs.
+
+## 11. As-built amendments (2026-09-22)
+
+The sections above were amended after the final whole-branch review, which found five
+places where the shipped implementation was right and the spec was stale. Each amendment
+records what was built, not a change of intent.
+
+| § | Amendment | Why |
+|---|---|---|
+| 2 | Names the five symbols added to `diagrams_as_code.__all__` and the test that guards them | The clause was written but not implemented; the fix wave added the exports and `tests/test_public_api.py`. |
+| 3, 4.2 | `build_layout_graph(diagram)` → `build_scope_graph(diagram, group, pinned)` | Layout is solved one scope at a time (root, then each group), so the builder takes the scope and the pinned set. Per-scope is the shape the pipeline actually needs. |
+| 4.1, 4.3 step 5 | Canvas growth is no longer auto-only: it also runs when a layout file positioned at least one element | A layout file records positions but not the canvas. Replayed in `manual` mode the diagram kept the declared canvas and clipped content — the workflow `docs/how-to.md` documents. Growth is still skipped for a `manual` diagram with no layout file, which is what keeps the 92 committed outputs byte-identical. |
+| 4.2 | The pin rule is stated for groups: a group is pinned when a descendant has a user absolute constraint **or** a user relative constraint whose target is outside that group | With only the absolute half of the rule, a child anchored to a shape outside its group left the group auto-placeable; the group's auto constraint then dragged the child away from its anchor, silently. |
+| 4.3 | Step order: layout-file overrides run **before** auto-placement (was: after) | File entries must be visible to the pin rule, or auto-layout would place an element the file had already positioned. |
+| 4.3 step 2 | The group size estimate is skipped for pinned groups | The group-local solve cannot resolve a descendant's reference to an element outside the group, so the estimate would be stale. A pinned group is not a node in its parent's graph, so the estimate is not needed. |
+| 4.5, 4.3 step 1 | "replaces the element's constraints" → "inserted as the element's leading absolute constraint" | Same observable behaviour by a different mechanism: the solver takes the first absolute constraint and stops, so a constraint behind the file entry is inert rather than deleted. Describing the mechanism keeps the round-trip and override rules checkable. |
+| 6 | `configure()` re-solves instead of raising when the diagram is already solved | Every script solves itself on `with`-block exit, so a `configure` that raised would make the CLI's `--layout`/`--theme`/`--layout-file` flags unusable. The note that `None` means "unchanged" (so `layout_file` cannot be cleared) is also recorded in `docs/how-to.md`. |
+
+**Known limitation.** 15 of the 92 committed `manual` diagrams place content past their
+declared canvas and are clipped today. Growing the canvas unconditionally in `manual` mode
+would fix them but would change committed output, so it was not done; see
+`.superpowers/sdd/2026-09-22-auto-layout-cli/final-fix-report.md`.
