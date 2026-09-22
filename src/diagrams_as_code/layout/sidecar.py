@@ -64,9 +64,13 @@ def load_layout_file(path: Union[str, Path]) -> dict[str, tuple[float, float]]:
     return entries
 
 
-def apply_entries(elements: list[Element], entries: dict[str, tuple[float, float]]) -> None:
-    """Put each entry first in its element's constraints so it wins."""
+def apply_entries(elements: list[Element], entries: dict[str, tuple[float, float]]) -> int:
+    """Put each entry first in its element's constraints so it wins.
+
+    Returns how many entries matched an element.
+    """
     keyed = keyed_elements(elements)
+    applied = 0
     for key in sorted(entries):
         matches = keyed.get(key, [])
         if not matches:
@@ -80,6 +84,8 @@ def apply_entries(elements: list[Element], entries: dict[str, tuple[float, float
         matches[0].constraints.insert(
             0, {"type": "absolute", "x": x, "y": y, "anchor": Anchor.TOP_LEFT, SOURCE_KEY: "file"}
         )
+        applied += 1
+    return applied
 
 
 def export_layout(diagram: Any, path: Union[str, Path]) -> Path:

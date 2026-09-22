@@ -74,3 +74,24 @@ def test_node_size_reserves_room_for_labels_below() -> None:
     assert node_size(inside) == (100, 50)
     assert node_size(icon) == (48, 48 + LABEL_BELOW_EXTRA)
     assert node_size(below) == (100, 50 + LABEL_BELOW_EXTRA)
+
+
+def test_group_with_a_child_anchored_outside_it_is_pinned() -> None:
+    d = Diagram()
+    outside = d.shape("Outside")
+    with d.group("G") as g:
+        inside = d.shape("Inside")
+        d.shape("Free")
+    inside.right_of(outside)
+    ids = pinned_ids(d.solver.all_elements())
+    assert ids == {inside.id, g.id}
+
+
+def test_group_whose_relatives_all_point_inside_stays_auto_placeable() -> None:
+    d = Diagram()
+    with d.group("G") as g:
+        a = d.shape("A")
+        b = d.shape("B").right_of(a)
+    ids = pinned_ids(d.solver.all_elements())
+    assert ids == {b.id}
+    assert g.id not in ids

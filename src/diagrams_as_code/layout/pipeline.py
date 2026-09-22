@@ -6,8 +6,9 @@
    groups first, as absolute constraints tagged ``SOURCE_KEY: "auto"``.
 4. Run the constraint solver (strict).
 5. Recompute group bounds bottom-up and frame negative coordinates.
-6. With ``layout="auto"``, grow the canvas to fit and warn about pins that
-   overlap auto-placed siblings.
+6. Grow the canvas to fit when auto-layout ran or a layout file supplied a
+   position, and with ``layout="auto"`` warn about pins that overlap
+   auto-placed siblings.
 7. Route every edge; the renderer draws these paths.
 
 With ``layout="manual"`` and no layout file this reproduces the original
@@ -49,7 +50,7 @@ def run_layout(diagram: Any) -> None:
     """Position every element of ``diagram``."""
     elements = diagram.solver.all_elements()
     _reset(diagram, elements)
-    _apply_layout_file(diagram, elements)
+    from_file = _apply_layout_file(diagram, elements)
     auto_ids: set[str] = set()
     if diagram.layout == "auto":
         auto_ids = _auto_place(diagram, elements)
@@ -57,8 +58,9 @@ def run_layout(diagram: Any) -> None:
     groups = _deepest_first(diagram.groups)
     _refresh_group_bounds(groups)
     _frame(elements, groups)
-    if diagram.layout == "auto":
+    if diagram.layout == "auto" or from_file:
         _grow_canvas(diagram, elements)
+    if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
     router = OrthogonalRouter()
@@ -88,9 +90,11 @@ def _reset(diagram: Any, elements: list[Element]) -> None:
         el.constraints[:] = [c for c in el.constraints if SOURCE_KEY not in c]
 
 
-def _apply_layout_file(diagram: Any, elements: list[Element]) -> None:
-    if diagram.layout_file is not None:
-        apply_entries(elements, load_layout_file(diagram.layout_file))
+def _apply_layout_file(diagram: Any, elements: list[Element]) -> bool:
+    """Apply the layout file, if any; True when at least one entry matched."""
+    if diagram.layout_file is None:
+        return False
+    return apply_entries(elements, load_layout_file(diagram.layout_file)) > 0
 
 
 def _deepest_first(groups: list[Group]) -> list[Group]:
@@ -127,8 +131,14 @@ def _auto_place(diagram: Any, elements: list[Element]) -> set[str]:
             continue
         origin = Point(group.padding, group.padding + group.header_height)
         placed |= _place(diagram, group, pinned, engine, origin)
-        # Estimate this group's size for its parent scope. The global solve
-        # below is authoritative; this one may leave outside references unresolved.
+        if group.id in pinned:
+            # A pinned group is not a node in its parent's graph, so no size
+            # estimate is needed -- and its descendants may reference elements
+            # outside it, which a group-local solve cannot resolve.
+            continue
+        # Estimate this group's size for its parent scope. Every constraint in
+        # an unpinned group resolves within it, so the estimate is complete;
+        # the global solve below stays authoritative.
         local = ConstraintSolver()
         local.add(group)
         local.solve(strict=False)

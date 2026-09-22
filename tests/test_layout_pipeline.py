@@ -5,7 +5,7 @@ import warnings
 import pytest
 
 from diagrams_as_code import Diagram
-from diagrams_as_code.layout import LayoutWarning
+from diagrams_as_code.layout import LayoutWarning, export_layout
 
 
 def _bounds(d: Diagram) -> dict[str, tuple[float, float, float, float]]:
@@ -128,3 +128,37 @@ def test_invalid_layout_options() -> None:
         Diagram(layout="grid")
     with pytest.raises(ValueError, match="direction"):
         Diagram(direction="RL")
+
+
+def test_a_layout_file_grows_the_canvas_in_manual_mode(tmp_path) -> None:
+    with Diagram(layout="auto", width=400, height=300) as auto:
+        a, b, c = auto.shape("A"), auto.shape("B"), auto.shape("C")
+        a >> b >> c
+    path = export_layout(auto, tmp_path / "chain.layout.json")
+
+    with Diagram(width=400, height=300, layout_file=path) as replay:
+        x, y, z = replay.shape("A"), replay.shape("B"), replay.shape("C")
+        x >> y >> z
+
+    assert (z.bounds.x, z.bounds.y) == (c.bounds.x, c.bounds.y)
+    assert (replay.width, replay.height) == (auto.width, auto.height)
+    assert z.bounds.right <= replay.width
+
+
+def test_manual_canvas_without_a_layout_file_is_left_alone() -> None:
+    with Diagram(width=400, height=300) as d:
+        d.shape("A").at(900, 700)
+    assert (d.width, d.height) == (400.0, 300.0)
+
+
+def test_group_keeps_a_child_anchored_to_a_shape_outside_it() -> None:
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", LayoutWarning)
+        with Diagram(layout="auto", width=900, height=500) as d:
+            anchor = d.shape("Anchor").at(700, 400)
+            with d.group("G") as g:
+                inside = d.shape("Inside").right_of(anchor, margin=10)
+                other = d.shape("Other")
+            inside >> other
+    assert (inside.bounds.x, inside.bounds.y) == (anchor.bounds.right + 10.0, anchor.bounds.y)
+    assert g.bounds.intersects(inside.bounds)

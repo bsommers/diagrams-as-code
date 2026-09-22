@@ -32,26 +32,56 @@ def lift(element: Element, group: Optional[Group]) -> Optional[Element]:
     return None
 
 
+def _user_constraints(element: Element) -> list[dict[str, Any]]:
+    """The element's own constraints, excluding the ones auto-layout generated."""
+    return [c for c in element.constraints if c.get(SOURCE_KEY) != "auto"]
+
+
 def is_user_pinned(element: Element) -> bool:
     """True if the author (in code or the layout file) positioned ``element``."""
-    return any(c.get(SOURCE_KEY) != "auto" for c in element.constraints)
+    return bool(_user_constraints(element))
 
 
-def _has_absolute_descendant(group: Group) -> bool:
-    for child in group.children:
-        if any(c["type"] == "absolute" and c.get(SOURCE_KEY) != "auto" for c in child.constraints):
-            return True
-        if isinstance(child, Group) and _has_absolute_descendant(child):
-            return True
-    return False
+def _ancestors(element: Element) -> list[Group]:
+    """The groups containing ``element``, innermost first."""
+    chain: list[Group] = []
+    current = element.parent
+    while current is not None:
+        chain.append(current)
+        current = current.parent
+    return chain
+
+
+def _enclosing_ids(element: Element) -> set[str]:
+    """Ids of ``element`` and every group containing it."""
+    return {element.id, *(g.id for g in _ancestors(element))}
 
 
 def pinned_ids(elements: list[Element]) -> set[str]:
-    """Ids that auto-layout must not move."""
-    pinned = {e.id for e in elements if is_user_pinned(e)}
-    pinned.update(
-        e.id for e in elements if isinstance(e, Group) and _has_absolute_descendant(e)
-    )
+    """Ids that auto-layout must not move, in one pass over ``elements``.
+
+    An element is pinned when the author positioned it. A group is pinned when
+    a descendant carries a user absolute constraint, or a user relative
+    constraint whose target sits outside that group: auto-placing the group
+    would translate the descendant away from the position it was anchored to.
+    """
+    pinned: set[str] = set()
+    for el in elements:
+        user = _user_constraints(el)
+        if not user:
+            continue
+        pinned.add(el.id)
+        ancestors = _ancestors(el)
+        if not ancestors:
+            continue
+        if any(c["type"] == "absolute" for c in user):
+            pinned.update(g.id for g in ancestors)
+            continue
+        for c in user:
+            if c["type"] != "relative_dir":
+                continue
+            inside = _enclosing_ids(c["target"])
+            pinned.update(g.id for g in ancestors if g.id not in inside)
     return pinned
 
 
