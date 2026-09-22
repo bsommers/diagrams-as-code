@@ -27,6 +27,7 @@ class Element:
         self.metadata.update(kwargs)
         self.constraints: list[dict[str, Any]] = []
         self._diagram: Optional[Any] = None
+        self.explicit_id: bool = True
 
     def translate(self, dx: float, dy: float) -> None:
         """Translate element bounds by delta (dx, dy)."""

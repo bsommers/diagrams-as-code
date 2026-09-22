@@ -32,8 +32,8 @@ class ConstraintSolver:
             raise ValueError(f"Duplicate element id '{el.id}' detected in solver")
         self.elements.append(el)
 
-    def _collect_all_elements(self) -> list[Element]:
-        """Collect all elements including nested children of groups."""
+    def all_elements(self) -> list[Element]:
+        """Return every element, groups before their children, in declaration order."""
         result: list[Element] = []
         seen: dict[str, Element] = {}
 
@@ -54,9 +54,11 @@ class ConstraintSolver:
             visit(root)
         return result
 
-    def solve(self) -> None:
+    _collect_all_elements = all_elements
+
+    def solve(self, strict: bool = True) -> None:
         """Resolve all element constraints iteratively with hierarchical group support."""
-        all_elements = self._collect_all_elements()
+        all_elements = self.all_elements()
         solved: set[Element] = set()
 
         # Step 1: Resolve absolute constraints for non-group elements or empty groups
@@ -130,7 +132,7 @@ class ConstraintSolver:
                 break
 
         unsolved = [e.id for e in all_elements if e not in solved]
-        if unsolved:
+        if unsolved and strict:
             raise RuntimeError(f"Unresolved constraints for elements: {unsolved}")
 
     def _apply_absolute(self, el: Element, c: dict[str, Any]) -> None:

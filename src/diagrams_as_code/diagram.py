@@ -1,6 +1,7 @@
 """Diagram context manager and fluent syntax engine."""
 from __future__ import annotations
 
+import dataclasses
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
@@ -246,21 +247,9 @@ class Diagram:
         self.height = float(height)
         base_t = get_theme(theme)
         if theme_overrides:
-            fields = {
-                "name": f"{base_t.name}_custom",
-                "background": base_t.background,
-                "group_bg": base_t.group_bg,
-                "group_stroke": base_t.group_stroke,
-                "node_fill": base_t.node_fill,
-                "node_stroke": base_t.node_stroke,
-                "accent": base_t.accent,
-                "text": base_t.text,
-                "subtext": base_t.subtext,
-                "edge_color": base_t.edge_color,
-                "font_family": base_t.font_family,
-            }
-            fields.update(theme_overrides)
-            self.theme = Theme(**fields)
+            self.theme = dataclasses.replace(
+                base_t, name=f"{base_t.name}_custom", **theme_overrides
+            )
         else:
             self.theme = base_t
         self.label_position = label_position
@@ -316,6 +305,7 @@ class Diagram:
             **kwargs,
         )
         s._diagram = self
+        s.explicit_id = id is not None
         self.shapes.append(s)
         self.solver.add(s)
         if self._active_group is not None:
@@ -345,6 +335,7 @@ class Diagram:
             metadata=metadata,
         )
         g._diagram = self
+        g.explicit_id = id is not None
         self.groups.append(g)
         self.solver.add(g)
         return _GroupContext(self, g)
@@ -465,7 +456,7 @@ class Diagram:
                 g.calculate_bounds()
 
         # Check if root elements need framing (if bounds are negative, which clips off canvas)
-        all_elements = self.solver._collect_all_elements()
+        all_elements = self.solver.all_elements()
         if all_elements:
             roots = [e for e in all_elements if getattr(e, "parent", None) is None]
             if roots:
