@@ -65,6 +65,17 @@ def test_failing_script_returns_1_and_others_still_render(tmp_path: Path, capsys
     assert (tmp_path / "out" / "demo.svg").exists()
 
 
+def test_directory_with_syntax_error_is_reported_not_skipped(tmp_path: Path, capsys) -> None:
+    _script(tmp_path / "gallery" / "good.py", stem="good")
+    broken = tmp_path / "gallery" / "broken.py"
+    broken.write_text("def diagram(:\n    pass\n", encoding="utf-8")
+    out = tmp_path / "out"
+    assert main(["render", str(tmp_path / "gallery"), "--out", str(out), "--format", "svg"]) == 1
+    err = capsys.readouterr().err
+    assert f"error: {broken}:" in err and "Traceback" not in err
+    assert (out / "good.svg").exists()
+
+
 def test_debug_shows_the_traceback(tmp_path: Path, capsys) -> None:
     bad = tmp_path / "bad.py"
     bad.write_text("def diagram():\n    raise RuntimeError('boom')\n", encoding="utf-8")

@@ -71,21 +71,42 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _defines_diagram(path: Path) -> bool:
+def _scan(path: Path) -> tuple[bool, Optional[Exception]]:
+    """``(has_diagram, error)`` for a candidate script found while scanning a directory.
+
+    ``error`` is set when the file could not even be parsed, as distinct from a file
+    that parses cleanly but simply defines no ``diagram()`` (a helper module).
+    """
     try:
         tree = ast.parse(path.read_text(encoding="utf-8"))
-    except (OSError, SyntaxError, UnicodeDecodeError):
-        return False
-    return any(isinstance(n, ast.FunctionDef) and n.name == "diagram" for n in tree.body)
+    except (OSError, SyntaxError, UnicodeDecodeError) as exc:
+        return False, exc
+    has_diagram = any(isinstance(n, ast.FunctionDef) and n.name == "diagram" for n in tree.body)
+    return has_diagram, None
 
 
-def discover(paths: list[Path]) -> list[tuple[Path, Path]]:
-    """Scripts to render, each with its output subdirectory."""
+def discover(
+    paths: list[Path], errors: Optional[list[tuple[Path, Exception]]] = None
+) -> list[tuple[Path, Path]]:
+    """Scripts to render, each with its output subdirectory.
+
+    A directly named path is always included, unchecked (a syntax error there
+    surfaces through the normal load path). When scanning a directory, a ``*.py``
+    file that cannot be parsed is appended to ``errors`` as ``(path, exception)``
+    instead of being silently dropped; a file that parses but defines no
+    ``diagram()`` is skipped without error, since that's how helper modules are
+    excluded.
+    """
     found: list[tuple[Path, Path]] = []
     for path in paths:
         if path.is_dir():
             for script in sorted(path.rglob("*.py")):
-                if _defines_diagram(script):
+                has_diagram, exc = _scan(script)
+                if exc is not None:
+                    if errors is not None:
+                        errors.append((script, exc))
+                    continue
+                if has_diagram:
                     found.append((script, script.parent.relative_to(path)))
         else:
             found.append((path, Path(".")))
@@ -125,7 +146,12 @@ def _report(path: Path, exc: Exception, debug: bool) -> None:
 
 def _render(args: argparse.Namespace) -> int:
     status = 0
-    for script, subdir in discover(args.paths):
+    errors: list[tuple[Path, Exception]] = []
+    scripts = discover(args.paths, errors)
+    for script, exc in errors:
+        _report(script, exc, args.debug)
+        status = 1
+    for script, subdir in scripts:
         try:
             diag, stem = load_script(script)
             _configure(diag, args, theme=args.theme)
