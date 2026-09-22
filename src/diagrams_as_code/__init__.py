@@ -6,6 +6,13 @@ from diagrams_as_code.diagram import Diagram
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import Anchor, Point, Rect, Size, UnitBasis
 from diagrams_as_code.groups import Group
+from diagrams_as_code.layout import (
+    LayeredLayout,
+    LayoutWarning,
+    export_layout,
+    load_layout_file,
+)
+from diagrams_as_code.output import render_all
 from diagrams_as_code.renderer_svg import SVGRenderer
 from diagrams_as_code.router import OrthogonalRouter
 from diagrams_as_code.shapes import ShapeLibrary, ShapeRenderer
@@ -51,6 +58,8 @@ __all__ = [
     "HIGH_CONTRAST",
     "IIOT_DARK_GOLD",
     "IIOT_LIGHT",
+    "LayeredLayout",
+    "LayoutWarning",
     "MONOCHROME",
     "NORD",
     "OrthogonalRouter",
@@ -70,11 +79,14 @@ __all__ = [
     "Theme",
     "UnitBasis",
     "create_theme",
+    "export_layout",
     "get_dark_themes",
     "get_light_themes",
     "get_theme",
     "list_themes",
+    "load_layout_file",
     "register_theme",
+    "render_all",
     "reset_themes",
 ]
 
