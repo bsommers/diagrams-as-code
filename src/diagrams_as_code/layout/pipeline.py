@@ -36,6 +36,10 @@ class _LayoutState:
 
     bounds: dict[int, tuple[Element, Rect, float, float]] = field(default_factory=dict)
     base_size: tuple[float, float] = (0.0, 0.0)
+    #: (width, height) the pipeline itself left the canvas at after the previous
+    #: run. Used to tell "the pipeline grew the canvas" apart from "the user
+    #: changed width/height between solves" (see ``_reset``).
+    grown_size: tuple[float, float] = (0.0, 0.0)
 
 
 def run_layout(diagram: Any) -> None:
@@ -53,15 +57,23 @@ def run_layout(diagram: Any) -> None:
     if diagram.layout == "auto":
         _grow_canvas(diagram, elements)
         _warn_pinned_overlaps(diagram, elements, auto_ids)
+    diagram._layout_state.grown_size = (diagram.width, diagram.height)
 
 
 def _reset(diagram: Any, elements: list[Element]) -> None:
     state: Optional[_LayoutState] = getattr(diagram, "_layout_state", None)
     if state is None:
-        state = _LayoutState(base_size=(diagram.width, diagram.height))
+        size = (diagram.width, diagram.height)
+        state = _LayoutState(base_size=size, grown_size=size)
         diagram._layout_state = state
     else:
-        diagram.width, diagram.height = state.base_size
+        current = (diagram.width, diagram.height)
+        if current == state.grown_size:
+            # Nothing but the pipeline's own last growth changed the size; undo it.
+            diagram.width, diagram.height = state.base_size
+        else:
+            # The user set width/height since the last solve; treat that as new.
+            state.base_size = current
     for el in elements:
         saved = state.bounds.get(id(el))
         if saved is None:

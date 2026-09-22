@@ -85,14 +85,33 @@ def test_canvas_grows_to_fit_but_never_shrinks() -> None:
 
 
 def test_solve_is_idempotent() -> None:
-    with Diagram(layout="auto") as d:
-        with d.group("G"):
-            a, b = d.shape("A"), d.shape("B")
-            a >> b
-        c = d.shape("C").right_of(b)
-    first = _bounds(d)
-    d.solve()
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", LayoutWarning)
+        with Diagram(layout="auto") as d:
+            with d.group("G"):
+                a, b = d.shape("A"), d.shape("B")
+                a >> b
+            c = d.shape("C").right_of(b, margin=40)
+        first = _bounds(d)
+        d.solve()
     assert _bounds(d) == first
+
+
+def test_manual_width_change_persists_across_resolve() -> None:
+    with Diagram() as d:
+        d.shape("A")
+    d.width = 2000.0
+    d.solve()
+    assert d.width == 2000.0
+
+
+def test_auto_user_width_larger_than_content_is_kept() -> None:
+    with Diagram(layout="auto") as d:
+        a, b = d.shape("A"), d.shape("B")
+        a >> b
+    d.width = 5000.0
+    d.solve()
+    assert d.width == 5000.0
 
 
 def test_configure_switches_layout_and_resolves_on_render() -> None:
