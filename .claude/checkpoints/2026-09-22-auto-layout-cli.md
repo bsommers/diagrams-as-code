@@ -2,30 +2,12 @@
 
 **Safe to `/clear`. Read this file + the SDD ledger before acting.**
 
-## ⚠️ First thing to know
+## Status: COMPLETED (v0.4.0 released)
 
-PR #13 was **merged** at `bc55bc8` (merge commit `fda6f69` on `origin/master`).
-**Three later commits sit on `origin/feat/auto-layout-cli` and are NOT in master:**
-
-| Commit | What |
-|---|---|
-| `28714da` | fix(layout): canvas grows whenever content lands outside it — **unclips 15 previously clipped diagrams** (only SVG header lines change; no artwork moves) |
-| `9ef90dd` | docs: canvas growth described as unconditional (spec §4.1/§4.3/§11 + how-to.md) |
-| `10328a2` | docs: full refresh — architecture.md pipeline/lifecycle, all 4 files in docs/diagrams/, README + running.md counts 227→431, AGENTS.md core-package fix, CHANGELOG [Unreleased] |
-
-**Open question for the user:** second PR for these three, or push straight to
-master? Not asked, not authorized. CI never ran on them (PR already merged, so
-the pushes triggered no workflow). Locally: 431 tests pass, `generate_icons.py
---check` clean, `git status --porcelain -- output/ icons/` empty, tree clean.
-
-## State
-
-- Worktree: `/home/bill/src/ai/diagrams-as-code-auto-layout`, branch `feat/auto-layout-cli` @ `10328a2`, pushed.
-- Main checkout `/home/bill/src/ai/diagrams-as-code` on `master`; fetched, local master may lag `origin/master` (`fda6f69`).
-- SDD ledger (every ruling, deferred minor, parked finding):
-  `/home/bill/src/ai/diagrams-as-code-auto-layout/.superpowers/sdd/2026-09-22-auto-layout-cli/progress.md`
-  Same dir: per-task briefs/reports/reviews, `final-review.md`, `final-fix-report.md`, `docs-refresh-report.md`. Git-ignored; delete only once the three commits land.
-- No background processes. No subagents running.
+- PR #13 merged at `bc55bc8` (merge commit `fda6f69` on `origin/master`).
+- PR #14 merged at commit `af09a85` incorporating `28714da` (canvas growth fix), `9ef90dd` (unconditional canvas growth docs), and `10328a2` (docs and diagrams refresh).
+- Worktree `/home/bill/src/ai/diagrams-as-code-auto-layout` removed; branch `feat/auto-layout-cli` deleted locally and remotely.
+- Master synced and clean; 431 tests passing. Tag `v0.4.0` released.
 
 ## What shipped (12 plan tasks + final-review fixes)
 

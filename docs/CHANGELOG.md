@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.4.0] - 2026-09-22
+
 ### Added
 - **Auto-layout (`Diagram(layout="auto")`):** a deterministic layered engine places unpinned shapes and groups from the edge structure, left-to-right or top-to-bottom. Shapes placed with `.at()` or `.right_of()` stay pinned, relative placement can target auto-placed shapes, and a `LayoutWarning` names any pin that overlaps an auto-placed sibling.
 - **Layout file:** `diagrams-as-code layout export` writes every position to a JSON file keyed by label path or explicit `id=`; hand edits are applied as overrides on the next render, and a group entry moves the whole group.

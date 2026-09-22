@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-09-21T00:00:00Z",
+  "last_updated": "2026-09-22T00:00:00Z",
   "summary": {
     "total_capabilities": 12,
     "operational": 11,
