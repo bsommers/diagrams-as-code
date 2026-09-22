@@ -7,6 +7,7 @@ from diagrams_as_code.layout.base import (
     LayoutWarning,
 )
 from diagrams_as_code.layout.layered import LayeredLayout
+from diagrams_as_code.layout.pipeline import run_layout
 
 __all__ = [
     "LayeredLayout",
@@ -15,4 +16,5 @@ __all__ = [
     "LayoutGraph",
     "LayoutNode",
     "LayoutWarning",
+    "run_layout",
 ]

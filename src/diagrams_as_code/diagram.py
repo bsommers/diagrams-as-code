@@ -11,6 +11,8 @@ from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import Anchor, Size, UnitBasis
 from diagrams_as_code.groups import Group
+from diagrams_as_code.layout.layered import DIRECTIONS
+from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
 from diagrams_as_code.theme import Theme, get_theme
 from diagrams_as_code import context, rasterize
@@ -227,6 +229,7 @@ class Diagram:
     """Fluent context manager and container for directed diagrams."""
 
     _active_stack: list[Diagram] = context._ACTIVE
+    LAYOUT_MODES = ("manual", "auto")
 
     @classmethod
     def get_current(cls) -> Optional[Diagram]:
@@ -241,6 +244,11 @@ class Diagram:
         theme: Union[Theme, str] = "iiot_dark_gold",
         theme_overrides: Optional[dict[str, str]] = None,
         label_position: str = "inside",
+        layout: str = "manual",
+        direction: str = "LR",
+        layout_file: Optional[Union[str, Path]] = None,
+        rank_gap: float = 80.0,
+        node_gap: float = 40.0,
     ) -> None:
         self.title = title
         self.width = float(width)
@@ -260,7 +268,55 @@ class Diagram:
         self._active_group: Optional[Group] = None
         self._counter: int = 0
         self._is_solved: bool = False
+        self.layout = "manual"
+        self.direction = "LR"
+        self.layout_file: Optional[Path] = None
+        self.rank_gap = 80.0
+        self.node_gap = 40.0
+        self.configure(
+            layout=layout,
+            direction=direction,
+            layout_file=layout_file,
+            rank_gap=rank_gap,
+            node_gap=node_gap,
+        )
 
+    def configure(
+        self,
+        *,
+        layout: Optional[str] = None,
+        direction: Optional[str] = None,
+        theme: Optional[Union[Theme, str]] = None,
+        layout_file: Optional[Union[str, Path]] = None,
+        rank_gap: Optional[float] = None,
+        node_gap: Optional[float] = None,
+    ) -> Diagram:
+        """Change layout or theme settings; layout changes re-solve on next render."""
+        if layout is not None and layout not in self.LAYOUT_MODES:
+            raise ValueError(f"layout must be one of {self.LAYOUT_MODES}, got {layout!r}")
+        if direction is not None and direction not in DIRECTIONS:
+            raise ValueError(f"direction must be one of {DIRECTIONS}, got {direction!r}")
+        for name, gap in (("rank_gap", rank_gap), ("node_gap", node_gap)):
+            if gap is not None and gap < 0:
+                raise ValueError(f"{name} must be non-negative, got {gap}")
+        if theme is not None:
+            self.theme = get_theme(theme)
+        changes = {
+            "layout": layout,
+            "direction": direction,
+            "layout_file": Path(layout_file) if layout_file is not None else None,
+            "rank_gap": float(rank_gap) if rank_gap is not None else None,
+            "node_gap": float(node_gap) if node_gap is not None else None,
+        }
+        for name, value in changes.items():
+            if value is not None:
+                setattr(self, name, value)
+                self._is_solved = False
+        return self
+
+    def all_elements(self) -> list[Element]:
+        """Every shape and group, groups before their children, in declaration order."""
+        return self.solver.all_elements()
 
     @property
     def unit_basis(self) -> UnitBasis:
@@ -439,38 +495,8 @@ class Diagram:
         return flat
 
     def solve(self) -> None:
-        """Solve all layout constraints and update group bounding boxes in bottom-up depth order."""
-        self.solver.solve()
-
-        def _depth(g: Group) -> int:
-            d = 0
-            curr = g.parent
-            while curr is not None:
-                d += 1
-                curr = curr.parent
-            return d
-
-        sorted_groups = sorted(self.groups, key=_depth, reverse=True)
-        for g in sorted_groups:
-            if g.is_auto_sized and g.children:
-                g.calculate_bounds()
-
-        # Check if root elements need framing (if bounds are negative, which clips off canvas)
-        all_elements = self.solver.all_elements()
-        if all_elements:
-            roots = [e for e in all_elements if getattr(e, "parent", None) is None]
-            if roots:
-                min_x = min(e.bounds.x for e in roots)
-                min_y = min(e.bounds.y for e in roots)
-                if min_x < 0.0 or min_y < 0.0:
-                    offset_x = max(0.0, -min_x + 60.0) if min_x < 0.0 else 0.0
-                    offset_y = max(0.0, -min_y + 80.0) if min_y < 0.0 else 0.0
-                    for r in roots:
-                        r.translate(offset_x, offset_y)
-                    for g in sorted_groups:
-                        if g.is_auto_sized and g.children:
-                            g.calculate_bounds()
-
+        """Place every element: auto-layout, layout file, constraints, framing."""
+        run_layout(self)
         self._is_solved = True
 
     def render_svg(self, path: Optional[Union[str, Path]] = None) -> str:
