@@ -252,11 +252,11 @@ A layout file entry always wins over both manual constraints and the auto
 engine's placement for that key; a stale entry that matches no element in
 the current script emits a `LayoutWarning` and is otherwise ignored.
 
-Whenever a layout file positions at least one element, the canvas grows to fit
-the result plus the framing margin, in `manual` mode as well as `auto` — an
-edited coordinate past the declared `width`/`height` widens the SVG instead of
-being clipped. A `manual` diagram with no layout file keeps the `width` and
-`height` you passed, unchanged.
+The canvas always grows to fit whatever lands outside it, plus the framing
+margin — an edited layout-file coordinate, an auto-placed shape, or a plain
+`.at()` call in `manual` mode with no layout file at all. A `width`/`height`
+you passed is a floor, not a ceiling: it's honored whenever content already
+fits, and widened past it otherwise. It never shrinks below what you passed.
 
 ### Changing settings after construction
 

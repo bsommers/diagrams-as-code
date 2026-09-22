@@ -50,7 +50,7 @@ Diagram(title, ..., layout="manual" | "auto", direction="LR" | "TB",
 ```
 
 - `layout="auto"` enables §4.3 step 1. `direction` is the rank axis (LR: ranks are columns, flow left→right).
-- The canvas `width`/`height` grow to fit content plus the framing margin whenever auto-layout ran **or** a layout file positioned at least one element; they never shrink below the values passed. A `manual` diagram with no layout file keeps the canvas it was given.
+- The canvas `width`/`height` grow to fit content plus the framing margin whenever any element's bounds land outside it — auto-layout, a layout file, and hand-placed coordinates in `manual` mode all trigger it; they never shrink below the values passed. (Growth was auto/layout-file-only until 2026-09-22; see §11.)
 - Invalid `layout`/`direction` values raise `ValueError` at construction.
 
 ### 4.2 Layout graph
@@ -70,7 +70,7 @@ A node is **pinned** if its element has any constraint (`.at`, `.move_to`, `.rig
 5. **Framing**: the negative-bounds translation currently in `Diagram.solve()` moves here, unchanged in behavior. Canvas growth (§4.1) is applied after framing, whenever auto-layout ran or a layout file supplied a position.
 6. **Overlap check**: any overlap between a pinned element and an auto-placed sibling emits `LayoutWarning` (a `UserWarning` subclass) naming both labels. Overlaps between two auto-placed nodes cannot occur (§4.4 invariant) and are asserted in tests, not checked at runtime.
 
-With `layout="manual"` and no layout file, steps 1, 2 and 6 are no-ops, the canvas is left alone, and the pipeline produces exactly today's coordinates.
+With `layout="manual"` and no layout file, steps 1, 2, and the pin-overlap half of step 6 are no-ops, and the pipeline produces exactly today's coordinates for every element — except that step 6's canvas growth is not one of those no-ops: since 2026-09-22 it runs unconditionally, so a `manual` diagram with content placed past its declared `width`/`height` grows to fit instead of clipping (see §11).
 
 ### 4.4 `LayeredLayout` engine
 
@@ -176,14 +176,17 @@ records what was built, not a change of intent.
 |---|---|---|
 | 2 | Names the five symbols added to `diagrams_as_code.__all__` and the test that guards them | The clause was written but not implemented; the fix wave added the exports and `tests/test_public_api.py`. |
 | 3, 4.2 | `build_layout_graph(diagram)` → `build_scope_graph(diagram, group, pinned)` | Layout is solved one scope at a time (root, then each group), so the builder takes the scope and the pinned set. Per-scope is the shape the pipeline actually needs. |
-| 4.1, 4.3 step 5 | Canvas growth is no longer auto-only: it also runs when a layout file positioned at least one element | A layout file records positions but not the canvas. Replayed in `manual` mode the diagram kept the declared canvas and clipped content — the workflow `docs/how-to.md` documents. Growth is still skipped for a `manual` diagram with no layout file, which is what keeps the 92 committed outputs byte-identical. |
+| 4.1, 4.3 step 5 | Canvas growth is no longer auto-only: it also runs when a layout file positioned at least one element | A layout file records positions but not the canvas. Replayed in `manual` mode the diagram kept the declared canvas and clipped content — the workflow `docs/how-to.md` documents. Growth was still skipped for a `manual` diagram with no layout file, which is what kept the 92 committed outputs byte-identical at the time. **Superseded 2026-09-22** (commit `28714da`): growth became fully unconditional, resolving the Known limitation below — see that note. |
 | 4.2 | The pin rule is stated for groups: a group is pinned when a descendant has a user absolute constraint **or** a user relative constraint whose target is outside that group | With only the absolute half of the rule, a child anchored to a shape outside its group left the group auto-placeable; the group's auto constraint then dragged the child away from its anchor, silently. |
 | 4.3 | Step order: layout-file overrides run **before** auto-placement (was: after) | File entries must be visible to the pin rule, or auto-layout would place an element the file had already positioned. |
 | 4.3 step 2 | The group size estimate is skipped for pinned groups | The group-local solve cannot resolve a descendant's reference to an element outside the group, so the estimate would be stale. A pinned group is not a node in its parent's graph, so the estimate is not needed. |
 | 4.5, 4.3 step 1 | "replaces the element's constraints" → "inserted as the element's leading absolute constraint" | Same observable behaviour by a different mechanism: the solver takes the first absolute constraint and stops, so a constraint behind the file entry is inert rather than deleted. Describing the mechanism keeps the round-trip and override rules checkable. |
 | 6 | `configure()` re-solves instead of raising when the diagram is already solved | Every script solves itself on `with`-block exit, so a `configure` that raised would make the CLI's `--layout`/`--theme`/`--layout-file` flags unusable. The note that `None` means "unchanged" (so `layout_file` cannot be cleared) is also recorded in `docs/how-to.md`. |
 
-**Known limitation.** 15 of the 92 committed `manual` diagrams place content past their
-declared canvas and are clipped today. Growing the canvas unconditionally in `manual` mode
-would fix them but would change committed output, so it was not done; see
-`.superpowers/sdd/2026-09-22-auto-layout-cli/final-fix-report.md`.
+**Known limitation, resolved 2026-09-22.** This section originally recorded an open
+limitation: 15 of the 92 committed `manual` diagrams placed content past their declared
+canvas and were clipped. Commit `28714da` (`fix(layout): grow the canvas whenever content
+lands outside it`) made canvas growth unconditional, which fixed all 15: each affected
+diagram's SVG `width`/`height` grew (`1200`→`1290`, `1540`, or `1790`) and no artwork moved.
+See `.superpowers/sdd/2026-09-22-auto-layout-cli/final-fix-report.md` for the original
+analysis that identified them.

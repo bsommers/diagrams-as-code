@@ -14,8 +14,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 - Scripts define `diagram() -> Diagram`; files are written by `output.render_all`. Existing `build_diagram()` functions keep working.
-- Internals split for modularity: PNG backends in `rasterize.py`, icon glyphs in `icon_glyphs.py`, the active-diagram stack in `context.py`, label metrics in `metrics.py`, and the solve pipeline in `layout/pipeline.py`, which now also routes edges so the renderer only draws. `tests/test_module_boundaries.py` enforces import direction. Rendered output of all existing diagrams is byte-identical.
+- Internals split for modularity: PNG backends in `rasterize.py`, icon glyphs in `icon_glyphs.py`, the active-diagram stack in `context.py`, label metrics in `metrics.py`, and the solve pipeline in `layout/pipeline.py`, which now also routes edges so the renderer only draws. `tests/test_module_boundaries.py` enforces import direction. Rendered output of all existing diagrams was byte-identical through the modularity and layout work; the canvas-growth fix below changed 15 of them (see Fixed).
 - `Diagram.render_png()` returns the PNG bytes for every backend (CairoSVG previously returned `None`).
+
+### Fixed
+- **Canvas growth is unconditional:** the canvas now grows to fit any content that lands outside it — hand-placed coordinates in `manual` mode included, not just auto-layout or a layout file. 15 of the 92 committed diagrams were clipped this way; their SVG `width`/`height` grew (`1200`→`1290`, `1540`, or `1790`) and no artwork moved.
 
 ## [v0.3.0] - 2026-09-21
 
