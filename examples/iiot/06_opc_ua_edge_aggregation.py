@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_opc_ua_edge_aggregation.svg"
-    png_file = out / "06_opc_ua_edge_aggregation.png"
-    readme_file = out / "06_opc_ua_edge_aggregation_README.md"
-
+def diagram() -> Diagram:
     with Diagram("OPC UA TSN Edge Aggregator", theme="iiot_light") as diag:
         with diag.group("Cell Devices") as g_1:
             plc_cell1 = diag.add(Shape("plc_cell1", "Assembly Cell PLC", icon="plc", vendor="Siemens"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         robot_cell >> diag.edge("Profinet IO", style="solid") >> agg_gw
         agg_gw >> diag.edge("MQTT Sparkplug", style="solid") >> mes
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_opc_ua_edge_aggregation.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "06_opc_ua_edge_aggregation")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_high_density_ai_compute_pod.svg"
-    png_file = out / "08_high_density_ai_compute_pod.png"
-    readme_file = out / "08_high_density_ai_compute_pod_README.md"
-
+def diagram() -> Diagram:
     with Diagram("High-Density AI Supercomputing Pod", theme="crimson") as diag:
         with diag.group("SuperPOD Racks") as g_1:
             dgx_rack1 = diag.add(Shape("dgx_rack1", "DGX H100 Rack 01", icon="server_rack", compute="8x H100 SXM5 640GB"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         ib_spine >> diag.edge("RDMA Storage Mount", style="solid") >> storage_appliance
         dgx_rack1 >> diag.edge("IPMI / BMC Telemetry", style="dotted") >> telemetry_node
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_high_density_ai_compute_pod.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "08_high_density_ai_compute_pod")["svg"]
 
 
 if __name__ == "__main__":

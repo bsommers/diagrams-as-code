@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_employee_onboarding.svg"
-    png_file = out / "02_employee_onboarding.png"
-    readme_file = out / "02_employee_onboarding_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Corporate Employee Onboarding Lifecycle", theme="monochrome") as diag:
         with diag.group("Talent Acquisition") as g_1:
             candidate = diag.add(Shape("candidate", "New Hire Employee", icon="user", role="Software Engineer"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         hr_intake >> diag.edge("Enroll Benefits", style="solid") >> payroll
         it_provision >> diag.edge("Deliver Workstation", style="dashed") >> candidate
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_employee_onboarding.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "02_employee_onboarding")["svg"]
 
 
 if __name__ == "__main__":

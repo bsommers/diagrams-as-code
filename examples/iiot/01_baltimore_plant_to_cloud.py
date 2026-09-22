@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_baltimore_plant_to_cloud.svg"
-    png_file = out / "01_baltimore_plant_to_cloud.png"
-    readme_file = out / "01_baltimore_plant_to_cloud_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Baltimore Plant to Managed Cloud", theme="iiot_dark_gold") as diag:
         with diag.group("On-Premise (Baltimore)") as g_1:
             plc = diag.add(Shape("plc", "Automation PLC", icon="sensor", vendor="Siemens S7-1500", protocol="Modbus"))
@@ -38,12 +33,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         edge >> diag.edge("MQTT TLS", style="solid") >> broker
         broker >> diag.edge("Dashboard Stream", style="solid") >> dashboard
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_baltimore_plant_to_cloud.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "01_baltimore_plant_to_cloud")["svg"]
 
 
 if __name__ == "__main__":

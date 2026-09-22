@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_leaf_spine_clos_network.svg"
-    png_file = out / "03_leaf_spine_clos_network.png"
-    readme_file = out / "03_leaf_spine_clos_network_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Leaf-Spine Clos Datacenter Network", theme="cyber_slate") as diag:
         with diag.group("Spine Layer") as g_1:
             spine1 = diag.add(Shape("spine1", "Core Spine Switch 01", icon="router", throughput="32x 400GbE Ports"))
@@ -50,12 +45,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         pod1 >> diag.edge("TOR Trunk", style="solid") >> leaf1
         pod2 >> diag.edge("TOR Trunk", style="solid") >> leaf2
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_leaf_spine_clos_network.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "03_leaf_spine_clos_network")["svg"]
 
 
 if __name__ == "__main__":

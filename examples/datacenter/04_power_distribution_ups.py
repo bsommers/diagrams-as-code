@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_power_distribution_ups.svg"
-    png_file = out / "04_power_distribution_ups.png"
-    readme_file = out / "04_power_distribution_ups_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Datacenter Power Distribution & 2N UPS", theme="cyber_slate") as diag:
         with diag.group("Utility Ingress") as g_1:
             utility = diag.add(Shape("utility", "Utility Grid Feeder (13.8kV)", icon="ups", capacity="2.5 MVA"))
@@ -56,12 +51,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         pdu_a >> diag.edge("PDU Whip A", style="solid") >> rack_feed
         pdu_b >> diag.edge("PDU Whip B", style="dashed") >> rack_feed
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_power_distribution_ups.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "04_power_distribution_ups")["svg"]
 
 
 if __name__ == "__main__":

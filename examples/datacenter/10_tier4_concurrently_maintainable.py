@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_tier4_concurrently_maintainable.svg"
-    png_file = out / "10_tier4_concurrently_maintainable.png"
-    readme_file = out / "10_tier4_concurrently_maintainable_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Tier IV Concurrently Maintainable Datacenter", theme="blueprint") as diag:
         with diag.group("Utility Service") as g_1:
             grid_a = diag.add(Shape("grid_a", "Substation Grid Line A", icon="ups", feed="34.5kV Dedicated Feed"))
@@ -53,12 +48,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         crac_loop_a >> diag.edge("Underfloor Supply A", style="solid") >> mission_rack
         crac_loop_b >> diag.edge("Underfloor Supply B", style="dashed") >> mission_rack
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_tier4_concurrently_maintainable.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "10_tier4_concurrently_maintainable")["svg"]
 
 
 if __name__ == "__main__":

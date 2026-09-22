@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_vdi_thin_client_fleet.svg"
-    png_file = out / "08_vdi_thin_client_fleet.png"
-    readme_file = out / "08_vdi_thin_client_fleet_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Enterprise Virtual Desktop Infrastructure (VDI)", theme="monochrome") as diag:
         with diag.group("Office Floor") as g_1:
             thin1 = diag.add(Shape("thin1", "Dell Wyse Thin Client 01", icon="laptop", os="ThinOS"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         broker >> diag.edge("Allocate VM Session", style="solid") >> esxi_cluster
         esxi_cluster >> diag.edge("VMDK Disk I/O", style="solid") >> san_storage
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_vdi_thin_client_fleet.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "08_vdi_thin_client_fleet")["svg"]
 
 
 if __name__ == "__main__":

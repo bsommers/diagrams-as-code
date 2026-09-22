@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_regulatory_compliance_audit.svg"
-    png_file = out / "05_regulatory_compliance_audit.png"
-    readme_file = out / "05_regulatory_compliance_audit_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Continuous SOC2 & ISO 27001 Audit Process", theme="pastel_light") as diag:
         with diag.group("Audit Boundary") as g_1:
             cloud_env = diag.add(Shape("cloud_env", "AWS / Azure Infrastructure", icon="cloud", accounts="12 Production Accounts"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         sec_controls >> diag.edge("Flag Deviation", style="dashed") >> remediation
         auditor >> diag.edge("Issue Clean Opinion", style="solid") >> attestation
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_regulatory_compliance_audit.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "05_regulatory_compliance_audit")["svg"]
 
 
 if __name__ == "__main__":

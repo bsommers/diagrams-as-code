@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_claims_processing_fraud_detection.svg"
-    png_file = out / "09_claims_processing_fraud_detection.png"
-    readme_file = out / "09_claims_processing_fraud_detection_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Insurance Claims Processing & AI Fraud Scoring", theme="emerald") as diag:
         with diag.group("First Notice of Loss") as g_1:
             claimant = diag.add(Shape("claimant", "Policyholder Claimant", icon="user", type="Auto Accident Claim"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         adjuster >> diag.edge("Approve Settlement Amount", style="solid") >> payment
         payment >> diag.edge("Disburse Funds", style="solid") >> claimant
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_claims_processing_fraud_detection.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "09_claims_processing_fraud_detection")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_hvac_containment_cooling.svg"
-    png_file = out / "05_hvac_containment_cooling.png"
-    readme_file = out / "05_hvac_containment_cooling_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Datacenter In-Row CRAC & Cooling Loops", theme="nord") as diag:
         with diag.group("Containment Zone") as g_1:
             hot_aisle = diag.add(Shape("hot_aisle", "Hot Aisle Enclosure (38°C)", icon="cooling", exhaust="Encapsulated Airflow"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         water_loop >> diag.edge("Chilled Water Feed", style="solid") >> chiller
         chiller >> diag.edge("Condenser Water Loop", style="solid") >> towers
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_hvac_containment_cooling.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "05_hvac_containment_cooling")["svg"]
 
 
 if __name__ == "__main__":

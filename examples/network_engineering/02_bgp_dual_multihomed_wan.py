@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_bgp_dual_multihomed_wan.svg"
-    png_file = out / "02_bgp_dual_multihomed_wan.png"
-    readme_file = out / "02_bgp_dual_multihomed_wan_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Dual-Homed eBGP Enterprise WAN Peering", theme="blueprint") as diag:
         with diag.group("Upstream Transit Providers") as g_1:
             isp1 = diag.add(Shape("isp1", "Tier-1 ISP A (AS 174)", icon="bgp", routes="Full BGP Table"))
@@ -42,12 +37,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         edge1 >> diag.edge("OSPF Internal", style="solid") >> core_fabric
         edge2 >> diag.edge("OSPF Internal", style="solid") >> core_fabric
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_bgp_dual_multihomed_wan.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "02_bgp_dual_multihomed_wan")["svg"]
 
 
 if __name__ == "__main__":

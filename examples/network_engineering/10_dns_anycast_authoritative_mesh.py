@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_dns_anycast_authoritative_mesh.svg"
-    png_file = out / "10_dns_anycast_authoritative_mesh.png"
-    readme_file = out / "10_dns_anycast_authoritative_mesh_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Global Anycast Authoritative DNS Network", theme="cyber_slate") as diag:
         with diag.group("Global Client Query Ingress") as g_1:
             client_query = diag.add(Shape("client_query", "Global DNS Clients", icon="user", ip="Query 192.0.2.1"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         master_db >> diag.edge("Zone Replication", style="solid") >> dns_us
         master_db >> diag.edge("Zone Replication", style="solid") >> dns_eu
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_dns_anycast_authoritative_mesh.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "10_dns_anycast_authoritative_mesh")["svg"]
 
 
 if __name__ == "__main__":

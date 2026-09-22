@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_feature_store_mlops.svg"
-    png_file = out / "05_feature_store_mlops.png"
-    readme_file = out / "05_feature_store_mlops_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Enterprise Feature Store & MLOps Pipeline", theme="cyber_slate") as diag:
         with diag.group("Data Ingestion") as g_1:
             stream_in = diag.add(Shape("stream_in", "Streaming Kafka Topics", icon="queue", rate="250,000 evt/s"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         model_svc >> diag.edge("Retrieve Entity Vector", style="solid") >> redis_online
         warehouse >> diag.edge("Offline Training Features", style="dashed") >> feast
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_feature_store_mlops.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "05_feature_store_mlops")["svg"]
 
 
 if __name__ == "__main__":

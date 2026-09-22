@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_san_storage_fabric.svg"
-    png_file = out / "02_san_storage_fabric.png"
-    readme_file = out / "02_san_storage_fabric_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Fibre Channel Storage Area Network (SAN)", theme="iiot_dark_gold") as diag:
         with diag.group("Compute Hosts") as g_1:
             host_app = diag.add(Shape("host_app", "Enterprise Application Host", icon="server", hba="Dual 32G FC HBAs"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         ctrl_a >> diag.edge("SAS-4 24G Loop", style="solid") >> disk_shelf
         ctrl_b >> diag.edge("SAS-4 24G Loop", style="dashed") >> disk_shelf
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_san_storage_fabric.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "02_san_storage_fabric")["svg"]
 
 
 if __name__ == "__main__":

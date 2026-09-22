@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_smart_factory_mes_integration.svg"
-    png_file = out / "07_smart_factory_mes_integration.png"
-    readme_file = out / "07_smart_factory_mes_integration_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Smart Factory MES & ERP Integration", theme="emerald") as diag:
         with diag.group("Shop Floor") as g_1:
             hmi_station = diag.add(Shape("hmi_station", "Line Operator HMI", icon="hmi", screen="15-inch Touch"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         ipc_worker >> diag.edge("REST API :443", style="solid") >> mes_core
         mes_core >> diag.edge("Batch Sync", style="solid") >> erp_db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_smart_factory_mes_integration.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "07_smart_factory_mes_integration")["svg"]
 
 
 if __name__ == "__main__":

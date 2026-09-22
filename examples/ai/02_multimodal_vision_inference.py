@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_multimodal_vision_inference.svg"
-    png_file = out / "02_multimodal_vision_inference.png"
-    readme_file = out / "02_multimodal_vision_inference_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Multimodal Vision Inference Pipeline", theme="synthwave") as diag:
         with diag.group("Perception Tier") as g_1:
             cam = diag.add(Shape("cam", "IP Surveillance Camera", icon="vision", stream="RTSP 4K 60fps"))
@@ -43,12 +38,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         vit >> diag.edge("Feature Embeddings", style="solid") >> yolo
         yolo >> diag.edge("Hazard Detected", style="solid") >> alert
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_multimodal_vision_inference.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "02_multimodal_vision_inference")["svg"]
 
 
 if __name__ == "__main__":

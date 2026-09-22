@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_home_lab_network.svg"
-    png_file = out / "02_home_lab_network.png"
-    readme_file = out / "02_home_lab_network_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Home Lab Self-Hosted Infrastructure", theme="iiot_light") as diag:
         with diag.group("WAN Demarcation") as g_1:
             ont = diag.add(Shape("ont", "Fiber ONT Internet", icon="router", speed="1 Gbps Symmetrical"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         poe_switch >> diag.edge("2.5GbE LAN", style="solid") >> truenas
         poe_switch >> diag.edge("2.5GbE LAN", style="solid") >> proxmox
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_home_lab_network.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "02_home_lab_network")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_agentic_tool_orchestration.svg"
-    png_file = out / "03_agentic_tool_orchestration.png"
-    readme_file = out / "03_agentic_tool_orchestration_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Autonomous Agent Tool Orchestration", theme="dracula") as diag:
         with diag.group("User Tier") as g_1:
             user = diag.add(Shape("user", "Enterprise Operator", icon="user", auth="SSO RBAC"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         agent >> diag.edge("Run Query", style="solid") >> tool_sql
         agent >> diag.edge("Verified Plan & Result", style="dashed") >> user
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_agentic_tool_orchestration.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "03_agentic_tool_orchestration")["svg"]
 
 
 if __name__ == "__main__":

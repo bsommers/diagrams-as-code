@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_serverless_event_pipeline.svg"
-    png_file = out / "02_serverless_event_pipeline.png"
-    readme_file = out / "02_serverless_event_pipeline_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Serverless Event Processing Pipeline", theme="blueprint") as diag:
         with diag.group("Client Tier") as g_1:
             app = diag.add(Shape("app", "Mobile App Client", icon="mobile", sdk="Amplify SDK"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         queue >> diag.edge("Write State", style="solid") >> dynamo
         queue >> diag.edge("Parquet Dump", style="solid") >> s3
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_serverless_event_pipeline.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "02_serverless_event_pipeline")["svg"]
 
 
 if __name__ == "__main__":

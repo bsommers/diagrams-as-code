@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_simple_rag_pipeline.svg"
-    png_file = out / "01_simple_rag_pipeline.png"
-    readme_file = out / "01_simple_rag_pipeline_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Simple Retrieval Augmented Generation (RAG)", theme="synthwave") as diag:
         with diag.group("Interface Tier") as g_1:
             user = diag.add(Shape("user", "User Query Client", icon="user", channel="Chat UI"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         retriever >> diag.edge("Augmented Prompt", style="solid") >> llm
         llm >> diag.edge("Synthesized Answer", style="dashed") >> user
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_simple_rag_pipeline.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "01_simple_rag_pipeline")["svg"]
 
 
 if __name__ == "__main__":

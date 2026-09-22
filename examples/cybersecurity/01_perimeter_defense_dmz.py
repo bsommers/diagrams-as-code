@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_perimeter_defense_dmz.svg"
-    png_file = out / "01_perimeter_defense_dmz.png"
-    readme_file = out / "01_perimeter_defense_dmz_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Enterprise DMZ Perimeter Defense", theme="crimson") as diag:
         with diag.group("Untrusted External") as g_1:
             client = diag.add(Shape("client", "Web Client", icon="laptop", origin="Internet"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         int_fw >> diag.edge("mTLS :8443", style="solid") >> app
         app >> diag.edge("TCP TLS :5432", style="solid") >> db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_perimeter_defense_dmz.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "01_perimeter_defense_dmz")["svg"]
 
 
 if __name__ == "__main__":

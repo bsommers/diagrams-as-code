@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_microservices_service_mesh.svg"
-    png_file = out / "05_microservices_service_mesh.png"
-    readme_file = out / "05_microservices_service_mesh_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Microservices Service Mesh Architecture", theme="nord") as diag:
         with diag.group("Edge Routing") as g_1:
             ingress = diag.add(Shape("ingress", "Ingress Envoy Gateway", icon="api_gateway", protocol="HTTP/2 gRPC"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         auth_svc >> diag.edge("Cache Session", style="solid") >> redis
         order_svc >> diag.edge("Persist Order", style="solid") >> db_orders
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_microservices_service_mesh.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "05_microservices_service_mesh")["svg"]
 
 
 if __name__ == "__main__":

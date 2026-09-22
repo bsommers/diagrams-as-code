@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_sd_wan_hub_and_spoke.svg"
-    png_file = out / "05_sd_wan_hub_and_spoke.png"
-    readme_file = out / "05_sd_wan_hub_and_spoke_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Enterprise SD-WAN Hub-and-Spoke Topology", theme="emerald") as diag:
         with diag.group("SD-WAN Control Plane") as g_1:
             vmanage = diag.add(Shape("vmanage", "SD-WAN Orchestrator", icon="server", role="vManage NMS"))
@@ -42,12 +37,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         hub >> diag.edge("IPsec Tunnel", style="solid") >> branch1
         hub >> diag.edge("IPsec Tunnel", style="solid") >> branch2
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_sd_wan_hub_and_spoke.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "05_sd_wan_hub_and_spoke")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_sparkplug_b_pipeline.svg"
-    png_file = out / "03_sparkplug_b_pipeline.png"
-    readme_file = out / "03_sparkplug_b_pipeline_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Sparkplug B Unified Namespace", theme="blueprint") as diag:
         with diag.group("Field Sensors") as g_1:
             sensors = diag.add(Shape("sensors", "Sensors & PLCs", icon="sensor", io="4-20mA / Modbus"))
@@ -40,12 +35,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         eon >> diag.edge("NBIRTH / NDATA", style="solid") >> broker
         broker >> diag.edge("MQTT Subscription", style="solid") >> scada
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_sparkplug_b_pipeline.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "03_sparkplug_b_pipeline")["svg"]
 
 
 if __name__ == "__main__":

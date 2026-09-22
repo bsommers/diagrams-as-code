@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_dual_homed_edge_gateway.svg"
-    png_file = out / "04_dual_homed_edge_gateway.png"
-    readme_file = out / "04_dual_homed_edge_gateway_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Dual-Homed Industrial Edge Gateway", theme="blueprint") as diag:
         with diag.group("OT Factory Floor") as g_1:
             field_sensors = diag.add(Shape("field_sensors", "RS-485 Modbus RTU Slaves", icon="sensor", baud="115200 bps"))
@@ -43,12 +38,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         edge_ipc >> diag.edge("Firewall NAT", style="dashed") >> it_nic
         it_nic >> diag.edge("TLS MQTT / Sparkplug", style="solid") >> corp_server
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_dual_homed_edge_gateway.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "04_dual_homed_edge_gateway")["svg"]
 
 
 if __name__ == "__main__":

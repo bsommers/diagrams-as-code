@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_embedded_rtos_system.svg"
-    png_file = out / "07_embedded_rtos_system.png"
-    readme_file = out / "07_embedded_rtos_system_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Embedded Real-Time Operating System (RTOS)", theme="monochrome") as diag:
         with diag.group("Silicon Core") as g_1:
             arm_mcu = diag.add(Shape("arm_mcu", "ARM Cortex-M4 Microcontroller", icon="chip", clock="168 MHz", flash="1MB"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         freertos >> diag.edge("Schedule Task", style="solid") >> task_comms
         task_comms >> diag.edge("Sign Outgoing Packet", style="dashed") >> crypto
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_embedded_rtos_system.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "07_embedded_rtos_system")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_global_enterprise_backbone.svg"
-    png_file = out / "10_global_enterprise_backbone.png"
-    readme_file = out / "10_global_enterprise_backbone_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Global Enterprise Multi-Region Network Backbone", theme="iiot_dark_gold") as diag:
         with diag.group("Americas Region") as g_1:
             us_dc = diag.add(Shape("us_dc", "Americas On-Prem DC", icon="router", location="Chicago, IL"))
@@ -51,12 +46,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         ap_vpc >> diag.edge("Core Route", style="solid") >> cloud_wan
         cloud_wan >> diag.edge("VPC Flow Logs", style="dashed") >> sec_hub
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_global_enterprise_backbone.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "10_global_enterprise_backbone")["svg"]
 
 
 if __name__ == "__main__":

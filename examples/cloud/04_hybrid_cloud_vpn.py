@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_hybrid_cloud_vpn.svg"
-    png_file = out / "04_hybrid_cloud_vpn.png"
-    readme_file = out / "04_hybrid_cloud_vpn_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Hybrid Cloud IPSec & Transit Gateway", theme="solarized_light") as diag:
         with diag.group("Corporate On-Prem") as g_1:
             onprem_gw = diag.add(Shape("onprem_gw", "Corporate VPN Gateway", icon="router", device="Cisco ASA"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         tgw >> diag.edge("Attachment A", style="solid") >> prod_vpc
         tgw >> diag.edge("Attachment B", style="solid") >> stage_vpc
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_hybrid_cloud_vpn.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "04_hybrid_cloud_vpn")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_supply_chain_rfq_fulfillment.svg"
-    png_file = out / "08_supply_chain_rfq_fulfillment.png"
-    readme_file = out / "08_supply_chain_rfq_fulfillment_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Global Supply Chain RFQ & Sourcing", theme="blueprint") as diag:
         with diag.group("Supply Planning") as g_1:
             demand_plan = diag.add(Shape("demand_plan", "Material Demand Forecast", icon="analytics", horizon="Quarterly Plan"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         freight >> diag.edge("Present Bill of Lading", style="solid") >> customs
         customs >> diag.edge("Release Cargo to Racks", style="solid") >> dc_intake
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_supply_chain_rfq_fulfillment.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "08_supply_chain_rfq_fulfillment")["svg"]
 
 
 if __name__ == "__main__":

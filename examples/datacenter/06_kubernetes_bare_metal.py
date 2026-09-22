@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_kubernetes_bare_metal.svg"
-    png_file = out / "06_kubernetes_bare_metal.png"
-    readme_file = out / "06_kubernetes_bare_metal_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Bare-Metal Kubernetes High Availability", theme="nord") as diag:
         with diag.group("Load Balancers") as g_1:
             vip_lb = diag.add(Shape("vip_lb", "Keepalived / HAProxy VIP", icon="api_gateway", virtual_ip="10.0.0.10:6443"))
@@ -50,12 +45,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         master1 >> diag.edge("Kubelet Instruction", style="solid") >> worker2
         worker1 >> diag.edge("RBD Mount", style="dashed") >> ceph
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_kubernetes_bare_metal.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "06_kubernetes_bare_metal")["svg"]
 
 
 if __name__ == "__main__":

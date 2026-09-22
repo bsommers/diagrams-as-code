@@ -9,12 +9,12 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 from iiot_diagrams import Diagram, Port
+from diagrams_as_code.output import render_all
+
+OUTPUT_STEM = "sparkplug_pipeline"
 
 
-def generate_sparkplug_pipeline(output_dir: Path | str = "output") -> Diagram:
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-
+def diagram() -> Diagram:
     diag = Diagram(
         "IIoT Unified Namespace (UNS) with Sparkplug B",
         width=1300,
@@ -124,21 +124,13 @@ def generate_sparkplug_pipeline(output_dir: Path | str = "output") -> Diagram:
             target_port=Port.WEST,
         ) >> scada
 
-    svg_path = out_dir / "sparkplug_pipeline.svg"
-    png_path = out_dir / "sparkplug_pipeline.png"
-    readme_path = out_dir / "sparkplug_pipeline_README.md"
+    return diag
 
-    diag.render_svg(svg_path)
-    diag.render_png(png_path)
-    diag.generate_readme(
-        image_file="sparkplug_pipeline.svg",
-        output_path=readme_path,
-        include_connections=True,
-    )
 
-    print(f"Generated: {svg_path}")
-    print(f"Generated: {png_path}")
-    print(f"Generated: {readme_path}")
+def generate_sparkplug_pipeline(output_dir: Path | str = "output") -> Diagram:
+    diag = diagram()
+    for path in render_all(diag, output_dir, OUTPUT_STEM).values():
+        print(f"Generated: {path}")
     return diag
 
 

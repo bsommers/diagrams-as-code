@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_three_tier_campus_lan.svg"
-    png_file = out / "01_three_tier_campus_lan.png"
-    readme_file = out / "01_three_tier_campus_lan_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Three-Tier Hierarchical Campus LAN", theme="blueprint") as diag:
         with diag.group("Campus Core Layer") as g_1:
             core1 = diag.add(Shape("core1", "Core Switch Alpha", icon="switch", model="Catalyst 9600"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         dist1 >> diag.edge("10G Trunk", style="solid") >> acc1
         dist2 >> diag.edge("10G Trunk", style="solid") >> acc2
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_three_tier_campus_lan.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "01_three_tier_campus_lan")["svg"]
 
 
 if __name__ == "__main__":

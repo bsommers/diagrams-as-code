@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_edge_micro_datacenter.svg"
-    png_file = out / "09_edge_micro_datacenter.png"
-    readme_file = out / "09_edge_micro_datacenter_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Modular Edge Micro-Datacenter Container", theme="blueprint") as diag:
         with diag.group("Facilities Automation") as g_1:
             env_sensors = diag.add(Shape("env_sensors", "Environmental & Smoke Sensors", icon="sensor", detection="VESDA Laser Air"))
@@ -43,12 +38,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         hyperconverged >> diag.edge("Remote IPMI Console", style="solid") >> cellular_oob
         env_sensors >> diag.edge("Telemetry Telemetry", style="dashed") >> cellular_oob
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_edge_micro_datacenter.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "09_edge_micro_datacenter")["svg"]
 
 
 if __name__ == "__main__":

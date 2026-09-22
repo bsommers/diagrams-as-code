@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_scada_historian_redundancy.svg"
-    png_file = out / "05_scada_historian_redundancy.png"
-    readme_file = out / "05_scada_historian_redundancy_README.md"
-
+def diagram() -> Diagram:
     with Diagram("SCADA & Historian Dual Redundancy", theme="iiot_light") as diag:
         with diag.group("Control Network") as g_1:
             plc_main = diag.add(Shape("plc_main", "Plant Main PLC", icon="plc", cpu="Redundant Rack"))
@@ -42,12 +37,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         scada_pri >> diag.edge("Tag Ingest", style="solid") >> hist_pri
         hist_pri >> diag.edge("DB Replication", style="solid") >> hist_sec
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_scada_historian_redundancy.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "05_scada_historian_redundancy")["svg"]
 
 
 if __name__ == "__main__":

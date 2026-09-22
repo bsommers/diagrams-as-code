@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_customer_loan_origination.svg"
-    png_file = out / "07_customer_loan_origination.png"
-    readme_file = out / "07_customer_loan_origination_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Digital Consumer Loan Origination", theme="blueprint") as diag:
         with diag.group("Customer Portal") as g_1:
             applicant = diag.add(Shape("applicant", "Loan Applicant", icon="user", credit="Consumer Retail"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         esign >> diag.edge("Executed Signature", style="solid") >> ach_wire
         ach_wire >> diag.edge("Fund Account", style="dashed") >> applicant
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_customer_loan_origination.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "07_customer_loan_origination")["svg"]
 
 
 if __name__ == "__main__":

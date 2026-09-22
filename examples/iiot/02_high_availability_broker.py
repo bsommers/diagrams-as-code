@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_high_availability_broker.svg"
-    png_file = out / "02_high_availability_broker.png"
-    readme_file = out / "02_high_availability_broker_README.md"
-
+def diagram() -> Diagram:
     with Diagram("High Availability Broker Cluster", theme="iiot_dark_gold") as diag:
         with diag.group("Production Ingress") as g_1:
             lb = diag.add(Shape("lb", "Load Balancer", icon="load_balancer", algorithm="Round Robin", vip="10.0.0.10"))
@@ -43,12 +38,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         node2 >> diag.edge("Event Store", style="solid") >> db
         node3 >> diag.edge("Event Store", style="solid") >> db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_high_availability_broker.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "02_high_availability_broker")["svg"]
 
 
 if __name__ == "__main__":

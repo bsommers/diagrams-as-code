@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_edr_threat_hunting.svg"
-    png_file = out / "05_edr_threat_hunting.png"
-    readme_file = out / "05_edr_threat_hunting_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Endpoint Detection & Threat Hunting Grid", theme="dracula") as diag:
         with diag.group("Managed Endpoints") as g_1:
             win_host = diag.add(Shape("win_host", "Finance Desktop", icon="laptop", os="Windows 11"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         analyst_ws >> diag.edge("Execute Containment", style="solid") >> quarantine
         quarantine >> diag.edge("Isolate NIC", style="dashed") >> win_host
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_edr_threat_hunting.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "05_edr_threat_hunting")["svg"]
 
 
 if __name__ == "__main__":

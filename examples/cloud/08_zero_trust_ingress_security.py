@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_zero_trust_ingress_security.svg"
-    png_file = out / "08_zero_trust_ingress_security.png"
-    readme_file = out / "08_zero_trust_ingress_security_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Zero-Trust Perimeter & DMZ Security Ingress", theme="cyber_slate") as diag:
         with diag.group("Untrusted Zone") as g_1:
             internet = diag.add(Shape("internet", "External Traffic", icon="user", origin="Public Internet"))
@@ -53,12 +48,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         dmz_proxy >> diag.edge("Internal mTLS", style="solid") >> backend
         backend >> diag.edge("Fetch Secret", style="dashed") >> vault
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_zero_trust_ingress_security.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "08_zero_trust_ingress_security")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_simple_vpc_web.svg"
-    png_file = out / "01_simple_vpc_web.png"
-    readme_file = out / "01_simple_vpc_web_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Simple VPC Web Application", theme="blueprint") as diag:
         with diag.group("Public Zone") as g_1:
             client = diag.add(Shape("client", "Web Client", icon="mobile", type="Mobile/Browser"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         web1 >> diag.edge("TCP :5432", style="solid") >> db
         web2 >> diag.edge("TCP :5432", style="solid") >> db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_simple_vpc_web.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "01_simple_vpc_web")["svg"]
 
 
 if __name__ == "__main__":

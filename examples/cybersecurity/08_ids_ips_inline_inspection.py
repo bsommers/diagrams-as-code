@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_ids_ips_inline_inspection.svg"
-    png_file = out / "08_ids_ips_inline_inspection.png"
-    readme_file = out / "08_ids_ips_inline_inspection_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Inline IDS/IPS Deep Packet Inspection", theme="cyber_slate") as diag:
         with diag.group("Perimeter Ingress") as g_1:
             border_rtr = diag.add(Shape("border_rtr", "Border Transit Router", icon="core_router", bandwidth="100 Gbps"))
@@ -42,12 +37,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         suricata_ips >> diag.edge("Scrubbed Flow", style="solid") >> npb
         npb >> diag.edge("Permitted Packets", style="solid") >> core_sw
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_ids_ips_inline_inspection.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "08_ids_ips_inline_inspection")["svg"]
 
 
 if __name__ == "__main__":

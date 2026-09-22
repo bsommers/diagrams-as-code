@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_distributed_training_cluster.svg"
-    png_file = out / "04_distributed_training_cluster.png"
-    readme_file = out / "04_distributed_training_cluster_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Distributed Multi-GPU Training Cluster", theme="dracula") as diag:
         with diag.group("Coordination") as g_1:
             param_server = diag.add(Shape("param_server", "Parameter Server Coordinator", icon="server", framework="Megatron-LM"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         gpu3 >> diag.edge("Ring AllReduce", style="dashed") >> gpu4
         lustre >> diag.edge("Sharded Batch Feed", style="solid") >> gpu1
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_distributed_training_cluster.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "04_distributed_training_cluster")["svg"]
 
 
 if __name__ == "__main__":

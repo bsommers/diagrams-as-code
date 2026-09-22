@@ -9,12 +9,12 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 from iiot_diagrams import Diagram, Port
+from diagrams_as_code.output import render_all
+
+OUTPUT_STEM = "mockup_slide"
 
 
-def generate_mockup_slide(output_dir: Path | str = "output") -> Diagram:
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-
+def diagram() -> Diagram:
     diag = Diagram(
         "IIoT Client Reference UNS",
         width=1200,
@@ -111,21 +111,13 @@ def generate_mockup_slide(output_dir: Path | str = "output") -> Diagram:
             target_port=Port.WEST,
         ) >> dashboard
 
-    svg_path = out_dir / "mockup_slide.svg"
-    png_path = out_dir / "mockup_slide.png"
-    readme_path = out_dir / "mockup_slide_README.md"
+    return diag
 
-    diag.render_svg(svg_path)
-    diag.render_png(png_path)
-    diag.generate_readme(
-        image_file="mockup_slide.svg",
-        output_path=readme_path,
-        include_connections=True,
-    )
 
-    print(f"Generated: {svg_path}")
-    print(f"Generated: {png_path}")
-    print(f"Generated: {readme_path}")
+def generate_mockup_slide(output_dir: Path | str = "output") -> Diagram:
+    diag = diagram()
+    for path in render_all(diag, output_dir, OUTPUT_STEM).values():
+        print(f"Generated: {path}")
     return diag
 
 

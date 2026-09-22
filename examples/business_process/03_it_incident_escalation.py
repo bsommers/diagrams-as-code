@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_it_incident_escalation.svg"
-    png_file = out / "03_it_incident_escalation.png"
-    readme_file = out / "03_it_incident_escalation_README.md"
-
+def diagram() -> Diagram:
     with Diagram("ITSM Major Incident Escalation & Response", theme="solarized_light") as diag:
         with diag.group("Monitoring") as g_1:
             alert_source = diag.add(Shape("alert_source", "Prometheus / Datadog Alert", icon="message", threshold="API Error Rate > 5%"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         war_room >> diag.edge("Publish Degradation", style="dashed") >> status_page
         war_room >> diag.edge("Resolve & File RCA", style="solid") >> postmortem
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_it_incident_escalation.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "03_it_incident_escalation")["svg"]
 
 
 if __name__ == "__main__":

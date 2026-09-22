@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_iot_cloud_fleet_management.svg"
-    png_file = out / "09_iot_cloud_fleet_management.png"
-    readme_file = out / "09_iot_cloud_fleet_management_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Cloud IoT Fleet Telemetry & Management", theme="iiot_dark_gold") as diag:
         with diag.group("Edge Devices") as g_1:
             fleet = diag.add(Shape("fleet", "Connected Vehicle Fleet", icon="sensor", units="100k Vehicles"))
@@ -55,12 +50,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         kinesis >> diag.edge("Batch Insert", style="solid") >> timescale
         timescale >> diag.edge("SQL Query", style="solid") >> dash
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_iot_cloud_fleet_management.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "09_iot_cloud_fleet_management")["svg"]
 
 
 if __name__ == "__main__":

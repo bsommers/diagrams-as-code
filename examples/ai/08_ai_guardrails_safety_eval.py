@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_ai_guardrails_safety_eval.svg"
-    png_file = out / "08_ai_guardrails_safety_eval.png"
-    readme_file = out / "08_ai_guardrails_safety_eval_README.md"
-
+def diagram() -> Diagram:
     with Diagram("AI Safety Guardrails & Jailbreak Defense", theme="pastel_light") as diag:
         with diag.group("Ingress Gate") as g_1:
             user_input = diag.add(Shape("user_input", "Untrusted User Prompt", icon="user", risk="Potential Jailbreak"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         guard_out >> diag.edge("Log Prompt & Evaluation", style="dashed") >> audit_log
         guard_out >> diag.edge("Verified Safe Response", style="solid") >> user_input
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_ai_guardrails_safety_eval.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "08_ai_guardrails_safety_eval")["svg"]
 
 
 if __name__ == "__main__":
