@@ -30,7 +30,9 @@ def sources_text() -> str:
 
 @pytest.fixture(scope="module")
 def render_png_source() -> str:
-    return inspect.getsource(Diagram.render_png)
+    from diagrams_as_code import rasterize
+
+    return inspect.getsource(rasterize)
 
 
 #: Every third-party name ``render_png`` can reach for, mapped to the phrase
