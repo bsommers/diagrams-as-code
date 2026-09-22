@@ -1,6 +1,6 @@
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-227%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-431%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)

@@ -23,29 +23,36 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        User Architecture Script                        │
-│                with Diagram("Title", theme="nord") as diag:            │
-└───────────────────────────────────┬────────────────────────────────────┘
+│        User Architecture Script  —or—  the diagrams-as-code CLI        │
+│              with Diagram("Title", theme="nord") as diag:              │
+└────────────────────────────────────┬───────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
 │                    Declarative Object Model & Stack                    │
-│                 Diagram  │  Shapes  │  Groups  │  Edges                │
-└───────────────────────────────────┬────────────────────────────────────┘
+│                Diagram  │  Shapes  │  Groups  │  Edges                 │
+└────────────────────────────────────┬───────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│               Topological Constraint Solver & Auto-Framing             │
-│            Relative Alignments  │  DAG Resolution  │  Groups           │
-└───────────────────────────────────┬────────────────────────────────────┘
+│                            Layout Pipeline                             │
+│      Layout File  │  Auto-Place (LayeredLayout)  │  Canvas Growth      │
+└────────────────────────────────────┬───────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│                   Orthogonal Manhattan Router (A*)                     │
-│               Cardinal Ports  │  Obstacles  │  Badges                  │
-└───────────────────────────────────┬────────────────────────────────────┘
+│              Topological Constraint Solver & Auto-Framing              │
+│           Relative Alignments  │  DAG Resolution  │  Groups            │
+└────────────────────────────────────┬───────────────────────────────────┘
+                                    │
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                    Orthogonal Manhattan Router (A*)                    │
+│                Cardinal Ports  │  Obstacles  │  Badges                 │
+└────────────────────────────────────┬───────────────────────────────────┘
                                     │
                    ┌────────────────┴────────────────┐
+                   │                                 │
                    ▼                                 ▼
 ┌─────────────────────────────────────┐ ┌────────────────────────────────┐
 │             SVGRenderer             │ │          BOMGenerator          │
@@ -53,12 +60,15 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 │  - 60 Built-in Vector Icons         │ │  - Machine-Readable JSON       │
 │  - Multi-line <tspan> Wrap          │ └────────────────────────────────┘
 │  - Text-Below-Graphic Tiles         │
-└──────────────────┬──────────────────┘
-                   │
-                   ▼
+└─────────────────────────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
-│         resvg-py Rasterizer         │
-│  - High-Resolution Crisp PNG Images │
+│              output.py              │
+│  - Writes .svg / .png / BOM         │
+│  - PNG via rasterize.py:            │
+│    resvg-py/Cairo/Inkscape/         │
+│    ImageMagick                      │
 └─────────────────────────────────────┘
 ```
 

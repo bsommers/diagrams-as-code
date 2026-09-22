@@ -1,9 +1,9 @@
 ========================================================================================
-                      DIAGRAMS-AS-CODE: SYSTEM ARCHITECTURE
+                         DIAGRAMS-AS-CODE: SYSTEM ARCHITECTURE                          
 ========================================================================================
 
 +--------------------------------------------------------------------------------------+
-|                                   USER PYTHON SCRIPT                                 |
+|                 USER PYTHON SCRIPT  —or—  THE `diagrams-as-code` CLI                 |
 |                                                                                      |
 |   from diagrams_as_code import Diagram, Shape                                        |
 |   with Diagram("Architecture", theme="nord") as diag:                                |
@@ -11,60 +11,71 @@
 |       s2 = diag.add(Shape("db", "PostgreSQL", icon="database", kind="cylinder"))     |
 |       s2.right_of(s1, margin=80)                                                     |
 |       s1 >> diag.edge("TCP :5432") >> s2                                             |
+|                                                                                      |
+|   # or, with no Python driver at all (cli.py):                                       |
+|   uv run diagrams-as-code render architecture.py --layout auto --out output          |
 +--------------------------------------------------------------------------------------+
                                            │
                                            ▼
 +--------------------------------------------------------------------------------------+
-|                           DIAGRAM ENGINE CONTEXT & DOM                               |
+|                             DIAGRAM ENGINE CONTEXT & DOM                             |
 |                                                                                      |
 |   +-----------------------+   +-----------------------+   +----------------------+   |
 |   |        Diagram        |   |       Element         |   |        Group         |   |
 |   |  - Active context     |   |  - Bounds (Rect)      |   |  - Auto-bounding     |   |
-|   |  - Theme registry     |   |  - Constraints list   |   |  - Internal layouts  |   |
-|   |  - Node counter       |   |  - Metadata payload   |   |  - Padding & header  |   |
+|   |    (context.py)       |   |  - Constraints list   |   |  - Internal layouts  |   |
+|   |  - Themes             |   |  - Metadata payload   |   |  - Padding & header  |   |
 |   +-----------------------+   +-----------------------+   +----------------------+   |
 +--------------------------------------------------------------------------------------+
                                            │
                                            ▼
 +--------------------------------------------------------------------------------------+
-|                         TOPOLOGICAL CONSTRAINT SOLVER                                |
+|                  LAYOUT PIPELINE  (layout/pipeline.py: run_layout)                   |
 |                                                                                      |
-|   - Dependency DAG Construction                                                      |
-|   - Cycle Detection (RuntimeError on circular links)                                 |
-|   - Directional Translations (right_of, below, above, left_of)                       |
-|   - Bottom-Up Group Bounds Calculation                                               |
-|   - Viewport Auto-Framing (translates negative bounds to 60.0, 80.0)                 |
+|   1. Apply layout-file overrides -- stable id/label-path keys (layout/sidecar.py)    |
+|   2. layout="auto": place unpinned shapes/groups per scope, deepest-first            |
+|      (layout/graph.py: build_scope_graph, layout/layered.py: LayeredLayout)          |
+|   3. Constraint solve -- DAG, cycle detection, right_of/below/above/left_of          |
+|      (constraints.py)                                                                |
+|   4. Group bounds bottom-up + viewport auto-framing (negative bounds -> 60, 80)      |
+|   5. Canvas grows to fit any content past width/height; LayoutWarning on a           |
+|      pinned/auto-placed overlap                                                      |
 +--------------------------------------------------------------------------------------+
                                            │
                                            ▼
 +--------------------------------------------------------------------------------------+
-|                         ORTHOGONAL MANHATTAN ROUTER                                  |
+|                       ORTHOGONAL MANHATTAN ROUTER  (router.py)                       |
 |                                                                                      |
 |   - Automatic Cardinal Port Selection (North, South, East, West)                     |
 |   - 90-Degree Orthogonal Waypoints with Obstacle Avoidance                           |
 |   - Redundant Collinear Segment Simplification                                       |
 |   - Protocol Badge Centering (calculates badge rect to prevent line collisions)      |
 +--------------------------------------------------------------------------------------+
-                                           │
-                     ┌─────────────────────┴─────────────────────┐
-                     ▼                                           ▼
+                      ┌────────────────────┴─────────────────────┐
+                      │                                          │
+                      ▼                                          ▼
 +-----------------------------------------+ +------------------------------------------+
-|              SVG RENDERER               | |              BOM GENERATOR               |
+|               SVG RENDERER              | |              BOM GENERATOR               |
 |                                         | |                                          |
-|  - Theme Palette Injection (13 themes)  | |  - Component Inventory Assembly          |
-|  - 59 Built-in Vector Icons (icons/)    | |  - Metadata Attributes Table Extraction  |
-|  - Shape Primitives (box, cylinder, etc)| |  - Protocol Edge Connection Inventory    |
-|  - Multi-line <tspan> Label Wrapping    | |  - Living Markdown Document (.md)        |
-|  - Text-Below-Graphic Support (tiles)   | |  - Machine-Readable JSON Schema (.json)  |
-|  - Dynamic XML Escaping & Defs Markers  | +------------------------------------------+
-+-----------------------------------------+
-                     │
-                     ▼
-+-----------------------------------------+
-|           resvg-py RASTERIZER           |
-|                                         |
-|  - Pure Python Wheel Binding            |
-|  - Zero C-Dependency Execution          |
-|  - High-DPI Crisp PNG Output (.png)     |
-+-----------------------------------------+
+|  - Theme Palette Injection (13)         | |  - Component Inventory Assembly          |
+|  - 60 Built-in Vector Icons             | |  - Metadata Attributes Table             |
+|    (icon_glyphs.py, icons/)             | |    Extraction                            |
+|  - Shape Primitives (box, etc)          | |  - Protocol Edge Connection              |
+|  - Multi-line <tspan> Wrapping          | |    Inventory                             |
+|  - Text-Below-Graphic Support           | |  - Markdown (.md) + JSON (.json)         |
++-----------------------------------------+ +------------------------------------------+
+                      │
+                      ▼
++--------------------------------------------------------------------------------------+
+|         PNG RASTERIZATION  (rasterize.py) -- tried in order until one works          |
+|                                                                                      |
+|   resvg-py (pure wheel)  ->  CairoSVG  ->  Inkscape  ->  ImageMagick                 |
++--------------------------------------------------------------------------------------+
+                                           │
+                                           ▼
++--------------------------------------------------------------------------------------+
+|                output.py: render_all() writes every requested format                 |
+|                                                                                      |
+|   .svg vector  |  .png raster  |  _README.md BOM  |  _bom.json                       |
++--------------------------------------------------------------------------------------+
 ========================================================================================

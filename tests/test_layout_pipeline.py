@@ -145,9 +145,17 @@ def test_a_layout_file_grows_the_canvas_in_manual_mode(tmp_path) -> None:
     assert z.bounds.right <= replay.width
 
 
-def test_manual_canvas_without_a_layout_file_is_left_alone() -> None:
+def test_manual_canvas_grows_to_fit_content_placed_past_it() -> None:
+    """Hand-placed content outside the declared canvas used to be clipped."""
     with Diagram(width=400, height=300) as d:
-        d.shape("A").at(900, 700)
+        a = d.shape("A").at(900, 700)
+    assert d.width == a.bounds.right + 60.0
+    assert d.height == a.bounds.bottom + 80.0
+
+
+def test_canvas_that_already_fits_is_left_alone() -> None:
+    with Diagram(width=400, height=300) as d:
+        d.shape("A").at(60, 80)
     assert (d.width, d.height) == (400.0, 300.0)
 
 

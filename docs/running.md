@@ -121,7 +121,7 @@ rest); `2` a command-line usage error (unknown flag, missing subcommand).
 
 ## 4. Test Suite Execution
 
-Execute the comprehensive 227+ automated test suite using `uv run pytest`:
+Execute the comprehensive 431-test automated suite using `uv run pytest`:
 
 ```bash
 # Run all tests
@@ -166,8 +166,12 @@ docker compose run --rm diagram-gen
 
 ## 6. Exit Codes
 
+The `diagrams-as-code` CLI (§3.4) returns:
+
 | Exit Code | Meaning |
 |---|---|
-| `0` | Success: diagram generation completed, layout solved, and files written. |
-| `1` | Test failure or script execution error. |
-| `2` | Cycle detected in layout constraints (`RuntimeError`). |
+| `0` | Success: every script loaded, solved, and wrote its requested formats. |
+| `1` | One or more scripts failed to load, render, or write (a cycle in the layout constraints raises `RuntimeError` here); each failure is reported and the command continues with the rest. |
+| `2` | Command-line usage error: unknown flag or missing subcommand. |
+
+`uv run pytest` follows the ordinary pytest convention: `0` all tests passed, `1` at least one test failed.

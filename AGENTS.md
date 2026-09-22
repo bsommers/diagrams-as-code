@@ -13,5 +13,5 @@ In this repository, **ALWAYS** use [`uv`](https://docs.astral.sh/uv/) for all Py
 - **Container Build & Run:** `./docker-build-n-run.sh` or `docker compose run --rm diagram-gen`
 
 ### Architecture Constraints
-- The core engine (`src/iiot_diagrams/`) is pure Python standard library: zero external C-dependencies (no Graphviz `dot`, Cairo, or ImageMagick required for SVG rendering).
+- The core engine (`src/diagrams_as_code/`) is pure Python standard library: zero external C-dependencies (no Graphviz `dot`, Cairo, or ImageMagick required for SVG rendering). `src/iiot_diagrams/` is a backward-compatibility facade that re-exports it.
 - Do not add runtime dependencies to `dependencies = []` in `pyproject.toml` unless explicitly requested.
