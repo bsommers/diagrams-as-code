@@ -30,13 +30,15 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 - **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 60 handcrafted 24x24 open-source vector icons across 8 domains, with support for `kind="icon"` (borderless icon graphics).
 - **Living Documentation & Automated BOM**: Instant emission of Markdown component tables and machine-readable JSON schemas tracking hardware, protocols, and infrastructure specs.
 - **Topological Constraint Solving**: Decouples shape instantiation from placement. Elements can be positioned with relative constraints (`right_of`, `below`, `above`, `left_of`) and negative coordinate auto-framing.
-- **80 Production Reference Architectures**: 10 comprehensive reference diagrams across 8 architectural domains in [`examples/`](examples/).
+- **88 Production Reference Architectures**: 11 comprehensive reference diagrams across 8 architectural domains in [`examples/`](examples/), including auto-layout examples per domain.
+- **Auto-Layout Engine**: `Diagram(layout="auto")` places unpinned shapes and groups deterministically from the edge structure; pinned shapes can still coexist via `.at()` / `.right_of()`.
+- **CLI**: `diagrams-as-code render|layout export|themes|icons` for batch rendering, layout-file export, and catalog discovery without writing a script.
 
 ---
 
 ## 8 Architectural Domains Gallery
 
-Explore 80 fully implemented diagrams in [`examples/`](examples/README.md) and [`output/`](output/):
+Explore 88 fully implemented diagrams in [`examples/`](examples/README.md) and [`output/`](output/):
 
 | Domain | Focus & Architectures | Key Built-in Icons |
 |---|---|---|
@@ -91,7 +93,26 @@ diag.render_png("output/quickstart.png")
 diag.generate_readme("output/quickstart.svg", "output/quickstart_README.md")
 ```
 
-### 3. Run and Verify
+### 3. Or Let the Engine Lay It Out
+
+```python
+from diagrams_as_code import Diagram
+
+with Diagram("Auto-Laid-Out Pipeline", theme="nord", layout="auto") as diag:
+    gw = diag.shape("API Gateway", icon="api_gateway")
+    worker = diag.shape("Worker", icon="server")
+    gw >> diag.edge("invoke") >> worker
+```
+
+No `.at()` or `.right_of()` needed — `layout="auto"` places every unpinned
+shape and group from the edge structure. Render it (and any script) from the
+command line:
+
+```bash
+uv run diagrams-as-code render my_diagram.py --out output
+```
+
+### 4. Run and Verify
 
 ```bash
 # Run reference architecture

@@ -5,8 +5,8 @@
   "repository": "ai/diagrams-as-code",
   "last_updated": "2026-09-21T00:00:00Z",
   "summary": {
-    "total_capabilities": 10,
-    "operational": 9,
+    "total_capabilities": 12,
+    "operational": 11,
     "beta": 0,
     "planned": 1,
     "categories": [
@@ -18,6 +18,8 @@
       "SVG Vector Rendering",
       "Diagram-as-Code API",
       "Living Documentation & BOM",
+      "Layout Engine",
+      "Command-Line Interface",
       "Domain Reference Architectures"
     ]
   },
@@ -51,6 +53,12 @@
       "capability_id": "CAP-DIAG-BOM",
       "python_api": "diag.generate_readme(image_file, output_path)",
       "details": "Extracts diagram inventory, group affiliations, connection topology, and technical metadata into Markdown tables and JSON catalogs."
+    },
+    "has_auto_layout": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-LAYOUT",
+      "python_api": "Diagram(layout=\"auto\")",
+      "details": "A deterministic layered engine places unpinned shapes and groups from the edge structure (direction LR or TB); pinned shapes coexist via .at()/.right_of(), and a LayoutWarning flags any pin that overlaps an auto-placed sibling."
     }
   },
   "capabilities": [
@@ -117,8 +125,30 @@
       "target_release": "v0.1.0",
       "python_api": "examples/",
       "classes": ["Diagram"],
-      "details": "80 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, and iiot demonstrating multi-theme styling, BOM generation, and automated test verification.",
+      "details": "88 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, and iiot demonstrating multi-theme styling, BOM generation, and automated test verification.",
       "verification": "uv run pytest tests/test_domain_examples.py"
+    },
+    {
+      "id": "CAP-DIAG-LAYOUT",
+      "name": "Auto-Layout Engine and Editable Layout File",
+      "category": "Layout Engine",
+      "status": "OPERATIONAL",
+      "target_release": "v0.4.0",
+      "python_api": "diagrams_as_code.layout",
+      "classes": ["LayeredLayout", "LayoutWarning"],
+      "details": "Deterministic Sugiyama-style ranked placement (layout=\"auto\", direction LR or TB) for unpinned shapes and groups scope by scope; an editable JSON layout file keyed by explicit id= or label path (diagrams-as-code layout export); pinned shapes and relative placement coexist with auto-placed siblings, with a LayoutWarning raised on overlap.",
+      "verification": "uv run pytest tests/test_layout_layered.py tests/test_layout_graph.py tests/test_layout_pipeline.py tests/test_layout_sidecar.py"
+    },
+    {
+      "id": "CAP-DIAG-CLI",
+      "name": "The diagrams-as-code Command",
+      "category": "Command-Line Interface",
+      "status": "OPERATIONAL",
+      "target_release": "v0.4.0",
+      "python_api": "diagrams_as_code.cli",
+      "classes": [],
+      "details": "Entrypoint diagrams-as-code (also python -m diagrams_as_code) with subcommands render, layout export, themes, and icons; batch-renders scripts or directories to SVG/PNG/BOM, exports layout files, and lists built-in themes and icons. Exit codes: 0 success, 1 a script failed, 2 usage error.",
+      "verification": "uv run pytest tests/test_cli.py"
     },
     {
       "id": "CAP-DIAG-SVG",

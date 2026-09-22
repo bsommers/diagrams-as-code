@@ -18,6 +18,7 @@
 | **Can groups auto-bound and flow?** | **YES** | `group2.below(group1, margin=40)` | Hierarchical containers with bottom-up auto-bounding encapsulating children, headers, and padding. |
 | **Can connections route orthogonally?** | **YES** | `s1 >> diag.edge("MQTT") >> s2` | Automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`) and Manhattan waypoint routing with collinear line simplification. |
 | **Can living BOM docs be generated?** | **YES** | `diag.generate_readme()` | Extracts component inventories, group affiliations, connection topology, and technical notes into Markdown tables and JSON catalogs. |
+| **Is there auto-layout?** | **YES** | `Diagram(layout="auto")` | A deterministic layered engine places unpinned shapes and groups from the edge structure (`direction="LR"`/`"TB"`); pinned shapes coexist via `.at()`/`.right_of()`, and a `LayoutWarning` flags any pin that overlaps an auto-placed sibling. |
 
 ---
 
@@ -120,19 +121,43 @@
 
 ---
 
-### 2.9 Domain Architectural Reference Suite
+### 2.9 Layout (`diagrams_as_code.layout`)
+
+#### `CAP-DIAG-LAYOUT`: Auto-Layout Engine and Editable Layout File
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.4.0`
+- **Python API:** `diagrams_as_code.layout`
+- **Classes:** `LayeredLayout`, `LayoutWarning`
+- **Features:** Deterministic Sugiyama-style ranked placement (`layout="auto"`, `direction="LR"`/`"TB"`) for unpinned shapes and groups scope by scope; an editable JSON layout file keyed by explicit `id=` or label path (`diagrams-as-code layout export`); pinned shapes and relative placement (`.at()`, `.right_of()`) coexist with auto-placed siblings, with a `LayoutWarning` raised on overlap.
+- **Verification:** `uv run pytest tests/test_layout_layered.py tests/test_layout_graph.py tests/test_layout_pipeline.py tests/test_layout_sidecar.py`
+
+---
+
+### 2.10 Command-Line Interface
+
+#### `CAP-DIAG-CLI`: The `diagrams-as-code` Command
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.4.0`
+- **Entrypoint:** `diagrams-as-code` (also `python -m diagrams_as_code`)
+- **Subcommands:** `render`, `layout export`, `themes`, `icons`
+- **Features:** Batch-renders scripts or whole directories to SVG/PNG/BOM without a Python entry point, exports layout files, and lists built-in themes and icons for discovery; exit codes `0` success, `1` a script failed, `2` usage error.
+- **Verification:** `uv run pytest tests/test_cli.py`
+
+---
+
+### 2.11 Domain Architectural Reference Suite
 
 #### `CAP-DIAG-DOMAINS`: Multi-Domain Reference Topologies & Automated Test Suite
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
 - **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`, `examples/iiot`)
-- **Exports:** 70 self-contained executable diagram scripts and documentation artifacts
-- **Features:** 10 topologies per domain demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 13 presets, automated SVG and Markdown BOM generation in `output/`, and gallery documentation in `examples/README.md`.
+- **Exports:** 88 self-contained executable diagram scripts and documentation artifacts
+- **Features:** 11 topologies per domain (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 13 presets, automated SVG and Markdown BOM generation in `output/`, and gallery documentation in `examples/README.md`.
 - **Verification:** `uv run pytest tests/test_domain_examples.py`
 
 ---
 
-### 2.10 Planned Capabilities
+### 2.12 Planned Capabilities
 
 #### `CAP-DIAG-INTERACTIVE`: Interactive SVG Pan-Zoom and Collapsible Groups
 - **Status:** `PLANNED`

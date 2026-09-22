@@ -1,4 +1,4 @@
-"""Test suite executing and verifying all 70 domain example diagram scripts across 7 domains."""
+"""Test suite executing and verifying all 88 domain example diagram scripts across 8 domains."""
 
 from __future__ import annotations
 
@@ -26,8 +26,8 @@ EXPECTED_DOMAINS = {
 
 
 def test_example_script_discovery() -> None:
-    """Verify that exactly 80 example scripts exist across 8 domains."""
-    assert len(EXAMPLE_SCRIPTS) == 80
+    """Verify that exactly 88 example scripts exist across 8 domains."""
+    assert len(EXAMPLE_SCRIPTS) == 88
     domain_counts: dict[str, int] = {}
     for p in EXAMPLE_SCRIPTS:
         domain = p.parent.name
@@ -35,7 +35,7 @@ def test_example_script_discovery() -> None:
 
     assert set(domain_counts.keys()) == EXPECTED_DOMAINS
     for d, count in domain_counts.items():
-        assert count == 10, f"Domain {d} has {count} scripts, expected 10."
+        assert count == 11, f"Domain {d} has {count} scripts, expected 11."
 
 
 @pytest.mark.parametrize(

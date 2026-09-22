@@ -30,6 +30,15 @@
                                          │
                                          ▼
 +-----------------------------------------------------------------------------------+
+|                Layout Pipeline (manual / auto / layout file)                      |
+|      - manual: constraint solver output passes through unchanged                  |
+|      - auto: LayeredLayout places unpinned shapes/groups per scope                |
+|      - layout file: JSON overrides applied last, keyed by id or label path        |
+|      - Pinned-vs-auto overlap detection emits LayoutWarning                       |
++-----------------------------------------------------------------------------------+
+                                         │
+                                         ▼
++-----------------------------------------------------------------------------------+
 |                       Orthogonal Manhattan Router (A*)                            |
 |      - Dynamic Automatic Port Selection (North, South, East, West)                |
 |      - Obstacle Avoidance & Bounding Box Routing                                  |
@@ -105,6 +114,13 @@
 - Produces clean Markdown tables suitable for GitHub READMEs or architecture portals.
 - Serializes complete Bill of Materials to machine-readable JSON schemas for integration with asset tracking, procurement, or configuration management databases (CMDB).
 
+### 2.9 Layout (`diagrams_as_code.layout`)
+- **`base.py`**: Shared data model — `LayoutNode`, `LayoutEdge`, `LayoutGraph` (one scope's nodes and edges), the `LayoutEngine` protocol, and the `LayoutWarning` (`UserWarning`) class used whenever a layout result is probably not what the author intended.
+- **`graph.py`**: Turns one scope of a diagram (the canvas, or a single group) into a `LayoutGraph` — collecting that scope's unpinned children and the edges between them, duck-typed against `solver.elements`/`edges` so it never imports `diagram`.
+- **`layered.py`**: `LayeredLayout` — deterministic Sugiyama-style placement. Ranks nodes by edge direction (`LR` or `TB`), orders each rank to reduce crossings, and spaces ranks evenly; ties always break by declaration index, so a re-run of the same script reproduces the same layout.
+- **`sidecar.py`**: The editable layout file. `element_key()` derives a stable key (explicit `id=`, else the ancestor-label path joined by `/`); `load_layout_file()` / `export_layout()` round-trip a JSON file of `{key: {x, y}}` entries; `apply_entries()` inserts each entry as the winning constraint, warning on any stale key that matches no element.
+- **`pipeline.py`**: `run_layout()` — the ordered steps `Diagram.solve()` runs: drop the previous run's generated constraints, apply layout-file entries first, place unpinned elements scope-by-scope with `layout="auto"`, solve, recompute group bounds and frame negative coordinates, grow the canvas and warn about pins overlapping auto-placed siblings, then route every edge. With `layout="manual"` and no layout file this reproduces the original solve exactly.
+
 ---
 
 ## 3. Execution Lifecycle
@@ -133,13 +149,25 @@ src/
 │   ├── geometry.py                 # Geometric primitives (Point, Size, Rect, Anchor, UnitBasis)
 │   ├── elements.py                 # Core Element base model and Shape node
 │   ├── shapes.py                   # Vector ShapeLibrary & embedded SVG icon renderers
+│   ├── icon_glyphs.py              # SVG bodies for the built-in icons (24x24 grid)
 │   ├── groups.py                   # Group container with dynamic auto-bounding and flow layouts
 │   ├── constraints.py              # Topological DAG ConstraintSolver with cycle detection
+│   ├── context.py                  # Stack of Diagrams whose `with` block is currently open
+│   ├── metrics.py                  # Text metrics shared by layout and rendering
+│   ├── layout/                     # Manual / auto / layout-file placement (see §2.9)
+│   │   ├── base.py                 # LayoutNode, LayoutEdge, LayoutGraph, LayoutEngine, LayoutWarning
+│   │   ├── graph.py                # Diagram scope -> LayoutGraph
+│   │   ├── layered.py              # LayeredLayout: deterministic Sugiyama-style placement
+│   │   ├── sidecar.py              # Editable layout file: keys, load/export, apply_entries
+│   │   └── pipeline.py             # run_layout(): the ordered steps Diagram.solve() runs
 │   ├── router.py                   # Orthogonal Manhattan routing with obstacle avoidance
 │   ├── connections.py              # Edge connection models & fluent >> operator overloading
 │   ├── renderer_svg.py             # SVGRenderer with theme integration and defs generation
+│   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
 │   ├── theme.py                    # 13 built-in palette themes (nord, emerald, crimson, …)
 │   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation
+│   ├── output.py                   # Writes a diagram's SVG, PNG and BOM to a directory
+│   ├── cli.py                      # `diagrams-as-code render|layout export|themes|icons`
 │   └── diagram.py                  # Diagram canvas context manager, render_svg, render_png
 │
 └── iiot_diagrams/                  # Backward Compatibility Facade
@@ -165,14 +193,14 @@ IIoT is treated as one of eight first-class architectural domains:
 
 ```
 examples/
-├── cloud/                          # 10 Cloud architecture diagrams
-├── ai/                             # 10 AI / ML pipeline diagrams
-├── computer/                       # 10 Computer & endpoint diagrams
-├── datacenter/                     # 10 Datacenter & infrastructure diagrams
-├── business_process/               # 10 Business workflow & BPMN diagrams
-├── cybersecurity/                  # 10 Cybersecurity & Zero-Trust diagrams
-├── network_engineering/            # 10 Campus & WAN network diagrams
-└── iiot/                           # 10 Industrial IoT & automation diagrams
+├── cloud/                          # 11 Cloud architecture diagrams (incl. 1 auto-layout)
+├── ai/                             # 11 AI / ML pipeline diagrams (incl. 1 auto-layout)
+├── computer/                       # 11 Computer & endpoint diagrams (incl. 1 auto-layout)
+├── datacenter/                     # 11 Datacenter & infrastructure diagrams (incl. 1 auto-layout)
+├── business_process/               # 11 Business workflow & BPMN diagrams (incl. 1 auto-layout)
+├── cybersecurity/                  # 11 Cybersecurity & Zero-Trust diagrams (incl. 1 auto-layout)
+├── network_engineering/            # 11 Campus & WAN network diagrams (incl. 1 auto-layout)
+└── iiot/                           # 11 Industrial IoT & automation diagrams (incl. 1 auto-layout)
 ```
 
 ---
@@ -183,3 +211,4 @@ examples/
 2. **Always Use `uv`:** All environment setup, script runs, and testing must use `uv run`.
 3. **Decoupled Lifecycle:** Elements exist independently of positioning constraints; positions can be declared late or updated dynamically.
 4. **Guaranteed Solve:** Rendering functions (`render_svg`, `render_png`, `generate_readme`) automatically resolve layout constraints and normalize bounds before emitting output.
+5. **Layered imports:** enforced by `tests/test_module_boundaries.py`.

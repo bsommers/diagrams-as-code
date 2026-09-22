@@ -70,23 +70,52 @@ uv run python examples/02_high_availability.py
 uv run python examples/03_sparkplug_pipeline.py
 ```
 
-### 3.3 Batch Regenerate All 80 Domain Examples
+### 3.3 Batch Regenerate the Gallery
 
 ```bash
-uv run python -c "
-import importlib.util
-from pathlib import Path
-
-for py_file in sorted(Path('examples').glob('*/*.py')):
-    spec = importlib.util.spec_from_file_location('module', py_file)
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    domain = py_file.parent.name
-    out_dir = Path('output') / domain
-    if hasattr(mod, 'build_diagram'):
-        mod.build_diagram(out_dir)
-"
+uv run diagrams-as-code render examples --out output --format svg,png,bom
 ```
+
+This scans `examples/` for every script that defines `diagram()`, renders each
+into its domain subdirectory under `output/`, and writes all three formats
+(the default `--format` is `svg,bom`; `png` is added explicitly here since
+PNG bytes are excluded from the batch's tracked comparison but useful to look
+at locally).
+
+### 3.4 The `diagrams-as-code` Command
+
+Installed as a console script (`uv run diagrams-as-code ...`), and also
+runnable as `uv run python -m diagrams_as_code ...`.
+
+**`render PATH... [--out DIR] [--format FORMATS] [--theme THEME] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
+
+Renders one or more scripts, or every `diagram()`-defining script found by
+recursively scanning a directory. `--format` is a comma-separated subset of
+`svg,png,bom`; it defaults to `svg,bom` because those two are the
+byte-comparable, git-tracked artifacts — PNG bytes vary slightly by backend
+(Cairo vs. the pure-Python fallback), so they're opt-in. `--theme`,
+`--layout`, `--direction`, and `--layout-file` override the script's own
+`Diagram(...)` settings for this render only. `--debug` prints full
+tracebacks for scripts that fail to load or render.
+
+**`layout export SCRIPT [-o FILE] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
+
+Runs a script's `diagram()`, solves it, and writes every element's resolved
+position to a JSON layout file (default: `SCRIPT.layout.json`). See
+`docs/how-to.md` for the layout-file editing workflow.
+
+**`themes`**
+
+Lists every built-in theme name, one per line.
+
+**`icons [--domain DOMAIN]`**
+
+Lists every built-in icon as `name<TAB>domain<TAB>description`; `--domain`
+filters to one domain.
+
+**Exit codes:** `0` success; `1` one or more scripts failed to load, render,
+or write (each failure is reported, and the command continues with the
+rest); `2` a command-line usage error (unknown flag, missing subcommand).
 
 ---
 

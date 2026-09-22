@@ -165,6 +165,93 @@ Add this workflow step to `.github/workflows/ci.yml` to automatically verify all
 
 ---
 
+## Recipe 7: Let the Engine Lay Out a Diagram
+
+Set `layout="auto"` and skip `.at()` / `.right_of()` entirely — the layered
+engine places every shape and group from the edge structure, left-to-right
+by default:
+
+```python
+from diagrams_as_code import Diagram
+
+with Diagram("Order Pipeline", theme="nord", layout="auto", direction="LR") as diag:
+    with diag.group("Ingress") as ingress:
+        client = diag.shape("Client", icon="mobile")
+        gw = diag.shape("API Gateway", icon="api_gateway")
+    with diag.group("Compute") as compute:
+        worker = diag.shape("Worker", icon="server")
+
+    client >> diag.edge("HTTPS") >> gw
+    gw >> diag.edge("invoke") >> worker
+```
+
+Use `direction="TB"` to rank top-to-bottom instead. Ranks follow edge
+direction; ties break by declaration order, so re-running the same script
+produces the same layout every time.
+
+### Mixing pinned and auto-placed shapes
+
+A shape or group positioned with `.at()`, or anchored with `.right_of()` /
+`.below()` / etc., stays exactly where you put it — the auto engine only
+places elements that have no position constraint of their own. Relative
+placement can target an auto-placed sibling, since its position is resolved
+before the render:
+
+```python
+with Diagram("Mixed Layout", layout="auto") as diag:
+    gw = diag.shape("API Gateway", icon="api_gateway")   # auto-placed
+    note = diag.shape("Ops Note", kind="diamond")
+    note.right_of(gw, margin=40)                          # pinned, relative to an auto shape
+```
+
+If a pin ends up overlapping an auto-placed sibling in the same scope, the
+render issues a `LayoutWarning` naming both shapes:
+
+```
+LayoutWarning: pinned 'Ops Note' overlaps auto-placed 'API Gateway'; move the pin or give both explicit positions
+```
+
+The warning doesn't fail the render — fix it by moving the pin, giving the
+auto-placed shape an explicit position too, or widening the margin.
+
+### The layout file workflow
+
+Export the positions a script resolved to, hand-edit them, and reuse them on
+later renders instead of guessing coordinates:
+
+```bash
+uv run diagrams-as-code layout export my_diagram.py
+# wrote my_diagram.layout.json
+```
+
+Open `my_diagram.layout.json` and adjust any `x`/`y` pair. Each entry is
+keyed by the shape's or group's **label path** — ancestor group labels and
+its own label joined by `/` (e.g. `"Ingress/API Gateway"`) — unless the
+element was created with an explicit `id=`, in which case its key is that id.
+Give a shape `id=` when its label isn't unique within its scope, or when you
+want a key that survives a label rename. A key that names a **group** moves
+every child in that group together, preserving their positions relative to
+each other.
+
+Render with the edited file layered on top of the script's own layout:
+
+```bash
+uv run diagrams-as-code render my_diagram.py --layout-file my_diagram.layout.json
+```
+
+or, from Python, pass it to the constructor directly:
+
+```python
+with Diagram("My Diagram", layout_file="my_diagram.layout.json") as diag:
+    ...
+```
+
+A layout file entry always wins over both manual constraints and the auto
+engine's placement for that key; a stale entry that matches no element in
+the current script emits a `LayoutWarning` and is otherwise ignored.
+
+---
+
 ## Troubleshooting Matrix
 
 | Problem | Root Cause | Solution |

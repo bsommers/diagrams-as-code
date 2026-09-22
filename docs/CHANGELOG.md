@@ -4,6 +4,19 @@ All notable changes, architectural milestones, and capability updates to the pur
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
+## [Unreleased]
+
+### Added
+- **Auto-layout (`Diagram(layout="auto")`):** a deterministic layered engine places unpinned shapes and groups from the edge structure, left-to-right or top-to-bottom. Shapes placed with `.at()` or `.right_of()` stay pinned, relative placement can target auto-placed shapes, and a `LayoutWarning` names any pin that overlaps an auto-placed sibling.
+- **Layout file:** `diagrams-as-code layout export` writes every position to a JSON file keyed by label path or explicit `id=`; hand edits are applied as overrides on the next render, and a group entry moves the whole group.
+- **`diagrams-as-code` command:** `render`, `layout export`, `themes`, `icons`; also `python -m diagrams_as_code`.
+- **8 auto-layout gallery examples** (`examples/<domain>/11_auto_*.py`), bringing the gallery to 88.
+
+### Changed
+- Scripts define `diagram() -> Diagram`; files are written by `output.render_all`. Existing `build_diagram()` functions keep working.
+- Internals split for modularity: PNG backends in `rasterize.py`, icon glyphs in `icon_glyphs.py`, the active-diagram stack in `context.py`, label metrics in `metrics.py`, and the solve pipeline in `layout/pipeline.py`, which now also routes edges so the renderer only draws. `tests/test_module_boundaries.py` enforces import direction. Rendered output of all existing diagrams is byte-identical.
+- `Diagram.render_png()` returns the PNG bytes for every backend (CairoSVG previously returned `None`).
+
 ## [v0.3.0] - 2026-09-21
 
 ### Added
