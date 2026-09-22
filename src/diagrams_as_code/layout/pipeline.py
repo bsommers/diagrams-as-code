@@ -50,7 +50,7 @@ def run_layout(diagram: Any) -> None:
     """Position every element of ``diagram``."""
     elements = diagram.solver.all_elements()
     _reset(diagram, elements)
-    from_file = _apply_layout_file(diagram, elements)
+    _apply_layout_file(diagram, elements)
     auto_ids: set[str] = set()
     if diagram.layout == "auto":
         auto_ids = _auto_place(diagram, elements)
@@ -58,8 +58,7 @@ def run_layout(diagram: Any) -> None:
     groups = _deepest_first(diagram.groups)
     _refresh_group_bounds(groups)
     _frame(elements, groups)
-    if diagram.layout == "auto" or from_file:
-        _grow_canvas(diagram, elements)
+    _grow_canvas(diagram, elements)
     if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
