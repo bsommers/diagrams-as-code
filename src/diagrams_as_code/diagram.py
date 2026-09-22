@@ -12,6 +12,7 @@ from diagrams_as_code.geometry import Anchor, Size, UnitBasis
 from diagrams_as_code.groups import Group
 from diagrams_as_code.renderer_svg import SVGRenderer
 from diagrams_as_code.theme import Theme, get_theme
+from diagrams_as_code import context
 
 
 class _EdgeBuilder:
@@ -224,12 +225,12 @@ class _GroupContext:
 class Diagram:
     """Fluent context manager and container for directed diagrams."""
 
-    _active_stack: list[Diagram] = []
+    _active_stack: list[Diagram] = context._ACTIVE
 
     @classmethod
     def get_current(cls) -> Optional[Diagram]:
         """Get the innermost active Diagram from the context stack."""
-        return cls._active_stack[-1] if cls._active_stack else None
+        return context.current()
 
     def __init__(
         self,
@@ -278,12 +279,11 @@ class Diagram:
         return UnitBasis(Size(self.width, self.height))
 
     def __enter__(self) -> Diagram:
-        Diagram._active_stack.append(self)
+        context.push(self)
         return self
 
     def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
-        if Diagram._active_stack and Diagram._active_stack[-1] is self:
-            Diagram._active_stack.pop()
+        context.pop(self)
         if exc_type is None:
             self.solve()
 
