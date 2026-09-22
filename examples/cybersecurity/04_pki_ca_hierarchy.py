@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_pki_ca_hierarchy.svg"
-    png_file = out / "04_pki_ca_hierarchy.png"
-    readme_file = out / "04_pki_ca_hierarchy_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Public Key Infrastructure (PKI) Certificate Hierarchy", theme="high_contrast") as diag:
         with diag.group("Tier 0 Root Trust") as g_1:
             root_ca = diag.add(Shape("root_ca", "Offline Root CA", icon="vault", key="RSA 4096 / HSM", state="Air-Gapped"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         tls_ca >> diag.edge("Issues TLS Cert", style="solid") >> web_svr
         code_ca >> diag.edge("Issues Signing Cert", style="solid") >> dev_ws
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_pki_ca_hierarchy.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "04_pki_ca_hierarchy")["svg"]
 
 
 if __name__ == "__main__":

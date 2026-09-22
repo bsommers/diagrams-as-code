@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_single_rack_blade_chassis.svg"
-    png_file = out / "01_single_rack_blade_chassis.png"
-    readme_file = out / "01_single_rack_blade_chassis_README.md"
-
+def diagram() -> Diagram:
     with Diagram("High-Density Blade Server Enclosure", theme="iiot_dark_gold") as diag:
         with diag.group("Rack Enclosure 42U") as g_1:
             tor1 = diag.add(Shape("tor1", "Top-of-Rack Switch A", icon="router", speed="100GbE Uplinks"))
@@ -43,12 +38,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         chassis_mgmt >> diag.edge("Telemetry Bus", style="dotted") >> blade1
         chassis_mgmt >> diag.edge("Telemetry Bus", style="dotted") >> blade2
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_single_rack_blade_chassis.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "01_single_rack_blade_chassis")["svg"]
 
 
 if __name__ == "__main__":

@@ -95,6 +95,15 @@ class Rect:
         max_y = max(self.bottom, other.bottom)
         return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
 
+    def intersects(self, other: Rect) -> bool:
+        """Return True when the two rectangles' interiors overlap."""
+        return (
+            self.left < other.right
+            and other.left < self.right
+            and self.top < other.bottom
+            and other.top < self.bottom
+        )
+
     def expand(
         self,
         padding: Union[float, int, tuple[float, ...], list[float]],

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_mobile_client_sync.svg"
-    png_file = out / "06_mobile_client_sync.png"
-    readme_file = out / "06_mobile_client_sync_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Mobile Offline-First Database Sync", theme="nord") as diag:
         with diag.group("Mobile Client") as g_1:
             mobile_app = diag.add(Shape("mobile_app", "Field Technician App", icon="mobile", os="iOS / Android React Native"))
@@ -39,12 +34,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         sync_mgr >> diag.edge("TLS WebSocket Sync", style="solid") >> ws_gateway
         ws_gateway >> diag.edge("Commit Resolved Transactions", style="solid") >> cloud_db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_mobile_client_sync.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "06_mobile_client_sync")["svg"]
 
 
 if __name__ == "__main__":

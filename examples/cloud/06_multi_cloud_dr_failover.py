@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_multi_cloud_dr_failover.svg"
-    png_file = out / "06_multi_cloud_dr_failover.png"
-    readme_file = out / "06_multi_cloud_dr_failover_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Multi-Cloud Active-Passive Disaster Recovery", theme="nord") as diag:
         with diag.group("Traffic Routing") as g_1:
             dns_mgr = diag.add(Shape("dns_mgr", "Global Traffic Manager", icon="dns", check="5s Probe"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         azure_app >> diag.edge("Read Query", style="dashed") >> azure_db
         aws_db >> diag.edge("Cross-Cloud Replication", style="dotted") >> azure_db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_multi_cloud_dr_failover.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "06_multi_cloud_dr_failover")["svg"]
 
 
 if __name__ == "__main__":

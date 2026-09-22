@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_order_to_cash.svg"
-    png_file = out / "01_order_to_cash.png"
-    readme_file = out / "01_order_to_cash_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Order-to-Cash (O2C) Business Process", theme="monochrome") as diag:
         with diag.group("Customer Realm") as g_1:
             customer = diag.add(Shape("customer", "Purchasing Customer", icon="user", channel="B2B Ecommerce"))
@@ -47,12 +42,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         shipping >> diag.edge("Proof of Delivery", style="solid") >> invoice
         invoice >> diag.edge("Send Invoice", style="dashed") >> customer
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_order_to_cash.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "01_order_to_cash")["svg"]
 
 
 if __name__ == "__main__":

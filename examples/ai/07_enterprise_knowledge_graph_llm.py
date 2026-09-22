@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_enterprise_knowledge_graph_llm.svg"
-    png_file = out / "07_enterprise_knowledge_graph_llm.png"
-    readme_file = out / "07_enterprise_knowledge_graph_llm_README.md"
-
+def diagram() -> Diagram:
     with Diagram("GraphRAG & Knowledge Graph Augmented LLM", theme="pastel_light") as diag:
         with diag.group("Source Corpus") as g_1:
             raw_corpus = diag.add(Shape("raw_corpus", "Unstructured PDF / Confluence", icon="document", volume="100,000 Documents"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         graph_retriever >> diag.edge("Sub-graph Context", style="solid") >> synth_llm
         synth_llm >> diag.edge("Grounded Graph Synthesis", style="dashed") >> analyst
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_enterprise_knowledge_graph_llm.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "07_enterprise_knowledge_graph_llm")["svg"]
 
 
 if __name__ == "__main__":

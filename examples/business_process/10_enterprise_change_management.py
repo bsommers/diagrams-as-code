@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_enterprise_change_management.svg"
-    png_file = out / "10_enterprise_change_management.png"
-    readme_file = out / "10_enterprise_change_management_README.md"
-
+def diagram() -> Diagram:
     with Diagram("ITSM Enterprise Change Advisory Board (CAB)", theme="emerald") as diag:
         with diag.group("RFC Initiation") as g_1:
             engineer = diag.add(Shape("engineer", "Systems Engineer", icon="user", role="Cloud Platform Lead"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         maint_window >> diag.edge("Run Post-Change Verification", style="solid") >> health_verify
         health_verify >> diag.edge("Abnormal Signals Detected", style="dashed") >> rollback
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_enterprise_change_management.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "10_enterprise_change_management")["svg"]
 
 
 if __name__ == "__main__":

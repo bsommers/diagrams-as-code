@@ -9,12 +9,12 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 from iiot_diagrams import Diagram, Port
+from diagrams_as_code.output import render_all
+
+OUTPUT_STEM = "high_availability"
 
 
-def generate_high_availability(output_dir: Path | str = "output") -> Diagram:
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-
+def diagram() -> Diagram:
     diag = Diagram(
         "IIoT High Availability UNS",
         width=1200,
@@ -121,21 +121,13 @@ def generate_high_availability(output_dir: Path | str = "output") -> Diagram:
             arrow_tail=False,
         ) >> node3
 
-    svg_path = out_dir / "high_availability.svg"
-    png_path = out_dir / "high_availability.png"
-    readme_path = out_dir / "high_availability_README.md"
+    return diag
 
-    diag.render_svg(svg_path)
-    diag.render_png(png_path)
-    diag.generate_readme(
-        image_file="high_availability.svg",
-        output_path=readme_path,
-        include_connections=True,
-    )
 
-    print(f"Generated: {svg_path}")
-    print(f"Generated: {png_path}")
-    print(f"Generated: {readme_path}")
+def generate_high_availability(output_dir: Path | str = "output") -> Diagram:
+    diag = diagram()
+    for path in render_all(diag, output_dir, OUTPUT_STEM).values():
+        print(f"Generated: {path}")
     return diag
 
 

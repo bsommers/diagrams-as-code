@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_self_hosted_vllm_cluster.svg"
-    png_file = out / "10_self_hosted_vllm_cluster.png"
-    readme_file = out / "10_self_hosted_vllm_cluster_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Self-Hosted vLLM Ray Cluster with PagedAttention", theme="emerald") as diag:
         with diag.group("Load Balancing") as g_1:
             ingress_lb = diag.add(Shape("ingress_lb", "Traefik Ingress Router", icon="api_gateway", rate_limiting="Token Bucket"))
@@ -52,12 +47,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         worker2 >> diag.edge("Paged Attention Blocks", style="dashed") >> kv_cache
         vllm_router >> diag.edge("Report Latency & TTFT", style="dashed") >> metrics
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_self_hosted_vllm_cluster.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "10_self_hosted_vllm_cluster")["svg"]
 
 
 if __name__ == "__main__":

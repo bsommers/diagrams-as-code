@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_ha_firewall_cluster_carp_sync.svg"
-    png_file = out / "06_ha_firewall_cluster_carp_sync.png"
-    readme_file = out / "06_ha_firewall_cluster_carp_sync_README.md"
-
+def diagram() -> Diagram:
     with Diagram("High-Availability Active/Passive Firewall Cluster", theme="emerald") as diag:
         with diag.group("Public Ingress Zone") as g_1:
             wan_sw = diag.add(Shape("wan_sw", "WAN Ingress Switch", icon="switch", vip="198.51.100.1 VIP"))
@@ -43,12 +38,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         fw_pri >> diag.edge("Active Gateway", style="solid") >> lan_sw
         fw_sec >> diag.edge("Standby Gateway", style="dashed") >> lan_sw
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_ha_firewall_cluster_carp_sync.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "06_ha_firewall_cluster_carp_sync")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_iam_federation_saml_oidc.svg"
-    png_file = out / "09_iam_federation_saml_oidc.png"
-    readme_file = out / "09_iam_federation_saml_oidc_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Enterprise IAM Federation & SSO Pipeline", theme="monochrome") as diag:
         with diag.group("User Principal") as g_1:
             user_node = diag.add(Shape("user_node", "Corporate User", icon="user", browser="Chrome / Edge"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         idp_cloud >> diag.edge("SAML Assertion Post", style="solid") >> saas_app
         idp_cloud >> diag.edge("ID Token / PKCE", style="solid") >> portal_app
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_iam_federation_saml_oidc.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "09_iam_federation_saml_oidc")["svg"]
 
 
 if __name__ == "__main__":

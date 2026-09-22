@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_dwdm_metro_optical_ring.svg"
-    png_file = out / "07_dwdm_metro_optical_ring.png"
-    readme_file = out / "07_dwdm_metro_optical_ring_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Metro DWDM Optical Transport Ring", theme="iiot_light") as diag:
         with diag.group("West Datacenter Node") as g_1:
             roadm_w = diag.add(Shape("roadm_w", "ROADM Metro West", icon="fiber_optic", waves="96 C-Band Channels"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         roadm_s >> diag.edge("Structured Patching", style="solid") >> patch_bay
         patch_bay >> diag.edge("Client Hand-off", style="solid") >> transponder
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_dwdm_metro_optical_ring.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "07_dwdm_metro_optical_ring")["svg"]
 
 
 if __name__ == "__main__":

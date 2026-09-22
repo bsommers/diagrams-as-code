@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_water_wastewater_remote_rtu.svg"
-    png_file = out / "10_water_wastewater_remote_rtu.png"
-    readme_file = out / "10_water_wastewater_remote_rtu_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Water & Wastewater Remote RTU Mesh", theme="cyber_slate") as diag:
         with diag.group("Remote Lift Stations") as g_1:
             pump_sens = diag.add(Shape("pump_sens", "Well Level & Flow Sensor", icon="sensor", sensor="Submersible 4-20mA"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         cell_tower >> diag.edge("IPSec VPN Tunnel", style="solid") >> scada_hub
         scada_hub >> diag.edge("High Alarm Trigger", style="solid") >> alert_sys
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_water_wastewater_remote_rtu.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "10_water_wastewater_remote_rtu")["svg"]
 
 
 if __name__ == "__main__":

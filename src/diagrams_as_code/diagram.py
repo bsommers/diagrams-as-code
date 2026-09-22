@@ -1,6 +1,7 @@
 """Diagram context manager and fluent syntax engine."""
 from __future__ import annotations
 
+import dataclasses
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
@@ -8,10 +9,13 @@ from diagrams_as_code.bom import BOMGenerator
 from diagrams_as_code.connections import Edge, Port, Routing
 from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import Anchor, Size, UnitBasis
+from diagrams_as_code.geometry import Anchor, Point, Size, UnitBasis
 from diagrams_as_code.groups import Group
+from diagrams_as_code.layout.layered import DIRECTIONS
+from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
 from diagrams_as_code.theme import Theme, get_theme
+from diagrams_as_code import context, rasterize
 
 
 class _EdgeBuilder:
@@ -224,12 +228,13 @@ class _GroupContext:
 class Diagram:
     """Fluent context manager and container for directed diagrams."""
 
-    _active_stack: list[Diagram] = []
+    _active_stack: list[Diagram] = context._ACTIVE
+    LAYOUT_MODES = ("manual", "auto")
 
     @classmethod
     def get_current(cls) -> Optional[Diagram]:
         """Get the innermost active Diagram from the context stack."""
-        return cls._active_stack[-1] if cls._active_stack else None
+        return context.current()
 
     def __init__(
         self,
@@ -239,38 +244,80 @@ class Diagram:
         theme: Union[Theme, str] = "iiot_dark_gold",
         theme_overrides: Optional[dict[str, str]] = None,
         label_position: str = "inside",
+        layout: str = "manual",
+        direction: str = "LR",
+        layout_file: Optional[Union[str, Path]] = None,
+        rank_gap: float = 80.0,
+        node_gap: float = 40.0,
     ) -> None:
         self.title = title
         self.width = float(width)
         self.height = float(height)
         base_t = get_theme(theme)
         if theme_overrides:
-            fields = {
-                "name": f"{base_t.name}_custom",
-                "background": base_t.background,
-                "group_bg": base_t.group_bg,
-                "group_stroke": base_t.group_stroke,
-                "node_fill": base_t.node_fill,
-                "node_stroke": base_t.node_stroke,
-                "accent": base_t.accent,
-                "text": base_t.text,
-                "subtext": base_t.subtext,
-                "edge_color": base_t.edge_color,
-                "font_family": base_t.font_family,
-            }
-            fields.update(theme_overrides)
-            self.theme = Theme(**fields)
+            self.theme = dataclasses.replace(
+                base_t, name=f"{base_t.name}_custom", **theme_overrides
+            )
         else:
             self.theme = base_t
         self.label_position = label_position
         self.shapes: list[Shape] = []
         self.groups: list[Group] = []
         self.edges: list[Edge] = []
+        self.routes: dict[int, list[Point]] = {}
         self.solver = ConstraintSolver()
         self._active_group: Optional[Group] = None
         self._counter: int = 0
         self._is_solved: bool = False
+        self.layout = "manual"
+        self.direction = "LR"
+        self.layout_file: Optional[Path] = None
+        self.rank_gap = 80.0
+        self.node_gap = 40.0
+        self.configure(
+            layout=layout,
+            direction=direction,
+            layout_file=layout_file,
+            rank_gap=rank_gap,
+            node_gap=node_gap,
+        )
 
+    def configure(
+        self,
+        *,
+        layout: Optional[str] = None,
+        direction: Optional[str] = None,
+        theme: Optional[Union[Theme, str]] = None,
+        layout_file: Optional[Union[str, Path]] = None,
+        rank_gap: Optional[float] = None,
+        node_gap: Optional[float] = None,
+    ) -> Diagram:
+        """Change layout or theme settings; layout changes re-solve on next render."""
+        if layout is not None and layout not in self.LAYOUT_MODES:
+            raise ValueError(f"layout must be one of {self.LAYOUT_MODES}, got {layout!r}")
+        if direction is not None and direction not in DIRECTIONS:
+            raise ValueError(f"direction must be one of {DIRECTIONS}, got {direction!r}")
+        for name, gap in (("rank_gap", rank_gap), ("node_gap", node_gap)):
+            if gap is not None and gap < 0:
+                raise ValueError(f"{name} must be non-negative, got {gap}")
+        if theme is not None:
+            self.theme = get_theme(theme)
+        changes = {
+            "layout": layout,
+            "direction": direction,
+            "layout_file": Path(layout_file) if layout_file is not None else None,
+            "rank_gap": float(rank_gap) if rank_gap is not None else None,
+            "node_gap": float(node_gap) if node_gap is not None else None,
+        }
+        for name, value in changes.items():
+            if value is not None:
+                setattr(self, name, value)
+                self._is_solved = False
+        return self
+
+    def all_elements(self) -> list[Element]:
+        """Every shape and group, groups before their children, in declaration order."""
+        return self.solver.all_elements()
 
     @property
     def unit_basis(self) -> UnitBasis:
@@ -278,12 +325,11 @@ class Diagram:
         return UnitBasis(Size(self.width, self.height))
 
     def __enter__(self) -> Diagram:
-        Diagram._active_stack.append(self)
+        context.push(self)
         return self
 
     def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
-        if Diagram._active_stack and Diagram._active_stack[-1] is self:
-            Diagram._active_stack.pop()
+        context.pop(self)
         if exc_type is None:
             self.solve()
 
@@ -316,6 +362,7 @@ class Diagram:
             **kwargs,
         )
         s._diagram = self
+        s.explicit_id = id is not None
         self.shapes.append(s)
         self.solver.add(s)
         if self._active_group is not None:
@@ -345,6 +392,7 @@ class Diagram:
             metadata=metadata,
         )
         g._diagram = self
+        g.explicit_id = id is not None
         self.groups.append(g)
         self.solver.add(g)
         return _GroupContext(self, g)
@@ -448,38 +496,8 @@ class Diagram:
         return flat
 
     def solve(self) -> None:
-        """Solve all layout constraints and update group bounding boxes in bottom-up depth order."""
-        self.solver.solve()
-
-        def _depth(g: Group) -> int:
-            d = 0
-            curr = g.parent
-            while curr is not None:
-                d += 1
-                curr = curr.parent
-            return d
-
-        sorted_groups = sorted(self.groups, key=_depth, reverse=True)
-        for g in sorted_groups:
-            if g.is_auto_sized and g.children:
-                g.calculate_bounds()
-
-        # Check if root elements need framing (if bounds are negative, which clips off canvas)
-        all_elements = self.solver._collect_all_elements()
-        if all_elements:
-            roots = [e for e in all_elements if getattr(e, "parent", None) is None]
-            if roots:
-                min_x = min(e.bounds.x for e in roots)
-                min_y = min(e.bounds.y for e in roots)
-                if min_x < 0.0 or min_y < 0.0:
-                    offset_x = max(0.0, -min_x + 60.0) if min_x < 0.0 else 0.0
-                    offset_y = max(0.0, -min_y + 80.0) if min_y < 0.0 else 0.0
-                    for r in roots:
-                        r.translate(offset_x, offset_y)
-                    for g in sorted_groups:
-                        if g.is_auto_sized and g.children:
-                            g.calculate_bounds()
-
+        """Place every element: auto-layout, layout file, constraints, framing."""
+        run_layout(self)
         self._is_solved = True
 
     def render_svg(self, path: Optional[Union[str, Path]] = None) -> str:
@@ -493,6 +511,7 @@ class Diagram:
             edges=self.edges,
             width=self.width,
             height=self.height,
+            routes=self.routes,
         )
         if path is not None:
             p = Path(path)
@@ -505,65 +524,7 @@ class Diagram:
         svg_content = self.render_svg()
         p = Path(path)
         p.parent.mkdir(parents=True, exist_ok=True)
-
-        try:
-            import resvg_py  # type: ignore
-
-            png_bytes: bytes = resvg_py.svg_to_bytes(svg_content)
-            p.write_bytes(png_bytes)
-            return png_bytes
-        except ImportError:
-            pass
-
-        try:
-            import cairosvg  # type: ignore
-
-            cairo_bytes: bytes = cairosvg.svg2png(
-                bytestring=svg_content.encode("utf-8"), write_to=str(p)
-            )
-            return cairo_bytes
-        except ImportError:
-            pass
-
-        import shutil
-        import subprocess
-
-        # Try system inkscape
-        inkscape_bin = shutil.which("inkscape")
-        if inkscape_bin:
-            temp_svg = p.with_suffix(".temp.svg")
-            try:
-                temp_svg.write_text(svg_content, encoding="utf-8")
-                res = subprocess.run(
-                    [inkscape_bin, str(temp_svg), "-o", str(p)],
-                    capture_output=True,
-                )
-                if res.returncode == 0 and p.exists():
-                    return p.read_bytes()
-            finally:
-                if temp_svg.exists():
-                    temp_svg.unlink()
-
-        # Try system ImageMagick
-        magick_bin = shutil.which("magick") or shutil.which("convert")
-        if magick_bin:
-            temp_svg = p.with_suffix(".temp.svg")
-            try:
-                temp_svg.write_text(svg_content, encoding="utf-8")
-                res = subprocess.run(
-                    [magick_bin, str(temp_svg), str(p)],
-                    capture_output=True,
-                )
-                if res.returncode == 0 and p.exists():
-                    return p.read_bytes()
-            finally:
-                if temp_svg.exists():
-                    temp_svg.unlink()
-
-        raise RuntimeError(
-            "PNG rendering requires 'resvg-py', 'cairosvg', or system utilities ('inkscape'/'magick'). "
-            "Install with: uv add --dev resvg-py"
-        )
+        return rasterize.svg_to_png(svg_content, p)
 
     @property
     def bom(self) -> BOMGenerator:

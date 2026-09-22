@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "08_ospf_multi_area_enterprise.svg"
-    png_file = out / "08_ospf_multi_area_enterprise.png"
-    readme_file = out / "08_ospf_multi_area_enterprise_README.md"
-
+def diagram() -> Diagram:
     with Diagram("OSPF Multi-Area Enterprise Routing", theme="iiot_light") as diag:
         with diag.group("Area 0 Backbone") as g_1:
             bb_rtr1 = diag.add(Shape("bb_rtr1", "Backbone Router A", icon="core_router", role="Backbone Router"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         bb_rtr2 >> diag.edge("Area 0 Trunk", style="solid") >> asbr_dc
         asbr_dc >> diag.edge("eBGP Redistribution", style="solid") >> bgp_peer
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("08_ospf_multi_area_enterprise.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "08_ospf_multi_area_enterprise")["svg"]
 
 
 if __name__ == "__main__":

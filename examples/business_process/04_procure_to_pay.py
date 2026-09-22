@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_procure_to_pay.svg"
-    png_file = out / "04_procure_to_pay.png"
-    readme_file = out / "04_procure_to_pay_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Procure-to-Pay (P2P) Sourcing Process", theme="solarized_light") as diag:
         with diag.group("Requisition") as g_1:
             requester = diag.add(Shape("requester", "Internal Department Lead", icon="user", dept="Engineering"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         vendor >> diag.edge("Deliver Goods & Invoice", style="solid") >> match_3way
         match_3way >> diag.edge("Approve Payment", style="solid") >> ap_disburse
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_procure_to_pay.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "04_procure_to_pay")["svg"]
 
 
 if __name__ == "__main__":

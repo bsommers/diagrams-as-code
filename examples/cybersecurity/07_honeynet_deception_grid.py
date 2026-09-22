@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_honeynet_deception_grid.svg"
-    png_file = out / "07_honeynet_deception_grid.png"
-    readme_file = out / "07_honeynet_deception_grid_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Deception Technology Honeynet Grid", theme="cyber_slate") as diag:
         with diag.group("Attacker Vector") as g_1:
             adversary = diag.add(Shape("adversary", "Adversary Terminal", icon="terminal", origin="Compromised Node"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         decoy_db >> diag.edge("Honeytoken Tripwire", style="solid") >> honey_siem
         honey_siem >> diag.edge("Trigger Block", style="solid") >> blackhole
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_honeynet_deception_grid.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "07_honeynet_deception_grid")["svg"]
 
 
 if __name__ == "__main__":

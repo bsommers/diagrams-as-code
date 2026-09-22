@@ -9,12 +9,12 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 from diagrams_as_code import Diagram, Port
+from diagrams_as_code.output import render_all
+
+OUTPUT_STEM = "main_architecture"
 
 
-def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-
+def diagram() -> Diagram:
     diag = Diagram(
         "IIoT Reference Architecture",
         width=1200,
@@ -103,22 +103,13 @@ def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
             target_port=Port.WEST,
         ) >> scada
 
-    svg_file = out_dir / "main_architecture.svg"
-    png_file = out_dir / "main_architecture.png"
-    readme_file = out_dir / "main_README.md"
+    return diag
 
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme(
-        image_file="main_architecture.svg",
-        output_path=readme_file,
-        include_connections=True,
-    )
 
-    print(f"Generated: {svg_file}")
-    print(f"Generated: {png_file}")
-    print(f"Generated: {readme_file}")
-
+def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
+    diag = diagram()
+    for path in render_all(diag, output_dir, OUTPUT_STEM, readme_name="main_README.md").values():
+        print(f"Generated: {path}")
     return diag
 
 

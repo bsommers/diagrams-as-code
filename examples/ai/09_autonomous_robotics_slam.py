@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_autonomous_robotics_slam.svg"
-    png_file = out / "09_autonomous_robotics_slam.png"
-    readme_file = out / "09_autonomous_robotics_slam_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Autonomous Mobile Robot (AMR) SLAM Engine", theme="emerald") as diag:
         with diag.group("Sensor Array") as g_1:
             lidar = diag.add(Shape("lidar", "3D Flash LiDAR", icon="sensor", frequency="20Hz 128-Beam"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         slam >> diag.edge("Robot Pose & Global Map", style="solid") >> planner
         planner >> diag.edge("Velocity Commands (Twist)", style="solid") >> motors
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_autonomous_robotics_slam.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "09_autonomous_robotics_slam")["svg"]
 
 
 if __name__ == "__main__":

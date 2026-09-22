@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal, Optional, Union
 from diagrams_as_code.geometry import Anchor, Rect
+from diagrams_as_code import context
 
 
 class Element:
@@ -26,6 +27,7 @@ class Element:
         self.metadata.update(kwargs)
         self.constraints: list[dict[str, Any]] = []
         self._diagram: Optional[Any] = None
+        self.explicit_id: bool = True
 
     def translate(self, dx: float, dy: float) -> None:
         """Translate element bounds by delta (dx, dy)."""
@@ -47,9 +49,7 @@ class Element:
             return self._diagram
         if other is not None and getattr(other, "_diagram", None) is not None:
             return other._diagram
-        from diagrams_as_code.diagram import Diagram
-
-        return Diagram.get_current()
+        return context.current()
 
     def __rshift__(self, other: Any) -> Any:
         """Connect this element to target using >> operator."""

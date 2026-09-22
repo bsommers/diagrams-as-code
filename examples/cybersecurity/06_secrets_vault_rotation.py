@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_secrets_vault_rotation.svg"
-    png_file = out / "06_secrets_vault_rotation.png"
-    readme_file = out / "06_secrets_vault_rotation_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Automated Secrets Vault & Credential Rotation", theme="dracula") as diag:
         with diag.group("Workload Layer") as g_1:
             k8s_app = diag.add(Shape("k8s_app", "Kubernetes Workload", icon="container", identity="SPIFFE / JWT"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         rotator >> diag.edge("Rotate Password", style="solid") >> prod_db
         rotator >> diag.edge("Commit New Secret", style="solid") >> vault_srv
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_secrets_vault_rotation.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "06_secrets_vault_rotation")["svg"]
 
 
 if __name__ == "__main__":

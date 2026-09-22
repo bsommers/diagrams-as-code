@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "02_soc_siem_pipeline.svg"
-    png_file = out / "02_soc_siem_pipeline.png"
-    readme_file = out / "02_soc_siem_pipeline_README.md"
-
+def diagram() -> Diagram:
     with Diagram("SOC & SIEM Telemetry Analytics Pipeline", theme="crimson") as diag:
         with diag.group("Telemetry Sources") as g_1:
             edr = diag.add(Shape("edr", "Endpoint EDR Fleet", icon="malware_scan", agents="5000 Nodes"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         siem >> diag.edge("Case Escalation", style="solid") >> soc
         soar >> diag.edge("Status Report", style="dashed") >> soc
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("02_soc_siem_pipeline.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "02_soc_siem_pipeline")["svg"]
 
 
 if __name__ == "__main__":

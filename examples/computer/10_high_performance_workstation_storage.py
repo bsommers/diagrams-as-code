@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_high_performance_workstation_storage.svg"
-    png_file = out / "10_high_performance_workstation_storage.png"
-    readme_file = out / "10_high_performance_workstation_storage_README.md"
-
+def diagram() -> Diagram:
     with Diagram("High-Performance Compute Storage Pipeline", theme="cyber_slate") as diag:
         with diag.group("Compute Subsystem") as g_1:
             cpu_host = diag.add(Shape("cpu_host", "AMD Threadripper PRO 64-Core", icon="chip", pcie="128 Lanes PCIe Gen5"))
@@ -42,12 +37,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         gpu_accel >> diag.edge("RDMA Direct Pass", style="solid") >> nic_100g
         nic_100g >> diag.edge("100GbE Fiber Link", style="solid") >> nvme_over_fabrics
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_high_performance_workstation_storage.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "10_high_performance_workstation_storage")["svg"]
 
 
 if __name__ == "__main__":

@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "05_developer_terminal_environment.svg"
-    png_file = out / "05_developer_terminal_environment.png"
-    readme_file = out / "05_developer_terminal_environment_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Modern Developer Terminal Toolchain", theme="nord") as diag:
         with diag.group("User Shell") as g_1:
             terminal = diag.add(Shape("terminal", "GPU Accelerated Terminal", icon="terminal", emulator="Alacritty / WezTerm"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         neovim >> diag.edge("Test Containers", style="dashed") >> docker_sock
         docker_sock >> diag.edge("Spin Up DB", style="solid") >> local_db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("05_developer_terminal_environment.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "05_developer_terminal_environment")["svg"]
 
 
 if __name__ == "__main__":

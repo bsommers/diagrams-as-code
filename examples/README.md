@@ -1,18 +1,19 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 80 production-grade architecture and workflow diagrams spanning 8 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `output/<domain>/`.
+This directory contains 88 production-grade architecture and workflow diagrams spanning 8 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `output/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Diagrams:** 80
+- **Total Diagrams:** 88
 - **Domains Covered:** 8 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`)
-- **Diagrams per Domain:** 10
+- **Diagrams per Domain:** 11 (10 manually placed + 1 auto-layout)
 - **Themes Demonstrated:** 13 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`)
-- **Theme Variety per Domain:** 5 distinct varieties per domain (3-5 required)
+- **Theme Variety per Domain:** at least 3 distinct varieties per domain
 - **Built-in Domain Vector Icons:** 60 custom open-source SVG vector icons
 - **Zero External Dependencies:** 100% Python standard library core engine execution
+- **Auto-Layout Examples:** each domain's `11_auto_*.py` uses `Diagram(layout="auto")` — no `.at()` / `.right_of()` calls; the engine derives every position from the edge graph
 
 
 ---
@@ -33,6 +34,7 @@ Modern distributed, serverless, hybrid, and multi-region cloud topologies.
 | 08 | [`08_zero_trust_ingress_security.py`](cloud/08_zero_trust_ingress_security.py) | Zero Trust Ingress Security Stack | `cyber_slate` | Enterprise | WAF/DDoS Shield, Mutual TLS Gateway, IdP, Internal Apps |
 | 09 | [`09_iot_cloud_fleet_management.py`](cloud/09_iot_cloud_fleet_management.py) | Global IoT Cloud Fleet Management | `nord` | Advanced | Edge Gateways, MQTT Ingestion Broker, TimeSeries DB, Telemetry |
 | 10 | [`10_global_enterprise_backbone.py`](cloud/10_global_enterprise_backbone.py) | Global Cloud Enterprise Backbone | `iiot_dark_gold` | Enterprise | Cloud WAN Hub, Direct Connect, Enterprise VPCs, Multi-Region Transit |
+| 11 | [`11_auto_serverless_pipeline.py`](cloud/11_auto_serverless_pipeline.py) | Auto-Laid-Out Serverless Pipeline | `nord` | Moderate (auto-layout) | Client, API Gateway, Order/Billing Functions, Event Queue, Orders DB |
 
 ---
 
@@ -52,6 +54,7 @@ Large language model pipelines, autonomous agent swarms, vector retrieval, distr
 | 08 | [`08_ai_guardrails_safety_eval.py`](ai/08_ai_guardrails_safety_eval.py) | AI Safety & Alignment Guardrail Filter | `cyber_slate` | Moderate | Prompt Injection Filter, PII Masking, LLM Core, Hallucination Scorer |
 | 09 | [`09_autonomous_robotics_slam.py`](ai/09_autonomous_robotics_slam.py) | Autonomous Mobile Robot SLAM & Perception Stack | `emerald` | Enterprise | LiDAR & Stereo Depth, Visual Odometry, EKF State Estimator, Costmap Planner |
 | 10 | [`10_self_hosted_vllm_cluster.py`](ai/10_self_hosted_vllm_cluster.py) | High-Throughput vLLM Serving Cluster | `monochrome` | Advanced | Reverse Proxy Router, PagedAttention vLLM Workers, Model Storage Cache |
+| 11 | [`11_auto_training_pipeline.py`](ai/11_auto_training_pipeline.py) | Auto-Laid-Out Training Pipeline | `dracula` | Moderate (auto-layout) | Raw Lake, Feature Store, Trainer, Experiment Tracker, Model Registry, Inference API |
 
 ---
 
@@ -71,6 +74,7 @@ Workstations, home labs, embedded RTOS, industrial PLCs, edge gateways, and deve
 | 08 | [`08_vdi_thin_client_fleet.py`](computer/08_vdi_thin_client_fleet.py) | Enterprise Virtual Desktop (VDI) Thin Client Fleet | `blueprint` | Enterprise | Thin Client Terminals, Secure Gateway, VDI Connection Broker, Hyper-V Host |
 | 09 | [`09_scada_hmi_control_station.py`](computer/09_scada_hmi_control_station.py) | SCADA Supervisory HMI Station | `iiot_dark_gold` | Advanced | Dual HMI Displays, Industrial PC, Redundant SCADA Servers, Plant Network |
 | 10 | [`10_high_performance_workstation_storage.py`](computer/10_high_performance_workstation_storage.py) | High-Performance Workstation NVMe Storage Tier | `crimson` | Advanced | Threadripper CPU, PCIe Gen5 Switch, U.2 NVMe RAID Array, 100GbE NIC |
+| 11 | [`11_auto_workstation_stack.py`](computer/11_auto_workstation_stack.py) | Auto-Laid-Out Workstation Stack | `solarized_light` | Simple (auto-layout) | Applications, Runtime, Kernel, Drivers, Hardware |
 
 ---
 
@@ -90,6 +94,7 @@ High-density compute pods, SAN fabrics, leaf-spine network fabrics, power distri
 | 08 | [`08_high_density_ai_compute_pod.py`](datacenter/08_high_density_ai_compute_pod.py) | High-Density AI GPU SuperPOD Architecture | `iiot_dark_gold` | Enterprise | In-Row Liquid Cooling CDU, 8x NVIDIA HGX Nodes, Quantum InfiniBand Fabric |
 | 09 | [`09_edge_micro_datacenter.py`](datacenter/09_edge_micro_datacenter.py) | Ruggedized Edge Micro-Datacenter (MDC) | `cyber_slate` | Moderate | NEMA-4 Enclosure, Edge Converged Host, Integrated Lithium UPS, LTE Failover |
 | 10 | [`10_tier4_concurrently_maintainable.py`](datacenter/10_tier4_concurrently_maintainable.py) | Tier IV Concurrently Maintainable Datacenter | `monochrome` | Enterprise | Dual Substation Feeds, Independent Power Paths A/B, Isolated Cooling Loops |
+| 11 | [`11_auto_spine_leaf.py`](datacenter/11_auto_spine_leaf.py) | Auto-Laid-Out Spine-Leaf Fabric | `blueprint` | Moderate (auto-layout) | Spine 1-2, Leaf 1-3, Rack A-C |
 
 ---
 
@@ -109,6 +114,7 @@ Cross-functional enterprise workflows, approval gates, compliance audits, procur
 | 08 | [`08_supply_chain_rfq_fulfillment.py`](business_process/08_supply_chain_rfq_fulfillment.py) | Supply Chain RFQ & Supplier Selection | `blueprint` | Advanced | Bill of Materials Intake, Vendor Bidding Portal, Cost/Lead-Time Matrix, Contract Award |
 | 09 | [`09_claims_processing_fraud_detection.py`](business_process/09_claims_processing_fraud_detection.py) | Insurance Claims Triage & Fraud Detection | `crimson` | Enterprise | FNOL Filing, ML Fraud Score Model, Special Investigation Unit (SIU), Fast-Track Pay |
 | 10 | [`10_enterprise_change_management.py`](business_process/10_enterprise_change_management.py) | Enterprise ITIL Change Advisory Board (CAB) | `monochrome` | Advanced | Change Request (RFC), Risk Assessment Matrix, CAB Review Meeting, Scheduled Maintenance |
+| 11 | [`11_auto_order_to_cash.py`](business_process/11_auto_order_to_cash.py) | Auto-Laid-Out Order to Cash | `pastel_light` | Moderate (auto-layout) | Order Received, Credit Check, Fulfil Order, Invoice, Payment Received, Collections |
 
 ---
 
@@ -128,6 +134,7 @@ Threat hunting, Zero Trust access, SIEM/SOAR telemetry, PKI trust hierarchy, sec
 | 08 | [`08_ids_ips_inline_inspection.py`](cybersecurity/08_ids_ips_inline_inspection.py) | Inline IDS/IPS Deep Packet Inspection | `iiot_dark_gold` | Enterprise | Border Router, Network Packet Broker TAP, ASIC SSL Decryptor, Suricata IPS, Core Switch |
 | 09 | [`09_iam_federation_saml_oidc.py`](cybersecurity/09_iam_federation_saml_oidc.py) | Enterprise IAM Federation & SSO Pipeline | `monochrome` | Moderate | Corporate User, FIDO2 WebAuthn Key, Okta/Entra IdP, LDAP/AD, SaaS App, OIDC Portal |
 | 10 | [`10_ransomware_containment_airgap.py`](cybersecurity/10_ransomware_containment_airgap.py) | Ransomware Defense & Optical Air-Gapped Vault | `crimson` | Enterprise | Production SAN, Backup Master, Optical Data Diode (Tx-Only), Immutable WORM Vault, Cleanroom Sandbox |
+| 11 | [`11_auto_soc_pipeline.py`](cybersecurity/11_auto_soc_pipeline.py) | Auto-Laid-Out SOC Detection Pipeline | `cyber_slate` | Moderate (auto-layout) | Endpoints, Firewalls, Log Collector, Correlation Engine, SOAR, Analyst Console |
 
 ---
 
@@ -147,6 +154,7 @@ Campus LAN switching, multihomed BGP peering, provider MPLS L3VPN, EVPN-VXLAN da
 | 08 | [`08_ospf_multi_area_enterprise.py`](network_engineering/08_ospf_multi_area_enterprise.py) | OSPF Multi-Area Enterprise Routing | `monochrome` | Advanced | Area 0 Backbone Core Routers, Area 10 Campus ABR, Datacenter ASBR, BGP Redistribution |
 | 09 | [`09_radius_802_1x_nac.py`](network_engineering/09_radius_802_1x_nac.py) | 802.1X Network Access Control (NAC) & RADIUS | `nord` | Moderate | Supplicant Laptop, 802.1X Authenticator Switch, FreeRADIUS/ISE, Active Directory, Dynamic VLANs |
 | 10 | [`10_dns_anycast_authoritative_mesh.py`](network_engineering/10_dns_anycast_authoritative_mesh.py) | Global Anycast Authoritative DNS Network | `cyber_slate` | Enterprise | Global DNS Clients, US-East & EU-Central BGP Anycast PoPs, Knot/BIND Resolvers, Master Zone DB |
+| 11 | [`11_auto_campus_core.py`](network_engineering/11_auto_campus_core.py) | Auto-Laid-Out Campus Core | `emerald` | Moderate (auto-layout) | Internet, Edge Router, Core Switch, Distribution A/B, Access A/B |
 
 ---
 
@@ -166,6 +174,7 @@ Edge-to-cloud UNS architectures, high-availability broker clusters, Sparkplug B 
 | 08 | [`08_automated_guided_vehicle_fleet.py`](iiot/08_automated_guided_vehicle_fleet.py) | AGV Fleet Telemetry & Traffic Management | `nord` | Advanced | AGV Forklift & Tugger Units, Industrial Wi-Fi Mesh, Fleet Traffic Manager |
 | 09 | [`09_cold_chain_environmental_telemetry.py`](iiot/09_cold_chain_environmental_telemetry.py) | Cold Chain Environmental Monitoring | `nord` | Moderate | Freezer & Chiller Probes, LoRaWAN Gateway, 21 CFR Part 11 Audit Datastore |
 | 10 | [`10_water_wastewater_remote_rtu.py`](iiot/10_water_wastewater_remote_rtu.py) | Water & Wastewater Remote RTU Mesh | `blueprint` | Advanced | Submersible Level Sensors, Solar-Powered RTU, Cellular LTE-M, Central SCADA |
+| 11 | [`11_auto_uns_backbone.py`](iiot/11_auto_uns_backbone.py) | Auto-Laid-Out UNS Backbone | `iiot_dark_gold` | Moderate (auto-layout) | PLC, Sensor Array, Edge Gateway, MQTT Broker, Historian, Dashboard |
 
 ---
 
@@ -174,12 +183,7 @@ Edge-to-cloud UNS architectures, high-availability broker clusters, Sparkplug B 
 To regenerate all diagrams and documentation artifacts across all domains:
 
 ```bash
-uv run python -c "
-import subprocess, glob, sys
-for script in sorted(glob.glob('examples/*/*.py')):
-    print(f'Building {script}...')
-    subprocess.run([sys.executable, script], check=True)
-"
+uv run diagrams-as-code render examples --out output --format svg,png,bom
 ```
 
 To run automated verification tests across the entire gallery:

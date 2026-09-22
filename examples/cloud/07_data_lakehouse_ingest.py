@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_data_lakehouse_ingest.svg"
-    png_file = out / "07_data_lakehouse_ingest.png"
-    readme_file = out / "07_data_lakehouse_ingest_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Enterprise Cloud Data Lakehouse Ingest", theme="cyber_slate") as diag:
         with diag.group("Data Sources") as g_1:
             producers = diag.add(Shape("producers", "Event Producers", icon="mobile", protocol="HTTPS Webhooks"))
@@ -51,12 +46,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         glue >> diag.edge("ETL Transform", style="solid") >> s3_curated
         athena >> diag.edge("Direct SQL", style="solid") >> s3_curated
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_data_lakehouse_ingest.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "07_data_lakehouse_ingest")["svg"]
 
 
 if __name__ == "__main__":

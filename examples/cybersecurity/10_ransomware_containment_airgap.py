@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "10_ransomware_containment_airgap.svg"
-    png_file = out / "10_ransomware_containment_airgap.png"
-    readme_file = out / "10_ransomware_containment_airgap_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Ransomware Defense & Optical Air-Gapped Vault", theme="monochrome") as diag:
         with diag.group("Primary Datacenter") as g_1:
             prod_san = diag.add(Shape("prod_san", "Production SAN Volume", icon="storage_array", storage="NVMe-oF"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         diode >> diag.edge("Zero-ACK Pulse", style="solid") >> immutable_vault
         immutable_vault >> diag.edge("Read-Only Mount", style="solid") >> clean_vm
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("10_ransomware_containment_airgap.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "10_ransomware_containment_airgap")["svg"]
 
 
 if __name__ == "__main__":

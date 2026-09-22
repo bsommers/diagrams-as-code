@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "07_disaster_recovery_datacenter_pair.svg"
-    png_file = out / "07_disaster_recovery_datacenter_pair.png"
-    readme_file = out / "07_disaster_recovery_datacenter_pair_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Metro Disaster Recovery Datacenter Pair", theme="crimson") as diag:
         with diag.group("East Datacenter (Active)") as g_1:
             dc_east_compute = diag.add(Shape("dc_east_compute", "Primary DC Compute Farm", icon="cluster", vms="2,500 Production VMs"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
         dr_orchestrator >> diag.edge("Automated Power On", style="dashed") >> dc_west_compute
         dr_orchestrator >> diag.edge("Promote LUNs", style="dashed") >> dc_west_san
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("07_disaster_recovery_datacenter_pair.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/datacenter") -> Path:
+    return render_all(diagram(), output_dir, "07_disaster_recovery_datacenter_pair")["svg"]
 
 
 if __name__ == "__main__":

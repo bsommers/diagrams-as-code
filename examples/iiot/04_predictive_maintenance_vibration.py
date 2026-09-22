@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_predictive_maintenance_vibration.svg"
-    png_file = out / "04_predictive_maintenance_vibration.png"
-    readme_file = out / "04_predictive_maintenance_vibration_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Predictive Maintenance Vibration Analysis", theme="blueprint") as diag:
         with diag.group("Rotary Equipment") as g_1:
             sensor_x = diag.add(Shape("sensor_x", "3-Axis Accelerometer", icon="sensor", sampling="10kHz", axis="X/Y/Z"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         edge_dsp >> diag.edge("OPC UA Stream", style="solid") >> historian
         edge_dsp >> diag.edge("MQTT TLS", style="solid") >> cloud_ml
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_predictive_maintenance_vibration.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "04_predictive_maintenance_vibration")["svg"]
 
 
 if __name__ == "__main__":

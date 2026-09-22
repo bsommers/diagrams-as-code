@@ -3,11 +3,13 @@ from __future__ import annotations
 
 import html
 import re
-from typing import Any, Optional, Sequence
+from typing import Any, Mapping, Optional, Sequence
 
 from diagrams_as_code.connections import Edge
 from diagrams_as_code.elements import Element, Shape
+from diagrams_as_code.geometry import Point
 from diagrams_as_code.groups import Group
+from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
 from diagrams_as_code.router import OrthogonalRouter
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
@@ -76,6 +78,7 @@ class SVGRenderer:
         edges: Optional[Sequence[Edge]] = None,
         width: float = 1200.0,
         height: float = 800.0,
+        routes: Optional[Mapping[int, list[Point]]] = None,
     ) -> str:
         """Render complete SVG string for provided diagram elements and connections."""
         element_list = list(elements) if elements is not None else []
@@ -162,7 +165,7 @@ class SVGRenderer:
 
         # 3. Render Edges
         for e in edge_list:
-            pts = self.router.route(e)
+            pts = routes[id(e)] if routes is not None and id(e) in routes else self.router.route(e)
             if len(pts) < 2:
                 continue
 
@@ -293,7 +296,7 @@ class SVGRenderer:
                         f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
                     )
                 if el.label:
-                    text_y = b.y + b.height + 14.0
+                    text_y = b.y + b.height + LABEL_BELOW_OFFSET
                     lines.append(
                         f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
                         f'fill="{text_color}" font-family="{self.theme.font_family}" '
@@ -312,7 +315,7 @@ class SVGRenderer:
                         f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
                     )
                 if el.label:
-                    text_y = b.y + b.height + 14.0
+                    text_y = b.y + b.height + LABEL_BELOW_OFFSET
                     char_budget = max(14, int(max(b.width, 100.0) / 7.0))
                     label_lines = self.wrap_text(el.label, max_chars=char_budget)
                     if len(label_lines) <= 1:

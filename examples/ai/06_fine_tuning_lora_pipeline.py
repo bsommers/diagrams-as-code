@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/ai") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_fine_tuning_lora_pipeline.svg"
-    png_file = out / "06_fine_tuning_lora_pipeline.png"
-    readme_file = out / "06_fine_tuning_lora_pipeline_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Foundation Model LoRA Fine-Tuning Pipeline", theme="cyber_slate") as diag:
         with diag.group("Input Artifacts") as g_1:
             base_model = diag.add(Shape("base_model", "Base Llama-3 70B Weights", icon="model", precision="FP16 Baseline"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/ai") -> Path:
         adapter >> diag.edge("Fuse & Quantize", style="solid") >> quantizer
         quantizer >> diag.edge("Register Model Package", style="solid") >> registry
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_fine_tuning_lora_pipeline.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/ai") -> Path:
+    return render_all(diagram(), output_dir, "06_fine_tuning_lora_pipeline")["svg"]
 
 
 if __name__ == "__main__":

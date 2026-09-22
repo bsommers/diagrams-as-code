@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_zero_trust_ztna.svg"
-    png_file = out / "03_zero_trust_ztna.png"
-    readme_file = out / "03_zero_trust_ztna_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Zero Trust Network Access (ZTNA) Architecture", theme="high_contrast") as diag:
         with diag.group("Endpoint Tier") as g_1:
             employee = diag.add(Shape("employee", "Remote Employee", icon="user", auth="MFA Challenge"))
@@ -44,12 +39,11 @@ def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
         ztna_broker >> diag.edge("Session Grant", style="solid") >> app_gw
         app_gw >> diag.edge("Local Proxy", style="solid") >> corp_crm
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_zero_trust_ztna.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cybersecurity") -> Path:
+    return render_all(diagram(), output_dir, "03_zero_trust_ztna")["svg"]
 
 
 if __name__ == "__main__":

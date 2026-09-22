@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "04_vxlan_evpn_datacenter_fabric.svg"
-    png_file = out / "04_vxlan_evpn_datacenter_fabric.png"
-    readme_file = out / "04_vxlan_evpn_datacenter_fabric_README.md"
-
+def diagram() -> Diagram:
     with Diagram("EVPN-VXLAN Datacenter Spine-Leaf Fabric", theme="nord") as diag:
         with diag.group("Spine Layer (Underlay)") as g_1:
             spine1 = diag.add(Shape("spine1", "Spine Switch 01", icon="switch", speed="400GbE QSFP-DD"))
@@ -45,12 +40,11 @@ def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path
         leaf1 >> diag.edge("25G MLAG", style="solid") >> host1
         leaf2 >> diag.edge("25G MLAG", style="solid") >> host2
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("04_vxlan_evpn_datacenter_fabric.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/network_engineering") -> Path:
+    return render_all(diagram(), output_dir, "04_vxlan_evpn_datacenter_fabric")["svg"]
 
 
 if __name__ == "__main__":

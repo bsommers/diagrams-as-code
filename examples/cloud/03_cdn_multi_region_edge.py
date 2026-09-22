@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_cdn_multi_region_edge.svg"
-    png_file = out / "03_cdn_multi_region_edge.png"
-    readme_file = out / "03_cdn_multi_region_edge_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Global Edge CDN & Origin Distribution", theme="solarized_light") as diag:
         with diag.group("Global Users") as g_1:
             user_na = diag.add(Shape("user_na", "North America Clients", icon="user", latency="<15ms"))
@@ -49,12 +44,11 @@ def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
         cdn >> diag.edge("Static Cache", style="solid") >> s3_static
         cdn >> diag.edge("API Forward", style="solid") >> alb_api
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_cdn_multi_region_edge.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/cloud") -> Path:
+    return render_all(diagram(), output_dir, "03_cdn_multi_region_edge")["svg"]
 
 
 if __name__ == "__main__":

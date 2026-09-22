@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_cold_chain_environmental_telemetry.svg"
-    png_file = out / "09_cold_chain_environmental_telemetry.png"
-    readme_file = out / "09_cold_chain_environmental_telemetry_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Cold Chain Environmental Monitoring", theme="cyber_slate") as diag:
         with diag.group("Refrigerated Zones") as g_1:
             temp_probe1 = diag.add(Shape("temp_probe1", "Freezer Probe (-30C)", icon="sensor", accuracy="+-0.1C"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
         hum_probe >> diag.edge("LoRa Wireless", style="solid") >> lora_gw
         lora_gw >> diag.edge("HTTPS Ingest", style="solid") >> audit_db
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_cold_chain_environmental_telemetry.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+    return render_all(diagram(), output_dir, "09_cold_chain_environmental_telemetry")["svg"]
 
 
 if __name__ == "__main__":

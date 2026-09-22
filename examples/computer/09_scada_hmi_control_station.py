@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "09_scada_hmi_control_station.svg"
-    png_file = out / "09_scada_hmi_control_station.png"
-    readme_file = out / "09_scada_hmi_control_station_README.md"
-
+def diagram() -> Diagram:
     with Diagram("SCADA Dual-Console Operator Control Station", theme="cyber_slate") as diag:
         with diag.group("Control Room") as g_1:
             hmi_left = diag.add(Shape("hmi_left", "Primary Operator Touchscreen", icon="dashboard", display="32-inch Industrial Touch"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         scada_pri >> diag.edge("Heartbeat Sync", style="dotted") >> scada_sec
         scada_pri >> diag.edge("Serial DNP3 Over IP", style="solid") >> field_rtu
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("09_scada_hmi_control_station.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "09_scada_hmi_control_station")["svg"]
 
 
 if __name__ == "__main__":

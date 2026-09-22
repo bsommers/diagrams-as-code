@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "01_workstation_peripherals.svg"
-    png_file = out / "01_workstation_peripherals.png"
-    readme_file = out / "01_workstation_peripherals_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Professional Workstation Hardware Topology", theme="iiot_light") as diag:
         with diag.group("Compute Core") as g_1:
             pc_host = diag.add(Shape("pc_host", "Workstation Host Tower", icon="laptop", cpu="AMD Ryzen 9 7950X", ram="64GB DDR5"))
@@ -48,12 +43,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         pc_host >> diag.edge("USB Audio Class 2", style="solid") >> dac
         pc_host >> diag.edge("Thunderbolt 4", style="solid") >> backup_ssd
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("01_workstation_peripherals.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "01_workstation_peripherals")["svg"]
 
 
 if __name__ == "__main__":

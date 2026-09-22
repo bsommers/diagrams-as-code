@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/computer") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "03_plc_industrial_io.svg"
-    png_file = out / "03_plc_industrial_io.png"
-    readme_file = out / "03_plc_industrial_io_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Industrial PLC Hardware & IO Subsystem", theme="blueprint") as diag:
         with diag.group("Control CPU") as g_1:
             plc_cpu = diag.add(Shape("plc_cpu", "Siemens S7-1500 PLC", icon="plc", firmware="v3.1", cycle="2ms Scan"))
@@ -41,12 +36,11 @@ def build_diagram(output_dir: Path | str = "output/computer") -> Path:
         plc_cpu >> diag.edge("Control Signals", style="solid") >> relay_out
         plc_cpu >> diag.edge("PTO Motion Pulses", style="solid") >> stepper
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("03_plc_industrial_io.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/computer") -> Path:
+    return render_all(diagram(), output_dir, "03_plc_industrial_io")["svg"]
 
 
 if __name__ == "__main__":

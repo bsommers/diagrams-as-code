@@ -5,15 +5,10 @@ import sys
 from pathlib import Path
 
 from diagrams_as_code import Diagram, Edge, Group, Shape
+from diagrams_as_code.output import render_all
 
 
-def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
-    out = Path(output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    svg_file = out / "06_software_release_gate.svg"
-    png_file = out / "06_software_release_gate.png"
-    readme_file = out / "06_software_release_gate_README.md"
-
+def diagram() -> Diagram:
     with Diagram("Continuous Deployment & Release Gating", theme="pastel_light") as diag:
         with diag.group("Engineering") as g_1:
             developer = diag.add(Shape("developer", "Software Engineer", icon="user", git="feature-branch"))
@@ -46,12 +41,11 @@ def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
         sast_gate >> diag.edge("Deploy to Canary", style="solid") >> canary
         canary >> diag.edge("Promote Release", style="solid") >> prod_fleet
 
-    # Render outputs after diagram context resolves layout constraints
-    diag.render_svg(svg_file)
-    diag.render_png(png_file)
-    diag.generate_readme("06_software_release_gate.svg", readme_file)
+    return diag
 
-    return svg_file
+
+def build_diagram(output_dir: Path | str = "output/business_process") -> Path:
+    return render_all(diagram(), output_dir, "06_software_release_gate")["svg"]
 
 
 if __name__ == "__main__":
