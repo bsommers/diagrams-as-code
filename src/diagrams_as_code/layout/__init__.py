@@ -8,6 +8,7 @@ from diagrams_as_code.layout.base import (
 )
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.pipeline import run_layout
+from diagrams_as_code.layout.sidecar import export_layout, load_layout_file
 
 __all__ = [
     "LayeredLayout",
@@ -16,5 +17,7 @@ __all__ = [
     "LayoutGraph",
     "LayoutNode",
     "LayoutWarning",
+    "export_layout",
+    "load_layout_file",
     "run_layout",
 ]

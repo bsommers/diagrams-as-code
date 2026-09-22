@@ -26,6 +26,7 @@ from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
 from diagrams_as_code.layout.layered import LayeredLayout
+from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
 from diagrams_as_code.router import OrthogonalRouter
 
 FRAME_X = 60.0
@@ -88,8 +89,8 @@ def _reset(diagram: Any, elements: list[Element]) -> None:
 
 
 def _apply_layout_file(diagram: Any, elements: list[Element]) -> None:
-    """Replaced in Task 10."""
-    return
+    if diagram.layout_file is not None:
+        apply_entries(elements, load_layout_file(diagram.layout_file))
 
 
 def _deepest_first(groups: list[Group]) -> list[Group]:
