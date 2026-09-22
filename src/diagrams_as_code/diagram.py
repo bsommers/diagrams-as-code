@@ -9,7 +9,7 @@ from diagrams_as_code.bom import BOMGenerator
 from diagrams_as_code.connections import Edge, Port, Routing
 from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import Anchor, Size, UnitBasis
+from diagrams_as_code.geometry import Anchor, Point, Size, UnitBasis
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.pipeline import run_layout
@@ -264,6 +264,7 @@ class Diagram:
         self.shapes: list[Shape] = []
         self.groups: list[Group] = []
         self.edges: list[Edge] = []
+        self.routes: dict[int, list[Point]] = {}
         self.solver = ConstraintSolver()
         self._active_group: Optional[Group] = None
         self._counter: int = 0
@@ -510,6 +511,7 @@ class Diagram:
             edges=self.edges,
             width=self.width,
             height=self.height,
+            routes=self.routes,
         )
         if path is not None:
             p = Path(path)

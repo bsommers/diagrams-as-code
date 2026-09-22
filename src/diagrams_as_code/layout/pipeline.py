@@ -8,6 +8,7 @@
 5. Recompute group bounds bottom-up and frame negative coordinates.
 6. With ``layout="auto"``, grow the canvas to fit and warn about pins that
    overlap auto-placed siblings.
+7. Route every edge; the renderer draws these paths.
 
 With ``layout="manual"`` and no layout file this reproduces the original
 ``Diagram.solve()`` exactly.
@@ -25,6 +26,7 @@ from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
 from diagrams_as_code.layout.layered import LayeredLayout
+from diagrams_as_code.router import OrthogonalRouter
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
@@ -58,6 +60,8 @@ def run_layout(diagram: Any) -> None:
         _grow_canvas(diagram, elements)
         _warn_pinned_overlaps(diagram, elements, auto_ids)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
+    router = OrthogonalRouter()
+    diagram.routes = {id(edge): router.route(edge) for edge in diagram.edges}
 
 
 def _reset(diagram: Any, elements: list[Element]) -> None:
