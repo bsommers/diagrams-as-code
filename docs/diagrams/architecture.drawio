@@ -7,17 +7,20 @@
 
         <!-- User Layer -->
         <mxCell id="layer_user" value="User Application Layer" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="280" height="160" as="geometry" />
+          <mxGeometry x="40" y="40" width="280" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="node_script" value="User Python Architecture Script&#xa;(main.py / examples/*.py)&#xa;Pure Python DSL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3B4252;strokeColor=#88C0D0;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_user">
-          <mxGeometry x="20" y="45" width="240" height="90" as="geometry" />
+        <mxCell id="node_script" value="User Python Script&#xa;diagram() -&gt; Diagram&#xa;Pure Python DSL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3B4252;strokeColor=#88C0D0;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_user">
+          <mxGeometry x="20" y="45" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="node_cli" value="diagrams-as-code CLI&#xa;render | layout export | themes | icons&#xa;(cli.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3B4252;strokeColor=#88C0D0;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_user">
+          <mxGeometry x="20" y="125" width="240" height="60" as="geometry" />
         </mxCell>
 
         <!-- Declarative Object Model Layer -->
         <mxCell id="layer_dom" value="Declarative Object Model (DOM)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
           <mxGeometry x="360" y="40" width="340" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="node_diag" value="Diagram Context Manager&#xa;(diagram.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#81A1C1;fontColor=#ECEFF4;" vertex="1" parent="layer_dom">
+        <mxCell id="node_diag" value="Diagram Context Manager&#xa;(diagram.py, context.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#81A1C1;fontColor=#ECEFF4;" vertex="1" parent="layer_dom">
           <mxGeometry x="20" y="40" width="300" height="40" as="geometry" />
         </mxCell>
         <mxCell id="node_elements" value="Elements &amp; Shapes&#xa;(elements.py, shapes.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#81A1C1;fontColor=#ECEFF4;" vertex="1" parent="layer_dom">
@@ -30,39 +33,62 @@
           <mxGeometry x="20" y="160" width="300" height="50" as="geometry" />
         </mxCell>
 
-        <!-- Solver & Routing Layer -->
-        <mxCell id="layer_solver" value="Layout &amp; Routing Engine" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
+        <!-- Layout Pipeline -->
+        <mxCell id="layer_layout" value="Layout Pipeline (layout/)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
           <mxGeometry x="740" y="40" width="300" height="240" as="geometry" />
         </mxCell>
+        <mxCell id="node_sidecar" value="Layout-File Overrides&#xa;Stable id / label-path keys&#xa;(layout/sidecar.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#B48EAD;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_layout">
+          <mxGeometry x="20" y="40" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="node_layered" value="LayeredLayout: auto-place unpinned scopes&#xa;(layout/graph.py, layout/layered.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#B48EAD;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_layout">
+          <mxGeometry x="20" y="110" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="node_pipeline" value="run_layout(): solve, frame, grow canvas,&#xa;warn on overlap (layout/pipeline.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#B48EAD;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_layout">
+          <mxGeometry x="20" y="180" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Solver & Routing Layer -->
+        <mxCell id="layer_solver" value="Constraint Solve &amp; Routing" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="280" height="240" as="geometry" />
+        </mxCell>
         <mxCell id="node_solver" value="Topological Constraint Solver&#xa;DAG Resolution &amp; Cycle Detection&#xa;(constraints.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#EBCB8B;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_solver">
-          <mxGeometry x="20" y="40" width="260" height="70" as="geometry" />
+          <mxGeometry x="20" y="40" width="240" height="70" as="geometry" />
         </mxCell>
         <mxCell id="node_router" value="Orthogonal Manhattan Router&#xa;Cardinal Ports &amp; Obstacle Routing&#xa;(router.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434C5E;strokeColor=#EBCB8B;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_solver">
-          <mxGeometry x="20" y="130" width="260" height="70" as="geometry" />
+          <mxGeometry x="20" y="130" width="240" height="70" as="geometry" />
         </mxCell>
 
         <!-- Output Rendering Layer -->
         <mxCell id="layer_render" value="Output Generation Layer" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
-          <mxGeometry x="360" y="320" width="680" height="240" as="geometry" />
+          <mxGeometry x="360" y="320" width="680" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="node_svg" value="SVG Vector Renderer&#xa;(renderer_svg.py, theme.py)&#xa;13 Themes, Multi-line &lt;tspan&gt;, 59 Icons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#A3BE8C;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
+        <mxCell id="node_svg" value="SVG Vector Renderer&#xa;(renderer_svg.py, theme.py, metrics.py)&#xa;13 Themes, Multi-line &lt;tspan&gt;, 60 Icons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#A3BE8C;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
           <mxGeometry x="20" y="40" width="300" height="80" as="geometry" />
         </mxCell>
         <mxCell id="node_bom" value="Living Documentation BOM&#xa;(bom.py)&#xa;Markdown Tables &amp; JSON Specifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#A3BE8C;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
           <mxGeometry x="360" y="40" width="300" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="node_resvg" value="resvg-py High-DPI PNG Rasterizer&#xa;(Pure Wheel Binding, Zero C-Deps)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#D08770;fontColor=#ECEFF4;" vertex="1" parent="layer_render">
-          <mxGeometry x="20" y="145" width="300" height="60" as="geometry" />
+        <mxCell id="node_output" value="output.render_all()&#xa;Writes every requested format&#xa;(output.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#88C0D0;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
+          <mxGeometry x="20" y="130" width="300" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="node_outputs" value="Generated Artifacts&#xa;.svg Vector | .png Image | _README.md BOM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#B48EAD;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
-          <mxGeometry x="360" y="145" width="300" height="60" as="geometry" />
+        <mxCell id="node_resvg" value="PNG Backends, tried in order&#xa;resvg-py -&gt; CairoSVG -&gt; Inkscape -&gt; ImageMagick&#xa;(rasterize.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#D08770;fontColor=#ECEFF4;" vertex="1" parent="layer_render">
+          <mxGeometry x="360" y="130" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="node_outputs" value="Generated Artifacts&#xa;.svg | .png | _README.md BOM | _bom.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#B48EAD;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
+          <mxGeometry x="190" y="205" width="300" height="60" as="geometry" />
         </mxCell>
 
         <!-- Connectors -->
         <mxCell id="edge_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#88C0D0;strokeWidth=2;" edge="1" parent="1" source="node_script" target="node_diag">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#81A1C1;strokeWidth=2;" edge="1" parent="1" source="layer_dom" target="node_solver">
+        <mxCell id="edge_cli" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#88C0D0;strokeWidth=2;" edge="1" parent="1" source="node_cli" target="node_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#81A1C1;strokeWidth=2;" edge="1" parent="1" source="layer_dom" target="layer_layout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_layout_solver" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B48EAD;strokeWidth=2;" edge="1" parent="1" source="node_pipeline" target="node_solver">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="edge_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EBCB8B;strokeWidth=2;" edge="1" parent="1" source="node_solver" target="node_router">
@@ -71,10 +97,19 @@
         <mxCell id="edge_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EBCB8B;strokeWidth=2;" edge="1" parent="1" source="node_router" target="node_svg">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A3BE8C;strokeWidth=2;" edge="1" parent="1" source="node_svg" target="node_resvg">
+        <mxCell id="edge_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A3BE8C;strokeWidth=2;" edge="1" parent="1" source="node_svg" target="node_output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_bom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A3BE8C;strokeWidth=2;" edge="1" parent="1" source="node_bom" target="node_output">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="edge_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A3BE8C;strokeWidth=2;" edge="1" parent="1" source="node_diag" target="node_bom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_output_resvg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#88C0D0;strokeWidth=2;" edge="1" parent="1" source="node_output" target="node_resvg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_output_artifacts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B48EAD;strokeWidth=2;" edge="1" parent="1" source="node_output" target="node_outputs">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>

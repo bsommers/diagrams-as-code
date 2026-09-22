@@ -1,23 +1,27 @@
 sequenceDiagram
     autonumber
-    actor User as User Script
+    actor User as User Script or CLI
     participant Diag as Diagram Context
     participant Group as Group Context
+    participant Pipe as run_layout (pipeline.py)
+    participant Side as sidecar.py
+    participant Layered as LayeredLayout
     participant Solver as ConstraintSolver
     participant Router as OrthogonalRouter
     participant SVG as SVGRenderer
-    participant Resvg as resvg-py
+    participant Out as output.render_all
+    participant Raster as rasterize.py
     participant BOM as BOMGenerator
 
-    User->>Diag: with Diagram("Arch", theme="nord") as diag
+    User->>Diag: with Diagram("Arch", theme="nord", layout="auto") as diag
     activate Diag
-    Diag->>Diag: Push context to active stack
+    Diag->>Diag: Push context onto context.py's active stack
 
     User->>Group: with diag.group("Zone") as g
     activate Group
     User->>Diag: Shape("node1", "Client", icon="mobile")
     User->>Diag: Shape("node2", "Server", icon="server")
-    User->>Group: Position and arrange children
+    Note over Group: unpinned children left unplaced under layout="auto"
     deactivate Group
 
     User->>Diag: node1 >> diag.edge("HTTPS") >> node2
@@ -27,22 +31,28 @@ sequenceDiagram
     User->>Diag: diag.render_svg("out.svg")
     activate Diag
     Diag->>Diag: Check _is_solved dirty flag
-    Diag->>Solver: diag.solve()
-    activate Solver
-    Solver->>Solver: Topological sort constraints
-    Solver->>Solver: Recalculate group bounding boxes
-    Solver->>Solver: Auto-frame negative coordinates to (60, 80)
-    Solver-->>Diag: Layout normalized
-    deactivate Solver
-
-    Diag->>Router: Route edge connections
+    Diag->>Pipe: diag.solve() delegates to run_layout(diag)
+    activate Pipe
+    Pipe->>Side: apply layout-file overrides (leading absolute constraints)
+    Side-->>Pipe: matched entries applied, stale keys warn
+    Pipe->>Layered: arrange each scope's unpinned nodes, deepest-first
+    Layered-->>Pipe: {node_id: Point}, tagged source="auto"
+    Pipe->>Solver: solve() the full constraint DAG
+    Solver-->>Pipe: relative constraints resolved
+    Pipe->>Pipe: Recalculate group bounds bottom-up
+    Pipe->>Pipe: Auto-frame negative coordinates to (60, 80)
+    Pipe->>Pipe: Grow canvas to fit content past width/height
+    Pipe->>Pipe: warn LayoutWarning on pinned/auto-placed overlap
+    Pipe->>Router: route every edge
     activate Router
     Router->>Router: Select cardinal ports (N/S/E/W)
     Router->>Router: Generate orthogonal waypoints
-    Router-->>Diag: Waypoints list
+    Router-->>Pipe: routes keyed by edge
     deactivate Router
+    Pipe-->>Diag: Layout + routes ready
+    deactivate Pipe
 
-    Diag->>SVG: render(elements, groups, edges)
+    Diag->>SVG: render(elements, groups, edges, routes)
     activate SVG
     SVG->>SVG: Inject theme palette & SVG defs
     SVG->>SVG: Multi-line wrap labels (<tspan>)
@@ -50,12 +60,13 @@ sequenceDiagram
     deactivate SVG
     Diag->>User: Write out.svg
 
-    User->>Diag: diag.render_png("out.png")
-    Diag->>Resvg: svg_to_bytes(svg_string)
-    Resvg-->>Diag: PNG byte buffer
-    Diag->>User: Write out.png
-
-    User->>Diag: diag.generate_readme("out.svg", "README.md")
-    Diag->>BOM: generate_markdown("out.svg")
-    BOM-->>Diag: Markdown tables
-    Diag->>User: Write README.md
+    User->>Out: render_all(diag, out_dir, stem, formats)
+    activate Out
+    Out->>Diag: render_png("out.png")
+    Diag->>Raster: svg_to_png_bytes(svg_string)
+    Note over Raster: resvg-py -> CairoSVG -> Inkscape -> ImageMagick, first available wins
+    Raster-->>Diag: PNG byte buffer
+    Out->>BOM: generate_markdown(svg_path) / generate_bom_json(...)
+    BOM-->>Out: Markdown tables + JSON schema
+    Out-->>User: Write out.png, out_README.md, out_bom.json
+    deactivate Out

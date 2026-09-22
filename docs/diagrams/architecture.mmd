@@ -1,40 +1,53 @@
 flowchart TD
     classDef client fill:#3B4252,stroke:#88C0D0,stroke-width:2px,color:#ECEFF4
     classDef core fill:#2E3440,stroke:#81A1C1,stroke-width:2px,color:#ECEFF4
+    classDef layout fill:#3B4252,stroke:#B48EAD,stroke-width:2px,color:#ECEFF4
     classDef solver fill:#434C5E,stroke:#EBCB8B,stroke-width:2px,color:#ECEFF4
     classDef output fill:#4C566A,stroke:#A3BE8C,stroke-width:2px,color:#ECEFF4
 
     subgraph UserSpace["User Layer"]
-        Script["User Architecture Script<br/>(main.py / examples/*.py)"]:::client
+        Script["User Architecture Script<br/>(diagram() -> Diagram)"]:::client
+        CLI["diagrams-as-code CLI<br/>render / layout export / themes / icons<br/>(cli.py)"]:::client
     end
 
     subgraph DOM["Declarative Object Model"]
-        Diagram["Diagram Context Manager<br/>(diagram.py)"]:::core
+        Diagram["Diagram Context Manager<br/>(diagram.py, context.py)"]:::core
         Elements["Shapes & Elements<br/>(elements.py)"]:::core
         Groups["Hierarchical Groups<br/>(groups.py)"]:::core
         Edges["Directed Edges & Ports<br/>(connections.py)"]:::core
     end
 
-    subgraph SolverEngine["Layout & Routing Engine"]
+    subgraph LayoutEngine["Layout Pipeline (layout/)"]
+        Sidecar["Layout-file overrides<br/>(layout/sidecar.py)"]:::layout
+        AutoPlace["Auto-place unpinned scopes, layout='auto'<br/>(layout/graph.py, layout/layered.py)"]:::layout
+        Pipeline["run_layout()<br/>(layout/pipeline.py)"]:::layout
+    end
+
+    subgraph SolverEngine["Constraint Solve & Routing"]
         Solver["Topological Constraint Solver<br/>(constraints.py)"]:::solver
-        AutoFrame["Viewport Auto-Framing<br/>(Diagram.solve)"]:::solver
+        AutoFrame["Group Bounds & Viewport Auto-Framing<br/>+ Canvas Growth"]:::solver
         Router["Orthogonal Manhattan Router<br/>(router.py)"]:::solver
     end
 
     subgraph RenderEngine["Output Generation"]
-        SVGRenderer["SVG Vector Renderer<br/>(renderer_svg.py)"]:::output
+        SVGRenderer["SVG Vector Renderer<br/>(renderer_svg.py, metrics.py)"]:::output
         ThemeEngine["Theme Palette Engine<br/>(theme.py)"]:::output
-        ShapeLib["Shape & Icon Library<br/>(shapes.py)"]:::output
+        ShapeLib["Shape & Icon Library<br/>(shapes.py, icon_glyphs.py)"]:::output
         BOM["Living BOM Generator<br/>(bom.py)"]:::output
-        Resvg["resvg-py Rasterizer<br/>(render_png)"]:::output
+        Rasterize["PNG Backends, tried in order<br/>resvg-py -> CairoSVG -> Inkscape -> ImageMagick<br/>(rasterize.py)"]:::output
+        Output["render_all()<br/>(output.py)"]:::output
     end
 
     Script --> Diagram
+    CLI --> Script
     Diagram --> Elements
     Diagram --> Groups
     Diagram --> Edges
 
-    Diagram --> Solver
+    Diagram --> Pipeline
+    Pipeline --> Sidecar
+    Sidecar --> AutoPlace
+    AutoPlace --> Solver
     Solver --> AutoFrame
     AutoFrame --> Router
 
@@ -43,8 +56,10 @@ flowchart TD
     ShapeLib --> SVGRenderer
     Diagram --> BOM
 
-    SVGRenderer --> SVGFile["SVG Vector (.svg)"]
-    SVGRenderer --> Resvg
-    Resvg --> PNGFile["Rasterized PNG (.png)"]
-    BOM --> MDFile["Markdown BOM (_README.md)"]
-    BOM --> JSONFile["JSON BOM (.json)"]
+    SVGRenderer --> Output
+    BOM --> Output
+    Output --> SVGFile["SVG Vector (.svg)"]
+    Output --> Rasterize
+    Rasterize --> PNGFile["Rasterized PNG (.png)"]
+    Output --> MDFile["Markdown BOM (_README.md)"]
+    Output --> JSONFile["JSON BOM (.json)"]

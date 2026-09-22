@@ -31,9 +31,10 @@
                                          ▼
 +-----------------------------------------------------------------------------------+
 |                Layout Pipeline (manual / auto / layout file)                      |
-|      - manual: constraint solver output passes through unchanged                  |
+|      - manual: constraint solver output passes through unchanged, except canvas   |
+|        growth, which is unconditional (see below)                                 |
 |      - auto: LayeredLayout places unpinned shapes/groups per scope                |
-|      - layout file: JSON overrides applied last, keyed by id or label path        |
+|      - layout file: overrides applied first (before auto-place); id or path keys  |
 |      - Pinned-vs-auto overlap detection emits LayoutWarning                       |
 +-----------------------------------------------------------------------------------+
                                          │
@@ -119,22 +120,27 @@
 - **`graph.py`**: Turns one scope of a diagram (the canvas, or a single group) into a `LayoutGraph` — collecting that scope's unpinned children and the edges between them, duck-typed against `solver.elements`/`edges` so it never imports `diagram`.
 - **`layered.py`**: `LayeredLayout` — deterministic Sugiyama-style placement. Ranks nodes by edge direction (`LR` or `TB`), orders each rank to reduce crossings, and spaces ranks evenly; ties always break by declaration index, so a re-run of the same script reproduces the same layout.
 - **`sidecar.py`**: The editable layout file. `element_key()` derives a stable key (explicit `id=`, else the ancestor-label path joined by `/`); `load_layout_file()` / `export_layout()` round-trip a JSON file of `{key: {x, y}}` entries; `apply_entries()` inserts each entry as the winning constraint, warning on any stale key that matches no element.
-- **`pipeline.py`**: `run_layout()` — the ordered steps `Diagram.solve()` runs: drop the previous run's generated constraints, apply layout-file entries first, place unpinned elements scope-by-scope with `layout="auto"`, solve, recompute group bounds and frame negative coordinates, grow the canvas and warn about pins overlapping auto-placed siblings, then route every edge. With `layout="manual"` and no layout file this reproduces the original solve exactly.
+- **`pipeline.py`**: `run_layout()` — the ordered steps `Diagram.solve()` runs: drop the previous run's generated constraints, apply layout-file entries first, place unpinned elements scope-by-scope with `layout="auto"`, solve, recompute group bounds and frame negative coordinates, grow the canvas to fit any content past its declared `width`/`height`, and (with `layout="auto"`) warn about pins overlapping auto-placed siblings, then route every edge. Canvas growth is unconditional — it runs in `layout="manual"` with no layout file too. With `layout="manual"` and no layout file this otherwise reproduces the original solve exactly.
 
 ---
 
 ## 3. Execution Lifecycle
 
-1. **Context Initialization**: `with Diagram("Title", theme="nord") as diag:` establishes active context on thread-local stack.
-2. **Declaration Phase**: Shapes, groups, and edges are declared using fluent syntax.
-3. **Context Exit / Pre-Render Hook**: `Diagram.__exit__()` or `render_svg()` verifies `_is_solved`.
-4. **Constraint Solving**:
-   - Computes topological ordering of relative constraints.
+1. **Context Initialization**: `with Diagram("Title", theme="nord") as diag:` pushes the diagram onto the module-level active-diagram stack in `context.py` (a plain list, not thread-local — elements look up the innermost open `Diagram` there instead of importing `diagram`).
+2. **Declaration Phase**: Shapes, groups, and edges are declared using fluent syntax, either directly or via the CLI's `load_script()`, which imports the script and calls its `diagram()` function.
+3. **Context Exit / Pre-Render Hook**: `Diagram.__exit__()` or `render_svg()` verifies `_is_solved` and calls `solve()`, which delegates to `run_layout()` (`layout/pipeline.py`).
+4. **Layout & Constraint Solving** (`run_layout()`):
+   - Drops the previous run's auto-generated constraints and restores pre-layout bounds.
+   - Applies layout-file entries, if any, as each element's leading absolute constraint.
+   - With `layout="auto"`, places unpinned shapes/groups scope-by-scope (deepest groups first) via `LayeredLayout`.
+   - Runs the constraint solver: topological ordering of relative constraints (`right_of`, `below`, `above`, `left_of`).
    - Computes group bounds from leaf elements upwards.
    - Detects any negative bounds and translates canvas into visible viewport coordinates `(60.0, 80.0)`.
-5. **Path Routing**: Orthogonal router determines port waypoints and protocol badge locations.
+   - Grows the canvas to fit any content past its declared `width`/`height` — unconditionally, in every layout mode.
+   - With `layout="auto"`, warns (`LayoutWarning`) about any pinned element overlapping an auto-placed sibling.
+5. **Path Routing**: `OrthogonalRouter` determines port waypoints and protocol badge locations for every edge; routes are cached on the diagram.
 6. **SVG Assembly**: SVGRenderer generates XML document with markers, filters, groups, paths, icons, and multi-line wrapped labels.
-7. **PNG Rasterization & BOM Emission**: `resvg-py` renders high-resolution PNG; `BOMGenerator` emits structured living documentation.
+7. **Output Writing**: `render_svg()`/`render_png()`/`generate_readme()`/`generate_bom_json()` write individually, or `output.render_all()` writes every requested format (`svg,png,bom` by default) in one call — the CLI always uses `render_all()`. PNG rasterization tries `rasterize.py`'s four backends in order (`resvg-py` → CairoSVG → Inkscape → ImageMagick) until one is available; `BOMGenerator` emits the living Markdown and JSON documentation.
 
 ---
 
