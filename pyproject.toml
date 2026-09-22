@@ -28,6 +28,9 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+diagrams-as-code = "diagrams_as_code.cli:main"
+
 [dependency-groups]
 dev = [
     "pytest>=8.0.0",
