@@ -8,6 +8,7 @@ from typing import Any, Optional, Sequence
 from diagrams_as_code.connections import Edge
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.groups import Group
+from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
 from diagrams_as_code.router import OrthogonalRouter
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
@@ -293,7 +294,7 @@ class SVGRenderer:
                         f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
                     )
                 if el.label:
-                    text_y = b.y + b.height + 14.0
+                    text_y = b.y + b.height + LABEL_BELOW_OFFSET
                     lines.append(
                         f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
                         f'fill="{text_color}" font-family="{self.theme.font_family}" '
@@ -312,7 +313,7 @@ class SVGRenderer:
                         f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
                     )
                 if el.label:
-                    text_y = b.y + b.height + 14.0
+                    text_y = b.y + b.height + LABEL_BELOW_OFFSET
                     char_budget = max(14, int(max(b.width, 100.0) / 7.0))
                     label_lines = self.wrap_text(el.label, max_chars=char_budget)
                     if len(label_lines) <= 1:
