@@ -1,13 +1,13 @@
 ---
 gsd_state_version: '1.0'
-status: ready_to_archive
-milestone: v0.6.0
+status: ready_to_plan
+milestone: v0.7.0
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 3
-  completed_plans: 3
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -17,41 +17,27 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 **Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** Milestone v0.6.0 (Completed all phases: Phase 4, Phase 5, Phase 6).
+**Current focus:** Planning next milestone (v0.7.0). Milestone v0.6.0 shipped.
 
 ## Current Position
 
-Phase: 6 of 6 (Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`))  
-Milestone: v0.6.0 (Phases 4-6)  
-Plan: 1 of 1 in current phase  
-Status: Milestone complete, ready for release audit & archiving  
-Last activity: 2026-09-23 — Completed Phase 6 (Viewport Minimap Navigator).
+Phase: None active (Milestone v0.6.0 complete)  
+Milestone: v0.7.0  
+Plan: 0 of 0  
+Status: Milestone v0.6.0 archived, awaiting v0.7.0 roadmap definition  
+Last activity: 2026-09-23 — Shipped v0.6.0 (Phases 4-6).
 
-Progress: [██████████] 100%
-
-## Performance Metrics
-
-**Velocity:**
-- Total plans completed: 3
-- Average duration: 15 min
-- Total execution time: 0.75 hours
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|---|---|---|---|
-| Phase 1: SDD Review Polish & Edge Robustness | 1/1 | 15 min | 15 min |
-| Phase 2: Architectural Follow-ups | 1/1 | 15 min | 15 min |
-| Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups | 1/1 | 15 min | 15 min |
+Progress: [----------] 0%
 
 ## Accumulated Context
 
 ### Decisions
 
 - 2026-09-22: Onboarded GSD framework (`.planning/`) following completion of `v0.4.0`.
-- 2026-09-22: Prioritized sequence `4 -> 3 -> 1 -> 2` (GSD Onboarding -> SDD Polish -> Architectural Follow-ups -> Interactive SVG).
+- 2026-09-23: Shipped `v0.5.0` (Polish, Typed Constraints, Interactive SVG Pan-Zoom).
+- 2026-09-23: Shipped `v0.6.0` (CLI `--interactive`, Client-Side Search, Viewport Minimap Navigator).
 - 2026-09-23: Verified 100% byte invariance for default non-interactive rendering across all 88 domain diagrams.
 
 ### Blockers / Concerns
 
-- None. 439/439 tests passing locally.
+- None.
