@@ -3,8 +3,32 @@ name: CI
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - ".planning/**"
+      - ".claude/**"
+      - ".cursor/**"
+      - ".superpowers/**"
+      - ".issues/**"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "GEMINI.md"
+      - "LICENSE"
   pull_request:
     branches: [master]
+    paths-ignore:
+      - ".planning/**"
+      - ".claude/**"
+      - ".cursor/**"
+      - ".superpowers/**"
+      - ".issues/**"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "GEMINI.md"
+      - "LICENSE"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:

@@ -12,3 +12,7 @@ In this project, always use `uv` instead of standard `pip` or bare `python`:
 - **Run Python Scripts:** `uv run python <script.py>`
 - **Run Tests:** `uv run pytest`
 - **Docker:** Use the multi-stage `uv` Dockerfile (`ghcr.io/astral-sh/uv:python3.12-bookworm-slim`)
+
+## Conserve GitHub CI Minutes
+Always run tests (`uv run pytest`) and artifact checks (`uv run python main.py`) locally before pushing or opening pull requests. Do not push intermediate or broken commits to remote.
+
