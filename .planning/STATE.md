@@ -1,13 +1,13 @@
 ---
 gsd_state_version: '1.0'
-status: ready_to_archive
-milestone: v0.7.0
+status: ready_to_plan
+milestone: v0.8.0
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -17,17 +17,17 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 **Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** Completed Phase 7 (`CAP-DIAG-ROUTER-AVOIDANCE`).
+**Current focus:** Milestone v0.7.0 shipped. Preparing v0.8.0 discovery & backlog.
 
 ## Current Position
 
-Phase: 7 of 7 (Phase 7: Edge Routing & Orthogonal Waypoint Enhancements)  
-Milestone: v0.7.0  
-Plan: 1 of 1 in current phase  
-Status: Phase 7 complete, all 453 tests passing  
-Last activity: 2026-09-24 — Completed Phase 7 (Obstacle-aware routing & multi-rank layout).
+Phase: None active (Milestone v0.7.0 complete)  
+Milestone: v0.8.0  
+Plan: 0 of 0  
+Status: Milestone v0.7.0 archived, awaiting v0.8.0 roadmap definition  
+Last activity: 2026-09-24 — Shipped v0.7.0 (Phase 7).
 
-Progress: [██████████] 100%
+Progress: [----------] 0%
 
 ## Accumulated Context
 
@@ -36,7 +36,7 @@ Progress: [██████████] 100%
 - 2026-09-22: Onboarded GSD framework (`.planning/`) following completion of `v0.4.0`.
 - 2026-09-23: Shipped `v0.5.0` (Polish, Typed Constraints, Interactive SVG Pan-Zoom).
 - 2026-09-23: Shipped `v0.6.0` (CLI `--interactive`, Client-Side Search, Viewport Minimap Navigator).
-- 2026-09-24: Completed Phase 7 (Obstacle-aware orthogonal edge routing & multi-rank crossing minimization).
+- 2026-09-24: Shipped `v0.7.0` (Obstacle-Aware Orthogonal Routing & Multi-Rank Layout Crossing Minimization).
 
 ### Blockers / Concerns
 

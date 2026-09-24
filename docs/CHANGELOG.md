@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.7.0] - 2026-09-24
+
+### Added
+- **Obstacle-Aware Orthogonal Routing (`CAP-DIAG-ROUTER-AVOIDANCE`, `ROUTE-01` to `ROUTE-03`, `ROUTE-05`):**
+  - Added `segment_intersects_rect(p1, p2, rect)` detecting orthogonal segment penetrations into obstacle interior bounds with strict boundary clearance.
+  - Extended `OrthogonalRouter.route(edge, obstacles=None, clearance=15.0)` to automatically calculate clean Manhattan detour channels around intermediate node obstacles.
+  - Implemented minimum-bend orthogonal channel Dijkstra grid search with collinear simplification.
+  - Preserved fast-path collision check ensuring 100% byte invariance for obstacle-free routes.
+  - Wired diagram elements as obstacles in `layout/pipeline.py`.
+- **Multi-Rank Crossing Minimization (`ROUTE-04`):**
+  - Extended `LayeredLayout._order()` with Sugiyama virtual dummy vertices across ranks spanning $\ge 2$ layers.
+  - Included intermediate edge segments in barycenter sweeps and crossing count evaluations to eliminate avoidable cross-layer line crossings.
+
+### Verification Evidence
+- `uv run pytest` -> 453 passed in 11.5s across all unit, integration, boundary, and hygiene test suites.
+- `git diff --exit-code -- output/ icons/ README.md` -> Zero byte drift across all domain diagrams.
+- `tests/test_module_boundaries.py` -> 100% compliant with strict downward architectural layering.
+
 ## [v0.6.0] - 2026-09-23
 
 ### Added
