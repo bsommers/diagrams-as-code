@@ -210,3 +210,105 @@ def test_solver_add_duplicate_id_raises_value_error():
     solver.add(s1)
     with pytest.raises(ValueError, match="Duplicate element id"):
         solver.add(s2)
+
+
+def test_typed_constraint_dataclasses_and_coercion():
+    from diagrams_as_code.constraints import (
+        AbsoluteConstraint,
+        AlignConstraint,
+        Constraint,
+        RelativeConstraint,
+        to_constraint,
+    )
+
+    # 1. AbsoluteConstraint typed and dict behavior
+    abs_c = AbsoluteConstraint(100.0, 50.0, anchor=Anchor.CENTER)
+    assert abs_c.type == "absolute"
+    assert abs_c.x == 100.0
+    assert abs_c.y == 50.0
+    assert abs_c.anchor == Anchor.CENTER
+    assert abs_c["x"] == 100.0
+    assert abs_c["type"] == "absolute"
+    assert "_source" not in abs_c
+    assert abs_c.get("_source") is None
+    abs_c["_source"] = "auto"
+    assert abs_c["_source"] == "auto"
+    assert abs_c.get("_source") == "auto"
+    assert "_source" in abs_c
+    abs_c._source = None
+    assert "_source" not in abs_c
+
+    # 2. RelativeConstraint
+    target = Shape("t1", "Target")
+    rel_c = RelativeConstraint(target=target, direction="right", margin=30.0, align="top")
+    assert rel_c.type == "relative_dir"
+    assert rel_c.target is target
+    assert rel_c.direction == "right"
+    assert rel_c.margin == 30.0
+    assert rel_c.align == "top"
+    assert rel_c["direction"] == "right"
+    assert rel_c["margin"] == 30.0
+
+    # 3. AlignConstraint
+    align_c = AlignConstraint(target=target, align="center", axis="horizontal")
+    assert align_c.type == "align"
+    assert align_c.target is target
+    assert align_c.align == "center"
+    assert align_c.axis == "horizontal"
+    assert align_c["align"] == "center"
+
+    # 4. to_constraint coercion
+    d = {"type": "absolute", "x": 10.0, "y": 20.0, "anchor": "top_left"}
+    coerced = to_constraint(d)
+    assert isinstance(coerced, AbsoluteConstraint)
+    assert coerced.x == 10.0 and coerced.y == 20.0
+    assert to_constraint(abs_c) is abs_c
+
+    d_rel = {"type": "relative_dir", "target": target, "direction": "below", "margin": 15.0, "align": "center"}
+    coerced_rel = to_constraint(d_rel)
+    assert isinstance(coerced_rel, RelativeConstraint)
+    assert coerced_rel.direction == "below" and coerced_rel.margin == 15.0
+
+    d_align = {"type": "align", "target": target, "align": "left", "axis": "horizontal"}
+    coerced_align = to_constraint(d_align)
+    assert isinstance(coerced_align, AlignConstraint)
+    assert coerced_align.align == "left"
+
+    # 5. Methods appending typed dataclasses
+    s = Shape("s", "S")
+    s.at(10.0, 20.0)
+    assert isinstance(s.constraints[0], AbsoluteConstraint)
+    s.right_of(target)
+    assert isinstance(s.constraints[1], RelativeConstraint)
+    s.align_with(target)
+    assert isinstance(s.constraints[2], AlignConstraint)
+
+
+def test_align_with_constraint_solving():
+    solver = ConstraintSolver()
+    base = Shape("base", "Base", width=100.0, height=80.0).at(100.0, 100.0)
+
+    # Centered horizontally: target x=100, width=100. Shape width=40. Expected x = 100 + (100 - 40)/2 = 130
+    c_x = Shape("c_x", "CX", width=40.0, height=30.0).at(0.0, 200.0).align_with(base, align="center", axis="horizontal")
+
+    # Left aligned: Expected x = 100
+    l_x = Shape("l_x", "LX", width=40.0, height=30.0).at(0.0, 250.0).align_with(base, align="left")
+
+    # Right aligned: Expected x = 100 + 100 - 40 = 160
+    r_x = Shape("r_x", "RX", width=40.0, height=30.0).at(0.0, 300.0).align_with(base, align="right")
+
+    # Top aligned: Expected y = 100
+    t_y = Shape("t_y", "TY", width=40.0, height=30.0).at(300.0, 0.0).align_with(base, align="top")
+
+    # Bottom aligned: Expected y = 100 + 80 - 30 = 150
+    b_y = Shape("b_y", "BY", width=40.0, height=30.0).at(300.0, 0.0).align_with(base, align="bottom")
+
+    solver.add(base, c_x, l_x, r_x, t_y, b_y)
+    solver.solve()
+
+    assert c_x.bounds.x == 130.0
+    assert l_x.bounds.x == 100.0
+    assert r_x.bounds.x == 160.0
+    assert t_y.bounds.y == 100.0
+    assert b_y.bounds.y == 150.0
+

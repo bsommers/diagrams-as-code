@@ -1,9 +1,25 @@
 from __future__ import annotations
 
 from typing import Any, Sequence, Union
-from diagrams_as_code.elements import Element
+from diagrams_as_code.elements import (
+    AbsoluteConstraint,
+    AlignConstraint,
+    Constraint,
+    Element,
+    RelativeConstraint,
+    to_constraint,
+)
 from diagrams_as_code.geometry import Anchor, Rect
 from diagrams_as_code.groups import Group
+
+__all__ = [
+    "AbsoluteConstraint",
+    "AlignConstraint",
+    "Constraint",
+    "ConstraintSolver",
+    "RelativeConstraint",
+    "to_constraint",
+]
 
 
 class ConstraintSolver:
@@ -66,10 +82,14 @@ class ConstraintSolver:
             has_children = isinstance(el, Group) and bool(el.children)
             if has_children:
                 continue
+            has_rel = any(
+                c["type"] in ("relative_dir", "align") for c in el.constraints
+            )
             for c in el.constraints:
                 if c["type"] == "absolute":
                     self._apply_absolute(el, c)
-                    solved.add(el)
+                    if not has_rel:
+                        solved.add(el)
                     break
 
         # Step 2: Unconstrained elements retain initial bounds without error
@@ -96,7 +116,9 @@ class ConstraintSolver:
                             c for c in el.constraints if c["type"] == "absolute"
                         ]
                         rel_constraints = [
-                            c for c in el.constraints if c["type"] == "relative_dir"
+                            c
+                            for c in el.constraints
+                            if c["type"] in ("relative_dir", "align")
                         ]
                         if abs_constraints:
                             self._apply_absolute(el, abs_constraints[0])
@@ -106,27 +128,39 @@ class ConstraintSolver:
                             solved.add(el)
                             progress = True
 
-            # 3b: Resolve relative directional constraints
+            # 3b: Resolve relative directional and alignment constraints
             for el in all_elements:
                 if el in solved:
                     continue
                 if isinstance(el, Group) and el.children:
                     if not all(ch in solved for ch in el.children):
                         continue
-                for c in el.constraints:
-                    if c["type"] == "relative_dir":
-                        target = c["target"]
-                        if target in solved:
+                rel_list = [
+                    c
+                    for c in el.constraints
+                    if c["type"] in ("relative_dir", "align")
+                ]
+                if not rel_list:
+                    continue
+                if all(c["target"] in solved for c in rel_list):
+                    for c in rel_list:
+                        if c["type"] == "relative_dir":
                             self._apply_relative(
                                 el,
-                                target,
+                                c["target"],
                                 c["direction"],
                                 c["margin"],
                                 c["align"],
                             )
-                            solved.add(el)
-                            progress = True
-                            break
+                        elif c["type"] == "align":
+                            self._apply_align(
+                                el,
+                                c["target"],
+                                c.get("align", "center"),
+                                c.get("axis", "horizontal"),
+                            )
+                    solved.add(el)
+                    progress = True
 
             if not progress:
                 break
@@ -210,3 +244,34 @@ class ConstraintSolver:
         dx = x - el.bounds.x
         dy = y - el.bounds.y
         el.translate(dx, dy)
+
+    def _apply_align(
+        self,
+        el: Element,
+        target: Element,
+        align: str,
+        axis: str = "horizontal",
+    ) -> None:
+        """Align element bounds relative to a target element along specified axis."""
+        tb = target.bounds
+        w, h = el.bounds.width, el.bounds.height
+        dx, dy = 0.0, 0.0
+
+        if align == "center":
+            if axis in ("horizontal", "x", "both"):
+                dx = (tb.left + (tb.width - w) / 2.0) - el.bounds.x
+            if axis in ("vertical", "y", "both"):
+                dy = (tb.top + (tb.height - h) / 2.0) - el.bounds.y
+        elif align == "left":
+            dx = tb.left - el.bounds.x
+        elif align == "right":
+            dx = tb.right - w - el.bounds.x
+        elif align == "top":
+            dy = tb.top - el.bounds.y
+        elif align == "bottom":
+            dy = tb.bottom - h - el.bounds.y
+        else:
+            raise ValueError(f"Unknown align: {align}")
+
+        el.translate(dx, dy)
+

@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from diagrams_as_code.constraints import ConstraintSolver
-from diagrams_as_code.elements import Element
+from diagrams_as_code.elements import AbsoluteConstraint, Element
 from diagrams_as_code.geometry import Anchor, Point, Rect
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
@@ -111,8 +111,10 @@ def _deepest_first(groups: list[Group]) -> list[Group]:
     return sorted(groups, key=depth, reverse=True)
 
 
-def _auto_constraint(x: float, y: float) -> dict[str, Any]:
-    return {"type": "absolute", "x": x, "y": y, "anchor": Anchor.TOP_LEFT, SOURCE_KEY: "auto"}
+def _auto_constraint(x: float, y: float) -> AbsoluteConstraint:
+    return AbsoluteConstraint(
+        x=x, y=y, anchor=Anchor.TOP_LEFT, _layout_source="auto"
+    )
 
 
 def _place(diagram: Any, group: Optional[Group], pinned: set[str], engine: LayeredLayout,

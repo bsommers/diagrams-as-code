@@ -1,14 +1,25 @@
 """IIoT Diagrams as Code framework."""
 from diagrams_as_code.bom import BOMGenerator
 from diagrams_as_code.connections import Edge, Port, Routing
-from diagrams_as_code.constraints import ConstraintSolver
+from diagrams_as_code.constraints import (
+    AbsoluteConstraint,
+    AlignConstraint,
+    Constraint,
+    ConstraintSolver,
+    RelativeConstraint,
+    to_constraint,
+)
 from diagrams_as_code.diagram import Diagram
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import Anchor, Point, Rect, Size, UnitBasis
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout import (
+    GridLayout,
+    GroupFlowLayout,
+    HorizontalFlowLayout,
     LayeredLayout,
     LayoutWarning,
+    VerticalFlowLayout,
     export_layout,
     load_layout_file,
 )
@@ -43,19 +54,25 @@ from diagrams_as_code.theme import (
 
 __version__ = "0.4.0"
 __all__ = [
+    "AbsoluteConstraint",
+    "AlignConstraint",
     "Anchor",
     "BLUEPRINT",
     "BOMGenerator",
     "CRIMSON",
     "CYBER_SLATE",
+    "Constraint",
     "ConstraintSolver",
     "DRACULA",
     "Diagram",
     "EMERALD",
     "Edge",
     "Element",
+    "GridLayout",
     "Group",
+    "GroupFlowLayout",
     "HIGH_CONTRAST",
+    "HorizontalFlowLayout",
     "IIOT_DARK_GOLD",
     "IIOT_LIGHT",
     "LayeredLayout",
@@ -67,6 +84,7 @@ __all__ = [
     "Point",
     "Port",
     "Rect",
+    "RelativeConstraint",
     "Routing",
     "SOLARIZED_LIGHT",
     "SVGRenderer",
@@ -78,6 +96,7 @@ __all__ = [
     "THEMES",
     "Theme",
     "UnitBasis",
+    "VerticalFlowLayout",
     "create_theme",
     "export_layout",
     "get_dark_themes",
@@ -88,5 +107,7 @@ __all__ = [
     "register_theme",
     "render_all",
     "reset_themes",
+    "to_constraint",
 ]
+
 

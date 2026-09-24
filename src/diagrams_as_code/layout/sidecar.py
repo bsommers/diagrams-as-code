@@ -11,7 +11,7 @@ import warnings
 from pathlib import Path
 from typing import Any, Union
 
-from diagrams_as_code.elements import Element
+from diagrams_as_code.elements import AbsoluteConstraint, Element
 from diagrams_as_code.geometry import Anchor
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 
@@ -82,7 +82,10 @@ def apply_entries(elements: list[Element], entries: dict[str, tuple[float, float
             )
         x, y = entries[key]
         matches[0].constraints.insert(
-            0, {"type": "absolute", "x": x, "y": y, "anchor": Anchor.TOP_LEFT, SOURCE_KEY: "file"}
+            0,
+            AbsoluteConstraint(
+                x=x, y=y, anchor=Anchor.TOP_LEFT, _layout_source="file"
+            ),
         )
         applied += 1
     return applied

@@ -14,8 +14,8 @@
 
 ### Phase 2: Architectural Follow-ups
 
-- [ ] **ARCH-01**: Typed constraint dataclasses: Replace untyped constraint dictionaries (`shape.constraints = [{"type": ...}]`) with typed dataclasses (`RelativeConstraint`, `AbsoluteConstraint`, `AlignConstraint`) with backward-compatible dict coercion.
-- [ ] **ARCH-02**: Group flow layout engine extraction: Decouple flow layout algorithms from `Group.flow()` into dedicated layout engine classes under `diagrams_as_code/layout/`.
+- [x] **ARCH-01**: Typed constraint dataclasses: Replace untyped constraint dictionaries (`shape.constraints = [{"type": ...}]`) with typed dataclasses (`RelativeConstraint`, `AbsoluteConstraint`, `AlignConstraint`) with backward-compatible dict coercion.
+- [x] **ARCH-02**: Group flow layout engine extraction: Decouple flow layout algorithms from `Group.flow()` into dedicated layout engine classes under `diagrams_as_code/layout/`.
 
 ### Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups (`CAP-DIAG-INTERACTIVE`)
 
@@ -31,8 +31,8 @@
 | POLISH-02 | Phase 1 (Polish) | Completed |
 | POLISH-03 | Phase 1 (Polish) | Completed |
 | POLISH-04 | Phase 1 (Polish) | Completed |
-| ARCH-01 | Phase 2 (Architecture) | Pending |
-| ARCH-02 | Phase 2 (Architecture) | Pending |
+| ARCH-01 | Phase 2 (Architecture) | Completed |
+| ARCH-02 | Phase 2 (Architecture) | Completed |
 | INTER-01 | Phase 3 (Interactive) | Pending |
 | INTER-02 | Phase 3 (Interactive) | Pending |
 | INTER-03 | Phase 3 (Interactive) | Pending |

@@ -7,7 +7,7 @@ Following the successful release of `v0.4.0` (auto-layout, CLI, modularity), thi
 ## Phases
 
 - [x] **Phase 1: SDD Review Polish & Edge Robustness** - CLI error targeting, descendant traversal memoization, stable edge keying, and import cleanliness.
-- [ ] **Phase 2: Architectural Follow-ups** - Typed constraint dataclasses and group flow layout engine extraction.
+- [x] **Phase 2: Architectural Follow-ups** - Typed constraint dataclasses and group flow layout engine extraction.
 - [ ] **Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups** - Optional inline JavaScript injection for responsive SVG manipulation.
 
 ## Phase Details
@@ -38,7 +38,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: Introduce typed constraint dataclasses and extract group flow layout engine.
+- [x] 02-01: Introduce typed constraint dataclasses and extract group flow layout engine.
 
 ### Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups (`CAP-DIAG-INTERACTIVE`)
 **Goal**: Implement client-side interactive pan/zoom and collapsible groups via pure, zero-dependency inline JavaScript.  

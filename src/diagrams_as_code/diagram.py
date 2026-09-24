@@ -207,6 +207,19 @@ class _GroupContext:
         self.group.move_to(x, y, anchor=anchor)
         return self
 
+    def align_with(
+        self,
+        other: Element,
+        align: Literal["center", "left", "right", "top", "bottom"] = "center",
+        axis: Literal["horizontal", "vertical", "both", "x", "y"] = "horizontal",
+    ) -> _GroupContext:
+        self.group.align_with(other, align=align, axis=axis)
+        return self
+
+    def flow(self, engine: Any = "vertical", **kwargs: Any) -> _GroupContext:
+        self.group.flow(engine, **kwargs)
+        return self
+
     def clear_constraints(self) -> _GroupContext:
         self.group.clear_constraints()
         return self

@@ -1,8 +1,35 @@
 from __future__ import annotations
 
 from typing import Any, Literal, Optional, Sequence, Union
-from diagrams_as_code.elements import Element
+from diagrams_as_code.elements import (
+    AbsoluteConstraint,
+    AlignConstraint,
+    Element,
+    RelativeConstraint,
+)
 from diagrams_as_code.geometry import Anchor, Rect
+
+_LAYOUT_ENGINES: dict[str, type] = {}
+
+
+def register_group_layout(name: str, engine_cls: type) -> None:
+    """Register a layout engine class by mode name."""
+    _LAYOUT_ENGINES[name] = engine_cls
+
+
+def get_group_layout_engine(name: str, **kwargs: Any) -> Any:
+    """Retrieve and instantiate a registered layout engine."""
+    if name not in _LAYOUT_ENGINES:
+        import importlib
+
+        try:
+            importlib.import_module("diagrams_as_code.layout.flow")
+        except ImportError:
+            pass
+    engine_cls = _LAYOUT_ENGINES.get(name)
+    if engine_cls is None:
+        raise ValueError(f"Unknown group layout mode: {name!r}")
+    return engine_cls(**kwargs)
 
 
 class Group(Element):
@@ -27,6 +54,7 @@ class Group(Element):
         self.grid_columns: int = 2
         self.grid_margin_x: float = 20.0
         self.grid_margin_y: float = 20.0
+        self._flow_engine: Optional[Any] = None
 
     def add(self, *elements: Union[Element, Sequence[Element]]) -> Group:
         """Add child elements to this group."""
@@ -104,7 +132,7 @@ class Group(Element):
     ) -> Group:
         """Position group absolutely with an anchor point."""
         self.constraints.append(
-            {"type": "absolute", "x": float(x), "y": float(y), "anchor": anchor}
+            AbsoluteConstraint(x=float(x), y=float(y), anchor=anchor)
         )
         if isinstance(anchor, str):
             try:
@@ -138,13 +166,12 @@ class Group(Element):
     ) -> Group:
         """Position group to the right of another element."""
         self.constraints.append(
-            {
-                "type": "relative_dir",
-                "target": other,
-                "direction": "right",
-                "margin": float(margin),
-                "align": align,
-            }
+            RelativeConstraint(
+                target=other,
+                direction="right",
+                margin=float(margin),
+                align=align,
+            )
         )
         return self
 
@@ -156,13 +183,12 @@ class Group(Element):
     ) -> Group:
         """Position group to the left of another element."""
         self.constraints.append(
-            {
-                "type": "relative_dir",
-                "target": other,
-                "direction": "left",
-                "margin": float(margin),
-                "align": align,
-            }
+            RelativeConstraint(
+                target=other,
+                direction="left",
+                margin=float(margin),
+                align=align,
+            )
         )
         return self
 
@@ -174,13 +200,12 @@ class Group(Element):
     ) -> Group:
         """Position group below another element."""
         self.constraints.append(
-            {
-                "type": "relative_dir",
-                "target": other,
-                "direction": "below",
-                "margin": float(margin),
-                "align": align,
-            }
+            RelativeConstraint(
+                target=other,
+                direction="below",
+                margin=float(margin),
+                align=align,
+            )
         )
         return self
 
@@ -192,14 +217,40 @@ class Group(Element):
     ) -> Group:
         """Position group above another element."""
         self.constraints.append(
-            {
-                "type": "relative_dir",
-                "target": other,
-                "direction": "above",
-                "margin": float(margin),
-                "align": align,
-            }
+            RelativeConstraint(
+                target=other,
+                direction="above",
+                margin=float(margin),
+                align=align,
+            )
         )
+        return self
+
+    def align_with(
+        self,
+        other: Element,
+        align: Literal["center", "left", "right", "top", "bottom"] = "center",
+        axis: Literal["horizontal", "vertical", "both", "x", "y"] = "horizontal",
+    ) -> Group:
+        """Align group relative to another element."""
+        self.constraints.append(
+            AlignConstraint(
+                target=other,
+                align=align,
+                axis=axis,
+            )
+        )
+        return self
+
+    def flow(self, engine: Any = "vertical", **kwargs: Any) -> Group:
+        """Apply a flow layout engine or registered preset mode to child elements."""
+        if isinstance(engine, str):
+            self.layout_mode = engine
+            self._flow_engine = get_group_layout_engine(engine, **kwargs)
+        else:
+            self._flow_engine = engine
+            self.layout_mode = getattr(engine, "mode", "custom")
+        self._apply_layout()
         return self
 
     def vertical_flow(
@@ -211,6 +262,9 @@ class Group(Element):
         self.layout_mode = "vertical_flow"
         self.layout_margin = float(margin)
         self.layout_align = align
+        self._flow_engine = get_group_layout_engine(
+            "vertical_flow", margin=self.layout_margin, align=align
+        )
         self._apply_layout()
         return self
 
@@ -223,6 +277,9 @@ class Group(Element):
         self.layout_mode = "horizontal_flow"
         self.layout_margin = float(margin)
         self.layout_align = align
+        self._flow_engine = get_group_layout_engine(
+            "horizontal_flow", margin=self.layout_margin, align=align
+        )
         self._apply_layout()
         return self
 
@@ -237,6 +294,12 @@ class Group(Element):
         self.grid_columns = max(1, int(columns))
         self.grid_margin_x = float(margin_x)
         self.grid_margin_y = float(margin_y)
+        self._flow_engine = get_group_layout_engine(
+            "grid",
+            columns=self.grid_columns,
+            margin_x=self.grid_margin_x,
+            margin_y=self.grid_margin_y,
+        )
         self._apply_layout()
         return self
 
@@ -245,64 +308,18 @@ class Group(Element):
         if not self.children:
             return
 
-        for ch in self.children:
-            ch.constraints = [c for c in ch.constraints if not c.get("_auto_layout")]
-
-        if self.layout_mode == "vertical_flow":
-            for i in range(1, len(self.children)):
-                prev = self.children[i - 1]
-                curr = self.children[i]
-                curr.constraints.append(
-                    {
-                        "type": "relative_dir",
-                        "target": prev,
-                        "direction": "below",
-                        "margin": self.layout_margin,
-                        "align": self.layout_align,
-                        "_auto_layout": True,
-                    }
+        if self._flow_engine is not None:
+            self._flow_engine.apply(self)
+        elif self.layout_mode is not None:
+            if self.layout_mode == "grid":
+                self._flow_engine = get_group_layout_engine(
+                    "grid",
+                    columns=self.grid_columns,
+                    margin_x=self.grid_margin_x,
+                    margin_y=self.grid_margin_y,
                 )
-        elif self.layout_mode == "horizontal_flow":
-            for i in range(1, len(self.children)):
-                prev = self.children[i - 1]
-                curr = self.children[i]
-                curr.constraints.append(
-                    {
-                        "type": "relative_dir",
-                        "target": prev,
-                        "direction": "right",
-                        "margin": self.layout_margin,
-                        "align": self.layout_align,
-                        "_auto_layout": True,
-                    }
+            else:
+                self._flow_engine = get_group_layout_engine(
+                    self.layout_mode, margin=self.layout_margin, align=self.layout_align
                 )
-        elif self.layout_mode == "grid":
-            cols = self.grid_columns
-            for idx, ch in enumerate(self.children):
-                row = idx // cols
-                col = idx % cols
-                if col > 0:
-                    left_sibling = self.children[idx - 1]
-                    ch.constraints.append(
-                        {
-                            "type": "relative_dir",
-                            "target": left_sibling,
-                            "direction": "right",
-                            "margin": self.grid_margin_x,
-                            "align": "top",
-                            "_auto_layout": True,
-                        }
-                    )
-                if row > 0:
-                    above_sibling = self.children[idx - cols]
-                    if col == 0:
-                        ch.constraints.append(
-                            {
-                                "type": "relative_dir",
-                                "target": above_sibling,
-                                "direction": "below",
-                                "margin": self.grid_margin_y,
-                                "align": "left",
-                                "_auto_layout": True,
-                            }
-                        )
+            self._flow_engine.apply(self)

@@ -482,3 +482,92 @@ def test_group_manual_sizing_with_is_auto_sized_false() -> None:
     # Should not recalculate bounds from children when is_auto_sized=False
     assert b == Rect(50.0, 50.0, 300.0, 200.0)
     assert g.bounds == Rect(50.0, 50.0, 300.0, 200.0)
+
+
+def test_group_flow_layout_engines_and_custom_pluggable() -> None:
+    from diagrams_as_code.elements import RelativeConstraint
+    from diagrams_as_code.layout import (
+        GridLayout,
+        HorizontalFlowLayout,
+        VerticalFlowLayout,
+    )
+
+    # 1. VerticalFlowLayout
+    g1 = Group("g1", "Vertical Group")
+    s1 = Shape("s1", "S1", width=100.0, height=50.0)
+    s2 = Shape("s2", "S2", width=100.0, height=50.0)
+    s3 = Shape("s3", "S3", width=100.0, height=50.0)
+    g1.add(s1, s2, s3)
+    g1.flow(VerticalFlowLayout(margin=30.0, align="center"))
+
+    assert len(s2.constraints) == 1
+    assert isinstance(s2.constraints[0], RelativeConstraint)
+    assert s2.constraints[0].direction == "below"
+    assert s2.constraints[0].margin == 30.0
+    assert s2.constraints[0].align == "center"
+    assert s2.constraints[0]._auto_layout is True
+
+    # 2. HorizontalFlowLayout
+    g2 = Group("g2", "Horizontal Group")
+    h1 = Shape("h1", "H1", width=100.0, height=50.0)
+    h2 = Shape("h2", "H2", width=100.0, height=50.0)
+    g2.add(h1, h2)
+    g2.flow(HorizontalFlowLayout(margin=15.0, align="bottom"))
+
+    assert len(h2.constraints) == 1
+    assert isinstance(h2.constraints[0], RelativeConstraint)
+    assert h2.constraints[0].direction == "right"
+    assert h2.constraints[0].margin == 15.0
+    assert h2.constraints[0].align == "bottom"
+
+    # 3. GridLayout
+    g3 = Group("g3", "Grid Group")
+    shapes = [Shape(f"g_{i}", f"G{i}", width=50.0, height=30.0) for i in range(4)]
+    g3.add(*shapes)
+    g3.flow(GridLayout(columns=2, margin_x=10.0, margin_y=20.0))
+
+    # shapes[1] is col 1, row 0 -> right of shapes[0]
+    assert shapes[1].constraints[0].direction == "right"
+    assert shapes[1].constraints[0].target is shapes[0]
+    # shapes[2] is col 0, row 1 -> below shapes[0]
+    assert shapes[2].constraints[0].direction == "below"
+    assert shapes[2].constraints[0].target is shapes[0]
+    # shapes[3] is col 1, row 1 -> right of shapes[2]
+    assert shapes[3].constraints[0].direction == "right"
+    assert shapes[3].constraints[0].target is shapes[2]
+
+    # 4. Adding a new child dynamically reapplies layout
+    h3 = Shape("h3", "H3", width=100.0, height=50.0)
+    g2.add(h3)
+    assert len(h3.constraints) == 1
+    assert h3.constraints[0].target is h2
+    assert h3.constraints[0].direction == "right"
+
+    # 5. Custom pluggable layout engine
+    class ReverseVerticalLayout:
+        mode = "reverse_vertical"
+
+        def apply(self, group: Group) -> None:
+            children = group.children
+            for ch in children:
+                ch.constraints = [c for c in ch.constraints if not c.get("_auto_layout")]
+            for i in range(1, len(children)):
+                prev = children[i - 1]
+                curr = children[i]
+                curr.constraints.append(
+                    RelativeConstraint(
+                        target=prev,
+                        direction="above",
+                        margin=10.0,
+                        align="center",
+                        _auto_layout=True,
+                    )
+                )
+
+    g_custom = Group("g_custom", "Custom Group")
+    c1 = Shape("c1", "C1")
+    c2 = Shape("c2", "C2")
+    g_custom.add(c1, c2)
+    g_custom.flow(ReverseVerticalLayout())
+    assert c2.constraints[0].direction == "above"
+
