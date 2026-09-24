@@ -59,11 +59,16 @@ def run_layout(diagram: Any) -> None:
     _refresh_group_bounds(groups)
     _frame(elements, groups)
     _grow_canvas(diagram, elements)
+    diagram._layout_state.grown_size = (diagram.width, diagram.height)
     if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
-    diagram._layout_state.grown_size = (diagram.width, diagram.height)
     router = OrthogonalRouter()
-    diagram.routes = {id(edge): router.route(edge) for edge in diagram.edges}
+    routes: dict[int, list[Point]] = {}
+    for edge in diagram.edges:
+        waypoints = router.route(edge)
+        edge.waypoints = waypoints
+        routes[id(edge)] = waypoints
+    diagram.routes = routes
 
 
 def _reset(diagram: Any, elements: list[Element]) -> None:

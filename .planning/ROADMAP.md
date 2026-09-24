@@ -6,7 +6,7 @@ Following the successful release of `v0.4.0` (auto-layout, CLI, modularity), thi
 
 ## Phases
 
-- [ ] **Phase 1: SDD Review Polish & Edge Robustness** - CLI error targeting, descendant traversal memoization, stable edge keying, and import cleanliness.
+- [x] **Phase 1: SDD Review Polish & Edge Robustness** - CLI error targeting, descendant traversal memoization, stable edge keying, and import cleanliness.
 - [ ] **Phase 2: Architectural Follow-ups** - Typed constraint dataclasses and group flow layout engine extraction.
 - [ ] **Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups** - Optional inline JavaScript injection for responsive SVG manipulation.
 
@@ -25,7 +25,7 @@ Following the successful release of `v0.4.0` (auto-layout, CLI, modularity), thi
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Implement CLI path checks, graph traversal memoization, edge waypoint attachment, and import cleanup.
+- [x] 01-01: Implement CLI path checks, graph traversal memoization, edge waypoint attachment, and import cleanup.
 
 ### Phase 2: Architectural Follow-ups
 **Goal**: Elevate model type-safety and decouple layout logic from container elements.  

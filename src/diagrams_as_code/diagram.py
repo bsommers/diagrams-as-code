@@ -5,6 +5,7 @@ import dataclasses
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
+from diagrams_as_code import context, rasterize
 from diagrams_as_code.bom import BOMGenerator
 from diagrams_as_code.connections import Edge, Port, Routing
 from diagrams_as_code.constraints import ConstraintSolver
@@ -15,7 +16,6 @@ from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
 from diagrams_as_code.theme import Theme, get_theme
-from diagrams_as_code import context, rasterize
 
 
 class _EdgeBuilder:

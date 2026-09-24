@@ -145,6 +145,9 @@ def _report(path: Path, exc: Exception, debug: bool) -> None:
 
 
 def _render(args: argparse.Namespace) -> int:
+    if args.out.is_file():
+        print(f"error: --out: {args.out} is an existing file, not a directory", file=sys.stderr)
+        return 2
     status = 0
     errors: list[tuple[Path, Exception]] = []
     scripts = discover(args.paths, errors)

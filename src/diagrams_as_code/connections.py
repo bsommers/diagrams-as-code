@@ -4,7 +4,7 @@ from enum import Enum
 from typing import Any, Optional, Type, TypeVar, Union
 
 from diagrams_as_code.elements import Element
-from diagrams_as_code.geometry import Anchor
+from diagrams_as_code.geometry import Anchor, Point
 
 E = TypeVar("E", bound=Enum)
 
@@ -105,3 +105,4 @@ class Edge:
         self.arrow_head = bool(arrow_head)
         self.arrow_tail = bool(arrow_tail)
         self.metadata: dict[str, Any] = dict(metadata) if metadata else {}
+        self.waypoints: Optional[list[Point]] = None

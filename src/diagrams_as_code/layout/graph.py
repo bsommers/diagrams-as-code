@@ -66,6 +66,13 @@ def pinned_ids(elements: list[Element]) -> set[str]:
     would translate the descendant away from the position it was anchored to.
     """
     pinned: set[str] = set()
+    enclosing_cache: dict[str, set[str]] = {}
+
+    def _get_enclosing(target: Element) -> set[str]:
+        if target.id not in enclosing_cache:
+            enclosing_cache[target.id] = _enclosing_ids(target)
+        return enclosing_cache[target.id]
+
     for el in elements:
         user = _user_constraints(el)
         if not user:
@@ -80,7 +87,7 @@ def pinned_ids(elements: list[Element]) -> set[str]:
         for c in user:
             if c["type"] != "relative_dir":
                 continue
-            inside = _enclosing_ids(c["target"])
+            inside = _get_enclosing(c["target"])
             pinned.update(g.id for g in ancestors if g.id not in inside)
     return pinned
 

@@ -16,8 +16,6 @@ from pathlib import Path
 
 import pytest
 
-from diagrams_as_code.diagram import Diagram
-
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCES = REPO_ROOT / "docs" / "sources.md"
 DOCKERFILE = REPO_ROOT / "Dockerfile"

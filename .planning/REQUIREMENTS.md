@@ -7,10 +7,10 @@
 
 ### Phase 1: SDD Review Polish & Edge Robustness
 
-- [ ] **POLISH-01**: CLI `--out` validation: When `--out` path is an existing regular file when generating multiple outputs, report a clear error blaming `--out` rather than blaming the diagram script.
-- [ ] **POLISH-02**: Graph builder optimization: Memoize descendant pin state in `layout/graph.py` (`_has_absolute_descendant()`) during bottom-up traversal to eliminate repeated $O(n \cdot \text{depth})$ subtree walks.
-- [ ] **POLISH-03**: Edge identity keying: Replace `id(edge)` dictionary keying in `layout/pipeline.py` with stable edge identifiers or direct waypoint storage on `Edge` instances.
-- [ ] **POLISH-04**: Import cleanliness & ordering: Clean up unused `Diagram` import in `tests/test_dependency_catalog.py` and alphabetize imports in `diagram.py`.
+- [x] **POLISH-01**: CLI `--out` validation: When `--out` path is an existing regular file when generating multiple outputs, report a clear error blaming `--out` rather than blaming the diagram script.
+- [x] **POLISH-02**: Graph builder optimization: Memoize descendant pin state in `layout/graph.py` (`_has_absolute_descendant()`) during bottom-up traversal to eliminate repeated $O(n \cdot \text{depth})$ subtree walks.
+- [x] **POLISH-03**: Edge identity keying: Replace `id(edge)` dictionary keying in `layout/pipeline.py` with stable edge identifiers or direct waypoint storage on `Edge` instances.
+- [x] **POLISH-04**: Import cleanliness & ordering: Clean up unused `Diagram` import in `tests/test_dependency_catalog.py` and alphabetize imports in `diagram.py`.
 
 ### Phase 2: Architectural Follow-ups
 
@@ -27,10 +27,10 @@
 
 | Requirement | Phase | Status |
 |---|---|:---:|
-| POLISH-01 | Phase 1 (Polish) | Pending |
-| POLISH-02 | Phase 1 (Polish) | Pending |
-| POLISH-03 | Phase 1 (Polish) | Pending |
-| POLISH-04 | Phase 1 (Polish) | Pending |
+| POLISH-01 | Phase 1 (Polish) | Completed |
+| POLISH-02 | Phase 1 (Polish) | Completed |
+| POLISH-03 | Phase 1 (Polish) | Completed |
+| POLISH-04 | Phase 1 (Polish) | Completed |
 | ARCH-01 | Phase 2 (Architecture) | Pending |
 | ARCH-02 | Phase 2 (Architecture) | Pending |
 | INTER-01 | Phase 3 (Interactive) | Pending |

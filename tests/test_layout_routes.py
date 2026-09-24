@@ -14,7 +14,9 @@ def _diag() -> Diagram:
 def test_solve_routes_every_edge() -> None:
     d = _diag()
     (edge,) = d.edges
-    assert d.routes[id(edge)] == OrthogonalRouter().route(edge)
+    assert edge.waypoints is not None
+    assert edge.waypoints == OrthogonalRouter().route(edge)
+    assert d.routes[id(edge)] == edge.waypoints
 
 
 def test_renderer_uses_given_routes_without_calling_the_router(monkeypatch) -> None:
@@ -31,7 +33,24 @@ def test_renderer_uses_given_routes_without_calling_the_router(monkeypatch) -> N
     assert "<path" in svg
 
 
-def test_renderer_still_routes_when_no_routes_are_given() -> None:
+def test_renderer_uses_edge_waypoints_directly_without_routes_dict(monkeypatch) -> None:
     d = _diag()
+
+    def fail(self, edge):
+        raise AssertionError("renderer must not call router when edge has waypoints")
+
+    monkeypatch.setattr(OrthogonalRouter, "route", fail)
+    svg = SVGRenderer(d.theme).render(
+        elements=d.shapes, groups=d.groups, edges=d.edges,
+        width=d.width, height=d.height, routes=None,
+    )
+    assert "<path" in svg
+
+
+def test_renderer_still_routes_when_no_routes_or_waypoints() -> None:
+    d = _diag()
+    (edge,) = d.edges
+    edge.waypoints = None
     svg = SVGRenderer(d.theme).render(elements=d.shapes, groups=d.groups, edges=d.edges, width=d.width, height=d.height)
     assert "<path" in svg
+

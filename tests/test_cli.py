@@ -90,10 +90,18 @@ def test_script_without_diagram_function(tmp_path: Path, capsys) -> None:
     assert "defines no diagram() function" in capsys.readouterr().err
 
 
-def test_usage_errors_return_2(capsys) -> None:
+def test_usage_errors_return_2(capsys, tmp_path: Path) -> None:
     assert main(["render"]) == 2
     assert main(["render", "x.py", "--layout", "grid"]) == 2
     assert main(["no-such-command"]) == 2
+
+    # --out pointing to an existing file blames --out, not the script
+    f = tmp_path / "not_a_dir.txt"
+    f.write_text("content", encoding="utf-8")
+    script = _script(tmp_path / "demo.py")
+    assert main(["render", str(script), "--out", str(f)]) == 2
+    err = capsys.readouterr().err
+    assert f"error: --out: {f} is an existing file" in err
 
 
 def test_layout_export(tmp_path: Path) -> None:

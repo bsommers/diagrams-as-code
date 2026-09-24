@@ -165,7 +165,11 @@ class SVGRenderer:
 
         # 3. Render Edges
         for e in edge_list:
-            pts = routes[id(e)] if routes is not None and id(e) in routes else self.router.route(e)
+            pts = (
+                e.waypoints
+                if getattr(e, "waypoints", None) is not None
+                else (routes[id(e)] if routes is not None and id(e) in routes else self.router.route(e))
+            )
             if len(pts) < 2:
                 continue
 
