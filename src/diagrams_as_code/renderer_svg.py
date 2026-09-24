@@ -71,6 +71,191 @@ class SVGRenderer:
             lines.append(" ".join(curr))
         return lines
 
+    def _render_interactive_styles(self) -> str:
+        contrast = self._contrast_color(self.theme.accent)
+        return (
+            "    <style>\n"
+            "      .diagram-interactive { cursor: grab; user-select: none; }\n"
+            "      .diagram-interactive:active { cursor: grabbing; }\n"
+            "      .group-header { cursor: pointer; }\n"
+            "      .group-header:hover text { opacity: 0.8; }\n"
+            f'      .group-toggle {{ font-size: 12px; fill: {self.theme.accent}; user-select: none; }}\n'
+            "      .hud-btn { cursor: pointer; }\n"
+            "      .hud-btn rect { transition: fill 0.15s; }\n"
+            f'      .hud-btn:hover rect {{ fill: {self.theme.accent}; }}\n'
+            f'      .hud-btn:hover text {{ fill: {contrast}; }}\n'
+            "    </style>"
+        )
+
+    def _render_interactive_controls(self, width: float, height: float) -> list[str]:
+        ctrl_x = float(width) - 110.0
+        ctrl_y = 16.0
+        ctrl_w = 94.0
+        ctrl_h = 30.0
+        return [
+            f'  <g id="svg-pan-zoom-controls" transform="translate({ctrl_x}, {ctrl_y})">',
+            f'    <rect x="0" y="0" width="{ctrl_w}" height="{ctrl_h}" rx="6" '
+            f'fill="{self.theme.node_fill}" stroke="{self.theme.node_stroke}" stroke-width="1.5" filter="url(#shadow)"/>',
+            '    <g id="btn-zoom-in" class="hud-btn">'
+            f'<rect x="3" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
+            f'<text x="16" y="19" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="16" font-weight="bold">+</text>'
+            '<title>Zoom In</title></g>',
+            '    <g id="btn-zoom-out" class="hud-btn">'
+            f'<rect x="34" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
+            f'<text x="47" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="16" font-weight="bold">−</text>'
+            '<title>Zoom Out</title></g>',
+            '    <g id="btn-zoom-reset" class="hud-btn">'
+            f'<rect x="65" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
+            f'<text x="78" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="13" font-weight="bold">⟲</text>'
+            '<title>Reset View</title></g>',
+            '  </g>',
+        ]
+
+    def _render_interactive_script(self, width: float, height: float) -> list[str]:
+        w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
+        h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
+        ctrl_x = float(width) - 110.0
+        ctrl_y = 16.0
+        js = f"""
+(function() {{
+  var svg = document.currentScript ? document.currentScript.closest('svg') : document.querySelector('svg');
+  if (!svg) return;
+
+  var vbAttr = svg.getAttribute('viewBox') || '0 0 {w_val} {h_val}';
+  var parts = vbAttr.split(/[\\s,]+/).map(Number);
+  var orig = {{ x: parts[0], y: parts[1], w: parts[2], h: parts[3] }};
+  var vb = {{ x: orig.x, y: orig.y, w: orig.w, h: orig.h }};
+
+  function updateViewBox() {{
+    svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+    var ctrl = document.getElementById('svg-pan-zoom-controls');
+    if (ctrl) {{
+      var scale = vb.w / orig.w;
+      var cx = vb.x + vb.w - (orig.w - {ctrl_x}) * scale;
+      var cy = vb.y + {ctrl_y} * scale;
+      ctrl.setAttribute('transform', 'translate(' + cx + ',' + cy + ') scale(' + scale + ')');
+    }}
+  }}
+
+  var isPanning = false;
+  var startX = 0, startY = 0;
+
+  svg.addEventListener('mousedown', function(e) {{
+    if (e.target.closest('#svg-pan-zoom-controls') || e.target.closest('.group-header')) return;
+    if (e.button !== 0) return;
+    isPanning = true;
+    startX = e.clientX;
+    startY = e.clientY;
+  }});
+
+  window.addEventListener('mousemove', function(e) {{
+    if (!isPanning) return;
+    var rect = svg.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    var dx = (e.clientX - startX) * (vb.w / rect.width);
+    var dy = (e.clientY - startY) * (vb.h / rect.height);
+    vb.x -= dx;
+    vb.y -= dy;
+    startX = e.clientX;
+    startY = e.clientY;
+    updateViewBox();
+  }});
+
+  window.addEventListener('mouseup', function() {{
+    isPanning = false;
+  }});
+
+  function zoomAt(factor, clientX, clientY) {{
+    var rect = svg.getBoundingClientRect();
+    var mouseX = clientX !== undefined && rect.width ? (clientX - rect.left) / rect.width : 0.5;
+    var mouseY = clientY !== undefined && rect.height ? (clientY - rect.top) / rect.height : 0.5;
+    var newW = vb.w * factor;
+    var newH = vb.h * factor;
+    if (newW < orig.w * 0.05 || newW > orig.w * 20.0) return;
+    vb.x += (vb.w - newW) * mouseX;
+    vb.y += (vb.h - newH) * mouseY;
+    vb.w = newW;
+    vb.h = newH;
+    updateViewBox();
+  }}
+
+  svg.addEventListener('wheel', function(e) {{
+    e.preventDefault();
+    var factor = e.deltaY > 0 ? 1.15 : 0.85;
+    zoomAt(factor, e.clientX, e.clientY);
+  }}, {{ passive: false }});
+
+  var btnIn = document.getElementById('btn-zoom-in');
+  if (btnIn) btnIn.addEventListener('click', function(e) {{
+    e.stopPropagation();
+    zoomAt(0.8);
+  }});
+
+  var btnOut = document.getElementById('btn-zoom-out');
+  if (btnOut) btnOut.addEventListener('click', function(e) {{
+    e.stopPropagation();
+    zoomAt(1.25);
+  }});
+
+  var btnReset = document.getElementById('btn-zoom-reset');
+  if (btnReset) btnReset.addEventListener('click', function(e) {{
+    e.stopPropagation();
+    vb.x = orig.x; vb.y = orig.y; vb.w = orig.w; vb.h = orig.h;
+    updateViewBox();
+  }});
+
+  var groupHeaders = svg.querySelectorAll('.group-header');
+  groupHeaders.forEach(function(header) {{
+    header.addEventListener('click', function(e) {{
+      e.stopPropagation();
+      var groupId = header.getAttribute('data-group-id');
+      var groupG = document.getElementById(groupId);
+      if (!groupG) return;
+      var isCollapsed = groupG.getAttribute('data-collapsed') === 'true';
+      var newCollapsed = !isCollapsed;
+      groupG.setAttribute('data-collapsed', newCollapsed ? 'true' : 'false');
+
+      var toggle = groupG.querySelector('.group-toggle');
+      if (toggle) toggle.textContent = newCollapsed ? '▶' : '▼';
+
+      var rect = groupG.querySelector('.group-box');
+      if (rect) {{
+        var origH = parseFloat(groupG.getAttribute('data-orig-height') || rect.getAttribute('height'));
+        var headerH = parseFloat(groupG.getAttribute('data-header-height') || '35');
+        rect.setAttribute('height', newCollapsed ? headerH : origH);
+      }}
+
+      function setVisibility(gId, hide) {{
+        var directChildren = svg.querySelectorAll('[data-parent-group=\"' + gId + '\"]');
+        directChildren.forEach(function(child) {{
+          child.style.display = hide ? 'none' : '';
+          if (child.classList.contains('diagram-group')) {{
+            var childGId = child.getAttribute('data-group-id') || child.id;
+            var childCollapsed = child.getAttribute('data-collapsed') === 'true';
+            if (!hide && childCollapsed) {{
+              setVisibility(childGId, true);
+            }} else {{
+              setVisibility(childGId, hide);
+            }}
+          }}
+        }});
+        var edges = svg.querySelectorAll('[data-source-group=\"' + gId + '\"], [data-target-group=\"' + gId + '\"]');
+        edges.forEach(function(edge) {{
+          edge.style.display = hide ? 'none' : '';
+        }});
+      }}
+
+      setVisibility(groupId, newCollapsed);
+    }});
+  }});
+}})();
+"""
+        return [
+            '  <script type="text/javascript"><![CDATA[',
+            js.strip(),
+            '  ]]></script>',
+        ]
+
     def render(
         self,
         elements: Optional[Sequence[Element]] = None,
@@ -79,6 +264,7 @@ class SVGRenderer:
         width: float = 1200.0,
         height: float = 800.0,
         routes: Optional[Mapping[int, list[Point]]] = None,
+        interactive: bool = False,
     ) -> str:
         """Render complete SVG string for provided diagram elements and connections."""
         element_list = list(elements) if elements is not None else []
@@ -88,8 +274,9 @@ class SVGRenderer:
         w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
         h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
 
+        svg_class = ' class="diagram-interactive"' if interactive else ""
         lines: list[str] = [
-            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_val} {h_val}" width="{w_val}" height="{h_val}">',
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_val} {h_val}" width="{w_val}" height="{h_val}"{svg_class}>',
 
 
             "  <defs>",
@@ -128,6 +315,8 @@ class SVGRenderer:
             '      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>'
         )
         lines.append("    </filter>")
+        if interactive:
+            lines.append(self._render_interactive_styles())
         lines.append("  </defs>")
 
         # Canvas background fill
@@ -151,19 +340,52 @@ class SVGRenderer:
             g_meta = getattr(g, "metadata", {}) or {}
             g_fill = g_meta.get("fill", self.theme.group_bg)
             g_stroke = g_meta.get("stroke", self.theme.group_stroke)
-            lines.append(f'  <g id="{escaped_g_id}">')
-            lines.append(
-                f'    <rect x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" rx="8" '
-                f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
-            )
-            if g.label:
+            if interactive:
+                p_attr = f' data-parent-group="{html.escape(g.parent.id, quote=True)}"' if g.parent is not None else ""
+                h_h = getattr(g, "header_height", 35.0)
                 lines.append(
-                    f'    <text x="{b.x + 16}" y="{b.y + 24}" fill="{self.theme.accent}" '
-                    f'font-family="{self.theme.font_family}" font-size="14" font-weight="bold">{html.escape(g.label)}</text>'
+                    f'  <g id="{escaped_g_id}" class="diagram-group" data-group-id="{escaped_g_id}" '
+                    f'data-collapsed="false" data-orig-height="{b.height}" data-header-height="{h_h}"{p_attr}>'
                 )
-            lines.append("  </g>")
+                lines.append(
+                    f'    <rect class="group-box" x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" rx="8" '
+                    f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
+                )
+                lines.append(f'    <g class="group-header" data-group-id="{escaped_g_id}">')
+                lines.append(
+                    f'      <rect x="{b.x}" y="{b.y}" width="{b.width}" height="{h_h}" rx="8" fill="transparent" />'
+                )
+                lines.append(
+                    f'      <text class="group-toggle" x="{b.x + 14}" y="{b.y + 22}">▼</text>'
+                )
+                if g.label:
+                    lines.append(
+                        f'      <text x="{b.x + 32}" y="{b.y + 24}" fill="{self.theme.accent}" '
+                        f'font-family="{self.theme.font_family}" font-size="14" font-weight="bold">{html.escape(g.label)}</text>'
+                    )
+                lines.append("    </g>")
+                lines.append("  </g>")
+            else:
+                lines.append(f'  <g id="{escaped_g_id}">')
+                lines.append(
+                    f'    <rect x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" rx="8" '
+                    f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
+                )
+                if g.label:
+                    lines.append(
+                        f'    <text x="{b.x + 16}" y="{b.y + 24}" fill="{self.theme.accent}" '
+                        f'font-family="{self.theme.font_family}" font-size="14" font-weight="bold">{html.escape(g.label)}</text>'
+                    )
+                lines.append("  </g>")
 
         # 3. Render Edges
+        def _get_group_id(elem: Any) -> Optional[str]:
+            if isinstance(elem, Group):
+                return elem.id
+            if getattr(elem, "parent", None) is not None:
+                return elem.parent.id
+            return None
+
         for e in edge_list:
             pts = (
                 e.waypoints
@@ -189,9 +411,22 @@ class SVGRenderer:
                 f' marker-start="url(#{m_id}-tail)"' if e.arrow_tail else ""
             )
 
-            lines.append(
-                f'  <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="2"{dash}{marker_start}{marker_end} />'
-            )
+            if interactive:
+                src_gid = _get_group_id(e.source)
+                tgt_gid = _get_group_id(e.target)
+                edge_attrs = ""
+                if src_gid:
+                    edge_attrs += f' data-source-group="{html.escape(src_gid, quote=True)}"'
+                if tgt_gid:
+                    edge_attrs += f' data-target-group="{html.escape(tgt_gid, quote=True)}"'
+                lines.append(f'  <g class="diagram-edge"{edge_attrs}>')
+                lines.append(
+                    f'    <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="2"{dash}{marker_start}{marker_end} />'
+                )
+            else:
+                lines.append(
+                    f'  <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="2"{dash}{marker_start}{marker_end} />'
+                )
 
             # Centered protocol badge so edge lines don't cross text
             if e.label:
@@ -219,13 +454,21 @@ class SVGRenderer:
                     height=badge_h,
                     font_family=self.theme.font_family,
                 )
-                lines.append(f"  {badge_svg}")
+                indent = "    " if interactive else "  "
+                lines.append(f"{indent}{badge_svg}")
+
+            if interactive:
+                lines.append("  </g>")
 
         # 4. Render Shapes
         for el in element_list:
             b = el.bounds
             escaped_el_id = html.escape(el.id, quote=True)
-            lines.append(f'  <g id="{escaped_el_id}" filter="url(#shadow)">')
+            if interactive and getattr(el, "parent", None) is not None:
+                escaped_p_id = html.escape(el.parent.id, quote=True)
+                lines.append(f'  <g id="{escaped_el_id}" data-parent-group="{escaped_p_id}" filter="url(#shadow)">')
+            else:
+                lines.append(f'  <g id="{escaped_el_id}" filter="url(#shadow)">')
 
             kind_raw = getattr(el, "kind", "box")
             kind = (kind_raw or "box").lower().replace("-", "_")
@@ -411,6 +654,10 @@ class SVGRenderer:
                         )
 
             lines.append("  </g>")
+
+        if interactive:
+            lines.extend(self._render_interactive_controls(width, height))
+            lines.extend(self._render_interactive_script(width, height))
 
         lines.append("</svg>")
         return "\n".join(lines)

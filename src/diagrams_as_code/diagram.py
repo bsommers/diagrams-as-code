@@ -262,6 +262,7 @@ class Diagram:
         layout_file: Optional[Union[str, Path]] = None,
         rank_gap: float = 80.0,
         node_gap: float = 40.0,
+        interactive: bool = False,
     ) -> None:
         self.title = title
         self.width = float(width)
@@ -274,6 +275,7 @@ class Diagram:
         else:
             self.theme = base_t
         self.label_position = label_position
+        self.interactive = bool(interactive)
         self.shapes: list[Shape] = []
         self.groups: list[Group] = []
         self.edges: list[Edge] = []
@@ -293,6 +295,7 @@ class Diagram:
             layout_file=layout_file,
             rank_gap=rank_gap,
             node_gap=node_gap,
+            interactive=interactive,
         )
 
     def configure(
@@ -304,8 +307,11 @@ class Diagram:
         layout_file: Optional[Union[str, Path]] = None,
         rank_gap: Optional[float] = None,
         node_gap: Optional[float] = None,
+        interactive: Optional[bool] = None,
     ) -> Diagram:
         """Change layout or theme settings; layout changes re-solve on next render."""
+        if interactive is not None:
+            self.interactive = bool(interactive)
         if layout is not None and layout not in self.LAYOUT_MODES:
             raise ValueError(f"layout must be one of {self.LAYOUT_MODES}, got {layout!r}")
         if direction is not None and direction not in DIRECTIONS:
@@ -525,6 +531,7 @@ class Diagram:
             width=self.width,
             height=self.height,
             routes=self.routes,
+            interactive=self.interactive,
         )
         if path is not None:
             p = Path(path)

@@ -19,9 +19,9 @@
 
 ### Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups (`CAP-DIAG-INTERACTIVE`)
 
-- [ ] **INTER-01**: Interactive SVG enablement: Support `Diagram(interactive=True)` emitting zero-dependency inline SVG `<script>` and `<style>` blocks.
-- [ ] **INTER-02**: Pan & Zoom viewport controls: Mouse drag, scroll wheel zoom, and reset button integrated within SVG `viewBox`.
-- [ ] **INTER-03**: Collapsible groups: Interactive click toggles on hierarchical group headers to collapse/expand child nodes.
+- [x] **INTER-01**: Interactive SVG enablement: Support `Diagram(interactive=True)` emitting zero-dependency inline SVG `<script>` and `<style>` blocks.
+- [x] **INTER-02**: Pan & Zoom viewport controls: Mouse drag, scroll wheel zoom, and reset button integrated within SVG `viewBox`.
+- [x] **INTER-03**: Collapsible groups: Interactive click toggles on hierarchical group headers to collapse/expand child nodes.
 
 ## Traceability
 
@@ -33,6 +33,6 @@
 | POLISH-04 | Phase 1 (Polish) | Completed |
 | ARCH-01 | Phase 2 (Architecture) | Completed |
 | ARCH-02 | Phase 2 (Architecture) | Completed |
-| INTER-01 | Phase 3 (Interactive) | Pending |
-| INTER-02 | Phase 3 (Interactive) | Pending |
-| INTER-03 | Phase 3 (Interactive) | Pending |
+| INTER-01 | Phase 3 (Interactive) | Completed |
+| INTER-02 | Phase 3 (Interactive) | Completed |
+| INTER-03 | Phase 3 (Interactive) | Completed |

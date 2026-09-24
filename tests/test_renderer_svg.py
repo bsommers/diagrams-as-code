@@ -389,4 +389,121 @@ def test_kind_icon_pure_rendering() -> None:
     assert '<rect x="100.0" y="100.0"' not in svg
 
 
+def test_interactive_svg_rendering_structure() -> None:
+    """Verify interactive mode includes styles, HUD controls, CDATA script, and is valid XML."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_a", label="Sensor A").at(50, 50)
+    s2 = Shape("node_b", label="Sensor B").at(250, 50)
+    e = Edge(s1, s2, label="MQTT")
+
+    svg = renderer.render(
+        elements=[s1, s2], edges=[e], width=800, height=600, interactive=True
+    )
+
+    # Strictly valid XML
+    root = ET.fromstring(svg)
+    assert root.tag == "{http://www.w3.org/2000/svg}svg"
+    assert "diagram-interactive" in root.attrib.get("class", "")
+
+    # Script tag with CDATA and client-side logic
+    assert "<script" in svg
+    assert "<![CDATA[" in svg
+    assert "svg-pan-zoom-controls" in svg
+    assert "btn-zoom-in" in svg
+    assert "btn-zoom-out" in svg
+    assert "btn-zoom-reset" in svg
+    assert "updateViewBox" in svg
+    assert "zoomAt" in svg
+
+    # Interactive style rules
+    assert ".diagram-interactive" in svg
+    assert ".group-header" in svg
+    assert ".group-toggle" in svg
+    assert ".hud-btn" in svg
+
+
+def test_interactive_svg_collapsible_groups_and_edges() -> None:
+    """Verify interactive group headers, toggle icons, hierarchy metadata, and edge group tagging."""
+    theme = get_theme("cyber_slate")
+    renderer = SVGRenderer(theme)
+
+    parent_grp = Group("parent_g", label="Factory OT Network").at(20, 20)
+    child_grp = Group("child_g", label="Cell Zone 1").at(40, 60)
+    parent_grp.add(child_grp)
+
+    s1 = Shape("plc1", label="PLC 1").at(60, 100)
+    child_grp.add(s1)
+
+    s2 = Shape("hmi", label="Plant HMI").at(300, 100)
+    parent_grp.add(s2)
+
+    s3 = Shape("cloud", label="AWS IoT").at(600, 100)
+
+    e_internal = Edge(s1, s2, label="OPC-UA")
+    e_external = Edge(s2, s3, label="HTTPS")
+
+    svg = renderer.render(
+        elements=[s1, s2, s3],
+        groups=[parent_grp, child_grp],
+        edges=[e_internal, e_external],
+        width=1000,
+        height=700,
+        interactive=True,
+    )
+
+    # Valid XML
+    ET.fromstring(svg)
+
+    # Group attributes
+    assert 'class="diagram-group"' in svg
+    assert 'data-group-id="parent_g"' in svg
+    assert 'data-collapsed="false"' in svg
+    assert 'data-parent-group="parent_g"' in svg
+    assert 'class="group-header"' in svg
+    assert 'class="group-toggle"' in svg
+    assert "▼" in svg
+
+    # Shape parent tagging
+    assert 'data-parent-group="child_g"' in svg
+    assert 'data-parent-group="parent_g"' in svg
+
+    # Edge group tagging
+    assert 'class="diagram-edge"' in svg
+    assert 'data-source-group="child_g"' in svg
+    assert 'data-target-group="parent_g"' in svg
+    assert 'data-source-group="parent_g"' in svg
+
+
+def test_diagram_interactive_flag_and_configuration() -> None:
+    """Verify Diagram(interactive=True) flows through render_svg and configure toggles."""
+    from diagrams_as_code.diagram import Diagram
+
+    d = Diagram(
+        "Interactive Test",
+        width=600,
+        height=400,
+        theme="nord_frost",
+        interactive=True,
+    )
+    n1 = Shape("n1", label="Node 1").at(50, 50)
+    n2 = Shape("n2", label="Node 2").at(250, 50)
+    d.add(n1, n2, Edge(n1, n2))
+
+    svg_interactive = d.render_svg()
+    assert 'class="diagram-interactive"' in svg_interactive
+    assert "svg-pan-zoom-controls" in svg_interactive
+    assert "<script" in svg_interactive
+
+    # Reconfigure to non-interactive
+    d.configure(interactive=False)
+    assert not d.interactive
+    svg_plain = d.render_svg()
+    assert 'class="diagram-interactive"' not in svg_plain
+    assert "svg-pan-zoom-controls" not in svg_plain
+    assert "<script" not in svg_plain
+
+
+
 
