@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [v0.5.0] - 2026-09-23
+### Added
+- **CLI Interactive Export Flags (`CAP-DIAG-CLI-INTERACTIVE`, `CLI-INTER-01` to `CLI-INTER-04`):**
+  - Added `--interactive` and `--no-interactive` flags to `diagrams-as-code render` subcommand in `src/diagrams_as_code/cli.py`.
+  - Added tri-state override forwarding to `Diagram.configure(interactive=...)`, preserving script-authored configuration by default.
+  - Enabled batch directory rendering with `--interactive` across all discovered diagram scripts.
+  - Added unit and subprocess integration tests in `tests/test_cli.py`.
+
 
 ### Added
 - **Interactive SVG Pan-Zoom and Collapsible Groups (`CAP-DIAG-INTERACTIVE`, `INTER-01` to `INTER-03`):**

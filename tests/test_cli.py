@@ -123,3 +123,58 @@ def test_module_entry_point_runs() -> None:
     env = dict(os.environ, PYTHONPATH=str(REPO_ROOT / "src"))
     res = subprocess.run([sys.executable, "-m", "diagrams_as_code", "themes"], capture_output=True, text=True, env=env)
     assert res.returncode == 0 and "nord" in res.stdout
+
+
+def test_cli_render_interactive_flag(tmp_path: Path) -> None:
+    """Verify --interactive flag enables pan/zoom controls and inline script."""
+    script = _script(tmp_path / "interactive_demo.py")
+    out = tmp_path / "out"
+    assert main(["render", str(script), "--out", str(out), "--format", "svg", "--interactive"]) == 0
+    svg = (out / "demo.svg").read_text(encoding="utf-8")
+    assert 'class="diagram-interactive"' in svg
+    assert "svg-pan-zoom-controls" in svg
+    assert "<script" in svg
+
+
+def test_cli_render_no_interactive_flag(tmp_path: Path) -> None:
+    """Verify --no-interactive flag overrides script-level interactive=True."""
+    custom_script = tmp_path / "override_demo.py"
+    custom_script.write_text(
+        '''from diagrams_as_code import Diagram
+OUTPUT_STEM = "override"
+def diagram() -> Diagram:
+    with Diagram("Demo", interactive=True) as d:
+        a = d.shape("A")
+    return d
+''',
+        encoding="utf-8",
+    )
+    out = tmp_path / "out"
+    assert main(["render", str(custom_script), "--out", str(out), "--format", "svg", "--no-interactive"]) == 0
+    svg = (out / "override.svg").read_text(encoding="utf-8")
+    assert 'class="diagram-interactive"' not in svg
+    assert "svg-pan-zoom-controls" not in svg
+    assert "<script" not in svg
+
+
+def test_cli_render_interactive_batch(tmp_path: Path) -> None:
+    """Verify batch directory rendering applies --interactive across all discovered scripts."""
+    _script(tmp_path / "gallery" / "cloud" / "one.py", stem="one")
+    _script(tmp_path / "gallery" / "ai" / "two.py", stem="two")
+    out = tmp_path / "out"
+    assert main(["render", str(tmp_path / "gallery"), "--out", str(out), "--format", "svg", "--interactive"]) == 0
+    svg_one = (out / "cloud" / "one.svg").read_text(encoding="utf-8")
+    svg_two = (out / "ai" / "two.svg").read_text(encoding="utf-8")
+    assert "svg-pan-zoom-controls" in svg_one
+    assert "svg-pan-zoom-controls" in svg_two
+
+
+def test_cli_help_lists_interactive(capsys) -> None:
+    """Verify diagrams-as-code render --help lists --interactive flag."""
+    with pytest.raises(SystemExit):
+        from diagrams_as_code.cli import build_parser
+
+        build_parser().parse_args(["render", "--help"])
+    help_text = capsys.readouterr().out
+    assert "--interactive" in help_text
+    assert "--no-interactive" in help_text

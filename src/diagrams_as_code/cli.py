@@ -56,6 +56,19 @@ def build_parser() -> argparse.ArgumentParser:
     render.add_argument("--out", type=Path, default=Path("output"))
     render.add_argument("--format", type=_formats, default=_formats(DEFAULT_FORMATS))
     render.add_argument("--theme", choices=list_themes())
+    render.add_argument(
+        "--interactive",
+        dest="interactive",
+        action="store_true",
+        default=None,
+        help="emit interactive pan/zoom-enabled SVG output",
+    )
+    render.add_argument(
+        "--no-interactive",
+        dest="interactive",
+        action="store_false",
+        help="disable interactive SVG output",
+    )
     _add_layout_flags(render)
 
     layout = sub.add_parser("layout", help="layout file tools")
@@ -135,7 +148,13 @@ def load_script(path: Path) -> tuple[Diagram, str]:
 
 
 def _configure(diag: Diagram, args: argparse.Namespace, theme: Optional[str] = None) -> None:
-    diag.configure(layout=args.layout, direction=args.direction, layout_file=args.layout_file, theme=theme)
+    diag.configure(
+        layout=args.layout,
+        direction=args.direction,
+        layout_file=args.layout_file,
+        theme=theme,
+        interactive=getattr(args, "interactive", None),
+    )
 
 
 def _report(path: Path, exc: Exception, debug: bool) -> None:

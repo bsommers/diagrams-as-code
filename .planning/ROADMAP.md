@@ -1,55 +1,55 @@
-# Roadmap: Diagrams as Code
+# Roadmap: Milestone v0.6.0 (CLI Interactive & Rich Viewport Controls)
 
 ## Milestone History
 
-- **[v0.5.0 Milestone](milestones/v0.5.0-ROADMAP.md)** — Shipped 2026-09-23: Phase 1 (Polish & Edge Robustness), Phase 2 (Typed Constraints & Group Flow Decoupling), Phase 3 (Interactive SVG Pan-Zoom & Collapsible Groups). Tag `v0.5.0` released.
+- **[v0.5.0 Milestone](milestones/v0.5.0-ROADMAP.md)** — Shipped 2026-09-23: Phase 1 (Polish & Edge Robustness), Phase 2 (Typed Constraints & Group Flow Decoupling), Phase 3 (Interactive SVG Pan-Zoom & Collapsible Groups).
+- **[v0.4.0 Milestone](milestones/v0.5.0-ROADMAP.md)** — Shipped 2026-09-22: Auto-layout, JSON layout files, CLI, modularity refactoring, unconditional canvas growth.
 
-## Active Milestone: v0.6.0
+## Overview
 
-*Pending next milestone initialization (`gsd-new-milestone`). Planned focus: CLI interactive export (`CAP-DIAG-CLI-INTERACTIVE`), interactive viewport minimap, and search filters.*
+Milestone `v0.6.0` extends the standalone CLI and client-side interactive SVG rendering capabilities with three sequential phases:
+1. Phase 4 exposes `--interactive` on the CLI to allow batch generation of interactive diagrams without code edits.
+2. Phase 5 adds inline HUD search filtering to quickly highlight nodes and inspect complex architectures.
+3. Phase 6 introduces an interactive minimap overview thumbnail for navigating large topologies.
 
-## Previous Phases (v0.5.0)
+## Phases
+
+- [x] **Phase 4: CLI `--interactive` Option (`CAP-DIAG-CLI-INTERACTIVE`)** - Add `--interactive` flag to `diagrams-as-code render` for single-script and batch exports.
+- [ ] **Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)** - Add HUD search filter with dynamic node matching and opacity dimming.
+- [ ] **Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)** - Add interactive overview thumbnail widget for large diagrams.
 
 ## Phase Details
 
-### Phase 1: SDD Review Polish & Edge Robustness
-**Goal**: Address non-blocking minor debt and edge cases logged during the auto-layout/CLI review.  
-**Depends on**: Nothing (first active phase).  
-**Requirements**: POLISH-01, POLISH-02, POLISH-03, POLISH-04  
+### Phase 4: CLI `--interactive` Option (`CAP-DIAG-CLI-INTERACTIVE`)
+**Goal**: Allow users to batch-generate interactive SVG diagrams directly from the CLI.  
+**Depends on**: Milestone v0.5.0  
+**Requirements**: CLI-INTER-01, CLI-INTER-02, CLI-INTER-03, CLI-INTER-04  
 **Success Criteria**:
-1. When `--out` points to an existing file when rendering, the CLI reports an explicit error attributing the issue to `--out` rather than failing during discovery and blaming the diagram script.
-2. `_has_absolute_descendant()` in `layout/graph.py` computes descendant pin status without redundant $O(n \cdot \text{depth})$ tree re-traversals.
-3. Pre-computed edge waypoints in `layout/pipeline.py` do not rely on transient `id(edge)` keys.
-4. `tests/test_dependency_catalog.py` has no unused imports, and `diagram.py` imports are alphabetized.
-5. All 431 existing tests continue to pass with zero regressions.
+1. `diagrams-as-code render <path> --interactive` outputs SVG files with interactive pan/zoom and collapsible groups enabled.
+2. Batch rendering whole directories (e.g. `diagrams-as-code render examples/ --interactive --out output/`) applies interactive mode across all discovered scripts.
+3. Default rendering without `--interactive` produces 100% byte-identical, script-free outputs.
+4. Comprehensive test coverage in `tests/test_cli.py`.
 **Plans**: 1 plan
+- [x] 04-01: Add `--interactive` flag to `cli.py`, pass through `_configure()`, and add CLI integration tests.
 
-Plans:
-- [x] 01-01: Implement CLI path checks, graph traversal memoization, edge waypoint attachment, and import cleanup.
-
-### Phase 2: Architectural Follow-ups
-**Goal**: Elevate model type-safety and decouple layout logic from container elements.  
-**Depends on**: Phase 1  
-**Requirements**: ARCH-01, ARCH-02  
+### Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)
+**Goal**: Enable fast visual search and filtering inside interactive SVGs.  
+**Depends on**: Phase 4  
+**Requirements**: SEARCH-01, SEARCH-02, SEARCH-03  
 **Success Criteria**:
-1. Shape constraints are represented by typed dataclasses (`RelativeConstraint`, `AbsoluteConstraint`, `AlignConstraint`) with backwards-compatible coercion.
-2. `Group.flow()` delegates placement algorithms to a pluggable layout engine class in `diagrams_as_code/layout/`.
-3. All 88 domain diagrams render with 100% byte-identical SVG outputs.
+1. Search input in HUD controls accepts query strings.
+2. Matching elements are highlighted while non-matching elements and edges are dimmed.
+3. Clearing the input or pressing Escape restores normal visibility.
 **Plans**: 1 plan
+- [ ] 05-01: Implement search input widget in HUD and client-side filtering script in `renderer_svg.py`.
 
-Plans:
-- [x] 02-01: Introduce typed constraint dataclasses and extract group flow layout engine.
-
-### Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups (`CAP-DIAG-INTERACTIVE`)
-**Goal**: Implement client-side interactive pan/zoom and collapsible groups via pure, zero-dependency inline JavaScript.  
-**Depends on**: Phase 2  
-**Requirements**: INTER-01, INTER-02, INTER-03  
+### Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)
+**Goal**: Provide bird's-eye navigation for large diagrams.  
+**Depends on**: Phase 5  
+**Requirements**: MINIMAP-01, MINIMAP-02, MINIMAP-03  
 **Success Criteria**:
-1. `Diagram(interactive=True)` injects lightweight, zero-dependency SVG `<script>` and `<style>` blocks into rendered SVGs.
-2. Users can pan via click-drag and zoom via scroll wheel within browser SVG viewports.
-3. Clicking group headers toggles group collapse/expand state with reactive visibility changes.
-4. Default rendering (`interactive=False`) remains 100% byte-identical and zero-script.
+1. Pinned minimap thumbnail renders scaled overview of all elements.
+2. Viewport indicator rect reflects visible bounds and updates during pan/zoom.
+3. Clicking/dragging on minimap navigates the main diagram viewport.
 **Plans**: 1 plan
-
-Plans:
-- [x] 03-01: Implement interactive SVG script generator, pan/zoom handlers, and collapsible group toggles.
+- [ ] 06-01: Implement minimap thumbnail and interactive drag navigation.

@@ -3,11 +3,11 @@ gsd_state_version: '1.0'
 status: ready_to_plan
 milestone: v0.6.0
 progress:
-  total_phases: 0
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_phases: 3
+  completed_phases: 1
+  total_plans: 3
+  completed_plans: 1
+  percent: 33
 ---
 
 # Project State
@@ -17,15 +17,17 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 **Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** Milestone v0.5.0 archived and released. Ready to plan v0.6.0.
+**Current focus:** Milestone v0.6.0 (Phase 5: Client-Side Search & Node Highlight).
 
 ## Current Position
 
-Milestone: v0.5.0 (Archived to `.planning/milestones/`)  
-Status: Released & Tagged `v0.5.0` (remote CI 100% green)  
-Last activity: 2026-09-23 — Released and archived v0.5.0 (Interactive SVG, Typed Constraints, and Group Flow Decoupling).
+Phase: 5 of 6 (Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`))  
+Milestone: v0.6.0 (Phases 4-6)  
+Plan: 0 of 1 in current phase  
+Status: Ready to plan  
+Last activity: 2026-09-23 — Completed Phase 4 (CLI `--interactive` Option).
 
-Progress: [██████████] 100%
+Progress: [███░░░░░░░] 33%
 
 ## Performance Metrics
 

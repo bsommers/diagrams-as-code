@@ -6,9 +6,9 @@
   "last_updated": "2026-09-23T00:00:00Z",
   "summary": {
     "total_capabilities": 13,
-    "operational": 12,
+    "operational": 13,
     "beta": 0,
-    "planned": 1,
+    "planned": 0,
     "categories": [
       "Geometry & Layout",
       "Constraint Resolution",
@@ -198,10 +198,11 @@
       "id": "CAP-DIAG-CLI-INTERACTIVE",
       "name": "CLI Interactive Export Option",
       "category": "Command-Line Interface",
-      "status": "PLANNED",
+      "status": "OPERATIONAL",
       "target_release": "v0.6.0",
-      "details": "Command-line flag (--interactive) for diagrams-as-code render and batch pipelines to emit responsive, pan/zoom-enabled SVG assets directly.",
-      "verification": "Pending v0.6.0 milestone"
+      "python_api": "diagrams_as_code.cli",
+      "details": "Command-line flags (--interactive, --no-interactive) for diagrams-as-code render and batch directory exports to emit responsive, pan/zoom-enabled SVG assets directly.",
+      "verification": "uv run pytest tests/test_cli.py"
     }
   ]
 }

@@ -170,11 +170,13 @@
 
 ---
 
-### 2.13 Planned Capabilities
+### 2.13 Command-Line Interface Extensions
 
 #### `CAP-DIAG-CLI-INTERACTIVE`: CLI Interactive Export Option
-- **Status:** `PLANNED`
+- **Status:** `OPERATIONAL`
 - **Target Release:** `v0.6.0`
-- **Details:** Command-line flag (`--interactive`) for `diagrams-as-code render` and batch pipelines to emit responsive, pan/zoom-enabled SVG assets directly.
-- **Verification:** Pending `v0.6.0` milestone
+- **Command:** `diagrams-as-code render <path> --interactive` / `--no-interactive`
+- **Features:** Command-line flags (`--interactive`, `--no-interactive`) for `diagrams-as-code render` supporting both single diagram scripts and batch directory exports. Injects client-side pan/zoom controls and collapsible groups into SVG assets directly from the CLI without code modifications. Preserves tri-state configuration defaulting to script-authored settings when omitted.
+- **Verification:** `uv run pytest tests/test_cli.py`
+
 

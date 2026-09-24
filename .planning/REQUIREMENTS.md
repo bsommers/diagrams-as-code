@@ -1,38 +1,41 @@
-# Requirements: Diagrams as Code
+# Requirements: Milestone v0.6.0 (CLI Interactive & Viewport Enhancements)
 
-**Defined:** 2026-09-22  
+**Defined:** 2026-09-23  
+**Target Release:** `v0.6.0`  
 **Core Value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.
 
 ## Active Requirements
 
-### Phase 1: SDD Review Polish & Edge Robustness
+### Phase 4: CLI `--interactive` Option (`CAP-DIAG-CLI-INTERACTIVE`)
 
-- [x] **POLISH-01**: CLI `--out` validation: When `--out` path is an existing regular file when generating multiple outputs, report a clear error blaming `--out` rather than blaming the diagram script.
-- [x] **POLISH-02**: Graph builder optimization: Memoize descendant pin state in `layout/graph.py` (`_has_absolute_descendant()`) during bottom-up traversal to eliminate repeated $O(n \cdot \text{depth})$ subtree walks.
-- [x] **POLISH-03**: Edge identity keying: Replace `id(edge)` dictionary keying in `layout/pipeline.py` with stable edge identifiers or direct waypoint storage on `Edge` instances.
-- [x] **POLISH-04**: Import cleanliness & ordering: Clean up unused `Diagram` import in `tests/test_dependency_catalog.py` and alphabetize imports in `diagram.py`.
+- [x] **CLI-INTER-01**: Add `--interactive` flag to `diagrams-as-code render` subcommand in `src/diagrams_as_code/cli.py`, forwarding `interactive=True` to `Diagram.configure()`.
+- [x] **CLI-INTER-02**: Support batch directory rendering with `--interactive`, generating interactive SVG outputs for all discovered diagram scripts.
+- [x] **CLI-INTER-03**: Verify default non-interactive behavior when `--interactive` is omitted (`interactive=False` retained).
+- [x] **CLI-INTER-04**: Add unit and subprocess integration tests for CLI `--interactive` in `tests/test_cli.py`.
 
-### Phase 2: Architectural Follow-ups
+### Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)
 
-- [x] **ARCH-01**: Typed constraint dataclasses: Replace untyped constraint dictionaries (`shape.constraints = [{"type": ...}]`) with typed dataclasses (`RelativeConstraint`, `AbsoluteConstraint`, `AlignConstraint`) with backward-compatible dict coercion.
-- [x] **ARCH-02**: Group flow layout engine extraction: Decouple flow layout algorithms from `Group.flow()` into dedicated layout engine classes under `diagrams_as_code/layout/`.
+- [ ] **SEARCH-01**: Inject lightweight search input field into the SVG interactive HUD controls.
+- [ ] **SEARCH-02**: Client-side filtering script: Typing in search input dynamically highlights matching node labels/IDs and dims non-matching nodes/edges.
+- [ ] **SEARCH-03**: Escape key or clearing input resets all node opacities.
 
-### Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups (`CAP-DIAG-INTERACTIVE`)
+### Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)
 
-- [x] **INTER-01**: Interactive SVG enablement: Support `Diagram(interactive=True)` emitting zero-dependency inline SVG `<script>` and `<style>` blocks.
-- [x] **INTER-02**: Pan & Zoom viewport controls: Mouse drag, scroll wheel zoom, and reset button integrated within SVG `viewBox`.
-- [x] **INTER-03**: Collapsible groups: Interactive click toggles on hierarchical group headers to collapse/expand child nodes.
+- [ ] **MINIMAP-01**: Render a miniature overview thumbnail widget in the bottom corner of the interactive SVG canvas.
+- [ ] **MINIMAP-02**: Render a responsive viewport rectangle inside the minimap indicating the current visible diagram bounds.
+- [ ] **MINIMAP-03**: Support click and drag on the minimap viewport rectangle to smoothly navigate across large topologies.
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |---|---|:---:|
-| POLISH-01 | Phase 1 (Polish) | Completed |
-| POLISH-02 | Phase 1 (Polish) | Completed |
-| POLISH-03 | Phase 1 (Polish) | Completed |
-| POLISH-04 | Phase 1 (Polish) | Completed |
-| ARCH-01 | Phase 2 (Architecture) | Completed |
-| ARCH-02 | Phase 2 (Architecture) | Completed |
-| INTER-01 | Phase 3 (Interactive) | Completed |
-| INTER-02 | Phase 3 (Interactive) | Completed |
-| INTER-03 | Phase 3 (Interactive) | Completed |
+| CLI-INTER-01 | Phase 4 (CLI Interactive) | Passed |
+| CLI-INTER-02 | Phase 4 (CLI Interactive) | Passed |
+| CLI-INTER-03 | Phase 4 (CLI Interactive) | Passed |
+| CLI-INTER-04 | Phase 4 (CLI Interactive) | Passed |
+| SEARCH-01 | Phase 5 (Search Highlight) | Pending |
+| SEARCH-02 | Phase 5 (Search Highlight) | Pending |
+| SEARCH-03 | Phase 5 (Search Highlight) | Pending |
+| MINIMAP-01 | Phase 6 (Minimap) | Pending |
+| MINIMAP-02 | Phase 6 (Minimap) | Pending |
+| MINIMAP-03 | Phase 6 (Minimap) | Pending |
