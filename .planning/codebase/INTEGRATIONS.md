@@ -1,41 +1,31 @@
 ---
-last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
+last_mapped_commit: 24c06772a5a54fc91d84877ee767ee933a39e761
 ---
 
-# External Integrations
+# External Integrations & Tooling
 
-**Analysis Date:** 2026-09-19
+**Analysis Date:** 2026-09-22 (v0.4.0)
 
-## APIs & External Services
+## Runtime & Service Integrations
 
-**Cloud Storage:**
-- AWS S3 - Hosting and distribution of generated diagram graphics (`*.svg`, `*.png`) and markdown documentation
-  - SDK/Client: `boto3` v1.x (`boto3.client('s3')`)
-  - Implementation: `upload_to_s3()` in `iiot_theme.py`
-  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` environment variables (configured via `docker-compose.yml`)
+- **Cloud / Network Services:** None. The framework operates 100% offline and air-gapped without remote API calls, telemetry, or network dependencies.
+- **Operating Systems:** Linux, macOS, Windows supported via pure Python standard library.
 
-**Version Control Services:**
-- GitHub / Remote Git - Automated synchronization of generated diagrams and README Bill of Materials
-  - SDK/Client: `gitpython` (`git.Repo`)
-  - Implementation: `push_to_github()` in `iiot_theme.py`
-  - Auth: Local git SSH keys or credential helper
+## Optional Rasterization Backends
 
-## Data Storage
+For converting vector SVG diagrams to PNG bitmaps, `rasterize.py` attempts backends in this deterministic order:
+1. `resvg` (via `resvg-py` dev dependency) - Recommended fast Rust-based renderer.
+2. `cairosvg` - Python Cairo wrapper (if installed system-wide).
+3. `inkscape` - Command-line binary (`inkscape --export-filename=...`).
+4. `magick` / `convert` - ImageMagick CLI.
 
-**File Systems & Local Catalogs:**
-- Local Icon Catalog (`icons/icons.yaml`, `icons/icons.csv`)
-  - Schema: `symbol`, `path`, `notes`
-  - Loaded by `IIoTPalette.load_icons()` in `iiot_theme.py`
+If no rasterizer is present, SVG output is still generated cleanly, while PNG rendering raises an instructive `RuntimeError` advising installation.
 
-## Protocol & Ecosystem Mappings
+## Container & CI Tooling
 
-**Industrial IoT (IIoT) Ecosystem:**
-- The codebase models IIoT architecture components across multiple diagram definitions:
-  - Brokers & Clusters: IIoT Edge Gateway, Central IIoT Cluster (`diagram-sparklplug.py`, `diagram-iiot-high-availability.py`)
-  - Field Protocols: Modbus/TCP, OPC UA, Sparkplug B (`spBv1.0/...`), MQTT over TLS
-  - Data Streaming & Historians: Apache Kafka (`diagrams.onprem.queue.Kafka`), InfluxDB (`diagrams.onprem.database.Influxdb`)
-  - Observability: Grafana Cloud dashboards (`diagrams.onprem.monitoring.Grafana`)
-
-## Webhooks & Notifications
-
-- None configured directly in code; intended for execution within CI/CD pipelines (e.g., GitHub Actions referenced in `RUNNING.md`).
+- **Container Image:** `ghcr.io/astral-sh/uv:python3.12-bookworm-slim` packaging `fonts-dejavu-core` to guarantee consistent typography rendering across host platforms.
+- **Docker Compose:** `docker-compose.yml` mounts local `output/` into `/app/output`.
+- **CI / CD Workflows:** GitHub Actions matrix running:
+  - Python 3.10, 3.11, 3.12, 3.13 unit tests.
+  - Docker container build and example execution.
+  - Post-execution diff gate on `output/`, `icons/`, `docs/`, `README.md`.

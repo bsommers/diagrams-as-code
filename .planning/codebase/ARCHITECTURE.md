@@ -1,60 +1,76 @@
 ---
-last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
+last_mapped_commit: 24c06772a5a54fc91d84877ee767ee933a39e761
 ---
 
 # Architecture
 
-**Analysis Date:** 2026-09-19
+**Analysis Date:** 2026-09-22 (v0.4.0)
 
 ## Pattern Overview
 
-**Overall:** Script-based Declarative Diagram Generation with Palette Helpers
+**Overall:** Decoupled Directed Diagram Engine with Layered Auto-Layout, Manhattan Routing, and Pure-Python SVG Synthesis.
 
-**Key Characteristics:**
-- Procedural Python scripts declaring Graphviz topologies using the `diagrams` library
-- Decoupled icon catalog (`icons/icons.yaml`, `icons/icons.csv`) mapping symbolic names to image assets
-- Stateful BOM (Bill of Materials) tracking during diagram construction
-- Post-render lifecycle hooks for generating markdown documentation, Git commits, and AWS S3 uploads
+**Key Invariants:**
+1. **Zero External Runtime Dependencies:** Everything runs on the Python 3.10+ standard library.
+2. **Deterministic Output:** Same code and data always produces identical SVG coordinates.
+3. **Decoupled Lifecycle:** Shape instantiation, hierarchical grouping, placement solving, edge routing, and file rendering are isolated stages.
+4. **Strict Layered Dependency Direction:** Lower modules never import higher modules; enforced by AST-based `tests/test_module_boundaries.py`.
 
-## Layers
+## Architectural Pipeline
 
-**1. Configuration & Asset Catalog (`icons/`):**
-- Purpose: Provides source-of-truth metadata for architecture nodes (symbol keys, image paths, technical notes)
-- Files: `icons/icons.yaml`, `icons/icons.csv`
-- Used by: `IIoTPalette` in `iiot_theme.py`
+```mermaid
+flowchart TD
+    subgraph Input ["1. Input & Context"]
+        D["Diagram(layout='auto'|'manual')"]
+        C["context.py (active stack)"]
+        DSL["Shapes, Groups, Edges (>>)"]
+        D --> C
+        DSL --> D
+    end
 
-**2. Palette & Theme Layer (`iiot_theme.py`):**
-- Purpose: Encapsulates corporate styling (dark/gold colors), icon bootstrapping, node factory methods, and BOM tracking
-- Key Class: `IIoTPalette`
-- Depends on: `diagrams.custom.Custom`, `pyyaml`, `gitpython`, `boto3`
-- Used by: All diagram definition scripts (`main.py`, `themed_main.py`, `one-click-main.py`)
+    subgraph Pipeline ["2. Solve & Routing Pipeline (layout/pipeline.py)"]
+        P0["_reset(): Snapshot initial bounds"]
+        P1["_apply_layout_file(): JSON position overrides"]
+        P2["_run_auto_layout(): LayeredLayout on scope graphs"]
+        P3["ConstraintSolver.solve(): Directional & alignment constraints"]
+        P4["_grow_canvas(): Unconditional canvas expansion on overflow"]
+        P5["OrthogonalRouter: Compute Manhattan waypoints"]
+        P0 --> P1 --> P2 --> P3 --> P4 --> P5
+    end
 
-**3. Diagram Definition Scripts (Root level):**
-- Purpose: Declare architecture topologies (clusters, nodes, directed edges, protocols)
-- Files:
-  - `main.py` & `themed_main.py`: General edge-to-cloud topology
-  - `diagram-architecture-slide.py`: Multi-cluster reference slide with legend and data flow
-  - `diagram-iiot-high-availability.py`: Clustered high-availability broker architecture with load balancer
-  - `diagram-sparklplug.py`: Sparkplug B topic namespaces and industrial sensor ingest
-  - `diagram-svg-out.py`: Vector output rendering configuration
-- Depends on: `diagrams` DSL and `iiot_theme.py`
+    subgraph Output ["3. Rendering & Output"]
+        R["SVGRenderer (renderer_svg.py): Pure XML drawing"]
+        BOM["BOMGenerator (bom.py): Markdown & JSON catalogs"]
+        PNG["rasterize.py: Multi-tier fallback (resvg/cairo/inkscape/magick)"]
+        W["output.render_all(): File emissions"]
+        R --> W
+        BOM --> W
+        PNG --> W
+    end
 
-**4. Publication & Documentation Generation:**
-- Purpose: Extracts used symbols into `README.md` Bill of Materials and uploads assets
-- Methods: `IIoTPalette.generate_readme()`, `IIoTPalette.push_to_github()`, `IIoTPalette.upload_to_s3()`
+    Input --> Pipeline --> Output
+```
 
-## Data Flow
+## Layer Descriptions
 
-**Execution Lifecycle:**
-1. Script initializes `IIoTPalette(config_path)`: Bootstraps `icons/` folder and loads icon definitions.
-2. Context manager opens `with Diagram(...)`: Configures canvas direction, background colors, and output format (`svg` or `png`).
-3. Script creates nodes and clusters: Calls `palette.get_node(symbol, label)`, which returns a `Custom` node and registers the symbol in `used_symbols`.
-4. Nodes connected with `>> Edge(...) >>`: Establishes directed graph relationships and protocol labels.
-5. Exit context manager: `diagrams` compiles the AST to Graphviz DOT and invokes system `dot` binary to render graphic file.
-6. Documentation hook: Calls `palette.generate_readme()`, outputting formatted Markdown BOM table referencing the generated image.
+1. **Context & Foundation Layer (`context.py`, `geometry.py`):**
+   - Active diagram tracking via module-level stack (avoids circular imports).
+   - Immutable 2D primitives (`Point`, `Size`, `Rect`, `Anchor`, `UnitBasis`).
 
-## Key Abstractions
+2. **Model Layer (`elements.py`, `connections.py`, `groups.py`, `shapes.py`, `theme.py`):**
+   - Element lifecycle: unplaced, placed late, relocated, cloned.
+   - 13 theme presets, 60 built-in vector icons, and standard SVG shapes (`box`, `cylinder`, `cloud`, `server_rack`, `database`, `diamond`, `badge`).
+   - Group hierarchy with auto-bounding.
 
-- `IIoTPalette`: Icon registry, custom node factory, and BOM tracker.
-- `Cluster`: Graphviz subgraph boundary grouping nodes logically (e.g., "Production Site", "Control Plane", "Cloud Platform").
-- `Edge`: Connection abstraction defining line styling (`dashed`, `dotted`, `solid`), stroke colors, and protocol annotations.
+3. **Layout & Routing Engine (`layout/`, `constraints.py`, `router.py`):**
+   - `layout/layered.py`: Deterministic Sugiyama-style rank ordering, crossing minimization (barycenter), and coordinate assignment.
+   - `layout/graph.py`: Builds per-scope dependency graphs with edge lifting and pin detection.
+   - `layout/sidecar.py`: Stable JSON layout file export and override application.
+   - `constraints.py`: Topological DAG solver for directional relative constraints (`right_of`, `below`, etc.).
+   - `router.py`: Orthogonal Manhattan routing with automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`).
+
+4. **Rendering & Export Layer (`renderer_svg.py`, `rasterize.py`, `output.py`, `bom.py`, `cli.py`):**
+   - `renderer_svg.py`: Pure string formatting W3C SVG XML generator with multi-line wrapping `<tspan>` and automated luminance contrast text coloring.
+   - `rasterize.py`: Headless rasterizer chain returning PNG bytes.
+   - `cli.py`: Unified command line runner (`render`, `layout export`, `themes`, `icons`).
+   - `iiot_diagrams/`: Facade package forwarding to canonical `diagrams_as_code`.

@@ -1,51 +1,41 @@
 ---
-last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
+last_mapped_commit: 24c06772a5a54fc91d84877ee767ee933a39e761
 ---
 
-# Coding Conventions
+# Code Conventions & Invariants
 
-**Analysis Date:** 2026-09-19
+**Analysis Date:** 2026-09-22 (v0.4.0)
 
-## Naming Patterns
+## Universal Tooling Rule: Always Use `uv`
 
-**Files:**
-- Script definitions: Mixed kebab-case and snake_case (`diagram-architecture-slide.py`, `iiot_theme.py`, `themed_main.py`)
-- Test scripts: Prefixed with `test_` (`test_bom.py`, `test_docs_bom.py`)
+- **Environment & Sync:** `uv sync`
+- **Script Execution:** `uv run python <script.py>`
+- **Test Execution:** `uv run pytest`
+- **Dependencies:** `uv add --dev <package>` / `uv remove <package>`
+- **Never:** Invoke bare `pip`, `python`, or `pytest` outside of `uv`.
 
-**Classes:**
-- PascalCase for all classes (`IIoTPalette`)
+## Architecture & Code Rules
 
-**Functions & Methods:**
-- snake_case for all methods (`get_node`, `load_icons`, `generate_readme`, `push_to_github`, `upload_to_s3`)
-- Private helper methods prefixed with single underscore (`_bootstrap`)
+1. **Zero External Runtime Dependencies:**
+   - The core engine is 100% Python standard library.
+   - `dependencies = []` in `pyproject.toml` remains strictly empty.
+   - Optional rasterizers (`resvg-py`) are dev-dependencies only.
 
-**Variables & Constants:**
-- Configuration constants in UPPER_SNAKE_CASE (`IIOT_YELLOW = "#FFC000"`, `IIOT_BLACK = "#000000"`, `GLOBAL_ATTR`, `BASE_NODE_ATTR`)
-- Local variables in snake_case (`node_info`, `used_symbols`, `diag_name`, `img_file`)
+2. **Strict Layering & Import Direction:**
+   - Evaluated by `tests/test_module_boundaries.py` using AST parsing.
+   - Lower layers (`geometry`, `context`) cannot import higher layers (`elements`, `diagram`, `layout`).
+   - Function-level imports are prohibited unless specifically allowlisted in the boundary test.
 
-## Code Style
+3. **Public API & Backward Compatibility:**
+   - `diagrams_as_code` is canonical.
+   - `iiot_diagrams` is an exact forwarding facade mirroring `diagrams_as_code.__all__`.
+   - `tests/test_public_api.py` enforces symbol parity between both packages.
 
-**Formatting:**
-- 4-space indentation following standard PEP 8 conventions
-- Double quotes primarily used for diagram labels and dictionary keys
-- Diagram DSL chain syntax:
-  - Directed edge connection: `source >> Edge(...) >> target`
-  - Group/Cluster scoping via context managers: `with Cluster("Name", graph_attr={...}):`
-  - Node list bulk connections: `sensors >> Edge(...) >> [node1, node2]`
+4. **Deterministic & Byte-Identical Output:**
+   - SVG generation is deterministic across runs and platforms.
+   - Output diff gate: `git diff --exit-code -- output/ icons/ README.md docs/`.
+   - Engine changes must run the full test suite to regenerate `output/` before commit.
 
-**Error Handling:**
-- Defensive fallback handling for icon lookups:
-  ```python
-  node_info = self.icon_data.get(sym_key, {"path": "./icons/default.png", "notes": "Unknown"})
-  ```
-- Catch-all exception handling around Git and AWS operations with stdout warning messages:
-  ```python
-  except Exception as e:
-      print(f"Git Error: {e}")
-  ```
-
-**Branding & Styling:**
-- Standard corporate palette constants defined at the top of diagram scripts:
-  - Background: Black (`#000000`) or Dark Grey (`#1A1A1A`)
-  - Accent / Lines: Gold / Yellow (`#FFC000` or `#F3B01C`)
-  - Node text / titles: Black text on gold fill, or gold text on dark background
+5. **Python Compatibility:**
+   - Code must execute identically on Python 3.10, 3.11, 3.12, and 3.13.
+   - Use `from __future__ import annotations` in all source files.

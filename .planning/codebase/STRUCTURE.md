@@ -1,82 +1,67 @@
 ---
-last_mapped_commit: aa12f844a5d25922af7be204ce6e5ef29d89db57
+last_mapped_commit: 24c06772a5a54fc91d84877ee767ee933a39e761
 ---
 
 # Codebase Structure
 
-**Analysis Date:** 2026-09-19
+**Analysis Date:** 2026-09-22 (v0.4.0)
 
-## Directory Layout
+## Repository Root Directory Tree
 
 ```
-.
-├── .planning/                          # Planning and codebase intelligence
-│   └── codebase/                       # Architectural documentation maps
-├── docs/                               # Documentation and specifications
-│   └── superpowers/
-│       └── plans/                      # Detailed implementation plans
-├── icons/                              # Node icon catalogs and metadata
-│   ├── icons.csv                       # Tabular icon symbol-path definitions
-│   └── icons.yaml                      # YAML icon symbol-path definitions
-├── Dockerfile                          # Container environment specification
-├── docker-compose.yml                  # Container execution configuration
-├── docker-build-n-run.sh               # Container build and launch script
-├── RUNNING.md                          # Operational instructions and guide
-├── main.py                             # Primary entry point
-├── iiot_theme.py                       # Canonical palette and theme implementation
-├── themed_main.py                      # Themed reference execution
-├── one-click-main.py                   # End-to-end rendering and publication pipeline
-├── diagram-architecture-slide.py       # Architecture slide layout
-├── diagram-iiot-high-availability.py   # High-availability cluster diagram
-├── diagram-sparklplug.py               # Sparkplug B industrial IoT diagram
-├── diagram-svg-out.py                  # Standalone SVG rendering script
-├── diagrams-1.py                       # Baseline architecture variant 1
-├── diagrams-2.py                       # Baseline architecture variant 2
-├── diagrams-3.py                       # Baseline architecture variant 3
-├── diagrams-hybrid-bridge.py           # Hybrid cloud bridge diagram
-├── diagrams-logos.py                   # Logo integration test diagram
-├── test_bom.py                         # BOM verification script
-├── test_docs_bom.py                    # Documentation generator test script
-├── mock-up.txt                         # Target ASCII layout specification
-├── bom_out_samp.txt                    # Sample Bill of Materials output
-├── Google Gemini.html                  # Historical context log
-└── diagrams-chat.txt                   # Historical prompt transcript
+diagrams-as-code/
+├── .planning/                  # GSD planning directory (codebase maps, roadmap, state)
+├── .claude/                    # Checkpoint tracking and project rules
+├── docs/                       # Architecture, running guide, how-tos, specs, changelog
+│   ├── diagrams/               # Architecture diagrams (ASCII, Mermaid, Draw.io)
+│   ├── superpowers/            # Specs and implementation plans
+│   ├── reviews/                # Architecture reviews
+│   ├── CAPABILITIES.md         # Living capability manifest (twin of capabilities.json)
+│   ├── capabilities.json       # Machine-readable capability registry
+│   └── CHANGELOG.md            # Master changelog (Keep a Changelog format)
+├── examples/                   # Reference architecture topologies (88 total across 8 domains)
+│   ├── ai/                     # 11 AI & LLM architectures
+│   ├── business_process/       # 11 Enterprise workflows
+│   ├── cloud/                  # 11 Cloud infrastructure & serverless
+│   ├── computer/               # 11 Hardware & workstation peripherals
+│   ├── cybersecurity/          # 11 SOC, SIEM, zero-trust topologies
+│   ├── datacenter/             # 11 Bare-metal & power topologies
+│   ├── iiot/                   # 11 Industrial IoT & edge architectures
+│   └── network_engineering/    # 11 Campus core, WAN, and routing
+├── icons/                      # 60 built-in SVG vector icons categorized by domain
+├── output/                     # Generated diagram SVGs, PNGs, and BOM markdown tables
+├── src/
+│   ├── diagrams_as_code/       # Canonical pure-Python engine
+│   │   ├── layout/             # Layered layout engine, graph builder, pipeline, sidecar
+│   │   │   ├── __init__.py     # Layout package exports
+│   │   │   ├── base.py         # Protocol, dataclasses (LayoutNode, LayoutEdge, LayoutGraph)
+│   │   │   ├── graph.py        # Scope graph extraction, edge lifting, pin detection
+│   │   │   ├── layered.py      # Sugiyama layered placement algorithm
+│   │   │   ├── pipeline.py     # Unified execution pipeline (run_layout)
+│   │   │   └── sidecar.py      # Editable JSON layout file export/import
+│   │   ├── __init__.py         # Public API re-exports and __version__
+│   │   ├── __main__.py         # Module execution entry (python -m diagrams_as_code)
+│   │   ├── bom.py              # Bill of Materials generator
+│   │   ├── cli.py              # CLI argument parser and command dispatcher
+│   │   ├── connections.py      # Edge definition and Port enums
+│   │   ├── constraints.py      # DAG relative constraint solver
+│   │   ├── context.py          # Active diagram context stack
+│   │   ├── diagram.py          # Diagram fluent context manager
+│   │   ├── elements.py         # Element and Shape base models
+│   │   ├── geometry.py         # Immutable Point, Size, Rect, Anchor, UnitBasis
+│   │   ├── groups.py           # Hierarchical Group container and auto-bounding
+│   │   ├── icon_glyphs.py      # Pre-compiled icon SVG path table
+│   │   ├── metrics.py          # Label and typography spatial metrics
+│   │   ├── output.py           # File emission engine (render_all)
+│   │   ├── rasterize.py        # Headless PNG rasterizer fallback chain
+│   │   ├── renderer_svg.py     # Pure Python SVG XML generator
+│   │   ├── router.py           # Orthogonal Manhattan router
+│   │   ├── shapes.py           # ShapeLibrary and vector primitive renderers
+│   │   └── theme.py            # Theme definitions and presets
+│   └── iiot_diagrams/          # Backward-compatibility facade package
+│       └── __init__.py         # Re-exports canonical symbols
+├── tests/                      # 29 test suites (431 total tests)
+├── tools/                      # Repository maintenance tools (generate_icons.py)
+├── pyproject.toml              # Project configuration and packaging metadata
+└── uv.lock                     # Deterministic dependency lockfile
 ```
-
-## Directory Purposes
-
-**`.planning/codebase/`:**
-- Purpose: Living system architecture and code intelligence documentation
-- Contains: `STACK.md`, `INTEGRATIONS.md`, `ARCHITECTURE.md`, `STRUCTURE.md`, `CONVENTIONS.md`, `TESTING.md`, `CONCERNS.md`
-
-**`docs/superpowers/plans/`:**
-- Purpose: Implementation specifications and roadmaps
-- Contains: Bite-sized implementation plans following TDD practices
-
-**`icons/`:**
-- Purpose: Stores symbol catalogs for node mapping
-- Contains: `icons.csv`, `icons.yaml`
-
-## Key File Locations
-
-**Entry Points:**
-- `main.py`: Core execution script initializing palette
-- `themed_main.py`: Example diagram generation showing industrial edge-to-cloud bridge
-- `one-click-main.py`: Full workflow generating diagram, README, and triggering optional Git/S3 publication
-- `docker-build-n-run.sh`: Automated Docker container execution script
-
-**Theme & Palette Modules:**
-- `iiot_theme.py`: Active theme definition and `IIoTPalette` class
-- Legacy/Variant theme files: `enhanced_iiot_themed_main.py`, `iiot_theme-2.py`, `old_iiot_theme.py`, `old2_iiot_theme.py`, `old3_iiot_theme.py`
-
-**Diagram Definitions:**
-- `diagram-architecture-slide.py`: Multi-cluster layout with legend
-- `diagram-iiot-high-availability.py`: High-availability cluster with load balancing and discovery lines
-- `diagram-sparklplug.py`: Sparkplug B topic architecture
-- `diagram-svg-out.py`: SVG output configuration
-
-## Naming Conventions
-
-- Python scripts: lowercase with hyphens (`diagram-*.py`) or underscores (`iiot_theme.py`, `main.py`)
-- Theme constants: uppercase snake case (`IIOT_YELLOW`, `IIOT_BLACK`, `DARK_GREY`, `GLOBAL_ATTR`)
-- Data files: lowercase with standard extensions (`.csv`, `.yaml`, `.txt`)
