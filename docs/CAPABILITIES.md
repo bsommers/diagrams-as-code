@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-09-22 (v0.4.0)  
+**Last Updated:** 2026-09-23 (v0.5.0-dev)  
 
 ---
 
@@ -19,6 +19,7 @@
 | **Can connections route orthogonally?** | **YES** | `s1 >> diag.edge("MQTT") >> s2` | Automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`) and Manhattan waypoint routing with collinear line simplification. |
 | **Can living BOM docs be generated?** | **YES** | `diag.generate_readme()` | Extracts component inventories, group affiliations, connection topology, and technical notes into Markdown tables and JSON catalogs. |
 | **Is there auto-layout?** | **YES** | `Diagram(layout="auto")` | A deterministic layered engine places unpinned shapes and groups from the edge structure (`direction="LR"`/`"TB"`); pinned shapes coexist via `.at()`/`.right_of()`, and a `LayoutWarning` flags any pin that overlaps an auto-placed sibling. |
+| **Can diagrams be zoomed and panned interactively?** | **YES** | `Diagram(interactive=True)` | Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features click-drag panning, scroll wheel zooming, viewport reset HUD controls, and interactive collapsible groups with header toggles. |
 
 ---
 
@@ -157,11 +158,13 @@
 
 ---
 
-### 2.12 Planned Capabilities
+### 2.12 Interactive SVG Vector Rendering
 
 #### `CAP-DIAG-INTERACTIVE`: Interactive SVG Pan-Zoom and Collapsible Groups
-- **Status:** `PLANNED`
-- **Target Release:** unscheduled
-- **Details:** Client-side lightweight JavaScript injection into SVG output for interactive panning, zooming, and group fold/unfold toggles.
-- **Verification:** Pending Milestone 2
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.5.0`
+- **Python API:** `diagrams_as_code.renderer_svg.SVGRenderer`, `diagrams_as_code.diagram.Diagram`
+- **Exports:** `Diagram(interactive=True)`, `SVGRenderer.render(interactive=True)`
+- **Features:** Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features responsive click-drag viewport panning, cursor-anchored mouse wheel zoom, viewport reset HUD controls (`#svg-pan-zoom-controls`), and interactive collapsible groups with header toggles (`▼` / `▶`) with recursive visibility management for child shapes, nested sub-groups, and incident edges. Standard non-interactive rendering (`interactive=False`) retains 100% byte-invariance and zero script overhead.
+- **Verification:** `uv run pytest tests/test_renderer_svg.py`
 

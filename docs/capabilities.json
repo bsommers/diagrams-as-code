@@ -187,10 +187,12 @@
       "id": "CAP-DIAG-INTERACTIVE",
       "name": "Interactive SVG Pan-Zoom and Collapsible Groups",
       "category": "SVG Vector Rendering",
-      "status": "PLANNED",
-      "target_release": "unscheduled",
-      "details": "Client-side lightweight JavaScript injection into SVG output for interactive panning, zooming, and group fold/unfold toggles.",
-      "verification": "Pending Milestone 2"
+      "status": "OPERATIONAL",
+      "target_release": "v0.5.0",
+      "python_api": "diagrams_as_code.renderer_svg.SVGRenderer",
+      "classes": ["SVGRenderer", "Diagram"],
+      "details": "Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features responsive click-drag viewport panning, cursor-anchored mouse wheel zoom, viewport reset HUD controls, and interactive collapsible groups with header toggles and recursive visibility propagation.",
+      "verification": "uv run pytest tests/test_renderer_svg.py"
     }
   ]
 }

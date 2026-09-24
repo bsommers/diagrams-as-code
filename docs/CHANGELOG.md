@@ -6,6 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- **Interactive SVG Pan-Zoom and Collapsible Groups (`CAP-DIAG-INTERACTIVE`, `INTER-01` to `INTER-03`):**
+  - Added `interactive: bool = False` flag to `Diagram.__init__`, `Diagram.configure()`, and `Diagram.render_svg()`.
+  - Added pure client-side SVG interaction with zero external binary or JavaScript dependencies.
+  - Implemented responsive mouse-drag canvas panning, cursor-centered scroll wheel zooming, and fixed-viewport HUD controls (`#svg-pan-zoom-controls`) featuring Zoom In, Zoom Out, and Reset buttons.
+  - Implemented collapsible hierarchical container groups with interactive click toggles (`▼` / `▶`) on group headers and recursive visibility management across child shapes, nested sub-groups (preserving nested collapse states), and incident edges.
+  - Enclosed inline JavaScript within `<![CDATA[ ... ]]>` inside `<script type="text/javascript">` to guarantee strict XML parser and ElementTree compatibility. Default rendering (`interactive=False`) remains 100% byte-identical and zero-script.
+- **Typed Constraint Dataclasses (`ARCH-01`):**
+  - Introduced typed dataclasses `AbsoluteConstraint`, `RelativeConstraint`, and `AlignConstraint` inheriting from base `Constraint` and `collections.abc.MutableMapping` for seamless dictionary duck-typing.
+  - Added `align_with()` multi-axis alignment supporting horizontal/vertical center, left, right, top, and bottom alignment constraints.
+- **Group Flow Layout Engine Decoupling (`ARCH-02`):**
+  - Created `diagrams_as_code.layout.flow` housing `GroupFlowLayout` protocol and engine classes `VerticalFlowLayout`, `HorizontalFlowLayout`, and `GridLayout`.
+  - Decoupled `Group` (Layer 2) from `layout` (Layer 4) via a dynamic layout registry (`register_group_layout`, `get_group_layout_engine`), ensuring strict acyclic module boundaries.
+  - Added `Group.flow(engine, **kwargs)` accepting either instantiated layout engines or registered mode names.
+- **CI Quota Conservation & Local-First Directives:**
+  - Added local-first testing and artifact verification directives to `AGENTS.md` and `.cursor/rules/uv.md`.
+  - Added concurrency cancellation (`cancel-in-progress: true`) and path filtering to `.github/workflows/ci.yml`.
+  - Symlinked `CLAUDE.md` and `GEMINI.md` to `AGENTS.md` for consistent cross-tool constraint enforcement.
+
+### Fixed
+- **CLI Output Collision Validation (`POLISH-01`):** Validated `--out` path collisions against existing regular files before executing diagram scripts, reporting a clear error attributing the collision to `--out`.
+- **Graph Builder Descendant Traversal Memoization (`POLISH-02`):** Memoized descendant pin state traversal in `layout/graph.py` to eliminate redundant $O(n \cdot \text{depth})$ subtree walks.
+- **Stable Edge Waypoint Keying (`POLISH-03`):** Replaced transient `id(edge)` dictionary keys in `layout/pipeline.py` with direct `Edge.waypoints` attribute storage.
+- **Import Ordering & Cleanup (`POLISH-04`):** Cleaned up unused imports in `tests/test_dependency_catalog.py` and alphabetized imports in `diagram.py`.
+
+### Verification Evidence
+- `uv run pytest` -> 439 passed in 11.3s across all unit, integration, boundary, and hygiene test suites.
+- `git diff --exit-code -- output/ icons/ README.md docs/` -> Zero byte drift across all 88 domain diagrams.
+- `tests/test_module_boundaries.py` -> 100% compliant with strict downward architectural layering.
+
 ## [v0.4.0] - 2026-09-22
 
 ### Added
