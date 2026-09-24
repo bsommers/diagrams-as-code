@@ -12,6 +12,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Added tri-state override forwarding to `Diagram.configure(interactive=...)`, preserving script-authored configuration by default.
   - Enabled batch directory rendering with `--interactive` across all discovered diagram scripts.
   - Added unit and subprocess integration tests in `tests/test_cli.py`.
+- **Client-Side Search & Node Highlighting (`CAP-DIAG-SEARCH`, `SEARCH-01` to `SEARCH-03`):**
+  - Integrated a lightweight search input field into the interactive HUD controls via responsive XHTML `<foreignObject>`.
+  - Implemented real-time dynamic substring matching against node IDs and labels, dimming non-matching nodes to 20% opacity and non-incident edges to 15% opacity.
+  - Added Escape key and clearing handler to restore original element opacities.
+  - Retained strict XML parseability and 100% byte invariance for non-interactive rendering.
 
 
 ### Added

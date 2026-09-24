@@ -15,9 +15,9 @@
 
 ### Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)
 
-- [ ] **SEARCH-01**: Inject lightweight search input field into the SVG interactive HUD controls.
-- [ ] **SEARCH-02**: Client-side filtering script: Typing in search input dynamically highlights matching node labels/IDs and dims non-matching nodes/edges.
-- [ ] **SEARCH-03**: Escape key or clearing input resets all node opacities.
+- [x] **SEARCH-01**: Inject lightweight search input field into the SVG interactive HUD controls.
+- [x] **SEARCH-02**: Client-side filtering script: Typing in search input dynamically highlights matching node labels/IDs and dims non-matching nodes/edges.
+- [x] **SEARCH-03**: Escape key or clearing input resets all node opacities.
 
 ### Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)
 
@@ -33,9 +33,9 @@
 | CLI-INTER-02 | Phase 4 (CLI Interactive) | Passed |
 | CLI-INTER-03 | Phase 4 (CLI Interactive) | Passed |
 | CLI-INTER-04 | Phase 4 (CLI Interactive) | Passed |
-| SEARCH-01 | Phase 5 (Search Highlight) | Pending |
-| SEARCH-02 | Phase 5 (Search Highlight) | Pending |
-| SEARCH-03 | Phase 5 (Search Highlight) | Pending |
+| SEARCH-01 | Phase 5 (Search Highlight) | Passed |
+| SEARCH-02 | Phase 5 (Search Highlight) | Passed |
+| SEARCH-03 | Phase 5 (Search Highlight) | Passed |
 | MINIMAP-01 | Phase 6 (Minimap) | Pending |
 | MINIMAP-02 | Phase 6 (Minimap) | Pending |
 | MINIMAP-03 | Phase 6 (Minimap) | Pending |

@@ -4,10 +4,10 @@ status: ready_to_plan
 milestone: v0.6.0
 progress:
   total_phases: 3
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 3
-  completed_plans: 1
-  percent: 33
+  completed_plans: 2
+  percent: 67
 ---
 
 # Project State
@@ -17,17 +17,17 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 **Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** Milestone v0.6.0 (Phase 5: Client-Side Search & Node Highlight).
+**Current focus:** Milestone v0.6.0 (Phase 6: Viewport Minimap Navigator).
 
 ## Current Position
 
-Phase: 5 of 6 (Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`))  
+Phase: 6 of 6 (Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`))  
 Milestone: v0.6.0 (Phases 4-6)  
 Plan: 0 of 1 in current phase  
 Status: Ready to plan  
-Last activity: 2026-09-23 — Completed Phase 4 (CLI `--interactive` Option).
+Last activity: 2026-09-23 — Completed Phase 5 (Client-Side Search & Node Highlight).
 
-Progress: [███░░░░░░░] 33%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 

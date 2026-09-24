@@ -84,29 +84,43 @@ class SVGRenderer:
             "      .hud-btn rect { transition: fill 0.15s; }\n"
             f'      .hud-btn:hover rect {{ fill: {self.theme.accent}; }}\n'
             f'      .hud-btn:hover text {{ fill: {contrast}; }}\n'
+            f'      #diagram-search-input {{\n'
+            f'        box-sizing: border-box; width: 100%; height: 100%;\n'
+            f'        background: {self.theme.background}; color: {self.theme.text};\n'
+            f'        border: 1px solid {self.theme.node_stroke}; border-radius: 4px;\n'
+            f'        padding: 0 6px; font-family: {self.theme.font_family}; font-size: 11px;\n'
+            f'        outline: none;\n'
+            f'      }}\n'
+            f'      #diagram-search-input:focus {{ border-color: {self.theme.accent}; }}\n'
+            f'      #diagram-search-input::placeholder {{ color: {self.theme.subtext}; opacity: 0.7; }}\n'
+            "      .diagram-node, .diagram-edge, .diagram-group { transition: opacity 0.2s ease-in-out; }\n"
             "    </style>"
         )
 
     def _render_interactive_controls(self, width: float, height: float) -> list[str]:
-        ctrl_x = float(width) - 110.0
-        ctrl_y = 16.0
-        ctrl_w = 94.0
+        ctrl_w = 228.0
         ctrl_h = 30.0
+        ctrl_x = float(width) - ctrl_w - 16.0
+        ctrl_y = 16.0
         return [
             f'  <g id="svg-pan-zoom-controls" transform="translate({ctrl_x}, {ctrl_y})">',
             f'    <rect x="0" y="0" width="{ctrl_w}" height="{ctrl_h}" rx="6" '
             f'fill="{self.theme.node_fill}" stroke="{self.theme.node_stroke}" stroke-width="1.5" filter="url(#shadow)"/>',
+            '    <foreignObject x="4" y="3" width="126" height="24">',
+            f'      <input xmlns="http://www.w3.org/1999/xhtml" id="diagram-search-input" type="text" '
+            f'placeholder="Search..." autocomplete="off" spellcheck="false" />',
+            '    </foreignObject>',
             '    <g id="btn-zoom-in" class="hud-btn">'
-            f'<rect x="3" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
-            f'<text x="16" y="19" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="16" font-weight="bold">+</text>'
+            f'<rect x="134" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
+            f'<text x="147" y="19" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="16" font-weight="bold">+</text>'
             '<title>Zoom In</title></g>',
             '    <g id="btn-zoom-out" class="hud-btn">'
-            f'<rect x="34" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
-            f'<text x="47" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="16" font-weight="bold">−</text>'
+            f'<rect x="165" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
+            f'<text x="178" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="16" font-weight="bold">−</text>'
             '<title>Zoom Out</title></g>',
             '    <g id="btn-zoom-reset" class="hud-btn">'
-            f'<rect x="65" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
-            f'<text x="78" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="13" font-weight="bold">⟲</text>'
+            f'<rect x="196" y="3" width="26" height="24" rx="4" fill="{self.theme.background}" />'
+            f'<text x="209" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="13" font-weight="bold">⟲</text>'
             '<title>Reset View</title></g>',
             '  </g>',
         ]
@@ -114,7 +128,8 @@ class SVGRenderer:
     def _render_interactive_script(self, width: float, height: float) -> list[str]:
         w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
         h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
-        ctrl_x = float(width) - 110.0
+        ctrl_w = 228.0
+        ctrl_x = float(width) - ctrl_w - 16.0
         ctrl_y = 16.0
         js = f"""
 (function() {{
@@ -203,6 +218,82 @@ class SVGRenderer:
     vb.x = orig.x; vb.y = orig.y; vb.w = orig.w; vb.h = orig.h;
     updateViewBox();
   }});
+
+  var searchInput = document.getElementById('diagram-search-input');
+  if (searchInput) {{
+    function applySearch(query) {{
+      var q = (query || '').trim().toLowerCase();
+      var nodes = svg.querySelectorAll('.diagram-node');
+      var edges = svg.querySelectorAll('.diagram-edge');
+      var groups = svg.querySelectorAll('.diagram-group');
+
+      if (!q) {{
+        nodes.forEach(function(n) {{ n.style.opacity = ''; }});
+        edges.forEach(function(e) {{ e.style.opacity = ''; }});
+        groups.forEach(function(g) {{ g.style.opacity = ''; }});
+        return;
+      }}
+
+      var matchedNodeIds = {{}};
+      nodes.forEach(function(n) {{
+        var id = (n.getAttribute('data-node-id') || n.id || '').toLowerCase();
+        var label = (n.getAttribute('data-label') || '').toLowerCase();
+        if (id.indexOf(q) !== -1 || label.indexOf(q) !== -1) {{
+          n.style.opacity = '1';
+          matchedNodeIds[n.getAttribute('data-node-id') || n.id] = true;
+        }} else {{
+          n.style.opacity = '0.2';
+        }}
+      }});
+
+      edges.forEach(function(e) {{
+        var src = e.getAttribute('data-source-id');
+        var tgt = e.getAttribute('data-target-id');
+        if ((src && matchedNodeIds[src]) || (tgt && matchedNodeIds[tgt])) {{
+          e.style.opacity = '1';
+        }} else {{
+          e.style.opacity = '0.15';
+        }}
+      }});
+
+      groups.forEach(function(g) {{
+        var gId = g.getAttribute('data-group-id') || g.id;
+        var gLabel = (g.getAttribute('data-label') || '').toLowerCase();
+        var hasMatch = (gId.toLowerCase().indexOf(q) !== -1) || (gLabel.indexOf(q) !== -1);
+        if (!hasMatch) {{
+          var children = g.querySelectorAll('.diagram-node');
+          for (var i = 0; i < children.length; i++) {{
+            var cId = children[i].getAttribute('data-node-id') || children[i].id;
+            if (matchedNodeIds[cId]) {{
+              hasMatch = true;
+              break;
+            }}
+          }}
+        }}
+        g.style.opacity = hasMatch ? '1' : '0.25';
+      }});
+    }}
+
+    searchInput.addEventListener('input', function() {{
+      applySearch(this.value);
+    }});
+
+    searchInput.addEventListener('keydown', function(e) {{
+      if (e.key === 'Escape') {{
+        this.value = '';
+        applySearch('');
+        this.blur();
+      }}
+      e.stopPropagation();
+    }});
+
+    searchInput.addEventListener('mousedown', function(e) {{
+      e.stopPropagation();
+    }});
+    searchInput.addEventListener('click', function(e) {{
+      e.stopPropagation();
+    }});
+  }}
 
   var groupHeaders = svg.querySelectorAll('.group-header');
   groupHeaders.forEach(function(header) {{
@@ -343,8 +434,10 @@ class SVGRenderer:
             if interactive:
                 p_attr = f' data-parent-group="{html.escape(g.parent.id, quote=True)}"' if g.parent is not None else ""
                 h_h = getattr(g, "header_height", 35.0)
+                g_label = html.escape(g.label or "", quote=True)
                 lines.append(
                     f'  <g id="{escaped_g_id}" class="diagram-group" data-group-id="{escaped_g_id}" '
+                    f'data-label="{g_label}" '
                     f'data-collapsed="false" data-orig-height="{b.height}" data-header-height="{h_h}"{p_attr}>'
                 )
                 lines.append(
@@ -414,7 +507,13 @@ class SVGRenderer:
             if interactive:
                 src_gid = _get_group_id(e.source)
                 tgt_gid = _get_group_id(e.target)
+                src_id = getattr(e.source, "id", "")
+                tgt_id = getattr(e.target, "id", "")
                 edge_attrs = ""
+                if src_id:
+                    edge_attrs += f' data-source-id="{html.escape(src_id, quote=True)}"'
+                if tgt_id:
+                    edge_attrs += f' data-target-id="{html.escape(tgt_id, quote=True)}"'
                 if src_gid:
                     edge_attrs += f' data-source-group="{html.escape(src_gid, quote=True)}"'
                 if tgt_gid:
@@ -464,9 +563,12 @@ class SVGRenderer:
         for el in element_list:
             b = el.bounds
             escaped_el_id = html.escape(el.id, quote=True)
-            if interactive and getattr(el, "parent", None) is not None:
-                escaped_p_id = html.escape(el.parent.id, quote=True)
-                lines.append(f'  <g id="{escaped_el_id}" data-parent-group="{escaped_p_id}" filter="url(#shadow)">')
+            if interactive:
+                escaped_label = html.escape(el.label or "", quote=True)
+                p_attr = f' data-parent-group="{html.escape(el.parent.id, quote=True)}"' if getattr(el, "parent", None) is not None else ""
+                lines.append(
+                    f'  <g id="{escaped_el_id}" class="diagram-node" data-node-id="{escaped_el_id}" data-label="{escaped_label}"{p_attr} filter="url(#shadow)">'
+                )
             else:
                 lines.append(f'  <g id="{escaped_el_id}" filter="url(#shadow)">')
 

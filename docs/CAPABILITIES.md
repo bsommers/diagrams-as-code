@@ -179,4 +179,17 @@
 - **Features:** Command-line flags (`--interactive`, `--no-interactive`) for `diagrams-as-code render` supporting both single diagram scripts and batch directory exports. Injects client-side pan/zoom controls and collapsible groups into SVG assets directly from the CLI without code modifications. Preserves tri-state configuration defaulting to script-authored settings when omitted.
 - **Verification:** `uv run pytest tests/test_cli.py`
 
+---
+
+### 2.14 Interactive Search & Node Highlight
+
+#### `CAP-DIAG-SEARCH`: Client-Side Search and Node Highlighting
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.6.0`
+- **Python API:** `diagrams_as_code.renderer_svg.SVGRenderer`
+- **Exports:** `SVGRenderer.render(interactive=True)`
+- **Features:** Client-side search input field integrated directly into the HUD controls via responsive XHTML `<foreignObject>`. Real-time dynamic substring matching against node IDs and labels dims non-matching nodes to 20% opacity, dims non-incident edges to 15% opacity, and highlights matching nodes and connected edges. Pressing Escape or clearing input resets all element opacities. Non-interactive rendering remains completely untouched.
+- **Verification:** `uv run pytest tests/test_renderer_svg.py`
+
+
 

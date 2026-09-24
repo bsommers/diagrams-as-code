@@ -15,7 +15,7 @@ Milestone `v0.6.0` extends the standalone CLI and client-side interactive SVG re
 ## Phases
 
 - [x] **Phase 4: CLI `--interactive` Option (`CAP-DIAG-CLI-INTERACTIVE`)** - Add `--interactive` flag to `diagrams-as-code render` for single-script and batch exports.
-- [ ] **Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)** - Add HUD search filter with dynamic node matching and opacity dimming.
+- [x] **Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)** - Add HUD search filter with dynamic node matching and opacity dimming.
 - [ ] **Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)** - Add interactive overview thumbnail widget for large diagrams.
 
 ## Phase Details
@@ -41,7 +41,7 @@ Milestone `v0.6.0` extends the standalone CLI and client-side interactive SVG re
 2. Matching elements are highlighted while non-matching elements and edges are dimmed.
 3. Clearing the input or pressing Escape restores normal visibility.
 **Plans**: 1 plan
-- [ ] 05-01: Implement search input widget in HUD and client-side filtering script in `renderer_svg.py`.
+- [x] 05-01: Implement search input widget in HUD and client-side filtering script in `renderer_svg.py`.
 
 ### Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)
 **Goal**: Provide bird's-eye navigation for large diagrams.  

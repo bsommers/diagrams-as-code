@@ -505,5 +505,74 @@ def test_diagram_interactive_flag_and_configuration() -> None:
     assert "<script" not in svg_plain
 
 
+def test_interactive_svg_search_controls() -> None:
+    """Verify HUD contains foreignObject search input, styles, and applySearch script."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_a", label="Sensor Alpha").at(50, 50)
+    s2 = Shape("node_b", label="Gateway Beta").at(250, 50)
+    e = Edge(s1, s2, label="MQTT")
+
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=800, height=600, interactive=True)
+
+    # Valid XML parse
+    root = ET.fromstring(svg)
+    assert root.tag == "{http://www.w3.org/2000/svg}svg"
+
+    # Search input element & foreignObject
+    assert "foreignObject" in svg
+    assert 'id="diagram-search-input"' in svg
+    assert 'placeholder="Search..."' in svg
+    assert "#diagram-search-input" in svg
+
+    # Script contains search filtering logic
+    assert "applySearch" in svg
+    assert "diagram-node" in svg
+    assert "matchedNodeIds" in svg
+    assert "Escape" in svg
+
+
+def test_interactive_svg_node_and_edge_search_metadata() -> None:
+    """Verify shapes and edges contain node IDs, labels, and source/target IDs in interactive mode."""
+    theme = get_theme("cyber_slate")
+    renderer = SVGRenderer(theme)
+
+    grp = Group("g1", label="Control Zone").at(20, 20)
+    s1 = Shape("plc1", label="PLC Alpha").at(50, 60)
+    s2 = Shape("scada1", label="SCADA Beta").at(250, 60)
+    grp.add(s1)
+    e = Edge(s1, s2, label="OPC-UA")
+
+    svg_interactive = renderer.render(
+        elements=[s1, s2], groups=[grp], edges=[e], width=800, height=600, interactive=True
+    )
+    ET.fromstring(svg_interactive)
+
+    # Node metadata
+    assert 'class="diagram-node"' in svg_interactive
+    assert 'data-node-id="plc1"' in svg_interactive
+    assert 'data-label="PLC Alpha"' in svg_interactive
+    assert 'data-node-id="scada1"' in svg_interactive
+    assert 'data-label="SCADA Beta"' in svg_interactive
+
+    # Edge metadata
+    assert 'data-source-id="plc1"' in svg_interactive
+    assert 'data-target-id="scada1"' in svg_interactive
+
+    # Group metadata
+    assert 'data-label="Control Zone"' in svg_interactive
+
+    # Non-interactive mode must not leak interactive attributes
+    svg_plain = renderer.render(
+        elements=[s1, s2], groups=[grp], edges=[e], width=800, height=600, interactive=False
+    )
+    assert 'id="diagram-search-input"' not in svg_plain
+    assert 'class="diagram-node"' not in svg_plain
+    assert 'data-node-id=' not in svg_plain
+    assert 'data-source-id=' not in svg_plain
+
+
+
 
 
