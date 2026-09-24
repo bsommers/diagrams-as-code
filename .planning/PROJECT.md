@@ -24,12 +24,16 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - [x] Standalone `diagrams-as-code` CLI with `render`, `layout export`, `themes`, `icons` (`v0.4.0`).
 - [x] Unconditional canvas growth on content overflow (`v0.4.0`).
 - [x] Enforced layered module boundaries via AST import tests (`v0.4.0`).
+- [x] Typed constraint dataclasses (`AbsoluteConstraint`, `RelativeConstraint`, `AlignConstraint`) with multi-axis alignment (`v0.5.0`).
+- [x] Pluggable group flow layout engines (`VerticalFlowLayout`, `HorizontalFlowLayout`, `GridLayout`) decoupled from `Group` (`v0.5.0`).
+- [x] Client-side interactive SVG pan/zoom and collapsible group header toggles with zero external runtime dependencies (`v0.5.0`).
+- [x] Local-first testing directives and GitHub Actions CI quota conservation controls (`v0.5.0`).
 
-### Active Scope (Phases)
+### Active Scope (Next Milestone: v0.6.0)
 
-- [ ] **Phase 1: SDD Review Polish & Edge Robustness** (CLI error handling for `--out`, subtree descendant memoization in graph builder, stable edge keying in pipeline, import cleanliness).
-- [ ] **Phase 2: Architectural Follow-ups** (Typed constraint dataclasses replacing untyped dicts, extracting `Group.flow` placement into pluggable layout engines).
-- [ ] **Phase 3: Planned Capabilities (`CAP-DIAG-INTERACTIVE`)** (Client-side lightweight JavaScript injection into SVG output for interactive pan, zoom, and collapsible group toggles).
+- [ ] **CLI Interactive Export (`CAP-DIAG-CLI-INTERACTIVE`)**: Expose `--interactive` CLI flag for `diagrams-as-code render` and batch exports.
+- [ ] **Interactive Enhancements**: Minimap viewport navigator, search/highlight node filters, and smooth CSS transitions on group toggles.
+- [ ] **Layout Refinements**: Compound group edge routing optimizations and ranking adjustments.
 
 ### Out of Scope
 
@@ -41,7 +45,7 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 
 - Evolved from legacy mingrammer/diagrams Graphviz wrapper into an independent pure-Python directed engine.
 - 88 gallery reference diagrams across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`).
-- Shipped `v0.4.0` with 431 unit/integration tests passing in ~12 seconds.
+- Shipped `v0.5.0` with 439 unit/integration tests passing in ~11 seconds.
 
 ## Constraints
 

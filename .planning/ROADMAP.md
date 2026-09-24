@@ -1,14 +1,14 @@
 # Roadmap: Diagrams as Code
 
-## Overview
+## Milestone History
 
-Following the successful release of `v0.4.0` (auto-layout, CLI, modularity), this roadmap executes three sequential milestones: resolving immediate review edge cases and polish (Phase 1), formalizing typed constraint models and decoupled group flow engines (Phase 2), and implementing client-side interactive SVG pan/zoom and collapsible group toggles (Phase 3).
+- **[v0.5.0 Milestone](milestones/v0.5.0-ROADMAP.md)** — Shipped 2026-09-23: Phase 1 (Polish & Edge Robustness), Phase 2 (Typed Constraints & Group Flow Decoupling), Phase 3 (Interactive SVG Pan-Zoom & Collapsible Groups). Tag `v0.5.0` released.
 
-## Phases
+## Active Milestone: v0.6.0
 
-- [x] **Phase 1: SDD Review Polish & Edge Robustness** - CLI error targeting, descendant traversal memoization, stable edge keying, and import cleanliness.
-- [x] **Phase 2: Architectural Follow-ups** - Typed constraint dataclasses and group flow layout engine extraction.
-- [x] **Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups** - Optional inline JavaScript injection for responsive SVG manipulation.
+*Pending next milestone initialization (`gsd-new-milestone`). Planned focus: CLI interactive export (`CAP-DIAG-CLI-INTERACTIVE`), interactive viewport minimap, and search filters.*
+
+## Previous Phases (v0.5.0)
 
 ## Phase Details
 

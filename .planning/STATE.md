@@ -1,29 +1,29 @@
 ---
 gsd_state_version: '1.0'
-status: completed
+status: ready_to_plan
+milestone: v0.6.0
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 3
-  completed_plans: 3
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: `.planning/PROJECT.md` (updated 2026-09-22)
+See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 **Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** All phases completed (Sequence 4 -> 3 -> 1 -> 2 completed).
+**Current focus:** Milestone v0.5.0 archived and released. Ready to plan v0.6.0.
 
 ## Current Position
 
-Phase: 3 of 3 (Phase 3: Interactive SVG Pan-Zoom & Collapsible Groups)  
-Plan: 1 of 1 in current phase  
-Status: Completed  
-Last activity: 2026-09-23 — Completed Phase 3 (Interactive SVG Pan-Zoom & Collapsible Groups: INTER-01, INTER-02, INTER-03).
+Milestone: v0.5.0 (Archived to `.planning/milestones/`)  
+Status: Released & Tagged `v0.5.0` (remote CI 100% green)  
+Last activity: 2026-09-23 — Released and archived v0.5.0 (Interactive SVG, Typed Constraints, and Group Flow Decoupling).
 
 Progress: [██████████] 100%
 
