@@ -52,7 +52,7 @@ from diagrams_as_code.theme import (
     reset_themes,
 )
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 __all__ = [
     "AbsoluteConstraint",
     "AlignConstraint",
