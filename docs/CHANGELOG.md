@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.5.0] - 2026-09-23
+
 ### Added
 - **Interactive SVG Pan-Zoom and Collapsible Groups (`CAP-DIAG-INTERACTIVE`, `INTER-01` to `INTER-03`):**
   - Added `interactive: bool = False` flag to `Diagram.__init__`, `Diagram.configure()`, and `Diagram.render_svg()`.

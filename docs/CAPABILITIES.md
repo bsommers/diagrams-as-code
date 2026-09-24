@@ -168,3 +168,13 @@
 - **Features:** Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features responsive click-drag viewport panning, cursor-anchored mouse wheel zoom, viewport reset HUD controls (`#svg-pan-zoom-controls`), and interactive collapsible groups with header toggles (`▼` / `▶`) with recursive visibility management for child shapes, nested sub-groups, and incident edges. Standard non-interactive rendering (`interactive=False`) retains 100% byte-invariance and zero script overhead.
 - **Verification:** `uv run pytest tests/test_renderer_svg.py`
 
+---
+
+### 2.13 Planned Capabilities
+
+#### `CAP-DIAG-CLI-INTERACTIVE`: CLI Interactive Export Option
+- **Status:** `PLANNED`
+- **Target Release:** `v0.6.0`
+- **Details:** Command-line flag (`--interactive`) for `diagrams-as-code render` and batch pipelines to emit responsive, pan/zoom-enabled SVG assets directly.
+- **Verification:** Pending `v0.6.0` milestone
+

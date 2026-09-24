@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-09-22T00:00:00Z",
+  "last_updated": "2026-09-23T00:00:00Z",
   "summary": {
-    "total_capabilities": 12,
-    "operational": 11,
+    "total_capabilities": 13,
+    "operational": 12,
     "beta": 0,
     "planned": 1,
     "categories": [
@@ -193,6 +193,15 @@
       "classes": ["SVGRenderer", "Diagram"],
       "details": "Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features responsive click-drag viewport panning, cursor-anchored mouse wheel zoom, viewport reset HUD controls, and interactive collapsible groups with header toggles and recursive visibility propagation.",
       "verification": "uv run pytest tests/test_renderer_svg.py"
+    },
+    {
+      "id": "CAP-DIAG-CLI-INTERACTIVE",
+      "name": "CLI Interactive Export Option",
+      "category": "Command-Line Interface",
+      "status": "PLANNED",
+      "target_release": "v0.6.0",
+      "details": "Command-line flag (--interactive) for diagrams-as-code render and batch pipelines to emit responsive, pan/zoom-enabled SVG assets directly.",
+      "verification": "Pending v0.6.0 milestone"
     }
   ]
 }
