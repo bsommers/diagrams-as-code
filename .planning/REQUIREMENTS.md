@@ -21,9 +21,9 @@
 
 ### Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)
 
-- [ ] **MINIMAP-01**: Render a miniature overview thumbnail widget in the bottom corner of the interactive SVG canvas.
-- [ ] **MINIMAP-02**: Render a responsive viewport rectangle inside the minimap indicating the current visible diagram bounds.
-- [ ] **MINIMAP-03**: Support click and drag on the minimap viewport rectangle to smoothly navigate across large topologies.
+- [x] **MINIMAP-01**: Render a miniature overview thumbnail widget in the bottom corner of the interactive SVG canvas.
+- [x] **MINIMAP-02**: Render a responsive viewport rectangle inside the minimap indicating the current visible diagram bounds.
+- [x] **MINIMAP-03**: Support click and drag on the minimap viewport rectangle to smoothly navigate across large topologies.
 
 ## Traceability
 
@@ -36,6 +36,6 @@
 | SEARCH-01 | Phase 5 (Search Highlight) | Passed |
 | SEARCH-02 | Phase 5 (Search Highlight) | Passed |
 | SEARCH-03 | Phase 5 (Search Highlight) | Passed |
-| MINIMAP-01 | Phase 6 (Minimap) | Pending |
-| MINIMAP-02 | Phase 6 (Minimap) | Pending |
-| MINIMAP-03 | Phase 6 (Minimap) | Pending |
+| MINIMAP-01 | Phase 6 (Minimap) | Passed |
+| MINIMAP-02 | Phase 6 (Minimap) | Passed |
+| MINIMAP-03 | Phase 6 (Minimap) | Passed |

@@ -191,5 +191,18 @@
 - **Features:** Client-side search input field integrated directly into the HUD controls via responsive XHTML `<foreignObject>`. Real-time dynamic substring matching against node IDs and labels dims non-matching nodes to 20% opacity, dims non-incident edges to 15% opacity, and highlights matching nodes and connected edges. Pressing Escape or clearing input resets all element opacities. Non-interactive rendering remains completely untouched.
 - **Verification:** `uv run pytest tests/test_renderer_svg.py`
 
+---
+
+### 2.15 Viewport Minimap Navigator
+
+#### `CAP-DIAG-NAVIGATOR`: Viewport Minimap Overview and Drag Navigation
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.6.0`
+- **Python API:** `diagrams_as_code.renderer_svg.SVGRenderer`
+- **Exports:** `SVGRenderer.render(interactive=True)`
+- **Features:** Pinned overview minimap thumbnail widget rendered in the bottom-right corner of interactive SVG canvases. Features scaled live diagram rendering (`<use href="#diagram-content">`) under a clipped viewport, a responsive viewport rectangle (`#minimap-viewport`) tracking current view bounds during zoom and pan, and smooth click-and-drag navigation to pan across extensive architectural topologies.
+- **Verification:** `uv run pytest tests/test_renderer_svg.py`
+
+
 
 

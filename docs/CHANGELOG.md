@@ -17,6 +17,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Implemented real-time dynamic substring matching against node IDs and labels, dimming non-matching nodes to 20% opacity and non-incident edges to 15% opacity.
   - Added Escape key and clearing handler to restore original element opacities.
   - Retained strict XML parseability and 100% byte invariance for non-interactive rendering.
+- **Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`, `MINIMAP-01` to `MINIMAP-03`):**
+  - Added a pinned overview minimap thumbnail widget in the bottom-right corner of interactive SVG canvases.
+  - Implemented scaled diagram rendering (`<use href="#diagram-content">`) within a clipped viewport.
+  - Added a responsive viewport rectangle (`#minimap-viewport`) tracking visible diagram bounds on zoom and pan.
+  - Implemented click-and-drag navigation on the minimap to smoothly pan the diagram view across large topologies.
+
 
 
 ### Added

@@ -94,6 +94,9 @@ class SVGRenderer:
             f'      #diagram-search-input:focus {{ border-color: {self.theme.accent}; }}\n'
             f'      #diagram-search-input::placeholder {{ color: {self.theme.subtext}; opacity: 0.7; }}\n'
             "      .diagram-node, .diagram-edge, .diagram-group { transition: opacity 0.2s ease-in-out; }\n"
+            "      #svg-minimap { cursor: pointer; user-select: none; }\n"
+            "      #minimap-viewport { cursor: grab; }\n"
+            "      #minimap-viewport:active { cursor: grabbing; }\n"
             "    </style>"
         )
 
@@ -125,12 +128,51 @@ class SVGRenderer:
             '  </g>',
         ]
 
+    def _render_interactive_minimap(self, width: float, height: float) -> list[str]:
+        mm_w = 160.0
+        mm_h = 100.0
+        mm_x = float(width) - mm_w - 16.0
+        mm_y = float(height) - mm_h - 16.0
+        inner_w = mm_w - 8.0
+        inner_h = mm_h - 8.0
+        mm_s = min(inner_w / float(width), inner_h / float(height))
+        mm_off_x = 4.0 + (inner_w - float(width) * mm_s) / 2.0
+        mm_off_y = 4.0 + (inner_h - float(height) * mm_s) / 2.0
+        init_vp_w = float(width) * mm_s
+        init_vp_h = float(height) * mm_s
+
+        return [
+            f'  <g id="svg-minimap" transform="translate({mm_x}, {mm_y})">',
+            f'    <rect class="minimap-bg" x="0" y="0" width="{mm_w}" height="{mm_h}" rx="6" '
+            f'fill="{self.theme.node_fill}" stroke="{self.theme.node_stroke}" stroke-width="1.5" '
+            f'filter="url(#shadow)" opacity="0.95"/>',
+            '    <g clip-path="url(#minimap-clip)">',
+            f'      <g transform="translate({mm_off_x:.2f}, {mm_off_y:.2f}) scale({mm_s:.6f})" opacity="0.65" pointer-events="none">',
+            '        <use href="#diagram-content" />',
+            '      </g>',
+            '    </g>',
+            f'    <rect id="minimap-viewport" x="{mm_off_x:.2f}" y="{mm_off_y:.2f}" width="{init_vp_w:.2f}" height="{init_vp_h:.2f}" rx="2" '
+            f'fill="{self.theme.accent}" fill-opacity="0.18" stroke="{self.theme.accent}" stroke-width="1.5" style="cursor: move;" />',
+            '  </g>',
+        ]
+
     def _render_interactive_script(self, width: float, height: float) -> list[str]:
         w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
         h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
         ctrl_w = 228.0
         ctrl_x = float(width) - ctrl_w - 16.0
         ctrl_y = 16.0
+
+        mm_w = 160.0
+        mm_h = 100.0
+        mm_x = float(width) - mm_w - 16.0
+        mm_y = float(height) - mm_h - 16.0
+        inner_w = mm_w - 8.0
+        inner_h = mm_h - 8.0
+        mm_s = min(inner_w / float(width), inner_h / float(height))
+        mm_off_x = 4.0 + (inner_w - float(width) * mm_s) / 2.0
+        mm_off_y = 4.0 + (inner_h - float(height) * mm_s) / 2.0
+
         js = f"""
 (function() {{
   var svg = document.currentScript ? document.currentScript.closest('svg') : document.querySelector('svg');
@@ -140,15 +182,25 @@ class SVGRenderer:
   var parts = vbAttr.split(/[\\s,]+/).map(Number);
   var orig = {{ x: parts[0], y: parts[1], w: parts[2], h: parts[3] }};
   var vb = {{ x: orig.x, y: orig.y, w: orig.w, h: orig.h }};
+  var updateMinimapViewport = null;
 
   function updateViewBox() {{
     svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+    var scale = vb.w / orig.w;
     var ctrl = document.getElementById('svg-pan-zoom-controls');
     if (ctrl) {{
-      var scale = vb.w / orig.w;
       var cx = vb.x + vb.w - (orig.w - {ctrl_x}) * scale;
       var cy = vb.y + {ctrl_y} * scale;
       ctrl.setAttribute('transform', 'translate(' + cx + ',' + cy + ') scale(' + scale + ')');
+    }}
+    var minimap = document.getElementById('svg-minimap');
+    if (minimap) {{
+      var mx = vb.x + vb.w - (orig.w - {mm_x}) * scale;
+      var my = vb.y + vb.h - (orig.h - {mm_y}) * scale;
+      minimap.setAttribute('transform', 'translate(' + mx + ',' + my + ') scale(' + scale + ')');
+      if (typeof updateMinimapViewport === 'function') {{
+        updateMinimapViewport();
+      }}
     }}
   }}
 
@@ -156,7 +208,7 @@ class SVGRenderer:
   var startX = 0, startY = 0;
 
   svg.addEventListener('mousedown', function(e) {{
-    if (e.target.closest('#svg-pan-zoom-controls') || e.target.closest('.group-header')) return;
+    if (e.target.closest('#svg-pan-zoom-controls') || e.target.closest('#svg-minimap') || e.target.closest('.group-header')) return;
     if (e.button !== 0) return;
     isPanning = true;
     startX = e.clientX;
@@ -295,6 +347,60 @@ class SVGRenderer:
     }});
   }}
 
+  var minimap = document.getElementById('svg-minimap');
+  var minimapVp = document.getElementById('minimap-viewport');
+  if (minimap && minimapVp) {{
+    var mmS = {mm_s:.6f};
+    var mmOffX = {mm_off_x:.2f};
+    var mmOffY = {mm_off_y:.2f};
+    var isMinimapDragging = false;
+
+    updateMinimapViewport = function() {{
+      var vx = mmOffX + vb.x * mmS;
+      var vy = mmOffY + vb.y * mmS;
+      var vw = vb.w * mmS;
+      var vh = vb.h * mmS;
+      minimapVp.setAttribute('x', vx);
+      minimapVp.setAttribute('y', vy);
+      minimapVp.setAttribute('width', vw);
+      minimapVp.setAttribute('height', vh);
+    }};
+
+    function centerFromMinimap(evt) {{
+      var mRect = minimap.getBoundingClientRect();
+      if (!mRect.width || !mRect.height) return;
+      var scale = vb.w / orig.w;
+      var clickX = (evt.clientX - mRect.left) / scale;
+      var clickY = (evt.clientY - mRect.top) / scale;
+
+      var diagTargetX = (clickX - mmOffX) / mmS;
+      var diagTargetY = (clickY - mmOffY) / mmS;
+
+      vb.x = diagTargetX - vb.w / 2;
+      vb.y = diagTargetY - vb.h / 2;
+      updateViewBox();
+    }}
+
+    minimap.addEventListener('mousedown', function(e) {{
+      if (e.button !== 0) return;
+      e.stopPropagation();
+      isMinimapDragging = true;
+      centerFromMinimap(e);
+    }});
+
+    window.addEventListener('mousemove', function(e) {{
+      if (isMinimapDragging) {{
+        centerFromMinimap(e);
+      }}
+    }});
+
+    window.addEventListener('mouseup', function() {{
+      isMinimapDragging = false;
+    }});
+
+    updateMinimapViewport();
+  }}
+
   var groupHeaders = svg.querySelectorAll('.group-header');
   groupHeaders.forEach(function(header) {{
     header.addEventListener('click', function(e) {{
@@ -407,6 +513,7 @@ class SVGRenderer:
         )
         lines.append("    </filter>")
         if interactive:
+            lines.append('    <clipPath id="minimap-clip"><rect x="0" y="0" width="160" height="100" rx="6"/></clipPath>')
             lines.append(self._render_interactive_styles())
         lines.append("  </defs>")
 
@@ -414,6 +521,8 @@ class SVGRenderer:
         lines.append(
             f'  <rect width="100%" height="100%" fill="{self.theme.background}"/>'
         )
+        if interactive:
+            lines.append('  <g id="diagram-content">')
 
         # 2. Render Groups (hierarchically: outermost parent groups first)
         def _get_depth(g: Group) -> int:
@@ -758,7 +867,9 @@ class SVGRenderer:
             lines.append("  </g>")
 
         if interactive:
+            lines.append("  </g>")
             lines.extend(self._render_interactive_controls(width, height))
+            lines.extend(self._render_interactive_minimap(width, height))
             lines.extend(self._render_interactive_script(width, height))
 
         lines.append("</svg>")

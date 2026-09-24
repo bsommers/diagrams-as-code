@@ -16,7 +16,7 @@ Milestone `v0.6.0` extends the standalone CLI and client-side interactive SVG re
 
 - [x] **Phase 4: CLI `--interactive` Option (`CAP-DIAG-CLI-INTERACTIVE`)** - Add `--interactive` flag to `diagrams-as-code render` for single-script and batch exports.
 - [x] **Phase 5: Client-Side Search & Node Highlight (`CAP-DIAG-SEARCH`)** - Add HUD search filter with dynamic node matching and opacity dimming.
-- [ ] **Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)** - Add interactive overview thumbnail widget for large diagrams.
+- [x] **Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`)** - Add interactive overview thumbnail widget for large diagrams.
 
 ## Phase Details
 
@@ -52,4 +52,4 @@ Milestone `v0.6.0` extends the standalone CLI and client-side interactive SVG re
 2. Viewport indicator rect reflects visible bounds and updates during pan/zoom.
 3. Clicking/dragging on minimap navigates the main diagram viewport.
 **Plans**: 1 plan
-- [ ] 06-01: Implement minimap thumbnail and interactive drag navigation.
+- [x] 06-01: Implement minimap thumbnail and interactive drag navigation.

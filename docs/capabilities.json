@@ -5,8 +5,8 @@
   "repository": "ai/diagrams-as-code",
   "last_updated": "2026-09-23T00:00:00Z",
   "summary": {
-    "total_capabilities": 14,
-    "operational": 14,
+    "total_capabilities": 15,
+    "operational": 15,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -213,6 +213,17 @@
       "python_api": "diagrams_as_code.renderer_svg.SVGRenderer",
       "classes": ["SVGRenderer"],
       "details": "Client-side search input field integrated directly into the HUD controls. Dynamically matches node labels and IDs, dimming non-matching elements and highlighting matches in real-time.",
+      "verification": "uv run pytest tests/test_renderer_svg.py"
+    },
+    {
+      "id": "CAP-DIAG-NAVIGATOR",
+      "name": "Viewport Minimap Overview and Drag Navigation",
+      "category": "SVG Vector Rendering",
+      "status": "OPERATIONAL",
+      "target_release": "v0.6.0",
+      "python_api": "diagrams_as_code.renderer_svg.SVGRenderer",
+      "classes": ["SVGRenderer"],
+      "details": "Pinned overview minimap thumbnail widget rendered in the bottom-right corner of interactive SVG canvases, featuring responsive visible bounds rectangle and smooth drag navigation.",
       "verification": "uv run pytest tests/test_renderer_svg.py"
     }
   ]

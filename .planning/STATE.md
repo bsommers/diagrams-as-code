@@ -1,13 +1,13 @@
 ---
 gsd_state_version: '1.0'
-status: ready_to_plan
+status: ready_to_archive
 milestone: v0.6.0
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 3
-  completed_plans: 2
-  percent: 67
+  completed_plans: 3
+  percent: 100
 ---
 
 # Project State
@@ -17,17 +17,17 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 **Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** Milestone v0.6.0 (Phase 6: Viewport Minimap Navigator).
+**Current focus:** Milestone v0.6.0 (Completed all phases: Phase 4, Phase 5, Phase 6).
 
 ## Current Position
 
 Phase: 6 of 6 (Phase 6: Viewport Minimap Navigator (`CAP-DIAG-NAVIGATOR`))  
 Milestone: v0.6.0 (Phases 4-6)  
-Plan: 0 of 1 in current phase  
-Status: Ready to plan  
-Last activity: 2026-09-23 — Completed Phase 5 (Client-Side Search & Node Highlight).
+Plan: 1 of 1 in current phase  
+Status: Milestone complete, ready for release audit & archiving  
+Last activity: 2026-09-23 — Completed Phase 6 (Viewport Minimap Navigator).
 
-Progress: [███████░░░] 67%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 

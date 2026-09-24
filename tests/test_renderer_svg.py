@@ -573,6 +573,52 @@ def test_interactive_svg_node_and_edge_search_metadata() -> None:
     assert 'data-source-id=' not in svg_plain
 
 
+def test_interactive_svg_minimap_structure() -> None:
+    """Verify presence of #svg-minimap, #diagram-content, minimap-clip, viewport rect, and JS navigation."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_a", label="Sensor Alpha").at(50, 50)
+    s2 = Shape("node_b", label="Gateway Beta").at(250, 50)
+    e = Edge(s1, s2, label="MQTT")
+
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=1000, height=800, interactive=True)
+
+    # Valid XML parse
+    root = ET.fromstring(svg)
+    assert root.tag == "{http://www.w3.org/2000/svg}svg"
+
+    # Minimap structural elements
+    assert "diagram-content" in svg
+    assert "svg-minimap" in svg
+    assert "minimap-clip" in svg
+    assert "minimap-viewport" in svg
+    assert '<use href="#diagram-content"' in svg
+
+    # Minimap JS navigation script
+    assert "updateMinimapViewport" in svg
+    assert "centerFromMinimap" in svg
+    assert "isMinimapDragging" in svg
+
+
+def test_non_interactive_no_minimap() -> None:
+    """Verify non-interactive mode produces no minimap or diagram-content wrappers."""
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_a", label="Sensor Alpha").at(50, 50)
+    s2 = Shape("node_b", label="Gateway Beta").at(250, 50)
+    e = Edge(s1, s2, label="MQTT")
+
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=1000, height=800, interactive=False)
+
+    assert "diagram-content" not in svg
+    assert "svg-minimap" not in svg
+    assert "minimap-clip" not in svg
+    assert "minimap-viewport" not in svg
+
+
+
 
 
 
