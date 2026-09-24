@@ -29,9 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `uv run pytest` -> 447 passed in 11.5s across all unit, integration, boundary, and hygiene test suites.
 - `git diff --exit-code -- output/ icons/ README.md` -> Zero byte drift across all domain diagrams.
 - `tests/test_module_boundaries.py` -> 100% compliant with strict downward architectural layering.
-
-
-
+## [v0.5.0] - 2026-09-23
 
 ### Added
 - **Interactive SVG Pan-Zoom and Collapsible Groups (`CAP-DIAG-INTERACTIVE`, `INTER-01` to `INTER-03`):**
