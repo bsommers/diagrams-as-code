@@ -71,6 +71,15 @@
 - **Features:** Intelligent edge connection model with automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`), orthogonal Manhattan waypoints calculation, and collinear straight-line simplification.
 - **Verification:** `uv run pytest tests/test_routing.py`
 
+#### `CAP-DIAG-ROUTER-AVOIDANCE`: Obstacle-Aware Orthogonal Routing and Multi-Rank Layout
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.7.0`
+- **Python API:** `diagrams_as_code.router.OrthogonalRouter`, `diagrams_as_code.router.segment_intersects_rect`
+- **Exports:** `OrthogonalRouter`, `segment_intersects_rect`
+- **Features:** Segment-box collision detection with clearance corridors, shortest Manhattan detour channel routing around intermediate obstacles, and multi-rank crossing minimization via virtual dummy vertices.
+- **Verification:** `uv run pytest tests/test_routing.py tests/test_layout_layered.py`
+
+
 ---
 
 ### 2.5 Vector Theming & Shapes

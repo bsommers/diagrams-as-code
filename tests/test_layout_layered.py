@@ -111,3 +111,34 @@ def test_rank_order_respected_for_forward_edges(direction: str) -> None:
         source_pos = getattr(pos[source], axis)
         target_pos = getattr(pos[target], axis)
         assert source_pos < target_pos, f"Edge {source}→{target}: {source} at {source_pos} not < {target} at {target_pos}"
+
+
+def test_multi_rank_edges_handled_in_ordering() -> None:
+    """Verify edges spanning >= 2 ranks are properly ordered without crash or overlap."""
+    nodes = [
+        ("a", 50, 50),
+        ("b", 50, 50),
+        ("c", 50, 50),
+        ("d", 50, 50),
+        ("e", 50, 50),
+    ]
+    edges = [
+        ("a", "c"),  # rank 0 -> rank 1
+        ("c", "e"),  # rank 1 -> rank 2
+        ("b", "e"),  # rank 0/1 -> rank 2
+        ("a", "e"),  # rank 0 -> rank 2 (multi-rank!)
+        ("d", "e"),  # rank 1 -> rank 2
+    ]
+    g = graph(nodes, edges)
+    pos = LayeredLayout().arrange(g)
+    assert len(pos) == 5
+    # Confirm valid coordinates for all nodes
+    for nid in "abcde":
+        assert nid in pos
+        assert pos[nid].x >= 0
+        assert pos[nid].y >= 0
+    # a must be rank 0 (x=0)
+    assert pos["a"].x == 0
+    # e must be at the highest rank
+    assert pos["e"].x > pos["a"].x
+

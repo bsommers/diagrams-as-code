@@ -52,20 +52,20 @@
   <rect x="450.0" y="206.0" width="140.0" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="520.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Create Cloud Account</text>
 </g>
-  <path d="M 455.0 170.0 L 835.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 65.0 L 835.0 65.0 L 835.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="578.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="645.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Issue Security Card</text>
+  <rect x="478.1" y="108.5" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="545.0" y="121.0" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Issue Security Card</text>
 </g>
-  <path d="M 455.0 170.0 L 1085.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 65.0 L 1085.0 65.0 L 1085.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="715.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="770.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Enroll Benefits</text>
+  <rect x="490.5" y="108.5" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="545.0" y="121.0" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Enroll Benefits</text>
 </g>
-  <path d="M 585.0 170.0 L 205.0 170.0" fill="none" stroke="#27272A" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-27272A)" />
+  <path d="M 585.0 170.0 L 495.0 170.0 L 495.0 240.0 L 205.0 240.0 L 205.0 170.0" fill="none" stroke="#27272A" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="328.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="395.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Deliver Workstation</text>
+  <rect x="428.1" y="196.0" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="495.0" y="208.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Deliver Workstation</text>
 </g>
   <g id="candidate" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />

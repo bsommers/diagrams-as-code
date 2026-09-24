@@ -65,7 +65,7 @@ def run_layout(diagram: Any) -> None:
     router = OrthogonalRouter()
     routes: dict[int, list[Point]] = {}
     for edge in diagram.edges:
-        waypoints = router.route(edge)
+        waypoints = router.route(edge, obstacles=elements)
         edge.waypoints = waypoints
         routes[id(edge)] = waypoints
     diagram.routes = routes

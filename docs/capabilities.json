@@ -107,6 +107,17 @@
       "verification": "uv run pytest tests/test_routing.py"
     },
     {
+      "id": "CAP-DIAG-ROUTER-AVOIDANCE",
+      "name": "Obstacle-Aware Orthogonal Routing and Multi-Rank Layout",
+      "category": "Connection Routing",
+      "status": "OPERATIONAL",
+      "target_release": "v0.7.0",
+      "python_api": "diagrams_as_code.router.OrthogonalRouter",
+      "classes": ["OrthogonalRouter", "segment_intersects_rect"],
+      "details": "Segment-box collision detection with clearance corridors, shortest Manhattan detour channel routing around intermediate obstacles, and multi-rank crossing minimization via virtual dummy vertices.",
+      "verification": "uv run pytest tests/test_routing.py tests/test_layout_layered.py"
+    },
+    {
       "id": "CAP-DIAG-THEME",
       "name": "Vector Theming Engine and Vector Shape Library",
       "category": "Vector Theming & Shapes",

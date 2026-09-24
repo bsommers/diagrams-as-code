@@ -148,18 +148,38 @@ def _order(
     layers: list[list[str]] = [[] for _ in range(max(rank.values()) + 1)]
     for n in sorted(rank, key=index.__getitem__):
         layers[rank[n]].append(n)
-    adjacent = [(s, t, w) for (s, t), w in dag.items() if rank[t] - rank[s] == 1]
+
+    # Augmented edges and virtual nodes for multi-rank edges (Sugiyama dummy vertices)
+    aug_adjacent = [(s, t, w) for (s, t), w in dag.items() if rank[t] - rank[s] == 1]
+    virtual_nodes: set[str] = set()
+    for (s, t), w in sorted(
+        dag.items(),
+        key=lambda item: (index.get(item[0][0], 0), index.get(item[0][1], 0)),
+    ):
+        span = rank[t] - rank[s]
+        if span > 1:
+            prev = s
+            for r in range(rank[s] + 1, rank[t]):
+                v_nid = f"__v_{s}_{t}_{r}"
+                virtual_nodes.add(v_nid)
+                layers[r].append(v_nid)
+                aug_adjacent.append((prev, v_nid, w))
+                prev = v_nid
+            aug_adjacent.append((prev, t, w))
 
     best = [list(layer) for layer in layers]
-    best_cross = crossings(best, adjacent)
+    best_cross = crossings(best, aug_adjacent)
     current = [list(layer) for layer in best]
     for i in range(sweeps):
-        _sweep(current, adjacent, downward=(i % 2 == 0))
-        c = crossings(current, adjacent)
+        _sweep(current, aug_adjacent, downward=(i % 2 == 0))
+        c = crossings(current, aug_adjacent)
         if c < best_cross:
             best, best_cross = [list(layer) for layer in current], c
         else:
             current = [list(layer) for layer in best]
+
+    if virtual_nodes:
+        return [[nid for nid in layer if nid not in virtual_nodes] for layer in best]
     return best
 
 

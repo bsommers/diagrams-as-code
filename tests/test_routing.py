@@ -326,3 +326,108 @@ def test_collinear_straight_line_simplification() -> None:
     assert waypoints_v[0] == Point(50.0, 50.0)
     assert waypoints_v[1] == Point(50.0, 300.0)
 
+
+def test_segment_intersects_rect() -> None:
+    """Verify orthogonal segment intersection against rectangle interior."""
+    from diagrams_as_code.router import segment_intersects_rect
+
+    r = Rect(100.0, 100.0, 100.0, 100.0)
+
+    # Horizontal crossing through interior
+    assert segment_intersects_rect(Point(50, 150), Point(250, 150), r)
+    assert segment_intersects_rect(Point(250, 150), Point(50, 150), r)
+
+    # Vertical crossing through interior
+    assert segment_intersects_rect(Point(150, 50), Point(150, 250), r)
+    assert segment_intersects_rect(Point(150, 250), Point(150, 50), r)
+
+    # Completely outside
+    assert not segment_intersects_rect(Point(50, 50), Point(250, 50), r)
+    assert not segment_intersects_rect(Point(50, 50), Point(50, 250), r)
+
+    # Touching boundary but not interior
+    assert not segment_intersects_rect(Point(50, 100), Point(250, 100), r)
+    assert not segment_intersects_rect(Point(100, 50), Point(100, 250), r)
+
+
+def test_obstacle_avoidance_horizontal() -> None:
+    """Verify route detours around an intermediate obstacle on horizontal path."""
+    from diagrams_as_code.router import segment_intersects_rect
+
+    s1 = Shape("s1", "Source", 100, 50).at(0, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(400, 100)
+    obs = Shape("obs", "Obstacle", 100, 100).at(200, 75)
+    edge = Edge(s1, s2, source_port=Port.EAST, target_port=Port.WEST)
+
+    router = OrthogonalRouter()
+    # Without obstacles: direct horizontal line
+    direct_route = router.route(edge)
+    assert len(direct_route) == 2
+    assert direct_route[0] == Point(100.0, 125.0)
+    assert direct_route[1] == Point(400.0, 125.0)
+
+    # With obstacle: must detour around obs
+    detour_route = router.route(edge, obstacles=[obs], clearance=15.0)
+    assert len(detour_route) > 2
+    assert detour_route[0] == Point(100.0, 125.0)
+    assert detour_route[-1] == Point(400.0, 125.0)
+
+    # Check each segment does not penetrate obstacle bounds
+    for p_a, p_b in zip(detour_route[:-1], detour_route[1:]):
+        assert not segment_intersects_rect(p_a, p_b, obs.bounds), f"Segment {p_a}->{p_b} intersects obstacle"
+        assert p_a.x == p_b.x or p_a.y == p_b.y
+
+
+def test_obstacle_avoidance_vertical() -> None:
+    """Verify route detours around an intermediate obstacle on vertical path."""
+    from diagrams_as_code.router import segment_intersects_rect
+
+    s1 = Shape("s1", "Source", 100, 50).at(100, 0)
+    s2 = Shape("s2", "Target", 100, 50).at(100, 400)
+    obs = Shape("obs", "Obstacle", 100, 100).at(100, 150)
+    edge = Edge(s1, s2, source_port=Port.SOUTH, target_port=Port.NORTH)
+
+    router = OrthogonalRouter()
+    detour_route = router.route(edge, obstacles=[obs], clearance=15.0)
+    assert len(detour_route) > 2
+    assert detour_route[0] == Point(150.0, 50.0)
+    assert detour_route[-1] == Point(150.0, 400.0)
+
+    for p_a, p_b in zip(detour_route[:-1], detour_route[1:]):
+        assert not segment_intersects_rect(p_a, p_b, obs.bounds)
+        assert p_a.x == p_b.x or p_a.y == p_b.y
+
+
+def test_obstacle_avoidance_multi_obstacles() -> None:
+    """Verify route detours around multiple obstacles without collision."""
+    from diagrams_as_code.router import segment_intersects_rect
+
+    s1 = Shape("s1", "Source", 80, 50).at(0, 100)
+    s2 = Shape("s2", "Target", 80, 50).at(500, 100)
+    obs1 = Shape("obs1", "Obstacle 1", 80, 80).at(150, 85)
+    obs2 = Shape("obs2", "Obstacle 2", 80, 80).at(300, 85)
+    edge = Edge(s1, s2, source_port=Port.EAST, target_port=Port.WEST)
+
+    router = OrthogonalRouter()
+    detour_route = router.route(edge, obstacles=[obs1, obs2], clearance=10.0)
+    assert len(detour_route) > 2
+    for p_a, p_b in zip(detour_route[:-1], detour_route[1:]):
+        assert not segment_intersects_rect(p_a, p_b, obs1.bounds)
+        assert not segment_intersects_rect(p_a, p_b, obs2.bounds)
+        assert p_a.x == p_b.x or p_a.y == p_b.y
+
+
+def test_obstacle_avoidance_backward_compatibility() -> None:
+    """Verify exact coordinate equality when obstacles are omitted or None."""
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(200, 100)
+    edge = Edge(s1, s2)
+    router = OrthogonalRouter()
+
+    default_waypoints = router.route(edge)
+    none_waypoints = router.route(edge, obstacles=None)
+    empty_waypoints = router.route(edge, obstacles=[])
+
+    assert default_waypoints == none_waypoints == empty_waypoints
+
+

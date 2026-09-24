@@ -1,4 +1,4 @@
-# Roadmap: Milestone v0.7.0 (Planning / Backlog)
+# Roadmap: Milestone v0.7.0 (Smart Routing & Layout Optimization)
 
 ## Milestone History
 
@@ -8,10 +8,24 @@
 
 ## Overview
 
-Milestone `v0.7.0` is currently in discovery and backlog refinement.
+Milestone `v0.7.0` focuses on intelligent routing and layout optimization:
+1. Phase 7 implements obstacle-aware orthogonal edge routing in `router.py` and multi-rank crossing minimization in `layout/layered.py`.
 
-## Upcoming Backlog & Discovery Ideas
+## Phases
 
-- Dark mode / theme toggling inside interactive SVG HUD.
-- Export / snapshot viewport state (download visible sub-region as PNG or standalone SVG).
-- Custom layout plugins / auto-layout routing algorithm enhancements.
+- [x] **Phase 7: Edge Routing & Orthogonal Waypoint Enhancements (`CAP-DIAG-ROUTER-AVOIDANCE`)** - Obstacle-aware orthogonal Manhattan routing, collision detection, and multi-rank crossing reduction.
+
+## Phase Details
+
+### Phase 7: Edge Routing & Orthogonal Waypoint Enhancements (`CAP-DIAG-ROUTER-AVOIDANCE`)
+**Goal**: Prevent edges from crossing over intermediate node obstacles and minimize multi-rank edge crossings.  
+**Depends on**: Milestone v0.6.0  
+**Requirements**: ROUTE-01, ROUTE-02, ROUTE-03, ROUTE-04, ROUTE-05  
+**Success Criteria**:
+1. `OrthogonalRouter.route()` routes around intermediate obstacles using clean orthogonal detours when obstacles are present.
+2. Fast-path collision check preserves 100% byte-invariance and zero regression when paths are clear.
+3. `LayeredLayout` barycenter sweep accounts for multi-rank edges spanning $\ge 2$ ranks.
+4. Comprehensive test coverage for collision detection, detour routing, and multi-rank crossings.
+5. All 453 tests pass.
+**Plans**: 1 plan
+- [x] 07-01: Implement obstacle avoidance in `router.py`, multi-rank sweeps in `layered.py`, wire pipeline, and verify.

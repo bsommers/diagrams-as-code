@@ -58,10 +58,10 @@
   <rect x="709.3" y="251.0" width="121.4" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="770.0" y="263.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Proof of Delivery</text>
 </g>
-  <path d="M 585.0 260.0 L 395.0 260.0 L 395.0 170.0 L 205.0 170.0" fill="none" stroke="#27272A" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-27272A)" />
+  <path d="M 585.0 260.0 L 205.0 260.0 L 205.0 170.0" fill="none" stroke="#27272A" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="349.8" y="206.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="395.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Send Invoice</text>
+  <rect x="349.8" y="251.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="395.0" y="263.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Send Invoice</text>
 </g>
   <g id="customer" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />

@@ -38,10 +38,10 @@
   <rect x="337.4" y="296.0" width="115.2" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="395.0" y="308.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Decrypted Stream</text>
 </g>
-  <path d="M 395.0 320.0 L 395.0 200.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 395.0 320.0 L 395.0 305.0 L 320.0 305.0 L 320.0 200.0 L 395.0 200.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="346.7" y="251.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="395.0" y="263.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
+  <rect x="309.2" y="296.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="357.5" y="308.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">

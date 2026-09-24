@@ -52,10 +52,10 @@
   <rect x="706.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#133663" />
   <text x="770.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Executed Signature</text>
 </g>
-  <path d="M 835.0 170.0 L 205.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 835.0 170.0 L 745.0 170.0 L 745.0 65.0 L 205.0 65.0 L 205.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="474.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#133663" />
-  <text x="520.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fund Account</text>
+  <rect x="699.8" y="108.5" width="90.4" height="18.0" rx="9.0" fill="#133663" />
+  <text x="745.0" y="121.0" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Fund Account</text>
 </g>
   <g id="applicant" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />

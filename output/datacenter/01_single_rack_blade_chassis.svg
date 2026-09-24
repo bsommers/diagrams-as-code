@@ -44,10 +44,10 @@
   <rect x="346.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
   <text x="395.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Telemetry Bus</text>
 </g>
-  <path d="M 395.0 200.0 L 395.0 320.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+  <path d="M 395.0 200.0 L 395.0 215.0 L 320.0 215.0 L 320.0 320.0 L 395.0 320.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="346.7" y="251.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="395.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Telemetry Bus</text>
+  <rect x="309.2" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="357.5" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Telemetry Bus</text>
 </g>
   <g id="tor1" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />

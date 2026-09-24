@@ -62,10 +62,10 @@
   <rect x="940.7" y="161.0" width="158.6" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="1020.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Log Prompt &amp; Evaluation</text>
 </g>
-  <path d="M 835.0 170.0 L 205.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 835.0 170.0 L 745.0 170.0 L 745.0 65.0 L 205.0 65.0 L 205.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="443.8" y="161.0" width="152.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="520.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verified Safe Response</text>
+  <rect x="668.8" y="108.5" width="152.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="745.0" y="121.0" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verified Safe Response</text>
 </g>
   <g id="user_input" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />

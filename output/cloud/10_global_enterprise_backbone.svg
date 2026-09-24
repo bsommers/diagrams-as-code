@@ -41,15 +41,15 @@
   <rect x="334.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#24242A" />
   <text x="395.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">DirectConnect 10G</text>
 </g>
-  <path d="M 205.0 260.0 L 520.0 260.0 L 520.0 170.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 260.0 L 295.0 260.0 L 295.0 330.0 L 835.0 330.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="481.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="520.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
+  <rect x="256.0" y="286.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="295.0" y="298.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
 </g>
-  <path d="M 455.0 260.0 L 645.0 260.0 L 645.0 170.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 260.0 L 835.0 260.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="606.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="645.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
+  <rect x="606.0" y="251.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="645.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
 </g>
   <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">

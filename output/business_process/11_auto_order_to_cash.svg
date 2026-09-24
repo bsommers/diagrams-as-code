@@ -23,10 +23,10 @@
   <rect x="407.2" y="151.0" width="65.6" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="440.0" y="163.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">approved</text>
 </g>
-  <path d="M 400.0 160.0 L 650.0 160.0 L 650.0 210.0 L 900.0 210.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 400.0 160.0 L 465.0 160.0 L 465.0 210.0 L 900.0 210.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="617.2" y="176.0" width="65.6" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="650.0" y="188.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">rejected</text>
+  <rect x="432.2" y="176.0" width="65.6" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="465.0" y="188.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">rejected</text>
 </g>
   <path d="M 610.0 160.0 L 690.0 160.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <path d="M 820.0 160.0 L 860.0 160.0 L 860.0 110.0 L 900.0 110.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />

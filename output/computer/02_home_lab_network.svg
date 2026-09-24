@@ -42,10 +42,10 @@
   <rect x="471.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="520.0" y="218.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">PoE+ Ethernet</text>
 </g>
-  <path d="M 455.0 260.0 L 645.0 260.0 L 645.0 170.0 L 835.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 260.0 L 820.0 260.0 L 820.0 170.0 L 835.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="606.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="645.0" y="218.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">2.5GbE LAN</text>
+  <rect x="781.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="820.0" y="218.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">2.5GbE LAN</text>
 </g>
   <path d="M 455.0 260.0 L 835.0 260.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">

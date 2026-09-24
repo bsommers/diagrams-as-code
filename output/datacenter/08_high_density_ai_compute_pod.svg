@@ -58,10 +58,10 @@
   <rect x="456.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#331E29" />
   <text x="520.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">RDMA Storage Mount</text>
 </g>
-  <path d="M 205.0 170.0 L 835.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow-FB7185)" />
+  <path d="M 205.0 170.0 L 295.0 170.0 L 295.0 65.0 L 835.0 65.0 L 835.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="450.0" y="161.0" width="140.0" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="520.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">IPMI / BMC Telemetry</text>
+  <rect x="225.0" y="108.5" width="140.0" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="295.0" y="121.0" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">IPMI / BMC Telemetry</text>
 </g>
   <g id="dgx_rack1" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />

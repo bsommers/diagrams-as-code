@@ -51,10 +51,10 @@
   <rect x="703.1" y="161.0" width="133.8" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="770.0" y="173.5" fill="#073642" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Publish Degradation</text>
 </g>
-  <path d="M 705.0 170.0 L 1085.0 170.0" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705.0 170.0 L 795.0 170.0 L 795.0 240.0 L 1085.0 240.0 L 1085.0 170.0" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="831.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="895.0" y="173.5" fill="#073642" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Resolve &amp; File RCA</text>
+  <rect x="731.2" y="196.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="795.0" y="208.5" fill="#073642" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Resolve &amp; File RCA</text>
 </g>
   <g id="alert_source" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />

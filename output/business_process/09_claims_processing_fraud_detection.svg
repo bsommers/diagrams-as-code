@@ -57,10 +57,10 @@
   <rect x="809.5" y="206.0" width="171.0" height="18.0" rx="9.0" fill="#163028" />
   <text x="895.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Approve Settlement Amount</text>
 </g>
-  <path d="M 835.0 260.0 L 520.0 260.0 L 520.0 170.0 L 205.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 835.0 260.0 L 745.0 260.0 L 745.0 330.0 L 205.0 330.0 L 205.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="468.6" y="206.0" width="102.8" height="18.0" rx="9.0" fill="#163028" />
-  <text x="520.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Disburse Funds</text>
+  <rect x="693.6" y="286.0" width="102.8" height="18.0" rx="9.0" fill="#163028" />
+  <text x="745.0" y="298.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Disburse Funds</text>
 </g>
   <g id="claimant" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
