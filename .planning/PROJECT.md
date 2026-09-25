@@ -28,24 +28,31 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - [x] Pluggable group flow layout engines (`VerticalFlowLayout`, `HorizontalFlowLayout`, `GridLayout`) decoupled from `Group` (`v0.5.0`).
 - [x] Client-side interactive SVG pan/zoom and collapsible group header toggles with zero external runtime dependencies (`v0.5.0`).
 - [x] Local-first testing directives and GitHub Actions CI quota conservation controls (`v0.5.0`).
+- [x] Standalone CLI `--interactive` flag, client-side search/highlight filter, and viewport minimap navigator (`v0.6.0`).
+- [x] Obstacle-aware orthogonal Manhattan routing with clearance corridors and multi-rank crossing minimization (`v0.7.0`).
 
-### Active Scope (Next Milestone: v0.6.0)
+## Current Milestone: v0.8.0 Curved & Bezier Edge Routing Engine
 
-- [ ] **CLI Interactive Export (`CAP-DIAG-CLI-INTERACTIVE`)**: Expose `--interactive` CLI flag for `diagrams-as-code render` and batch exports.
-- [ ] **Interactive Enhancements**: Minimap viewport navigator, search/highlight node filters, and smooth CSS transitions on group toggles.
-- [ ] **Layout Refinements**: Compound group edge routing optimizations and ranking adjustments.
+**Goal:** Provide deterministic, publication-quality cubic Bezier and curved edge routing with obstacle deflection, rounded corner fillets for orthogonal paths, and unified diagram/edge routing controls with zero external dependencies.
+
+**Target features:**
+- Cubic Bezier curve routing with port tangent vector calculation and control point generation (`Routing.CURVE`).
+- Rounded corner fillets (`arc_radius`) on orthogonal Manhattan routing paths (`Routing.ORTHOGONAL`).
+- Obstacle-aware Bezier splines routing through intermediate avoidance waypoints.
+- Diagram-level default routing configuration (`Diagram(routing=...)`) and per-edge override (`Edge(..., routing=...)`).
+- SVG renderer support for cubic Bezier path (`C`) commands and fillet arcs (`A`/`Q`).
 
 ### Out of Scope
 
 - External runtime dependencies (`dependencies = []` in `pyproject.toml` remains strictly empty).
 - Declarative JSON/YAML diagram specification (diagrams remain pure Python code).
-- Complex obstacle-avoiding edge routing (v1 Manhattan orthogonal routing remains canonical).
+- Dynamic interactive physics-based force-directed simulation (diagrams are statically compiled SVG).
 
 ## Context
 
 - Evolved from legacy mingrammer/diagrams Graphviz wrapper into an independent pure-Python directed engine.
 - 88 gallery reference diagrams across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`).
-- Shipped `v0.5.0` with 439 unit/integration tests passing in ~11 seconds.
+- Shipped `v0.7.0` with obstacle-aware routing and crossing minimization.
 
 ## Constraints
 
@@ -54,6 +61,23 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - **Verification:** Pre-commit and CI diff gate on `README.md`, `docs/`, `icons/`, `output/`.
 - **Compatibility:** Tested and passing on Python 3.10, 3.11, 3.12, and 3.13.
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ## Key Decisions
 
 - 2026-09-21: Rename canonical root package to `diagrams_as_code`; maintain `iiot_diagrams` as facade.
@@ -61,3 +85,9 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - 2026-09-22: Unconditional canvas growth applies across all layout modes (`manual`, `auto`, layout file).
 - 2026-09-22: Commit trailers truthfully attribute the model that performed the work.
 - 2026-09-22: Transition planning workflow from superpowers to GSD (`.planning/`).
+- 2026-09-24: Add obstacle avoidance and detour channel search to orthogonal router.
+- 2026-09-24: Implement cubic Bezier curves and rounded orthogonal fillets for v0.8.0.
+
+---
+*Last updated: 2026-09-24 for Milestone v0.8.0*
+

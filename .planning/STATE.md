@@ -1,7 +1,10 @@
 ---
-gsd_state_version: '1.0'
-status: ready_to_plan
+gsd_state_version: 1.0
 milestone: v0.8.0
+milestone_name: Curved & Bezier Edge Routing Engine
+status: planning
+last_updated: "2026-09-25T02:58:06.637Z"
+last_activity: 2026-09-24
 progress:
   total_phases: 0
   completed_phases: 0
@@ -21,13 +24,10 @@ See: `.planning/PROJECT.md` (updated 2026-09-23)
 
 ## Current Position
 
-Phase: None active (Milestone v0.7.0 complete)  
-Milestone: v0.8.0  
-Plan: 0 of 0  
-Status: Milestone v0.7.0 archived, awaiting v0.8.0 roadmap definition  
-Last activity: 2026-09-24 — Shipped v0.7.0 (Phase 7).
-
-Progress: [----------] 0%
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-09-24 — Milestone v0.8.0 started
 
 ## Accumulated Context
 
