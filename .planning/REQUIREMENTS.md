@@ -1,15 +1,94 @@
-# Requirements: Milestone v0.8.0 (Discovery / Backlog)
+# Requirements: Diagrams as Code (Milestone v0.8.0)
 
 **Defined:** 2026-09-24  
 **Target Release:** `v0.8.0`  
 **Core Value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.
 
-## Active Requirements
+## v1 Requirements
 
-*(Milestone v0.8.0 requirements in definition)*
+Requirements for Milestone v0.8.0 Curved & Bezier Edge Routing Engine. Each maps to roadmap phases.
+
+### Cubic Bezier Geometry & Path Generation
+
+- [ ] **BEZ-01**: User can set `routing=Routing.CURVE` (or `"curve"`) on an `Edge` to connect elements with an analytical cubic Bezier curve.
+- [ ] **BEZ-02**: Curve router computes control handles aligned with cardinal port outward normal vectors (NORTH, SOUTH, EAST, WEST) so curves enter/exit strictly perpendicular to node bounds.
+- [ ] **BEZ-03**: Curve router applies distance-proportional handle scaling along primary flow axes (`LR` and `TB`) to produce smooth S-curves without kinks or excessive bulging.
+- [ ] **BEZ-04**: SVG renderer emits native cubic Bezier `<path d="M... C...">` elements with correct arrowhead marker rotation angles at endpoints.
+- [ ] **BEZ-05**: Protocol label badges on curved edges are positioned at the curve's arc-length midpoint with non-overlapping background pills.
+
+### Rounded Corner Fillets for Orthogonal Routing
+
+- [ ] **FILLET-01**: User can configure `corner_radius` (or `arc_radius`) on orthogonal edges to produce rounded 90-degree corner bends.
+- [ ] **FILLET-02**: Corner filleting dynamically clamps radius per corner to $\min(R, L_1/2, L_2/2)$ so short segments never invert, create "dog ears", or overlap.
+- [ ] **FILLET-03**: SVG renderer emits quadratic Bezier (`Q`) commands connecting corner fillet tangent points for $C^1$-continuous smooth bends.
+
+### Obstacle Detection & Deflection for Curved Edges
+
+- [ ] **CURVEOBS-01**: Router detects when candidate cubic Bezier curves intersect intervening obstacle bounding boxes.
+- [ ] **CURVEOBS-02**: When an obstacle collision is detected, router deflects the curve through collision-free clearance channel waypoints as a smooth multi-segment spline.
+- [ ] **CURVEOBS-03**: Reverse-flow connections (backward edges) adaptively scale control points into lateral clearance channels to avoid clipping through source/target nodes.
+
+### Configuration Hierarchy, Layout & Extrema Integration
+
+- [ ] **CFG-01**: User can set diagram-wide default edge routing and corner radius via `Diagram(routing=..., corner_radius=...)`.
+- [ ] **CFG-02**: Connections created via fluent operators (`s1 >> s2`) inherit diagram defaults while individual `Edge` parameters take precedence.
+- [ ] **CFG-03**: Layout pipeline automatically runs unified edge routing for all diagram edges, populating `edge.waypoints` and `diagram.routes`.
+- [ ] **CFG-04**: Diagram canvas boundaries automatically expand (`_grow_canvas`) to encompass analytical curve extrema so high-arching Bezier curves are never clipped.
+
+## v2 Requirements
+
+Deferred to future release. Tracked but not in current roadmap.
+
+### Edge Enhancements
+
+- **EDGE-01**: User can configure continuous curvature parameter tuning (`curvature: float = 0.5`) to dial curve tension.
+- **EDGE-02**: User can configure bridge jump arcs (semi-circular hops) where orthogonal or curved edges cross each other.
+- **EDGE-03**: Edge bundling for high-density multi-edge meshes.
+
+## Out of Scope
+
+Explicitly excluded. Documented to prevent scope creep.
+
+| Feature | Reason |
+|---------|--------|
+| Manual control point dragging / canvas sculpting | Breaks code-as-truth reproducibility; non-declarative |
+| Physics / force-directed spline simulation | Non-deterministic, runtime jitter, introduces third-party dependencies or slow convergence |
+| Arbitrary high-order Bezier polynomials ($N \ge 4$) | Prone to Runge's phenomenon oscillations, unsupported in standard SVG path syntax |
+| External geometric math engines (NumPy, SciPy, Shapely) | Violates zero-dependency stdlib architectural rule |
+
+## Traceability
+
+Which phases cover which requirements. Updated during roadmap creation.
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| BEZ-01 | Pending | Pending |
+| BEZ-02 | Pending | Pending |
+| BEZ-03 | Pending | Pending |
+| BEZ-04 | Pending | Pending |
+| BEZ-05 | Pending | Pending |
+| FILLET-01 | Pending | Pending |
+| FILLET-02 | Pending | Pending |
+| FILLET-03 | Pending | Pending |
+| CURVEOBS-01 | Pending | Pending |
+| CURVEOBS-02 | Pending | Pending |
+| CURVEOBS-03 | Pending | Pending |
+| CFG-01 | Pending | Pending |
+| CFG-02 | Pending | Pending |
+| CFG-03 | Pending | Pending |
+| CFG-04 | Pending | Pending |
+
+**Coverage:**
+- v1 requirements: 15 total
+- Mapped to phases: 0
+- Unmapped: 15 ⚠️
 
 ## Archived Milestones
 
 - [v0.7.0 Requirements Archive](milestones/v0.7.0-REQUIREMENTS.md)
 - [v0.6.0 Requirements Archive](milestones/v0.6.0-REQUIREMENTS.md)
 - [v0.5.0 Requirements Archive](milestones/v0.5.0-REQUIREMENTS.md)
+
+---
+*Requirements defined: 2026-09-24*  
+*Last updated: 2026-09-24 for Milestone v0.8.0*
