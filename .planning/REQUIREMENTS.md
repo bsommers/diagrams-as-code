@@ -62,26 +62,26 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BEZ-01 | Pending | Pending |
-| BEZ-02 | Pending | Pending |
-| BEZ-03 | Pending | Pending |
-| BEZ-04 | Pending | Pending |
-| BEZ-05 | Pending | Pending |
-| FILLET-01 | Pending | Pending |
-| FILLET-02 | Pending | Pending |
-| FILLET-03 | Pending | Pending |
-| CURVEOBS-01 | Pending | Pending |
-| CURVEOBS-02 | Pending | Pending |
-| CURVEOBS-03 | Pending | Pending |
-| CFG-01 | Pending | Pending |
-| CFG-02 | Pending | Pending |
-| CFG-03 | Pending | Pending |
-| CFG-04 | Pending | Pending |
+| BEZ-01 | Phase 8 | Pending |
+| BEZ-02 | Phase 8 | Pending |
+| BEZ-03 | Phase 8 | Pending |
+| BEZ-04 | Phase 8 | Pending |
+| BEZ-05 | Phase 8 | Pending |
+| FILLET-01 | Phase 9 | Pending |
+| FILLET-02 | Phase 9 | Pending |
+| FILLET-03 | Phase 9 | Pending |
+| CURVEOBS-01 | Phase 10 | Pending |
+| CURVEOBS-02 | Phase 10 | Pending |
+| CURVEOBS-03 | Phase 10 | Pending |
+| CFG-01 | Phase 11 | Pending |
+| CFG-02 | Phase 11 | Pending |
+| CFG-03 | Phase 11 | Pending |
+| CFG-04 | Phase 11 | Pending |
 
 **Coverage:**
 - v1 requirements: 15 total
-- Mapped to phases: 0
-- Unmapped: 15 ⚠️
+- Mapped to phases: 15 (100%)
+- Unmapped: 0
 
 ## Archived Milestones
 
