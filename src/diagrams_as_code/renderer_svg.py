@@ -2,17 +2,118 @@
 from __future__ import annotations
 
 import html
+import math
 import re
 from typing import Any, Mapping, Optional, Sequence
 
 from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import CubicBezier, Point
+from diagrams_as_code.geometry import CubicBezier, Point, Rect
 from diagrams_as_code.groups import Group
 from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
 from diagrams_as_code.router import OrthogonalRouter
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
+
+
+def _render_filleted_path(
+    pts: list[Point],
+    corner_radius: float,
+    obstacles: Optional[Sequence[Rect]] = None,
+) -> str:
+    """Format orthogonal Manhattan polyline into SVG path with rounded quadratic Bezier fillets."""
+    n = len(pts)
+    if n < 3 or corner_radius <= 0.0:
+        return f"M {pts[0].x} {pts[0].y} " + " ".join(f"L {p.x} {p.y}" for p in pts[1:])
+
+    # 1. Precalculate segment vectors, lengths, and unit vectors
+    seg_lens: list[float] = []
+    seg_units: list[Point] = []
+    for j in range(n - 1):
+        vx = pts[j + 1].x - pts[j].x
+        vy = pts[j + 1].y - pts[j].y
+        l = math.hypot(vx, vy)
+        seg_lens.append(l)
+        seg_units.append(Point(vx / l, vy / l) if l > 1e-6 else Point(0.0, 0.0))
+
+    # 2. Compute effective radius per corner with dynamic clamping
+    effective_radii: list[float] = [0.0] * n
+    for i in range(1, n - 1):
+        l_in = seg_lens[i - 1]
+        l_out = seg_lens[i]
+
+        if l_in < 1e-6 or l_out < 1e-6:
+            continue
+
+        u_in = seg_units[i - 1]
+        u_out = seg_units[i]
+
+        # Strict 90-degree orthogonal turn detection (D-07)
+        dot = u_in.x * u_out.x + u_in.y * u_out.y
+        if abs(dot) > 1e-6:
+            continue
+
+        # 50% segment budget (D-05)
+        max_r_in = l_in / 2.0
+        max_r_out = l_out / 2.0
+
+        # Endpoint straight lead-in enforcement (D-08)
+        if i == 1:
+            lead_in = min(10.0, l_in / 2.0)
+            max_r_in = min(max_r_in, max(0.0, l_in - lead_in))
+        if i == n - 2:
+            lead_in = min(10.0, l_out / 2.0)
+            max_r_out = min(max_r_out, max(0.0, l_out - lead_in))
+
+        r_corner = min(corner_radius, max_r_in, max_r_out)
+
+        # Obstacle clearance guard (D-14, T-09-06)
+        if obstacles and r_corner >= 2.0:
+            p_c = pts[i]
+            dx_apex = -0.25 * (u_in.x - u_out.x)
+            dy_apex = -0.25 * (u_in.y - u_out.y)
+            for obs in obstacles:
+                exp = obs.expand(4.0)
+                apex_x = p_c.x + r_corner * dx_apex
+                apex_y = p_c.y + r_corner * dy_apex
+                if exp.left < apex_x < exp.right and exp.top < apex_y < exp.bottom:
+                    safe_r = r_corner
+                    cands: list[float] = []
+                    if abs(dx_apex) > 1e-6:
+                        target_x = exp.right if dx_apex < 0 else exp.left
+                        cands.append((target_x - p_c.x) / dx_apex)
+                    if abs(dy_apex) > 1e-6:
+                        target_y = exp.bottom if dy_apex < 0 else exp.top
+                        cands.append((target_y - p_c.y) / dy_apex)
+                    valid_cands = [c for c in cands if c >= 0.0]
+                    if valid_cands:
+                        safe_r = min(safe_r, *valid_cands)
+                    else:
+                        safe_r = 0.0
+                    r_corner = min(r_corner, safe_r)
+
+        # Minimum threshold suppression (D-06)
+        if r_corner < 2.0:
+            r_corner = 0.0
+
+        effective_radii[i] = r_corner
+
+    # 3. Assemble SVG path commands (D-09)
+    parts = [f"M {pts[0].x} {pts[0].y}"]
+    for i in range(1, n - 1):
+        p_c = pts[i]
+        r = effective_radii[i]
+        if r >= 2.0:
+            u_in = seg_units[i - 1]
+            u_out = seg_units[i]
+            t1 = Point(p_c.x - u_in.x * r, p_c.y - u_in.y * r)
+            t2 = Point(p_c.x + u_out.x * r, p_c.y + u_out.y * r)
+            parts.append(f"L {t1.x} {t1.y} Q {p_c.x} {p_c.y}, {t2.x} {t2.y}")
+        else:
+            parts.append(f"L {p_c.x} {p_c.y}")
+
+    parts.append(f"L {pts[-1].x} {pts[-1].y}")
+    return " ".join(parts)
 
 
 class SVGRenderer:
