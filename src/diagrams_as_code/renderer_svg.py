@@ -705,6 +705,9 @@ class SVGRenderer:
                     pass
 
             # Path generation branching
+            is_orthogonal = e.routing in (Routing.ORTHOGONAL, "orthogonal")
+            corner_r = getattr(e, "corner_radius", None) or 0.0
+
             if e.routing in (Routing.CURVE, "curve") and len(pts) == 4:
                 p0, c1, c2, p3 = pts
                 path_d = f"M {p0.x} {p0.y} C {c1.x} {c1.y}, {c2.x} {c2.y}, {p3.x} {p3.y}"
@@ -715,6 +718,9 @@ class SVGRenderer:
                         f"C {pts[i].x} {pts[i].y}, {pts[i+1].x} {pts[i+1].y}, {pts[i+2].x} {pts[i+2].y}"
                     )
                 path_d = " ".join(parts)
+            elif is_orthogonal and corner_r > 0.0:
+                obs_bounds = [el.bounds for el in element_list if el not in (e.source, e.target)]
+                path_d = _render_filleted_path(pts, corner_r, obstacles=obs_bounds)
             else:
                 path_d = f"M {pts[0].x} {pts[0].y} " + " ".join(
                     f"L {p.x} {p.y}" for p in pts[1:]
@@ -776,9 +782,15 @@ class SVGRenderer:
                     mid = curve.arc_length_midpoint(num_samples=32)
                     lx, ly = mid.x, mid.y
                 else:
-                    mid_idx = len(pts) // 2
-                    lx = (pts[mid_idx - 1].x + pts[mid_idx].x) / 2.0
-                    ly = (pts[mid_idx - 1].y + pts[mid_idx].y) / 2.0
+                    longest_idx = 0
+                    longest_len = -1.0
+                    for j in range(len(pts) - 1):
+                        seg_l = math.hypot(pts[j + 1].x - pts[j].x, pts[j + 1].y - pts[j].y)
+                        if seg_l > longest_len:
+                            longest_len = seg_l
+                            longest_idx = j
+                    lx = (pts[longest_idx].x + pts[longest_idx + 1].x) / 2.0
+                    ly = (pts[longest_idx].y + pts[longest_idx + 1].y) / 2.0
                 edge_meta = getattr(e, "metadata", {}) or {}
                 badge_fill = edge_meta.get("badge_fill", self.theme.node_fill)
                 badge_text_color = edge_meta.get(
