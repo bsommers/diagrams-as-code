@@ -302,6 +302,53 @@ class CubicBezier:
         t_mid = (idx + alpha) / num_samples
         return self.point_at(t_mid)
 
+    def subdivide(self, t: float = 0.5) -> tuple[CubicBezier, CubicBezier]:
+        """Bisect cubic Bezier curve into two sub-curves using De Casteljau algorithm."""
+        if not (0.0 <= t <= 1.0):
+            raise ValueError(f"Parameter t must be in [0.0, 1.0], got {t}")
+        it = 1.0 - t
+        # Level 1
+        q0 = Point(it * self.p0.x + t * self.c1.x, it * self.p0.y + t * self.c1.y)
+        q1 = Point(it * self.c1.x + t * self.c2.x, it * self.c1.y + t * self.c2.y)
+        q2 = Point(it * self.c2.x + t * self.p3.x, it * self.c2.y + t * self.p3.y)
+        # Level 2
+        r0 = Point(it * q0.x + t * q1.x, it * q0.y + t * q1.y)
+        r1 = Point(it * q1.x + t * q2.x, it * q1.y + t * q2.y)
+        # Level 3
+        s0 = Point(it * r0.x + t * r1.x, it * r0.y + t * r1.y)
+        return (
+            CubicBezier(self.p0, q0, r0, s0),
+            CubicBezier(s0, r1, q2, self.p3),
+        )
+
+    def split(self, t: float = 0.5) -> tuple[CubicBezier, CubicBezier]:
+        """Alias for subdivide."""
+        return self.subdivide(t)
+
+    def intersects_rect(self, rect: Rect, max_depth: int = 4) -> bool:
+        """Two-tier collision test: AABB broadphase filter followed by recursive De Casteljau narrowphase."""
+        # Tier 1: Broadphase filter using tight analytical bounding box
+        if not self.bbox().intersects(rect):
+            return False
+
+        # Guard recursion depth to prevent stack exhaustion (T-10-01)
+        clamped_depth = max(1, min(int(max_depth), 8))
+
+        # Tier 2: Narrowphase recursive subdivision
+        def _check_subcurve(curve: CubicBezier, depth: int) -> bool:
+            min_x = min(curve.p0.x, curve.c1.x, curve.c2.x, curve.p3.x)
+            max_x = max(curve.p0.x, curve.c1.x, curve.c2.x, curve.p3.x)
+            min_y = min(curve.p0.y, curve.c1.y, curve.c2.y, curve.p3.y)
+            max_y = max(curve.p0.y, curve.c1.y, curve.c2.y, curve.p3.y)
+            if not (min_x < rect.right and max_x > rect.left and min_y < rect.bottom and max_y > rect.top):
+                return False
+            if depth >= clamped_depth:
+                return True
+            left, right = curve.subdivide(0.5)
+            return _check_subcurve(left, depth + 1) or _check_subcurve(right, depth + 1)
+
+        return _check_subcurve(self, 0)
+
 
 @dataclass(frozen=True)
 class QuadraticBezier:

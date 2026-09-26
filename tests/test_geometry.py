@@ -401,3 +401,109 @@ def test_quadratic_bezier_arc_length_and_immutability():
         curved.p2 = Point(1.0, 1.0)  # type: ignore
 
 
+def test_cubic_bezier_subdivision():
+    from diagrams_as_code.geometry import CubicBezier
+
+    cb = CubicBezier(
+        p0=Point(0.0, 10.0),
+        c1=Point(20.0, 50.0),
+        c2=Point(80.0, 90.0),
+        p3=Point(100.0, 20.0),
+    )
+
+    # Subdivide at midpoint t = 0.5
+    left, right = cb.subdivide(0.5)
+    assert left.p0 == cb.p0
+    assert right.p3 == cb.p3
+    assert left.p3 == right.p0
+    assert left.p3.distance_to(cb.point_at(0.5)) < 1e-9
+
+    # Sample subcurves and compare with parent curve evaluations
+    assert left.point_at(0.5).distance_to(cb.point_at(0.25)) < 1e-5
+    assert right.point_at(0.5).distance_to(cb.point_at(0.75)) < 1e-5
+
+    # Split alias produces identical result
+    split_left, split_right = cb.split(0.5)
+    assert split_left == left
+    assert split_right == right
+
+    # Asymmetric subdivision at t = 0.3
+    left_3, right_3 = cb.subdivide(0.3)
+    assert left_3.p0 == cb.p0
+    assert right_3.p3 == cb.p3
+    assert left_3.p3 == right_3.p0
+    assert left_3.p3.distance_to(cb.point_at(0.3)) < 1e-9
+    # u = 0.5 on left_3 corresponds to t = 0.5 * 0.3 = 0.15
+    assert left_3.point_at(0.5).distance_to(cb.point_at(0.15)) < 1e-5
+    # u = 0.5 on right_3 corresponds to t = 0.3 + 0.5 * 0.7 = 0.65
+    assert right_3.point_at(0.5).distance_to(cb.point_at(0.65)) < 1e-5
+
+    # Parameter boundary handling
+    with pytest.raises(ValueError, match=r"Parameter t must be in \[0\.0, 1\.0\]"):
+        cb.subdivide(-0.01)
+    with pytest.raises(ValueError, match=r"Parameter t must be in \[0\.0, 1\.0\]"):
+        cb.subdivide(1.01)
+
+
+def test_cubic_bezier_intersects_rect_clear_miss():
+    from diagrams_as_code.geometry import CubicBezier, Rect
+
+    cb = CubicBezier(Point(0.0, 0.0), Point(10.0, 10.0), Point(20.0, 20.0), Point(30.0, 30.0))
+    rect = Rect(100.0, 100.0, 50.0, 50.0)
+    assert not cb.intersects_rect(rect)
+
+
+def test_cubic_bezier_intersects_rect_direct_hit():
+    from diagrams_as_code.geometry import CubicBezier, Rect
+
+    cb = CubicBezier(Point(0.0, 50.0), Point(30.0, 50.0), Point(70.0, 50.0), Point(100.0, 50.0))
+    rect = Rect(40.0, 40.0, 20.0, 20.0)
+    assert cb.intersects_rect(rect)
+
+
+def test_cubic_bezier_intersects_rect_grazing_corner_miss():
+    from diagrams_as_code.geometry import CubicBezier, Rect
+
+    # Curve arcs diagonally near rectangle corner (50, 50)
+    cb = CubicBezier(
+        p0=Point(30.0, 70.0),
+        c1=Point(35.0, 45.0),
+        c2=Point(45.0, 35.0),
+        p3=Point(70.0, 30.0),
+    )
+    rect = Rect(50.0, 50.0, 40.0, 40.0)
+
+    # Broadphase AABB intersects: cb.bbox() overlaps [50, 70] x [50, 70]
+    assert cb.bbox().intersects(rect)
+
+    # Narrowphase correctly verifies zero intersection with rectangle interior
+    assert not cb.intersects_rect(rect)
+
+
+def test_cubic_bezier_intersects_rect_corner_clipping_hit():
+    from diagrams_as_code.geometry import CubicBezier, Rect
+
+    # Curve pushed outward to clip corner (50, 50) of rectangle
+    cb = CubicBezier(
+        p0=Point(30.0, 70.0),
+        c1=Point(55.0, 55.0),
+        c2=Point(55.0, 55.0),
+        p3=Point(70.0, 30.0),
+    )
+    rect = Rect(50.0, 50.0, 40.0, 40.0)
+    assert cb.intersects_rect(rect)
+
+
+def test_cubic_bezier_intersects_rect_depth_capping():
+    from diagrams_as_code.geometry import CubicBezier, Rect
+
+    cb = CubicBezier(Point(0.0, 50.0), Point(30.0, 50.0), Point(70.0, 50.0), Point(100.0, 50.0))
+    rect = Rect(40.0, 40.0, 20.0, 20.0)
+
+    # Verify clamping at lower and upper bounds does not error or cause stack overflow
+    assert cb.intersects_rect(rect, max_depth=0)
+    assert cb.intersects_rect(rect, max_depth=-5)
+    assert cb.intersects_rect(rect, max_depth=1)
+    assert cb.intersects_rect(rect, max_depth=100)
+
+
