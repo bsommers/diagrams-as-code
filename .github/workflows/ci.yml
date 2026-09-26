@@ -57,6 +57,9 @@ jobs:
       - name: Run test suite
         run: uv run pytest
 
+      - name: Run evaluation and benchmark suite
+        run: uv run python tools/eval_bezier.py
+
       - name: Verify diagram generation
         run: uv run python main.py
 

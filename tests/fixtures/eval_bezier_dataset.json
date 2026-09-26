@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "description": "Deterministic evaluation and benchmark dataset for cubic Bezier edge routing and SVG generation",
+  "scenarios": [
+    {
+      "id": "cardinal-east-west",
+      "category": "cardinal_facing",
+      "description": "Standard horizontal forward flow from East port to West port",
+      "src_rect": {"x": 100, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 400, "y": 100, "w": 120, "h": 60},
+      "src_port": "E",
+      "tgt_port": "W",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "cardinal-south-north",
+      "category": "cardinal_facing",
+      "description": "Standard vertical forward flow from South port to North port",
+      "src_rect": {"x": 200, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 200, "y": 400, "w": 120, "h": 60},
+      "src_port": "S",
+      "tgt_port": "N",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "cardinal-perpendicular-east-north",
+      "category": "cardinal_perpendicular",
+      "description": "Perpendicular port routing from East port down to North port",
+      "src_rect": {"x": 100, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 300, "y": 300, "w": 120, "h": 60},
+      "src_port": "E",
+      "tgt_port": "N",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "cardinal-perpendicular-south-west",
+      "category": "cardinal_perpendicular",
+      "description": "Perpendicular port routing from South port right to West port",
+      "src_rect": {"x": 100, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 350, "y": 250, "w": 120, "h": 60},
+      "src_port": "S",
+      "tgt_port": "W",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "cardinal-parallel-east-east",
+      "category": "cardinal_parallel_same_side",
+      "description": "Parallel same-side loop from East port to East port with vertical separation",
+      "src_rect": {"x": 100, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 100, "y": 300, "w": 120, "h": 60},
+      "src_port": "E",
+      "tgt_port": "E",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "cardinal-parallel-north-north",
+      "category": "cardinal_parallel_same_side",
+      "description": "Parallel same-side loop from North port to North port with horizontal separation",
+      "src_rect": {"x": 100, "y": 200, "w": 120, "h": 60},
+      "tgt_rect": {"x": 400, "y": 200, "w": 120, "h": 60},
+      "src_port": "N",
+      "tgt_port": "N",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "backward-flow-east-east-opposing",
+      "category": "backward_flow",
+      "description": "Backward retrograde flow from West-facing source back to East-facing target",
+      "src_rect": {"x": 400, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 100, "y": 100, "w": 120, "h": 60},
+      "src_port": "E",
+      "tgt_port": "E",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "facing-offset-s-curve",
+      "category": "s_curve",
+      "description": "East to West facing ports with large lateral vertical offset producing S-curve",
+      "src_rect": {"x": 100, "y": 100, "w": 120, "h": 60},
+      "tgt_rect": {"x": 500, "y": 350, "w": 120, "h": 60},
+      "src_port": "E",
+      "tgt_port": "W",
+      "expected_curve": true,
+      "expected_escalate": false
+    },
+    {
+      "id": "degenerate-coincident-ports",
+      "category": "degenerate",
+      "description": "Coincident nodes with zero separation between source and target ports",
+      "src_rect": {"x": 200, "y": 200, "w": 100, "h": 50},
+      "tgt_rect": {"x": 200, "y": 200, "w": 100, "h": 50},
+      "src_port": "E",
+      "tgt_port": "E",
+      "expected_curve": true,
+      "expected_escalate": true
+    },
+    {
+      "id": "degenerate-zero-distance-horizontal",
+      "category": "degenerate",
+      "description": "Nodes touching edge-to-edge with near-zero port separation",
+      "src_rect": {"x": 100, "y": 100, "w": 100, "h": 50},
+      "tgt_rect": {"x": 200, "y": 100, "w": 100, "h": 50},
+      "src_port": "E",
+      "tgt_port": "W",
+      "expected_curve": true,
+      "expected_escalate": false
+    }
+  ]
+}
