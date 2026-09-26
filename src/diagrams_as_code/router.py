@@ -4,7 +4,7 @@ import heapq
 from typing import Any, Iterable, Optional
 
 from diagrams_as_code.connections import Edge, Port, Routing
-from diagrams_as_code.geometry import Point, Rect
+from diagrams_as_code.geometry import CubicBezier, Point, Rect
 
 
 def segment_intersects_rect(p1: Point, p2: Point, rect: Rect) -> bool:
@@ -58,6 +58,51 @@ PORT_NORMALS: dict[Port, Point] = {
 
 class CurveRouter:
     """Computes cubic Bezier control handles from port normal vectors."""
+
+    def _normalize_obstacles(
+        self,
+        edge: Edge,
+        obstacles: Optional[Iterable[Any]],
+        p_start: Point,
+        p_end: Point,
+    ) -> list[Rect]:
+        """Normalize obstacles, filtering out endpoints, matching IDs, and enclosing container groups."""
+        if obstacles is None:
+            return []
+        norm: list[Rect] = []
+        src_id = getattr(edge.source, "id", None)
+        tgt_id = getattr(edge.target, "id", None)
+        filter_ids = {i for i in (src_id, tgt_id) if i is not None}
+        for item in obstacles:
+            if item is edge.source or item is edge.target:
+                continue
+            if hasattr(item, "id") and item.id in filter_ids:
+                continue
+            if hasattr(item, "bounds") and isinstance(item.bounds, Rect):
+                r = item.bounds
+            elif isinstance(item, Rect):
+                r = item
+            else:
+                continue
+
+            # Skip if start or end point is inside the obstacle (e.g. enclosing group)
+            if (r.left <= p_start.x <= r.right and r.top <= p_start.y <= r.bottom) or (
+                r.left <= p_end.x <= r.right and r.top <= p_end.y <= r.bottom
+            ):
+                continue
+            norm.append(r)
+        return norm
+
+    def _detect_collisions(
+        self,
+        curve: CubicBezier,
+        obstacles: list[Rect],
+        clearance: float,
+    ) -> list[Rect]:
+        """Collect and return obstacles that intersect candidate curve inflated by clearance."""
+        return [
+            obs for obs in obstacles if curve.intersects_rect(obs.expand(clearance))
+        ]
 
     def resolve_ports(self, edge: Edge) -> tuple[Port, Port]:
         """Determine connection ports for source and target elements."""

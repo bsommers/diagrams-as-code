@@ -4,6 +4,7 @@ import pytest
 
 from iiot_diagrams import (
     Anchor,
+    CubicBezier,
     CurveRouter,
     Edge,
     EdgeRouter,
@@ -780,6 +781,71 @@ def test_edge_clearance_diagram_cascading() -> None:
     # Fluent edge builder with explicit clearance override
     s1 >> diag.edge(clearance=8.0) >> s2
     assert diag.edges[-1].clearance == 8.0
+
+
+def test_curve_router_obstacle_filtering() -> None:
+    """Verify CurveRouter._normalize_obstacles filters endpoints, matching IDs, and enclosing groups."""
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(0, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(400, 100)
+    edge = Edge(s1, s2)
+    p_start = s1.bounds.get_anchor(Port.EAST.to_anchor())
+    p_end = s2.bounds.get_anchor(Port.WEST.to_anchor())
+
+    # Duplicate / matching ID element
+    s1_dup = Shape("s1", "Dup", 100, 50).at(0, 100)
+
+    # Enclosing container group that contains s1 / p_start
+    g1_rect = Rect(-10, 50, 150, 150)
+
+    # Intervening obstacle shape
+    intervening = Shape("s3", "Obstacle", 100, 50).at(200, 100)
+
+    # Bare Rect obstacle
+    bare_rect = Rect(220, 200, 60, 40)
+
+    obstacles = [s1, s2, s1_dup, g1_rect, intervening, bare_rect]
+
+    norm = router._normalize_obstacles(edge, obstacles, p_start, p_end)
+
+    # s1 and s2 excluded (D-03)
+    # s1_dup excluded because id == "s1" (D-03)
+    # g1_rect excluded because it contains p_start (D-03)
+    # intervening and bare_rect retained
+    assert intervening.bounds in norm
+    assert bare_rect in norm
+    assert len(norm) == 2
+
+    # None obstacles returns []
+    assert router._normalize_obstacles(edge, None, p_start, p_end) == []
+
+
+def test_curve_router_collision_detection() -> None:
+    """Verify CurveRouter._detect_collisions detects clearance-inflated intersections."""
+    router = CurveRouter()
+    curve = CubicBezier(
+        Point(0, 100),
+        Point(100, 100),
+        Point(200, 100),
+        Point(300, 100),
+    )
+
+    # Obstacle directly intersecting candidate curve
+    obs_hit = Rect(130, 80, 40, 40)
+
+    # Obstacle placed 25px away from curve (y: 125..165, curve is at y=100)
+    obs_far = Rect(130, 125, 40, 40)
+
+    # With clearance=15.0px, obs_far expanded is [115, 110, 70, 70] (top=110 > 100) -> no collision
+    collisions = router._detect_collisions(curve, [obs_hit, obs_far], clearance=15.0)
+    assert obs_hit in collisions
+    assert obs_far not in collisions
+
+    # With clearance=30.0px, obs_far expanded top is 125 - 30 = 95 (< 100) -> collision!
+    collisions_large = router._detect_collisions(curve, [obs_hit, obs_far], clearance=30.0)
+    assert obs_hit in collisions_large
+    assert obs_far in collisions_large
+
 
 
 
