@@ -683,4 +683,104 @@ def test_edge_corner_radius_validation() -> None:
         e.corner_radius = "bad"  # type: ignore
 
 
+def test_edge_clearance_default_and_setter() -> None:
+    """Verify Edge clearance default of 15.0px and setter behavior."""
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(200, 0)
+
+    # Default is 15.0px (D-02)
+    edge = Edge(s1, s2)
+    assert edge.clearance == 15.0
+    assert isinstance(edge.clearance, float)
+
+    # Explicit initialization
+    edge_custom = Edge(s1, s2, clearance=25.0)
+    assert edge_custom.clearance == 25.0
+
+    # Setter update with float and int
+    edge.clearance = 30.0
+    assert edge.clearance == 30.0
+
+    edge.clearance = 10
+    assert edge.clearance == 10.0
+    assert isinstance(edge.clearance, float)
+
+    # Zero clearance is valid
+    edge.clearance = 0
+    assert edge.clearance == 0.0
+
+    # None resets to default 15.0
+    edge.clearance = None  # type: ignore
+    assert edge.clearance == 15.0
+
+
+def test_edge_clearance_validation() -> None:
+    """Verify clearance input validation rejecting negative numbers, non-numeric strings, booleans, nan, inf."""
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(200, 0)
+
+    # Negative values
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=-1.0)
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=-0.001)
+
+    # Non-numeric strings
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance="15")  # type: ignore
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance="invalid")  # type: ignore
+
+    # Boolean values
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=True)  # type: ignore
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=False)  # type: ignore
+
+    # NaN and Inf
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=float("nan"))
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=float("inf"))
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, clearance=float("-inf"))
+
+    # Setter validation
+    e = Edge(s1, s2)
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.clearance = -5.0
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.clearance = "bad"  # type: ignore
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.clearance = True  # type: ignore
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.clearance = float("nan")
+
+
+def test_edge_clearance_diagram_cascading() -> None:
+    """Verify clearance cascading from Diagram and EdgeBuilder to Edge instances."""
+    from diagrams_as_code.diagram import Diagram
+
+    diag = Diagram("Clearance Cascade", clearance=28.0)
+    s1 = diag.shape("S1")
+    s2 = diag.shape("S2")
+
+    # Inherit diagram-level default clearance
+    e1 = diag.connect(s1, s2)
+    assert e1.clearance == 28.0
+
+    # Explicit override on connect
+    e2 = diag.connect(s1, s2, clearance=12.0)
+    assert e2.clearance == 12.0
+
+    # Fluent edge builder inheriting diagram clearance
+    s1 >> diag.edge() >> s2
+    assert diag.edges[-1].clearance == 28.0
+
+    # Fluent edge builder with explicit clearance override
+    s1 >> diag.edge(clearance=8.0) >> s2
+    assert diag.edges[-1].clearance == 8.0
+
+
+
 

@@ -77,6 +77,7 @@ class Edge:
         routing: Union[Routing, str] = Routing.ORTHOGONAL,
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
+        clearance: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> None:
         if not isinstance(source, Element):
@@ -107,6 +108,7 @@ class Edge:
 
         effective_r = corner_radius if corner_radius is not None else arc_radius
         self._corner_radius: Optional[float] = self._validate_corner_radius(effective_r)
+        self._clearance: float = self._validate_clearance(clearance)
 
         self.arrow_head = bool(arrow_head)
         self.arrow_tail = bool(arrow_tail)
@@ -151,4 +153,34 @@ class Edge:
     @arc_radius.setter
     def arc_radius(self, val: Optional[Union[int, float]]) -> None:
         self._corner_radius = self._validate_corner_radius(val)
+
+    @staticmethod
+    def _validate_clearance(val: Optional[Union[int, float]]) -> float:
+        """Validate and coerce clearance buffer to non-negative finite float."""
+        if val is None:
+            return 15.0
+        if isinstance(val, (bool, str)):
+            raise ValueError(
+                f"clearance must be a non-negative finite float, got {val!r}"
+            )
+        try:
+            c = float(val)
+        except (TypeError, ValueError) as exc:
+            raise ValueError(
+                f"clearance must be a non-negative finite float, got {val!r}"
+            ) from exc
+        if c < 0.0 or math.isnan(c) or math.isinf(c):
+            raise ValueError(
+                f"clearance must be a non-negative finite float, got {c}"
+            )
+        return c
+
+    @property
+    def clearance(self) -> float:
+        """Clearance buffer distance (in pixels) maintained from obstacles."""
+        return self._clearance
+
+    @clearance.setter
+    def clearance(self, val: Union[int, float]) -> None:
+        self._clearance = self._validate_clearance(val)
 
