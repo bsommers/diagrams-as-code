@@ -320,3 +320,52 @@ def test_e2e_theme_switching_dark_gold_and_light() -> None:
     root_light = ET.fromstring(svg_light)
     assert root_dark.tag.endswith("svg")
     assert root_light.tag.endswith("svg")
+
+
+def test_e2e_obstacle_avoidance_with_corner_fillets() -> None:
+    """Verify obstacle detour path receives rounded corner fillets with apex clearance >= 4.0px."""
+    import math
+    import re
+    from diagrams_as_code.geometry import Point, QuadraticBezier
+
+    diag = Diagram("Obstacle Detour Fillets", width=800.0, height=400.0)
+    with diag:
+        s = diag.shape("Source", width=80.0, height=50.0).at(50.0, 100.0)
+        t = diag.shape("Target", width=80.0, height=50.0).at(400.0, 100.0)
+        obs = diag.shape("Obstacle", width=100.0, height=80.0).at(200.0, 70.0)
+        edge = diag.connect(s, t, routing=Routing.ORTHOGONAL, corner_radius=12.0)
+
+    # Waypoints must detour around obstacle (more than 2 points)
+    assert edge.waypoints is not None
+    assert len(edge.waypoints) > 2
+
+    # Render to SVG
+    svg_content = diag.render_svg()
+    root = ET.fromstring(svg_content)
+    assert root.tag.endswith("svg")
+
+    # Find edge path
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 1
+    path_d = paths[0].attrib["d"]
+
+    # Verify Q commands exist for each 90-degree detour corner
+    num_corners = len(edge.waypoints) - 2
+    q_matches = re.findall(r"L\s+([\d.]+)\s+([\d.]+)\s+Q\s+([\d.]+)\s+([\d.]+),\s+([\d.]+)\s+([\d.]+)", path_d)
+    assert len(q_matches) == num_corners
+    assert path_d.count(" Q ") == num_corners
+
+    # Verify fillet apex maintains >= 4.0px clearance margin from obstacle
+    obs_bounds = obs.bounds
+    for match in q_matches:
+        p0_x, p0_y, ctrl_x, ctrl_y, p2_x, p2_y = map(float, match)
+        q = QuadraticBezier(Point(p0_x, p0_y), Point(ctrl_x, ctrl_y), Point(p2_x, p2_y))
+        apex = q.point_at(0.5)
+
+        # Distance from apex to obstacle bounding box
+        dx = max(0.0, obs_bounds.left - apex.x, apex.x - obs_bounds.right)
+        dy = max(0.0, obs_bounds.top - apex.y, apex.y - obs_bounds.bottom)
+        clearance = math.hypot(dx, dy)
+        assert clearance >= 4.0, f"Apex {apex} has clearance {clearance}px < 4.0px from obstacle {obs_bounds}"
+

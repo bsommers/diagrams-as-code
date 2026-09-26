@@ -946,6 +946,57 @@ def test_orthogonal_fillet_badge_placement() -> None:
     assert abs(badge_center_y - 75.0) <= 0.5
 
 
+def test_mixed_routing_styles_in_single_diagram() -> None:
+    """Verify mixed routing styles coexist in a single diagram without crosstalk or contamination."""
+    import re
+    from diagrams_as_code import Diagram, Routing
+
+    with Diagram("Mixed Routing", width=1000.0, height=800.0) as diag:
+        s1 = diag.shape("S1").at(50.0, 50.0)
+        t1 = diag.shape("T1").at(250.0, 150.0)
+        s1 >> diag.edge("Sharp", routing=Routing.ORTHOGONAL, corner_radius=0.0) >> t1
+
+        s2 = diag.shape("S2").at(50.0, 200.0)
+        t2 = diag.shape("T2").at(250.0, 300.0)
+        s2 >> diag.edge("Rounded", routing=Routing.ORTHOGONAL, corner_radius=12.0) >> t2
+
+        s3 = diag.shape("S3").at(50.0, 350.0)
+        t3 = diag.shape("T3").at(250.0, 450.0)
+        s3 >> diag.edge("Curve", routing=Routing.CURVE) >> t3
+
+        s4 = diag.shape("S4").at(50.0, 500.0)
+        t4 = diag.shape("T4").at(250.0, 500.0)
+        s4 >> diag.edge("Direct", routing=Routing.DIRECT) >> t4
+
+    svg = diag.render_svg()
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 4
+
+    p1_d = paths[0].attrib["d"]
+    p2_d = paths[1].attrib["d"]
+    p3_d = paths[2].attrib["d"]
+    p4_d = paths[3].attrib["d"]
+
+    # Edge 1 (sharp orthogonal): no Q or C commands, uses L
+    assert " Q " not in p1_d and " C " not in p1_d
+    assert " L " in p1_d
+
+    # Edge 2 (rounded orthogonal): has Q commands, no C commands
+    assert " Q " in p2_d
+    assert " C " not in p2_d
+
+    # Edge 3 (cubic Bezier): has C commands, no Q commands
+    assert " C " in p3_d
+    assert " Q " not in p3_d
+
+    # Edge 4 (direct): direct linear 2-point path
+    assert " Q " not in p4_d and " C " not in p4_d
+    assert re.match(r"^M [0-9.]+ [0-9.]+ L [0-9.]+ [0-9.]+$", p4_d) is not None
+
+
+
 
 
 

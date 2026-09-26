@@ -404,3 +404,27 @@ def test_diagram_corner_radius_cascade_and_override() -> None:
     with pytest.raises(ValueError, match="non-negative finite float"):
         diag.arc_radius = "invalid"  # type: ignore
 
+
+def test_fluent_operator_multi_hop_cascade_and_selective_override() -> None:
+    """Verify diagram-level corner_radius cascades across multi-hop fluent operator chain with selective override."""
+    with Diagram("Fluent Test", corner_radius=10.0) as diag:
+        a = diag.shape("A").at(0.0, 0.0)
+        b = diag.shape("B").at(100.0, 0.0)
+        c = diag.shape("C").at(200.0, 0.0)
+        d = diag.shape("D").at(300.0, 0.0)
+
+        # Multi-hop fluent operator cascade with selective sharp override on B >> C
+        a >> b >> diag.edge(corner_radius=0.0) >> c >> d
+
+    diag.solve()
+
+    assert len(diag.edges) == 3
+    e_ab = next(e for e in diag.edges if e.source == a and e.target == b)
+    e_bc = next(e for e in diag.edges if e.source == b and e.target == c)
+    e_cd = next(e for e in diag.edges if e.source == c and e.target == d)
+
+    assert e_ab.corner_radius == 10.0
+    assert e_bc.corner_radius == 0.0
+    assert e_cd.corner_radius == 10.0
+
+
