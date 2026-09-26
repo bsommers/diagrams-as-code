@@ -4,12 +4,15 @@ import pytest
 
 from iiot_diagrams import (
     Anchor,
+    CurveRouter,
     Edge,
+    EdgeRouter,
     Element,
     Group,
     OrthogonalRouter,
     Point,
     Port,
+    PORT_NORMALS,
     Rect,
     Routing,
     Shape,
@@ -24,10 +27,16 @@ def test_package_exports() -> None:
     assert hasattr(iiot_diagrams, "Routing")
     assert hasattr(iiot_diagrams, "Edge")
     assert hasattr(iiot_diagrams, "OrthogonalRouter")
+    assert hasattr(iiot_diagrams, "CurveRouter")
+    assert hasattr(iiot_diagrams, "EdgeRouter")
+    assert hasattr(iiot_diagrams, "PORT_NORMALS")
     assert "Port" in iiot_diagrams.__all__
     assert "Routing" in iiot_diagrams.__all__
     assert "Edge" in iiot_diagrams.__all__
     assert "OrthogonalRouter" in iiot_diagrams.__all__
+    assert "CurveRouter" in iiot_diagrams.__all__
+    assert "EdgeRouter" in iiot_diagrams.__all__
+    assert "PORT_NORMALS" in iiot_diagrams.__all__
 
 
 def test_port_enum_values_and_anchor_mapping() -> None:
@@ -429,5 +438,162 @@ def test_obstacle_avoidance_backward_compatibility() -> None:
     empty_waypoints = router.route(edge, obstacles=[])
 
     assert default_waypoints == none_waypoints == empty_waypoints
+
+
+def test_curve_routing_edge_dispatch() -> None:
+    """Verify Routing.CURVE and 'curve' return 4 points across CurveRouter, OrthogonalRouter, and EdgeRouter."""
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(300, 0)
+
+    # With enum
+    edge_enum = Edge(s1, s2, routing=Routing.CURVE)
+    # With string
+    edge_str = Edge(s1, s2, routing="curve")
+
+    for edge in (edge_enum, edge_str):
+        curve_pts = CurveRouter().route(edge)
+        assert len(curve_pts) == 4
+        assert curve_pts[0] == s1.bounds.get_anchor(Port.EAST.to_anchor())
+        assert curve_pts[3] == s2.bounds.get_anchor(Port.WEST.to_anchor())
+
+        # OrthogonalRouter delegation
+        ortho_pts = OrthogonalRouter().route(edge)
+        assert ortho_pts == curve_pts
+
+        # EdgeRouter facade
+        edge_pts = EdgeRouter().route(edge)
+        assert edge_pts == curve_pts
+
+    # EdgeRouter also dispatches DIRECT and ORTHOGONAL correctly
+    edge_direct = Edge(s1, s2, routing=Routing.DIRECT)
+    assert len(EdgeRouter().route(edge_direct)) == 2
+
+    edge_ortho = Edge(s1, s2, routing=Routing.ORTHOGONAL)
+    assert EdgeRouter().route(edge_ortho) == OrthogonalRouter().route(edge_ortho)
+
+
+def test_curve_router_port_tangent_alignment() -> None:
+    """Verify all 16 cardinal port pairs produce strictly collinear tangents with zero perpendicular drift."""
+    import math
+
+    ports = [Port.EAST, Port.WEST, Port.NORTH, Port.SOUTH]
+    router = CurveRouter()
+
+    for sp in ports:
+        for tp in ports:
+            s1 = Shape("s1", "Src", 100, 60).at(50, 50)
+            s2 = Shape("s2", "Tgt", 100, 60).at(400, 350)
+            edge = Edge(s1, s2, source_port=sp, target_port=tp, routing=Routing.CURVE)
+            pts = router.route(edge)
+            assert len(pts) == 4, f"Failed for {sp} -> {tp}: expected 4 waypoints"
+            p0, c1, c2, p3 = pts
+
+            n_src = PORT_NORMALS[sp]
+            n_tgt = PORT_NORMALS[tp]
+
+            # Vector (c1 - p0) must be parallel to outward normal n_src:
+            # 2D cross product: v.x * n.y - v.y * n.x == 0
+            v_exit = c1 - p0
+            cross_exit = v_exit.x * n_src.y - v_exit.y * n_src.x
+            dot_exit = v_exit.x * n_src.x + v_exit.y * n_src.y
+            assert math.isclose(cross_exit, 0.0, abs_tol=1e-6), (
+                f"{sp}->{tp}: Exit tangent drift {cross_exit}"
+            )
+            assert dot_exit > 0.0, f"{sp}->{tp}: Exit tangent must point along outward normal"
+
+            # Vector (p3 - c2) must be antiparallel to outward normal n_tgt (pointing inward):
+            # 2D cross product: v.x * n.y - v.y * n.x == 0
+            v_entry = p3 - c2
+            cross_entry = v_entry.x * n_tgt.y - v_entry.y * n_tgt.x
+            dot_entry = v_entry.x * n_tgt.x + v_entry.y * n_tgt.y
+            assert math.isclose(cross_entry, 0.0, abs_tol=1e-6), (
+                f"{sp}->{tp}: Entry tangent drift {cross_entry}"
+            )
+            assert dot_entry < 0.0, f"{sp}->{tp}: Entry tangent must point inward toward target"
+
+            # Minimum handle separation invariant (D-02, D-15)
+            assert p0.distance_to(c1) >= 20.0
+            assert p3.distance_to(c2) >= 20.0
+
+
+def test_curve_router_handle_scaling_heuristics() -> None:
+    """Verify D-01 through D-07 handle scaling heuristics and minimum clamp D-15."""
+    import math
+
+    router = CurveRouter()
+
+    # D-01 / D-02: Forward flow scaling along primary axis
+    # s1 EAST anchor: (100, 25); s2 WEST anchor: (300, 25) -> dx = 200, dy = 0
+    # axis_delta = 200, lat_delta = 0 -> d = max(0.5 * 200, 0, 20.0) = 100.0
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(300, 0)
+    e_forward = Edge(s1, s2, source_port=Port.EAST, target_port=Port.WEST, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_forward)
+    assert p0 == Point(100.0, 25.0)
+    assert p3 == Point(300.0, 25.0)
+    assert c1 == Point(200.0, 25.0)
+    assert c2 == Point(200.0, 25.0)
+    assert math.isclose(p0.distance_to(c1), 100.0)
+    assert math.isclose(p3.distance_to(c2), 100.0)
+
+    # D-03: Lateral blending when axis separation is small but lateral offset is large
+    # s1 EAST anchor: (100, 25); s2 WEST anchor: (110, 225) -> dx = 10, dy = 200
+    # axis_delta = 10, lat_delta = 200 -> d = max(0.5 * 10, 0.25 * 200, 20.0) = max(5, 50, 20) = 50.0
+    s3 = Shape("s3", "C", 100, 50).at(0, 0)
+    s4 = Shape("s4", "D", 100, 50).at(110, 200)
+    e_lateral = Edge(s3, s4, source_port=Port.EAST, target_port=Port.WEST, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_lateral)
+    assert math.isclose(p0.distance_to(c1), 50.0)
+    assert math.isclose(p3.distance_to(c2), 50.0)
+
+    # D-05: Perpendicular ports (e.g. EAST to SOUTH)
+    # s1 EAST anchor: (100, 25); s2 SOUTH anchor: (250, 250) -> dx = 150, dy = 225
+    # d_x = max(0.5 * 150, 25.0) = 75.0 (horizontal source EAST)
+    # d_y = max(0.5 * 225, 25.0) = 112.5 (vertical target SOUTH)
+    s5 = Shape("s5", "E", 100, 50).at(0, 0)
+    s6 = Shape("s6", "F", 100, 50).at(200, 200)
+    e_perp = Edge(s5, s6, source_port=Port.EAST, target_port=Port.SOUTH, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_perp)
+    assert math.isclose(p0.distance_to(c1), 75.0)
+    assert math.isclose(p3.distance_to(c2), 112.5)
+
+    # D-06: Same-side / parallel ports (e.g. NORTH to NORTH)
+    # s5 NORTH anchor: (50, 0); s6 NORTH anchor: (250, 200) -> dx = 200, dy = 200
+    # ports are vertical -> sep = |dx| = 200 -> d = max(0.5 * 200, 30.0) = 100.0
+    e_parallel_v = Edge(s5, s6, source_port=Port.NORTH, target_port=Port.NORTH, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_parallel_v)
+    assert math.isclose(p0.distance_to(c1), 100.0)
+    assert math.isclose(p3.distance_to(c2), 100.0)
+
+    # Parallel horizontal ports (EAST to EAST)
+    # s1 EAST anchor: (100, 25); s_eh EAST anchor: (300, 125) -> dx = 200, dy = 100
+    # ports are horizontal -> sep = |dy| = 100 -> d = max(0.5 * 100, 30.0) = 50.0
+    s_eh = Shape("s_eh", "EH", 100, 50).at(200, 100)
+    e_parallel_h = Edge(s1, s_eh, source_port=Port.EAST, target_port=Port.EAST, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_parallel_h)
+    assert math.isclose(p0.distance_to(c1), 50.0)
+    assert math.isclose(p3.distance_to(c2), 50.0)
+
+    # D-07: Backward flow 30px minimum clearance
+    # s7 at x=200 facing EAST; s8 at x=0 facing WEST -> backward flow (dx = -300 <= 0)
+    s7 = Shape("s7", "G", 100, 50).at(200, 0)
+    s8 = Shape("s8", "H", 100, 50).at(0, 0)
+    e_backward = Edge(s7, s8, source_port=Port.EAST, target_port=Port.WEST, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_backward)
+    assert p0 == Point(300.0, 25.0)
+    assert p3 == Point(0.0, 25.0)
+    assert math.isclose(p0.distance_to(c1), 30.0)
+    assert math.isclose(p3.distance_to(c2), 30.0)
+    assert c1 == Point(330.0, 25.0)
+    assert c2 == Point(-30.0, 25.0)
+
+    # D-02, D-15: Minimum handle separation >= 20px on extremely close shapes
+    s9 = Shape("s9", "I", 100, 50).at(0, 0)
+    s10 = Shape("s10", "J", 100, 50).at(102, 0)
+    e_close = Edge(s9, s10, source_port=Port.EAST, target_port=Port.WEST, routing=Routing.CURVE)
+    p0, c1, c2, p3 = router.route(e_close)
+    assert p0.distance_to(c1) >= 20.0
+    assert p3.distance_to(c2) >= 20.0
+
 
 

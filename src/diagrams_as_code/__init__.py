@@ -25,7 +25,12 @@ from diagrams_as_code.layout import (
 )
 from diagrams_as_code.output import render_all
 from diagrams_as_code.renderer_svg import SVGRenderer
-from diagrams_as_code.router import OrthogonalRouter
+from diagrams_as_code.router import (
+    CurveRouter,
+    EdgeRouter,
+    OrthogonalRouter,
+    PORT_NORMALS,
+)
 from diagrams_as_code.shapes import ShapeLibrary, ShapeRenderer
 from diagrams_as_code.theme import (
     BLUEPRINT,
@@ -64,10 +69,12 @@ __all__ = [
     "Constraint",
     "ConstraintSolver",
     "CubicBezier",
+    "CurveRouter",
     "DRACULA",
     "Diagram",
     "EMERALD",
     "Edge",
+    "EdgeRouter",
     "Element",
     "GridLayout",
     "Group",
@@ -82,6 +89,7 @@ __all__ = [
     "NORD",
     "OrthogonalRouter",
     "PASTEL_LIGHT",
+    "PORT_NORMALS",
     "Point",
     "Port",
     "Rect",

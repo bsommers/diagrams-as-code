@@ -164,6 +164,9 @@ class OrthogonalRouter:
         clearance: float = 15.0,
     ) -> list[Point]:
         """Compute ordered path waypoints between source and target elements."""
+        if edge.routing in (Routing.CURVE, "curve"):
+            return CurveRouter().route(edge, obstacles=obstacles, clearance=clearance)
+
         src_port, tgt_port = self.resolve_ports(edge)
         p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
         p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
@@ -396,3 +399,29 @@ class OrthogonalRouter:
             if not deduped or p != deduped[-1]:
                 deduped.append(p)
         return deduped
+
+
+class EdgeRouter:
+    """Unified routing facade dispatching across DIRECT, ORTHOGONAL, and CURVE strategies."""
+
+    def __init__(self) -> None:
+        self.orthogonal = OrthogonalRouter()
+        self.curve = CurveRouter()
+
+    def resolve_ports(self, edge: Edge) -> tuple[Port, Port]:
+        """Determine connection ports for source and target elements."""
+        if edge.routing in (Routing.CURVE, "curve"):
+            return self.curve.resolve_ports(edge)
+        return self.orthogonal.resolve_ports(edge)
+
+    def route(
+        self,
+        edge: Edge,
+        obstacles: Optional[Iterable[Any]] = None,
+        clearance: float = 15.0,
+    ) -> list[Point]:
+        """Compute ordered path waypoints using the appropriate routing strategy."""
+        if edge.routing in (Routing.CURVE, "curve"):
+            return self.curve.route(edge, obstacles=obstacles, clearance=clearance)
+        return self.orthogonal.route(edge, obstacles=obstacles, clearance=clearance)
+

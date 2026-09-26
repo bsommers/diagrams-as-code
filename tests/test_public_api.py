@@ -36,3 +36,11 @@ def test_cubic_bezier_is_exported(package) -> None:
     assert "CubicBezier" in package.__all__
     assert hasattr(package, "CubicBezier")
 
+
+@pytest.mark.parametrize("package", [diagrams_as_code, iiot_diagrams])
+def test_curve_routing_symbols_are_exported(package) -> None:
+    for name in ("CurveRouter", "EdgeRouter", "PORT_NORMALS"):
+        assert name in package.__all__
+        assert hasattr(package, name)
+
+
