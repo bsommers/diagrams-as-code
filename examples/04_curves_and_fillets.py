@@ -21,16 +21,16 @@ def diagram() -> Diagram:
     diag = Diagram(
         "Architecture Overview: Curves & Fillets",
         width=950,
-        height=600,
+        height=680,
         theme="iiot_dark_gold",
         corner_radius=16.0,
     )
 
     with diag:
-        ingress = diag.shape("API Gateway", kind="cloud", icon="gateway").at(80.0, 150.0)
-        auth = diag.shape("Auth Service", kind="cybersecurity", icon="lock").at(340.0, 270.0)
-        analytics = diag.shape("Analytics Engine", kind="ai", icon="server").at(640.0, 270.0)
-        db = diag.shape("Primary DB", kind="database", icon="database").at(340.0, 440.0)
+        ingress = diag.shape("API Gateway", kind="cloud", icon="gateway").at(80.0, 220.0)
+        auth = diag.shape("Auth Service", kind="cybersecurity", icon="lock").at(340.0, 360.0)
+        analytics = diag.shape("Analytics Engine", kind="ai", icon="server").at(640.0, 360.0)
+        db = diag.shape("Primary DB", kind="database", icon="database").at(340.0, 520.0)
 
         # 1. Rounded orthogonal connection with 90-degree corners (inherits diagram corner_radius=16.0)
         ingress >> diag.edge("HTTPS") >> auth
@@ -51,7 +51,7 @@ def diagram() -> Diagram:
             auth,
             db,
             routing=Routing.ORTHOGONAL,
-            source_port=Port.EAST,
+            source_port=Port.SOUTH,
             target_port=Port.EAST,
             corner_radius=0.0,
             label="SQL Sync",

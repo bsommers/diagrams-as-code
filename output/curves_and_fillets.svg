@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 680" width="950" height="680">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFC000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FFC000"/>
+    </marker>
+    <marker id="arrow-8B5CF6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow-8B5CF6-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#8B5CF6"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#000000"/>
+  <path d="M 210.0 250.0 L 259.0 250.0 Q 275.0 250.0, 275.0 266.0 L 275.0 374.0 Q 275.0 390.0, 291.0 390.0 L 340.0 390.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="251.5" y="311.0" width="47.0" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="275.0" y="323.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">HTTPS</text>
+</g>
+  <path d="M 705.0 360.0 C 705.0 80.0, 145.0 -60.0, 145.0 220.0" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-8B5CF6)" />
+  <g class="badge">
+  <rect x="410.33128469931" y="78.75618546233858" width="84.2" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="452.43128469931" y="91.25618546233858" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Async Event</text>
+</g>
+  <path d="M 405.0 420.0 L 405.0 550.0 L 470.0 550.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="372.2" y="476.0" width="65.6" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="405.0" y="488.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL Sync</text>
+</g>
+  <g id="shape_1" filter="url(#shadow)">
+    <path d="M 112.5 271.0 L 177.5 271.0 C 197.0 271.0 210.0 263.2 210.0 254.8 C 210.0 246.4 194.4 239.2 177.5 239.2 C 171.0 229.0 145.0 229.0 132.0 236.8 C 116.4 233.2 95.6 239.2 95.6 248.8 C 80.0 253.0 80.0 265.0 112.5 271.0 Z" fill="#24242A" stroke="#FFC000" stroke-width="2.0"/>
+    <g class="icon icon-gateway" transform="translate(133.6, 229.6) scale(0.9500000000000001)">
+  <line x1="6" y1="9" x2="6" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="18" y1="9" x2="18" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="7" cy="15" r="1.5" fill="#FFC000"/>
+  <circle cx="12" cy="15" r="1.5" fill="#FFC000"/>
+  <circle cx="17" cy="15" r="1.5" fill="#FFC000"/>
+</g>
+    <text x="145.0" y="266.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">API Gateway</text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="340.0" y="360.0" width="130.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-lock" transform="translate(393.6, 369.6) scale(0.9500000000000001)">
+  <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="12" cy="16" r="1.5" fill="#FFC000"/>
+</g>
+    <text x="405.0" y="406.40000000000003" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Auth Service</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="640.0" y="360.0" width="130.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <g class="icon icon-server" transform="translate(693.6, 369.6) scale(0.9500000000000001)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <circle cx="6" cy="7" r="1" fill="#FFC000"/>
+  <circle cx="9" cy="7" r="1" fill="#FFC000"/>
+  <circle cx="6" cy="17" r="1" fill="#FFC000"/>
+  <circle cx="9" cy="17" r="1" fill="#FFC000"/>
+</g>
+    <text x="705.0" y="406.40000000000003" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Analytics Engine</text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <path d="M 340.0 530.0 L 340.0 570.0 A 65.0 10.0 0 0 0 470.0 570.0 L 470.0 530.0 A 65.0 10.0 0 0 1 340.0 530.0 Z" fill="#24242A" stroke="#FFC000" stroke-width="2.0"/>
+<path d="M 340.0 543.3333333333334 A 65.0 10.0 0 0 0 470.0 543.3333333333334" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+<path d="M 340.0 556.6666666666666 A 65.0 10.0 0 0 0 470.0 556.6666666666666" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+<ellipse cx="405.0" cy="530.0" rx="65.0" ry="10.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0"/>
+    <g class="icon icon-database" transform="translate(393.6, 529.6) scale(0.9500000000000001)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#FFC000" stroke-width="2.0"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#FFC000" stroke-width="2.0"/>
+</g>
+    <text x="405.0" y="566.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Primary DB</text>
+  </g>
+</svg>
