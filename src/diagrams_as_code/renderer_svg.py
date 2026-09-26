@@ -5,9 +5,9 @@ import html
 import re
 from typing import Any, Mapping, Optional, Sequence
 
-from diagrams_as_code.connections import Edge
+from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import Point
+from diagrams_as_code.geometry import CubicBezier, Point
 from diagrams_as_code.groups import Group
 from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
 from diagrams_as_code.router import OrthogonalRouter
@@ -597,9 +597,27 @@ class SVGRenderer:
             if len(pts) < 2:
                 continue
 
-            path_d = f"M {pts[0].x} {pts[0].y} " + " ".join(
-                f"L {p.x} {p.y}" for p in pts[1:]
-            )
+            if getattr(e, "waypoints", None) is None:
+                try:
+                    e.waypoints = pts
+                except Exception:
+                    pass
+
+            # Path generation branching
+            if e.routing in (Routing.CURVE, "curve") and len(pts) == 4:
+                p0, c1, c2, p3 = pts
+                path_d = f"M {p0.x} {p0.y} C {c1.x} {c1.y}, {c2.x} {c2.y}, {p3.x} {p3.y}"
+            elif e.routing in (Routing.CURVE, "curve") and len(pts) >= 4 and (len(pts) - 1) % 3 == 0:
+                parts = [f"M {pts[0].x} {pts[0].y}"]
+                for i in range(1, len(pts), 3):
+                    parts.append(
+                        f"C {pts[i].x} {pts[i].y}, {pts[i+1].x} {pts[i+1].y}, {pts[i+2].x} {pts[i+2].y}"
+                    )
+                path_d = " ".join(parts)
+            else:
+                path_d = f"M {pts[0].x} {pts[0].y} " + " ".join(
+                    f"L {p.x} {p.y}" for p in pts[1:]
+                )
             edge_color = e.color or self.theme.edge_color
             dash = (
                 ' stroke-dasharray="5,5"'
