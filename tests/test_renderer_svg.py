@@ -618,6 +618,141 @@ def test_non_interactive_no_minimap() -> None:
     assert "minimap-viewport" not in svg
 
 
+def test_svg_render_cubic_bezier_path_and_arrowhead() -> None:
+    """Verify cubic Bezier edges emit <path d="M... C..."> and align arrowheads without NaN."""
+    import re
+    from iiot_diagrams.connections import Edge, Routing
+    from iiot_diagrams.elements import Shape
+    from iiot_diagrams.renderer_svg import SVGRenderer
+    from iiot_diagrams.theme import get_theme
+
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_1", label="Source Node", width=120, height=60).at(50, 100)
+    s2 = Shape("node_2", label="Target Node", width=120, height=60).at(350, 100)
+    edge = Edge(s1, s2, routing=Routing.CURVE)
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=600, height=300)
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 1
+    edge_path = paths[0]
+
+    d = edge_path.attrib["d"]
+    # Assert path d attribute matches ^M [0-9.]+ [0-9.]+ C [0-9.]+ [0-9.]+, [0-9.]+ [0-9.]+, [0-9.]+ [0-9.]+$
+    pattern = r"^M [0-9.]+ [0-9.]+ C [0-9.]+ [0-9.]+, [0-9.]+ [0-9.]+, [0-9.]+ [0-9.]+$"
+    assert re.match(pattern, d) is not None, f"Path d='{d}' did not match pattern '{pattern}'"
+    assert " L " not in d
+    assert "L" not in d.split()[2:]
+
+    # Assert marker-end attribute points to valid marker ID
+    marker_end = edge_path.attrib["marker-end"]
+    match = re.search(r"url\(#([^)]+)\)", marker_end)
+    assert match is not None
+    marker_id = match.group(1)
+    marker = root.find(f'.//svg:marker[@id="{marker_id}"]', ns)
+    assert marker is not None
+    assert marker.attrib.get("orient") in ("auto", "auto-start-reverse")
+
+
+def test_svg_badge_arc_length_centering_on_asymmetric_curve() -> None:
+    """Verify protocol badge is centered at arc-length midpoint and distinct from B(0.5)."""
+    import math
+    from iiot_diagrams.connections import Edge, Port, Routing
+    from iiot_diagrams.elements import Shape
+    from iiot_diagrams.geometry import CubicBezier
+    from iiot_diagrams.renderer_svg import SVGRenderer
+    from iiot_diagrams.theme import get_theme
+
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("src_node", label="Source Node", width=100, height=60).at(50, 50)
+    s2 = Shape("tgt_node", label="Target Node", width=100, height=60).at(400, 300)
+    edge = Edge(
+        s1,
+        s2,
+        label="HTTPS/REST",
+        source_port=Port.EAST,
+        target_port=Port.NORTH,
+        routing=Routing.CURVE,
+    )
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=500)
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+
+    # Find badge pill <rect rx="9.0" ... />
+    rects = root.findall(".//svg:g[@class='badge']/svg:rect", ns)
+    if not rects:
+        rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    assert len(rects) == 1, f"Expected 1 badge rect, found {len(rects)}"
+    badge_rect = rects[0]
+
+    bx = float(badge_rect.attrib["x"])
+    by = float(badge_rect.attrib["y"])
+    bw = float(badge_rect.attrib["width"])
+    bh = float(badge_rect.attrib["height"])
+    badge_center_x = bx + bw / 2.0
+    badge_center_y = by + bh / 2.0
+
+    assert edge.waypoints is not None
+    assert len(edge.waypoints) == 4
+    curve = CubicBezier(*edge.waypoints)
+    arc_mid = curve.arc_length_midpoint(num_samples=32)
+    param_mid = curve.point_at(0.5)
+
+    # Verify badge center matches CubicBezier(*edge.waypoints).arc_length_midpoint(32) within 1.0px tolerance
+    assert abs(badge_center_x - arc_mid.x) <= 1.0
+    assert abs(badge_center_y - arc_mid.y) <= 1.0
+
+    # Verify badge center is distinct from parametric midpoint B(0.5) by at least 5.0px on asymmetric curves
+    diff_from_param = math.hypot(badge_center_x - param_mid.x, badge_center_y - param_mid.y)
+    assert diff_from_param >= 5.0, f"Expected diff >= 5.0px, got {diff_from_param:.2f}px"
+
+
+def test_svg_multi_segment_bezier_path_rendering() -> None:
+    """Verify multi-segment Bezier spline emits chained C commands without L commands."""
+    from iiot_diagrams.connections import Edge, Routing
+    from iiot_diagrams.elements import Shape
+    from iiot_diagrams.geometry import Point
+    from iiot_diagrams.renderer_svg import SVGRenderer
+    from iiot_diagrams.theme import get_theme
+
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_1", label="Source", width=100, height=50).at(50, 50)
+    s2 = Shape("node_2", label="Target", width=100, height=50).at(500, 200)
+    edge = Edge(s1, s2, label="Multi-Hop", routing=Routing.CURVE)
+    # 7 waypoints = 2 cubic segments: (p0, c1, c2, p1), (p1, c3, c4, p2)
+    edge.waypoints = [
+        Point(150.0, 75.0),
+        Point(200.0, 75.0),
+        Point(250.0, 100.0),
+        Point(300.0, 100.0),
+        Point(350.0, 100.0),
+        Point(450.0, 225.0),
+        Point(500.0, 225.0),
+    ]
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=800, height=400)
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 1
+    d = paths[0].attrib["d"]
+
+    assert d.startswith("M 150.0 75.0")
+    assert d.count("C ") == 2
+    assert " L " not in d
+
+
+
 
 
 
