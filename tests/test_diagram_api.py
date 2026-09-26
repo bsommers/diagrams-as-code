@@ -357,3 +357,50 @@ def test_atomic_validation_in_operator_lists():
         with pytest.raises(TypeError, match="Expected Element in sources"):
             [s2, "invalid"] >> diag.edge("Test") >> s1  # type: ignore
         assert len(diag.edges) == initial_edges
+
+
+def test_diagram_corner_radius_cascade_and_override() -> None:
+    """Verify Diagram corner_radius cascades to fluent and connect edges, and allows explicit overrides."""
+    with Diagram("Cascade Test", corner_radius=15.0) as diag:
+        assert diag.corner_radius == 15.0
+        assert diag.arc_radius == 15.0
+
+        s1 = diag.shape("S1").at(0, 0)
+        s2 = diag.shape("S2").at(200, 0)
+        s3 = diag.shape("S3").at(400, 0)
+        s4 = diag.shape("S4").at(600, 0)
+
+        # Cascaded fluent edge (s1 >> s2)
+        s1 >> s2
+
+        # Explicit override with sharp corner (0.0)
+        s2 >> diag.edge(corner_radius=0.0) >> s3
+
+        # Explicit override with custom radius (25.0) via arc_radius alias
+        s3 >> diag.edge(arc_radius=25.0) >> s4
+
+    # On exit, diagram solves and edges are in diag.edges
+    assert len(diag.edges) == 3
+    e_cascaded, e_sharp, e_custom = diag.edges
+
+    # First edge inherits diagram corner_radius
+    assert e_cascaded.corner_radius == 15.0
+    assert e_cascaded.arc_radius == 15.0
+
+    # Second edge preserves explicit sharp override
+    assert e_sharp.corner_radius == 0.0
+
+    # Third edge preserves explicit custom override
+    assert e_custom.corner_radius == 25.0
+
+    # Test configure() update
+    diag.configure(corner_radius=8.0)
+    assert diag.corner_radius == 8.0
+    assert diag.arc_radius == 8.0
+
+    # Test setter validation on Diagram
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        diag.corner_radius = -5.0
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        diag.arc_radius = "invalid"  # type: ignore
+

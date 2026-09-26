@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
+import math
 from typing import Any, Optional, Type, TypeVar, Union
 
 from diagrams_as_code.elements import Element
@@ -74,6 +75,8 @@ class Edge:
         arrow_head: bool = True,
         arrow_tail: bool = False,
         routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        corner_radius: Optional[float] = None,
+        arc_radius: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> None:
         if not isinstance(source, Element):
@@ -102,7 +105,50 @@ class Edge:
         assert coerced_routing is not None
         self.routing: Routing = coerced_routing
 
+        effective_r = corner_radius if corner_radius is not None else arc_radius
+        self._corner_radius: Optional[float] = self._validate_corner_radius(effective_r)
+
         self.arrow_head = bool(arrow_head)
         self.arrow_tail = bool(arrow_tail)
         self.metadata: dict[str, Any] = dict(metadata) if metadata else {}
         self.waypoints: Optional[list[Point]] = None
+
+    @staticmethod
+    def _validate_corner_radius(val: Optional[Union[int, float]]) -> Optional[float]:
+        """Validate and coerce corner radius to non-negative finite float."""
+        if val is None:
+            return None
+        if isinstance(val, (bool, str)):
+            raise ValueError(
+                f"corner_radius must be a non-negative finite float, got {val!r}"
+            )
+        try:
+            r = float(val)
+        except (TypeError, ValueError) as exc:
+            raise ValueError(
+                f"corner_radius must be a non-negative finite float, got {val!r}"
+            ) from exc
+        if r < 0.0 or math.isnan(r) or math.isinf(r):
+            raise ValueError(
+                f"corner_radius must be a non-negative finite float, got {r}"
+            )
+        return r
+
+    @property
+    def corner_radius(self) -> Optional[float]:
+        """Corner radius for rounded orthogonal fillet bends."""
+        return self._corner_radius
+
+    @corner_radius.setter
+    def corner_radius(self, val: Optional[Union[int, float]]) -> None:
+        self._corner_radius = self._validate_corner_radius(val)
+
+    @property
+    def arc_radius(self) -> Optional[float]:
+        """Backward-compatible alias for corner_radius."""
+        return self._corner_radius
+
+    @arc_radius.setter
+    def arc_radius(self, val: Optional[Union[int, float]]) -> None:
+        self._corner_radius = self._validate_corner_radius(val)
+

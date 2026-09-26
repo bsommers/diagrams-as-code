@@ -34,6 +34,8 @@ class _EdgeBuilder:
         arrow_head: bool = True,
         arrow_tail: bool = False,
         routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        corner_radius: Optional[float] = None,
+        arc_radius: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> None:
         self.diagram = diagram
@@ -45,8 +47,26 @@ class _EdgeBuilder:
         self.arrow_head = arrow_head
         self.arrow_tail = arrow_tail
         self.routing = routing
+        effective_r = corner_radius if corner_radius is not None else arc_radius
+        self._corner_radius: Optional[float] = Edge._validate_corner_radius(effective_r)
         self.metadata = dict(metadata) if metadata else {}
         self.source: Any = None
+
+    @property
+    def corner_radius(self) -> Optional[float]:
+        return self._corner_radius
+
+    @corner_radius.setter
+    def corner_radius(self, val: Optional[Union[int, float]]) -> None:
+        self._corner_radius = Edge._validate_corner_radius(val)
+
+    @property
+    def arc_radius(self) -> Optional[float]:
+        return self._corner_radius
+
+    @arc_radius.setter
+    def arc_radius(self, val: Optional[Union[int, float]]) -> None:
+        self._corner_radius = Edge._validate_corner_radius(val)
 
     def __rrshift__(self, source: Any) -> _EdgeBuilder:
         """Support fan-in operator when left operand is a list/tuple or element."""
@@ -104,6 +124,10 @@ class _EdgeBuilder:
         if diag is None:
             diag = Diagram.get_current()
 
+        effective_cr = self.corner_radius
+        if effective_cr is None and diag is not None and diag.corner_radius is not None:
+            effective_cr = diag.corner_radius
+
         for s in sources:
             for t in targets:
                 if diag is not None:
@@ -118,6 +142,7 @@ class _EdgeBuilder:
                         arrow_head=self.arrow_head,
                         arrow_tail=self.arrow_tail,
                         routing=self.routing,
+                        corner_radius=effective_cr,
                         metadata=self.metadata,
                     )
                 else:
@@ -132,6 +157,7 @@ class _EdgeBuilder:
                         arrow_head=self.arrow_head,
                         arrow_tail=self.arrow_tail,
                         routing=self.routing,
+                        corner_radius=effective_cr,
                         metadata=self.metadata,
                     )
 
@@ -263,6 +289,8 @@ class Diagram:
         rank_gap: float = 80.0,
         node_gap: float = 40.0,
         interactive: bool = False,
+        corner_radius: Optional[float] = None,
+        arc_radius: Optional[float] = None,
     ) -> None:
         self.title = title
         self.width = float(width)
@@ -276,6 +304,8 @@ class Diagram:
             self.theme = base_t
         self.label_position = label_position
         self.interactive = bool(interactive)
+        effective_r = corner_radius if corner_radius is not None else arc_radius
+        self._corner_radius: Optional[float] = Edge._validate_corner_radius(effective_r)
         self.shapes: list[Shape] = []
         self.groups: list[Group] = []
         self.edges: list[Edge] = []
@@ -298,6 +328,24 @@ class Diagram:
             interactive=interactive,
         )
 
+    @property
+    def corner_radius(self) -> Optional[float]:
+        """Default corner radius for orthogonal edge fillets in this diagram."""
+        return self._corner_radius
+
+    @corner_radius.setter
+    def corner_radius(self, val: Optional[Union[int, float]]) -> None:
+        self._corner_radius = Edge._validate_corner_radius(val)
+
+    @property
+    def arc_radius(self) -> Optional[float]:
+        """Backward-compatible alias for corner_radius."""
+        return self._corner_radius
+
+    @arc_radius.setter
+    def arc_radius(self, val: Optional[Union[int, float]]) -> None:
+        self._corner_radius = Edge._validate_corner_radius(val)
+
     def configure(
         self,
         *,
@@ -308,6 +356,8 @@ class Diagram:
         rank_gap: Optional[float] = None,
         node_gap: Optional[float] = None,
         interactive: Optional[bool] = None,
+        corner_radius: Optional[float] = None,
+        arc_radius: Optional[float] = None,
     ) -> Diagram:
         """Change layout or theme settings; layout changes re-solve on next render."""
         if interactive is not None:
@@ -321,6 +371,10 @@ class Diagram:
                 raise ValueError(f"{name} must be non-negative, got {gap}")
         if theme is not None:
             self.theme = get_theme(theme)
+        effective_r = corner_radius if corner_radius is not None else arc_radius
+        if effective_r is not None:
+            self.corner_radius = Edge._validate_corner_radius(effective_r)
+            self._is_solved = False
         changes = {
             "layout": layout,
             "direction": direction,
@@ -426,6 +480,8 @@ class Diagram:
         arrow_head: bool = True,
         arrow_tail: bool = False,
         routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        corner_radius: Optional[float] = None,
+        arc_radius: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> _EdgeBuilder:
         """Return an edge builder for fluent >> chaining."""
@@ -439,6 +495,8 @@ class Diagram:
             arrow_head=arrow_head,
             arrow_tail=arrow_tail,
             routing=routing,
+            corner_radius=corner_radius,
+            arc_radius=arc_radius,
             metadata=metadata,
         )
 
@@ -454,9 +512,14 @@ class Diagram:
         arrow_head: bool = True,
         arrow_tail: bool = False,
         routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        corner_radius: Optional[float] = None,
+        arc_radius: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> Edge:
         """Directly connect two elements with an Edge and record it."""
+        effective_r = corner_radius if corner_radius is not None else arc_radius
+        if effective_r is None and self.corner_radius is not None:
+            effective_r = self.corner_radius
         e = Edge(
             source=source,
             target=target,
@@ -468,6 +531,7 @@ class Diagram:
             arrow_head=arrow_head,
             arrow_tail=arrow_tail,
             routing=routing,
+            corner_radius=effective_r,
             metadata=metadata,
         )
         self.edges.append(e)
@@ -516,6 +580,10 @@ class Diagram:
 
     def solve(self) -> None:
         """Place every element: auto-layout, layout file, constraints, framing."""
+        if self.corner_radius is not None:
+            for edge in self.edges:
+                if edge.corner_radius is None:
+                    edge.corner_radius = self.corner_radius
         run_layout(self)
         self._is_solved = True
 

@@ -596,4 +596,91 @@ def test_curve_router_handle_scaling_heuristics() -> None:
     assert p3.distance_to(c2) >= 20.0
 
 
+def test_edge_corner_radius_and_arc_radius_alias() -> None:
+    """Verify Edge corner_radius default, explicit setting, arc_radius alias, and bidirectional sync."""
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(200, 0)
+
+    # Default is None (sharp corners)
+    default_edge = Edge(s1, s2)
+    assert default_edge.corner_radius is None
+    assert default_edge.arc_radius is None
+
+    # Explicit corner_radius
+    e_cr = Edge(s1, s2, corner_radius=12.0)
+    assert e_cr.corner_radius == 12.0
+    assert e_cr.arc_radius == 12.0
+
+    # Explicit arc_radius alias
+    e_ar = Edge(s1, s2, arc_radius=8.5)
+    assert e_ar.corner_radius == 8.5
+    assert e_ar.arc_radius == 8.5
+
+    # Bidirectional setter sync
+    e = Edge(s1, s2)
+    e.corner_radius = 15.0
+    assert e.corner_radius == 15.0
+    assert e.arc_radius == 15.0
+
+    e.arc_radius = 6.0
+    assert e.corner_radius == 6.0
+    assert e.arc_radius == 6.0
+
+    e.corner_radius = None
+    assert e.corner_radius is None
+    assert e.arc_radius is None
+
+
+def test_edge_corner_radius_validation() -> None:
+    """Verify corner_radius input validation rejecting negative, non-numeric, nan, inf."""
+    s1 = Shape("s1", "A", 100, 50).at(0, 0)
+    s2 = Shape("s2", "B", 100, 50).at(200, 0)
+
+    # Integer coercion to float
+    e_int = Edge(s1, s2, corner_radius=10)
+    assert e_int.corner_radius == 10.0
+    assert isinstance(e_int.corner_radius, float)
+
+    # Float zero
+    e_zero = Edge(s1, s2, corner_radius=0)
+    assert e_zero.corner_radius == 0.0
+
+    # Negative values
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius=-1.0)
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, arc_radius=-0.5)
+
+    # Non-numeric strings
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius="invalid")
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, arc_radius="10px")
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius="12.0")
+
+    # Booleans
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius=True)  # type: ignore
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius=False)  # type: ignore
+
+    # NaN and Inf
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius=float("nan"))
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius=float("inf"))
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        Edge(s1, s2, corner_radius=float("-inf"))
+
+    # Setter validation
+    e = Edge(s1, s2)
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.corner_radius = -2.0
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.arc_radius = -2.0
+    with pytest.raises(ValueError, match="non-negative finite float"):
+        e.corner_radius = "bad"  # type: ignore
+
+
 
