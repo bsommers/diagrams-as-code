@@ -14,7 +14,7 @@ Milestone `v0.8.0` expands the Diagrams as Code engine beyond sharp Manhattan or
 ## Phases
 
 - [x] **Phase 8: Core Cubic Bezier Geometry & SVG Path Generation** - Layer 0 `CubicBezier` vector primitive, outward port normal tangents, distance-proportional handle heuristics, SVG `M...C` path rendering, and arc-length midpoint badge positioning. (completed 2026-09-26)
-- [ ] **Phase 9: Rounded Corner Fillets for Orthogonal Routing** - Orthogonal corner filleting, dynamic radius clamping ($\min(R, L_1/2, L_2/2)$) against "dog ear" artifacts, and SVG `Q` quadratic path generation.
+- [x] **Phase 9: Rounded Corner Fillets for Orthogonal Routing** - Orthogonal corner filleting, dynamic radius clamping ($\min(R, L_1/2, L_2/2)$) against "dog ear" artifacts, and SVG `Q` quadratic path generation. (completed 2026-09-26)
 - [ ] **Phase 10: Obstacle Detection & Deflection for Curved Edges** - Bounding box broadphase and De Casteljau collision detection, obstacle-deflected multi-segment splines, and lateral clearance routing for reverse-flow back-edges.
 - [ ] **Phase 11: Configuration Hierarchy, Layout & Extrema Integration** - Diagram-level default cascade, fluent operator inheritance, unified layout routing pipeline, and canvas auto-expansion via analytical curve extrema roots.
 

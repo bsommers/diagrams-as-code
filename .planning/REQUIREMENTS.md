@@ -10,17 +10,17 @@ Requirements for Milestone v0.8.0 Curved & Bezier Edge Routing Engine. Each maps
 
 ### Cubic Bezier Geometry & Path Generation
 
-- [ ] **BEZ-01**: User can set `routing=Routing.CURVE` (or `"curve"`) on an `Edge` to connect elements with an analytical cubic Bezier curve.
-- [ ] **BEZ-02**: Curve router computes control handles aligned with cardinal port outward normal vectors (NORTH, SOUTH, EAST, WEST) so curves enter/exit strictly perpendicular to node bounds.
-- [ ] **BEZ-03**: Curve router applies distance-proportional handle scaling along primary flow axes (`LR` and `TB`) to produce smooth S-curves without kinks or excessive bulging.
-- [ ] **BEZ-04**: SVG renderer emits native cubic Bezier `<path d="M... C...">` elements with correct arrowhead marker rotation angles at endpoints.
-- [ ] **BEZ-05**: Protocol label badges on curved edges are positioned at the curve's arc-length midpoint with non-overlapping background pills.
+- [x] **BEZ-01**: User can set `routing=Routing.CURVE` (or `"curve"`) on an `Edge` to connect elements with an analytical cubic Bezier curve.
+- [x] **BEZ-02**: Curve router computes control handles aligned with cardinal port outward normal vectors (NORTH, SOUTH, EAST, WEST) so curves enter/exit strictly perpendicular to node bounds.
+- [x] **BEZ-03**: Curve router applies distance-proportional handle scaling along primary flow axes (`LR` and `TB`) to produce smooth S-curves without kinks or excessive bulging.
+- [x] **BEZ-04**: SVG renderer emits native cubic Bezier `<path d="M... C...">` elements with correct arrowhead marker rotation angles at endpoints.
+- [x] **BEZ-05**: Protocol label badges on curved edges are positioned at the curve's arc-length midpoint with non-overlapping background pills.
 
 ### Rounded Corner Fillets for Orthogonal Routing
 
-- [ ] **FILLET-01**: User can configure `corner_radius` (or `arc_radius`) on orthogonal edges to produce rounded 90-degree corner bends.
-- [ ] **FILLET-02**: Corner filleting dynamically clamps radius per corner to $\min(R, L_1/2, L_2/2)$ so short segments never invert, create "dog ears", or overlap.
-- [ ] **FILLET-03**: SVG renderer emits quadratic Bezier (`Q`) commands connecting corner fillet tangent points for $C^1$-continuous smooth bends.
+- [x] **FILLET-01**: User can configure `corner_radius` (or `arc_radius`) on orthogonal edges to produce rounded 90-degree corner bends.
+- [x] **FILLET-02**: Corner filleting dynamically clamps radius per corner to $\min(R, L_1/2, L_2/2)$ so short segments never invert, create "dog ears", or overlap.
+- [x] **FILLET-03**: SVG renderer emits quadratic Bezier (`Q`) commands connecting corner fillet tangent points for $C^1$-continuous smooth bends.
 
 ### Obstacle Detection & Deflection for Curved Edges
 
@@ -62,14 +62,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BEZ-01 | Phase 8 | Pending |
-| BEZ-02 | Phase 8 | Pending |
-| BEZ-03 | Phase 8 | Pending |
-| BEZ-04 | Phase 8 | Pending |
-| BEZ-05 | Phase 8 | Pending |
-| FILLET-01 | Phase 9 | Pending |
-| FILLET-02 | Phase 9 | Pending |
-| FILLET-03 | Phase 9 | Pending |
+| BEZ-01 | Phase 8 | Complete |
+| BEZ-02 | Phase 8 | Complete |
+| BEZ-03 | Phase 8 | Complete |
+| BEZ-04 | Phase 8 | Complete |
+| BEZ-05 | Phase 8 | Complete |
+| FILLET-01 | Phase 9 | Complete |
+| FILLET-02 | Phase 9 | Complete |
+| FILLET-03 | Phase 9 | Complete |
 | CURVEOBS-01 | Phase 10 | Pending |
 | CURVEOBS-02 | Phase 10 | Pending |
 | CURVEOBS-03 | Phase 10 | Pending |
