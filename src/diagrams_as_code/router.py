@@ -48,6 +48,58 @@ def segment_intersects_rect(p1: Point, p2: Point, rect: Rect) -> bool:
     return t_min < t_max and t_max > 0.0 and t_min < 1.0
 
 
+PORT_NORMALS: dict[Port, Point] = {
+    Port.EAST: Point(1.0, 0.0),
+    Port.WEST: Point(-1.0, 0.0),
+    Port.SOUTH: Point(0.0, 1.0),
+    Port.NORTH: Point(0.0, -1.0),
+}
+
+
+class CurveRouter:
+    """Computes cubic Bezier control handles from port normal vectors."""
+
+    def resolve_ports(self, edge: Edge) -> tuple[Port, Port]:
+        """Determine connection ports for source and target elements."""
+        if edge.source_port and edge.target_port:
+            return (edge.source_port, edge.target_port)
+
+        sb, tb = edge.source.bounds, edge.target.bounds
+        dx = tb.center.x - sb.center.x
+        dy = tb.center.y - sb.center.y
+
+        if abs(dx) >= abs(dy):
+            src_p = Port.EAST if dx > 0 else Port.WEST
+            tgt_p = Port.WEST if dx > 0 else Port.EAST
+        else:
+            src_p = Port.SOUTH if dy > 0 else Port.NORTH
+            tgt_p = Port.NORTH if dy > 0 else Port.SOUTH
+
+        return (edge.source_port or src_p, edge.target_port or tgt_p)
+
+    def route(
+        self,
+        edge: Edge,
+        obstacles: Optional[Iterable[Any]] = None,
+        clearance: float = 15.0,
+    ) -> list[Point]:
+        """Compute ordered path waypoints [P_start, C_1, C_2, P_end] for cubic Bezier curve."""
+        src_port, tgt_port = self.resolve_ports(edge)
+        p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
+        p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
+
+        n_src = PORT_NORMALS[src_port]
+        n_tgt = PORT_NORMALS[tgt_port]
+
+        d1 = 20.0
+        d2 = 20.0
+
+        c1 = Point(p_start.x + n_src.x * d1, p_start.y + n_src.y * d1)
+        c2 = Point(p_end.x + n_tgt.x * d2, p_end.y + n_tgt.y * d2)
+
+        return [p_start, c1, c2, p_end]
+
+
 class OrthogonalRouter:
     """Computes orthogonal Manhattan waypoints and resolves port anchors."""
 
