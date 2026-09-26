@@ -752,6 +752,201 @@ def test_svg_multi_segment_bezier_path_rendering() -> None:
     assert " L " not in d
 
 
+def test_orthogonal_fillet_svg_path_and_q_commands() -> None:
+    """Verify orthogonal edge emits Q commands with C1 tangent continuity."""
+    from diagrams_as_code.geometry import Point, QuadraticBezier
+    from diagrams_as_code.renderer_svg import _render_filleted_path
+
+    pts = [
+        Point(0.0, 50.0),
+        Point(100.0, 50.0),
+        Point(100.0, 150.0),
+        Point(200.0, 150.0),
+    ]
+    path_d = _render_filleted_path(pts, corner_radius=20.0)
+
+    # Verify start and end points
+    assert path_d.startswith("M 0.0 50.0")
+    assert path_d.endswith("L 200.0 150.0")
+
+    # Verify Q commands for both corners
+    assert "L 80.0 50.0 Q 100.0 50.0, 100.0 70.0" in path_d
+    assert "L 100.0 130.0 Q 100.0 150.0, 120.0 150.0" in path_d
+
+    # Verify C1 tangent continuity at corner 1 tangent points
+    q1 = QuadraticBezier(Point(80.0, 50.0), Point(100.0, 50.0), Point(100.0, 70.0))
+    tan_start1 = q1.tangent_at(0.0)
+    assert tan_start1.x > 0.0 and abs(tan_start1.y) < 1e-6
+    tan_end1 = q1.tangent_at(1.0)
+    assert abs(tan_end1.x) < 1e-6 and tan_end1.y > 0.0
+
+    # Verify C1 tangent continuity at corner 2 tangent points
+    q2 = QuadraticBezier(Point(100.0, 130.0), Point(100.0, 150.0), Point(120.0, 150.0))
+    tan_start2 = q2.tangent_at(0.0)
+    assert abs(tan_start2.x) < 1e-6 and tan_start2.y > 0.0
+    tan_end2 = q2.tangent_at(1.0)
+    assert tan_end2.x > 0.0 and abs(tan_end2.y) < 1e-6
+
+
+def test_orthogonal_fillet_short_segment_budget_clamping() -> None:
+    """Verify 50% segment budget clamping prevents overlapping arcs on short segments."""
+    from diagrams_as_code.geometry import Point
+    from diagrams_as_code.renderer_svg import _render_filleted_path
+
+    # Middle segment length is 18px (from y=50 to y=68)
+    pts = [
+        Point(0.0, 50.0),
+        Point(100.0, 50.0),
+        Point(100.0, 68.0),
+        Point(200.0, 68.0),
+    ]
+    # Request corner_radius=15.0, which exceeds 18/2 = 9.0px budget
+    path_d = _render_filleted_path(pts, corner_radius=15.0)
+
+    # Both corners must clamp to exactly 9.0px
+    assert "L 91.0 50.0 Q 100.0 50.0, 100.0 59.0" in path_d
+    assert "L 100.0 59.0 Q 100.0 68.0, 109.0 68.0" in path_d
+    # Meeting point at y=59.0 guarantees zero overlap
+    assert "100.0 59.0" in path_d
+
+
+def test_orthogonal_fillet_threshold_suppression() -> None:
+    """Verify micro-arcs with clamped radius < 2.0px suppress to sharp right angles."""
+    from diagrams_as_code.geometry import Point
+    from diagrams_as_code.renderer_svg import _render_filleted_path
+
+    # Middle segment length is 3px (from y=50 to y=53); budget is 3/2 = 1.5px < 2.0px
+    pts = [
+        Point(0.0, 50.0),
+        Point(100.0, 50.0),
+        Point(100.0, 53.0),
+        Point(200.0, 53.0),
+    ]
+    path_d = _render_filleted_path(pts, corner_radius=10.0)
+
+    # Radius 1.5px < 2.0px must suppress to sharp corners (zero Q commands)
+    assert "Q" not in path_d
+    assert path_d == "M 0.0 50.0 L 100.0 50.0 L 100.0 53.0 L 200.0 53.0"
+
+
+def test_orthogonal_fillet_port_straight_lead_in() -> None:
+    """Verify endpoint straight lead-in of min(10.0, L/2) is preserved at ports."""
+    from diagrams_as_code.geometry import Point
+    from diagrams_as_code.renderer_svg import _render_filleted_path
+
+    # 16px departure segment from source port
+    pts = [
+        Point(0.0, 50.0),
+        Point(16.0, 50.0),
+        Point(16.0, 100.0),
+    ]
+    path_d = _render_filleted_path(pts, corner_radius=20.0)
+
+    # Lead-in reserved = min(10.0, 16/2) = 8.0px
+    # Max corner radius on incoming segment = 16.0 - 8.0 = 8.0px
+    # Incoming tangent point is at (16.0 - 8.0, 50.0) = (8.0, 50.0)
+    assert "L 8.0 50.0 Q 16.0 50.0, 16.0 58.0" in path_d
+
+
+def test_orthogonal_fillet_obstacle_clearance_guard() -> None:
+    """Verify fillet apex preserves at least 4.0px margin from obstacle bounds."""
+    from diagrams_as_code.geometry import Point, QuadraticBezier, Rect
+    from diagrams_as_code.renderer_svg import _render_filleted_path
+
+    # Path turns from EAST to SOUTH at (100, 100)
+    pts = [
+        Point(0.0, 100.0),
+        Point(100.0, 100.0),
+        Point(100.0, 200.0),
+    ]
+    # Obstacle placed at inside corner: x in [0, 95], y in [105, 155]
+    obs = Rect(0.0, 105.0, 95.0, 50.0)
+
+    # Request corner_radius=20.0, which would place unclamped apex at (95, 105) (0px clearance)
+    path_d = _render_filleted_path(pts, corner_radius=20.0, obstacles=[obs])
+
+    # Radius must be clamped to 4.0px
+    assert "L 96.0 100.0 Q 100.0 100.0, 100.0 104.0" in path_d
+
+    # Calculate apex at t=0.5
+    q = QuadraticBezier(Point(96.0, 100.0), Point(100.0, 100.0), Point(100.0, 104.0))
+    apex = q.point_at(0.5)
+    assert abs(apex.x - 99.0) < 1e-6
+    assert abs(apex.y - 101.0) < 1e-6
+
+    # Verify clearance to obstacle bounding box (x <= 95, y >= 105) is >= 4.0px
+    assert apex.x - obs.right >= 4.0 - 1e-6
+    assert obs.top - apex.y >= 4.0 - 1e-6
+
+
+def test_orthogonal_fillet_badge_placement() -> None:
+    """Verify protocol badge on filleted orthogonal edge is centered on the longest straight segment."""
+    from iiot_diagrams.connections import Edge, Routing
+    from iiot_diagrams.elements import Shape
+    from iiot_diagrams.geometry import Point
+    from iiot_diagrams.renderer_svg import SVGRenderer
+    from iiot_diagrams.theme import get_theme
+
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("node_a", label="Source", width=100, height=50).at(50, 50)
+    s2 = Shape("node_b", label="Target", width=100, height=50).at(450, 200)
+    edge = Edge(
+        s1,
+        s2,
+        label="spBv1.0",
+        routing=Routing.ORTHOGONAL,
+        corner_radius=12.0,
+    )
+    # Segments:
+    # 0: (150, 75) -> (350, 75) len 200 (LONGEST)
+    # 1: (350, 75) -> (350, 200) len 125
+    # 2: (350, 200) -> (450, 200) len 100
+    edge.waypoints = [
+        Point(150.0, 75.0),
+        Point(350.0, 75.0),
+        Point(350.0, 200.0),
+        Point(450.0, 200.0),
+    ]
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=400)
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+
+    # Waypoints must remain sharp Manhattan polyline (D-11)
+    assert edge.waypoints == [
+        Point(150.0, 75.0),
+        Point(350.0, 75.0),
+        Point(350.0, 200.0),
+        Point(450.0, 200.0),
+    ]
+
+    # Filleted path must be present in SVG
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 1
+    d = paths[0].attrib["d"]
+    assert "Q 350.0 75.0" in d
+    assert "Q 350.0 200.0" in d
+
+    # Verify badge rect is centered on longest segment midpoint ((150+350)/2, 75) = (250, 75)
+    rects = root.findall(".//svg:g[@class='badge']/svg:rect", ns)
+    if not rects:
+        rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    assert len(rects) == 1
+    badge_rect = rects[0]
+    bx = float(badge_rect.attrib["x"])
+    by = float(badge_rect.attrib["y"])
+    bw = float(badge_rect.attrib["width"])
+    bh = float(badge_rect.attrib["height"])
+    badge_center_x = bx + bw / 2.0
+    badge_center_y = by + bh / 2.0
+
+    assert abs(badge_center_x - 250.0) <= 0.5
+    assert abs(badge_center_y - 75.0) <= 0.5
+
+
+
 
 
 
