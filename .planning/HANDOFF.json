@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-09-26T12:38:31.920Z",
+  "phase": "09",
+  "phase_name": "rounded-corner-fillets-for-orthogonal-routing",
+  "phase_dir": ".planning/phases/09-rounded-corner-fillets-for-orthogonal-routing",
+  "plan": 0,
+  "task": 0,
+  "total_tasks": 0,
+  "status": "paused",
+  "completed_tasks": [],
+  "remaining_tasks": [],
+  "blockers": [],
+  "async_jobs": [],
+  "human_actions_pending": [],
+  "decisions": [
+    {
+      "decision": "Support corner_radius as primary on Edge and Diagram with arc_radius as alias (D-01)",
+      "rationale": "Diagram cascades default, Edge overrides",
+      "phase": "09"
+    },
+    {
+      "decision": "Sharp corners by default (corner_radius=0.0 / None) (D-02)",
+      "rationale": "100% backward compatibility and zero diff across all 88 gallery diagrams",
+      "phase": "09"
+    },
+    {
+      "decision": "corner_radius applies strictly to Routing.ORTHOGONAL edges (D-03)",
+      "rationale": "Gracefully ignored on DIRECT and CURVE edges without raising error",
+      "phase": "09"
+    },
+    {
+      "decision": "Dynamic clamping R_effective = min(R, L_in/2, L_out/2) with 2.0px suppression threshold (D-05, D-06)",
+      "rationale": "Prevents dog-ear overlapping loops and sub-pixel micro-arcs",
+      "phase": "09"
+    },
+    {
+      "decision": "Emit quadratic Bezier L T1 Q P_c T2 commands in SVG path generation (D-09)",
+      "rationale": "Directly satisfies FILLET-03 with exact C1 tangent continuity at corners",
+      "phase": "09"
+    },
+    {
+      "decision": "Implement immutable geometry.QuadraticBezier(p0, p1, p2) in Layer 0 (D-10)",
+      "rationale": "Pure standard library mathematical primitive mirroring CubicBezier",
+      "phase": "09"
+    },
+    {
+      "decision": "Keep Edge.waypoints as sharp Manhattan vertices and fillet in Layer 4 (D-11)",
+      "rationale": "Preserves JSON layout compatibility and collision checking simplicity",
+      "phase": "09"
+    },
+    {
+      "decision": "Uniform filleting across default and obstacle detour paths with 4.0px apex clearance guard (D-13, D-14)",
+      "rationale": "Consistent aesthetic styling while preventing obstacle clipping",
+      "phase": "09"
+    }
+  ],
+  "uncommitted_files": [],
+  "next_action": "/gsd-plan:phase 9",
+  "context_notes": "Phase 08 is completely verified (100/100 PRODUCTION READY). Phase 09 discussion is finished with 09-CONTEXT.md and 09-DISCUSSION-LOG.md committed. Ready for planning Phase 09."
+}
