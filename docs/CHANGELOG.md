@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.8.2] - 2026-09-26
+
+### Fixed
+- **Curves & Fillets Reference Example Headroom (`examples/04_curves_and_fillets.py`):**
+  - Shifted node positions down ($y = 220\text{px}$) and expanded canvas height to $680\text{px}$ to prevent top clipping on wide North-to-North cubic Bezier curves ($560\text{px}$ span).
+  - Provided $78\text{px}+$ of top margin clearance for the curve apex ($y = 67.4\text{px}$) and `Async Event` protocol badge ($y = 87.8\text{px}$).
+  - Re-routed `SQL Sync` connection from `auth` South port to `db` East port to demonstrate explicit $90^\circ$ sharp corner overrides (`corner_radius=0.0`).
+  - Added companion vector output `output/curves_and_fillets.svg` and living BOM documentation `output/curves_and_fillets_README.md`.
+
+### Verification Evidence
+- `uv run pytest` -> 492 passed in 11.66s across all unit, integration, boundary, and hygiene test suites.
+- Automated SVG margin audit -> 93/93 SVGs verified 100% free of clipping with positive margin bounds.
+- `uv run python tools/eval_bezier.py` -> 10/10 scenarios passed (100.0% score).
+
 ## [v0.8.1] - 2026-09-26
 
 ### Added
