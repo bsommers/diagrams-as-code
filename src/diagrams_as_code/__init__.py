@@ -11,7 +11,7 @@ from diagrams_as_code.constraints import (
 )
 from diagrams_as_code.diagram import Diagram
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import Anchor, Point, Rect, Size, UnitBasis
+from diagrams_as_code.geometry import Anchor, CubicBezier, Point, Rect, Size, UnitBasis
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout import (
     GridLayout,
@@ -63,6 +63,7 @@ __all__ = [
     "CYBER_SLATE",
     "Constraint",
     "ConstraintSolver",
+    "CubicBezier",
     "DRACULA",
     "Diagram",
     "EMERALD",

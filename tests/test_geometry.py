@@ -1,7 +1,8 @@
+from dataclasses import FrozenInstanceError
 import math
 import pytest
 import iiot_diagrams
-from iiot_diagrams import Point, Size, Rect, Anchor, UnitBasis
+from iiot_diagrams import Point, Size, Rect, Anchor, UnitBasis, CubicBezier
 
 def test_package_exports():
     assert hasattr(iiot_diagrams, "Point")
@@ -9,7 +10,8 @@ def test_package_exports():
     assert hasattr(iiot_diagrams, "Rect")
     assert hasattr(iiot_diagrams, "Anchor")
     assert hasattr(iiot_diagrams, "UnitBasis")
-    assert {"Point", "Size", "Rect", "Anchor", "UnitBasis"}.issubset(set(iiot_diagrams.__all__))
+    assert hasattr(iiot_diagrams, "CubicBezier")
+    assert {"Point", "Size", "Rect", "Anchor", "UnitBasis", "CubicBezier"}.issubset(set(iiot_diagrams.__all__))
 
 def test_rect_anchor_points():
     rect = Rect(10, 20, 100, 50)
@@ -280,4 +282,17 @@ def test_cubic_bezier_degenerate_cases():
     )
     bb = linear.bbox()
     assert bb == Rect(0.0, 0.0, 30.0, 30.0)
+
+
+def test_cubic_bezier_immutability():
+    cb = CubicBezier(Point(0.0, 0.0), Point(1.0, 1.0), Point(2.0, 2.0), Point(3.0, 3.0))
+    with pytest.raises(FrozenInstanceError):
+        cb.p0 = Point(4.0, 4.0)  # type: ignore
+    with pytest.raises(FrozenInstanceError):
+        cb.c1 = Point(4.0, 4.0)  # type: ignore
+    with pytest.raises(FrozenInstanceError):
+        cb.c2 = Point(4.0, 4.0)  # type: ignore
+    with pytest.raises(FrozenInstanceError):
+        cb.p3 = Point(4.0, 4.0)  # type: ignore
+
 

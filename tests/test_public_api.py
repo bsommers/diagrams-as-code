@@ -29,3 +29,10 @@ def test_new_layout_and_output_symbols_are_exported(package) -> None:
 
 def test_the_facade_mirrors_the_canonical_package() -> None:
     assert iiot_diagrams.__all__ == diagrams_as_code.__all__
+
+
+@pytest.mark.parametrize("package", [diagrams_as_code, iiot_diagrams])
+def test_cubic_bezier_is_exported(package) -> None:
+    assert "CubicBezier" in package.__all__
+    assert hasattr(package, "CubicBezier")
+
