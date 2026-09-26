@@ -21,6 +21,7 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 ## Key Features
 
 - **Pure Python Standard Library Core**: The vector rendering engine, geometric calculations, constraint solver, orthogonal Manhattan router, and SVG generation require zero external C-dependencies.
+- **Cubic Bezier Curves & Rounded Corner Fillets**: Native cubic Bezier edge routing (`Routing.CURVE`) with cardinal port normal tangents and arc-length midpoint protocol labels, plus smooth quadratic corner fillets (`corner_radius` / `arc_radius`) on Manhattan paths with dynamic budget clamping.
 - **Always Powered by `uv`**: Fast, deterministic package management, virtual environment provisioning, and test runs via [`uv`](https://docs.astral.sh/uv/).
 - **13 Built-in Theme Palettes**:
   - **Dark Themes:** `iiot_dark_gold`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `dracula`, `synthwave`.

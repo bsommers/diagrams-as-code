@@ -139,6 +139,45 @@ def test_03_sparkplug_pipeline_execution(tmp_path: Path) -> None:
     assert "Connections" in readme_content
 
 
+def test_04_curves_and_fillets_execution(tmp_path: Path) -> None:
+    result = _run_script("examples/04_curves_and_fillets.py", str(tmp_path))
+    assert result.returncode == 0, f"Script failed with stderr:\n{result.stderr}"
+
+    svg_path = tmp_path / "curves_and_fillets.svg"
+    assert svg_path.exists(), "Expected curves_and_fillets.svg in tmp_path"
+
+    png_path = tmp_path / "curves_and_fillets.png"
+    assert png_path.exists(), "Expected curves_and_fillets.png in tmp_path"
+    assert png_path.stat().st_size > 0
+    assert png_path.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
+    svg_content = svg_path.read_text(encoding="utf-8")
+    root = ET.fromstring(svg_content)
+    assert root.tag.endswith("svg")
+
+    # Assert node labels
+    assert "API Gateway" in svg_content
+    assert "Auth Service" in svg_content
+    assert "Analytics Engine" in svg_content
+    assert "Primary DB" in svg_content
+
+    # Assert protocol badges
+    assert "HTTPS" in svg_content
+    assert "Async Event" in svg_content
+    assert "SQL Sync" in svg_content
+
+    # Assert path commands: both Q (fillet) and C (cubic bezier) exist
+    assert " Q " in svg_content, "Expected quadratic Bezier fillet Q commands"
+    assert " C " in svg_content, "Expected cubic Bezier C command"
+
+    # Assert living documentation README was generated in tmp_path
+    readme_path = tmp_path / "curves_and_fillets_README.md"
+    assert readme_path.exists(), "Expected curves_and_fillets_README.md in tmp_path"
+    readme_content = readme_path.read_text(encoding="utf-8")
+    assert "Bill of Materials" in readme_content
+    assert "Connections" in readme_content
+
+
 def test_main_execution(tmp_path: Path) -> None:
     result = _run_script("main.py", str(tmp_path))
     assert result.returncode == 0, f"Script failed with stderr:\n{result.stderr}"
