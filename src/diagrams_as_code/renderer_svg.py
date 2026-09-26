@@ -656,9 +656,28 @@ class SVGRenderer:
 
             # Centered protocol badge so edge lines don't cross text
             if e.label:
-                mid_idx = len(pts) // 2
-                lx = (pts[mid_idx - 1].x + pts[mid_idx].x) / 2.0
-                ly = (pts[mid_idx - 1].y + pts[mid_idx].y) / 2.0
+                is_curve = e.routing in (Routing.CURVE, "curve")
+                if is_curve and len(pts) == 4:
+                    curve = CubicBezier(pts[0], pts[1], pts[2], pts[3])
+                    mid = curve.arc_length_midpoint(num_samples=32)
+                    lx, ly = mid.x, mid.y
+                elif is_curve and len(pts) >= 4 and (len(pts) - 1) % 3 == 0:
+                    # Multi-segment fallback: take arc-length midpoint of middle segment or first segment
+                    num_segs = (len(pts) - 1) // 3
+                    seg_idx = num_segs // 2
+                    seg_start = seg_idx * 3
+                    curve = CubicBezier(
+                        pts[seg_start],
+                        pts[seg_start + 1],
+                        pts[seg_start + 2],
+                        pts[seg_start + 3],
+                    )
+                    mid = curve.arc_length_midpoint(num_samples=32)
+                    lx, ly = mid.x, mid.y
+                else:
+                    mid_idx = len(pts) // 2
+                    lx = (pts[mid_idx - 1].x + pts[mid_idx].x) / 2.0
+                    ly = (pts[mid_idx - 1].y + pts[mid_idx].y) / 2.0
                 edge_meta = getattr(e, "metadata", {}) or {}
                 badge_fill = edge_meta.get("badge_fill", self.theme.node_fill)
                 badge_text_color = edge_meta.get(
