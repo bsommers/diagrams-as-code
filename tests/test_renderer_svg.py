@@ -996,6 +996,32 @@ def test_mixed_routing_styles_in_single_diagram() -> None:
     assert re.match(r"^M [0-9.]+ [0-9.]+ L [0-9.]+ [0-9.]+$", p4_d) is not None
 
 
+def test_resvg_rasterization_of_filleted_paths() -> None:
+    """Verify headless SVG rasterization processes filleted Q path commands without error."""
+    try:
+        import resvg_py
+    except ImportError:
+        pytest.skip("resvg_py is not installed")
+
+    from diagrams_as_code import Diagram, Routing
+
+    with Diagram("Rasterize Test", width=600.0, height=400.0) as diag:
+        s1 = diag.shape("Source Node").at(50.0, 50.0)
+        s2 = diag.shape("Target Node").at(250.0, 150.0)
+        s1 >> diag.edge("MQTT/TLS", routing=Routing.ORTHOGONAL, corner_radius=15.0) >> s2
+
+    svg = diag.render_svg()
+    assert " Q " in svg
+
+    render_fn = getattr(resvg_py, "svg_to_bytes", None) or getattr(resvg_py, "render", None)
+    assert render_fn is not None, "resvg_py does not provide svg_to_bytes or render"
+    png_bytes = render_fn(svg)
+
+    assert png_bytes is not None and len(png_bytes) > 0
+    assert png_bytes.startswith(b"\x89PNG\r\n\x1a\n")
+
+
+
 
 
 

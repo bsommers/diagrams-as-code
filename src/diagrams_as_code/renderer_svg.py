@@ -781,7 +781,7 @@ class SVGRenderer:
                     )
                     mid = curve.arc_length_midpoint(num_samples=32)
                     lx, ly = mid.x, mid.y
-                else:
+                elif is_orthogonal and corner_r > 0.0:
                     longest_idx = 0
                     longest_len = -1.0
                     for j in range(len(pts) - 1):
@@ -791,6 +791,10 @@ class SVGRenderer:
                             longest_idx = j
                     lx = (pts[longest_idx].x + pts[longest_idx + 1].x) / 2.0
                     ly = (pts[longest_idx].y + pts[longest_idx + 1].y) / 2.0
+                else:
+                    mid_idx = len(pts) // 2
+                    lx = (pts[mid_idx - 1].x + pts[mid_idx].x) / 2.0
+                    ly = (pts[mid_idx - 1].y + pts[mid_idx].y) / 2.0
                 edge_meta = getattr(e, "metadata", {}) or {}
                 badge_fill = edge_meta.get("badge_fill", self.theme.node_fill)
                 badge_text_color = edge_meta.get(
