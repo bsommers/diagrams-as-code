@@ -50,3 +50,21 @@ def test_quadratic_bezier_is_exported(package) -> None:
     assert hasattr(package, "QuadraticBezier")
 
 
+@pytest.mark.parametrize("package", [diagrams_as_code, iiot_diagrams])
+def test_edge_clearance_is_accessible_on_instantiated_edges(package) -> None:
+    s1 = package.Shape("s1", "A")
+    s2 = package.Shape("s2", "B")
+    edge = package.Edge(s1, s2)
+    assert hasattr(edge, "clearance")
+    assert edge.clearance == 15.0
+    edge.clearance = 25.0
+    assert edge.clearance == 25.0
+
+
+@pytest.mark.parametrize("package", [diagrams_as_code, iiot_diagrams])
+def test_cubic_bezier_methods_are_accessible(package) -> None:
+    assert hasattr(package.CubicBezier, "subdivide")
+    assert hasattr(package.CubicBezier, "split")
+    assert hasattr(package.CubicBezier, "intersects_rect")
+
+
