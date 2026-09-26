@@ -236,3 +236,69 @@ class CubicBezier:
         if n < 2:
             return [self.p0, self.p3]
         return [self.point_at(i / (n - 1)) for i in range(n)]
+
+    def bbox(self) -> Rect:
+        """Compute exact tight axis-aligned bounding box using derivative roots."""
+        def solve_quadratic(a: float, b: float, c: float) -> list[float]:
+            if abs(a) < 1e-9:
+                if abs(b) < 1e-9:
+                    return []
+                return [-c / b]
+            disc = b * b - 4.0 * a * c
+            if disc < 0.0:
+                return []
+            if abs(disc) < 1e-9:
+                return [-b / (2.0 * a)]
+            s = math.sqrt(disc)
+            return [(-b - s) / (2.0 * a), (-b + s) / (2.0 * a)]
+
+        ax = 3.0 * (-self.p0.x + 3.0 * self.c1.x - 3.0 * self.c2.x + self.p3.x)
+        bx = 6.0 * (self.p0.x - 2.0 * self.c1.x + self.c2.x)
+        cx = 3.0 * (self.c1.x - self.p0.x)
+
+        ay = 3.0 * (-self.p0.y + 3.0 * self.c1.y - 3.0 * self.c2.y + self.p3.y)
+        by = 6.0 * (self.p0.y - 2.0 * self.c1.y + self.c2.y)
+        cy = 3.0 * (self.c1.y - self.p0.y)
+
+        candidates = [0.0, 1.0]
+        for t in solve_quadratic(ax, bx, cx):
+            if 0.0 < t < 1.0:
+                candidates.append(t)
+        for t in solve_quadratic(ay, by, cy):
+            if 0.0 < t < 1.0:
+                candidates.append(t)
+
+        pts = [self.point_at(t) for t in candidates]
+        min_x = min(p.x for p in pts)
+        max_x = max(p.x for p in pts)
+        min_y = min(p.y for p in pts)
+        max_y = max(p.y for p in pts)
+        return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
+
+    def arc_length(self, num_samples: int = 32) -> float:
+        """Compute approximate curve arc length via piecewise chord lengths."""
+        num_samples = max(1, num_samples)
+        pts = self.sample(num_samples + 1)
+        return sum(pts[i].distance_to(pts[i + 1]) for i in range(len(pts) - 1))
+
+    def arc_length_midpoint(self, num_samples: int = 32) -> Point:
+        """Find the physical midpoint s = L / 2 using chord parameterization."""
+        num_samples = max(1, num_samples)
+        pts = self.sample(num_samples + 1)
+        dists = [0.0]
+        for i in range(len(pts) - 1):
+            dists.append(dists[-1] + pts[i].distance_to(pts[i + 1]))
+
+        total_len = dists[-1]
+        if total_len < 1e-6:
+            return self.p0
+
+        half_len = total_len / 2.0
+        idx = bisect.bisect_right(dists, half_len) - 1
+        idx = max(0, min(idx, num_samples - 1))
+
+        segment_len = dists[idx + 1] - dists[idx]
+        alpha = (half_len - dists[idx]) / segment_len if segment_len > 1e-9 else 0.0
+        t_mid = (idx + alpha) / num_samples
+        return self.point_at(t_mid)
+

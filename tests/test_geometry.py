@@ -183,3 +183,101 @@ def test_cubic_bezier_evaluation_and_tangents():
     # Guard sample n < 2
     assert cb.sample(1) == [Point(0.0, 0.0), Point(30.0, 0.0)]
     assert cb.sample(0) == [Point(0.0, 0.0), Point(30.0, 0.0)]
+
+
+def test_cubic_bezier_bbox_vs_numerical_samples():
+    from diagrams_as_code.geometry import CubicBezier
+
+    # S-curve with overshoot along both axes
+    cb = CubicBezier(
+        p0=Point(10.0, 50.0),
+        c1=Point(100.0, 200.0),
+        c2=Point(50.0, -100.0),
+        p3=Point(200.0, 50.0),
+    )
+
+    # 1,001 fine samples for ground truth comparison
+    fine_samples = cb.sample(1001)
+    num_min_x = min(p.x for p in fine_samples)
+    num_max_x = max(p.x for p in fine_samples)
+    num_min_y = min(p.y for p in fine_samples)
+    num_max_y = max(p.y for p in fine_samples)
+
+    bb = cb.bbox()
+
+    # Analytical bbox must enclose all numerical samples
+    assert bb.left <= num_min_x + 1e-4
+    assert bb.right >= num_max_x - 1e-4
+    assert bb.top <= num_min_y + 1e-4
+    assert bb.bottom >= num_max_y - 1e-4
+
+    # Tightness: analytical bounds should match within 0.01px to 1001 numerical samples
+    assert bb.left == pytest.approx(num_min_x, abs=0.01)
+    assert bb.right == pytest.approx(num_max_x, abs=0.01)
+    assert bb.top == pytest.approx(num_min_y, abs=0.01)
+    assert bb.bottom == pytest.approx(num_max_y, abs=0.01)
+
+
+def test_cubic_bezier_arc_length_and_midpoint():
+    from diagrams_as_code.geometry import CubicBezier
+
+    # Straight line: arc-length should be exact distance
+    line = CubicBezier(
+        p0=Point(0.0, 0.0),
+        c1=Point(10.0, 0.0),
+        c2=Point(20.0, 0.0),
+        p3=Point(30.0, 0.0),
+    )
+    assert line.arc_length() == pytest.approx(30.0, rel=1e-4)
+    mid_line = line.arc_length_midpoint()
+    assert mid_line.x == pytest.approx(15.0, abs=1e-4)
+    assert mid_line.y == pytest.approx(0.0, abs=1e-4)
+
+    # Asymmetric curve where arc-length midpoint differs from parametric t=0.5
+    asym = CubicBezier(
+        p0=Point(0.0, 0.0),
+        c1=Point(5.0, 0.0),
+        c2=Point(10.0, 0.0),
+        p3=Point(100.0, 100.0),
+    )
+    mid_arc = asym.arc_length_midpoint(num_samples=32)
+    mid_param = asym.point_at(0.5)
+
+    # They should differ measurably because curve accelerates near p3
+    assert abs(mid_arc.x - mid_param.x) > 5.0
+
+    # Total arc length
+    total_l = asym.arc_length(num_samples=64)
+    # The arc length up to midpoint should be approximately half total length
+    # Check using fine sampling
+    samples = asym.sample(1001)
+    # find closest sample to mid_arc
+    closest_idx = min(range(len(samples)), key=lambda i: samples[i].distance_to(mid_arc))
+    len_to_mid = sum(samples[i].distance_to(samples[i + 1]) for i in range(closest_idx))
+    assert len_to_mid == pytest.approx(total_l / 2.0, rel=0.02)
+
+
+def test_cubic_bezier_degenerate_cases():
+    from diagrams_as_code.geometry import CubicBezier, Rect
+
+    # Point curve: all 4 points identical
+    pt_curve = CubicBezier(
+        p0=Point(10.0, 20.0),
+        c1=Point(10.0, 20.0),
+        c2=Point(10.0, 20.0),
+        p3=Point(10.0, 20.0),
+    )
+    assert pt_curve.bbox() == Rect(10.0, 20.0, 0.0, 0.0)
+    assert pt_curve.arc_length() == 0.0
+    assert pt_curve.arc_length_midpoint() == Point(10.0, 20.0)
+
+    # Linear curve (derivative quadratic is linear / constant)
+    linear = CubicBezier(
+        p0=Point(0.0, 0.0),
+        c1=Point(10.0, 10.0),
+        c2=Point(20.0, 20.0),
+        p3=Point(30.0, 30.0),
+    )
+    bb = linear.bbox()
+    assert bb == Rect(0.0, 0.0, 30.0, 30.0)
+
