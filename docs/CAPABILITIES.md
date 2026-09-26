@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-09-23 (v0.5.0-dev)  
+**Last Updated:** 2026-09-26 (v0.8.0)  
 
 ---
 
@@ -17,6 +17,8 @@
 | **Can shapes be decoupled from location?** | **YES** | `Shape(id, label)` / `s.move_to(x, y)` | Shapes can be defined unplaced, placed late, relocated dynamically, or stamped from prototypes via `.clone()`. |
 | **Can groups auto-bound and flow?** | **YES** | `group2.below(group1, margin=40)` | Hierarchical containers with bottom-up auto-bounding encapsulating children, headers, and padding. |
 | **Can connections route orthogonally?** | **YES** | `s1 >> diag.edge("MQTT") >> s2` | Automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`) and Manhattan waypoint routing with collinear line simplification. |
+| **Can connections route as cubic Bezier curves?** | **YES** | `Edge(routing=Routing.CURVE)` | Analytical cubic Bezier curves with outward cardinal port normals, distance-proportional tension scaling, native SVG `M...C` path rendering, and arc-length centered protocol badges. |
+| **Can orthogonal corners be rounded with fillets?** | **YES** | `Edge(corner_radius=12)` / `Diagram(corner_radius=12)` | Smooth quadratic Bezier corner fillets with dynamic 50% segment budget clamping, 2.0px suppression threshold, obstacle apex clearance guard, and native SVG `Q` commands. |
 | **Can living BOM docs be generated?** | **YES** | `diag.generate_readme()` | Extracts component inventories, group affiliations, connection topology, and technical notes into Markdown tables and JSON catalogs. |
 | **Is there auto-layout?** | **YES** | `Diagram(layout="auto")` | A deterministic layered engine places unpinned shapes and groups from the edge structure (`direction="LR"`/`"TB"`); pinned shapes coexist via `.at()`/`.right_of()`, and a `LayoutWarning` flags any pin that overlaps an auto-placed sibling. |
 | **Can diagrams be zoomed and panned interactively?** | **YES** | `Diagram(interactive=True)` | Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features click-drag panning, scroll wheel zooming, viewport reset HUD controls, and interactive collapsible groups with header toggles. |
@@ -78,6 +80,22 @@
 - **Exports:** `OrthogonalRouter`, `segment_intersects_rect`
 - **Features:** Segment-box collision detection with clearance corridors, shortest Manhattan detour channel routing around intermediate obstacles, and multi-rank crossing minimization via virtual dummy vertices.
 - **Verification:** `uv run pytest tests/test_routing.py tests/test_layout_layered.py`
+
+#### `CAP-DIAG-ROUTER-CURVE`: Cubic Bezier Edge Routing & SVG Path Generation
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.8.0`
+- **Python API:** `diagrams_as_code.router.CurveRouter`
+- **Exports:** `CubicBezier`, `CurveRouter`, `EdgeRouter`
+- **Features:** Pure-Python analytical cubic Bezier edge routing (`Routing.CURVE`). Computes outward cardinal normal port tangents, distance-proportional handle heuristics along flow axes, native SVG `<path d="M... C...">` emission with tangentially aligned destination arrowheads, and physical arc-length midpoint protocol badge positioning.
+- **Verification:** `uv run pytest tests/test_geometry.py tests/test_routing.py tests/test_renderer_svg.py -k "curve or bezier"`
+
+#### `CAP-DIAG-ROUTER-FILLET`: Rounded Corner Fillets for Orthogonal Routing
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.8.0`
+- **Python API:** `diagrams_as_code.renderer_svg._render_filleted_path`
+- **Exports:** `QuadraticBezier`, `Edge`, `Diagram`
+- **Features:** Quadratic Bezier corner filleting for orthogonal Manhattan edges (`corner_radius` and `arc_radius` alias on `Edge` and `Diagram`). Emits native SVG `Q` commands with dynamic 50% segment budget clamping, straight port lead-in preservation, 2.0px threshold suppression, and obstacle clearance apex guards.
+- **Verification:** `uv run pytest tests/test_geometry.py tests/test_routing.py tests/test_renderer_svg.py -k "fillet or corner_radius"`
 
 
 ---

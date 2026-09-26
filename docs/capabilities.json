@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-09-24T00:00:00Z",
+  "last_updated": "2026-09-26T00:00:00Z",
   "summary": {
-    "total_capabilities": 16,
-    "operational": 16,
+    "total_capabilities": 18,
+    "operational": 18,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -59,6 +59,18 @@
       "capability_id": "CAP-DIAG-LAYOUT",
       "python_api": "Diagram(layout=\"auto\")",
       "details": "A deterministic layered engine places unpinned shapes and groups from the edge structure (direction LR or TB); pinned shapes coexist via .at()/.right_of(), and a LayoutWarning flags any pin that overlaps an auto-placed sibling."
+    },
+    "can_route_cubic_bezier_curves": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-ROUTER-CURVE",
+      "python_api": "Edge(routing=Routing.CURVE)",
+      "details": "Pure-Python analytical cubic Bezier edge routing with outward cardinal normal port tangents, distance-proportional tension scaling, native SVG M...C path rendering, and physical arc-length midpoint protocol badge placement."
+    },
+    "can_round_orthogonal_corners": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-ROUTER-FILLET",
+      "python_api": "Edge(corner_radius=12) / Diagram(corner_radius=12)",
+      "details": "Quadratic Bezier corner filleting for orthogonal edges with dynamic 50% segment budget clamping, 2.0px suppression threshold, obstacle apex clearance guard, and native SVG Q commands."
     }
   },
   "capabilities": [
@@ -116,6 +128,28 @@
       "classes": ["OrthogonalRouter", "segment_intersects_rect"],
       "details": "Segment-box collision detection with clearance corridors, shortest Manhattan detour channel routing around intermediate obstacles, and multi-rank crossing minimization via virtual dummy vertices.",
       "verification": "uv run pytest tests/test_routing.py tests/test_layout_layered.py"
+    },
+    {
+      "id": "CAP-DIAG-ROUTER-CURVE",
+      "name": "Cubic Bezier Edge Routing and SVG Path Generation",
+      "category": "Connection Routing",
+      "status": "OPERATIONAL",
+      "target_release": "v0.8.0",
+      "python_api": "diagrams_as_code.router.CurveRouter",
+      "classes": ["CubicBezier", "CurveRouter", "EdgeRouter"],
+      "details": "Pure-Python analytical cubic Bezier edge routing (Routing.CURVE). Computes outward cardinal normal port tangents, distance-proportional handle heuristics, native SVG M...C path rendering with tangentially aligned destination arrowheads, and physical arc-length midpoint protocol badge positioning.",
+      "verification": "uv run pytest tests/test_geometry.py tests/test_routing.py tests/test_renderer_svg.py -k \"curve or bezier\""
+    },
+    {
+      "id": "CAP-DIAG-ROUTER-FILLET",
+      "name": "Rounded Corner Fillets for Orthogonal Routing",
+      "category": "Connection Routing",
+      "status": "OPERATIONAL",
+      "target_release": "v0.8.0",
+      "python_api": "diagrams_as_code.renderer_svg._render_filleted_path",
+      "classes": ["QuadraticBezier", "Edge", "Diagram"],
+      "details": "Quadratic Bezier corner filleting for orthogonal Manhattan edges (corner_radius and arc_radius alias on Edge and Diagram). Emits native SVG Q commands with dynamic 50% segment budget clamping, straight port lead-in preservation, 2.0px threshold suppression, and obstacle clearance apex guards.",
+      "verification": "uv run pytest tests/test_geometry.py tests/test_routing.py tests/test_renderer_svg.py -k \"fillet or corner_radius\""
     },
     {
       "id": "CAP-DIAG-THEME",

@@ -6,6 +6,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.8.0] - 2026-09-26
+
+### Added
+- **Cubic Bezier Edge Routing & SVG Path Generation (`CAP-DIAG-ROUTER-CURVE`, `BEZ-01` to `BEZ-05`):**
+  - Added immutable Layer 0 `CubicBezier(p0, p1, p2, p3)` primitive with Bernstein polynomial evaluation, analytical velocity tangents, linear root derivative bounding box (`bbox()`), and physical arc-length integration (`arc_length()`, `arc_length_midpoint()`).
+  - Implemented Layer 3 `CurveRouter` computing outward cardinal port normal tangent handles (`PORT_NORMALS`) and distance-proportional handle scaling along flow axes (`LR` and `TB`) to produce smooth S-curves without kinks or excessive handle bulging.
+  - Implemented `EdgeRouter` facade dispatching `Routing.CURVE` edges to `CurveRouter` while delegating `Routing.ORTHOGONAL` to `OrthogonalRouter`.
+  - Added native SVG `<path d="M... C...">` path command formatting in `SVGRenderer._render_edges` with endpoint arrowhead markers tangentially aligned to curve departure vectors.
+  - Added physical arc-length midpoint protocol label badge placement (`edge.label`) with high-contrast background pill stroke masks for asymmetric curves.
+  - Added standalone CLI and CI evaluation test runner `tools/eval_bezier.py` validating 10 quality dimensions across a 10-scenario canonical benchmark dataset (`tests/fixtures/eval_bezier_dataset.json`).
+- **Rounded Corner Fillets for Orthogonal Routing (`CAP-DIAG-ROUTER-FILLET`, `FILLET-01` to `FILLET-03`):**
+  - Added immutable Layer 0 `QuadraticBezier(p0, p1, p2)` primitive with Bernstein evaluation, velocity tangents, exact linear-root bounding box, and chord arc length.
+  - Extended `Edge` and `Diagram` with `corner_radius` (primary) and `arc_radius` (alias), strict non-negative float input validation, and diagram-level cascading to `_EdgeBuilder` with per-edge overrides.
+  - Implemented Layer 4 `_render_filleted_path` vector engine emitting native SVG `<path d="M... L... Q... L...">` elements connecting corner fillet tangent points for $C^1$-continuous smooth 90-degree corner bends.
+  - Implemented dynamic 50% segment budget clamping ($R_{\text{eff}} \le \min(R, L_{\text{in}}/2, L_{\text{out}}/2)$), preventing inverted arcs, overlapping loops, or "dog ear" artifacts on short segments.
+  - Implemented straight port lead-in preservation ($\ge \min(10.0, L/2)$) at source and destination ports, ensuring arrowheads and departures seat flush against shape bounds.
+  - Implemented 2.0px threshold suppression clamping micro-arcs to clean sharp 90-degree corners to eliminate sub-pixel rasterization artifacts.
+  - Implemented analytical obstacle apex clearance guards maintaining $\ge 4.0\text{px}$ clearance from obstacle bounding boxes.
+  - Preserved Manhattan waypoint sequences in `Edge.waypoints` for downstream layout and collision simplicity.
+  - Maintained longest-segment protocol badge centering on filleted edges.
+  - Verified headless W3C SVG rasterization using `resvg-py`.
+
+### Verification Evidence
+- `uv run pytest` -> 491 passed in 11.29s across all unit, integration, boundary, and hygiene test suites.
+- `uv run python tools/eval_bezier.py` -> 10/10 scenarios passed (100.0% score, PRODUCTION READY).
+- `uv run python main.py && git diff --exit-code -- output/ icons/ README.md docs/` -> Zero byte drift across all 88 domain gallery diagrams (100% backward compatibility for sharp default `corner_radius=0.0`).
+- `tests/test_module_boundaries.py` -> 27/27 tests passed; 100% compliant with strict downward architectural layering (Layer 0 geometry has 0 internal imports).
+- `tests/test_public_api.py` -> 100% export parity between canonical package `diagrams_as_code` and backward-compatible facade `iiot_diagrams`.
+
 ## [v0.7.0] - 2026-09-24
 
 ### Added
