@@ -847,6 +847,45 @@ def test_curve_router_collision_detection() -> None:
     assert obs_far in collisions_large
 
 
+def test_curve_router_reverse_flow_automatic_port_resolution() -> None:
+    """Verify CurveRouter.resolve_ports auto-resolves reverse-flow edges to lateral cardinal ports."""
+    router = CurveRouter()
+
+    # 1. Forward flow horizontal (dx > 0): resolves to (EAST, WEST)
+    s_fwd1 = Shape("f1", "Src", 100, 50).at(0, 100)
+    s_fwd2 = Shape("f2", "Tgt", 100, 50).at(300, 100)
+    assert router.resolve_ports(Edge(s_fwd1, s_fwd2)) == (Port.EAST, Port.WEST)
+
+    # 2. Horizontal reverse flow (dx = -300 < 0) with unspecified ports: resolves to (NORTH, NORTH)
+    s_rev1 = Shape("r1", "Src", 100, 50).at(400, 100)
+    s_rev2 = Shape("r2", "Tgt", 100, 50).at(100, 100)
+    assert router.resolve_ports(Edge(s_rev1, s_rev2)) == (Port.NORTH, Port.NORTH)
+
+    # 3. Horizontal reverse flow constrained at top canvas boundary (y <= 30): resolves to (SOUTH, SOUTH)
+    s_top1 = Shape("t1", "Src", 100, 50).at(400, 20)
+    s_top2 = Shape("t2", "Tgt", 100, 50).at(100, 20)
+    assert router.resolve_ports(Edge(s_top1, s_top2)) == (Port.SOUTH, Port.SOUTH)
+
+    # 4. Horizontal reverse flow with north corridor obstacle: resolves to (SOUTH, SOUTH)
+    obs_north = Rect(200, 80, 100, 15)  # occupies y=80..95, s_rev1/s_rev2 are at y=100
+    assert router.resolve_ports(Edge(s_rev1, s_rev2), obstacles=[obs_north]) == (Port.SOUTH, Port.SOUTH)
+
+    # 5. Forward flow vertical (dy > 0): resolves to (SOUTH, NORTH)
+    s_vfwd1 = Shape("vf1", "Src", 100, 50).at(100, 0)
+    s_vfwd2 = Shape("vf2", "Tgt", 100, 50).at(100, 300)
+    assert router.resolve_ports(Edge(s_vfwd1, s_vfwd2)) == (Port.SOUTH, Port.NORTH)
+
+    # 6. Vertical reverse flow (dy = -200 < 0) with unspecified ports: resolves to (EAST, EAST)
+    s_vrev1 = Shape("vr1", "Src", 100, 50).at(100, 300)
+    s_vrev2 = Shape("vr2", "Tgt", 100, 50).at(100, 100)
+    assert router.resolve_ports(Edge(s_vrev1, s_vrev2)) == (Port.EAST, Port.EAST)
+
+    # 7. Vertical reverse flow with east corridor obstacle: resolves to (WEST, WEST)
+    obs_east = Rect(205, 150, 40, 100)  # occupies x=205..245, s_vrev1/s_vrev2 right is 200
+    assert router.resolve_ports(Edge(s_vrev1, s_vrev2), obstacles=[obs_east]) == (Port.WEST, Port.WEST)
+
+
+
 
 
 

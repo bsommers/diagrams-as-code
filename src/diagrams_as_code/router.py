@@ -104,8 +104,12 @@ class CurveRouter:
             obs for obs in obstacles if curve.intersects_rect(obs.expand(clearance))
         ]
 
-    def resolve_ports(self, edge: Edge) -> tuple[Port, Port]:
-        """Determine connection ports for source and target elements."""
+    def resolve_ports(
+        self,
+        edge: Edge,
+        obstacles: Optional[Iterable[Any]] = None,
+    ) -> tuple[Port, Port]:
+        """Determine connection ports for source and target elements, auto-resolving reverse flows."""
         if edge.source_port and edge.target_port:
             return (edge.source_port, edge.target_port)
 
@@ -114,9 +118,59 @@ class CurveRouter:
         dy = tb.center.y - sb.center.y
 
         if abs(dx) >= abs(dy):
+            if dx < 0 and edge.source_port is None and edge.target_port is None:
+                # Reverse-flow horizontal detected! Resolve to outward lateral cardinal ports (D-14).
+                min_top = min(sb.top, tb.top)
+                north_constrained = min_top <= 30.0
+                if not north_constrained and obstacles:
+                    x_span_min = min(sb.left, tb.left)
+                    x_span_max = max(sb.right, tb.right)
+                    for item in obstacles:
+                        r = item if isinstance(item, Rect) else getattr(item, "bounds", None)
+                        if not isinstance(r, Rect):
+                            continue
+                        if item is edge.source or item is edge.target:
+                            continue
+                        src_id = getattr(edge.source, "id", None)
+                        tgt_id = getattr(edge.target, "id", None)
+                        filter_ids = {i for i in (src_id, tgt_id) if i is not None}
+                        if hasattr(item, "id") and item.id in filter_ids:
+                            continue
+                        if r.right >= x_span_min and r.left <= x_span_max:
+                            if r.top < min_top and r.bottom >= min_top - 30.0:
+                                north_constrained = True
+                                break
+                if north_constrained:
+                    return (Port.SOUTH, Port.SOUTH)
+                return (Port.NORTH, Port.NORTH)
             src_p = Port.EAST if dx > 0 else Port.WEST
             tgt_p = Port.WEST if dx > 0 else Port.EAST
         else:
+            if dy < 0 and edge.source_port is None and edge.target_port is None:
+                # Reverse-flow vertical detected! Resolve to outward lateral cardinal ports (D-14).
+                max_right = max(sb.right, tb.right)
+                east_constrained = False
+                if obstacles:
+                    y_span_min = min(sb.top, tb.top)
+                    y_span_max = max(sb.bottom, tb.bottom)
+                    for item in obstacles:
+                        r = item if isinstance(item, Rect) else getattr(item, "bounds", None)
+                        if not isinstance(r, Rect):
+                            continue
+                        if item is edge.source or item is edge.target:
+                            continue
+                        src_id = getattr(edge.source, "id", None)
+                        tgt_id = getattr(edge.target, "id", None)
+                        filter_ids = {i for i in (src_id, tgt_id) if i is not None}
+                        if hasattr(item, "id") and item.id in filter_ids:
+                            continue
+                        if r.bottom >= y_span_min and r.top <= y_span_max:
+                            if r.right > max_right and r.left <= max_right + 30.0:
+                                east_constrained = True
+                                break
+                if east_constrained:
+                    return (Port.WEST, Port.WEST)
+                return (Port.EAST, Port.EAST)
             src_p = Port.SOUTH if dy > 0 else Port.NORTH
             tgt_p = Port.NORTH if dy > 0 else Port.SOUTH
 
@@ -129,7 +183,7 @@ class CurveRouter:
         clearance: float = 15.0,
     ) -> list[Point]:
         """Compute ordered path waypoints [P_start, C_1, C_2, P_end] for cubic Bezier curve."""
-        src_port, tgt_port = self.resolve_ports(edge)
+        src_port, tgt_port = self.resolve_ports(edge, obstacles=obstacles)
         p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
         p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
 
@@ -184,7 +238,9 @@ class CurveRouter:
 class OrthogonalRouter:
     """Computes orthogonal Manhattan waypoints and resolves port anchors."""
 
-    def resolve_ports(self, edge: Edge) -> tuple[Port, Port]:
+    def resolve_ports(
+        self, edge: Edge, obstacles: Optional[Iterable[Any]] = None
+    ) -> tuple[Port, Port]:
         """Determine connection ports for source and target elements."""
         if edge.source_port and edge.target_port:
             return (edge.source_port, edge.target_port)
@@ -453,11 +509,13 @@ class EdgeRouter:
         self.orthogonal = OrthogonalRouter()
         self.curve = CurveRouter()
 
-    def resolve_ports(self, edge: Edge) -> tuple[Port, Port]:
+    def resolve_ports(
+        self, edge: Edge, obstacles: Optional[Iterable[Any]] = None
+    ) -> tuple[Port, Port]:
         """Determine connection ports for source and target elements."""
         if edge.routing in (Routing.CURVE, "curve"):
-            return self.curve.resolve_ports(edge)
-        return self.orthogonal.resolve_ports(edge)
+            return self.curve.resolve_ports(edge, obstacles=obstacles)
+        return self.orthogonal.resolve_ports(edge, obstacles=obstacles)
 
     def route(
         self,
