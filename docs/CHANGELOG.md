@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.8.1] - 2026-09-26
+
+### Added
+- **Curves & Fillets Reference Architecture Example (`examples/04_curves_and_fillets.py`):**
+  - Added standalone executable example demonstrating rounded corner fillets (`corner_radius=16.0`), cubic Bezier feedback loop with protocol badge (`Routing.CURVE`), and explicit sharp corner overrides (`corner_radius=0.0`).
+  - Added automated execution verification test `test_04_curves_and_fillets_execution` in `tests/test_examples.py`.
+- **Milestone Onboarding Summary (`.planning/reports/MILESTONE_SUMMARY-v0.8.0.md`):**
+  - Generated comprehensive project and architecture overview for Milestone v0.8.0 covering decisions D-01 through D-16 across Phases 8 and 9, requirements coverage, and quickstart guide.
+
+### Verification Evidence
+- `uv run pytest` -> 492 passed in 11.95s across all unit, integration, boundary, and hygiene test suites.
+- `uv run python tools/eval_bezier.py` -> 10/10 scenarios passed (100.0% score).
+- `git diff --exit-code -- output/ icons/` -> Zero byte drift across all gallery diagrams.
+
 ## [v0.8.0] - 2026-09-26
 
 ### Added
