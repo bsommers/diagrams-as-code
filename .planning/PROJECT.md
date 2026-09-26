@@ -30,6 +30,7 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - [x] Local-first testing directives and GitHub Actions CI quota conservation controls (`v0.5.0`).
 - [x] Standalone CLI `--interactive` flag, client-side search/highlight filter, and viewport minimap navigator (`v0.6.0`).
 - [x] Obstacle-aware orthogonal Manhattan routing with clearance corridors and multi-rank crossing minimization (`v0.7.0`).
+- [x] Foundational cubic Bezier geometry primitives, port normal tangency heuristics, native SVG `<path d="M... C...">` generation, and arc-length midpoint protocol badge placement (`v0.8.0` - Phase 8).
 
 ## Current Milestone: v0.8.0 Curved & Bezier Edge Routing Engine
 
@@ -89,5 +90,5 @@ This document evolves at phase transitions and milestone boundaries.
 - 2026-09-24: Implement cubic Bezier curves and rounded orthogonal fillets for v0.8.0.
 
 ---
-*Last updated: 2026-09-24 for Milestone v0.8.0*
+*Last updated: 2026-09-26 for Phase 8 completion*
 
