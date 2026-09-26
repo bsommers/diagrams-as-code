@@ -44,3 +44,9 @@ def test_curve_routing_symbols_are_exported(package) -> None:
         assert hasattr(package, name)
 
 
+@pytest.mark.parametrize("package", [diagrams_as_code, iiot_diagrams])
+def test_quadratic_bezier_is_exported(package) -> None:
+    assert "QuadraticBezier" in package.__all__
+    assert hasattr(package, "QuadraticBezier")
+
+
