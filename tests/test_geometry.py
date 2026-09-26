@@ -1,3 +1,4 @@
+import math
 import pytest
 import iiot_diagrams
 from iiot_diagrams import Point, Size, Rect, Anchor, UnitBasis
@@ -105,3 +106,80 @@ def test_immutability():
     sz = Size(10.0, 20.0)
     with pytest.raises(Exception):
         sz.width = 30.0  # type: ignore
+
+
+def test_point_arithmetic_operators():
+    p1 = Point(10.0, 20.0)
+    p2 = Point(3.0, 5.0)
+
+    # Addition
+    assert p1 + p2 == Point(13.0, 25.0)
+    # Subtraction
+    assert p1 - p2 == Point(7.0, 15.0)
+    # Scalar multiplication (mul and rmul)
+    assert p1 * 2.0 == Point(20.0, 40.0)
+    assert 2.5 * p1 == Point(25.0, 50.0)
+    assert p1 * 3 == Point(30.0, 60.0)
+    assert 3 * p1 == Point(30.0, 60.0)
+    # Division
+    assert p1 / 2.0 == Point(5.0, 10.0)
+    assert p1 / 4 == Point(2.5, 5.0)
+
+    # Type errors / NotImplemented
+    with pytest.raises(TypeError):
+        _ = p1 + 5  # type: ignore
+    with pytest.raises(TypeError):
+        _ = p1 - 5  # type: ignore
+    with pytest.raises(TypeError):
+        _ = p1 * "scalar"  # type: ignore
+    with pytest.raises(TypeError):
+        _ = "scalar" * p1  # type: ignore
+    with pytest.raises(TypeError):
+        _ = p1 / "scalar"  # type: ignore
+
+    # distance_to
+    assert p1.distance_to(p2) == pytest.approx(math.hypot(7.0, 15.0))
+    assert p1.distance_to(Point(10.0, 20.0)) == 0.0
+
+
+def test_cubic_bezier_evaluation_and_tangents():
+    from diagrams_as_code.geometry import CubicBezier
+
+    cb = CubicBezier(
+        p0=Point(0.0, 0.0),
+        c1=Point(10.0, 20.0),
+        c2=Point(20.0, 20.0),
+        p3=Point(30.0, 0.0),
+    )
+
+    # Endpoints
+    assert cb.point_at(0.0) == Point(0.0, 0.0)
+    assert cb.point_at(1.0) == Point(30.0, 0.0)
+
+    # Midpoint t = 0.5:
+    # x = 0.125 * 0 + 3 * 0.25 * 0.5 * 10 + 3 * 0.5 * 0.25 * 20 + 0.125 * 30 = 3.75 + 7.5 + 3.75 = 15.0
+    # y = 0.125 * 0 + 3 * 0.25 * 0.5 * 20 + 3 * 0.5 * 0.25 * 20 + 0.125 * 0 = 7.5 + 7.5 = 15.0
+    mid = cb.point_at(0.5)
+    assert mid.x == pytest.approx(15.0)
+    assert mid.y == pytest.approx(15.0)
+
+    # Tangents at endpoints
+    # B'(0) = 3 * (C1 - P0) = 3 * (10, 20) = (30, 60)
+    t0 = cb.tangent_at(0.0)
+    assert t0.x == pytest.approx(30.0)
+    assert t0.y == pytest.approx(60.0)
+
+    # B'(1) = 3 * (P3 - C2) = 3 * (10, -20) = (30, -60)
+    t1 = cb.tangent_at(1.0)
+    assert t1.x == pytest.approx(30.0)
+    assert t1.y == pytest.approx(-60.0)
+
+    # Sample
+    pts_16 = cb.sample(16)
+    assert len(pts_16) == 16
+    assert pts_16[0] == Point(0.0, 0.0)
+    assert pts_16[-1] == Point(30.0, 0.0)
+
+    # Guard sample n < 2
+    assert cb.sample(1) == [Point(0.0, 0.0), Point(30.0, 0.0)]
+    assert cb.sample(0) == [Point(0.0, 0.0), Point(30.0, 0.0)]

@@ -1,12 +1,42 @@
 from __future__ import annotations
+import bisect
 from dataclasses import dataclass
 from enum import Enum
+import math
 from typing import Union
 
 @dataclass(frozen=True)
 class Point:
     x: float
     y: float
+
+    def __add__(self, other: Point) -> Point:
+        if not isinstance(other, Point):
+            return NotImplemented
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __sub__(self, other: Point) -> Point:
+        if not isinstance(other, Point):
+            return NotImplemented
+        return Point(self.x - other.x, self.y - other.y)
+
+    def __mul__(self, scalar: float) -> Point:
+        if not isinstance(scalar, (int, float)):
+            return NotImplemented
+        return Point(self.x * float(scalar), self.y * float(scalar))
+
+    def __rmul__(self, scalar: float) -> Point:
+        if not isinstance(scalar, (int, float)):
+            return NotImplemented
+        return Point(self.x * float(scalar), self.y * float(scalar))
+
+    def __truediv__(self, scalar: float) -> Point:
+        if not isinstance(scalar, (int, float)):
+            return NotImplemented
+        return Point(self.x / float(scalar), self.y / float(scalar))
+
+    def distance_to(self, other: Point) -> float:
+        return math.hypot(self.x - other.x, self.y - other.y)
 
 @dataclass(frozen=True)
 class Size:
@@ -155,3 +185,54 @@ class UnitBasis:
         x = self._parse_val(u, self.reference_size.width)
         y = self._parse_val(v, self.reference_size.height)
         return Point(x, y)
+
+
+@dataclass(frozen=True)
+class CubicBezier:
+    p0: Point
+    c1: Point
+    c2: Point
+    p3: Point
+
+    def point_at(self, t: float) -> Point:
+        """Evaluate point on cubic Bezier curve at parameter t in [0.0, 1.0]."""
+        it = 1.0 - t
+        it2 = it * it
+        t2 = t * t
+        x = (
+            it2 * it * self.p0.x
+            + 3.0 * it2 * t * self.c1.x
+            + 3.0 * it * t2 * self.c2.x
+            + t2 * t * self.p3.x
+        )
+        y = (
+            it2 * it * self.p0.y
+            + 3.0 * it2 * t * self.c1.y
+            + 3.0 * it * t2 * self.c2.y
+            + t2 * t * self.p3.y
+        )
+        return Point(x, y)
+
+    def tangent_at(self, t: float) -> Point:
+        """Evaluate first derivative velocity vector B'(t)."""
+        it = 1.0 - t
+        c_p0 = 3.0 * it * it
+        c_c1 = 6.0 * it * t
+        c_c2 = 3.0 * t * t
+        vx = (
+            c_p0 * (self.c1.x - self.p0.x)
+            + c_c1 * (self.c2.x - self.c1.x)
+            + c_c2 * (self.p3.x - self.c2.x)
+        )
+        vy = (
+            c_p0 * (self.c1.y - self.p0.y)
+            + c_c1 * (self.c2.y - self.c1.y)
+            + c_c2 * (self.p3.y - self.c2.y)
+        )
+        return Point(vx, vy)
+
+    def sample(self, n: int = 16) -> list[Point]:
+        """Uniform parameter sampling at t = i / (n - 1) for i in [0, n-1]."""
+        if n < 2:
+            return [self.p0, self.p3]
+        return [self.point_at(i / (n - 1)) for i in range(n)]
