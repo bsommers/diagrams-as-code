@@ -296,3 +296,108 @@ def test_cubic_bezier_immutability():
         cb.p3 = Point(4.0, 4.0)  # type: ignore
 
 
+def test_quadratic_bezier_evaluation_and_tangents():
+    from diagrams_as_code.geometry import QuadraticBezier
+
+    qb = QuadraticBezier(
+        p0=Point(0.0, 0.0),
+        p1=Point(10.0, 20.0),
+        p2=Point(30.0, 0.0),
+    )
+
+    # Endpoints
+    assert qb.point_at(0.0) == Point(0.0, 0.0)
+    assert qb.point_at(1.0) == Point(30.0, 0.0)
+
+    # Midpoint t = 0.5:
+    # (1-0.5)^2 * (0,0) + 2*(0.5)*(0.5)*(10,20) + 0.5^2 * (30,0) = (5 + 7.5, 10) = (12.5, 10.0)
+    mid = qb.point_at(0.5)
+    assert mid.x == pytest.approx(12.5)
+    assert mid.y == pytest.approx(10.0)
+
+    # Analytical derivative vectors
+    # B'(0) = 2 * (P1 - P0) = 2 * (10, 20) = (20, 40)
+    t0 = qb.tangent_at(0.0)
+    assert t0.x == pytest.approx(20.0)
+    assert t0.y == pytest.approx(40.0)
+
+    # B'(1) = 2 * (P2 - P1) = 2 * (20, -20) = (40, -40)
+    t1 = qb.tangent_at(1.0)
+    assert t1.x == pytest.approx(40.0)
+    assert t1.y == pytest.approx(-40.0)
+
+    # Sample
+    pts_16 = qb.sample(16)
+    assert len(pts_16) == 16
+    assert pts_16[0] == Point(0.0, 0.0)
+    assert pts_16[-1] == Point(30.0, 0.0)
+
+    # Guard sample n < 2
+    assert qb.sample(1) == [Point(0.0, 0.0), Point(30.0, 0.0)]
+    assert qb.sample(0) == [Point(0.0, 0.0), Point(30.0, 0.0)]
+
+
+def test_quadratic_bezier_bbox_vs_numerical_samples():
+    from diagrams_as_code.geometry import QuadraticBezier
+
+    # Curve with overshoot / extrema along both axes:
+    # x goes from 50 -> 200 -> 100 (overshoot max along x)
+    # y goes from 100 -> -50 -> 150 (undershoot min along y)
+    qb = QuadraticBezier(
+        p0=Point(50.0, 100.0),
+        p1=Point(200.0, -50.0),
+        p2=Point(100.0, 150.0),
+    )
+
+    fine_samples = qb.sample(1001)
+    num_min_x = min(p.x for p in fine_samples)
+    num_max_x = max(p.x for p in fine_samples)
+    num_min_y = min(p.y for p in fine_samples)
+    num_max_y = max(p.y for p in fine_samples)
+
+    bb = qb.bbox()
+
+    # Analytical bbox must enclose all numerical samples
+    assert bb.left <= num_min_x + 1e-4
+    assert bb.right >= num_max_x - 1e-4
+    assert bb.top <= num_min_y + 1e-4
+    assert bb.bottom >= num_max_y - 1e-4
+
+    # Tightness: analytical bounds should match within 0.01px to 1001 numerical samples
+    assert bb.left == pytest.approx(num_min_x, abs=0.01)
+    assert bb.right == pytest.approx(num_max_x, abs=0.01)
+    assert bb.top == pytest.approx(num_min_y, abs=0.01)
+    assert bb.bottom == pytest.approx(num_max_y, abs=0.01)
+
+
+def test_quadratic_bezier_arc_length_and_immutability():
+    from diagrams_as_code.geometry import QuadraticBezier
+
+    # Collinear points: arc length should equal straight distance
+    collinear = QuadraticBezier(
+        p0=Point(0.0, 0.0),
+        p1=Point(10.0, 0.0),
+        p2=Point(20.0, 0.0),
+    )
+    assert collinear.arc_length(num_samples=16) == pytest.approx(20.0, rel=1e-4)
+
+    # Curved arc length
+    curved = QuadraticBezier(
+        p0=Point(0.0, 0.0),
+        p1=Point(0.0, 20.0),
+        p2=Point(20.0, 20.0),
+    )
+    chord_len = curved.p0.distance_to(curved.p2)
+    poly_len = curved.p0.distance_to(curved.p1) + curved.p1.distance_to(curved.p2)
+    arc_len = curved.arc_length(num_samples=64)
+    assert chord_len < arc_len < poly_len
+
+    # Immutability
+    with pytest.raises(FrozenInstanceError):
+        curved.p0 = Point(1.0, 1.0)  # type: ignore
+    with pytest.raises(FrozenInstanceError):
+        curved.p1 = Point(1.0, 1.0)  # type: ignore
+    with pytest.raises(FrozenInstanceError):
+        curved.p2 = Point(1.0, 1.0)  # type: ignore
+
+

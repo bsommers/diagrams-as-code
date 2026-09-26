@@ -302,3 +302,62 @@ class CubicBezier:
         t_mid = (idx + alpha) / num_samples
         return self.point_at(t_mid)
 
+
+@dataclass(frozen=True)
+class QuadraticBezier:
+    p0: Point
+    p1: Point
+    p2: Point
+
+    def point_at(self, t: float) -> Point:
+        """Evaluate point on quadratic Bezier curve at parameter t in [0.0, 1.0]."""
+        it = 1.0 - t
+        it2 = it * it
+        t2 = t * t
+        two_it_t = 2.0 * it * t
+        x = it2 * self.p0.x + two_it_t * self.p1.x + t2 * self.p2.x
+        y = it2 * self.p0.y + two_it_t * self.p1.y + t2 * self.p2.y
+        return Point(x, y)
+
+    def tangent_at(self, t: float) -> Point:
+        """Evaluate first derivative velocity vector B'(t)."""
+        it = 1.0 - t
+        vx = 2.0 * it * (self.p1.x - self.p0.x) + 2.0 * t * (self.p2.x - self.p1.x)
+        vy = 2.0 * it * (self.p1.y - self.p0.y) + 2.0 * t * (self.p2.y - self.p1.y)
+        return Point(vx, vy)
+
+    def sample(self, n: int = 16) -> list[Point]:
+        """Uniform parameter sampling at t = i / (n - 1) for i in [0, n - 1]."""
+        if n < 2:
+            return [self.p0, self.p2]
+        return [self.point_at(i / (n - 1)) for i in range(n)]
+
+    def bbox(self) -> Rect:
+        """Compute exact tight axis-aligned bounding box from analytical linear roots of first derivative."""
+        candidates = [0.0, 1.0]
+
+        denom_x = self.p0.x - 2.0 * self.p1.x + self.p2.x
+        if abs(denom_x) > 1e-9:
+            tx = (self.p0.x - self.p1.x) / denom_x
+            if 0.0 < tx < 1.0:
+                candidates.append(tx)
+
+        denom_y = self.p0.y - 2.0 * self.p1.y + self.p2.y
+        if abs(denom_y) > 1e-9:
+            ty = (self.p0.y - self.p1.y) / denom_y
+            if 0.0 < ty < 1.0:
+                candidates.append(ty)
+
+        pts = [self.point_at(t) for t in candidates]
+        min_x = min(p.x for p in pts)
+        max_x = max(p.x for p in pts)
+        min_y = min(p.y for p in pts)
+        max_y = max(p.y for p in pts)
+        return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
+
+    def arc_length(self, num_samples: int = 16) -> float:
+        """Compute approximate curve arc length via piecewise chord lengths."""
+        num_samples = max(1, num_samples)
+        pts = self.sample(num_samples + 1)
+        return sum(pts[i].distance_to(pts[i + 1]) for i in range(len(pts) - 1))
+
