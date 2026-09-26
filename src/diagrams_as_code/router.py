@@ -91,8 +91,44 @@ class CurveRouter:
         n_src = PORT_NORMALS[src_port]
         n_tgt = PORT_NORMALS[tgt_port]
 
-        d1 = 20.0
-        d2 = 20.0
+        dx = p_end.x - p_start.x
+        dy = p_end.y - p_start.y
+
+        is_src_horiz = src_port in (Port.EAST, Port.WEST)
+        is_tgt_horiz = tgt_port in (Port.EAST, Port.WEST)
+
+        if is_src_horiz != is_tgt_horiz:
+            # Perpendicular ports (D-05)
+            d_x = max(0.5 * abs(dx), 25.0)
+            d_y = max(0.5 * abs(dy), 25.0)
+            d1 = d_x if is_src_horiz else d_y
+            d2 = d_x if is_tgt_horiz else d_y
+        elif src_port == tgt_port:
+            # Same-side / parallel ports (D-06)
+            sep = abs(dx) if not is_src_horiz else abs(dy)
+            d = max(0.5 * sep, 30.0)
+            d1 = d2 = d
+        else:
+            # Facing or opposing ports (D-01, D-02, D-03, D-07)
+            if is_src_horiz:
+                axis_delta = dx if src_port == Port.EAST else -dx
+                lat_delta = abs(dy)
+            else:
+                axis_delta = dy if src_port == Port.SOUTH else -dy
+                lat_delta = abs(dx)
+
+            if axis_delta > 0:
+                # Forward flow (D-01, D-02, D-03)
+                d = max(0.5 * axis_delta, 0.25 * lat_delta, 20.0)
+                d1 = d2 = d
+            else:
+                # Backward flow (D-07)
+                d = max(0.25 * lat_delta, 30.0)
+                d1 = d2 = d
+
+        # Minimum handle separation invariant (D-02, D-15)
+        d1 = max(d1, 20.0)
+        d2 = max(d2, 20.0)
 
         c1 = Point(p_start.x + n_src.x * d1, p_start.y + n_src.y * d1)
         c2 = Point(p_end.x + n_tgt.x * d2, p_end.y + n_tgt.y * d2)
