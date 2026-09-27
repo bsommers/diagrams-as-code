@@ -270,9 +270,11 @@ class CurveRouter:
 
         norm_obstacles = self._normalize_obstacles(edge, obstacles, p_start, p_end)
         if obstacles is not None and self._is_reverse_flow_explicit(edge, src_port, tgt_port):
-            return self._route_reverse_flow_explicit_ports(
+            pts = self._route_reverse_flow_explicit_ports(
                 edge, p_start, p_end, src_port, tgt_port, norm_obstacles, eff_clearance
             )
+            edge.waypoints = pts
+            return pts
 
         n_src = PORT_NORMALS[src_port]
         n_tgt = PORT_NORMALS[tgt_port]
