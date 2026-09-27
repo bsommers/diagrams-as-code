@@ -952,6 +952,174 @@ def test_curve_router_reverse_flow_explicit_ports_escape() -> None:
         assert not math.isinf(pt.y)
 
 
+def test_curve_deflection_single_obstacle_compact() -> None:
+    """Verify single apex waypoint (7 points / 2 segments) for compact obstacle deflection (D-07, CURVEOBS-02)."""
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(100, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(500, 100)
+    edge = Edge(s1, s2, routing=Routing.CURVE)
+
+    # Compact obstacle: width 20px <= 2 * clearance (30.0px)
+    obs = Shape("obs", "Obstacle", 20, 50).at(300, 100)
+
+    pts = router.route(edge, obstacles=[s1, s2, obs])
+    assert len(pts) == 7  # 3N+1 points with N=2
+    assert edge.waypoints == pts
+
+    p0, c0a, c0b, w, c1a, c1b, p3 = pts
+    assert p0 == Point(200.0, 125.0)  # s1 EAST anchor
+    assert p3 == Point(500.0, 125.0)  # s2 WEST anchor
+    assert w.x == 310.0  # obstacle center x
+    # Waypoint deflected either above (y <= 85.0) or below (y >= 165.0)
+    assert w.y <= 85.0 or w.y >= 165.0
+
+
+def test_curve_deflection_wide_obstacle_two_waypoints() -> None:
+    """Verify 2 corner clearance waypoints (10 points / 3 segments) for wide obstacle deflection (D-07, CURVEOBS-02)."""
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(100, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(500, 100)
+    edge = Edge(s1, s2, routing=Routing.CURVE)
+
+    # Wide obstacle: width 100px > 2 * clearance (30.0px)
+    obs = Shape("obs", "Obstacle", 100, 50).at(250, 100)
+
+    pts = router.route(edge, obstacles=[s1, s2, obs])
+    assert len(pts) == 10  # 3N+1 points with N=3
+    assert edge.waypoints == pts
+
+    p0, c0a, c0b, w1, c1a, c1b, w2, c2a, c2b, p3 = pts
+    assert p0 == Point(200.0, 125.0)
+    assert p3 == Point(500.0, 125.0)
+
+    # Corner clearance waypoints
+    assert w1.x <= obs.bounds.left - 15.0  # <= 235.0
+    assert w2.x >= obs.bounds.right + 15.0  # >= 365.0
+    assert w1.y == w2.y
+    assert w1.y <= 85.0 or w1.y >= 165.0
+
+    # Middle bypass segment has collinear handles along corridor line
+    assert c1a.y == w1.y
+    assert c1b.y == w2.y
+
+
+def test_curve_deflection_corner_clearance_invariant() -> None:
+    """Verify all deflection waypoints maintain >= 15.0px distance from all obstacle corners (D-11, T-10-03)."""
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(100, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(500, 100)
+
+    # 1. Compact obstacle
+    obs_compact = Shape("obs_c", "Obstacle", 20, 50).at(300, 100)
+    edge_compact = Edge(s1, s2, routing=Routing.CURVE)
+    pts_compact = router.route(edge_compact, obstacles=[s1, s2, obs_compact])
+    w_compact = pts_compact[3]
+
+    corners_c = [
+        Point(obs_compact.bounds.left, obs_compact.bounds.top),
+        Point(obs_compact.bounds.right, obs_compact.bounds.top),
+        Point(obs_compact.bounds.left, obs_compact.bounds.bottom),
+        Point(obs_compact.bounds.right, obs_compact.bounds.bottom),
+    ]
+    for c in corners_c:
+        assert w_compact.distance_to(c) >= 15.0
+
+    # 2. Wide obstacle
+    obs_wide = Shape("obs_w", "Obstacle", 120, 60).at(240, 95)
+    edge_wide = Edge(s1, s2, routing=Routing.CURVE)
+    pts_wide = router.route(edge_wide, obstacles=[s1, s2, obs_wide])
+    w1, w2 = pts_wide[3], pts_wide[6]
+
+    corners_w = [
+        Point(obs_wide.bounds.left, obs_wide.bounds.top),
+        Point(obs_wide.bounds.right, obs_wide.bounds.top),
+        Point(obs_wide.bounds.left, obs_wide.bounds.bottom),
+        Point(obs_wide.bounds.right, obs_wide.bounds.bottom),
+    ]
+    for corner in corners_w:
+        assert w1.distance_to(corner) >= 15.0
+        assert w2.distance_to(corner) >= 15.0
+
+
+def test_curve_deflection_secondary_obstacle_bypass() -> None:
+    """Verify curve routes to alternative corridor or expands when secondary obstacles block preferred corridor (D-10)."""
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(100, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(500, 100)
+
+    # Primary obstacle directly in between
+    obs_mid = Shape("obs_mid", "Obstacle", 100, 50).at(250, 100)
+    # Secondary obstacle above, blocking the TOP corridor (y = 85)
+    obs_roof = Rect(250, 40, 100, 45)  # top=40, bottom=85
+
+    edge = Edge(s1, s2, routing=Routing.CURVE)
+    pts = router.route(edge, obstacles=[s1, s2, obs_mid, obs_roof])
+    # Must deflect via BOTTOM corridor: y >= 150 + 15 = 165
+    w1 = pts[3]
+    assert w1.y >= 165.0
+
+    # If BOTH top and bottom are blocked, expand corridor further outward (D-10)
+    obs_floor = Rect(250, 155, 100, 40)  # top=155, bottom=195
+    pts_exp = router.route(edge, obstacles=[s1, s2, obs_mid, obs_roof, obs_floor])
+    w_exp = pts_exp[3]
+    # Either above obs_roof (y <= 40 - 15 = 25) or below obs_floor (y >= 195 + 15 = 210)
+    assert w_exp.y <= 25.0 or w_exp.y >= 210.0
+
+
+def test_curve_deflection_c1_continuity() -> None:
+    """Verify strict C1 continuity (u_out == u_in within 1e-5 tolerance) at all intermediate waypoints (D-05)."""
+    import math
+
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(100, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(500, 100)
+
+    # Test compact obstacle (N=2, 1 intermediate waypoint)
+    obs_c = Shape("obs_c", "Obstacle", 20, 50).at(300, 100)
+    pts_c = router.route(Edge(s1, s2, routing=Routing.CURVE), obstacles=[s1, s2, obs_c])
+    w_c, c_in_c, c_out_c = pts_c[3], pts_c[2], pts_c[4]
+    v_in = Point(w_c.x - c_in_c.x, w_c.y - c_in_c.y)
+    v_out = Point(c_out_c.x - w_c.x, c_out_c.y - w_c.y)
+    l_in = math.hypot(v_in.x, v_in.y)
+    l_out = math.hypot(v_out.x, v_out.y)
+    u_in = Point(v_in.x / l_in, v_in.y / l_in)
+    u_out = Point(v_out.x / l_out, v_out.y / l_out)
+    assert abs(u_in.x - u_out.x) < 1e-5
+    assert abs(u_in.y - u_out.y) < 1e-5
+
+    # Test wide obstacle (N=3, 2 intermediate waypoints)
+    obs_w = Shape("obs_w", "Obstacle", 100, 50).at(250, 100)
+    pts_w = router.route(Edge(s1, s2, routing=Routing.CURVE), obstacles=[s1, s2, obs_w])
+    for w_idx, in_idx, out_idx in [(3, 2, 4), (6, 5, 7)]:
+        w, c_in, c_out = pts_w[w_idx], pts_w[in_idx], pts_w[out_idx]
+        v_in = Point(w.x - c_in.x, w.y - c_in.y)
+        v_out = Point(c_out.x - w.x, c_out.y - w.y)
+        l_in = math.hypot(v_in.x, v_in.y)
+        l_out = math.hypot(v_out.x, v_out.y)
+        u_in = Point(v_in.x / l_in, v_in.y / l_in)
+        u_out = Point(v_out.x / l_out, v_out.y / l_out)
+        assert abs(u_in.x - u_out.x) < 1e-5
+        assert abs(u_in.y - u_out.y) < 1e-5
+
+
+def test_curve_routing_unobstructed_backward_compatibility() -> None:
+    """Verify unobstructed curves return exact 4 points identical to Phase 8 (D-16)."""
+    router = CurveRouter()
+    s1 = Shape("s1", "Source", 100, 50).at(100, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(300, 100)
+    edge = Edge(s1, s2, routing=Routing.CURVE)
+
+    pts_none = router.route(edge, obstacles=None)
+    pts_empty = router.route(edge, obstacles=[])
+    pts_clear = router.route(edge, obstacles=[Shape("obs", "Far", 50, 50).at(1000, 1000)])
+
+    assert len(pts_none) == 4
+    assert len(pts_empty) == 4
+    assert len(pts_clear) == 4
+    assert pts_none == pts_empty == pts_clear
+
+
+
 
 
 

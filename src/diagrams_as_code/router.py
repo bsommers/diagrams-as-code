@@ -319,7 +319,286 @@ class CurveRouter:
         c1 = Point(p_start.x + n_src.x * d1, p_start.y + n_src.y * d1)
         c2 = Point(p_end.x + n_tgt.x * d2, p_end.y + n_tgt.y * d2)
 
-        return [p_start, c1, c2, p_end]
+        cand = CubicBezier(p_start, c1, c2, p_end)
+        if not norm_obstacles:
+            edge.waypoints = [p_start, c1, c2, p_end]
+            return edge.waypoints
+
+        hits = self._detect_collisions(cand, norm_obstacles, eff_clearance)
+        if not hits:
+            edge.waypoints = [p_start, c1, c2, p_end]
+            return edge.waypoints
+
+        pts = self._select_deflected_corridor(
+            p_start, p_end, n_src, n_tgt, hits, norm_obstacles, eff_clearance
+        )
+        edge.waypoints = pts
+        return pts
+
+    def _build_deflected_spline_horizontal(
+        self,
+        p0: Point,
+        p3: Point,
+        n_src: Point,
+        n_tgt: Point,
+        obs_block: Rect,
+        y_corridor: float,
+        clearance: float = 15.0,
+    ) -> list[Point]:
+        """Synthesize C1 continuous multi-segment spline deflected along horizontal corridor (D-05, D-07, D-08)."""
+        w_obs = obs_block.width
+        dx = p3.x - p0.x
+        t_x = 1.0 if dx >= 0 else -1.0
+        tangent = Point(t_x, 0.0)
+
+        if w_obs <= 2.0 * clearance:
+            # Compact obstacle: single apex waypoint (D-07)
+            w = Point(obs_block.center.x, y_corridor)
+            l1 = p0.distance_to(w)
+            l2 = w.distance_to(p3)
+            h0 = max(20.0, min(0.35 * l1, 80.0))
+            h1 = max(20.0, min(0.35 * l1, 80.0))
+            h2 = max(20.0, min(0.35 * l2, 80.0))
+            h3 = max(20.0, min(0.35 * l2, 80.0))
+            c0a = Point(p0.x + n_src.x * h0, p0.y + n_src.y * h0)
+            c0b = Point(w.x - tangent.x * h1, w.y - tangent.y * h1)
+            c1a = Point(w.x + tangent.x * h2, w.y + tangent.y * h2)
+            c1b = Point(p3.x + n_tgt.x * h3, p3.y + n_tgt.y * h3)
+            return [p0, c0a, c0b, w, c1a, c1b, p3]
+        else:
+            # Wide obstacle: 2 corner clearance waypoints (D-07, D-11)
+            if dx >= 0:
+                w1_x = obs_block.left - clearance
+                w2_x = obs_block.right + clearance
+            else:
+                w1_x = obs_block.right + clearance
+                w2_x = obs_block.left - clearance
+
+            w1 = Point(w1_x, y_corridor)
+            w2 = Point(w2_x, y_corridor)
+
+            # Segment 1: p0 -> w1
+            l1 = p0.distance_to(w1)
+            h0 = max(20.0, min(0.35 * l1, 80.0))
+            h1_in = max(20.0, min(0.35 * l1, 80.0))
+            c0a = Point(p0.x + n_src.x * h0, p0.y + n_src.y * h0)
+            c0b = Point(w1.x - tangent.x * h1_in, w1.y)
+
+            # Segment 2: w1 -> w2
+            l_mid = abs(w2.x - w1.x)
+            h_mid = max(20.0, l_mid / 3.0)
+            c1a = Point(w1.x + tangent.x * h_mid, w1.y)
+            c1b = Point(w2.x - tangent.x * h_mid, w2.y)
+
+            # Segment 3: w2 -> p3
+            l3 = w2.distance_to(p3)
+            h2_out = max(20.0, min(0.35 * l3, 80.0))
+            h3 = max(20.0, min(0.35 * l3, 80.0))
+            c2a = Point(w2.x + tangent.x * h2_out, w2.y)
+            c2b = Point(p3.x + n_tgt.x * h3, p3.y + n_tgt.y * h3)
+
+            return [p0, c0a, c0b, w1, c1a, c1b, w2, c2a, c2b, p3]
+
+    def _build_deflected_spline_vertical(
+        self,
+        p0: Point,
+        p3: Point,
+        n_src: Point,
+        n_tgt: Point,
+        obs_block: Rect,
+        x_corridor: float,
+        clearance: float = 15.0,
+    ) -> list[Point]:
+        """Synthesize C1 continuous multi-segment spline deflected along vertical corridor (D-05, D-07, D-08)."""
+        h_obs = obs_block.height
+        dy = p3.y - p0.y
+        t_y = 1.0 if dy >= 0 else -1.0
+        tangent = Point(0.0, t_y)
+
+        if h_obs <= 2.0 * clearance:
+            # Compact obstacle: single apex waypoint (D-07)
+            w = Point(x_corridor, obs_block.center.y)
+            l1 = p0.distance_to(w)
+            l2 = w.distance_to(p3)
+            h0 = max(20.0, min(0.35 * l1, 80.0))
+            h1 = max(20.0, min(0.35 * l1, 80.0))
+            h2 = max(20.0, min(0.35 * l2, 80.0))
+            h3 = max(20.0, min(0.35 * l2, 80.0))
+            c0a = Point(p0.x + n_src.x * h0, p0.y + n_src.y * h0)
+            c0b = Point(w.x - tangent.x * h1, w.y - tangent.y * h1)
+            c1a = Point(w.x + tangent.x * h2, w.y + tangent.y * h2)
+            c1b = Point(p3.x + n_tgt.x * h3, p3.y + n_tgt.y * h3)
+            return [p0, c0a, c0b, w, c1a, c1b, p3]
+        else:
+            # Tall obstacle: 2 corner clearance waypoints (D-07, D-11)
+            if dy >= 0:
+                w1_y = obs_block.top - clearance
+                w2_y = obs_block.bottom + clearance
+            else:
+                w1_y = obs_block.bottom + clearance
+                w2_y = obs_block.top - clearance
+
+            w1 = Point(x_corridor, w1_y)
+            w2 = Point(x_corridor, w2_y)
+
+            # Segment 1: p0 -> w1
+            l1 = p0.distance_to(w1)
+            h0 = max(20.0, min(0.35 * l1, 80.0))
+            h1_in = max(20.0, min(0.35 * l1, 80.0))
+            c0a = Point(p0.x + n_src.x * h0, p0.y + n_src.y * h0)
+            c0b = Point(w1.x, w1.y - tangent.y * h1_in)
+
+            # Segment 2: w1 -> w2
+            l_mid = abs(w2.y - w1.y)
+            h_mid = max(20.0, l_mid / 3.0)
+            c1a = Point(w1.x, w1.y + tangent.y * h_mid)
+            c1b = Point(w2.x, w2.y - tangent.y * h_mid)
+
+            # Segment 3: w2 -> p3
+            l3 = w2.distance_to(p3)
+            h2_out = max(20.0, min(0.35 * l3, 80.0))
+            h3 = max(20.0, min(0.35 * l3, 80.0))
+            c2a = Point(w2.x, w2.y + tangent.y * h2_out)
+            c2b = Point(p3.x + n_tgt.x * h3, p3.y + n_tgt.y * h3)
+
+            return [p0, c0a, c0b, w1, c1a, c1b, w2, c2a, c2b, p3]
+
+    def _test_spline_collisions(
+        self, pts: list[Point], obstacles: list[Rect], clearance: float
+    ) -> list[Rect]:
+        """Detect any obstacles intersecting the multi-segment spline."""
+        num_segs = (len(pts) - 1) // 3
+        hit_obs: list[Rect] = []
+        for k in range(num_segs):
+            seg = CubicBezier(pts[k * 3], pts[k * 3 + 1], pts[k * 3 + 2], pts[k * 3 + 3])
+            for obs in obstacles:
+                if obs not in hit_obs and seg.intersects_rect(obs.expand(clearance)):
+                    hit_obs.append(obs)
+        return hit_obs
+
+    def _select_deflected_corridor(
+        self,
+        p0: Point,
+        p3: Point,
+        n_src: Point,
+        n_tgt: Point,
+        colliding: list[Rect],
+        all_obstacles: list[Rect],
+        clearance: float,
+    ) -> list[Point]:
+        """Select minimal deviation collision-free corridor or expand past secondary obstacles (D-09, D-10)."""
+        min_x = min(r.left for r in colliding)
+        min_y = min(r.top for r in colliding)
+        max_x = max(r.right for r in colliding)
+        max_y = max(r.bottom for r in colliding)
+        block = Rect(min_x, min_y, max_x - min_x, max_y - min_y)
+
+        dx = p3.x - p0.x
+        dy = p3.y - p0.y
+        is_horiz = abs(dx) >= abs(dy)
+
+        if is_horiz:
+            y_top = block.top - clearance
+            y_bot = block.bottom + clearance
+            cand_top = self._build_deflected_spline_horizontal(
+                p0, p3, n_src, n_tgt, block, y_top, clearance
+            )
+            cand_bot = self._build_deflected_spline_horizontal(
+                p0, p3, n_src, n_tgt, block, y_bot, clearance
+            )
+
+            hits_top = self._test_spline_collisions(cand_top, all_obstacles, clearance)
+            hits_bot = self._test_spline_collisions(cand_bot, all_obstacles, clearance)
+
+            if not hits_top and not hits_bot:
+                segs_top = (len(cand_top) - 1) // 3
+                len_top = sum(
+                    CubicBezier(
+                        cand_top[k * 3], cand_top[k * 3 + 1], cand_top[k * 3 + 2], cand_top[k * 3 + 3]
+                    ).arc_length(16)
+                    for k in range(segs_top)
+                )
+                segs_bot = (len(cand_bot) - 1) // 3
+                len_bot = sum(
+                    CubicBezier(
+                        cand_bot[k * 3], cand_bot[k * 3 + 1], cand_bot[k * 3 + 2], cand_bot[k * 3 + 3]
+                    ).arc_length(16)
+                    for k in range(segs_bot)
+                )
+                return cand_top if len_top <= len_bot else cand_bot
+            elif not hits_top:
+                return cand_top
+            elif not hits_bot:
+                return cand_bot
+            else:
+                y_top_exp = min(o.top for o in hits_top) - clearance
+                cand_top_exp = self._build_deflected_spline_horizontal(
+                    p0, p3, n_src, n_tgt, block, y_top_exp, clearance
+                )
+                hits_top_exp = self._test_spline_collisions(cand_top_exp, all_obstacles, clearance)
+                if not hits_top_exp:
+                    return cand_top_exp
+
+                y_bot_exp = max(o.bottom for o in hits_bot) + clearance
+                cand_bot_exp = self._build_deflected_spline_horizontal(
+                    p0, p3, n_src, n_tgt, block, y_bot_exp, clearance
+                )
+                hits_bot_exp = self._test_spline_collisions(cand_bot_exp, all_obstacles, clearance)
+                if not hits_bot_exp:
+                    return cand_bot_exp
+
+                return cand_top_exp if len(hits_top_exp) <= len(hits_bot_exp) else cand_bot_exp
+        else:
+            x_left = block.left - clearance
+            x_right = block.right + clearance
+            cand_left = self._build_deflected_spline_vertical(
+                p0, p3, n_src, n_tgt, block, x_left, clearance
+            )
+            cand_right = self._build_deflected_spline_vertical(
+                p0, p3, n_src, n_tgt, block, x_right, clearance
+            )
+
+            hits_left = self._test_spline_collisions(cand_left, all_obstacles, clearance)
+            hits_right = self._test_spline_collisions(cand_right, all_obstacles, clearance)
+
+            if not hits_left and not hits_right:
+                segs_left = (len(cand_left) - 1) // 3
+                len_left = sum(
+                    CubicBezier(
+                        cand_left[k * 3], cand_left[k * 3 + 1], cand_left[k * 3 + 2], cand_left[k * 3 + 3]
+                    ).arc_length(16)
+                    for k in range(segs_left)
+                )
+                segs_right = (len(cand_right) - 1) // 3
+                len_right = sum(
+                    CubicBezier(
+                        cand_right[k * 3], cand_right[k * 3 + 1], cand_right[k * 3 + 2], cand_right[k * 3 + 3]
+                    ).arc_length(16)
+                    for k in range(segs_right)
+                )
+                return cand_left if len_left <= len_right else cand_right
+            elif not hits_left:
+                return cand_left
+            elif not hits_right:
+                return cand_right
+            else:
+                x_left_exp = min(o.left for o in hits_left) - clearance
+                cand_left_exp = self._build_deflected_spline_vertical(
+                    p0, p3, n_src, n_tgt, block, x_left_exp, clearance
+                )
+                hits_left_exp = self._test_spline_collisions(cand_left_exp, all_obstacles, clearance)
+                if not hits_left_exp:
+                    return cand_left_exp
+
+                x_right_exp = max(o.right for o in hits_right) + clearance
+                cand_right_exp = self._build_deflected_spline_vertical(
+                    p0, p3, n_src, n_tgt, block, x_right_exp, clearance
+                )
+                hits_right_exp = self._test_spline_collisions(cand_right_exp, all_obstacles, clearance)
+                if not hits_right_exp:
+                    return cand_right_exp
+
+                return cand_left_exp if len(hits_left_exp) <= len(hits_right_exp) else cand_right_exp
 
 
 class OrthogonalRouter:
