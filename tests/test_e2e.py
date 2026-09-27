@@ -20,6 +20,7 @@ from iiot_diagrams import (
     Diagram,
     Edge,
     Group,
+    Point,
     Port,
     Rect,
     Routing,
@@ -368,4 +369,143 @@ def test_e2e_obstacle_avoidance_with_corner_fillets() -> None:
         dy = max(0.0, obs_bounds.top - apex.y, apex.y - obs_bounds.bottom)
         clearance = math.hypot(dx, dy)
         assert clearance >= 4.0, f"Apex {apex} has clearance {clearance}px < 4.0px from obstacle {obs_bounds}"
+
+
+def test_e2e_curved_obstacle_avoidance_single_and_wide() -> None:
+    """E2E verification of compact and wide obstacle avoidance for curved routing (CURVEOBS-01, CURVEOBS-02)."""
+    with Diagram("Curved Avoidance", width=1200.0, height=800.0) as diag:
+        # Pair 1: Compact obstacle (width 20px <= 2 * 15px)
+        s1 = diag.shape("Source 1", width=80.0, height=50.0).at(50.0, 100.0)
+        t1 = diag.shape("Target 1", width=80.0, height=50.0).at(450.0, 100.0)
+        obs_c = diag.shape("Compact Obstacle", width=20.0, height=60.0).at(250.0, 95.0)
+        e1 = diag.connect(s1, t1, label="COMPACT_CORR", routing=Routing.CURVE)
+
+        # Pair 2: Wide obstacle (width 120px > 2 * 15px)
+        s2 = diag.shape("Source 2", width=80.0, height=50.0).at(50.0, 400.0)
+        t2 = diag.shape("Target 2", width=80.0, height=50.0).at(550.0, 400.0)
+        obs_w = diag.shape("Wide Obstacle", width=120.0, height=60.0).at(240.0, 395.0)
+        e2 = diag.connect(s2, t2, label="WIDE_CORR", routing=Routing.CURVE)
+
+    # 1. Compact obstacle verification
+    assert e1.waypoints is not None
+    assert len(e1.waypoints) == 7  # 1 apex waypoint (2 segments)
+    w_apex = e1.waypoints[3]
+    # Deflected by >= 15.0px clearance from obstacle bounds
+    assert w_apex.y <= obs_c.bounds.top - 15.0 or w_apex.y >= obs_c.bounds.bottom + 15.0
+
+    # 2. Wide obstacle verification
+    assert e2.waypoints is not None
+    assert len(e2.waypoints) == 10  # 2 corner waypoints (3 segments)
+    w1, w2 = e2.waypoints[3], e2.waypoints[6]
+    corners_w = [
+        Point(obs_w.bounds.left, obs_w.bounds.top),
+        Point(obs_w.bounds.right, obs_w.bounds.top),
+        Point(obs_w.bounds.left, obs_w.bounds.bottom),
+        Point(obs_w.bounds.right, obs_w.bounds.bottom),
+    ]
+    for c in corners_w:
+        assert w1.distance_to(c) >= 15.0
+        assert w2.distance_to(c) >= 15.0
+
+    # 3. SVG rendering & XML verification
+    svg = diag.render_svg()
+    root = ET.fromstring(svg)
+    assert root.tag.endswith("svg")
+
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 2
+
+    # Verify both paths contain chained C commands
+    for path in paths:
+        d = path.attrib["d"]
+        assert d.startswith("M ")
+        assert " C " in d
+        assert " L " not in d
+
+
+def test_e2e_curved_reverse_flow_escape_routing() -> None:
+    """E2E verification of reverse-flow escape routing for curved edges (D-13..D-15, CURVEOBS-03)."""
+    with Diagram("Reverse Flow Escape", width=800.0, height=600.0) as diag:
+        # Source at right: x=400, Target at left: x=100
+        src = diag.shape("Producer", width=100.0, height=50.0).at(400.0, 200.0)
+        tgt = diag.shape("Consumer", width=100.0, height=50.0).at(100.0, 200.0)
+        # Reverse flow edge with automatic port resolution
+        e_auto = diag.connect(src, tgt, routing=Routing.CURVE)
+
+        # Reverse flow edge with explicit ports
+        src2 = diag.shape("Producer 2", width=100.0, height=50.0).at(400.0, 400.0)
+        tgt2 = diag.shape("Consumer 2", width=100.0, height=50.0).at(100.0, 400.0)
+        e_expl = diag.connect(
+            src2,
+            tgt2,
+            source_port=Port.EAST,
+            target_port=Port.WEST,
+            routing=Routing.CURVE,
+        )
+
+    # 1. Automatic back-edge port resolution: NORTH/NORTH or SOUTH/SOUTH (D-14)
+    from diagrams_as_code.router import CurveRouter
+    router = CurveRouter()
+    ports_auto = router.resolve_ports(e_auto, obstacles=[src, tgt])
+    assert ports_auto in ((Port.NORTH, Port.NORTH), (Port.SOUTH, Port.SOUTH))
+
+    # 2. Explicit ports: outer lateral clearance corridor >= 30.0px (D-13, D-15)
+    assert e_expl.waypoints is not None
+    assert len(e_expl.waypoints) == 10  # 3 segments
+    w_esc1, w_esc2 = e_expl.waypoints[3], e_expl.waypoints[6]
+    # Lateral extension >= 30.0px beyond boundaries
+    assert w_esc1.x >= src2.bounds.right + 30.0
+    assert w_esc2.x <= tgt2.bounds.left - 30.0
+
+    # 3. Verify disjoint bounding boxes: no bow-tie self-intersection (T-10-04)
+    from diagrams_as_code.geometry import CubicBezier
+    seg1 = CubicBezier(e_expl.waypoints[0], e_expl.waypoints[1], e_expl.waypoints[2], e_expl.waypoints[3])
+    seg3 = CubicBezier(e_expl.waypoints[6], e_expl.waypoints[7], e_expl.waypoints[8], e_expl.waypoints[9])
+    assert not seg1.bbox().intersects(seg3.bbox())
+
+    # 4. XML parse validity
+    svg = diag.render_svg()
+    root = ET.fromstring(svg)
+    assert root.tag.endswith("svg")
+
+
+def test_e2e_mixed_orthogonal_and_curved_routing_with_obstacles() -> None:
+    """E2E verification of orthogonal filleted and curved edges coexisting on the same canvas (FILLET-01, CURVEOBS-01)."""
+    with Diagram("Mixed Routing", width=900.0, height=600.0) as diag:
+        s1 = diag.shape("Source A", width=80.0, height=50.0).at(50.0, 100.0)
+        t1 = diag.shape("Target A", width=80.0, height=50.0).at(450.0, 100.0)
+        obs1 = diag.shape("Obs A", width=100.0, height=60.0).at(220.0, 95.0)
+
+        s2 = diag.shape("Source B", width=80.0, height=50.0).at(50.0, 350.0)
+        t2 = diag.shape("Target B", width=80.0, height=50.0).at(450.0, 350.0)
+        obs2 = diag.shape("Obs B", width=100.0, height=60.0).at(220.0, 345.0)
+
+        # Curved edge around obs1
+        e_curve = diag.connect(s1, t1, label="CURVE_EDGE", routing=Routing.CURVE)
+        # Orthogonal filleted edge around obs2
+        e_ortho = diag.connect(
+            s2, t2, label="ORTHO_EDGE", routing=Routing.ORTHOGONAL, corner_radius=12.0
+        )
+
+    svg = diag.render_svg()
+    root = ET.fromstring(svg)
+    assert root.tag.endswith("svg")
+
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 2
+
+    path_ds = [p.attrib["d"] for p in paths]
+    # One path has Q commands (orthogonal filleted)
+    has_q = any(" Q " in d for d in path_ds)
+    # One path has chained C commands (curved multi-segment)
+    has_c = any(" C " in d for d in path_ds)
+    assert has_q, "Expected at least one orthogonal path with Q fillet commands"
+    assert has_c, "Expected at least one curved path with C bezier commands"
+
+    # Both badges are rendered and readable
+    badges = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    assert len(badges) == 2
+
 
