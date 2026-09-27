@@ -11,7 +11,7 @@ from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import CubicBezier, Point, Rect
 from diagrams_as_code.groups import Group
 from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
-from diagrams_as_code.router import OrthogonalRouter
+from diagrams_as_code.router import CurveRouter, OrthogonalRouter
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
 
@@ -123,6 +123,7 @@ class SVGRenderer:
         self.theme = theme
         self.shapes = ShapeLibrary()
         self.router = OrthogonalRouter()
+        self.curve_router = CurveRouter()
 
     def _marker_id_for_color(self, color: str) -> str:
         if color == self.theme.accent:
@@ -689,11 +690,20 @@ class SVGRenderer:
                 return elem.parent.id
             return None
 
+        obs_bounds = [el.bounds for el in element_list] + [g.bounds for g in group_list]
         for e in edge_list:
             pts = (
                 e.waypoints
                 if getattr(e, "waypoints", None) is not None
-                else (routes[id(e)] if routes is not None and id(e) in routes else self.router.route(e))
+                else (
+                    routes[id(e)]
+                    if routes is not None and id(e) in routes
+                    else (
+                        self.curve_router.route(e, obstacles=obs_bounds)
+                        if e.routing in (Routing.CURVE, "curve")
+                        else self.router.route(e)
+                    )
+                )
             )
             if len(pts) < 2:
                 continue
@@ -769,17 +779,22 @@ class SVGRenderer:
                     mid = curve.arc_length_midpoint(num_samples=32)
                     lx, ly = mid.x, mid.y
                 elif is_curve and len(pts) >= 4 and (len(pts) - 1) % 3 == 0:
-                    # Multi-segment fallback: take arc-length midpoint of middle segment or first segment
                     num_segs = (len(pts) - 1) // 3
-                    seg_idx = num_segs // 2
-                    seg_start = seg_idx * 3
-                    curve = CubicBezier(
-                        pts[seg_start],
-                        pts[seg_start + 1],
-                        pts[seg_start + 2],
-                        pts[seg_start + 3],
-                    )
-                    mid = curve.arc_length_midpoint(num_samples=32)
+                    longest_curve: Optional[CubicBezier] = None
+                    max_seg_len = -1.0
+                    for k in range(num_segs):
+                        seg_curve = CubicBezier(
+                            pts[k * 3],
+                            pts[k * 3 + 1],
+                            pts[k * 3 + 2],
+                            pts[k * 3 + 3],
+                        )
+                        seg_len = seg_curve.arc_length(num_samples=16)
+                        if seg_len > max_seg_len:
+                            max_seg_len = seg_len
+                            longest_curve = seg_curve
+                    assert longest_curve is not None
+                    mid = longest_curve.arc_length_midpoint(num_samples=32)
                     lx, ly = mid.x, mid.y
                 elif is_orthogonal and corner_r > 0.0:
                     longest_idx = 0

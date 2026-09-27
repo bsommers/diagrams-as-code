@@ -1021,6 +1021,100 @@ def test_resvg_rasterization_of_filleted_paths() -> None:
     assert png_bytes.startswith(b"\x89PNG\r\n\x1a\n")
 
 
+def test_svg_multi_segment_spline_badge_on_longest_segment() -> None:
+    """Verify badge center aligns with arc-length midpoint of longest spline segment (D-12)."""
+    from diagrams_as_code import Edge, Point, Routing, Shape
+    from diagrams_as_code.geometry import CubicBezier
+    from diagrams_as_code.renderer_svg import SVGRenderer
+    from diagrams_as_code.theme import get_theme
+
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("s1", "Source", 100, 50).at(50, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(550, 100)
+    edge = Edge(s1, s2, label="KAFKA/AVRO", routing=Routing.CURVE)
+
+    # 10 points (3 segments):
+    # Segment 1: length ~50 (p0=(150, 125) -> w1=(180, 50))
+    # Segment 2: length ~240 (w1=(180, 50) -> w2=(420, 50)) -> LONGEST segment, midpoint at x=300, y=50
+    # Segment 3: length ~50 (w2=(420, 50) -> p3=(550, 125))
+    p0 = Point(150.0, 125.0)
+    c0a = Point(170.0, 125.0)
+    c0b = Point(160.0, 50.0)
+    w1 = Point(180.0, 50.0)
+
+    c1a = Point(260.0, 50.0)
+    c1b = Point(340.0, 50.0)
+    w2 = Point(420.0, 50.0)
+
+    c2a = Point(440.0, 50.0)
+    c2b = Point(530.0, 125.0)
+    p3 = Point(550.0, 125.0)
+
+    edge.waypoints = [p0, c0a, c0b, w1, c1a, c1b, w2, c2a, c2b, p3]
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=800, height=400)
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+
+    rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    assert len(rects) == 1
+    badge = rects[0]
+    bx = float(badge.attrib["x"])
+    bw = float(badge.attrib["width"])
+    center_x = bx + bw / 2.0
+    by = float(badge.attrib["y"])
+    bh = float(badge.attrib["height"])
+    center_y = by + bh / 2.0
+
+    # Longest segment is segment 2 (w1 to w2), centered at x=300.0, y=50.0
+    seg2 = CubicBezier(w1, c1a, c1b, w2)
+    expected_mid = seg2.arc_length_midpoint(32)
+    assert abs(center_x - expected_mid.x) <= 2.0
+    assert abs(center_y - expected_mid.y) <= 2.0
+
+
+def test_svg_render_deflected_spline_path() -> None:
+    """Verify SVG path contains chained C commands for multi-segment deflected spline (D-06)."""
+    from diagrams_as_code import Edge, Point, Routing, Shape
+    from diagrams_as_code.renderer_svg import SVGRenderer
+    from diagrams_as_code.theme import get_theme
+
+    theme = get_theme("iiot_dark_gold")
+    renderer = SVGRenderer(theme)
+
+    s1 = Shape("s1", "Source", 100, 50).at(50, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(550, 100)
+    edge = Edge(s1, s2, routing=Routing.CURVE)
+
+    # 7-point deflected curve (2 segments)
+    edge.waypoints = [
+        Point(150.0, 125.0),
+        Point(200.0, 125.0),
+        Point(280.0, 50.0),
+        Point(300.0, 50.0),
+        Point(320.0, 50.0),
+        Point(500.0, 125.0),
+        Point(550.0, 125.0),
+    ]
+
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=800, height=400)
+    root = ET.fromstring(svg)
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+
+    paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
+    assert len(paths) == 1
+    d = paths[0].attrib["d"]
+
+    # Must start with M, have 2 C commands, and no L commands
+    assert d.startswith("M 150.0 125.0")
+    c_count = d.count("C ")
+    assert c_count == 2
+    assert " L " not in d
+
+
+
 
 
 
