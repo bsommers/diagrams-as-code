@@ -885,6 +885,74 @@ def test_curve_router_reverse_flow_automatic_port_resolution() -> None:
     assert router.resolve_ports(Edge(s_vrev1, s_vrev2), obstacles=[obs_east]) == (Port.WEST, Port.WEST)
 
 
+def test_curve_router_reverse_flow_explicit_ports_escape() -> None:
+    """Verify reverse-flow edges with explicit ports route via lateral escape corridor (D-13, D-15, T-10-04)."""
+    import math
+
+    router = CurveRouter()
+
+    # Source at right: x=400..500, y=100..150; Target at left: x=100..200, y=100..150
+    s1 = Shape("s1", "Source", 100, 50).at(400, 100)
+    s2 = Shape("s2", "Target", 100, 50).at(100, 100)
+    edge = Edge(s1, s2, source_port=Port.EAST, target_port=Port.WEST, routing=Routing.CURVE)
+
+    # 1. Route with obstacles provided triggers lateral escape corridor (3-segment spline = 10 waypoints)
+    pts = router.route(edge, obstacles=[s1, s2])
+    assert len(pts) == 10  # 3N+1 points (D-06)
+
+    p0, c0a, c0b, w_esc1, c1a, c1b, w_esc2, c2a, c2b, p3 = pts
+
+    # Anchors match ports
+    assert p0 == Point(500.0, 125.0)  # s1 EAST anchor
+    assert p3 == Point(100.0, 125.0)  # s2 WEST anchor
+
+    # Clearance margin checks: >= 30.0px beyond boundaries (D-13, D-15)
+    margin = 30.0
+    assert w_esc1.x >= s1.bounds.right + margin  # >= 530.0
+    assert w_esc2.x <= s2.bounds.left - margin   # <= 70.0
+    assert w_esc1.y <= min(s1.bounds.top, s2.bounds.top) - margin  # <= 70.0
+    assert w_esc2.y <= min(s1.bounds.top, s2.bounds.top) - margin  # <= 70.0
+
+    # Intermediate control handles maintain >= 20.0px minimum clamp (D-02, D-15, T-10-02)
+    assert p0.distance_to(c0a) >= 20.0
+    assert w_esc1.distance_to(c0b) >= 20.0
+    assert w_esc1.distance_to(c1a) >= 20.0
+    assert w_esc2.distance_to(c1b) >= 20.0
+    assert w_esc2.distance_to(c2a) >= 20.0
+    assert p3.distance_to(c2b) >= 20.0
+
+    # 2. Verify no self-intersection or bow-tie loops (T-10-04)
+    seg1 = CubicBezier(p0, c0a, c0b, w_esc1)
+    seg2 = CubicBezier(w_esc1, c1a, c1b, w_esc2)
+    seg3 = CubicBezier(w_esc2, c2a, c2b, p3)
+
+    bbox1 = seg1.bbox()
+    bbox3 = seg3.bbox()
+    # Segment 1 and Segment 3 bounding boxes must be disjoint along x-axis
+    assert bbox1.left >= 500.0
+    assert bbox3.right <= 100.0
+    assert not bbox1.intersects(bbox3)
+
+    # 3. Verify corridor expands further when an intervening obstacle is present
+    obs_roof = Rect(200, 40, 100, 30)  # top at y=40, above s1 and s2
+    pts_with_obs = router.route(edge, obstacles=[s1, s2, obs_roof])
+    w_esc1_obs = pts_with_obs[3]
+    # Escape corridor y should be at or above obs_roof.top - margin = 40 - 30 = 10.0
+    assert w_esc1_obs.y <= obs_roof.top - margin
+
+    # 4. Verify coincident anchor node robustness against zero-division / NaN (T-10-02)
+    s_same = Shape("same", "Same", 100, 50).at(100, 100)
+    e_same = Edge(s_same, s_same, source_port=Port.EAST, target_port=Port.WEST, routing=Routing.CURVE)
+    pts_same = router.route(e_same, obstacles=[s_same])
+    assert len(pts_same) == 10
+    for pt in pts_same:
+        assert not math.isnan(pt.x)
+        assert not math.isnan(pt.y)
+        assert not math.isinf(pt.x)
+        assert not math.isinf(pt.y)
+
+
+
 
 
 

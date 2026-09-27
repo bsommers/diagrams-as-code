@@ -176,6 +176,81 @@ class CurveRouter:
 
         return (edge.source_port or src_p, edge.target_port or tgt_p)
 
+    def _is_reverse_flow_explicit(
+        self, edge: Edge, src_port: Port, tgt_port: Port
+    ) -> bool:
+        """Check if edge is reverse-flow with opposing/facing explicit ports."""
+        if edge.source_port is None and edge.target_port is None:
+            return False
+        sb = edge.source.bounds
+        tb = edge.target.bounds
+        dx = tb.center.x - sb.center.x
+        dy = tb.center.y - sb.center.y
+        is_reverse_x = (abs(dx) >= abs(dy) and dx < 0) or (edge.source == edge.target)
+        if is_reverse_x:
+            if src_port in (Port.EAST, Port.WEST) and tgt_port in (Port.EAST, Port.WEST):
+                return src_port == Port.EAST or tgt_port == Port.WEST
+        return False
+
+    def _route_reverse_flow_explicit_ports(
+        self,
+        edge: Edge,
+        p_start: Point,
+        p_end: Point,
+        src_port: Port,
+        tgt_port: Port,
+        obstacles: list[Rect],
+        clearance: float,
+    ) -> list[Point]:
+        """Route reverse-flow connection with explicit facing ports via lateral escape corridor (D-13, D-15)."""
+        margin = max(clearance, 30.0)
+        sb = edge.source.bounds
+        tb = edge.target.bounds
+
+        # Determine escape corridor level: above both nodes and any obstacles (D-13)
+        min_top = min(sb.top, tb.top, *(o.top for o in obstacles)) if obstacles else min(sb.top, tb.top)
+        y_corridor = min_top - margin
+
+        # Escape waypoints projected laterally beyond shape boundaries (D-13, D-15)
+        w_esc1_x = sb.right + margin if src_port == Port.EAST else sb.left - margin
+        w_esc2_x = tb.right + margin if tgt_port == Port.EAST else tb.left - margin
+
+        w_esc1 = Point(w_esc1_x, y_corridor)
+        w_esc2 = Point(w_esc2_x, y_corridor)
+
+        # Direction unit vector along escape corridor from w_esc1 to w_esc2
+        dx_esc = w_esc2.x - w_esc1.x
+        t_x = -1.0 if dx_esc <= 0 else 1.0
+        tangent = Point(t_x, 0.0)
+
+        n_src = PORT_NORMALS[src_port]
+        n_tgt = PORT_NORMALS[tgt_port]
+
+        # Segment 1: p_start to w_esc1
+        l1 = p_start.distance_to(w_esc1)
+        h0 = max(20.0, min(0.35 * l1, 0.5 * abs(w_esc1.x - p_start.x)))
+        h1_in = max(20.0, min(0.35 * l1, 0.5 * abs(w_esc1.x - p_start.x)))
+
+        c0a = Point(p_start.x + n_src.x * h0, p_start.y + n_src.y * h0)
+        c0b = Point(w_esc1.x - tangent.x * h1_in, w_esc1.y - tangent.y * h1_in)
+
+        # Segment 2: w_esc1 to w_esc2 (corridor bypass)
+        l_mid = abs(w_esc2.x - w_esc1.x)
+        h_mid = max(20.0, l_mid / 3.0)
+
+        c1a = Point(w_esc1.x + tangent.x * h_mid, w_esc1.y)
+        c1b = Point(w_esc2.x - tangent.x * h_mid, w_esc2.y)
+
+        # Segment 3: w_esc2 to p_end
+        l3 = w_esc2.distance_to(p_end)
+        h2_out = max(20.0, min(0.35 * l3, 0.5 * abs(p_end.x - w_esc2.x)))
+        h3 = max(20.0, min(0.35 * l3, 0.5 * abs(p_end.x - w_esc2.x)))
+
+        c2a = Point(w_esc2.x + tangent.x * h2_out, w_esc2.y)
+        c2b = Point(p_end.x + n_tgt.x * h3, p_end.y + n_tgt.y * h3)
+
+        return [p_start, c0a, c0b, w_esc1, c1a, c1b, w_esc2, c2a, c2b, p_end]
+
     def route(
         self,
         edge: Edge,
@@ -186,6 +261,18 @@ class CurveRouter:
         src_port, tgt_port = self.resolve_ports(edge, obstacles=obstacles)
         p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
         p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
+
+        eff_clearance = (
+            getattr(edge, "clearance", None)
+            if clearance == 15.0 and getattr(edge, "clearance", None) is not None
+            else clearance
+        )
+
+        norm_obstacles = self._normalize_obstacles(edge, obstacles, p_start, p_end)
+        if obstacles is not None and self._is_reverse_flow_explicit(edge, src_port, tgt_port):
+            return self._route_reverse_flow_explicit_ports(
+                edge, p_start, p_end, src_port, tgt_port, norm_obstacles, eff_clearance
+            )
 
         n_src = PORT_NORMALS[src_port]
         n_tgt = PORT_NORMALS[tgt_port]
