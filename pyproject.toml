@@ -8,7 +8,7 @@ version = "0.8.2"
 description = "Pure-Python directed diagrams as code framework with Manhattan routing and living BOM documentation"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 authors = [
     { name = "Bill Sommers" }
 ]
@@ -16,7 +16,7 @@ keywords = ["diagrams", "iiot", "svg", "architecture", "diagrams-as-code", "manh
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",

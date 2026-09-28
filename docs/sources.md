@@ -10,7 +10,7 @@ The engine provides 60 handcrafted, resolution-independent vector icons across 8
 
 ### Authorship
 
-**Every glyph is original geometry written for this project**, covered by this repository's [MIT license](../LICENSE). No third-party icon set is vendored, traced, or redistributed here, and no upstream icon license obligations attach to this repository.
+**Every glyph is original geometry written for this project**, covered by this repository's [Apache-2.0 license](../LICENSE). No third-party icon set is vendored, traced, or redistributed here, and no upstream icon license obligations attach to this repository.
 
 The artwork is not exported from a design tool. Each glyph is emitted as SVG primitives — `line`, `circle`, `rect`, `path`, `polyline`, `ellipse`, `polygon` — by `ShapeLibrary._render_icon_content` in [`src/diagrams_as_code/shapes.py`](../src/diagrams_as_code/shapes.py), placed on whole-number coordinates of the 24x24 grid. [`icons/datacenter/kubernetes.svg`](../icons/datacenter/kubernetes.svg), for instance, is a circle with eight straight spokes; it neither derives from nor resembles the seven-sided CNCF helm.
 

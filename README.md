@@ -6,7 +6,7 @@
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
 [![Themes](https://img.shields.io/badge/themes-13%20palettes-orange)](src/diagrams_as_code/theme.py)
 [![Vector Icons](https://img.shields.io/badge/icons-60%20SVG-informational)](icons/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 A pure-Python declarative vector diagramming framework. Generate publication-quality architecture diagrams, high-resolution rasterized images, and living Bill of Materials (BOM) documentation from code — with **zero Graphviz**, **zero Cairo**, and **zero external C-library runtime dependencies**.
 
@@ -142,4 +142,4 @@ Comprehensive architectural, operational, and how-to guides are available in [`d
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+Apache-2.0 License. See [LICENSE](LICENSE) for details.

@@ -151,7 +151,7 @@ def render_readme(library: ShapeLibrary) -> str:
         "## Authorship and licensing",
         "",
         "Every glyph is original geometry written for this project and is covered",
-        "by the repository's [MIT license](../LICENSE). No third-party icon set is",
+        "by the repository's [Apache-2.0 license](../LICENSE). No third-party icon set is",
         "vendored, traced, or redistributed here, and no upstream icon license",
         "obligations attach to it. See [`docs/sources.md`](../docs/sources.md) for",
         "the full provenance statement.",
