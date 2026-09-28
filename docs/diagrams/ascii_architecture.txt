@@ -44,12 +44,20 @@
                                            │
                                            ▼
 +--------------------------------------------------------------------------------------+
-|                       ORTHOGONAL MANHATTAN ROUTER  (router.py)                       |
+|                 EDGE ROUTING ENGINE: ORTHOGONAL & CURVE  (router.py)                 |
 |                                                                                      |
+|   OrthogonalRouter:                                                                  |
 |   - Automatic Cardinal Port Selection (North, South, East, West)                     |
 |   - 90-Degree Orthogonal Waypoints with Obstacle Avoidance                           |
 |   - Redundant Collinear Segment Simplification                                       |
-|   - Protocol Badge Centering (calculates badge rect to prevent line collisions)      |
+|   - Rounded Corner Fillets (Q) with Dynamic 50% Segment Budget Clamping              |
+|   - Protocol Badge Centering on Longest Straight Segment                             |
+|                                                                                      |
+|   CurveRouter:                                                                       |
+|   - Cubic Bezier Splines (C) with Cardinal Port Normal Tangents                      |
+|   - Two-Tier Obstacle Collision Detection (AABB Broadphase + De Casteljau Subdivision)
+|   - Minimal-Deviation C1-Continuous Deflection Splines Around Intervening Nodes       |
+|   - Automatic Reverse-Flow Escape Corridors (>= 30px lateral clearance)              |
 +--------------------------------------------------------------------------------------+
                       ┌────────────────────┴─────────────────────┐
                       │                                          │
@@ -63,7 +71,9 @@
 |  - Shape Primitives (box, etc)          | |  - Protocol Edge Connection              |
 |  - Multi-line <tspan> Wrapping          | |    Inventory                             |
 |  - Text-Below-Graphic Support           | |  - Markdown (.md) + JSON (.json)         |
-+-----------------------------------------+ +------------------------------------------+
+|  - Interactive Pan/Zoom & Minimap HUD   | +------------------------------------------+
+|  - Real-Time Search Highlighting        |
++-----------------------------------------+
                       │
                       ▼
 +--------------------------------------------------------------------------------------+

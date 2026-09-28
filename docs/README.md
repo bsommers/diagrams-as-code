@@ -1,3 +1,24 @@
+```text
+╔══════════════════════════════════════════════════════════════════════════════════════════╗
+║  ██████╗ ██╗ █████╗  ██████╗ ██████╗  █████╗ ███╗   ███╗███████╗     █████╗ ███████╗     ║
+║  ██╔══██╗██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗████╗ ████║██╔════╝    ██╔══██╗██╔════╝     ║
+║  ██║  ██║██║███████║██║  ███╗██████╔╝███████║██╔████╔██║███████╗    ███████║███████╗     ║
+║  ██║  ██║██║██╔══██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║╚════██║    ██╔══██║╚════██║     ║
+║  ██████╔╝██║██║  ██║╚██████╔╝██║  ██║██║  ██║██║ └──═╝██║███████║    ██║  ██║███████║     ║
+║  ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═╝╚══════╝    ╚═╝  ╚═╝╚══════╝     ║
+║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
+║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ DOCUMENTATION & ARCHITECTURE ]   ║
+║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 520 TESTS • 88 ARCHITECTURES ]   ║
+║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
+║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
+╚══════════════════════════════════════════════════════════════════════════════════════════╝
+```
+
+<p align="center">
+  <img src="assets/logo.svg" alt="Diagrams-as-Code Retro DOS CRT Banner" width="100%">
+</p>
+
 # Diagrams-as-Code: Documentation Hub
 
 Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hub provides architectural blueprints, operational runbooks, step-by-step recipes, and multi-format visual diagrams.
@@ -9,9 +30,9 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 | Document | Topic & Focus |
 |---|---|
 | [**Purpose & Threat Model**](purpose.md) | Problem statement, architectural motivation, pure standard library philosophy, and security threat model. |
-| [**System Architecture**](architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal router, SVG renderer, and living BOM pipeline. |
+| [**System Architecture**](architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal and curve routers, corner filleting, interactive SVG viewer, and living BOM pipeline. |
 | [**Running & Installation Guide**](running.md) | Prerequisites, virtual environment provisioning with `uv`, CLI commands, test execution, and Docker setup. |
-| [**How-To Recipes & Troubleshooting**](how-to.md) | Step-by-step recipes for custom themes, text layout optimization, standalone vector icons, living documentation, and troubleshooting matrix. |
+| [**How-To Recipes & Troubleshooting**](how-to.md) | Step-by-step recipes for custom themes, curved routing with obstacle deflection, rounded corner fillets, interactive SVGs, text layout optimization, standalone vector icons, and living BOMs. |
 | [**Visual Architecture Diagrams**](diagrams/README.md) | Visual model catalog containing terminal ASCII text, standalone Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML. |
 | [**Layout Root Cause Post-Mortem**](LAYOUT_ROOT_CAUSE.md) | Diagnostic analysis and resolution of context-manager lifecycle coordinate resolution and negative bounding box clipping. |
 | [**Open-Source Sources & Provenance**](sources.md) | Upstream repositories, specifications, design systems, and permissive open-source licenses for all icons and tooling. |
@@ -47,8 +68,9 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│                    Orthogonal Manhattan Router (A*)                    │
-│                Cardinal Ports  │  Obstacles  │  Badges                 │
+│                  Edge Routing Engine (Orthogonal / Curve)              │
+│   Orthogonal: Manhattan A*  │  Collinear Clean  │  Corner Fillets (Q)  │
+│   Curve: Cubic Bezier (C)   │  Port Normals     │  Obstacle Deflection │
 └────────────────────────────────────┬───────────────────────────────────┘
                                     │
                    ┌────────────────┴────────────────┐
@@ -59,7 +81,8 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 │  - 13 Themes (Light/Dark/A11y)      │ │  - Markdown Tables             │
 │  - 60 Built-in Vector Icons         │ │  - Machine-Readable JSON       │
 │  - Multi-line <tspan> Wrap          │ └────────────────────────────────┘
-│  - Text-Below-Graphic Tiles         │
+│  - Interactive Pan/Zoom & Minimap   │
+│  - Client-Side Search Highlighting  │
 └─────────────────────────────────────┘
                   │
                   ▼

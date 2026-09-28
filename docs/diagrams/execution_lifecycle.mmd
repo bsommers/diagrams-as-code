@@ -43,10 +43,10 @@ sequenceDiagram
     Pipe->>Pipe: Auto-frame negative coordinates to (60, 80)
     Pipe->>Pipe: Grow canvas to fit content past width/height
     Pipe->>Pipe: warn LayoutWarning on pinned/auto-placed overlap
-    Pipe->>Router: route every edge
+    Pipe->>Router: route every edge (OrthogonalRouter / CurveRouter)
     activate Router
-    Router->>Router: Select cardinal ports (N/S/E/W)
-    Router->>Router: Generate orthogonal waypoints
+    Router->>Router: Select cardinal ports & port normal tangents
+    Router->>Router: Compute waypoints / Bezier handles & deflect obstacles
     Router-->>Pipe: routes keyed by edge
     deactivate Router
     Pipe-->>Diag: Layout + routes ready
@@ -55,7 +55,9 @@ sequenceDiagram
     Diag->>SVG: render(elements, groups, edges, routes)
     activate SVG
     SVG->>SVG: Inject theme palette & SVG defs
+    SVG->>SVG: Emit paths (filleted Q or curved C)
     SVG->>SVG: Multi-line wrap labels (<tspan>)
+    SVG->>SVG: Embed interactive HUD (pan/zoom/search/minimap)
     SVG-->>Diag: Complete XML SVG string
     deactivate SVG
     Diag->>User: Write out.svg

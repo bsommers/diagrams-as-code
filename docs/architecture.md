@@ -30,7 +30,7 @@
                                          │
                                          ▼
 +-----------------------------------------------------------------------------------+
-|                Layout Pipeline (manual / auto / layout file)                      |
+|                               Layout Pipeline                                     |
 |      - manual: constraint solver output passes through unchanged, except canvas   |
 |        growth, which is unconditional (see below)                                 |
 |      - auto: LayeredLayout places unpinned shapes/groups per scope                |
@@ -40,21 +40,23 @@
                                          │
                                          ▼
 +-----------------------------------------------------------------------------------+
-|                       Orthogonal Manhattan Router (A*)                            |
-|      - Dynamic Automatic Port Selection (North, South, East, West)                |
-|      - Obstacle Avoidance & Bounding Box Routing                                  |
-|      - Collinear Segment Simplification & Waypoint Generation                     |
+|                  Edge Routing Engine (Orthogonal / Curve)                         |
+|      - OrthogonalRouter: A* Manhattan, Cardinal Ports, Collinear Simplification   |
+|        and Quadratic Rounded Corner Fillets (Q) with Dynamic Budget Clamping      |
+|      - CurveRouter: Cubic Bezier (C), Cardinal Port Normals, De Casteljau         |
+|        Collision Detection, C1 Deflection Splines, and Reverse-Flow Escape        |
 +-----------------------------------------------------------------------------------+
                                          │
                     ┌────────────────────┴────────────────────┐
                     ▼                                         ▼
 +---------------------------------------+ +-----------------------------------------+
 |            SVGRenderer                | |             BOMGenerator                |
-|  - Theme Palette Injection            | |  - Component Inventory Assembly         |
+|  - Theme Palette Injection (13)       | |  - Component Inventory Assembly         |
 |  - Standalone Vector Icons (60)       | |  - Metadata Attribute Extraction        |
 |  - Dynamic SVG Defs & Shadow Filters  | |  - Protocol & Connection Mapping        |
 |  - Multi-line <tspan> Anti-Spill Wrap | |  - Markdown Table & JSON Serialization  |
-|  - Text-Below-Graphic Support         | +-----------------------------------------+
+|  - Interactive Pan/Zoom & Minimap HUD | +-----------------------------------------+
+|  - Client-Side Search Highlighting    |
 +---------------------------------------+
                     │
                     ▼
@@ -70,9 +72,11 @@
 ## 2. Subsystem Breakdown
 
 ### 2.1 Geometry Engine (`diagrams_as_code.geometry`)
-- **`Point(x, y)`**: Immutable 2D Cartesian coordinate with vector arithmetic (`+`, `-`, scalar `*`).
+- **`Point(x, y)`**: Immutable 2D Cartesian coordinate with vector arithmetic (`+`, `-`, scalar `*`, length, normalization, dot product, distance).
 - **`Size(width, height)`**: Non-negative 2D dimension descriptor.
-- **`Rect(x, y, width, height)`**: Bounding box primitive supporting intersection tests, bounding box union (`union()`), inflation/padding expansion (`expand()`), and 9-point cardinal anchors (`TOP_LEFT`, `TOP_CENTER`, `TOP_RIGHT`, `CENTER_LEFT`, `CENTER`, `CENTER_RIGHT`, `BOTTOM_LEFT`, `BOTTOM_CENTER`, `BOTTOM_RIGHT`).
+- **`Rect(x, y, width, height)`**: Bounding box primitive supporting intersection tests, bounding box union (`union()`), inflation/padding expansion (`expand()`), point containment (`contains()`, `contains_point()`), and 9-point cardinal anchors (`TOP_LEFT`, `TOP_CENTER`, `TOP_RIGHT`, `CENTER_LEFT`, `CENTER`, `CENTER_RIGHT`, `BOTTOM_LEFT`, `BOTTOM_CENTER`, `BOTTOM_RIGHT`).
+- **`CubicBezier(p0, p1, p2, p3)`**: Cubic Bezier parametric curve primitive. Evaluates coordinates (`point_at(t)`) and derivatives (`tangent_at(t)`), computes exact arc length via 5-point Legendre-Gauss numerical quadrature, determines tight axis-aligned bounding boxes via quadratic polynomial derivative root solving, performs recursive De Casteljau subdivision (`subdivide(t)`), and tests line/spline collisions against rectangular bounding boxes (`intersects_rect()`).
+- **`QuadraticBezier(p0, p1, p2)`**: Quadratic Bezier parametric curve primitive used for corner filleting. Provides `point_at(t)`, `tangent_at(t)`, `bbox()`, analytical arc length calculation, and equidistant midpoint evaluation.
 - **`UnitBasis`**: Coordinate normalization converting canvas-relative floating ratios (`0.0` to `1.0`) into absolute pixel coordinates.
 
 ### 2.2 Domain Object Model (`diagrams_as_code.elements`)
@@ -96,11 +100,31 @@
 - Detects circular dependencies and raises explicit `RuntimeError` on cycles.
 - Applies auto-framing on negative coordinates: translates all canvas elements so the minimum bounding box begins at visible canvas coordinates `(60.0, 80.0)`.
 
-### 2.6 Orthogonal Manhattan Router (`diagrams_as_code.router`)
-- Computes clean orthogonal Manhattan routes with 90-degree waypoints.
-- Automatically selects the optimal cardinal ports (`North`, `South`, `East`, `West`) between source and target based on relative positioning.
-- Simplifies redundant collinear segments.
-- Centers protocol badges over the midpoint segment with white or theme-colored backgrounds to prevent lines from crossing text.
+### 2.6 Edge Routing Engine (`diagrams_as_code.router`)
+
+The routing subsystem computes collision-free trajectories between node ports, supporting both orthogonal Manhattan paths and organic cubic Bezier splines.
+
+#### 2.6.1 Orthogonal Manhattan Router (`OrthogonalRouter`)
+- **Cardinal Port Selection**: Dynamically evaluates geometric relative positions to select optimal exit and entry ports (`North`, `South`, `East`, `West`).
+- **A* Obstacle Avoidance**: Computes orthogonal waypoints that navigate around intervening shapes and containers.
+- **Collinear Simplification**: Prunes redundant collinear vertices to generate minimal-bend orthogonal paths.
+- **Protocol Badge Placement**: Computes bounding boxes over the longest straight segment, masking the underlying stroke with high-contrast badge backgrounds.
+
+#### 2.6.2 Rounded Corner Fillets (`corner_radius` / `arc_radius`)
+- **Dynamic 50% Budget Clamping**: Constrains effective fillet radius to `R_eff = min(corner_radius, L_in / 2.0, L_out / 2.0)` to eliminate self-intersecting loops and "dog-ear" visual artifacts on short intermediate segments.
+- **Port & Arrowhead Lead-In Protection**: Enforces straight collinear lead-ins at source and destination ports, ensuring arrowheads render flush without curvature distortion.
+- **Threshold Suppression**: Suppresses fillets when `R_eff < 2.0px`, seamlessly falling back to sharp 90-degree corners.
+- **Obstacle Apex Clearance**: Analytically checks corner rounded arc apices against obstacle boundaries, clamping radius to maintain >= 4.0px safety clearance.
+- **Native SVG Q Emission**: Converts filleted corner bends into standard SVG Quadratic Bezier (`Q`) commands (`L T1 Q P_c T2`).
+
+#### 2.6.3 Cubic Bezier Routing Engine (`CurveRouter`)
+- **Smooth Spline Trajectories (`Routing.CURVE`)**: Calculates cubic Bezier curves using cardinal port normal vectors with handle distances scaled proportionally to Euclidean port separation (`handle_dist = clamp(dist * 0.4, 20.0, 300.0)`).
+- **Two-Tier Obstacle Collision Detection**:
+  - *Tier 1 (AABB Broadphase)*: Rapid bounding box intersection filtering excluding source and destination endpoints.
+  - *Tier 2 (Narrowphase Subdivision)*: De Casteljau subdivision up to depth 4, testing child curve convex hulls against inflated obstacle rectangles (`clearance=15px`).
+- **Minimal Deviation Deflection**: Evaluates perpendicular detour corridors (above/below or left/right), selects the minimal geometric deviation path, and inserts deflection waypoints.
+- **Strict $C^1$ Spline Continuity**: Enforces collinear incoming and outgoing control handles (`u_out = -u_in`) across all intermediate deflection waypoints, guaranteeing zero slope discontinuity or inflection kinks.
+- **Reverse-Flow Escape Routing**: Detects backward flow (e.g. source to the right of target in LR diagrams), automatically routes out of North/South ports, and offsets control handles into dedicated lateral escape corridors (>= 30px clearance).
 
 ### 2.7 Theme Engine (`diagrams_as_code.theme`)
 - 13 built-in themes:
@@ -122,6 +146,13 @@
 - **`sidecar.py`**: The editable layout file. `element_key()` derives a stable key (explicit `id=`, else the ancestor-label path joined by `/`); `load_layout_file()` / `export_layout()` round-trip a JSON file of `{key: {x, y}}` entries; `apply_entries()` inserts each entry as the winning constraint, warning on any stale key that matches no element.
 - **`pipeline.py`**: `run_layout()` — the ordered steps `Diagram.solve()` runs: drop the previous run's generated constraints, apply layout-file entries first, place unpinned elements scope-by-scope with `layout="auto"`, solve, recompute group bounds and frame negative coordinates, grow the canvas to fit any content past its declared `width`/`height`, and (with `layout="auto"`) warn about pins overlapping auto-placed siblings, then route every edge. Canvas growth is unconditional — it runs in `layout="manual"` with no layout file too. With `layout="manual"` and no layout file this otherwise reproduces the original solve exactly.
 
+### 2.10 Interactive SVG Engine (`diagrams_as_code.renderer_svg`)
+- **Zero-Dependency Vector Interactivity**: Embeds pure vanilla JavaScript directly into emitted SVG documents without requiring external scripts or web frameworks.
+- **Client-Side Pan & Zoom**: Handles mouse drag and wheel events via SVG root matrix transforms (`transform="matrix(...)"`), supporting infinite canvas panning and smooth zoom scaling from 0.1x to 10.0x.
+- **Node Search & Focus Highlighting**: Real-time client-side search bar HUD. Matches node labels, dims non-matching nodes, pulses active matches with focus outlines, and navigates match results with Enter/Tab keyboard navigation.
+- **Minimap Navigator**: Real-time interactive minimap HUD in the bottom-right corner displaying an overview thumbnail with an interactive viewport bounding box synchronized to current pan/zoom coordinates.
+- **Heuristics & Toggle**: Activated via `Diagram(interactive=True)` or automatically enabled when canvas dimensions exceed 1600x1200 pixels.
+
 ---
 
 ## 3. Execution Lifecycle
@@ -131,15 +162,15 @@
 3. **Context Exit / Pre-Render Hook**: `Diagram.__exit__()` or `render_svg()` verifies `_is_solved` and calls `solve()`, which delegates to `run_layout()` (`layout/pipeline.py`).
 4. **Layout & Constraint Solving** (`run_layout()`):
    - Drops the previous run's auto-generated constraints and restores pre-layout bounds.
-   - Applies layout-file entries, if any, as each element's leading absolute constraint.
+   - Applies layout-file overrides, if any, as each element's leading absolute constraint.
    - With `layout="auto"`, places unpinned shapes/groups scope-by-scope (deepest groups first) via `LayeredLayout`.
    - Runs the constraint solver: topological ordering of relative constraints (`right_of`, `below`, `above`, `left_of`).
    - Computes group bounds from leaf elements upwards.
    - Detects any negative bounds and translates canvas into visible viewport coordinates `(60.0, 80.0)`.
    - Grows the canvas to fit any content past its declared `width`/`height` — unconditionally, in every layout mode.
    - With `layout="auto"`, warns (`LayoutWarning`) about any pinned element overlapping an auto-placed sibling.
-5. **Path Routing**: `OrthogonalRouter` determines port waypoints and protocol badge locations for every edge; routes are cached on the diagram.
-6. **SVG Assembly**: SVGRenderer generates XML document with markers, filters, groups, paths, icons, and multi-line wrapped labels.
+5. **Path Routing**: `run_layout()` dispatches edge routing to `OrthogonalRouter` (for Manhattan routing and corner filleting) or `CurveRouter` (for cubic Bezier curves, obstacle collision deflection, and reverse-flow escape corridors). Port waypoints and badge rects are computed and cached on the diagram.
+6. **SVG Assembly**: SVGRenderer generates the XML document with markers, filters, groups, paths, icons, multi-line wrapped labels (`<tspan>`), and interactive HUD controllers (pan/zoom, search, minimap) when interactive mode is active.
 7. **Output Writing**: `render_svg()`/`render_png()`/`generate_readme()`/`generate_bom_json()` write individually, or `output.render_all()` writes every requested format (`svg,png,bom` by default) in one call — the CLI always uses `render_all()`. PNG rasterization tries `rasterize.py`'s four backends in order (`resvg-py` → CairoSVG → Inkscape → ImageMagick) until one is available; `BOMGenerator` emits the living Markdown and JSON documentation.
 
 ---
@@ -152,7 +183,7 @@ The engine lives in `src/diagrams_as_code/`; `src/iiot_diagrams/` is a backward-
 src/
 ├── diagrams_as_code/               # Canonical Root Module
 │   ├── __init__.py                 # Public API exports & package version
-│   ├── geometry.py                 # Geometric primitives (Point, Size, Rect, Anchor, UnitBasis)
+│   ├── geometry.py                 # Geometric primitives (Point, Size, Rect, Anchor, UnitBasis, CubicBezier, QuadraticBezier)
 │   ├── elements.py                 # Core Element base model and Shape node
 │   ├── shapes.py                   # Vector ShapeLibrary & embedded SVG icon renderers
 │   ├── icon_glyphs.py              # SVG bodies for the built-in icons (24x24 grid)
@@ -166,9 +197,9 @@ src/
 │   │   ├── layered.py              # LayeredLayout: deterministic Sugiyama-style placement
 │   │   ├── sidecar.py              # Editable layout file: keys, load/export, apply_entries
 │   │   └── pipeline.py             # run_layout(): the ordered steps Diagram.solve() runs
-│   ├── router.py                   # Orthogonal Manhattan routing with obstacle avoidance
+│   ├── router.py                   # Orthogonal Manhattan & Cubic Bezier routing with obstacle deflection
 │   ├── connections.py              # Edge connection models & fluent >> operator overloading
-│   ├── renderer_svg.py             # SVGRenderer with theme integration and defs generation
+│   ├── renderer_svg.py             # SVGRenderer with theme integration, fillets, defs, and interactive HUD
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
 │   ├── theme.py                    # 13 built-in palette themes (nord, emerald, crimson, …)
 │   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation

@@ -26,11 +26,13 @@ flowchart TD
     subgraph SolverEngine["Constraint Solve & Routing"]
         Solver["Topological Constraint Solver<br/>(constraints.py)"]:::solver
         AutoFrame["Group Bounds & Viewport Auto-Framing<br/>+ Canvas Growth"]:::solver
-        Router["Orthogonal Manhattan Router<br/>(router.py)"]:::solver
+        Router["Orthogonal Manhattan Router<br/>+ Corner Fillets (Q)<br/>(router.py)"]:::solver
+        CurveRouter["Cubic Bezier Curve Router<br/>+ Obstacle Deflection<br/>(router.py)"]:::solver
     end
 
     subgraph RenderEngine["Output Generation"]
         SVGRenderer["SVG Vector Renderer<br/>(renderer_svg.py, metrics.py)"]:::output
+        InteractiveHUD["Interactive Pan/Zoom & Minimap<br/>Search Highlighting<br/>(renderer_svg.py)"]:::output
         ThemeEngine["Theme Palette Engine<br/>(theme.py)"]:::output
         ShapeLib["Shape & Icon Library<br/>(shapes.py, icon_glyphs.py)"]:::output
         BOM["Living BOM Generator<br/>(bom.py)"]:::output
@@ -50,8 +52,11 @@ flowchart TD
     AutoPlace --> Solver
     Solver --> AutoFrame
     AutoFrame --> Router
+    AutoFrame --> CurveRouter
 
     Router --> SVGRenderer
+    CurveRouter --> SVGRenderer
+    InteractiveHUD --> SVGRenderer
     ThemeEngine --> SVGRenderer
     ShapeLib --> SVGRenderer
     Diagram --> BOM

@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 360" width="100%" height="360" style="background:#0a0c10;border-radius:12px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,0.6);">
+  <defs>
+    <!-- CRT Monitor & Phosphor Gradients -->
+    <linearGradient id="bezelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242b35"/>
+      <stop offset="50%" stop-color="#181d24"/>
+      <stop offset="100%" stop-color="#0f1217"/>
+    </linearGradient>
+    <radialGradient id="screenGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#141812"/>
+      <stop offset="70%" stop-color="#0a0d09"/>
+      <stop offset="100%" stop-color="#050705"/>
+    </radialGradient>
+    <linearGradient id="amberGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- CRT Scanline Pattern -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="rgba(0, 0, 0, 0.35)" stroke-width="1.2"/>
+    </pattern>
+
+    <!-- Phosphor Bloom Filter -->
+    <filter id="phosphorGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .dos-text {
+      font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
+      font-size: 13px;
+      fill: #fbbf24;
+      letter-spacing: 0.5px;
+    }
+    .dos-bold {
+      font-weight: bold;
+    }
+    .dos-dim {
+      fill: #b45309;
+    }
+    .dos-cyan {
+      fill: #38bdf8;
+    }
+    .dos-green {
+      fill: #4ade80;
+    }
+    .dos-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 10px;
+      line-height: 11px;
+      fill: #f59e0b;
+      white-space: pre;
+    }
+    .blink {
+      animation: blinker 1s steps(2, start) infinite;
+    }
+    @keyframes blinker {
+      to { visibility: hidden; }
+    }
+  </style>
+
+  <!-- Monitor Bezel Chassis -->
+  <rect x="0" y="0" width="920" height="360" rx="14" fill="url(#bezelGrad)" stroke="#374151" stroke-width="2"/>
+  
+  <!-- Screws / Corner Rivets -->
+  <circle cx="16" cy="16" r="3.5" fill="#374151" stroke="#1f2937" stroke-width="1"/>
+  <circle cx="904" cy="16" r="3.5" fill="#374151" stroke="#1f2937" stroke-width="1"/>
+  <circle cx="16" cy="344" r="3.5" fill="#374151" stroke="#1f2937" stroke-width="1"/>
+  <circle cx="904" cy="344" r="3.5" fill="#374151" stroke="#1f2937" stroke-width="1"/>
+
+  <!-- Bezel Header Label -->
+  <text x="460" y="19" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#64748b" letter-spacing="2">
+    ★ RETRO-DOS 80x25 CRT TERMINAL // IIoT VECTOR GRAPHICS ENGINE ★
+  </text>
+
+  <!-- CRT Inner Screen Bevel -->
+  <rect x="22" y="28" width="876" height="308" rx="8" fill="url(#screenGlow)" stroke="#111827" stroke-width="3"/>
+
+  <!-- Scanline Overlay -->
+  <rect x="22" y="28" width="876" height="308" rx="8" fill="url(#scanlines)" pointer-events="none"/>
+
+  <!-- Terminal Content Group with Phosphor Bloom Filter -->
+  <g filter="url(#phosphorGlow)">
+    
+    <!-- Top System Bar -->
+    <text x="40" y="52" class="dos-text dos-dim">
+      ROM BIOS (C) 1984-2026 // PURE-PYTHON ARCHITECTURE ENGINE // APACHE-2.0
+    </text>
+    <text x="760" y="52" class="dos-text dos-cyan">
+      640K BASE OK
+    </text>
+
+    <!-- Top Border Line -->
+    <path d="M 40 62 L 880 62" stroke="#d97706" stroke-width="1.5" stroke-dasharray="8,2"/>
+
+    <!-- ASCII Art Logo Banner -->
+    <g transform="translate(42, 72)">
+      <text x="0" y="10" class="dos-title"> ██████╗ ██╗ █████╗  ██████╗ ██████╗  █████╗ ███╗   ███╗███████╗     █████╗ ███████╗</text>
+      <text x="0" y="21" class="dos-title"> ██╔══██╗██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗████╗ ████║██╔════╝    ██╔══██╗██╔════╝</text>
+      <text x="0" y="32" class="dos-title"> ██║  ██║██║███████║██║  ███╗██████╔╝███████║██╔████╔██║███████╗    ███████║███████╗</text>
+      <text x="0" y="43" class="dos-title"> ██║  ██║██║██╔══██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║╚════██║    ██╔══██║╚════██║</text>
+      <text x="0" y="54" class="dos-title"> ██████╔╝██║██║  ██║╚██████╔╝██║  ██║██║  ██║██║ └──═╝██║███████║    ██║  ██║███████║</text>
+      <text x="0" y="65" class="dos-title"> ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═╝╚══════╝    ╚═╝  ╚═╝╚══════╝</text>
+      <text x="0" y="78" class="dos-title">                ██████╗  ██████╗ ██████╗ ███████╗</text>
+      <text x="0" y="89" class="dos-title">               ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝</text>
+      <text x="0" y="100" class="dos-title">               ██║      ██║   ██║██║  ██║█████╗  </text>
+      <text x="0" y="111" class="dos-title">               ██║      ██║   ██║██║  ██║██╔══╝  </text>
+      <text x="0" y="122" class="dos-title">               ╚██████╗ ╚██████╔╝██████╔╝███████╗</text>
+      <text x="0" y="133" class="dos-title">                ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝</text>
+    </g>
+
+    <!-- Side Spec Box -->
+    <g transform="translate(560, 142)">
+      <!-- Double-Line Box -->
+      <path d="M 0 0 L 315 0 L 315 72 L 0 72 Z" fill="#0d110d" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="12" y="18" class="dos-text dos-bold" fill="#fbbf24">► PURE-PYTHON VECTOR COMPILER</text>
+      <text x="12" y="34" class="dos-text dos-green">✔ ZERO GRAPHVIZ  ✔ ZERO C-DEPS</text>
+      <text x="12" y="50" class="dos-text dos-cyan">✔ CUBIC BEZIER   ✔ CORNER FILLETS</text>
+      <text x="12" y="64" class="dos-text dos-dim">✔ 13 THEMES      ✔ 88 ARCHITECTURES</text>
+    </g>
+
+    <!-- Middle Divider -->
+    <path d="M 40 232 L 880 232" stroke="#d97706" stroke-width="1.5"/>
+
+    <!-- Micro Schematic Demo (ASCII Diagram Wire with Obstacle Deflection) -->
+    <g transform="translate(40, 240)">
+      <text x="0" y="16" class="dos-text dos-dim">WIRE DEFLECTION ENGINE:</text>
+      <!-- Source Node -->
+      <rect x="0" y="24" width="90" height="24" fill="#181d24" stroke="#fbbf24" stroke-width="1.2"/>
+      <text x="45" y="40" class="dos-text dos-bold" text-anchor="middle" font-size="11">[SRC_NODE]</text>
+      
+      <!-- Intervening Obstacle -->
+      <rect x="160" y="24" width="100" height="24" fill="#241a1a" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,2"/>
+      <text x="210" y="40" class="dos-text" fill="#ef4444" text-anchor="middle" font-size="10">OBSTACLE</text>
+
+      <!-- Destination Node -->
+      <rect x="330" y="24" width="90" height="24" fill="#181d24" stroke="#fbbf24" stroke-width="1.2"/>
+      <text x="375" y="40" class="dos-text dos-bold" text-anchor="middle" font-size="11">[DST_NODE]</text>
+
+      <!-- Deflected Cubic Bezier Arc around Obstacle -->
+      <path d="M 90 36 C 130 36, 140 2, 210 2 C 280 2, 290 36, 330 36" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <!-- Arrowhead -->
+      <polygon points="330,36 323,32 323,40" fill="#38bdf8"/>
+      <!-- Protocol Badge -->
+      <rect x="185" y="-5" width="50" height="13" rx="2" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <text x="210" y="5" class="dos-text dos-cyan" text-anchor="middle" font-size="9">C1:SPLINE</text>
+    </g>
+
+    <!-- DOS Prompt and Command Bar -->
+    <g transform="translate(480, 260)">
+      <text x="0" y="14" class="dos-text dos-green">C:\SRC\AI\DIAGRAMS-AS-CODE&gt;</text>
+      <text x="235" y="14" class="dos-text dos-bold">uv run pytest</text>
+      <text x="0" y="30" class="dos-text dos-cyan">================ 520 PASSED [100%] ================</text>
+      <text x="0" y="46" class="dos-text dos-dim">STATUS: READY &gt; <tspan class="blink" fill="#fbbf24">█</tspan></text>
+    </g>
+
+    <!-- Bottom Status Bar -->
+    <rect x="22" y="318" width="876" height="18" fill="#1e293b"/>
+    <text x="32" y="331" font-family="monospace" font-size="10" font-weight="bold" fill="#94a3b8">
+      F1:HELP   F2:RENDER   F3:LAYOUT   F4:THEMES   F5:ICONS   F6:BOM   F7:BEZIER   F8:EXIT
+    </text>
+    <text x="810" y="331" font-family="monospace" font-size="10" font-weight="bold" fill="#38bdf8">
+      BUILD: v0.8.3
+    </text>
+
+  </g>
+</svg>

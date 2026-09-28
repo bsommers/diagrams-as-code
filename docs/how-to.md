@@ -270,6 +270,80 @@ same reason `configure(theme=...)` re-resolves the named theme and drops any
 
 ---
 
+## Recipe 8: Routing Curved Bezier Edges with Obstacle Deflection
+
+Create organic cubic Bezier splines (`routing="curve"`) that automatically calculate port normal tangents, detect intervening obstacles, and route minimal-deviation collision-free detour splines:
+
+```python
+from diagrams_as_code import Diagram, Shape, Routing
+
+with Diagram("Event Pipeline", theme="nord") as diag:
+    producer = diag.shape("Event Producer", icon="server")
+    obstacle = diag.shape("Intervening Gateway", icon="firewall").right_of(producer, margin=80)
+    consumer = diag.shape("Event Consumer", icon="database").right_of(obstacle, margin=80)
+
+    # Automatically detects intervening obstacle, evaluates deflection corridors,
+    # and emits a smooth C1-continuous cubic Bezier spline around it
+    producer >> diag.edge("Stream Events", routing=Routing.CURVE) >> consumer
+```
+
+### Reverse-flow Back-edges
+
+Edges connecting nodes backward against the primary flow (e.g. consumer back to producer) automatically resolve to North/South cardinal ports and route through lateral clearance escape corridors (>= 30px):
+
+```python
+    # Routes upward from consumer's North port, over obstacles, into producer's North port
+    consumer >> diag.edge("Telemetry Sync", routing="curve") >> producer
+```
+
+---
+
+## Recipe 9: Smoothing Orthogonal Edges with Rounded Corner Fillets
+
+Round sharp 90-degree orthogonal corners into sleek arcs using `corner_radius` (or `arc_radius`):
+
+```python
+from diagrams_as_code import Diagram, Shape
+
+# Set a diagram-wide default corner radius (e.g. 12px)
+with Diagram("Microservice Mesh", theme="synthwave", corner_radius=12.0) as diag:
+    svc_a = diag.shape("Service A", icon="server")
+    svc_b = diag.shape("Service B", icon="server").below(svc_a, margin=40).right_of(svc_a, margin=60)
+
+    # Inherits diagram-level corner_radius=12.0
+    svc_a >> diag.edge("gRPC Call") >> svc_b
+
+    # Override corner radius for a specific edge, or pass 0.0 for sharp corners
+    svc_b >> diag.edge("Audit Trail", corner_radius=6.0) >> svc_a
+```
+
+> **Dynamic Budget Protection**: If an intermediate orthogonal segment is too short to accommodate the requested radius, the engine automatically clamps `R_eff = min(corner_radius, L_in/2, L_out/2)` and suppresses bends under 2.0px to eliminate "dog-ear" visual glitches.
+
+---
+
+## Recipe 10: Generating Interactive SVGs with Pan-Zoom, Search, and Minimap
+
+For complex architectures or large diagrams, enable embedded interactive navigation:
+
+```python
+from diagrams_as_code import Diagram
+
+with Diagram("Enterprise Datacenter Map", theme="blueprint", interactive=True) as diag:
+    # Build large multi-tier topology...
+    ...
+
+# Emits an interactive SVG vector file
+diag.render_svg("enterprise_map.svg")
+```
+
+When opened in any modern browser, the SVG provides:
+- **Pan & Zoom**: Click-and-drag mouse navigation and mouse wheel zooming.
+- **Search HUD**: Top-left search bar with real-time text matching, node pulsing, and non-match dimming.
+- **Minimap Navigator**: Bottom-right live radar overview with a synchronized viewport bounding box.
+- **View Controls**: Zoom in (`+`), zoom out (`-`), and reset view (`⟲`) buttons.
+
+---
+
 ## Troubleshooting Matrix
 
 | Problem | Root Cause | Solution |
@@ -278,4 +352,6 @@ same reason `configure(theme=...)` re-resolves the named theme and drops any
 | **Labels clipping / spilling out** | Label exceeded shape width without wrapping. | Use `label_position="bottom"`, or rely on built-in `<tspan>` auto-wrapping and dynamic font scaling. |
 | **Protocol badges overlapping boxes** | Gap between groups was smaller than badge text width. | Increase inter-group margin from `50` to `80`–`100` (`g_2.right_of(g_1, margin=90)`). |
 | **`RuntimeError: Cycle detected`** | Circular relative constraints (e.g. A right of B, B right of A). | Inspect relative constraints to ensure the spatial DAG has no loops. |
+| **Fillet rendered sharp instead of rounded** | Intermediate segment was shorter than 4px (`R_eff < 2.0px`). | Increase spacing between shapes so orthogonal segments have room to fillet. |
+| **Curved edge clips intervening shape** | Shape added after edge declaration, or clearance buffer too small. | Declare shapes before edges, or set explicit `clearance=25.0` on the edge. |
 | **Unknown icon name error** | Typo in icon name or unregistered custom icon. | Check `icons/icons.yaml` for canonical names and aliases, or load custom SVG via `ShapeLibrary.load_icon_file(...)`. |

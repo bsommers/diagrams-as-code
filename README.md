@@ -1,6 +1,27 @@
+```text
+╔══════════════════════════════════════════════════════════════════════════════════════════╗
+║  ██████╗ ██╗ █████╗  ██████╗ ██████╗  █████╗ ███╗   ███╗███████╗     █████╗ ███████╗     ║
+║  ██╔══██╗██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗████╗ ████║██╔════╝    ██╔══██╗██╔════╝     ║
+║  ██║  ██║██║███████║██║  ███╗██████╔╝███████║██╔████╔██║███████╗    ███████║███████╗     ║
+║  ██║  ██║██║██╔══██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║╚════██║    ██╔══██║╚════██║     ║
+║  ██████╔╝██║██║  ██║╚██████╔╝██║  ██║██║  ██║██║ └──═╝██║███████║    ██║  ██║███████║     ║
+║  ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═╝╚══════╝    ╚═╝  ╚═╝╚══════╝     ║
+║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
+║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
+║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 520 TESTS • 88 ARCHITECTURES ]   ║
+║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
+║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
+╚══════════════════════════════════════════════════════════════════════════════════════════╝
+```
+
+<p align="center">
+  <img src="docs/assets/logo.svg" alt="Diagrams-as-Code Retro DOS CRT Banner" width="100%">
+</p>
+
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-431%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-520%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
@@ -20,8 +41,10 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 
 ## Key Features
 
-- **Pure Python Standard Library Core**: The vector rendering engine, geometric calculations, constraint solver, orthogonal Manhattan router, and SVG generation require zero external C-dependencies.
-- **Cubic Bezier Curves & Rounded Corner Fillets**: Native cubic Bezier edge routing (`Routing.CURVE`) with cardinal port normal tangents and arc-length midpoint protocol labels, plus smooth quadratic corner fillets (`corner_radius` / `arc_radius`) on Manhattan paths with dynamic budget clamping.
+- **Pure Python Standard Library Core**: The vector rendering engine, geometric calculations, constraint solver, orthogonal Manhattan router, cubic Bezier curve engine, and SVG generation require zero external C-dependencies.
+- **Cubic Bezier Curves & Obstacle Deflection**: Native cubic Bezier edge routing (`Routing.CURVE`) with cardinal port normal tangents, AABB broadphase + recursive De Casteljau collision detection, minimal-deviation C1-continuous spline deflection around intervening obstacles, and lateral escape corridors for reverse-flow edges.
+- **Smooth Rounded Corner Fillets**: Analytical quadratic corner fillets (`corner_radius` / `arc_radius`) on Manhattan orthogonal paths with dynamic 50% segment budget clamping (`min(R, L_in/2, L_out/2)`), straight port lead-ins, 2.0px suppression threshold, and native SVG `Q` path emission.
+- **Interactive SVG Engine**: Client-side interactive pan-and-zoom with SVG matrix transforms, real-time node search highlighting with auto-focus, reset viewport controls, and miniature minimap navigator HUD embedded directly into vector outputs without external JS libraries.
 - **Always Powered by `uv`**: Fast, deterministic package management, virtual environment provisioning, and test runs via [`uv`](https://docs.astral.sh/uv/).
 - **13 Built-in Theme Palettes**:
   - **Dark Themes:** `iiot_dark_gold`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `dracula`, `synthwave`.
