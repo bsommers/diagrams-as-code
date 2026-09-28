@@ -3,7 +3,7 @@ import bisect
 from dataclasses import dataclass
 from enum import Enum
 import math
-from typing import Union
+from typing import Optional, Union
 
 @dataclass(frozen=True)
 class Point:
@@ -407,4 +407,175 @@ class QuadraticBezier:
         num_samples = max(1, num_samples)
         pts = self.sample(num_samples + 1)
         return sum(pts[i].distance_to(pts[i + 1]) for i in range(len(pts) - 1))
+
+
+class PathKind(Enum):
+    POLYLINE = "polyline"
+    BEZIER_CHAIN = "bezier_chain"
+
+
+@dataclass(frozen=True)
+class RoutedPath:
+    kind: PathKind
+    points: tuple[Point, ...]
+    corner_radius: float = 0.0
+
+    def segments(self) -> list[Union[tuple[Point, Point], CubicBezier]]:
+        if self.kind == PathKind.POLYLINE:
+            return [(self.points[i], self.points[i + 1]) for i in range(len(self.points) - 1)]
+        elif self.kind == PathKind.BEZIER_CHAIN:
+            if len(self.points) < 4 or (len(self.points) - 1) % 3 != 0:
+                return []
+            curves: list[CubicBezier] = []
+            for i in range(0, len(self.points) - 1, 3):
+                curves.append(
+                    CubicBezier(
+                        self.points[i],
+                        self.points[i + 1],
+                        self.points[i + 2],
+                        self.points[i + 3],
+                    )
+                )
+            return curves
+        return []
+
+    def bbox(self) -> Rect:
+        if not self.points:
+            return Rect(0.0, 0.0, 0.0, 0.0)
+        if self.kind == PathKind.BEZIER_CHAIN:
+            segs = self.segments()
+            if segs and all(isinstance(s, CubicBezier) for s in segs):
+                bboxes = [s.bbox() for s in segs]  # type: ignore[union-attr]
+                min_x = min(b.x for b in bboxes)
+                min_y = min(b.y for b in bboxes)
+                max_x = max(b.right for b in bboxes)
+                max_y = max(b.bottom for b in bboxes)
+                return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
+        min_x = min(p.x for p in self.points)
+        min_y = min(p.y for p in self.points)
+        max_x = max(p.x for p in self.points)
+        max_y = max(p.y for p in self.points)
+        return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
+
+    def translate(self, dx: float, dy: float) -> RoutedPath:
+        shifted_points = tuple(Point(p.x + dx, p.y + dy) for p in self.points)
+        return RoutedPath(
+            kind=self.kind,
+            points=shifted_points,
+            corner_radius=self.corner_radius,
+        )
+
+    def label_anchor(self) -> tuple[float, float]:
+        if not self.points:
+            return (0.0, 0.0)
+        if self.kind == PathKind.BEZIER_CHAIN:
+            segs = [s for s in self.segments() if isinstance(s, CubicBezier)]
+            if not segs:
+                return (self.points[0].x, self.points[0].y)
+            if len(segs) == 1:
+                mid = segs[0].arc_length_midpoint(num_samples=32)
+                return (mid.x, mid.y)
+            longest_curve: Optional[CubicBezier] = None
+            max_seg_len = -1.0
+            for seg_curve in segs:
+                seg_len = seg_curve.arc_length(num_samples=16)
+                if seg_len > max_seg_len:
+                    max_seg_len = seg_len
+                    longest_curve = seg_curve
+            assert longest_curve is not None
+            mid = longest_curve.arc_length_midpoint(num_samples=32)
+            return (mid.x, mid.y)
+        if self.corner_radius > 0.0 and len(self.points) > 2:
+            longest_idx = 0
+            longest_len = -1.0
+            for j in range(len(self.points) - 1):
+                seg_l = math.hypot(
+                    self.points[j + 1].x - self.points[j].x,
+                    self.points[j + 1].y - self.points[j].y,
+                )
+                if seg_l > longest_len:
+                    longest_len = seg_l
+                    longest_idx = j
+            lx = (self.points[longest_idx].x + self.points[longest_idx + 1].x) / 2.0
+            ly = (self.points[longest_idx].y + self.points[longest_idx + 1].y) / 2.0
+            return (lx, ly)
+        mid_idx = len(self.points) // 2
+        lx = (self.points[mid_idx - 1].x + self.points[mid_idx].x) / 2.0
+        ly = (self.points[mid_idx - 1].y + self.points[mid_idx].y) / 2.0
+        return (lx, ly)
+
+    def svg_d(self) -> str:
+        if not self.points:
+            return ""
+        if self.kind == PathKind.BEZIER_CHAIN:
+            if len(self.points) == 4:
+                p0, c1, c2, p3 = self.points
+                return f"M {p0.x} {p0.y} C {c1.x} {c1.y}, {c2.x} {c2.y}, {p3.x} {p3.y}"
+            if len(self.points) >= 4 and (len(self.points) - 1) % 3 == 0:
+                parts = [f"M {self.points[0].x} {self.points[0].y}"]
+                for i in range(1, len(self.points), 3):
+                    parts.append(
+                        f"C {self.points[i].x} {self.points[i].y}, "
+                        f"{self.points[i + 1].x} {self.points[i + 1].y}, "
+                        f"{self.points[i + 2].x} {self.points[i + 2].y}"
+                    )
+                return " ".join(parts)
+        if self.kind == PathKind.POLYLINE and self.corner_radius > 0.0 and len(self.points) >= 3:
+            return self._filleted_svg_d()
+        return f"M {self.points[0].x} {self.points[0].y} " + " ".join(
+            f"L {p.x} {p.y}" for p in self.points[1:]
+        )
+
+    def _filleted_svg_d(self) -> str:
+        pts = self.points
+        n = len(pts)
+        cr = self.corner_radius
+        seg_lens: list[float] = []
+        seg_units: list[Point] = []
+        for j in range(n - 1):
+            vx = pts[j + 1].x - pts[j].x
+            vy = pts[j + 1].y - pts[j].y
+            l = math.hypot(vx, vy)
+            seg_lens.append(l)
+            seg_units.append(Point(vx / l, vy / l) if l > 1e-6 else Point(0.0, 0.0))
+
+        effective_radii: list[float] = [0.0] * n
+        for i in range(1, n - 1):
+            l_in = seg_lens[i - 1]
+            l_out = seg_lens[i]
+            if l_in < 1e-6 or l_out < 1e-6:
+                continue
+            u_in = seg_units[i - 1]
+            u_out = seg_units[i]
+            dot = u_in.x * u_out.x + u_in.y * u_out.y
+            if abs(dot) > 1e-6:
+                continue
+            max_r_in = l_in / 2.0
+            max_r_out = l_out / 2.0
+            if i == 1:
+                lead_in = min(10.0, l_in / 2.0)
+                max_r_in = min(max_r_in, max(0.0, l_in - lead_in))
+            if i == n - 2:
+                lead_in = min(10.0, l_out / 2.0)
+                max_r_out = min(max_r_out, max(0.0, l_out - lead_in))
+            r_corner = min(cr, max_r_in, max_r_out)
+            if r_corner < 2.0:
+                r_corner = 0.0
+            effective_radii[i] = r_corner
+
+        parts = [f"M {pts[0].x} {pts[0].y}"]
+        for i in range(1, n - 1):
+            p_c = pts[i]
+            r = effective_radii[i]
+            if r >= 2.0:
+                u_in = seg_units[i - 1]
+                u_out = seg_units[i]
+                t1 = Point(p_c.x - u_in.x * r, p_c.y - u_in.y * r)
+                t2 = Point(p_c.x + u_out.x * r, p_c.y + u_out.y * r)
+                parts.append(f"L {t1.x} {t1.y} Q {p_c.x} {p_c.y}, {t2.x} {t2.y}")
+            else:
+                parts.append(f"L {p_c.x} {p_c.y}")
+        parts.append(f"L {pts[-1].x} {pts[-1].y}")
+        return " ".join(parts)
+
 

@@ -507,3 +507,88 @@ def test_cubic_bezier_intersects_rect_depth_capping():
     assert cb.intersects_rect(rect, max_depth=100)
 
 
+def test_routed_path_polyline_bbox_and_translate() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath, Point, Rect
+
+    pts = (Point(10.0, 20.0), Point(50.0, 20.0), Point(50.0, 80.0))
+    path = RoutedPath(kind=PathKind.POLYLINE, points=pts, corner_radius=0.0)
+    assert path.bbox() == Rect(10.0, 20.0, 40.0, 60.0)
+
+    translated = path.translate(5.0, 10.0)
+    assert translated.points == (Point(15.0, 30.0), Point(55.0, 30.0), Point(55.0, 90.0))
+    assert translated.bbox() == Rect(15.0, 30.0, 40.0, 60.0)
+
+
+def test_routed_path_bezier_bbox() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath, Point
+
+    p0 = Point(0.0, 100.0)
+    c1 = Point(30.0, 0.0)
+    c2 = Point(70.0, 0.0)
+    p3 = Point(100.0, 100.0)
+    path = RoutedPath(kind=PathKind.BEZIER_CHAIN, points=(p0, c1, c2, p3))
+    bb = path.bbox()
+    assert bb.y < 30.0  # Captures arching Bezier curve apex
+    assert bb.height > 70.0
+
+
+def test_routed_path_svg_d_polyline_and_fillet() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath, Point
+
+    pts = (Point(0.0, 0.0), Point(100.0, 0.0), Point(100.0, 100.0))
+    sharp = RoutedPath(kind=PathKind.POLYLINE, points=pts, corner_radius=0.0)
+    assert sharp.svg_d() == "M 0.0 0.0 L 100.0 0.0 L 100.0 100.0"
+
+    filleted = RoutedPath(kind=PathKind.POLYLINE, points=pts, corner_radius=10.0)
+    d = filleted.svg_d()
+    assert "Q" in d
+
+
+def test_routed_path_label_anchor() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath, Point
+
+    pts = (Point(0.0, 0.0), Point(100.0, 0.0))
+    path = RoutedPath(kind=PathKind.POLYLINE, points=pts)
+    assert path.label_anchor() == (50.0, 0.0)
+
+
+def test_routed_path_segments_and_edge_cases() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath, Point, Rect, CubicBezier
+
+    # Empty path
+    empty_poly = RoutedPath(kind=PathKind.POLYLINE, points=())
+    assert empty_poly.segments() == []
+    assert empty_poly.bbox() == Rect(0.0, 0.0, 0.0, 0.0)
+    assert empty_poly.label_anchor() == (0.0, 0.0)
+    assert empty_poly.svg_d() == ""
+
+    # Polyline segments
+    pts = (Point(0.0, 0.0), Point(10.0, 0.0), Point(10.0, 10.0))
+    poly = RoutedPath(kind=PathKind.POLYLINE, points=pts)
+    assert poly.segments() == [(Point(0.0, 0.0), Point(10.0, 0.0)), (Point(10.0, 0.0), Point(10.0, 10.0))]
+
+    # Bezier chain invalid lengths
+    assert RoutedPath(kind=PathKind.BEZIER_CHAIN, points=(Point(0.0, 0.0),)).segments() == []
+    assert RoutedPath(kind=PathKind.BEZIER_CHAIN, points=(Point(0.0, 0.0), Point(1.0, 1.0), Point(2.0, 2.0))).segments() == []
+
+    # Bezier chain valid multi-segment (7 points -> 2 curves)
+    bezier_pts = (
+        Point(0.0, 0.0), Point(10.0, 0.0), Point(20.0, 10.0), Point(30.0, 10.0),
+        Point(40.0, 10.0), Point(50.0, 20.0), Point(60.0, 20.0),
+    )
+    bchain = RoutedPath(kind=PathKind.BEZIER_CHAIN, points=bezier_pts)
+    segs = bchain.segments()
+    assert len(segs) == 2
+    assert all(isinstance(s, CubicBezier) for s in segs)
+    assert "C" in bchain.svg_d()
+    anchor = bchain.label_anchor()
+    assert isinstance(anchor, tuple) and len(anchor) == 2
+
+    # Filleted polyline label anchor on longest segment
+    long_pts = (Point(0.0, 0.0), Point(10.0, 0.0), Point(10.0, 100.0))
+    filleted_long = RoutedPath(kind=PathKind.POLYLINE, points=long_pts, corner_radius=5.0)
+    # Longest segment is (10, 0) to (10, 100), midpoint is (10.0, 50.0)
+    assert filleted_long.label_anchor() == (10.0, 50.0)
+
+
+
