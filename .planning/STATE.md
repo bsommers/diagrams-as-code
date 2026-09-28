@@ -5,10 +5,10 @@ milestone_name: Curved & Bezier Edge Routing Engine
 current_phase: 11
 current_phase_name: Configuration Hierarchy, Layout & Extrema Integration
 status: ready_to_plan
-stopped_at: Phase 11 context gathered
-last_updated: "2026-09-28T12:40:45.259Z"
-last_activity: 2026-09-27
-last_activity_desc: Phase 10 verified and closed (all 4 plans green, 520 tests passing, 0 diff)
+stopped_at: Checkpoint saved at Phase 11 boundary (ready to plan)
+last_updated: "2026-09-28T12:45:00.000Z"
+last_activity: 2026-09-28
+last_activity_desc: Phase 11 context gathered, 12 decisions locked, checkpointed and ready to plan
 progress:
   total_phases: 4
   completed_phases: 3
@@ -48,6 +48,6 @@ Last activity: 2026-09-27 — Phase 10 verified and closed (all 4 plans green, 5
 
 ## Session
 
-**Last session:** 2026-09-28T12:40:45.252Z
-**Stopped at:** Phase 11 context gathered
-**Resume file:** .planning/phases/11-configuration-hierarchy-layout-extrema-integration/11-CONTEXT.md
+**Last session:** 2026-09-28T12:45:00.000Z
+**Stopped at:** Checkpoint saved at Phase 11 boundary (ready to plan)
+**Resume file:** .planning/phases/11-configuration-hierarchy-layout-extrema-integration/.continue-here.md
