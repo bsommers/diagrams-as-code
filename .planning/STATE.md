@@ -41,6 +41,7 @@ Last activity: 2026-09-28 — Shipped v0.8.3, Apache-2.0 license migration, refr
 - 2026-09-23: Shipped `v0.6.0` (CLI `--interactive`, Client-Side Search, Viewport Minimap Navigator).
 - 2026-09-24: Shipped `v0.7.0` (Obstacle-Aware Orthogonal Routing & Multi-Rank Layout Crossing Minimization).
 - 2026-09-24: Defined 4-phase roadmap for Milestone v0.8.0 (Phases 8–11) covering all 15 requirements.
+- 2026-09-28: Code review (v0.8.2..HEAD, 15 findings) and edge-routing architecture review (`docs/reviews/2026-09-28-edge-routing-architecture.md`). Folded review Batches 1–2 into Phase 11 (11-CONTEXT D-05–D-08 revised, D-13–D-19 added); Batches 4–5 deferred to a follow-up phase.
 
 ### Blockers / Concerns
 

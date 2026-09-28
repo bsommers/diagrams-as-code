@@ -32,7 +32,7 @@ Requirements for Milestone v0.8.0 Curved & Bezier Edge Routing Engine. Each maps
 
 - [ ] **CFG-01**: User can set diagram-wide default edge routing and corner radius via `Diagram(routing=..., corner_radius=...)`.
 - [ ] **CFG-02**: Connections created via fluent operators (`s1 >> s2`) inherit diagram defaults while individual `Edge` parameters take precedence.
-- [ ] **CFG-03**: Layout pipeline automatically runs unified edge routing for all diagram edges, populating `edge.waypoints` and `diagram.routes`.
+- [ ] **CFG-03**: Layout pipeline automatically runs unified edge routing for all diagram edges, populating `diagram.routes` with typed `RoutedPath` values through a single `EdgeRouter` dispatcher (`edge.waypoints` remains as a read-only view).
 - [ ] **CFG-04**: Diagram canvas boundaries automatically expand (`_grow_canvas`) to encompass analytical curve extrema so high-arching Bezier curves are never clipped.
 
 ## v2 Requirements

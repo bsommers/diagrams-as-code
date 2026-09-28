@@ -124,3 +124,20 @@
 
 ## Deferred Ideas
 None — discussion stayed within phase scope.
+
+---
+
+## Revision — 2026-09-28 (post-review)
+
+**Trigger:** the `/code-review` of v0.8.2..HEAD (15 findings) and the architecture review `docs/reviews/2026-09-28-edge-routing-architecture.md`.
+
+**User's choice:** fold review Batches 1–2 (routing data model + edge style resolution) into Phase 11; defer Batches 4–5 (CurveRouter internals, invariant test) to a follow-up phase.
+
+| Decision | Change | Reason |
+|---|---|---|
+| D-05 | `router_for_routing` → existing `EdgeRouter` as sole dispatcher | Three routing entry points already exist (CR-1, CR-15); a fourth would add to the problem. |
+| D-07 | preserve non-empty `edge.waypoints` → new `Edge.manual_waypoints` input field | Every edge has waypoints after one solve, so the original rule would freeze routes on re-solve. |
+| D-08 | `elements + groups` → `RoutingScene` | `all_elements()` already includes groups; the real bug is three drifting obstacle filters (CR-3, CR-4, CR-14). |
+| D-13–D-16 | added: `RoutedPath`, pure routers, draw-only renderer, fillet clamping at route time | D-09 and D-10 need `bbox()` / `translate()` on a typed path; the renderer was decoding routes from list lengths. |
+| D-17–D-19 | added: `None` for unset, `resolve_edge_style`, strict `_EdgeBuilder.__call__` | CR-9, CR-10, CR-11 and CR-13; this is how D-02 and D-03 get implemented. |
+

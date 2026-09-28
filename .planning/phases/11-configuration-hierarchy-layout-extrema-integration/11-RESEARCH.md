@@ -4,6 +4,9 @@
 **Researched:** 2026-09-28  
 **Confidence:** HIGH  
 
+> [!IMPORTANT]
+> **Superseded in part (2026-09-28).** `11-CONTEXT.md` now revises D-05 to D-08 and adds D-13 to D-19 (routing data model and edge style resolution), following `docs/reviews/2026-09-28-edge-routing-architecture.md`. Where this research recommends `router_for_routing`, a `CURVED` alias, `translate_waypoints`, preserving non-empty `edge.waypoints`, or writing routes onto `edge.waypoints`, **CONTEXT.md wins.**
+
 <user_constraints>
 ## Implementation Decisions
 
