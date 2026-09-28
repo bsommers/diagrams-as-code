@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.8.3] - 2026-09-28
+
+### Added
+- **Obstacle Detection & Deflection for Curved Edges (`CAP-DIAG-ROUTER-CURVE-OBS`, `CURVEOBS-01` to `CURVEOBS-03`):**
+  - Added `CubicBezier.subdivide(t)` (and `split()` alias) using de Casteljau recursion to split cubic curves into two self-contained sub-segments.
+  - Implemented analytical two-tier collision detection via `CubicBezier.intersects_rect()` combining bounding box broadphase filtering with recursive De Casteljau curve subdivision (capped at depth $\le 4$).
+  - Implemented `Edge.clearance` attribute and property on `Edge` and `Diagram` with strict positive float validation ($\ge 0.0$), defaulting to $15.0\text{px}$.
+  - Implemented obstacle normalization and filtering in `CurveRouter._normalize_obstacles`, automatically excluding source and target elements and their nested child nodes.
+  - Implemented automatic lateral port resolution (`NORTH`/`SOUTH`) for reverse-flow back-edges in `CurveRouter.resolve_ports()`.
+  - Implemented outer lateral clearance escape corridors in `CurveRouter.route()` for reverse-flow edges with explicit ports, ensuring curves navigate safely around node bodies without bow-tie loops.
+  - Implemented minimal deviation clearance channel selection (top/bottom and left/right detour corridors) with adaptive 1-2 waypoint synthesis and $C^1$-continuous handle generation ($u_{\text{out}} = -u_{\text{in}}$).
+  - Added protocol badge centering on the longest spline segment midpoint in `SVGRenderer._render_edges`.
+  - Added end-to-end integration tests in `tests/test_e2e.py` verifying multi-obstacle deflections, mixed curved/orthogonal routing, and nested group avoidance.
+
+### Changed
+- **Apache-2.0 License Migration:**
+  - Relicensed the repository under the standard Apache License Version 2.0 (Copyright 2026 Bill Sommers).
+  - Updated `LICENSE`, `pyproject.toml` (`license = { text = "Apache-2.0" }`), `README.md`, `docs/sources.md`, `icons/README.md`, and `tools/generate_icons.py`.
+
+### Verification Evidence
+- `uv run pytest` -> 520 passed in 12.68s across all unit, integration, boundary, and hygiene test suites.
+- `uv run python tools/eval_bezier.py` -> 10/10 scenarios passed (100.0% score).
+- `uv run python tools/generate_icons.py --check` -> 63/63 vector icons clean and up to date.
+- `git diff --exit-code -- output/` -> Zero byte drift across all gallery diagrams.
+
 ## [v0.8.2] - 2026-09-26
 
 ### Fixed

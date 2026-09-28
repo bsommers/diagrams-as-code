@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-09-26 (v0.8.2)  
+**Last Updated:** 2026-09-28 (v0.8.3)  
 
 ---
 
@@ -18,6 +18,7 @@
 | **Can groups auto-bound and flow?** | **YES** | `group2.below(group1, margin=40)` | Hierarchical containers with bottom-up auto-bounding encapsulating children, headers, and padding. |
 | **Can connections route orthogonally?** | **YES** | `s1 >> diag.edge("MQTT") >> s2` | Automatic port deduction (`NORTH`, `SOUTH`, `EAST`, `WEST`) and Manhattan waypoint routing with collinear line simplification. |
 | **Can connections route as cubic Bezier curves?** | **YES** | `Edge(routing=Routing.CURVE)` | Analytical cubic Bezier curves with outward cardinal port normals, distance-proportional tension scaling, native SVG `M...C` path rendering, and arc-length centered protocol badges. |
+| **Can curved edges deflect around obstacles?** | **YES** | `Edge(routing=Routing.CURVE, clearance=15)` | Two-tier collision detection (AABB broadphase + De Casteljau subdivision), reverse-flow lateral port resolution and escape corridors, and C1-continuous spline deflection waypoints. |
 | **Can orthogonal corners be rounded with fillets?** | **YES** | `Edge(corner_radius=12)` / `Diagram(corner_radius=12)` | Smooth quadratic Bezier corner fillets with dynamic 50% segment budget clamping, 2.0px suppression threshold, obstacle apex clearance guard, and native SVG `Q` commands. |
 | **Can living BOM docs be generated?** | **YES** | `diag.generate_readme()` | Extracts component inventories, group affiliations, connection topology, and technical notes into Markdown tables and JSON catalogs. |
 | **Is there auto-layout?** | **YES** | `Diagram(layout="auto")` | A deterministic layered engine places unpinned shapes and groups from the edge structure (`direction="LR"`/`"TB"`); pinned shapes coexist via `.at()`/`.right_of()`, and a `LayoutWarning` flags any pin that overlaps an auto-placed sibling. |
@@ -96,6 +97,14 @@
 - **Exports:** `QuadraticBezier`, `Edge`, `Diagram`
 - **Features:** Quadratic Bezier corner filleting for orthogonal Manhattan edges (`corner_radius` and `arc_radius` alias on `Edge` and `Diagram`). Emits native SVG `Q` commands with dynamic 50% segment budget clamping, straight port lead-in preservation, 2.0px threshold suppression, and obstacle clearance apex guards.
 - **Verification:** `uv run pytest tests/test_geometry.py tests/test_routing.py tests/test_renderer_svg.py -k "fillet or corner_radius"`
+
+#### `CAP-DIAG-ROUTER-CURVE-OBS`: Obstacle Detection & Deflection for Curved Edges
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.8.3`
+- **Python API:** `diagrams_as_code.router.CurveRouter`
+- **Exports:** `CurveRouter`, `CubicBezier`, `Edge`
+- **Features:** Two-tier collision detection combining bounding box broadphase filtering with recursive De Casteljau subdivision, automatic reverse-flow lateral port resolution and escape routing, adaptive $C^1$-continuous spline deflection waypoints around intervening obstacles, and longest-segment protocol badge centering.
+- **Verification:** `uv run pytest tests/test_routing.py tests/test_e2e.py -k "deflection or collision or reverse_flow"`
 
 
 ---

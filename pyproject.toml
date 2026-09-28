@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "diagrams-as-code"
-version = "0.8.2"
+version = "0.8.3"
 description = "Pure-Python directed diagrams as code framework with Manhattan routing and living BOM documentation"
 readme = "README.md"
 requires-python = ">=3.10"

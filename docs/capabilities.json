@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-09-26T00:00:00Z",
+  "last_updated": "2026-09-28T00:00:00Z",
   "summary": {
-    "total_capabilities": 18,
-    "operational": 18,
+    "total_capabilities": 19,
+    "operational": 19,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -270,6 +270,17 @@
       "classes": ["SVGRenderer"],
       "details": "Pinned overview minimap thumbnail widget rendered in the bottom-right corner of interactive SVG canvases, featuring responsive visible bounds rectangle and smooth drag navigation.",
       "verification": "uv run pytest tests/test_renderer_svg.py"
+    },
+    {
+      "id": "CAP-DIAG-ROUTER-CURVE-OBS",
+      "name": "Obstacle Detection and Deflection for Curved Edges",
+      "category": "Connection Routing",
+      "status": "OPERATIONAL",
+      "target_release": "v0.8.3",
+      "python_api": "diagrams_as_code.router.CurveRouter",
+      "classes": ["CurveRouter", "CubicBezier"],
+      "details": "Two-tier collision detection combining bounding box broadphase filtering with recursive De Casteljau subdivision, automatic reverse-flow lateral port resolution and escape routing, and adaptive C1-continuous spline deflection waypoints around intervening obstacles.",
+      "verification": "uv run pytest tests/test_routing.py tests/test_e2e.py"
     }
   ]
 }
