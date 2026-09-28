@@ -1,65 +1,33 @@
 {
   "version": "1.0",
-  "timestamp": "2026-09-26T19:47:00.000Z",
-  "phase": "09",
-  "phase_name": "rounded-corner-fillets-for-orthogonal-routing",
-  "phase_dir": ".planning/phases/09-rounded-corner-fillets-for-orthogonal-routing",
-  "plan": 3,
-  "task": 2,
-  "total_tasks": 8,
-  "status": "complete",
-  "completed_tasks": [
-    "09-01: Layer 0 Primitives & Layer 2/5 API Contracts",
-    "09-02: Layer 4 SVG Fillet Rendering Engine",
-    "09-03: End-to-End Integration, Diagram Cascading & Visual Regression"
-  ],
+  "timestamp": "2026-09-28T12:43:00Z",
+  "phase": "11",
+  "phase_name": "configuration-hierarchy-layout-extrema-integration",
+  "phase_dir": ".planning/phases/11-configuration-hierarchy-layout-extrema-integration",
+  "plan": null,
+  "task": null,
+  "total_tasks": null,
+  "status": "ready_to_plan",
+  "completed_tasks": [],
   "remaining_tasks": [],
   "blockers": [],
   "async_jobs": [],
   "human_actions_pending": [],
   "decisions": [
-    {
-      "decision": "Support corner_radius as primary on Edge and Diagram with arc_radius as alias (D-01)",
-      "rationale": "Diagram cascades default, Edge overrides",
-      "phase": "09"
-    },
-    {
-      "decision": "Sharp corners by default (corner_radius=0.0 / None) (D-02)",
-      "rationale": "100% backward compatibility and zero diff across all 88 gallery diagrams",
-      "phase": "09"
-    },
-    {
-      "decision": "corner_radius applies strictly to Routing.ORTHOGONAL edges (D-03)",
-      "rationale": "Gracefully ignored on DIRECT and CURVE edges without raising error",
-      "phase": "09"
-    },
-    {
-      "decision": "Dynamic clamping R_effective = min(R, L_in/2, L_out/2) with 2.0px suppression threshold (D-05, D-06)",
-      "rationale": "Prevents dog-ear overlapping loops and sub-pixel micro-arcs",
-      "phase": "09"
-    },
-    {
-      "decision": "Emit quadratic Bezier L T1 Q P_c T2 commands in SVG path generation (D-09)",
-      "rationale": "Directly satisfies FILLET-03 with exact C1 tangent continuity at corners",
-      "phase": "09"
-    },
-    {
-      "decision": "Implement immutable geometry.QuadraticBezier(p0, p1, p2) in Layer 0 (D-10)",
-      "rationale": "Pure standard library mathematical primitive mirroring CubicBezier",
-      "phase": "09"
-    },
-    {
-      "decision": "Keep Edge.waypoints as sharp Manhattan vertices and fillet in Layer 4 (D-11)",
-      "rationale": "Preserves JSON layout compatibility and collision checking simplicity",
-      "phase": "09"
-    },
-    {
-      "decision": "Uniform filleting across default and obstacle detour paths with 4.0px apex clearance guard (D-13, D-14)",
-      "rationale": "Consistent aesthetic styling while preventing obstacle clipping",
-      "phase": "09"
-    }
+    {"decision": "Diagram(routing=None) default fallback to orthogonal", "rationale": "100% backward compatibility for all existing diagrams and gallery tests", "phase": "11"},
+    {"decision": "3-tier configuration cascade: Edge > Diagram > System", "rationale": "Explicit edge parameters override diagram defaults which override system defaults", "phase": "11"},
+    {"decision": "corner_radius=None inherits diagram default, 0.0 forces sharp corners", "rationale": "Distinguishes unset edges from explicitly sharp corners", "phase": "11"},
+    {"decision": "Diagram.configure(routing=...) supports runtime reconfiguration with cache invalidation", "rationale": "Allows dynamic updates and marks _is_solved = False", "phase": "11"},
+    {"decision": "Dynamic router dispatcher router_for_routing(edge.routing)", "rationale": "Dispatches to CurveRouter, OrthogonalRouter, or direct/polyline based on edge type", "phase": "11"},
+    {"decision": "Route edges first in run_layout(), then expand canvas via _grow_canvas", "rationale": "Gives canvas growth full visibility into edge waypoints and curve extrema", "phase": "11"},
+    {"decision": "Preserve explicit non-empty edge.waypoints", "rationale": "Supports manually routed or file-loaded waypoints without re-routing", "phase": "11"},
+    {"decision": "Pass elements + diagram.groups as obstacles to edge routers", "rationale": "Ensures complete deflection coverage around grouped containers", "phase": "11"},
+    {"decision": "Analytical curve bounding boxes via CubicBezier.bbox()", "rationale": "Exact derivative roots avoid sampling errors in canvas bounds", "phase": "11"},
+    {"decision": "Framing translation translates both elements and edge waypoints", "rationale": "Eliminates clipping when curves arch into negative coordinates", "phase": "11"},
+    {"decision": "Standard FRAME_X (60px) and FRAME_Y (80px) margins", "rationale": "Consistent framing with element layout", "phase": "11"},
+    {"decision": "Max-expansion only for canvas dimensions", "rationale": "Preserves user-specified width/height unless content overflows", "phase": "11"}
   ],
   "uncommitted_files": [],
-  "next_action": "/gsd-discuss:phase 10",
-  "context_notes": "Phase 09 is completely verified (0 blockers, 0 warnings in review, verification passed, eval audit 100/100 PRODUCTION READY, 491/491 tests green, 0 visual diff). Ready for Phase 10."
+  "next_action": "/gsd-plan:phase 11",
+  "context_notes": "Phase 10 is verified and closed. Phase 11 discussion is complete with all 12 decisions locked in 11-CONTEXT.md. Entire test suite (520 tests) passes, zero diff on gallery outputs, working tree clean. Ready to plan Phase 11."
 }
