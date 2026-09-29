@@ -1,10 +1,53 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 import heapq
-from typing import Any, Iterable, Optional
+from typing import Any, Iterable, Optional, Sequence
 
 from diagrams_as_code.connections import Edge, Port, Routing
+from diagrams_as_code.elements import Element
 from diagrams_as_code.geometry import CubicBezier, Point, Rect
+from diagrams_as_code.groups import Group
+
+
+@dataclass(frozen=True)
+class RoutingScene:
+    rects: dict[Element, Rect]
+    ancestors: dict[Element, frozenset[Group]]
+    canvas: Rect
+
+    @classmethod
+    def build(
+        cls,
+        elements: Sequence[Element],
+        canvas: Optional[Rect] = None,
+    ) -> RoutingScene:
+        rects: dict[Element, Rect] = {}
+        ancestors: dict[Element, set[Group]] = {}
+        for el in elements:
+            rects[el] = el.bounds
+            curr = getattr(el, "parent", None)
+            anc: set[Group] = set()
+            while curr is not None:
+                anc.add(curr)
+                curr = getattr(curr, "parent", None)
+            ancestors[el] = anc
+        return cls(
+            rects=rects,
+            ancestors={k: frozenset(v) for k, v in ancestors.items()},
+            canvas=canvas or Rect(0.0, 0.0, 1200.0, 800.0),
+        )
+
+    def obstacles_for(self, edge: Edge, clearance: float = 0.0) -> list[Rect]:
+        excluded: set[Element] = {edge.source, edge.target}
+        excluded.update(self.ancestors.get(edge.source, frozenset()))
+        excluded.update(self.ancestors.get(edge.target, frozenset()))
+
+        result: list[Rect] = []
+        for el, r in self.rects.items():
+            if el not in excluded:
+                result.append(r.expand(clearance) if clearance > 0.0 else r)
+        return result
 
 
 def segment_intersects_rect(p1: Point, p2: Point, rect: Rect) -> bool:

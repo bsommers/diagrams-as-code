@@ -1126,6 +1126,77 @@ def test_curve_routing_unobstructed_backward_compatibility() -> None:
     assert pts_none == pts_empty == pts_clear
 
 
+def test_routing_scene_excludes_endpoints_and_ancestors() -> None:
+    """Verify RoutingScene excludes endpoints and ancestor groups from obstacles."""
+    from diagrams_as_code.connections import Edge
+    from diagrams_as_code.elements import Shape
+    from diagrams_as_code.geometry import Rect
+    from diagrams_as_code.groups import Group
+    from diagrams_as_code.router import RoutingScene
+
+    g = Group(id="g1", label="Group")
+    s1 = Shape(id="s1", label="S1")
+    s2 = Shape(id="s2", label="S2")
+    obs = Shape(id="obs", label="Obstacle")
+    g.add(s1)
+    s1.parent = g
+
+    s1.bounds = Rect(0.0, 0.0, 50.0, 50.0)
+    s2.bounds = Rect(200.0, 0.0, 50.0, 50.0)
+    obs.bounds = Rect(100.0, 0.0, 50.0, 50.0)
+    g.bounds = Rect(-10.0, -10.0, 80.0, 80.0)
+
+    scene = RoutingScene.build([g, s1, s2, obs], canvas=Rect(0, 0, 400, 300))
+    e = Edge(source=s1, target=s2)
+
+    blocked = scene.obstacles_for(e, clearance=5.0)
+    # Endpoint s1, endpoint s2, and ancestor g must be excluded. Only obs remains.
+    assert len(blocked) == 1
+    assert blocked[0] == obs.bounds.expand(5.0)
+
+
+def test_routing_scene_defaults_and_nested_ancestors() -> None:
+    """Verify RoutingScene default canvas, nested ancestor chains, and zero clearance."""
+    from dataclasses import FrozenInstanceError
+    import pytest
+    from diagrams_as_code.connections import Edge
+    from diagrams_as_code.elements import Shape
+    from diagrams_as_code.geometry import Rect
+    from diagrams_as_code.groups import Group
+    from diagrams_as_code.router import RoutingScene
+
+    g_outer = Group(id="g_outer", label="Outer")
+    g_inner = Group(id="g_inner", label="Inner")
+    s1 = Shape(id="s1", label="S1")
+    s2 = Shape(id="s2", label="S2")
+    g_target = Group(id="g_target", label="TargetGroup")
+    obs = Shape(id="obs", label="Obs")
+
+    g_outer.add(g_inner)
+    g_inner.parent = g_outer
+    g_inner.add(s1)
+    s1.parent = g_inner
+
+    g_target.add(s2)
+    s2.parent = g_target
+
+    scene = RoutingScene.build([g_outer, g_inner, s1, g_target, s2, obs])
+    assert scene.canvas == Rect(0.0, 0.0, 1200.0, 800.0)
+    assert scene.ancestors[s1] == frozenset({g_inner, g_outer})
+    assert scene.ancestors[s2] == frozenset({g_target})
+
+    e = Edge(source=s1, target=s2)
+    # Excludes s1, s2, g_inner, g_outer, g_target -> only obs remains
+    obstacles = scene.obstacles_for(e, clearance=0.0)
+    assert len(obstacles) == 1
+    assert obstacles[0] == obs.bounds
+
+    # Frozen dataclass check
+    with pytest.raises(FrozenInstanceError):
+        scene.canvas = Rect(0, 0, 10, 10)  # type: ignore[misc]
+
+
+
 
 
 
