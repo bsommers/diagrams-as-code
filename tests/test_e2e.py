@@ -527,6 +527,3 @@ def test_e2e_fluent_chain_inherits_diagram_curved_routing() -> None:
     svg = d.render_svg()
     assert 'd="M' in svg
     assert "C " in svg
-
-
-

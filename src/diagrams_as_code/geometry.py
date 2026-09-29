@@ -466,9 +466,9 @@ class RoutedPath:
         if not self.points:
             return Rect(0.0, 0.0, 0.0, 0.0)
         if self.kind == PathKind.BEZIER_CHAIN:
-            segs = self.segments()
-            if segs and all(isinstance(s, CubicBezier) for s in segs):
-                bboxes = [s.bbox() for s in segs]  # type: ignore[union-attr]
+            segs: list[CubicBezier] = [s for s in self.segments() if isinstance(s, CubicBezier)]
+            if segs:
+                bboxes = [s.bbox() for s in segs]
                 min_x = min(b.x for b in bboxes)
                 min_y = min(b.y for b in bboxes)
                 max_x = max(b.right for b in bboxes)
@@ -491,6 +491,8 @@ class RoutedPath:
     def label_anchor(self) -> tuple[float, float]:
         if not self.points:
             return (0.0, 0.0)
+        if len(self.points) == 1:
+            return (self.points[0].x, self.points[0].y)
         if self.kind == PathKind.BEZIER_CHAIN:
             segs = [s for s in self.segments() if isinstance(s, CubicBezier)]
             if not segs:

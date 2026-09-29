@@ -13,6 +13,8 @@ from diagrams_as_code.groups import Group
 
 @dataclass(frozen=True)
 class RoutingScene:
+    """Immutable snapshot of diagram geometry and element hierarchies for routing."""
+
     rects: dict[Element, Rect]
     ancestors: dict[Element, frozenset[Group]]
     canvas: Rect
@@ -23,6 +25,7 @@ class RoutingScene:
         elements: Sequence[Element],
         canvas: Optional[Rect] = None,
     ) -> RoutingScene:
+        """Construct a RoutingScene by inspecting element bounds and group hierarchies."""
         rects: dict[Element, Rect] = {}
         ancestors: dict[Element, set[Group]] = {}
         for el in elements:
@@ -40,6 +43,7 @@ class RoutingScene:
         )
 
     def obstacles_for(self, edge: Edge, clearance: float = 0.0) -> list[Rect]:
+        """Return obstacle bounding boxes relevant to an edge, excluding endpoints and ancestors."""
         excluded: set[Element] = {edge.source, edge.target}
         excluded.update(self.ancestors.get(edge.source, frozenset()))
         excluded.update(self.ancestors.get(edge.target, frozenset()))
@@ -304,9 +308,24 @@ class CurveRouter:
         clearance: Optional[float] = None,
     ) -> RoutedPath:
         """Compute ordered path waypoints for cubic Bezier curve."""
+        if isinstance(scene, EdgeStyle):
+            if style is None or isinstance(style, RoutingScene):
+                scene, style = style, scene
+        elif isinstance(style, RoutingScene):
+            if scene is None or isinstance(scene, EdgeStyle):
+                scene, style = style, scene
+
         if scene is not None and not isinstance(scene, RoutingScene):
             obstacles = scene
             scene = None
+
+        if style is not None and not isinstance(style, EdgeStyle):
+            if isinstance(style, (int, float)) and clearance is None:
+                clearance = float(style)
+                style = None
+            elif obstacles is None:
+                obstacles = style
+                style = None
 
         if clearance is not None:
             eff_clearance = clearance
@@ -750,9 +769,24 @@ class OrthogonalRouter:
         clearance: Optional[float] = None,
     ) -> RoutedPath:
         """Compute ordered path waypoints between source and target elements."""
+        if isinstance(scene, EdgeStyle):
+            if style is None or isinstance(style, RoutingScene):
+                scene, style = style, scene
+        elif isinstance(style, RoutingScene):
+            if scene is None or isinstance(scene, EdgeStyle):
+                scene, style = style, scene
+
         if scene is not None and not isinstance(scene, RoutingScene):
             obstacles = scene
             scene = None
+
+        if style is not None and not isinstance(style, EdgeStyle):
+            if isinstance(style, (int, float)) and clearance is None:
+                clearance = float(style)
+                style = None
+            elif obstacles is None:
+                obstacles = style
+                style = None
 
         if clearance is not None:
             eff_clearance = clearance
@@ -1056,16 +1090,30 @@ class EdgeRouter:
     def route(
         self,
         edge: Edge,
-        style: Optional[EdgeStyle] = None,
         scene: Optional[RoutingScene] = None,
+        style: Optional[EdgeStyle] = None,
         obstacles: Optional[Iterable[Any]] = None,
         clearance: Optional[float] = None,
     ) -> RoutedPath:
         """Compute ordered path waypoints using the appropriate routing strategy."""
-        # Handle positionally passed arguments if someone calls route(edge, obstacles, clearance)
+        if isinstance(scene, EdgeStyle):
+            if style is None or isinstance(style, RoutingScene):
+                scene, style = style, scene
+        elif isinstance(style, RoutingScene):
+            if scene is None or isinstance(scene, EdgeStyle):
+                scene, style = style, scene
+
+        if scene is not None and not isinstance(scene, RoutingScene):
+            obstacles = scene
+            scene = None
+
         if style is not None and not isinstance(style, EdgeStyle):
-            obstacles = style  # type: ignore[assignment]
-            style = None
+            if isinstance(style, (int, float)) and clearance is None:
+                clearance = float(style)
+                style = None
+            elif obstacles is None:
+                obstacles = style
+                style = None
 
         if style is None:
             eff_routing = (
@@ -1140,6 +1188,6 @@ def route_all(
                 corner_radius=float(edge._corner_radius or 0.0),
                 clearance=float(edge.clearance),
             )
-            routes[edge] = er.route(edge, style=style, scene=scene)
+            routes[edge] = er.route(edge, scene=scene, style=style)
     return routes
 

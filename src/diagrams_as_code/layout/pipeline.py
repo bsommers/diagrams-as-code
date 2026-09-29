@@ -109,7 +109,7 @@ def run_layout(diagram: Any) -> None:
             )
         else:
             style = resolve_edge_style(edge, diagram)
-            path = edge_router.route(edge, style=style, scene=scene)
+            path = edge_router.route(edge, scene=scene, style=style)
         edge._resolved_path = path
         routes[edge] = path
         routes[id(edge)] = path
@@ -241,8 +241,12 @@ def _frame(
         for r in roots:
             r.translate(offset_x, offset_y)
         _refresh_group_bounds(groups)
+        translated_paths: dict[int, RoutedPath] = {}
+        for p in routes.values():
+            if id(p) not in translated_paths:
+                translated_paths[id(p)] = p.translate(offset_x, offset_y)
         for k, path in list(routes.items()):
-            shifted = path.translate(offset_x, offset_y)
+            shifted = translated_paths[id(path)]
             routes[k] = shifted
             if isinstance(k, Edge):
                 k._resolved_path = shifted

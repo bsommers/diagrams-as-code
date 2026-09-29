@@ -1312,12 +1312,3 @@ def test_route_all_helper() -> None:
     assert isinstance(routes[e3], RoutedPath)
     assert routes[e3].kind == PathKind.POLYLINE
     assert len(routes[e3].points) == 3
-
-
-
-
-
-
-
-
-
