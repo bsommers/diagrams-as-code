@@ -187,7 +187,7 @@ class Edge:
     @property
     def arc_radius(self) -> Optional[float]:
         """Backward-compatible alias for corner_radius."""
-        return self._corner_radius
+        return self.corner_radius
 
     @arc_radius.setter
     def arc_radius(self, val: Optional[Union[int, float]]) -> None:

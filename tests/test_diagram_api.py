@@ -387,6 +387,7 @@ def test_diagram_corner_radius_cascade_and_override() -> None:
     # First edge inherits diagram corner_radius via resolve_edge_style without per-site mutation
     assert e_cascaded._corner_radius is None
     assert e_cascaded.corner_radius == 15.0
+    assert e_cascaded.arc_radius == 15.0
     assert resolve_edge_style(e_cascaded, diag).corner_radius == 15.0
 
     # Second edge preserves explicit sharp override
