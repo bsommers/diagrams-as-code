@@ -20,6 +20,7 @@ from iiot_diagrams import (
     Diagram,
     Edge,
     Group,
+    PathKind,
     Point,
     Port,
     Rect,
@@ -507,5 +508,25 @@ def test_e2e_mixed_orthogonal_and_curved_routing_with_obstacles() -> None:
     # Both badges are rendered and readable
     badges = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
     assert len(badges) == 2
+
+
+def test_e2e_fluent_chain_inherits_diagram_curved_routing() -> None:
+    with Diagram(routing="curve") as d:
+        s1 = d.shape("Sensor 1")
+        s2 = d.shape("Sensor 2")
+        s3 = d.shape("Gateway")
+        s1 >> s3
+        s2 >> s3
+
+    assert len(d.edges) == 2
+    for e in d.edges:
+        assert e.routing == Routing.CURVE
+        path = d.routes[e]
+        assert path.kind == PathKind.BEZIER_CHAIN
+
+    svg = d.render_svg()
+    assert 'd="M' in svg
+    assert "C " in svg
+
 
 
