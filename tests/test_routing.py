@@ -457,11 +457,12 @@ def test_curve_routing_edge_dispatch() -> None:
         assert curve_pts[0] == s1.bounds.get_anchor(Port.EAST.to_anchor())
         assert curve_pts[3] == s2.bounds.get_anchor(Port.WEST.to_anchor())
 
-        # OrthogonalRouter delegation
-        ortho_pts = OrthogonalRouter().route(edge)
-        assert ortho_pts == curve_pts
+        # OrthogonalRouter does not route curves (D-05)
+        from diagrams_as_code.geometry import PathKind
+        ortho_path = OrthogonalRouter().route(edge)
+        assert ortho_path.kind == PathKind.POLYLINE
 
-        # EdgeRouter facade
+        # EdgeRouter facade is the single dispatcher (D-05)
         edge_pts = EdgeRouter().route(edge)
         assert edge_pts == curve_pts
 
@@ -971,7 +972,7 @@ def test_curve_deflection_single_obstacle_compact() -> None:
 
     pts = router.route(edge, obstacles=[s1, s2, obs])
     assert len(pts) == 7  # 3N+1 points with N=2
-    assert edge.waypoints == pts
+    assert edge.waypoints is None  # Pure router does not mutate edge (D-14)
 
     p0, c0a, c0b, w, c1a, c1b, p3 = pts
     assert p0 == Point(200.0, 125.0)  # s1 EAST anchor
@@ -993,7 +994,7 @@ def test_curve_deflection_wide_obstacle_two_waypoints() -> None:
 
     pts = router.route(edge, obstacles=[s1, s2, obs])
     assert len(pts) == 10  # 3N+1 points with N=3
-    assert edge.waypoints == pts
+    assert edge.waypoints is None  # Pure router does not mutate edge (D-14)
 
     p0, c0a, c0b, w1, c1a, c1b, w2, c2a, c2b, p3 = pts
     assert p0 == Point(200.0, 125.0)
@@ -1194,6 +1195,123 @@ def test_routing_scene_defaults_and_nested_ancestors() -> None:
     # Frozen dataclass check
     with pytest.raises(FrozenInstanceError):
         scene.canvas = Rect(0, 0, 10, 10)  # type: ignore[misc]
+
+
+def test_router_purity_and_clamped_fillet() -> None:
+    from diagrams_as_code.connections import EdgeStyle
+    from diagrams_as_code.geometry import PathKind, RoutedPath
+    from diagrams_as_code.router import RoutingScene
+
+    s1 = Shape(id="s1", label="1")
+    s2 = Shape(id="s2", label="2")
+    s1.bounds = Rect(0, 0, 50, 50)
+    s2.bounds = Rect(200, 100, 50, 50)
+    e = Edge(source=s1, target=s2, corner_radius=15.0)
+    scene = RoutingScene.build([s1, s2])
+
+    er = EdgeRouter()
+    st = EdgeStyle(routing=Routing.ORTHOGONAL, corner_radius=15.0, clearance=15.0)
+    path1 = er.route(e, style=st, scene=scene)
+
+    # Router must be pure: does not mutate edge
+    assert isinstance(path1, RoutedPath)
+    assert e._resolved_path is None
+
+    # Routing twice produces identical result
+    path2 = er.route(e, style=st, scene=scene)
+    assert path1 == path2
+
+
+def test_orthogonal_fillet_obstacle_clamping_at_route_time() -> None:
+    from diagrams_as_code.connections import EdgeStyle
+    from diagrams_as_code.geometry import PathKind, RoutedPath
+    from diagrams_as_code.router import RoutingScene
+
+    # Path turns from EAST to SOUTH at (100, 100)
+    s1 = Shape(id="s1", label="S1")
+    s2 = Shape(id="s2", label="S2")
+    s1.bounds = Rect(0.0, 75.0, 50.0, 50.0)     # East port: (50, 100)
+    s2.bounds = Rect(75.0, 175.0, 50.0, 50.0)   # North port: (100, 175)
+
+    # Obstacle placed at inside corner: x in [0, 95], y in [105, 155]
+    obs = Shape(id="obs", label="Obs")
+    obs.bounds = Rect(0.0, 105.0, 95.0, 50.0)
+
+    e = Edge(source=s1, target=s2, source_port=Port.EAST, target_port=Port.NORTH)
+    scene_with_obs = RoutingScene.build([s1, s2, obs])
+    scene_unobstructed = RoutingScene.build([s1, s2])
+
+    er = EdgeRouter()
+    st = EdgeStyle(routing=Routing.ORTHOGONAL, corner_radius=20.0, clearance=15.0)
+
+    # 1. Unobstructed path retains full corner radius (20.0)
+    path_free = er.route(e, style=st, scene=scene_unobstructed)
+    assert path_free.corner_radius == 20.0
+
+    # 2. Obstructed path has corner radius clamped at route time (D-16)
+    path_clamped = er.route(e, style=st, scene=scene_with_obs)
+    assert path_clamped.corner_radius <= 4.0
+    assert path_clamped.corner_radius >= 2.0
+
+
+def test_edge_router_single_dispatcher() -> None:
+    from diagrams_as_code.connections import EdgeStyle
+    from diagrams_as_code.geometry import PathKind, RoutedPath
+
+    s1 = Shape(id="s1", label="1")
+    s2 = Shape(id="s2", label="2")
+    s1.bounds = Rect(0, 0, 100, 50)
+    s2.bounds = Rect(300, 100, 100, 50)
+
+    er = EdgeRouter()
+
+    # Direct
+    e_direct = Edge(source=s1, target=s2)
+    st_direct = EdgeStyle(routing=Routing.DIRECT, corner_radius=0.0, clearance=15.0)
+    p_direct = er.route(e_direct, style=st_direct)
+    assert p_direct.kind == PathKind.POLYLINE
+    assert len(p_direct.points) == 2
+
+    # Orthogonal
+    e_ortho = Edge(source=s1, target=s2)
+    st_ortho = EdgeStyle(routing=Routing.ORTHOGONAL, corner_radius=10.0, clearance=15.0)
+    p_ortho = er.route(e_ortho, style=st_ortho)
+    assert p_ortho.kind == PathKind.POLYLINE
+    assert len(p_ortho.points) >= 3
+    assert p_ortho.corner_radius == 10.0
+
+    # Curve
+    e_curve = Edge(source=s1, target=s2)
+    st_curve = EdgeStyle(routing=Routing.CURVE, corner_radius=0.0, clearance=15.0)
+    p_curve = er.route(e_curve, style=st_curve)
+    assert p_curve.kind == PathKind.BEZIER_CHAIN
+    assert len(p_curve.points) == 4
+
+
+def test_route_all_helper() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath
+    from diagrams_as_code.router import route_all
+
+    s1 = Shape(id="s1", label="1")
+    s2 = Shape(id="s2", label="2")
+    s3 = Shape(id="s3", label="3")
+    s1.bounds = Rect(0, 0, 50, 50)
+    s2.bounds = Rect(200, 0, 50, 50)
+    s3.bounds = Rect(400, 0, 50, 50)
+
+    e1 = Edge(source=s1, target=s2, routing=Routing.ORTHOGONAL)
+    e2 = Edge(source=s2, target=s3, routing=Routing.CURVE)
+    e3 = Edge(source=s1, target=s3, manual_waypoints=[Point(0, 0), Point(50, 50), Point(100, 100)])
+
+    routes = route_all(edges=[e1, e2, e3], elements=[s1, s2, s3])
+    assert len(routes) == 3
+    assert isinstance(routes[e1], RoutedPath)
+    assert routes[e1].kind == PathKind.POLYLINE
+    assert isinstance(routes[e2], RoutedPath)
+    assert routes[e2].kind == PathKind.BEZIER_CHAIN
+    assert isinstance(routes[e3], RoutedPath)
+    assert routes[e3].kind == PathKind.POLYLINE
+    assert len(routes[e3].points) == 3
 
 
 

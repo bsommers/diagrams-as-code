@@ -414,11 +414,34 @@ class PathKind(Enum):
     BEZIER_CHAIN = "bezier_chain"
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, eq=False)
 class RoutedPath:
     kind: PathKind
     points: tuple[Point, ...]
     corner_radius: float = 0.0
+
+    def __len__(self) -> int:
+        return len(self.points)
+
+    def __iter__(self):
+        return iter(self.points)
+
+    def __getitem__(self, index: Any) -> Any:
+        return self.points[index]
+
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, RoutedPath):
+            return (
+                self.kind == other.kind
+                and self.points == other.points
+                and self.corner_radius == other.corner_radius
+            )
+        if isinstance(other, (list, tuple)):
+            return list(self.points) == list(other)
+        return False
+
+    def __hash__(self) -> int:
+        return hash((self.kind, self.points, self.corner_radius))
 
     def segments(self) -> list[Union[tuple[Point, Point], CubicBezier]]:
         if self.kind == PathKind.POLYLINE:

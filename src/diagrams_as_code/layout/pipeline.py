@@ -20,7 +20,7 @@ import warnings
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from diagrams_as_code.connections import Edge, Routing
+from diagrams_as_code.connections import Edge, EdgeStyle, Routing
 from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import AbsoluteConstraint, Element
 from diagrams_as_code.geometry import Anchor, PathKind, Point, Rect, RoutedPath
@@ -29,17 +29,10 @@ from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
-from diagrams_as_code.router import OrthogonalRouter
+from diagrams_as_code.router import EdgeRouter, OrthogonalRouter
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
-
-
-@dataclass(frozen=True)
-class EdgeStyle:
-    routing: Routing
-    corner_radius: float
-    clearance: float
 
 
 def resolve_edge_style(edge: Edge, diagram: Any) -> EdgeStyle:
@@ -104,18 +97,14 @@ def run_layout(diagram: Any) -> None:
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
     if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
-    router = OrthogonalRouter()
+    router = EdgeRouter()
     routes: dict[int, list[Point]] = {}
     for edge in diagram.edges:
         style = resolve_edge_style(edge, diagram)
-        waypoints = router.route(edge, obstacles=elements)
-        edge.waypoints = waypoints
-        edge._resolved_path = RoutedPath(
-            kind=PathKind.BEZIER_CHAIN if style.routing == Routing.CURVE else PathKind.POLYLINE,
-            points=tuple(waypoints),
-            corner_radius=style.corner_radius,
-        )
-        routes[id(edge)] = waypoints
+        path = router.route(edge, style=style, obstacles=elements)
+        edge.waypoints = list(path.points)
+        edge._resolved_path = path
+        routes[id(edge)] = list(path.points)
     diagram.routes = routes
 
 

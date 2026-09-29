@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from enum import Enum
 import math
 from typing import Any, Optional, Sequence, Type, TypeVar, Union
@@ -58,6 +59,13 @@ class Routing(Enum):
     DIRECT = "direct"
     ORTHOGONAL = "orthogonal"
     CURVE = "curve"
+
+
+@dataclass(frozen=True)
+class EdgeStyle:
+    routing: Routing
+    corner_radius: float
+    clearance: float
 
 
 class Edge:

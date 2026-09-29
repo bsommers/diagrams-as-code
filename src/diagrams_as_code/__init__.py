@@ -1,6 +1,6 @@
 """IIoT Diagrams as Code framework."""
 from diagrams_as_code.bom import BOMGenerator
-from diagrams_as_code.connections import Edge, Port, Routing
+from diagrams_as_code.connections import Edge, EdgeStyle, Port, Routing
 from diagrams_as_code.constraints import (
     AbsoluteConstraint,
     AlignConstraint,
@@ -14,9 +14,11 @@ from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import (
     Anchor,
     CubicBezier,
+    PathKind,
     Point,
     QuadraticBezier,
     Rect,
+    RoutedPath,
     Size,
     UnitBasis,
 )
@@ -38,6 +40,8 @@ from diagrams_as_code.router import (
     EdgeRouter,
     OrthogonalRouter,
     PORT_NORMALS,
+    RoutingScene,
+    route_all,
 )
 from diagrams_as_code.shapes import ShapeLibrary, ShapeRenderer
 from diagrams_as_code.theme import (
@@ -83,6 +87,7 @@ __all__ = [
     "EMERALD",
     "Edge",
     "EdgeRouter",
+    "EdgeStyle",
     "Element",
     "GridLayout",
     "Group",
@@ -98,12 +103,15 @@ __all__ = [
     "OrthogonalRouter",
     "PASTEL_LIGHT",
     "PORT_NORMALS",
+    "PathKind",
     "Point",
     "Port",
     "QuadraticBezier",
     "Rect",
     "RelativeConstraint",
+    "RoutedPath",
     "Routing",
+    "RoutingScene",
     "SOLARIZED_LIGHT",
     "SVGRenderer",
     "SYNTHWAVE",
@@ -125,6 +133,7 @@ __all__ = [
     "register_theme",
     "render_all",
     "reset_themes",
+    "route_all",
     "to_constraint",
 ]
 

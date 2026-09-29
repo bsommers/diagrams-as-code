@@ -2,11 +2,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import heapq
+import math
 from typing import Any, Iterable, Optional, Sequence
 
-from diagrams_as_code.connections import Edge, Port, Routing
+from diagrams_as_code.connections import Edge, EdgeStyle, Port, Routing
 from diagrams_as_code.elements import Element
-from diagrams_as_code.geometry import CubicBezier, Point, Rect
+from diagrams_as_code.geometry import CubicBezier, PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
 
 
@@ -297,27 +298,42 @@ class CurveRouter:
     def route(
         self,
         edge: Edge,
+        scene: Optional[RoutingScene] = None,
+        style: Optional[EdgeStyle] = None,
         obstacles: Optional[Iterable[Any]] = None,
-        clearance: float = 15.0,
-    ) -> list[Point]:
-        """Compute ordered path waypoints [P_start, C_1, C_2, P_end] for cubic Bezier curve."""
-        src_port, tgt_port = self.resolve_ports(edge, obstacles=obstacles)
+        clearance: Optional[float] = None,
+    ) -> RoutedPath:
+        """Compute ordered path waypoints for cubic Bezier curve."""
+        if scene is not None and not isinstance(scene, RoutingScene):
+            obstacles = scene
+            scene = None
+
+        if clearance is not None:
+            eff_clearance = clearance
+        elif style is not None:
+            eff_clearance = style.clearance
+        elif getattr(edge, "clearance", None) is not None:
+            eff_clearance = edge.clearance
+        else:
+            eff_clearance = 15.0
+
+        if scene is not None:
+            cand_obstacles: Optional[Iterable[Any]] = scene.obstacles_for(edge, clearance=0.0)
+            res_obstacles = cand_obstacles
+        else:
+            cand_obstacles = obstacles
+            res_obstacles = obstacles
+
+        src_port, tgt_port = self.resolve_ports(edge, obstacles=res_obstacles)
         p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
         p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
 
-        eff_clearance = (
-            getattr(edge, "clearance", None)
-            if clearance == 15.0 and getattr(edge, "clearance", None) is not None
-            else clearance
-        )
-
-        norm_obstacles = self._normalize_obstacles(edge, obstacles, p_start, p_end)
-        if obstacles is not None and self._is_reverse_flow_explicit(edge, src_port, tgt_port):
+        norm_obstacles = self._normalize_obstacles(edge, cand_obstacles, p_start, p_end)
+        if (scene is not None or obstacles is not None) and self._is_reverse_flow_explicit(edge, src_port, tgt_port):
             pts = self._route_reverse_flow_explicit_ports(
                 edge, p_start, p_end, src_port, tgt_port, norm_obstacles, eff_clearance
             )
-            edge.waypoints = pts
-            return pts
+            return RoutedPath(kind=PathKind.BEZIER_CHAIN, points=tuple(pts))
 
         n_src = PORT_NORMALS[src_port]
         n_tgt = PORT_NORMALS[tgt_port]
@@ -366,19 +382,16 @@ class CurveRouter:
 
         cand = CubicBezier(p_start, c1, c2, p_end)
         if not norm_obstacles:
-            edge.waypoints = [p_start, c1, c2, p_end]
-            return edge.waypoints
+            return RoutedPath(kind=PathKind.BEZIER_CHAIN, points=(p_start, c1, c2, p_end))
 
         hits = self._detect_collisions(cand, norm_obstacles, eff_clearance)
         if not hits:
-            edge.waypoints = [p_start, c1, c2, p_end]
-            return edge.waypoints
+            return RoutedPath(kind=PathKind.BEZIER_CHAIN, points=(p_start, c1, c2, p_end))
 
         pts = self._select_deflected_corridor(
             p_start, p_end, n_src, n_tgt, hits, norm_obstacles, eff_clearance
         )
-        edge.waypoints = pts
-        return pts
+        return RoutedPath(kind=PathKind.BEZIER_CHAIN, points=tuple(pts))
 
     def _build_deflected_spline_horizontal(
         self,
@@ -669,52 +682,164 @@ class OrthogonalRouter:
 
         return (edge.source_port or src_p, edge.target_port or tgt_p)
 
+    def _clamp_fillet_obstacles(
+        self,
+        pts: list[Point],
+        corner_radius: float,
+        obstacles: Sequence[Rect],
+    ) -> float:
+        n = len(pts)
+        if n < 3 or corner_radius <= 0.0 or not obstacles:
+            return corner_radius
+
+        seg_lens: list[float] = []
+        seg_units: list[Point] = []
+        for j in range(n - 1):
+            vx = pts[j + 1].x - pts[j].x
+            vy = pts[j + 1].y - pts[j].y
+            l = math.hypot(vx, vy)
+            seg_lens.append(l)
+            seg_units.append(Point(vx / l, vy / l) if l > 1e-6 else Point(0.0, 0.0))
+
+        clamped = corner_radius
+        for i in range(1, n - 1):
+            l_in = seg_lens[i - 1]
+            l_out = seg_lens[i]
+            if l_in < 1e-6 or l_out < 1e-6:
+                continue
+
+            u_in = seg_units[i - 1]
+            u_out = seg_units[i]
+
+            dot = u_in.x * u_out.x + u_in.y * u_out.y
+            if abs(dot) > 1e-6:
+                continue
+
+            p_c = pts[i]
+            dx_apex = -0.25 * (u_in.x - u_out.x)
+            dy_apex = -0.25 * (u_in.y - u_out.y)
+
+            for obs in obstacles:
+                exp = obs.expand(4.0)
+                apex_x = p_c.x + clamped * dx_apex
+                apex_y = p_c.y + clamped * dy_apex
+                if exp.left < apex_x < exp.right and exp.top < apex_y < exp.bottom:
+                    safe_r = clamped
+                    cands: list[float] = []
+                    if abs(dx_apex) > 1e-6:
+                        target_x = exp.right if dx_apex < 0 else exp.left
+                        cands.append((target_x - p_c.x) / dx_apex)
+                    if abs(dy_apex) > 1e-6:
+                        target_y = exp.bottom if dy_apex < 0 else exp.top
+                        cands.append((target_y - p_c.y) / dy_apex)
+                    valid_cands = [c for c in cands if c >= 0.0]
+                    if valid_cands:
+                        safe_r = min(safe_r, *valid_cands)
+                    else:
+                        safe_r = 0.0
+                    clamped = min(clamped, safe_r)
+
+        return clamped
+
     def route(
         self,
         edge: Edge,
+        scene: Optional[RoutingScene] = None,
+        style: Optional[EdgeStyle] = None,
         obstacles: Optional[Iterable[Any]] = None,
-        clearance: float = 15.0,
-    ) -> list[Point]:
+        clearance: Optional[float] = None,
+    ) -> RoutedPath:
         """Compute ordered path waypoints between source and target elements."""
-        if edge.routing in (Routing.CURVE, "curve"):
-            return CurveRouter().route(edge, obstacles=obstacles, clearance=clearance)
+        if scene is not None and not isinstance(scene, RoutingScene):
+            obstacles = scene
+            scene = None
+
+        if clearance is not None:
+            eff_clearance = clearance
+        elif style is not None:
+            eff_clearance = style.clearance
+        elif getattr(edge, "clearance", None) is not None:
+            eff_clearance = edge.clearance
+        else:
+            eff_clearance = 15.0
+
+        if style is not None:
+            eff_cr = style.corner_radius
+            eff_routing = style.routing
+        else:
+            eff_cr = (
+                edge._corner_radius
+                if edge._corner_radius is not None
+                else getattr(edge, "corner_radius", 0.0) or 0.0
+            )
+            eff_routing = (
+                edge._routing
+                if edge._routing is not None
+                else getattr(edge, "routing", Routing.ORTHOGONAL)
+            )
+
+        if isinstance(eff_routing, str):
+            eff_routing = Routing(eff_routing)
 
         src_port, tgt_port = self.resolve_ports(edge)
         p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
         p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
 
-        if edge.routing == Routing.DIRECT:
-            return [p_start, p_end]
+        if eff_routing == Routing.DIRECT:
+            return RoutedPath(kind=PathKind.POLYLINE, points=(p_start, p_end), corner_radius=0.0)
 
         # Step default Manhattan midpoint
         default_pts = self._default_manhattan(p_start, p_end, src_port, tgt_port)
 
-        if obstacles is None:
-            return default_pts
+        if scene is not None:
+            raw_obs = scene.obstacles_for(edge, clearance=0.0)
+            norm_obstacles = [
+                r
+                for r in raw_obs
+                if not (
+                    (r.left <= p_start.x <= r.right and r.top <= p_start.y <= r.bottom)
+                    or (r.left <= p_end.x <= r.right and r.top <= p_end.y <= r.bottom)
+                )
+            ]
+        elif obstacles is not None:
+            norm_obstacles = self._normalize_obstacles(edge, obstacles, p_start, p_end)
+        else:
+            norm_obstacles = []
 
-        norm_obstacles = self._normalize_obstacles(edge, obstacles, p_start, p_end)
         if not norm_obstacles:
-            return default_pts
-
-        # Fast path: check if default path has collision
-        has_collision = False
-        for i in range(len(default_pts) - 1):
-            p_a, p_b = default_pts[i], default_pts[i + 1]
-            for obs in norm_obstacles:
-                if segment_intersects_rect(p_a, p_b, obs):
-                    has_collision = True
+            pts = default_pts
+        else:
+            # Fast path: check if default path has collision
+            has_collision = False
+            for i in range(len(default_pts) - 1):
+                p_a, p_b = default_pts[i], default_pts[i + 1]
+                for obs in norm_obstacles:
+                    if segment_intersects_rect(p_a, p_b, obs):
+                        has_collision = True
+                        break
+                if has_collision:
                     break
-            if has_collision:
-                break
 
-        if not has_collision:
-            return default_pts
+            if not has_collision:
+                pts = default_pts
+            else:
+                # Compute detour path around obstacles
+                detour = self._find_detour_path(
+                    p_start, p_end, src_port, tgt_port, norm_obstacles, eff_clearance
+                )
+                pts = detour if detour is not None else default_pts
 
-        # Compute detour path around obstacles
-        detour = self._find_detour_path(
-            p_start, p_end, src_port, tgt_port, norm_obstacles, clearance
-        )
-        return detour if detour is not None else default_pts
+        # Clamping fillet corner radius against obstacles (D-16)
+        if eff_cr > 0.0:
+            clamped_cr = eff_cr
+            if len(pts) >= 3 and norm_obstacles:
+                clamped_cr = self._clamp_fillet_obstacles(pts, clamped_cr, norm_obstacles)
+            if clamped_cr < 2.0:
+                clamped_cr = 0.0
+        else:
+            clamped_cr = 0.0
+
+        return RoutedPath(kind=PathKind.POLYLINE, points=tuple(pts), corner_radius=clamped_cr)
 
     def _default_manhattan(
         self, p_start: Point, p_end: Point, src_port: Port, tgt_port: Port
@@ -931,11 +1056,90 @@ class EdgeRouter:
     def route(
         self,
         edge: Edge,
+        style: Optional[EdgeStyle] = None,
+        scene: Optional[RoutingScene] = None,
         obstacles: Optional[Iterable[Any]] = None,
-        clearance: float = 15.0,
-    ) -> list[Point]:
+        clearance: Optional[float] = None,
+    ) -> RoutedPath:
         """Compute ordered path waypoints using the appropriate routing strategy."""
-        if edge.routing in (Routing.CURVE, "curve"):
-            return self.curve.route(edge, obstacles=obstacles, clearance=clearance)
-        return self.orthogonal.route(edge, obstacles=obstacles, clearance=clearance)
+        # Handle positionally passed arguments if someone calls route(edge, obstacles, clearance)
+        if style is not None and not isinstance(style, EdgeStyle):
+            obstacles = style  # type: ignore[assignment]
+            style = None
+
+        if style is None:
+            eff_routing = (
+                edge._routing
+                if edge._routing is not None
+                else getattr(edge, "routing", Routing.ORTHOGONAL)
+            )
+            if isinstance(eff_routing, str):
+                eff_routing = Routing(eff_routing)
+            eff_cr = (
+                edge._corner_radius
+                if edge._corner_radius is not None
+                else (getattr(edge, "corner_radius", 0.0) or 0.0)
+            )
+            eff_clearance = (
+                clearance
+                if clearance is not None
+                else (
+                    edge._clearance
+                    if edge._clearance is not None
+                    else getattr(edge, "clearance", 15.0)
+                )
+            )
+            style = EdgeStyle(
+                routing=eff_routing,
+                corner_radius=float(eff_cr),
+                clearance=float(eff_clearance),
+            )
+
+        routing = style.routing
+        if isinstance(routing, str):
+            routing = Routing(routing)
+
+        if routing == Routing.DIRECT:
+            obs = obstacles or (scene.obstacles_for(edge, clearance=0.0) if scene else None)
+            src_port, tgt_port = self.resolve_ports(edge, obstacles=obs)
+            p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
+            p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
+            return RoutedPath(kind=PathKind.POLYLINE, points=(p_start, p_end), corner_radius=0.0)
+
+        if routing == Routing.CURVE:
+            return self.curve.route(
+                edge, scene=scene, style=style, obstacles=obstacles, clearance=clearance
+            )
+
+        return self.orthogonal.route(
+            edge, scene=scene, style=style, obstacles=obstacles, clearance=clearance
+        )
+
+
+def route_all(
+    edges: Sequence[Edge],
+    elements: Sequence[Element],
+    groups: Sequence[Group] = (),
+    canvas: Optional[Rect] = None,
+) -> dict[Edge, RoutedPath]:
+    """Route all edges against a scene built from elements and groups."""
+    all_elements: list[Element] = list(elements) + [g for g in groups if g not in elements]
+    scene = RoutingScene.build(all_elements, canvas=canvas)
+    er = EdgeRouter()
+    routes: dict[Edge, RoutedPath] = {}
+    for edge in edges:
+        if edge.manual_waypoints:
+            routes[edge] = RoutedPath(
+                kind=PathKind.POLYLINE,
+                points=tuple(edge.manual_waypoints),
+                corner_radius=float(edge._corner_radius or 0.0),
+            )
+        else:
+            style = EdgeStyle(
+                routing=edge.routing,
+                corner_radius=float(edge._corner_radius or 0.0),
+                clearance=float(edge.clearance),
+            )
+            routes[edge] = er.route(edge, style=style, scene=scene)
+    return routes
 
