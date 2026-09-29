@@ -29,7 +29,7 @@ from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
-from diagrams_as_code.router import EdgeRouter, OrthogonalRouter
+from diagrams_as_code.router import EdgeRouter, OrthogonalRouter, RoutingScene
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
@@ -82,7 +82,7 @@ class _LayoutState:
 
 
 def run_layout(diagram: Any) -> None:
-    """Position every element of ``diagram``."""
+    """Position every element and route every edge of diagram."""
     elements = diagram.solver.all_elements()
     _reset(diagram, elements)
     _apply_layout_file(diagram, elements)
@@ -92,20 +92,35 @@ def run_layout(diagram: Any) -> None:
     diagram.solver.solve()
     groups = _deepest_first(diagram.groups)
     _refresh_group_bounds(groups)
-    _frame(elements, groups)
-    _grow_canvas(diagram, elements)
+
+    # 1. Build Scene & Route Edges
+    scene = RoutingScene.build(
+        elements,
+        canvas=Rect(0.0, 0.0, diagram.width, diagram.height),
+    )
+    edge_router = EdgeRouter()
+    routes: dict[Any, RoutedPath] = {}
+    for edge in diagram.edges:
+        if edge.manual_waypoints:
+            path = RoutedPath(
+                kind=PathKind.POLYLINE,
+                points=tuple(edge.manual_waypoints),
+                corner_radius=edge.corner_radius or 0.0,
+            )
+        else:
+            style = resolve_edge_style(edge, diagram)
+            path = edge_router.route(edge, style=style, scene=scene)
+        edge._resolved_path = path
+        routes[edge] = path
+        routes[id(edge)] = path
+    diagram.routes = routes
+
+    # 2. Frame & Grow Canvas
+    _frame(elements, groups, routes)
+    _grow_canvas(diagram, elements, routes)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
     if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
-    router = EdgeRouter()
-    routes: dict[int, list[Point]] = {}
-    for edge in diagram.edges:
-        style = resolve_edge_style(edge, diagram)
-        path = router.route(edge, style=style, obstacles=elements)
-        edge.waypoints = list(path.points)
-        edge._resolved_path = path
-        routes[id(edge)] = list(path.points)
-    diagram.routes = routes
 
 
 def _reset(diagram: Any, elements: list[Element]) -> None:
@@ -196,7 +211,11 @@ def _refresh_group_bounds(groups: list[Group]) -> None:
             g.calculate_bounds()
 
 
-def _frame(elements: list[Element], groups: list[Group]) -> None:
+def _frame(
+    elements: list[Element],
+    groups: list[Group],
+    routes: Optional[dict[Any, RoutedPath]] = None,
+) -> None:
     """Translate the canvas when content has negative coordinates."""
     if not elements:
         return
@@ -211,9 +230,19 @@ def _frame(elements: list[Element], groups: list[Group]) -> None:
         for r in roots:
             r.translate(offset_x, offset_y)
         _refresh_group_bounds(groups)
+        if routes:
+            for k, path in list(routes.items()):
+                shifted = path.translate(offset_x, offset_y)
+                routes[k] = shifted
+                if isinstance(k, Edge):
+                    k._resolved_path = shifted
 
 
-def _grow_canvas(diagram: Any, elements: list[Element]) -> None:
+def _grow_canvas(
+    diagram: Any,
+    elements: list[Element],
+    routes: Optional[dict[Any, RoutedPath]] = None,
+) -> None:
     roots = [e for e in elements if e.parent is None]
     if not roots:
         return

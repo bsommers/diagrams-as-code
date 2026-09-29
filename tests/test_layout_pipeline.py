@@ -5,6 +5,7 @@ import warnings
 import pytest
 
 from diagrams_as_code import Diagram, Edge, Routing
+from diagrams_as_code.geometry import Point, RoutedPath
 from diagrams_as_code.layout import LayoutWarning, export_layout
 from diagrams_as_code.layout.pipeline import EdgeStyle, resolve_edge_style
 
@@ -244,3 +245,34 @@ def test_diagram_routing_validation() -> None:
 
     with pytest.raises(ValueError):
         d.routing = "unknown_strategy"
+
+
+def test_pipeline_routing_before_canvas_growth() -> None:
+    with Diagram(layout="manual", width=500, height=300) as d:
+        s1 = d.shape("A", width=50, height=50)
+        s2 = d.shape("B", width=50, height=50)
+        s1.at(50, 50)
+        s2.at(400, 50)
+        s1 >> s2
+        e = d.edges[0]
+
+    # After diagram solve, d.routes must contain RoutedPath
+    assert e in d.routes or id(e) in d.routes
+    path = d.routes[e] if e in d.routes else d.routes[id(e)]
+    assert isinstance(path, RoutedPath)
+
+
+def test_pipeline_routing_with_manual_waypoints() -> None:
+    with Diagram(layout="manual", width=500, height=300) as d:
+        s1 = d.shape("A", width=50, height=50)
+        s2 = d.shape("B", width=50, height=50)
+        s1.at(50, 50)
+        s2.at(400, 50)
+        s1 >> s2
+        e = d.edges[0]
+        e.manual_waypoints = [Point(50, 50), Point(200, 200), Point(400, 50)]
+
+    path = d.routes[e] if e in d.routes else d.routes[id(e)]
+    assert isinstance(path, RoutedPath)
+    assert path.points == (Point(50, 50), Point(200, 200), Point(400, 50))
+
