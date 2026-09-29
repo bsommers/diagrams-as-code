@@ -276,3 +276,52 @@ def test_pipeline_routing_with_manual_waypoints() -> None:
     assert isinstance(path, RoutedPath)
     assert path.points == (Point(50, 50), Point(200, 200), Point(400, 50))
 
+
+def test_canvas_grows_for_deflected_or_arching_edge() -> None:
+    with Diagram(layout="manual", width=300, height=300, routing="curve") as d:
+        s1 = d.shape("A", width=50, height=50)
+        s2 = d.shape("B", width=50, height=50)
+        s1.at(50, 90)
+        s2.at(200, 90)
+        # An edge between them arching high or obstacle in middle forcing detour
+        obs = d.shape("Obs", width=60, height=60)
+        obs.at(120, 80)
+        s1 >> s2
+
+    # Diagram height should have grown beyond 300 if curve or elements needed margin
+    assert d.width >= 300
+    assert d.height >= 300
+
+
+def test_canvas_grows_for_edge_extrema_beyond_elements() -> None:
+    with Diagram(layout="manual", width=300, height=300) as d:
+        s1 = d.shape("A", width=50, height=50).at(50, 50)
+        s2 = d.shape("B", width=50, height=50).at(150, 50)
+        s1 >> s2
+        # Edge waypoints detour past the 300x300 canvas
+        d.edges[0].manual_waypoints = [Point(100, 75), Point(350, 320), Point(150, 75)]
+
+    # 350 + FRAME_X (60) = 410, 320 + FRAME_Y (80) = 400
+    assert d.width == 410.0
+    assert d.height == 400.0
+
+
+def test_frame_translates_for_negative_edge_extrema() -> None:
+    with Diagram(layout="manual", width=300, height=300, routing="curve") as d:
+        s1 = d.shape("A", width=50, height=50).at(50, 15)
+        s2 = d.shape("B", width=50, height=50).at(200, 15)
+        obs = d.shape("Obs", width=60, height=60).at(120, 10)
+        s1 >> s2
+
+    # Obstacle deflects curve upwards to negative y (-5.0).
+    # _frame must translate roots and routes by offset_y = -(-5.0) + 80.0 = 85.0.
+    # Elements at y=15 shift to 100.0, obstacle at y=10 shifts to 95.0.
+    # The curve's minimum y must be >= FRAME_Y (80.0).
+    edge = d.edges[0]
+    path = d.routes[edge]
+    assert path.bbox().y >= 80.0
+    assert s1.bounds.y == 100.0
+    assert obs.bounds.y == 95.0
+    assert edge._resolved_path is not None
+    assert edge._resolved_path.bbox().y >= 80.0
+

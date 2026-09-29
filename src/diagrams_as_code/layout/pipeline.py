@@ -29,7 +29,7 @@ from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
-from diagrams_as_code.router import EdgeRouter, OrthogonalRouter, RoutingScene
+from diagrams_as_code.router import EdgeRouter, RoutingScene
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
@@ -216,26 +216,36 @@ def _frame(
     groups: list[Group],
     routes: Optional[dict[Any, RoutedPath]] = None,
 ) -> None:
-    """Translate the canvas when content has negative coordinates."""
-    if not elements:
-        return
+    """Translate the canvas when content or routes have negative or tight coordinates."""
+    if routes is None:
+        routes = {}
     roots = [e for e in elements if getattr(e, "parent", None) is None]
-    if not roots:
+    if not roots and not routes:
         return
-    min_x = min(e.bounds.x for e in roots)
-    min_y = min(e.bounds.y for e in roots)
-    if min_x < 0.0 or min_y < 0.0:
-        offset_x = max(0.0, -min_x + FRAME_X) if min_x < 0.0 else 0.0
-        offset_y = max(0.0, -min_y + FRAME_Y) if min_y < 0.0 else 0.0
+
+    # Check minimum coordinates across elements and routes
+    mins_x: list[float] = [e.bounds.x for e in roots]
+    mins_y: list[float] = [e.bounds.y for e in roots]
+    for path in set(routes.values()):
+        bb = path.bbox()
+        mins_x.append(bb.x)
+        mins_y.append(bb.y)
+
+    min_x = min(mins_x) if mins_x else 0.0
+    min_y = min(mins_y) if mins_y else 0.0
+
+    offset_x = max(0.0, -min_x + FRAME_X) if min_x < 0.0 else 0.0
+    offset_y = max(0.0, -min_y + FRAME_Y) if min_y < 0.0 else 0.0
+
+    if offset_x > 0.0 or offset_y > 0.0:
         for r in roots:
             r.translate(offset_x, offset_y)
         _refresh_group_bounds(groups)
-        if routes:
-            for k, path in list(routes.items()):
-                shifted = path.translate(offset_x, offset_y)
-                routes[k] = shifted
-                if isinstance(k, Edge):
-                    k._resolved_path = shifted
+        for k, path in list(routes.items()):
+            shifted = path.translate(offset_x, offset_y)
+            routes[k] = shifted
+            if isinstance(k, Edge):
+                k._resolved_path = shifted
 
 
 def _grow_canvas(
@@ -243,13 +253,22 @@ def _grow_canvas(
     elements: list[Element],
     routes: Optional[dict[Any, RoutedPath]] = None,
 ) -> None:
-    roots = [e for e in elements if e.parent is None]
-    if not roots:
-        return
-    right = max(e.bounds.right for e in roots)
-    bottom = max(e.bounds.bottom for e in roots)
-    diagram.width = max(diagram.width, right + FRAME_X)
-    diagram.height = max(diagram.height, bottom + FRAME_Y)
+    if routes is None:
+        routes = {}
+    roots = [e for e in elements if getattr(e, "parent", None) is None]
+    maxs_x: list[float] = [e.bounds.right for e in roots]
+    maxs_y: list[float] = [e.bounds.bottom for e in roots]
+    for path in set(routes.values()):
+        bb = path.bbox()
+        maxs_x.append(bb.right)
+        maxs_y.append(bb.bottom)
+
+    if maxs_x:
+        right = max(maxs_x)
+        diagram.width = max(diagram.width, right + FRAME_X)
+    if maxs_y:
+        bottom = max(maxs_y)
+        diagram.height = max(diagram.height, bottom + FRAME_Y)
 
 
 def _warn_pinned_overlaps(diagram: Any, elements: list[Element], auto_ids: set[str]) -> None:
