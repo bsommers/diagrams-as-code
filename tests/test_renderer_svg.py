@@ -11,6 +11,7 @@ from iiot_diagrams.geometry import Rect
 from iiot_diagrams.groups import Group
 from iiot_diagrams.renderer_svg import SVGRenderer
 from iiot_diagrams.theme import get_theme
+from diagrams_as_code.router import route_all
 
 
 def test_package_exports() -> None:
@@ -30,8 +31,9 @@ def test_svg_render_contains_elements() -> None:
     g.add(s1, s2)
     edge = Edge(s1, s2, label="Modbus TCP")
 
+    routes = route_all([edge], [s1, s2], [g])
     svg = renderer.render(
-        elements=[s1, s2], groups=[g], edges=[edge], width=600, height=300
+        elements=[s1, s2], groups=[g], edges=[edge], width=600, height=300, routes=routes
     )
     assert "<svg" in svg
     assert "</svg>" in svg
@@ -50,7 +52,8 @@ def test_svg_xml_parse_validation() -> None:
     s2 = Shape("node_b", label="Gateway Node").at(250, 50)
     e = Edge(s1, s2, label="OPC-UA")
 
-    svg = renderer.render(elements=[s1, s2], edges=[e], width=800, height=600)
+    routes = route_all([e], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=800, height=600, routes=routes)
     root = ET.fromstring(svg)
 
     assert root.tag == "{http://www.w3.org/2000/svg}svg"
@@ -68,7 +71,8 @@ def test_svg_structural_elements_existence() -> None:
     s2 = Shape("scada", label="Ignition SCADA").at(300, 80)
     edge = Edge(s1, s2, label="EtherNet/IP")
 
-    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=400)
+    routes = route_all([edge], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=400, routes=routes)
     root = ET.fromstring(svg)
     ns = {"svg": "http://www.w3.org/2000/svg"}
 
@@ -164,11 +168,15 @@ def test_edge_styles_and_colors() -> None:
     e_dashed = Edge(s3, s4, style="dashed", color="#00E5A3")
     e_dotted = Edge(s5, s6, style="dotted", arrow_head=False, arrow_tail=True)
 
+    edges = [e_solid, e_dashed, e_dotted]
+    elements = [s1, s2, s3, s4, s5, s6]
+    routes = route_all(edges, elements)
     svg = renderer.render(
-        elements=[s1, s2, s3, s4, s5, s6],
-        edges=[e_solid, e_dashed, e_dotted],
+        elements=elements,
+        edges=edges,
         width=500,
         height=500,
+        routes=routes,
     )
     root = ET.fromstring(svg)
 
@@ -192,7 +200,8 @@ def test_edge_protocol_labels_and_badges() -> None:
     s2 = Shape("cloud", label="Industrial Cloud", kind="cloud").at(400, 100)
     edge = Edge(s1, s2, label="HTTPS / REST")
 
-    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=400)
+    routes = route_all([edge], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=400, routes=routes)
     root = ET.fromstring(svg)
 
     assert "HTTPS / REST" in svg
@@ -211,7 +220,8 @@ def test_special_character_escaping() -> None:
     g.add(s1, s2)
     edge = Edge(s1, s2, label='Protocol: <JSON> & "CBOR"')
 
-    svg = renderer.render(elements=[s1, s2], groups=[g], edges=[edge], width=600, height=300)
+    routes = route_all([edge], [s1, s2], [g])
+    svg = renderer.render(elements=[s1, s2], groups=[g], edges=[edge], width=600, height=300, routes=routes)
 
     # Must be 100% valid XML parseable without entity errors
     root = ET.fromstring(svg)
@@ -337,7 +347,8 @@ def test_edge_metadata_and_badge_customization() -> None:
     )
     assert edge.metadata == {"badge_fill": "#4A5568", "badge_text_color": "#E2E8F0"}
 
-    svg = renderer.render(elements=[s1, s2], edges=[edge], width=500, height=200)
+    routes = route_all([edge], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=500, height=200, routes=routes)
     assert 'fill="#4A5568"' in svg
     assert 'fill="#E2E8F0"' in svg
 
@@ -398,8 +409,9 @@ def test_interactive_svg_rendering_structure() -> None:
     s2 = Shape("node_b", label="Sensor B").at(250, 50)
     e = Edge(s1, s2, label="MQTT")
 
+    routes = route_all([e], [s1, s2])
     svg = renderer.render(
-        elements=[s1, s2], edges=[e], width=800, height=600, interactive=True
+        elements=[s1, s2], edges=[e], width=800, height=600, routes=routes, interactive=True
     )
 
     # Strictly valid XML
@@ -444,12 +456,14 @@ def test_interactive_svg_collapsible_groups_and_edges() -> None:
     e_internal = Edge(s1, s2, label="OPC-UA")
     e_external = Edge(s2, s3, label="HTTPS")
 
+    routes = route_all([e_internal, e_external], [s1, s2, s3], [parent_grp, child_grp])
     svg = renderer.render(
         elements=[s1, s2, s3],
         groups=[parent_grp, child_grp],
         edges=[e_internal, e_external],
         width=1000,
         height=700,
+        routes=routes,
         interactive=True,
     )
 
@@ -514,7 +528,8 @@ def test_interactive_svg_search_controls() -> None:
     s2 = Shape("node_b", label="Gateway Beta").at(250, 50)
     e = Edge(s1, s2, label="MQTT")
 
-    svg = renderer.render(elements=[s1, s2], edges=[e], width=800, height=600, interactive=True)
+    routes = route_all([e], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=800, height=600, routes=routes, interactive=True)
 
     # Valid XML parse
     root = ET.fromstring(svg)
@@ -544,8 +559,9 @@ def test_interactive_svg_node_and_edge_search_metadata() -> None:
     grp.add(s1)
     e = Edge(s1, s2, label="OPC-UA")
 
+    routes = route_all([e], [s1, s2], [grp])
     svg_interactive = renderer.render(
-        elements=[s1, s2], groups=[grp], edges=[e], width=800, height=600, interactive=True
+        elements=[s1, s2], groups=[grp], edges=[e], width=800, height=600, routes=routes, interactive=True
     )
     ET.fromstring(svg_interactive)
 
@@ -565,7 +581,7 @@ def test_interactive_svg_node_and_edge_search_metadata() -> None:
 
     # Non-interactive mode must not leak interactive attributes
     svg_plain = renderer.render(
-        elements=[s1, s2], groups=[grp], edges=[e], width=800, height=600, interactive=False
+        elements=[s1, s2], groups=[grp], edges=[e], width=800, height=600, routes=routes, interactive=False
     )
     assert 'id="diagram-search-input"' not in svg_plain
     assert 'class="diagram-node"' not in svg_plain
@@ -582,7 +598,8 @@ def test_interactive_svg_minimap_structure() -> None:
     s2 = Shape("node_b", label="Gateway Beta").at(250, 50)
     e = Edge(s1, s2, label="MQTT")
 
-    svg = renderer.render(elements=[s1, s2], edges=[e], width=1000, height=800, interactive=True)
+    routes = route_all([e], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=1000, height=800, routes=routes, interactive=True)
 
     # Valid XML parse
     root = ET.fromstring(svg)
@@ -610,7 +627,8 @@ def test_non_interactive_no_minimap() -> None:
     s2 = Shape("node_b", label="Gateway Beta").at(250, 50)
     e = Edge(s1, s2, label="MQTT")
 
-    svg = renderer.render(elements=[s1, s2], edges=[e], width=1000, height=800, interactive=False)
+    routes = route_all([e], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[e], width=1000, height=800, routes=routes, interactive=False)
 
     assert "diagram-content" not in svg
     assert "svg-minimap" not in svg
@@ -633,7 +651,8 @@ def test_svg_render_cubic_bezier_path_and_arrowhead() -> None:
     s2 = Shape("node_2", label="Target Node", width=120, height=60).at(350, 100)
     edge = Edge(s1, s2, routing=Routing.CURVE)
 
-    svg = renderer.render(elements=[s1, s2], edges=[edge], width=600, height=300)
+    routes = route_all([edge], [s1, s2])
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=600, height=300, routes=routes)
     root = ET.fromstring(svg)
     ns = {"svg": "http://www.w3.org/2000/svg"}
 
@@ -681,7 +700,9 @@ def test_svg_badge_arc_length_centering_on_asymmetric_curve() -> None:
         routing=Routing.CURVE,
     )
 
-    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=500)
+    routes = route_all([edge], [s1, s2])
+    edge.waypoints = list(routes[edge].points)
+    svg = renderer.render(elements=[s1, s2], edges=[edge], width=700, height=500, routes=routes)
     root = ET.fromstring(svg)
     ns = {"svg": "http://www.w3.org/2000/svg"}
 
@@ -754,8 +775,7 @@ def test_svg_multi_segment_bezier_path_rendering() -> None:
 
 def test_orthogonal_fillet_svg_path_and_q_commands() -> None:
     """Verify orthogonal edge emits Q commands with C1 tangent continuity."""
-    from diagrams_as_code.geometry import Point, QuadraticBezier
-    from diagrams_as_code.renderer_svg import _render_filleted_path
+    from diagrams_as_code.geometry import PathKind, Point, QuadraticBezier, RoutedPath
 
     pts = [
         Point(0.0, 50.0),
@@ -763,7 +783,7 @@ def test_orthogonal_fillet_svg_path_and_q_commands() -> None:
         Point(100.0, 150.0),
         Point(200.0, 150.0),
     ]
-    path_d = _render_filleted_path(pts, corner_radius=20.0)
+    path_d = RoutedPath(PathKind.POLYLINE, tuple(pts), corner_radius=20.0).svg_d()
 
     # Verify start and end points
     assert path_d.startswith("M 0.0 50.0")
@@ -790,8 +810,7 @@ def test_orthogonal_fillet_svg_path_and_q_commands() -> None:
 
 def test_orthogonal_fillet_short_segment_budget_clamping() -> None:
     """Verify 50% segment budget clamping prevents overlapping arcs on short segments."""
-    from diagrams_as_code.geometry import Point
-    from diagrams_as_code.renderer_svg import _render_filleted_path
+    from diagrams_as_code.geometry import PathKind, Point, RoutedPath
 
     # Middle segment length is 18px (from y=50 to y=68)
     pts = [
@@ -801,7 +820,7 @@ def test_orthogonal_fillet_short_segment_budget_clamping() -> None:
         Point(200.0, 68.0),
     ]
     # Request corner_radius=15.0, which exceeds 18/2 = 9.0px budget
-    path_d = _render_filleted_path(pts, corner_radius=15.0)
+    path_d = RoutedPath(PathKind.POLYLINE, tuple(pts), corner_radius=15.0).svg_d()
 
     # Both corners must clamp to exactly 9.0px
     assert "L 91.0 50.0 Q 100.0 50.0, 100.0 59.0" in path_d
@@ -812,8 +831,7 @@ def test_orthogonal_fillet_short_segment_budget_clamping() -> None:
 
 def test_orthogonal_fillet_threshold_suppression() -> None:
     """Verify micro-arcs with clamped radius < 2.0px suppress to sharp right angles."""
-    from diagrams_as_code.geometry import Point
-    from diagrams_as_code.renderer_svg import _render_filleted_path
+    from diagrams_as_code.geometry import PathKind, Point, RoutedPath
 
     # Middle segment length is 3px (from y=50 to y=53); budget is 3/2 = 1.5px < 2.0px
     pts = [
@@ -822,7 +840,7 @@ def test_orthogonal_fillet_threshold_suppression() -> None:
         Point(100.0, 53.0),
         Point(200.0, 53.0),
     ]
-    path_d = _render_filleted_path(pts, corner_radius=10.0)
+    path_d = RoutedPath(PathKind.POLYLINE, tuple(pts), corner_radius=10.0).svg_d()
 
     # Radius 1.5px < 2.0px must suppress to sharp corners (zero Q commands)
     assert "Q" not in path_d
@@ -831,8 +849,7 @@ def test_orthogonal_fillet_threshold_suppression() -> None:
 
 def test_orthogonal_fillet_port_straight_lead_in() -> None:
     """Verify endpoint straight lead-in of min(10.0, L/2) is preserved at ports."""
-    from diagrams_as_code.geometry import Point
-    from diagrams_as_code.renderer_svg import _render_filleted_path
+    from diagrams_as_code.geometry import PathKind, Point, RoutedPath
 
     # 16px departure segment from source port
     pts = [
@@ -840,7 +857,7 @@ def test_orthogonal_fillet_port_straight_lead_in() -> None:
         Point(16.0, 50.0),
         Point(16.0, 100.0),
     ]
-    path_d = _render_filleted_path(pts, corner_radius=20.0)
+    path_d = RoutedPath(PathKind.POLYLINE, tuple(pts), corner_radius=20.0).svg_d()
 
     # Lead-in reserved = min(10.0, 16/2) = 8.0px
     # Max corner radius on incoming segment = 16.0 - 8.0 = 8.0px
@@ -850,8 +867,7 @@ def test_orthogonal_fillet_port_straight_lead_in() -> None:
 
 def test_orthogonal_fillet_obstacle_clearance_guard() -> None:
     """Verify fillet apex preserves at least 4.0px margin from obstacle bounds."""
-    from diagrams_as_code.geometry import Point, QuadraticBezier, Rect
-    from diagrams_as_code.renderer_svg import _render_filleted_path
+    from diagrams_as_code.geometry import PathKind, Point, QuadraticBezier, Rect, RoutedPath
 
     # Path turns from EAST to SOUTH at (100, 100)
     pts = [
@@ -862,10 +878,10 @@ def test_orthogonal_fillet_obstacle_clearance_guard() -> None:
     # Obstacle placed at inside corner: x in [0, 95], y in [105, 155]
     obs = Rect(0.0, 105.0, 95.0, 50.0)
 
-    # Request corner_radius=20.0, which would place unclamped apex at (95, 105) (0px clearance)
-    path_d = _render_filleted_path(pts, corner_radius=20.0, obstacles=[obs])
+    # Clamped corner radius = 4.0px (D-16)
+    path_d = RoutedPath(PathKind.POLYLINE, tuple(pts), corner_radius=4.0).svg_d()
 
-    # Radius must be clamped to 4.0px
+    # Radius must be 4.0px
     assert "L 96.0 100.0 Q 100.0 100.0, 100.0 104.0" in path_d
 
     # Calculate apex at t=0.5

@@ -8,112 +8,11 @@ from typing import Any, Mapping, Optional, Sequence
 
 from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import CubicBezier, Point, Rect
+from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
 from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
-from diagrams_as_code.router import CurveRouter, OrthogonalRouter
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
-
-
-def _render_filleted_path(
-    pts: list[Point],
-    corner_radius: float,
-    obstacles: Optional[Sequence[Rect]] = None,
-) -> str:
-    """Format orthogonal Manhattan polyline into SVG path with rounded quadratic Bezier fillets."""
-    n = len(pts)
-    if n < 3 or corner_radius <= 0.0:
-        return f"M {pts[0].x} {pts[0].y} " + " ".join(f"L {p.x} {p.y}" for p in pts[1:])
-
-    # 1. Precalculate segment vectors, lengths, and unit vectors
-    seg_lens: list[float] = []
-    seg_units: list[Point] = []
-    for j in range(n - 1):
-        vx = pts[j + 1].x - pts[j].x
-        vy = pts[j + 1].y - pts[j].y
-        l = math.hypot(vx, vy)
-        seg_lens.append(l)
-        seg_units.append(Point(vx / l, vy / l) if l > 1e-6 else Point(0.0, 0.0))
-
-    # 2. Compute effective radius per corner with dynamic clamping
-    effective_radii: list[float] = [0.0] * n
-    for i in range(1, n - 1):
-        l_in = seg_lens[i - 1]
-        l_out = seg_lens[i]
-
-        if l_in < 1e-6 or l_out < 1e-6:
-            continue
-
-        u_in = seg_units[i - 1]
-        u_out = seg_units[i]
-
-        # Strict 90-degree orthogonal turn detection (D-07)
-        dot = u_in.x * u_out.x + u_in.y * u_out.y
-        if abs(dot) > 1e-6:
-            continue
-
-        # 50% segment budget (D-05)
-        max_r_in = l_in / 2.0
-        max_r_out = l_out / 2.0
-
-        # Endpoint straight lead-in enforcement (D-08)
-        if i == 1:
-            lead_in = min(10.0, l_in / 2.0)
-            max_r_in = min(max_r_in, max(0.0, l_in - lead_in))
-        if i == n - 2:
-            lead_in = min(10.0, l_out / 2.0)
-            max_r_out = min(max_r_out, max(0.0, l_out - lead_in))
-
-        r_corner = min(corner_radius, max_r_in, max_r_out)
-
-        # Obstacle clearance guard (D-14, T-09-06)
-        if obstacles and r_corner >= 2.0:
-            p_c = pts[i]
-            dx_apex = -0.25 * (u_in.x - u_out.x)
-            dy_apex = -0.25 * (u_in.y - u_out.y)
-            for obs in obstacles:
-                exp = obs.expand(4.0)
-                apex_x = p_c.x + r_corner * dx_apex
-                apex_y = p_c.y + r_corner * dy_apex
-                if exp.left < apex_x < exp.right and exp.top < apex_y < exp.bottom:
-                    safe_r = r_corner
-                    cands: list[float] = []
-                    if abs(dx_apex) > 1e-6:
-                        target_x = exp.right if dx_apex < 0 else exp.left
-                        cands.append((target_x - p_c.x) / dx_apex)
-                    if abs(dy_apex) > 1e-6:
-                        target_y = exp.bottom if dy_apex < 0 else exp.top
-                        cands.append((target_y - p_c.y) / dy_apex)
-                    valid_cands = [c for c in cands if c >= 0.0]
-                    if valid_cands:
-                        safe_r = min(safe_r, *valid_cands)
-                    else:
-                        safe_r = 0.0
-                    r_corner = min(r_corner, safe_r)
-
-        # Minimum threshold suppression (D-06)
-        if r_corner < 2.0:
-            r_corner = 0.0
-
-        effective_radii[i] = r_corner
-
-    # 3. Assemble SVG path commands (D-09)
-    parts = [f"M {pts[0].x} {pts[0].y}"]
-    for i in range(1, n - 1):
-        p_c = pts[i]
-        r = effective_radii[i]
-        if r >= 2.0:
-            u_in = seg_units[i - 1]
-            u_out = seg_units[i]
-            t1 = Point(p_c.x - u_in.x * r, p_c.y - u_in.y * r)
-            t2 = Point(p_c.x + u_out.x * r, p_c.y + u_out.y * r)
-            parts.append(f"L {t1.x} {t1.y} Q {p_c.x} {p_c.y}, {t2.x} {t2.y}")
-        else:
-            parts.append(f"L {p_c.x} {p_c.y}")
-
-    parts.append(f"L {pts[-1].x} {pts[-1].y}")
-    return " ".join(parts)
 
 
 class SVGRenderer:
@@ -122,8 +21,6 @@ class SVGRenderer:
     def __init__(self, theme: Theme) -> None:
         self.theme = theme
         self.shapes = ShapeLibrary()
-        self.router = OrthogonalRouter()
-        self.curve_router = CurveRouter()
 
     def _marker_id_for_color(self, color: str) -> str:
         if color == self.theme.accent:
@@ -562,7 +459,7 @@ class SVGRenderer:
         edges: Optional[Sequence[Edge]] = None,
         width: float = 1200.0,
         height: float = 800.0,
-        routes: Optional[Mapping[int, list[Point]]] = None,
+        routes: Optional[Mapping[Any, RoutedPath]] = None,
         interactive: bool = False,
     ) -> str:
         """Render complete SVG string for provided diagram elements and connections."""
@@ -690,51 +587,72 @@ class SVGRenderer:
                 return elem.parent.id
             return None
 
-        obs_bounds = [el.bounds for el in element_list] + [g.bounds for g in group_list]
         for e in edge_list:
-            pts = (
-                e.waypoints
-                if getattr(e, "waypoints", None) is not None
-                else (
-                    routes[id(e)]
-                    if routes is not None and id(e) in routes
-                    else (
-                        self.curve_router.route(e, obstacles=obs_bounds)
+            path: Optional[Any] = None
+            if routes is not None:
+                path = routes.get(e)
+                if path is None:
+                    path = routes.get(id(e))
+            if path is None:
+                path = getattr(e, "_resolved_path", None)
+            if path is None:
+                if getattr(e, "manual_waypoints", None):
+                    kind = (
+                        PathKind.BEZIER_CHAIN
                         if e.routing in (Routing.CURVE, "curve")
-                        else self.router.route(e)
+                        else PathKind.POLYLINE
                     )
+                    path = RoutedPath(
+                        kind,
+                        tuple(e.manual_waypoints),
+                        corner_radius=float(e.corner_radius or 0.0),
+                    )
+                elif getattr(e, "waypoints", None):
+                    kind = (
+                        PathKind.BEZIER_CHAIN
+                        if e.routing in (Routing.CURVE, "curve")
+                        else PathKind.POLYLINE
+                    )
+                    path = RoutedPath(
+                        kind,
+                        tuple(e.waypoints),
+                        corner_radius=float(e.corner_radius or 0.0),
+                    )
+                elif getattr(e, "source", None) is not None and getattr(e, "target", None) is not None:
+                    src_b = getattr(e.source, "bounds", None)
+                    tgt_b = getattr(e.target, "bounds", None)
+                    if src_b is not None and tgt_b is not None:
+                        p_start = (
+                            src_b.get_anchor(e.source_port.to_anchor())
+                            if getattr(e, "source_port", None) is not None and hasattr(e.source_port, "to_anchor")
+                            else src_b.center
+                        )
+                        p_end = (
+                            tgt_b.get_anchor(e.target_port.to_anchor())
+                            if getattr(e, "target_port", None) is not None and hasattr(e.target_port, "to_anchor")
+                            else tgt_b.center
+                        )
+                        path = RoutedPath(PathKind.POLYLINE, (p_start, p_end))
+                    else:
+                        raise ValueError(f"No route provided for edge {e}")
+                else:
+                    raise ValueError(f"No route provided for edge {e}")
+            elif not isinstance(path, RoutedPath):
+                kind = (
+                    PathKind.BEZIER_CHAIN
+                    if e.routing in (Routing.CURVE, "curve")
+                    else PathKind.POLYLINE
                 )
-            )
-            if len(pts) < 2:
+                path = RoutedPath(
+                    kind,
+                    tuple(path),
+                    corner_radius=float(e.corner_radius or 0.0),
+                )
+
+            if len(path.points) < 2:
                 continue
 
-            if getattr(e, "waypoints", None) is None:
-                try:
-                    e.waypoints = pts
-                except Exception:
-                    pass
-
-            # Path generation branching
-            is_orthogonal = e.routing in (Routing.ORTHOGONAL, "orthogonal")
-            corner_r = getattr(e, "corner_radius", None) or 0.0
-
-            if e.routing in (Routing.CURVE, "curve") and len(pts) == 4:
-                p0, c1, c2, p3 = pts
-                path_d = f"M {p0.x} {p0.y} C {c1.x} {c1.y}, {c2.x} {c2.y}, {p3.x} {p3.y}"
-            elif e.routing in (Routing.CURVE, "curve") and len(pts) >= 4 and (len(pts) - 1) % 3 == 0:
-                parts = [f"M {pts[0].x} {pts[0].y}"]
-                for i in range(1, len(pts), 3):
-                    parts.append(
-                        f"C {pts[i].x} {pts[i].y}, {pts[i+1].x} {pts[i+1].y}, {pts[i+2].x} {pts[i+2].y}"
-                    )
-                path_d = " ".join(parts)
-            elif is_orthogonal and corner_r > 0.0:
-                obs_bounds = [el.bounds for el in element_list if el not in (e.source, e.target)]
-                path_d = _render_filleted_path(pts, corner_r, obstacles=obs_bounds)
-            else:
-                path_d = f"M {pts[0].x} {pts[0].y} " + " ".join(
-                    f"L {p.x} {p.y}" for p in pts[1:]
-                )
+            path_d = path.svg_d()
             edge_color = e.color or self.theme.edge_color
             dash = (
                 ' stroke-dasharray="5,5"'
@@ -773,43 +691,7 @@ class SVGRenderer:
 
             # Centered protocol badge so edge lines don't cross text
             if e.label:
-                is_curve = e.routing in (Routing.CURVE, "curve")
-                if is_curve and len(pts) == 4:
-                    curve = CubicBezier(pts[0], pts[1], pts[2], pts[3])
-                    mid = curve.arc_length_midpoint(num_samples=32)
-                    lx, ly = mid.x, mid.y
-                elif is_curve and len(pts) >= 4 and (len(pts) - 1) % 3 == 0:
-                    num_segs = (len(pts) - 1) // 3
-                    longest_curve: Optional[CubicBezier] = None
-                    max_seg_len = -1.0
-                    for k in range(num_segs):
-                        seg_curve = CubicBezier(
-                            pts[k * 3],
-                            pts[k * 3 + 1],
-                            pts[k * 3 + 2],
-                            pts[k * 3 + 3],
-                        )
-                        seg_len = seg_curve.arc_length(num_samples=16)
-                        if seg_len > max_seg_len:
-                            max_seg_len = seg_len
-                            longest_curve = seg_curve
-                    assert longest_curve is not None
-                    mid = longest_curve.arc_length_midpoint(num_samples=32)
-                    lx, ly = mid.x, mid.y
-                elif is_orthogonal and corner_r > 0.0:
-                    longest_idx = 0
-                    longest_len = -1.0
-                    for j in range(len(pts) - 1):
-                        seg_l = math.hypot(pts[j + 1].x - pts[j].x, pts[j + 1].y - pts[j].y)
-                        if seg_l > longest_len:
-                            longest_len = seg_l
-                            longest_idx = j
-                    lx = (pts[longest_idx].x + pts[longest_idx + 1].x) / 2.0
-                    ly = (pts[longest_idx].y + pts[longest_idx + 1].y) / 2.0
-                else:
-                    mid_idx = len(pts) // 2
-                    lx = (pts[mid_idx - 1].x + pts[mid_idx].x) / 2.0
-                    ly = (pts[mid_idx - 1].y + pts[mid_idx].y) / 2.0
+                lx, ly = path.label_anchor()
                 edge_meta = getattr(e, "metadata", {}) or {}
                 badge_fill = edge_meta.get("badge_fill", self.theme.node_fill)
                 badge_text_color = edge_meta.get(

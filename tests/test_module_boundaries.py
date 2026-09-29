@@ -44,6 +44,11 @@ ALLOWED_UPWARD: dict[tuple[str, str], str] = {
     ("elements", "connections"): "a diagram-less `a >> b` builds a bare Edge",
 }
 
+#: Explicitly forbidden imports even if layer numbers would allow them.
+FORBIDDEN_EDGES: dict[tuple[str, str], str] = {
+    ("renderer_svg", "router"): "renderer only draws; routing happens in layout stage",
+}
+
 
 def _unit(path: Path) -> str:
     rel = path.relative_to(PKG)
@@ -100,6 +105,8 @@ def test_imports_point_down(path: Path) -> None:
     for target in sorted(_imported_units(tree, unit)):
         if target == unit or target not in LAYERS:
             continue
-        if LAYERS[target] >= LAYERS[unit] and (unit, target) not in ALLOWED_UPWARD:
+        if (unit, target) in FORBIDDEN_EDGES:
+            bad.append(f"{target} (forbidden: {FORBIDDEN_EDGES[(unit, target)]})")
+        elif LAYERS[target] >= LAYERS[unit] and (unit, target) not in ALLOWED_UPWARD:
             bad.append(target)
-    assert not bad, f"{unit} (layer {LAYERS.get(unit)}) imports higher/equal layers: {bad}"
+    assert not bad, f"{unit} (layer {LAYERS.get(unit)}) imports higher/equal/forbidden layers: {bad}"

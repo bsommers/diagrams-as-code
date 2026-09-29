@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from diagrams_as_code import Diagram, SVGRenderer
-from diagrams_as_code.router import OrthogonalRouter
+from diagrams_as_code.router import OrthogonalRouter, route_all
 
 
 def _diag() -> Diagram:
@@ -47,10 +47,13 @@ def test_renderer_uses_edge_waypoints_directly_without_routes_dict(monkeypatch) 
     assert "<path" in svg
 
 
-def test_renderer_still_routes_when_no_routes_or_waypoints() -> None:
+def test_renderer_routes_with_route_all() -> None:
     d = _diag()
     (edge,) = d.edges
     edge.waypoints = None
-    svg = SVGRenderer(d.theme).render(elements=d.shapes, groups=d.groups, edges=d.edges, width=d.width, height=d.height)
+    routes = route_all(d.edges, d.shapes, d.groups)
+    svg = SVGRenderer(d.theme).render(
+        elements=d.shapes, groups=d.groups, edges=d.edges, width=d.width, height=d.height, routes=routes
+    )
     assert "<path" in svg
 
