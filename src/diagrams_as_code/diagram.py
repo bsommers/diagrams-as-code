@@ -1,13 +1,14 @@
 """Diagram context manager and fluent syntax engine."""
 from __future__ import annotations
 
+import copy
 import dataclasses
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
 from diagrams_as_code import context, rasterize
 from diagrams_as_code.bom import BOMGenerator
-from diagrams_as_code.connections import Edge, Port, Routing
+from diagrams_as_code.connections import Edge, Port, Routing, _coerce_enum
 from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import Anchor, Point, Size, UnitBasis
@@ -33,7 +34,7 @@ class _EdgeBuilder:
         target_port: Optional[Union[Port, str]] = None,
         arrow_head: bool = True,
         arrow_tail: bool = False,
-        routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        routing: Optional[Union[Routing, str]] = None,
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
@@ -47,7 +48,7 @@ class _EdgeBuilder:
         self.target_port = target_port
         self.arrow_head = arrow_head
         self.arrow_tail = arrow_tail
-        self.routing = routing
+        self.routing = _coerce_enum(routing, Routing, "routing", allow_none=True)
         effective_r = corner_radius if corner_radius is not None else arc_radius
         self._corner_radius: Optional[float] = Edge._validate_corner_radius(effective_r)
         self._clearance: Optional[float] = (
@@ -87,14 +88,41 @@ class _EdgeBuilder:
         clearance: Optional[float] = None,
         **kwargs: Any,
     ) -> Any:
-        if clearance is not None:
-            self.clearance = clearance
+        allowed_kwargs = {
+            "source",
+            "target",
+            "clearance",
+            "corner_radius",
+            "arc_radius",
+            "routing",
+        }
+        for k in kwargs:
+            if k not in allowed_kwargs:
+                raise TypeError(f"_EdgeBuilder got unexpected keyword argument {k!r}")
+
+        clone = copy.copy(self)
+        call_source = kwargs.get("source", source)
+        call_target = kwargs.get("target", target)
+
         if "clearance" in kwargs:
-            self.clearance = kwargs.pop("clearance")
-        if source is not None and target is not None:
-            self.source = source
-            return self >> target
-        return self
+            clone.clearance = kwargs["clearance"]
+        elif clearance is not None:
+            clone.clearance = clearance
+
+        effective_r = kwargs.get("corner_radius", kwargs.get("arc_radius"))
+        if effective_r is not None or "corner_radius" in kwargs or "arc_radius" in kwargs:
+            clone.corner_radius = effective_r
+
+        if "routing" in kwargs:
+            clone.routing = _coerce_enum(
+                kwargs["routing"], Routing, "routing", allow_none=True
+            )
+
+        if call_source is not None:
+            clone.source = call_source
+        if clone.source is not None and call_target is not None:
+            return clone >> call_target
+        return clone
 
     def __rrshift__(self, source: Any) -> _EdgeBuilder:
         """Support fan-in operator when left operand is a list/tuple or element."""
@@ -531,7 +559,7 @@ class Diagram:
         target_port: Optional[Union[Port, str]] = None,
         arrow_head: bool = True,
         arrow_tail: bool = False,
-        routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        routing: Optional[Union[Routing, str]] = None,
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
@@ -565,7 +593,7 @@ class Diagram:
         target_port: Optional[Union[Port, str]] = None,
         arrow_head: bool = True,
         arrow_tail: bool = False,
-        routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        routing: Optional[Union[Routing, str]] = None,
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,

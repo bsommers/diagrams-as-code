@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from enum import Enum
 import math
-from typing import Any, Optional, Type, TypeVar, Union
+from typing import Any, Optional, Sequence, Type, TypeVar, Union
 
 from diagrams_as_code.elements import Element
-from diagrams_as_code.geometry import Anchor, Point
+from diagrams_as_code.geometry import Anchor, PathKind, Point, RoutedPath
 
 E = TypeVar("E", bound=Enum)
 
@@ -74,10 +74,11 @@ class Edge:
         target_port: Optional[Union[Port, str]] = None,
         arrow_head: bool = True,
         arrow_tail: bool = False,
-        routing: Union[Routing, str] = Routing.ORTHOGONAL,
+        routing: Optional[Union[Routing, str]] = None,
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
+        manual_waypoints: Optional[Sequence[Point]] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> None:
         if not isinstance(source, Element):
@@ -102,18 +103,52 @@ class Edge:
             target_port, Port, "target_port", allow_none=True
         )
 
-        coerced_routing = _coerce_enum(routing, Routing, "routing", allow_none=False)
-        assert coerced_routing is not None
-        self.routing: Routing = coerced_routing
+        self._routing: Optional[Routing] = _coerce_enum(
+            routing, Routing, "routing", allow_none=True
+        )
 
         effective_r = corner_radius if corner_radius is not None else arc_radius
         self._corner_radius: Optional[float] = self._validate_corner_radius(effective_r)
-        self._clearance: float = self._validate_clearance(clearance)
+        self._clearance: Optional[float] = self._validate_clearance(clearance)
 
         self.arrow_head = bool(arrow_head)
         self.arrow_tail = bool(arrow_tail)
         self.metadata: dict[str, Any] = dict(metadata) if metadata else {}
-        self.waypoints: Optional[list[Point]] = None
+        self.manual_waypoints: Optional[list[Point]] = (
+            list(manual_waypoints) if manual_waypoints else None
+        )
+        self._resolved_path: Optional[RoutedPath] = None
+
+    @property
+    def routing(self) -> Routing:
+        """Routing strategy for edges."""
+        if self._routing is not None:
+            return self._routing
+        if self._resolved_path is not None:
+            return (
+                Routing.CURVE
+                if self._resolved_path.kind == PathKind.BEZIER_CHAIN
+                else Routing.ORTHOGONAL
+            )
+        return Routing.ORTHOGONAL
+
+    @routing.setter
+    def routing(self, val: Optional[Union[Routing, str]]) -> None:
+        self._routing = _coerce_enum(val, Routing, "routing", allow_none=True)
+
+    @property
+    def waypoints(self) -> Optional[list[Point]]:
+        """Path waypoints, either from resolved path or manual waypoints."""
+        if self._resolved_path is not None:
+            return list(self._resolved_path.points)
+        if self.manual_waypoints is not None:
+            return list(self.manual_waypoints)
+        return None
+
+    @waypoints.setter
+    def waypoints(self, val: Optional[Union[Sequence[Point], list[Point]]]) -> None:
+        self.manual_waypoints = list(val) if val is not None else None
+        self._resolved_path = None
 
     @staticmethod
     def _validate_corner_radius(val: Optional[Union[int, float]]) -> Optional[float]:
@@ -155,10 +190,10 @@ class Edge:
         self._corner_radius = self._validate_corner_radius(val)
 
     @staticmethod
-    def _validate_clearance(val: Optional[Union[int, float]]) -> float:
+    def _validate_clearance(val: Optional[Union[int, float]]) -> Optional[float]:
         """Validate and coerce clearance buffer to non-negative finite float."""
         if val is None:
-            return 15.0
+            return None
         if isinstance(val, (bool, str)):
             raise ValueError(
                 f"clearance must be a non-negative finite float, got {val!r}"
@@ -178,9 +213,9 @@ class Edge:
     @property
     def clearance(self) -> float:
         """Clearance buffer distance (in pixels) maintained from obstacles."""
-        return self._clearance
+        return self._clearance if self._clearance is not None else 15.0
 
     @clearance.setter
-    def clearance(self, val: Union[int, float]) -> None:
+    def clearance(self, val: Optional[Union[int, float]]) -> None:
         self._clearance = self._validate_clearance(val)
 

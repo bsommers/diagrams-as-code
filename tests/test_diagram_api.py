@@ -428,3 +428,91 @@ def test_fluent_operator_multi_hop_cascade_and_selective_override() -> None:
     assert e_cd.corner_radius == 10.0
 
 
+def test_edge_style_defaults_to_none() -> None:
+    from diagrams_as_code import Edge, Routing, Point
+    from diagrams_as_code.elements import Shape
+
+    s1 = Shape(id="s1", label="1")
+    s2 = Shape(id="s2", label="2")
+    e = Edge(source=s1, target=s2)
+    assert e._routing is None
+    assert e._clearance is None
+    assert e._corner_radius is None
+    assert e.manual_waypoints is None
+    # Public getters fall back to system defaults when unresolved
+    assert e.routing == Routing.ORTHOGONAL
+    assert e.clearance == 15.0
+
+
+def test_edge_builder_rejects_unknown_kwargs() -> None:
+    from diagrams_as_code import Diagram
+
+    with Diagram() as d:
+        with pytest.raises(TypeError, match="unexpected keyword argument 'invalid_param'"):
+            d.edge(invalid_param=123)
+
+        builder = d.edge()
+        with pytest.raises(TypeError, match="unexpected keyword argument 'invalid_param'"):
+            builder(invalid_param=123)
+
+
+def test_edge_builder_call_does_not_mutate_state() -> None:
+    from diagrams_as_code import Diagram
+
+    with Diagram() as d:
+        s1 = d.shape("S1")
+        s2 = d.shape("S2")
+        s3 = d.shape("S3")
+        builder = d.edge()
+        assert builder.clearance is None
+        b2 = builder(clearance=25.0)
+        assert builder.clearance is None
+        assert b2.clearance == 25.0
+        s1 >> b2 >> s2
+        assert d.edges[-1].clearance == 25.0
+        s2 >> builder >> s3
+        assert d.edges[-1].clearance == 15.0
+
+
+def test_edge_waypoints_getter_and_setter() -> None:
+    from diagrams_as_code import Edge, Point
+    from diagrams_as_code.elements import Shape
+
+    s1 = Shape(id="s1", label="1")
+    s2 = Shape(id="s2", label="2")
+    e = Edge(source=s1, target=s2)
+    assert e.waypoints is None
+    e.waypoints = [Point(0, 0), Point(10, 10)]
+    assert e.waypoints == [Point(0, 0), Point(10, 10)]
+    assert e.manual_waypoints == [Point(0, 0), Point(10, 10)]
+    e.waypoints = None
+    assert e.waypoints is None
+    assert e.manual_waypoints is None
+
+
+def test_edge_routing_with_resolved_path() -> None:
+    from diagrams_as_code import Edge, Routing, Point
+    from diagrams_as_code.elements import Shape
+    from diagrams_as_code.geometry import RoutedPath, PathKind
+
+    s1 = Shape(id="s1", label="1")
+    s2 = Shape(id="s2", label="2")
+    e = Edge(source=s1, target=s2)
+    assert e.routing == Routing.ORTHOGONAL
+    e._resolved_path = RoutedPath(
+        kind=PathKind.BEZIER_CHAIN,
+        points=(Point(0, 0), Point(1, 1), Point(2, 2), Point(3, 3)),
+    )
+    assert e.routing == Routing.CURVE
+    assert e.waypoints == [Point(0, 0), Point(1, 1), Point(2, 2), Point(3, 3)]
+    e._resolved_path = RoutedPath(
+        kind=PathKind.POLYLINE,
+        points=(Point(0, 0), Point(10, 0), Point(10, 10)),
+    )
+    assert e.routing == Routing.ORTHOGONAL
+    assert e.waypoints == [Point(0, 0), Point(10, 0), Point(10, 10)]
+    # Explicit _routing overrides _resolved_path
+    e.routing = Routing.DIRECT
+    assert e.routing == Routing.DIRECT
+
+
