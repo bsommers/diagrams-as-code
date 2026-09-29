@@ -20,9 +20,10 @@ import warnings
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import AbsoluteConstraint, Element
-from diagrams_as_code.geometry import Anchor, Point, Rect
+from diagrams_as_code.geometry import Anchor, PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
@@ -32,6 +33,47 @@ from diagrams_as_code.router import OrthogonalRouter
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
+
+
+@dataclass(frozen=True)
+class EdgeStyle:
+    routing: Routing
+    corner_radius: float
+    clearance: float
+
+
+def resolve_edge_style(edge: Edge, diagram: Any) -> EdgeStyle:
+    # 1. Routing
+    if edge._routing is not None:
+        eff_routing = edge._routing
+    elif getattr(diagram, "routing", None) is not None:
+        eff_routing = diagram.routing
+    else:
+        eff_routing = Routing.ORTHOGONAL
+    if isinstance(eff_routing, str):
+        eff_routing = Routing(eff_routing)
+
+    # 2. Corner radius (None = inherit, 0.0 = explicit sharp)
+    if edge._corner_radius is not None:
+        eff_cr = edge._corner_radius
+    elif getattr(diagram, "corner_radius", None) is not None:
+        eff_cr = diagram.corner_radius
+    else:
+        eff_cr = 0.0
+
+    # 3. Clearance (None = inherit)
+    if edge._clearance is not None:
+        eff_clearance = edge._clearance
+    elif getattr(diagram, "clearance", None) is not None:
+        eff_clearance = diagram.clearance
+    else:
+        eff_clearance = 15.0
+
+    return EdgeStyle(
+        routing=eff_routing,
+        corner_radius=float(eff_cr),
+        clearance=float(eff_clearance),
+    )
 
 
 @dataclass
@@ -65,8 +107,14 @@ def run_layout(diagram: Any) -> None:
     router = OrthogonalRouter()
     routes: dict[int, list[Point]] = {}
     for edge in diagram.edges:
+        style = resolve_edge_style(edge, diagram)
         waypoints = router.route(edge, obstacles=elements)
         edge.waypoints = waypoints
+        edge._resolved_path = RoutedPath(
+            kind=PathKind.BEZIER_CHAIN if style.routing == Routing.CURVE else PathKind.POLYLINE,
+            points=tuple(waypoints),
+            corner_radius=style.corner_radius,
+        )
         routes[id(edge)] = waypoints
     diagram.routes = routes
 

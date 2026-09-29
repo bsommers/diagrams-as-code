@@ -180,14 +180,6 @@ class _EdgeBuilder:
         if diag is None:
             diag = Diagram.get_current()
 
-        effective_cr = self.corner_radius
-        if effective_cr is None and diag is not None and diag.corner_radius is not None:
-            effective_cr = diag.corner_radius
-
-        effective_clearance = self.clearance
-        if effective_clearance is None and diag is not None and diag.clearance is not None:
-            effective_clearance = diag.clearance
-
         for s in sources:
             for t in targets:
                 if diag is not None:
@@ -202,8 +194,8 @@ class _EdgeBuilder:
                         arrow_head=self.arrow_head,
                         arrow_tail=self.arrow_tail,
                         routing=self.routing,
-                        corner_radius=effective_cr,
-                        clearance=effective_clearance,
+                        corner_radius=self.corner_radius,
+                        clearance=self.clearance,
                         metadata=self.metadata,
                     )
                 else:
@@ -218,8 +210,8 @@ class _EdgeBuilder:
                         arrow_head=self.arrow_head,
                         arrow_tail=self.arrow_tail,
                         routing=self.routing,
-                        corner_radius=effective_cr,
-                        clearance=effective_clearance,
+                        corner_radius=self.corner_radius,
+                        clearance=self.clearance,
                         metadata=self.metadata,
                     )
 
@@ -354,6 +346,7 @@ class Diagram:
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
+        routing: Optional[Union[Routing, str]] = None,
     ) -> None:
         self.title = title
         self.width = float(width)
@@ -371,6 +364,9 @@ class Diagram:
         self._corner_radius: Optional[float] = Edge._validate_corner_radius(effective_r)
         self._clearance: Optional[float] = (
             Edge._validate_clearance(clearance) if clearance is not None else None
+        )
+        self._routing: Optional[Routing] = _coerce_enum(
+            routing, Routing, "routing", allow_none=True
         )
         self.shapes: list[Shape] = []
         self.groups: list[Group] = []
@@ -393,6 +389,7 @@ class Diagram:
             node_gap=node_gap,
             interactive=interactive,
             clearance=clearance,
+            routing=routing,
         )
 
     @property
@@ -422,6 +419,15 @@ class Diagram:
     def clearance(self, val: Optional[Union[int, float]]) -> None:
         self._clearance = Edge._validate_clearance(val) if val is not None else None
 
+    @property
+    def routing(self) -> Optional[Routing]:
+        """Default routing strategy for edges in this diagram."""
+        return self._routing
+
+    @routing.setter
+    def routing(self, val: Optional[Union[Routing, str]]) -> None:
+        self._routing = _coerce_enum(val, Routing, "routing", allow_none=True)
+
     def configure(
         self,
         *,
@@ -435,6 +441,7 @@ class Diagram:
         corner_radius: Optional[float] = None,
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
+        routing: Optional[Union[Routing, str]] = None,
     ) -> Diagram:
         """Change layout or theme settings; layout changes re-solve on next render."""
         if interactive is not None:
@@ -454,6 +461,9 @@ class Diagram:
             self._is_solved = False
         if clearance is not None:
             self.clearance = clearance
+            self._is_solved = False
+        if routing is not None:
+            self.routing = routing
             self._is_solved = False
         changes = {
             "layout": layout,
@@ -601,9 +611,6 @@ class Diagram:
     ) -> Edge:
         """Directly connect two elements with an Edge and record it."""
         effective_r = corner_radius if corner_radius is not None else arc_radius
-        if effective_r is None and self.corner_radius is not None:
-            effective_r = self.corner_radius
-        effective_c = clearance if clearance is not None else self.clearance
         e = Edge(
             source=source,
             target=target,
@@ -616,7 +623,7 @@ class Diagram:
             arrow_tail=arrow_tail,
             routing=routing,
             corner_radius=effective_r,
-            clearance=effective_c,
+            clearance=clearance,
             metadata=metadata,
         )
         self.edges.append(e)
@@ -665,10 +672,6 @@ class Diagram:
 
     def solve(self) -> None:
         """Place every element: auto-layout, layout file, constraints, framing."""
-        if self.corner_radius is not None:
-            for edge in self.edges:
-                if edge.corner_radius is None:
-                    edge.corner_radius = self.corner_radius
         run_layout(self)
         self._is_solved = True
 

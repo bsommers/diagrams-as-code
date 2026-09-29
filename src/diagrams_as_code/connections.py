@@ -174,7 +174,11 @@ class Edge:
     @property
     def corner_radius(self) -> Optional[float]:
         """Corner radius for rounded orthogonal fillet bends."""
-        return self._corner_radius
+        if self._corner_radius is not None:
+            return self._corner_radius
+        if self._resolved_path is not None:
+            return self._resolved_path.corner_radius
+        return None
 
     @corner_radius.setter
     def corner_radius(self, val: Optional[Union[int, float]]) -> None:

@@ -5,6 +5,7 @@ import pytest
 
 from iiot_diagrams import Diagram, Shape, Group, Edge
 from iiot_diagrams.geometry import Rect, Anchor, Point
+from diagrams_as_code.layout.pipeline import resolve_edge_style
 
 
 def test_fluent_diagram_api(tmp_path):
@@ -383,20 +384,26 @@ def test_diagram_corner_radius_cascade_and_override() -> None:
     assert len(diag.edges) == 3
     e_cascaded, e_sharp, e_custom = diag.edges
 
-    # First edge inherits diagram corner_radius
+    # First edge inherits diagram corner_radius via resolve_edge_style without per-site mutation
+    assert e_cascaded._corner_radius is None
     assert e_cascaded.corner_radius == 15.0
-    assert e_cascaded.arc_radius == 15.0
+    assert resolve_edge_style(e_cascaded, diag).corner_radius == 15.0
 
     # Second edge preserves explicit sharp override
+    assert e_sharp._corner_radius == 0.0
     assert e_sharp.corner_radius == 0.0
+    assert resolve_edge_style(e_sharp, diag).corner_radius == 0.0
 
     # Third edge preserves explicit custom override
+    assert e_custom._corner_radius == 25.0
     assert e_custom.corner_radius == 25.0
+    assert resolve_edge_style(e_custom, diag).corner_radius == 25.0
 
     # Test configure() update
     diag.configure(corner_radius=8.0)
     assert diag.corner_radius == 8.0
     assert diag.arc_radius == 8.0
+    assert resolve_edge_style(e_cascaded, diag).corner_radius == 8.0
 
     # Test setter validation on Diagram
     with pytest.raises(ValueError, match="non-negative finite float"):
@@ -423,9 +430,15 @@ def test_fluent_operator_multi_hop_cascade_and_selective_override() -> None:
     e_bc = next(e for e in diag.edges if e.source == b and e.target == c)
     e_cd = next(e for e in diag.edges if e.source == c and e.target == d)
 
+    assert e_ab._corner_radius is None
     assert e_ab.corner_radius == 10.0
+    assert resolve_edge_style(e_ab, diag).corner_radius == 10.0
+    assert e_bc._corner_radius == 0.0
     assert e_bc.corner_radius == 0.0
+    assert resolve_edge_style(e_bc, diag).corner_radius == 0.0
+    assert e_cd._corner_radius is None
     assert e_cd.corner_radius == 10.0
+    assert resolve_edge_style(e_cd, diag).corner_radius == 10.0
 
 
 def test_edge_style_defaults_to_none() -> None:

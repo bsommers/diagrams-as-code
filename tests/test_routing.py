@@ -759,28 +759,35 @@ def test_edge_clearance_validation() -> None:
 
 
 def test_edge_clearance_diagram_cascading() -> None:
-    """Verify clearance cascading from Diagram and EdgeBuilder to Edge instances."""
+    """Verify clearance cascading from Diagram and EdgeBuilder to Edge instances via resolve_edge_style."""
     from diagrams_as_code.diagram import Diagram
+    from diagrams_as_code.layout.pipeline import resolve_edge_style
 
     diag = Diagram("Clearance Cascade", clearance=28.0)
     s1 = diag.shape("S1")
     s2 = diag.shape("S2")
 
-    # Inherit diagram-level default clearance
+    # Inherit diagram-level default clearance without per-site edge mutation
     e1 = diag.connect(s1, s2)
-    assert e1.clearance == 28.0
+    assert e1._clearance is None
+    assert e1.clearance == 15.0
+    assert resolve_edge_style(e1, diag).clearance == 28.0
 
     # Explicit override on connect
     e2 = diag.connect(s1, s2, clearance=12.0)
+    assert e2._clearance == 12.0
     assert e2.clearance == 12.0
+    assert resolve_edge_style(e2, diag).clearance == 12.0
 
     # Fluent edge builder inheriting diagram clearance
     s1 >> diag.edge() >> s2
-    assert diag.edges[-1].clearance == 28.0
+    assert diag.edges[-1]._clearance is None
+    assert resolve_edge_style(diag.edges[-1], diag).clearance == 28.0
 
     # Fluent edge builder with explicit clearance override
     s1 >> diag.edge(clearance=8.0) >> s2
-    assert diag.edges[-1].clearance == 8.0
+    assert diag.edges[-1]._clearance == 8.0
+    assert resolve_edge_style(diag.edges[-1], diag).clearance == 8.0
 
 
 def test_curve_router_obstacle_filtering() -> None:

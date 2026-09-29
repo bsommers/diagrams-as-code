@@ -4,8 +4,9 @@ import warnings
 
 import pytest
 
-from diagrams_as_code import Diagram
+from diagrams_as_code import Diagram, Edge, Routing
 from diagrams_as_code.layout import LayoutWarning, export_layout
+from diagrams_as_code.layout.pipeline import EdgeStyle, resolve_edge_style
 
 
 def _bounds(d: Diagram) -> dict[str, tuple[float, float, float, float]]:
@@ -170,3 +171,76 @@ def test_group_keeps_a_child_anchored_to_a_shape_outside_it() -> None:
             inside >> other
     assert (inside.bounds.x, inside.bounds.y) == (anchor.bounds.right + 10.0, anchor.bounds.y)
     assert g.bounds.intersects(inside.bounds)
+
+
+def test_resolve_edge_style_precedence() -> None:
+    with Diagram(routing="curve", corner_radius=12.0, clearance=25.0) as d:
+        s1, s2 = d.shape("A"), d.shape("B")
+
+        # Edge 1: Inherits all diagram defaults
+        e1 = Edge(source=s1, target=s2)
+        st1 = resolve_edge_style(e1, d)
+        assert st1 == EdgeStyle(routing=Routing.CURVE, corner_radius=12.0, clearance=25.0)
+
+        # Edge 2: Overrides routing explicitly, corner_radius=0.0 forces sharp corners (D-03)
+        e2 = Edge(source=s1, target=s2, routing="orthogonal", corner_radius=0.0)
+        st2 = resolve_edge_style(e2, d)
+        assert st2 == EdgeStyle(routing=Routing.ORTHOGONAL, corner_radius=0.0, clearance=25.0)
+
+
+def test_diagram_configure_invalidates_cache() -> None:
+    d = Diagram()
+    d._is_solved = True
+    d.configure(routing="curve")
+    assert d._is_solved is False
+    assert d.routing == Routing.CURVE
+
+
+def test_resolve_edge_style_system_fallbacks() -> None:
+    d = Diagram()
+    s1, s2 = d.shape("A"), d.shape("B")
+    e = Edge(source=s1, target=s2)
+    style = resolve_edge_style(e, d)
+    assert style == EdgeStyle(routing=Routing.ORTHOGONAL, corner_radius=0.0, clearance=15.0)
+
+
+def test_diagram_connect_and_fluent_do_not_mutate_edge_instances() -> None:
+    with Diagram(routing="curve", corner_radius=12.0, clearance=25.0) as d:
+        s1, s2, s3 = d.shape("A"), d.shape("B"), d.shape("C")
+        e_conn = d.connect(s1, s2)
+        s2 >> s3
+
+    e_fluent = d.edges[1]
+    assert e_conn._routing is None
+    assert e_conn._corner_radius is None
+    assert e_conn._clearance is None
+    assert e_fluent._routing is None
+    assert e_fluent._corner_radius is None
+    assert e_fluent._clearance is None
+
+    assert resolve_edge_style(e_conn, d) == EdgeStyle(
+        routing=Routing.CURVE, corner_radius=12.0, clearance=25.0
+    )
+    assert resolve_edge_style(e_fluent, d) == EdgeStyle(
+        routing=Routing.CURVE, corner_radius=12.0, clearance=25.0
+    )
+
+
+def test_diagram_routing_validation() -> None:
+    d = Diagram()
+    assert d.routing is None
+
+    d.routing = "curve"
+    assert d.routing == Routing.CURVE
+
+    d.routing = Routing.DIRECT
+    assert d.routing == Routing.DIRECT
+
+    d.routing = None
+    assert d.routing is None
+
+    with pytest.raises(TypeError, match="routing must be Routing or str"):
+        d.routing = 123  # type: ignore
+
+    with pytest.raises(ValueError):
+        d.routing = "unknown_strategy"
