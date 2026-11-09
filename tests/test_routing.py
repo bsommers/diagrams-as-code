@@ -1387,3 +1387,38 @@ def test_routed_path_label_anchor_single_point_and_empty() -> None:
     empty = RoutedPath(kind=PathKind.POLYLINE, points=())
     assert empty.label_anchor() == (0.0, 0.0)
     assert empty.bbox() == Rect(0.0, 0.0, 0.0, 0.0)
+
+
+@pytest.mark.parametrize("router_cls", [EdgeRouter, CurveRouter, OrthogonalRouter])
+def test_route_legacy_style_then_obstacles_order(router_cls) -> None:
+    """route(edge, style, obstacles_list) used to raise AttributeError."""
+    from diagrams_as_code import Diagram
+
+    edge, scene, style = _routing_fixture()
+    with Diagram(layout="manual", width=400, height=300) as other:
+        blocker = other.shape("X", width=40, height=40).at(140, 90)
+    router = router_cls()
+    assert router.route(edge, style, [blocker]) == router.route(
+        edge, style=style, obstacles=[blocker]
+    )
+
+
+@pytest.mark.parametrize("router_cls", [EdgeRouter, CurveRouter, OrthogonalRouter])
+def test_route_rejects_bool_clearance(router_cls) -> None:
+    edge, scene, _style = _routing_fixture()
+    with pytest.raises(TypeError, match="not bool"):
+        router_cls().route(edge, scene, True)
+
+
+@pytest.mark.parametrize("router_cls", [EdgeRouter, CurveRouter, OrthogonalRouter])
+def test_route_rejects_conflicting_duplicate_arguments(router_cls) -> None:
+    edge, scene, style = _routing_fixture()
+    router = router_cls()
+    with pytest.raises(TypeError, match="obstacles both"):
+        router.route(edge, [], obstacles=[])
+    with pytest.raises(TypeError, match="clearance both"):
+        router.route(edge, scene, 5.0, clearance=6.0)
+    with pytest.raises(TypeError, match="more than one RoutingScene"):
+        router.route(edge, scene, scene)
+    with pytest.raises(TypeError, match="more than one EdgeStyle"):
+        router.route(edge, style, style)
