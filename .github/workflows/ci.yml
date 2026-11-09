@@ -28,13 +28,13 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
     name: Test (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
@@ -59,6 +59,7 @@ jobs:
         run: uv run pytest
 
       - name: Run evaluation and benchmark suite
+        timeout-minutes: 5
         run: uv run python tools/eval_bezier.py
 
       - name: Verify diagram generation
@@ -81,14 +82,29 @@ jobs:
 
   docker:
     name: Docker Container Build & Run
+    # Skip the container build when the test matrix already failed.
+    needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build Docker image with uv
-        run: docker build -t iiot-diagrams:latest .
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: iiot-diagrams:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Run container diagram generation
         run: docker run --rm -v ${{ github.workspace }}/output:/app/output iiot-diagrams:latest
+
+      - name: Verify container output matches committed artifacts
+        # The container runs as root, so mark the workspace safe for git.
+        run: git -c safe.directory='*' diff --exit-code -- output/
