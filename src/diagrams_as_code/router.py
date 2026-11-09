@@ -104,6 +104,46 @@ PORT_NORMALS: dict[Port, Point] = {
 }
 
 
+def _normalize_route_args(
+    scene: Any, style: Any, obstacles: Any, clearance: Any
+) -> tuple[Optional[RoutingScene], Optional[EdgeStyle], Optional[Iterable[Any]], Optional[float]]:
+    """Sort the loosely typed ``route()`` arguments into their proper roles.
+
+    ``scene`` and ``style`` may be passed in either order, ``style`` may be a bare
+    numeric clearance, and either may be an iterable of obstacle elements (the
+    legacy call shapes). Each role may be supplied only once: giving the same
+    role both positionally and by keyword, or twice positionally, is a
+    ``TypeError`` rather than a silent overwrite.
+    """
+    out_scene: Optional[RoutingScene] = None
+    out_style: Optional[EdgeStyle] = None
+    out_obstacles = obstacles
+    out_clearance = None if clearance is None else float(clearance)
+
+    for arg in (scene, style):
+        if arg is None:
+            continue
+        if isinstance(arg, RoutingScene):
+            if out_scene is not None:
+                raise TypeError("route() got more than one RoutingScene")
+            out_scene = arg
+        elif isinstance(arg, EdgeStyle):
+            if out_style is not None:
+                raise TypeError("route() got more than one EdgeStyle")
+            out_style = arg
+        elif isinstance(arg, bool):
+            raise TypeError("route() clearance must be a number, not bool")
+        elif isinstance(arg, (int, float)):
+            if out_clearance is not None:
+                raise TypeError("route() got clearance both positionally and by keyword")
+            out_clearance = float(arg)
+        else:
+            if out_obstacles is not None:
+                raise TypeError("route() got obstacles both positionally and by keyword")
+            out_obstacles = arg
+    return out_scene, out_style, out_obstacles, out_clearance
+
+
 class CurveRouter:
     """Computes cubic Bezier control handles from port normal vectors."""
 
@@ -308,24 +348,9 @@ class CurveRouter:
         clearance: Optional[float] = None,
     ) -> RoutedPath:
         """Compute ordered path waypoints for cubic Bezier curve."""
-        if isinstance(scene, EdgeStyle):
-            if style is None or isinstance(style, RoutingScene):
-                scene, style = style, scene
-        elif isinstance(style, RoutingScene):
-            if scene is None or isinstance(scene, EdgeStyle):
-                scene, style = style, scene
-
-        if scene is not None and not isinstance(scene, RoutingScene):
-            obstacles = scene
-            scene = None
-
-        if style is not None and not isinstance(style, EdgeStyle):
-            if isinstance(style, (int, float)) and clearance is None:
-                clearance = float(style)
-                style = None
-            elif obstacles is None:
-                obstacles = style
-                style = None
+        scene, style, obstacles, clearance = _normalize_route_args(
+            scene, style, obstacles, clearance
+        )
 
         if clearance is not None:
             eff_clearance = clearance
@@ -769,24 +794,9 @@ class OrthogonalRouter:
         clearance: Optional[float] = None,
     ) -> RoutedPath:
         """Compute ordered path waypoints between source and target elements."""
-        if isinstance(scene, EdgeStyle):
-            if style is None or isinstance(style, RoutingScene):
-                scene, style = style, scene
-        elif isinstance(style, RoutingScene):
-            if scene is None or isinstance(scene, EdgeStyle):
-                scene, style = style, scene
-
-        if scene is not None and not isinstance(scene, RoutingScene):
-            obstacles = scene
-            scene = None
-
-        if style is not None and not isinstance(style, EdgeStyle):
-            if isinstance(style, (int, float)) and clearance is None:
-                clearance = float(style)
-                style = None
-            elif obstacles is None:
-                obstacles = style
-                style = None
+        scene, style, obstacles, clearance = _normalize_route_args(
+            scene, style, obstacles, clearance
+        )
 
         if clearance is not None:
             eff_clearance = clearance
@@ -1096,24 +1106,9 @@ class EdgeRouter:
         clearance: Optional[float] = None,
     ) -> RoutedPath:
         """Compute ordered path waypoints using the appropriate routing strategy."""
-        if isinstance(scene, EdgeStyle):
-            if style is None or isinstance(style, RoutingScene):
-                scene, style = style, scene
-        elif isinstance(style, RoutingScene):
-            if scene is None or isinstance(scene, EdgeStyle):
-                scene, style = style, scene
-
-        if scene is not None and not isinstance(scene, RoutingScene):
-            obstacles = scene
-            scene = None
-
-        if style is not None and not isinstance(style, EdgeStyle):
-            if isinstance(style, (int, float)) and clearance is None:
-                clearance = float(style)
-                style = None
-            elif obstacles is None:
-                obstacles = style
-                style = None
+        scene, style, obstacles, clearance = _normalize_route_args(
+            scene, style, obstacles, clearance
+        )
 
         if style is None:
             eff_routing = (
