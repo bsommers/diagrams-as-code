@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ DOCUMENTATION & ARCHITECTURE ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 520 TESTS • 88 ARCHITECTURES ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 547 TESTS • 88 ARCHITECTURES ]   ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -31,6 +31,8 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 |---|---|
 | [**Purpose & Threat Model**](purpose.md) | Problem statement, architectural motivation, pure standard library philosophy, and security threat model. |
 | [**System Architecture**](architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal and curve routers, corner filleting, interactive SVG viewer, and living BOM pipeline. |
+| [**User Guide**](user-guide.md) | Task-oriented guide: concepts, first diagram, shapes, groups, positioning, routing, themes, icons, outputs, and the CLI. |
+| [**Development Guidelines**](development.md) | Contributor workflow: `uv` rules, repository layout, local-first verification gate, testing, generated artifacts, and doc sync. |
 | [**Running & Installation Guide**](running.md) | Prerequisites, virtual environment provisioning with `uv`, CLI commands, test execution, and Docker setup. |
 | [**How-To Recipes & Troubleshooting**](how-to.md) | Step-by-step recipes for custom themes, curved routing with obstacle deflection, rounded corner fillets, interactive SVGs, text layout optimization, standalone vector icons, and living BOMs. |
 | [**Visual Architecture Diagrams**](diagrams/README.md) | Visual model catalog containing terminal ASCII text, standalone Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML. |

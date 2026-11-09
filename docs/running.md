@@ -121,7 +121,7 @@ rest); `2` a command-line usage error (unknown flag, missing subcommand).
 
 ## 4. Test Suite Execution
 
-Execute the comprehensive 431-test automated suite using `uv run pytest`:
+Execute the automated test suite using `uv run pytest`:
 
 ```bash
 # Run all tests
