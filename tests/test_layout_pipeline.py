@@ -256,10 +256,16 @@ def test_pipeline_routing_before_canvas_growth() -> None:
         s1 >> s2
         e = d.edges[0]
 
-    # After diagram solve, d.routes must contain RoutedPath
-    assert e in d.routes or id(e) in d.routes
-    path = d.routes[e] if e in d.routes else d.routes[id(e)]
+    # Routes are keyed by both the edge and its id, and share one path object
+    # that is also recorded on the edge itself.
+    path = d.routes[e]
     assert isinstance(path, RoutedPath)
+    assert d.routes[id(e)] is path
+    assert e._resolved_path is path
+    # Routing happened against the pre-growth scene: the endpoints sit at the
+    # original (unshifted) element positions.
+    assert path.points[0].x == pytest.approx(s1.bounds.right)
+    assert path.points[-1].x == pytest.approx(s2.bounds.x)
 
 
 def test_pipeline_routing_with_manual_waypoints() -> None:
@@ -288,9 +294,10 @@ def test_canvas_grows_for_deflected_or_arching_edge() -> None:
         obs.at(120, 80)
         s1 >> s2
 
-    # Diagram height should have grown beyond 300 if curve or elements needed margin
-    assert d.width >= 300
-    assert d.height >= 300
+    # Width grows to hold the rightmost element plus FRAME_X: 200 + 50 + 60 = 310.
+    # The curve's bbox (y 65..115) fits inside the 300px height, so it stays put.
+    assert d.width == 310.0
+    assert d.height == 300.0
 
 
 def test_canvas_grows_for_edge_extrema_beyond_elements() -> None:
@@ -325,3 +332,55 @@ def test_frame_translates_for_negative_edge_extrema() -> None:
     assert edge._resolved_path is not None
     assert edge._resolved_path.bbox().y >= 80.0
 
+
+
+def test_frame_translates_for_negative_x_extrema() -> None:
+    with Diagram(layout="manual", width=300, height=300) as d:
+        s1 = d.shape("A", width=50, height=50).at(50, 50)
+        s2 = d.shape("B", width=50, height=50).at(150, 50)
+        s1 >> s2
+        d.edges[0].manual_waypoints = [Point(100, 75), Point(-40, 150), Point(150, 75)]
+
+    # min x = -40 shifts everything right by 60 - (-40) = 100.
+    assert s1.bounds.x == 150.0
+    assert s2.bounds.x == 250.0
+    assert d.routes[d.edges[0]].bbox().x == 60.0
+
+
+def test_canvas_already_large_enough_does_not_grow_or_shift() -> None:
+    with Diagram(layout="manual", width=800, height=600) as d:
+        s1 = d.shape("A", width=50, height=50).at(100, 100)
+        s2 = d.shape("B", width=50, height=50).at(300, 100)
+        s1 >> s2
+
+    assert (d.width, d.height) == (800.0, 600.0)
+    assert (s1.bounds.x, s1.bounds.y) == (100.0, 100.0)
+
+
+def test_extrema_on_both_axes_shift_and_grow_together() -> None:
+    with Diagram(layout="manual", width=300, height=300) as d:
+        s1 = d.shape("A", width=50, height=50).at(50, 50)
+        s2 = d.shape("B", width=50, height=50).at(150, 50)
+        s1 >> s2
+        d.edges[0].manual_waypoints = [Point(100, 75), Point(-20, -30), Point(350, 320)]
+
+    # offset_x = 60 + 20 = 80, offset_y = 80 + 30 = 110
+    assert (s1.bounds.x, s1.bounds.y) == (130.0, 160.0)
+    box = d.routes[d.edges[0]].bbox()
+    assert (box.x, box.y) == (60.0, 80.0)
+    assert d.width == 350.0 + 80.0 + 60.0
+    assert d.height == 320.0 + 110.0 + 80.0
+
+
+def test_pipeline_does_not_mutate_waypoints_and_is_repeatable() -> None:
+    waypoints = [Point(100, 75), Point(-40, 150), Point(150, 75)]
+    with Diagram(layout="manual", width=300, height=300) as d:
+        s1 = d.shape("A", width=50, height=50).at(50, 50)
+        s2 = d.shape("B", width=50, height=50).at(150, 50)
+        s1 >> s2
+        d.edges[0].manual_waypoints = list(waypoints)
+
+    assert d.edges[0].manual_waypoints == waypoints
+    first = d.routes[d.edges[0]]
+    d.solve()
+    assert d.routes[d.edges[0]] == first

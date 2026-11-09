@@ -1312,3 +1312,78 @@ def test_route_all_helper() -> None:
     assert isinstance(routes[e3], RoutedPath)
     assert routes[e3].kind == PathKind.POLYLINE
     assert len(routes[e3].points) == 3
+
+
+# --- Phase 11 coverage: router argument normalization and geometry changes ---
+
+
+def _routing_fixture():
+    from diagrams_as_code.layout.pipeline import resolve_edge_style
+    from diagrams_as_code.router import RoutingScene
+    from diagrams_as_code import Diagram
+
+    with Diagram(layout="manual", width=400, height=300) as d:
+        a = d.shape("A", width=50, height=50).at(50, 100)
+        b = d.shape("B", width=50, height=50).at(250, 100)
+        a >> b
+    edge = d.edges[0]
+    scene = RoutingScene.build(list(d.all_elements()))
+    return edge, scene, resolve_edge_style(edge, d)
+
+
+@pytest.mark.parametrize("router_cls", [EdgeRouter, CurveRouter, OrthogonalRouter])
+def test_route_accepts_scene_and_style_in_either_order(router_cls) -> None:
+    edge, scene, style = _routing_fixture()
+    router = router_cls()
+    assert router.route(edge, scene, style) == router.route(edge, style, scene)
+    assert router.route(edge, scene=scene, style=style) == router.route(edge, scene, style)
+
+
+@pytest.mark.parametrize("router_cls", [EdgeRouter, CurveRouter, OrthogonalRouter])
+def test_route_accepts_positional_numeric_clearance(router_cls) -> None:
+    edge, scene, _style = _routing_fixture()
+    router = router_cls()
+    assert router.route(edge, scene, 12.0) == router.route(edge, scene, clearance=12.0)
+
+
+@pytest.mark.parametrize("router_cls", [EdgeRouter, CurveRouter, OrthogonalRouter])
+def test_route_accepts_obstacles_iterable_as_scene(router_cls) -> None:
+    edge, _scene, _style = _routing_fixture()
+    router = router_cls()
+    from diagrams_as_code import Diagram
+
+    with Diagram(layout="manual", width=400, height=300) as other:
+        blocker = other.shape("X", width=40, height=40).at(140, 90)
+    by_position = router.route(edge, [blocker])
+    by_keyword = router.route(edge, obstacles=[blocker])
+    assert by_position == by_keyword
+
+
+def test_edge_router_route_positional_order_is_scene_then_style() -> None:
+    import inspect
+
+    params = list(inspect.signature(EdgeRouter.route).parameters)
+    assert params[:4] == ["self", "edge", "scene", "style"]
+
+
+def test_routed_path_bbox_bezier_chain_matches_curve_extent() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath
+
+    pts = (Point(0, 0), Point(0, 100), Point(100, 100), Point(100, 0))
+    path = RoutedPath(kind=PathKind.BEZIER_CHAIN, points=pts)
+    box = path.bbox()
+    # A cubic with these controls peaks at y = 75, well inside the control hull (y 100).
+    assert box.x == pytest.approx(0.0)
+    assert box.right == pytest.approx(100.0)
+    assert box.bottom == pytest.approx(75.0)
+    assert box.y == pytest.approx(0.0)
+
+
+def test_routed_path_label_anchor_single_point_and_empty() -> None:
+    from diagrams_as_code.geometry import PathKind, RoutedPath
+
+    single = RoutedPath(kind=PathKind.BEZIER_CHAIN, points=(Point(7, 9),))
+    assert single.label_anchor() == (7, 9)
+    empty = RoutedPath(kind=PathKind.POLYLINE, points=())
+    assert empty.label_anchor() == (0.0, 0.0)
+    assert empty.bbox() == Rect(0.0, 0.0, 0.0, 0.0)
