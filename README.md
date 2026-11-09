@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 520 TESTS • 88 ARCHITECTURES ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 547 TESTS • 88 ARCHITECTURES ]   ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,7 +21,7 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-520%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-547%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
@@ -154,6 +154,8 @@ Comprehensive architectural, operational, and how-to guides are available in [`d
 
 - [**Purpose & Threat Model**](docs/purpose.md): Architectural motivation, pure Python philosophy, and security posture.
 - [**System Architecture**](docs/architecture.md): Technical specifications on solver, router, SVG renderer, and BOM engine.
+- [**User Guide**](docs/user-guide.md): Concepts, first diagram, positioning, routing, themes, icons, outputs, and CLI.
+- [**Development Guidelines**](docs/development.md): Contributor workflow, local-first verification, testing, and doc sync (see also [CONTRIBUTING.md](CONTRIBUTING.md)).
 - [**Running & Installation Guide**](docs/running.md): Virtualenv setup with `uv`, CLI commands, Docker execution, and exit codes.
 - [**How-To Recipes & Troubleshooting**](docs/how-to.md): Practical recipes for themes, icons, text layouts, CI/CD integration, and troubleshooting.
 - [**Visual Architecture Diagrams**](docs/diagrams/README.md): Visual models in ASCII plain text, Mermaid flowcharts, Mermaid sequence lifecycles, and native draw.io XML.
