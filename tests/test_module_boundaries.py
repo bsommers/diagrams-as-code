@@ -23,6 +23,7 @@ LAYERS: dict[str, int] = {
     "icon_glyphs": 0,
     "rasterize": 0,
     "metrics": 0,
+    "text": 0,
     "shapes": 1,
     "elements": 1,
     "connections": 2,
