@@ -1,94 +1,85 @@
-# Requirements: Diagrams as Code (Milestone v0.8.0)
+# Requirements: Technical Figures Program (v0.8.4 → v0.13.0)
 
-**Defined:** 2026-09-24  
-**Target Release:** `v0.8.0`  
-**Core Value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.
+**Defined:** 2026-11-12
+**Core Value:** Zero external binary dependencies producing deterministic, publication-grade diagrams and technical figures from clean Python code.
+**Source:** `docs/plans/2026-11-12-technical-figures-and-quality.md` (defect IDs R1–R14 are defined there)
 
-## v1 Requirements
+## Requirements
 
-Requirements for Milestone v0.8.0 Curved & Bezier Edge Routing Engine. Each maps to roadmap phases.
+### Phase 12 — Baseline & Bug Fixes
 
-### Cubic Bezier Geometry & Path Generation
+- [ ] **FIX-01** (R1): Orthogonal routes arrive perpendicular to the target port; no final segment runs along a node border.
+- [ ] **FIX-02** (R2): Routes never pass through their own source or target.
+- [ ] **FIX-03** (R3): Self-loops are drawn as an external loop.
+- [ ] **FIX-04** (R4): The curve router retries wider detours and emits a `LayoutWarning` if a collision remains.
+- [ ] **FIX-05** (R5): Layout files with non-finite numbers are rejected.
+- [ ] **FIX-06** (R6): An explicitly passed layout file that does not exist is an error.
+- [ ] **FIX-07** (R7): Auto-layout spacing accounts for label and badge widths.
+- [ ] **FIX-08** (R8): Opposite edges between the same pair are offset, with separate badges.
+- [ ] **FIX-09** (R9): Adding or changing shapes and edges after a solve invalidates it.
+- [ ] **FIX-10** (R10): Re-solving keeps user changes to element size.
+- [ ] **FIX-11** (R11): Manual-waypoint edges take part in the style cascade.
+- [ ] **FIX-12** (R12): The BOM reports the resolved routing.
+- [ ] **FIX-13** (R13): CLI: no silent output overwrite, sibling imports work, `SystemExit` in a script is contained, correct blame for `-o`, empty input is reported.
+- [ ] **FIX-14** (R14): Rasterizer never returns a stale PNG; obstacles touching a port anchor are kept.
+- [ ] **AUDIT-01**: `tools/audit_gallery.py` counts visual defects across all examples and `--check` fails if any count exceeds the stored baseline.
+- [ ] **AUDIT-02**: The audit also counts edge-on-edge overlap, tangent arrivals and routes through own endpoints.
 
-- [x] **BEZ-01**: User can set `routing=Routing.CURVE` (or `"curve"`) on an `Edge` to connect elements with an analytical cubic Bezier curve.
-- [x] **BEZ-02**: Curve router computes control handles aligned with cardinal port outward normal vectors (NORTH, SOUTH, EAST, WEST) so curves enter/exit strictly perpendicular to node bounds.
-- [x] **BEZ-03**: Curve router applies distance-proportional handle scaling along primary flow axes (`LR` and `TB`) to produce smooth S-curves without kinks or excessive bulging.
-- [x] **BEZ-04**: SVG renderer emits native cubic Bezier `<path d="M... C...">` elements with correct arrowhead marker rotation angles at endpoints.
-- [x] **BEZ-05**: Protocol label badges on curved edges are positioned at the curve's arc-length midpoint with non-overlapping background pills.
+### Phase 13 — Text Engine
 
-### Rounded Corner Fillets for Orthogonal Routing
+- [ ] **TEXT-01**: Bundled font metric tables and a single `measure()` used by layout, badges, wrapping and rendering.
+- [ ] **TEXT-02**: Rich text runs (bold, italic, size, font role, baseline shift) with exact line boxes.
+- [ ] **TEXT-03**: Math markup inside `$…$`: sub/superscripts, grouping, Greek, operators, relations, `\mathrm`, `\text`, limits under big operators.
+- [ ] **TEXT-04**: Math glyphs drawn as vector outlines generated at development time from an open-licensed font; no runtime dependency.
+- [ ] **TEXT-05**: All labels accept the markup and explicit line breaks.
+- [ ] **TEXT-06**: Shapes can size themselves to their text.
 
-- [x] **FILLET-01**: User can configure `corner_radius` (or `arc_radius`) on orthogonal edges to produce rounded 90-degree corner bends.
-- [x] **FILLET-02**: Corner filleting dynamically clamps radius per corner to $\min(R, L_1/2, L_2/2)$ so short segments never invert, create "dog ears", or overlap.
-- [x] **FILLET-03**: SVG renderer emits quadratic Bezier (`Q`) commands connecting corner fillet tangent points for $C^1$-continuous smooth bends.
+### Phase 14 — Style Model & Layout Correctness
 
-### Obstacle Detection & Deflection for Curved Edges
+- [ ] **STYLE-01**: `Style` value object resolved theme → group → element; legacy `metadata` keys still work.
+- [ ] **STYLE-02**: `paper` theme.
+- [ ] **STYLE-03**: Renderer split into passes; dead route fallbacks removed.
+- [ ] **STYLE-04**: Fixed-precision coordinates; optional half-pixel alignment.
+- [ ] **LAYOUT-01**: Fit-to-content canvas with margin, on by default.
+- [ ] **LAYOUT-02**: Badges avoid nodes and other badges.
+- [ ] **LAYOUT-03**: Edges sharing a node side are spread across it.
+- [ ] **LAYOUT-04**: Labels do not overlap a shape's own artwork.
 
-- [ ] **CURVEOBS-01**: Router detects when candidate cubic Bezier curves intersect intervening obstacle bounding boxes.
-- [ ] **CURVEOBS-02**: When an obstacle collision is detected, router deflects the curve through collision-free clearance channel waypoints as a smooth multi-segment spline.
-- [ ] **CURVEOBS-03**: Reverse-flow connections (backward edges) adaptively scale control points into lateral clearance channels to avoid clipping through source/target nodes.
+### Phase 15 — Technical Drawing Primitives
 
-### Configuration Hierarchy, Layout & Extrema Integration
+- [ ] **PRIM-01**: `Text`, `Caption`, `Bracket`.
+- [ ] **PRIM-02**: `Polygon`, `Polyline`, `Path`.
+- [ ] **PRIM-03**: `Band` layer container (dashed, title, side notes).
+- [ ] **PRIM-04**: Shapes nested in shapes; double border.
+- [ ] **PRIM-05**: Edge stroke weight, arrowhead styles and sizes, two-way arrows.
+- [ ] **PRIM-06**: Edge endpoints at points and fractional anchors; shared-trunk fan-out; leaders; free splines; ellipsis connector.
+- [ ] **PRIM-07**: Projected solids (oblique, isometric) with hidden-edge dashing and translucent faces.
+- [ ] **PRIM-08**: Z-order control.
+- [ ] **PRIM-09**: `align()`, `distribute()`, grid snap, px/pt/mm lengths.
 
-- [ ] **CFG-01**: User can set diagram-wide default edge routing and corner radius via `Diagram(routing=..., corner_radius=...)`.
-- [ ] **CFG-02**: Connections created via fluent operators (`s1 >> s2`) inherit diagram defaults while individual `Edge` parameters take precedence.
-- [ ] **CFG-03**: Layout pipeline automatically runs unified edge routing for all diagram edges, populating `diagram.routes` with typed `RoutedPath` values through a single `EdgeRouter` dispatcher (`edge.waypoints` remains as a read-only view).
-- [ ] **CFG-04**: Diagram canvas boundaries automatically expand (`_grow_canvas`) to encompass analytical curve extrema so high-arching Bezier curves are never clipped.
+### Phase 16 — Technical Examples & Visual Regression
 
-## v2 Requirements
+- [ ] **EX-01**: Reproduction of the reference figure, slips corrected.
+- [ ] **EX-02**: Ten further technical figures.
+- [ ] **VIS-01**: Golden-image regression tests.
+- [ ] **VIS-02**: `diagrams-as-code lint`.
+- [ ] **DOC-01**: Technical-figures guide and math markup reference.
 
-Deferred to future release. Tracked but not in current roadmap.
+### Phase 17 — Vector PDF Export
 
-### Edge Enhancements
+- [ ] **PDF-01**: Pure-stdlib PDF writer covering paths, fills, dashes, arrowheads and opacity.
+- [ ] **PDF-02**: Text and math in PDF match the SVG.
+- [ ] **PDF-03**: `Diagram.render_pdf()` and CLI `--format pdf`.
 
-- **EDGE-01**: User can configure continuous curvature parameter tuning (`curvature: float = 0.5`) to dial curve tension.
-- **EDGE-02**: User can configure bridge jump arcs (semi-circular hops) where orthogonal or curved edges cross each other.
-- **EDGE-03**: Edge bundling for high-density multi-edge meshes.
+## Deferred
+
+- Fuller math (fractions, radicals, matrices).
+- EDGE-01 curvature tuning, EDGE-02 bridge jumps, EDGE-03 edge bundling (carried from v0.8.0).
 
 ## Out of Scope
 
-Explicitly excluded. Documented to prevent scope creep.
-
 | Feature | Reason |
-|---------|--------|
-| Manual control point dragging / canvas sculpting | Breaks code-as-truth reproducibility; non-declarative |
-| Physics / force-directed spline simulation | Non-deterministic, runtime jitter, introduces third-party dependencies or slow convergence |
-| Arbitrary high-order Bezier polynomials ($N \ge 4$) | Prone to Runge's phenomenon oscillations, unsupported in standard SVG path syntax |
-| External geometric math engines (NumPy, SciPy, Shapely) | Violates zero-dependency stdlib architectural rule |
-
-## Traceability
-
-Which phases cover which requirements. Updated during roadmap creation.
-
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| BEZ-01 | Phase 8 | Complete |
-| BEZ-02 | Phase 8 | Complete |
-| BEZ-03 | Phase 8 | Complete |
-| BEZ-04 | Phase 8 | Complete |
-| BEZ-05 | Phase 8 | Complete |
-| FILLET-01 | Phase 9 | Complete |
-| FILLET-02 | Phase 9 | Complete |
-| FILLET-03 | Phase 9 | Complete |
-| CURVEOBS-01 | Phase 10 | Pending |
-| CURVEOBS-02 | Phase 10 | Pending |
-| CURVEOBS-03 | Phase 10 | Pending |
-| CFG-01 | Phase 11 | Pending |
-| CFG-02 | Phase 11 | Pending |
-| CFG-03 | Phase 11 | Pending |
-| CFG-04 | Phase 11 | Pending |
-
-**Coverage:**
-- v1 requirements: 15 total
-- Mapped to phases: 15 (100%)
-- Unmapped: 0
-
-## Archived Milestones
-
-- [v0.7.0 Requirements Archive](milestones/v0.7.0-REQUIREMENTS.md)
-- [v0.6.0 Requirements Archive](milestones/v0.6.0-REQUIREMENTS.md)
-- [v0.5.0 Requirements Archive](milestones/v0.5.0-REQUIREMENTS.md)
-
----
-*Requirements defined: 2026-09-24*  
-*Last updated: 2026-09-24 for Milestone v0.8.0*
+|---|---|
+| Runtime dependencies of any kind | Core architectural rule |
+| Full TeX layout | Far beyond what figures need |
+| Literal copy of the reference's errors | Decided 2026-11-12: match style and structure, correct slips |

@@ -1,98 +1,81 @@
-# Roadmap: Milestone v0.8.0 (Curved & Bezier Edge Routing Engine)
+# Roadmap: Technical Figures Program (v0.8.4 → v0.13.0)
+
+Full rationale, review findings and decisions: `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
 ## Milestone History
 
-- **[v0.7.0 Milestone](milestones/v0.7.0-ROADMAP.md)** — Shipped 2026-09-24: Phase 7 (Obstacle-aware orthogonal Manhattan routing, collision detection, and multi-rank crossing minimization).
-- **[v0.6.0 Milestone](milestones/v0.6.0-ROADMAP.md)** — Shipped 2026-09-23: Phase 4 (CLI `--interactive` flag), Phase 5 (Client-side Search & Highlight), Phase 6 (Viewport Minimap Navigator).
-- **[v0.5.0 Milestone](milestones/v0.5.0-ROADMAP.md)** — Shipped 2026-09-23: Phase 1 (Polish & Edge Robustness), Phase 2 (Typed Constraints & Group Flow Decoupling), Phase 3 (Interactive SVG Pan-Zoom & Collapsible Groups).
-- **[v0.4.0 Milestone](milestones/v0.5.0-ROADMAP.md)** — Shipped 2026-09-22: Auto-layout, JSON layout files, CLI, modularity refactoring, unconditional canvas growth.
+- **[v0.8.0](milestones/v0.8.0-ROADMAP.md)** — Phases 8–11: curved and Bezier edge routing, fillets, obstacle deflection, routing configuration hierarchy.
+- **[v0.7.0](milestones/v0.7.0-ROADMAP.md)**, **[v0.6.0](milestones/v0.6.0-ROADMAP.md)**, **[v0.5.0](milestones/v0.5.0-ROADMAP.md)** — earlier milestones.
 
 ## Overview
 
-Milestone `v0.8.0` expands the Diagrams as Code engine beyond sharp Manhattan orthogonal lines to deliver publication-quality cubic Bezier edge routing (`Routing.CURVE`) and rounded corner fillets (`arc_radius` on `Routing.ORTHOGONAL`). The implementation adheres strictly to pure Python standard library math and vector primitives (zero external dependencies), full backward compatibility across all 88 domain gallery diagrams, and clean architectural separation between Layer 0 geometry, Layer 3 curve routing, and Layer 4 SVG path rendering.
+Fix the defects the engine ships today, then make it able to produce precise, paper-style technical figures (typeset math, sharp monochrome boxes, dashed layer bands, 3D solids, leader lines, captions), with a technical example set and vector PDF export. Runtime stays pure standard library.
+
+## Phase gate (applies to every phase)
+
+A phase is not done until all of these pass locally:
+
+1. `uv run pytest`
+2. `uv run python main.py` and `uv run python tools/generate_icons.py --check`
+3. `uv run python tools/audit_gallery.py --check` — visual defect counts must not rise above `tools/audit_baseline.json` (available from Phase 12)
+4. Golden-image comparison passes or goldens are deliberately regenerated (available from Phase 16)
+5. Rendered PNGs of changed diagrams are looked at, not only tested
+6. `git diff --exit-code -- output/ icons/ README.md docs/` after regeneration
+
+Process: one plan per phase, no separate research / plan-check / Nyquist documents. One PR per phase, pushed only when the gate is green.
 
 ## Phases
 
-- [x] **Phase 8: Core Cubic Bezier Geometry & SVG Path Generation** - Layer 0 `CubicBezier` vector primitive, outward port normal tangents, distance-proportional handle heuristics, SVG `M...C` path rendering, and arc-length midpoint badge positioning. (completed 2026-09-26)
-- [x] **Phase 9: Rounded Corner Fillets for Orthogonal Routing** - Orthogonal corner filleting, dynamic radius clamping ($\min(R, L_1/2, L_2/2)$) against "dog ear" artifacts, and SVG `Q` quadratic path generation. (completed 2026-09-26)
-- [x] **Phase 10: Obstacle Detection & Deflection for Curved Edges** - Bounding box broadphase and De Casteljau collision detection, obstacle-deflected multi-segment splines, and lateral clearance routing for reverse-flow back-edges. (completed 2026-09-27)
-- [ ] **Phase 11: Configuration Hierarchy, Layout & Extrema Integration** - Diagram-level default cascade, fluent operator inheritance, unified layout routing pipeline, and canvas auto-expansion via analytical curve extrema roots.
-
----
+- [ ] **Phase 12 (v0.8.4): Baseline & Bug Fixes** — router, layout, CLI and model defects fixed test-first; gallery defect audit added as a ratchet.
+- [ ] **Phase 13 (v0.9.0): Text Engine** — font metrics, rich text runs, math markup with outline glyphs from an open-licensed font, fit-to-text sizing.
+- [ ] **Phase 14 (v0.10.0): Style Model & Layout Correctness** — `Style` cascade, `paper` theme, fit-to-content canvas, badge and port collision fixes, renderer split.
+- [ ] **Phase 15 (v0.11.0): Technical Drawing Primitives** — text, caption, bands, nesting, polygons, projected solids, arrow styles, leaders, fractional anchors, alignment helpers.
+- [ ] **Phase 16 (v0.12.0): Technical Examples & Visual Regression** — reference reproduction plus ten technical figures, golden images, `lint` command, docs.
+- [ ] **Phase 17 (v0.13.0): Vector PDF Export** — pure-stdlib PDF writer for all primitives and text.
 
 ## Phase Details
 
-### Phase 8: Core Cubic Bezier Geometry & SVG Path Generation
+### Phase 12: Baseline & Bug Fixes
 
-**Goal:** Establish foundational cubic Bezier mathematical primitives in Layer 0, calculate port normal tangent handles in Layer 3, and render native SVG cubic curves with tangentially aligned arrowheads and arc-length centered protocol badges in Layer 4.
+**Requirements:** FIX-01 … FIX-14, AUDIT-01, AUDIT-02
+**Success criteria:**
+1. Every defect R1–R13 in the plan has a regression test that failed before the fix.
+2. `tools/audit_gallery.py --check` runs in the test suite and fails when any defect count rises.
+3. No gallery edge ends tangent to its target or passes through its own endpoints.
 
-**Requirements Covered:**
+### Phase 13: Text Engine
 
-- `BEZ-01`: User can set `routing=Routing.CURVE` (or `"curve"`) on an `Edge` to connect elements with an analytical cubic Bezier curve.
-- `BEZ-02`: Curve router computes control handles aligned with cardinal port outward normal vectors (NORTH, SOUTH, EAST, WEST) so curves enter/exit strictly perpendicular to node bounds.
-- `BEZ-03`: Curve router applies distance-proportional handle scaling along primary flow axes (`LR` and `TB`) to produce smooth S-curves without kinks or excessive bulging.
-- `BEZ-04`: SVG renderer emits native cubic Bezier `<path d="M... C...">` elements with correct arrowhead marker rotation angles at endpoints.
-- `BEZ-05`: Protocol label badges on curved edges are positioned at the curve's arc-length midpoint with non-overlapping background pills.
+**Requirements:** TEXT-01 … TEXT-06
+**Success criteria:**
+1. Every formula in the reference figure renders correctly in SVG and PNG, identically across viewers.
+2. One `measure()` function is the only source of text width; measured vs rendered width within 1px.
+3. Node label overflow count is 0 across the gallery.
 
-**Success Criteria:**
+### Phase 14: Style Model & Layout Correctness
 
-1. User can define an `Edge` with `routing=Routing.CURVE` (or `"curve"`) between two elements, producing a smooth cubic Bezier curve that exits and enters strictly normal to the node boundaries without manual control point manipulation.
-2. Rendered SVG output contains native `<path d="M x0 y0 C x1 y1, x2 y2, x3 y3">` elements with arrowhead markers aligned tangentially at destination endpoints (without `NaN` or erratic orientation angles).
-3. Curves across primary flow directions (`LR` and `TB`) scale control handles proportionally with node distance, eliminating kinks, cusps, or excessive handle bulge.
-4. Protocol label badges (`label="HTTPS"`) are positioned along the physical arc-length midpoint of the cubic curve with high-contrast background pills that do not clip or distort on asymmetric curves.
+**Requirements:** STYLE-01 … STYLE-04, LAYOUT-01 … LAYOUT-04
+**Success criteria:**
+1. All audit counts are 0 across the gallery.
+2. A `paper`-themed diagram has no shadows, 1px strokes and square corners with no per-element overrides.
+3. Existing themes are visually unchanged apart from the fixes.
 
----
+### Phase 15: Technical Drawing Primitives
 
-### Phase 9: Rounded Corner Fillets for Orthogonal Routing
+**Requirements:** PRIM-01 … PRIM-09
+**Success criteria:**
+1. Each primitive has unit tests and one focused example.
+2. Module-boundary tests still pass.
 
-**Goal:** Implement quadratic Bezier corner filleting on Manhattan orthogonal paths with dynamic per-segment radius clamping and native SVG `Q` path command generation.
+### Phase 16: Technical Examples & Visual Regression
 
-**Requirements Covered:**
+**Requirements:** EX-01, EX-02, VIS-01, VIS-02, DOC-01
+**Success criteria:**
+1. The reference reproduction matches the reference element for element (checklist in the PR), with its slips corrected.
+2. Golden-image tests cover every technical example; `lint` reports zero defects on all examples.
 
-- `FILLET-01`: User can configure `corner_radius` (or `arc_radius`) on orthogonal edges to produce rounded 90-degree corner bends.
-- `FILLET-02`: Corner filleting dynamically clamps radius per corner to $\min(R, L_1/2, L_2/2)$ so short segments never invert, create "dog ears", or overlap.
-- `FILLET-03`: SVG renderer emits quadratic Bezier (`Q`) commands connecting corner fillet tangent points for $C^1$-continuous smooth bends.
+### Phase 17: Vector PDF Export
 
-**Success Criteria:**
-
-1. User can set `corner_radius=12` (or `arc_radius=12`) on orthogonal edges or diagrams to render smooth, rounded 90-degree corner bends instead of sharp right angles.
-2. Short Manhattan segments automatically clamp corner radii to $\min(R, L_1/2, L_2/2)$ (and suppress fillets below $2\text{px}$), preventing inverted arcs, overlapping loops, or "dog ear" visual artifacts.
-3. Rendered SVG paths for filleted orthogonal edges emit quadratic Bezier (`Q`) commands connecting fillet tangent points, maintaining tangent continuity with adjacent linear segments.
-
----
-
-### Phase 10: Obstacle Detection & Deflection for Curved Edges
-
-**Goal:** Detect bounding box intersections on candidate Bezier curves and route collision-free deflected multi-segment splines and backward edges around intervening nodes and groups.
-
-**Requirements Covered:**
-
-- `CURVEOBS-01`: Router detects when candidate cubic Bezier curves intersect intervening obstacle bounding boxes.
-- `CURVEOBS-02`: When an obstacle collision is detected, router deflects the curve through collision-free clearance channel waypoints as a smooth multi-segment spline.
-- `CURVEOBS-03`: Reverse-flow connections (backward edges) adaptively scale control points into lateral clearance channels to avoid clipping through source/target nodes.
-
-**Success Criteria:**
-
-1. When a direct cubic Bezier trajectory intersects an intervening node or group bounding box, the routing engine detects the collision via bounding box broadphase and De Casteljau subdivision.
-2. Deflected curved edges automatically navigate through clearance channel waypoints as smooth multi-segment splines without penetrating obstacle boundaries.
-3. Reverse-flow connections (e.g. backward edges against diagram flow) route around source and target nodes via lateral clearance corridors rather than creating bow-tie loops or piercing node interiors.
-
----
-
-### Phase 11: Configuration Hierarchy, Layout & Extrema Integration
-
-**Goal:** Unify diagram-wide routing defaults, fluent operator inheritance, automated pipeline routing dispatch, and analytical Bezier extrema canvas expansion.
-
-**Requirements Covered:**
-
-- `CFG-01`: User can set diagram-wide default edge routing and corner radius via `Diagram(routing=..., corner_radius=...)`.
-- `CFG-02`: Connections created via fluent operators (`s1 >> s2`) inherit diagram defaults while individual `Edge` parameters take precedence.
-- `CFG-03`: Layout pipeline automatically runs unified edge routing for all diagram edges, populating `diagram.routes` with typed `RoutedPath` values through a single `EdgeRouter` dispatcher (`edge.waypoints` remains as a read-only view).
-- `CFG-04`: Diagram canvas boundaries automatically expand (`_grow_canvas`) to encompass analytical curve extrema so high-arching Bezier curves are never clipped.
-
-**Success Criteria:**
-
-1. User can specify default edge routing and corner radius at the diagram level (`Diagram(routing=Routing.CURVE, corner_radius=10)`), with fluent connections (`node1 >> node2`) automatically inheriting these defaults.
-2. Individual `Edge(routing=..., corner_radius=...)` instances seamlessly override diagram-level defaults, supporting mixed routing styles (e.g., curved feedback loops alongside orthogonal main pipelines) in a single diagram.
-3. The layout pipeline runs unified edge routing across all edges, populating `diagram.routes` consistently across `manual`, `auto`, and layout-file modes. Routing happens only in the pipeline: routers are pure, the renderer draws the `RoutedPath`s it is given, and re-solving after `configure()` re-routes every edge that has no `manual_waypoints`.
-4. Canvas auto-growth computes analytical polynomial extrema ($B'(t) = 0$) for all cubic Bezier curves, ensuring canvas boundaries expand to enclose high-arching curves without clipping.
+**Requirements:** PDF-01 … PDF-03
+**Success criteria:**
+1. `render_pdf()` output for every technical example opens in standard viewers and matches the SVG.
+2. No runtime dependency added.
