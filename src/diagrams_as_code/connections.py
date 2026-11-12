@@ -126,12 +126,15 @@ class Edge:
             list(manual_waypoints) if manual_waypoints else None
         )
         self._resolved_path: Optional[RoutedPath] = None
+        self._resolved_style: Optional[EdgeStyle] = None
 
     @property
     def routing(self) -> Routing:
         """Routing strategy for edges."""
         if self._routing is not None:
             return self._routing
+        if self._resolved_style is not None:
+            return self._resolved_style.routing
         if self._resolved_path is not None:
             return (
                 Routing.CURVE

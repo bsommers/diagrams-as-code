@@ -7,6 +7,7 @@ such as ``shape_3`` are never used: adding a shape would renumber them.
 from __future__ import annotations
 
 import json
+import math
 import warnings
 from pathlib import Path
 from typing import Any, Union
@@ -58,9 +59,12 @@ def load_layout_file(path: Union[str, Path]) -> dict[str, tuple[float, float]]:
     entries: dict[str, tuple[float, float]] = {}
     for key, pos in positions.items():
         try:
-            entries[key] = (float(pos["x"]), float(pos["y"]))
+            x, y = float(pos["x"]), float(pos["y"])
         except (TypeError, KeyError, ValueError) as exc:
             raise ValueError(f"{p}: entry {key!r} needs numeric 'x' and 'y'") from exc
+        if not (math.isfinite(x) and math.isfinite(y)):
+            raise ValueError(f"{p}: entry {key!r} has a non-finite coordinate ({x}, {y})")
+        entries[key] = (x, y)
     return entries
 
 

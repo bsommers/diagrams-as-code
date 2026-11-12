@@ -674,11 +674,32 @@ class Diagram:
         """Place every element: auto-layout, layout file, constraints, framing."""
         run_layout(self)
         self._is_solved = True
+        self._solved_signature = self._signature()
+
+    def _signature(self) -> tuple[Any, ...]:
+        """Everything a solve depends on, so a stale solve can be detected."""
+        elements = tuple(
+            (id(el), el.width, el.height, len(el.constraints), id(el.parent))
+            for el in self.solver.all_elements()
+        )
+        edges = tuple(
+            (
+                id(e), id(e.source), id(e.target), e.source_port, e.target_port,
+                e._routing, e._corner_radius, e._clearance, bool(e.label),
+                tuple(e.manual_waypoints) if e.manual_waypoints else None,
+            )
+            for e in self.edges
+        )
+        return (elements, edges, self.width, self.height)
+
+    def _ensure_solved(self) -> None:
+        """Solve if never solved, or if the model changed since the last solve."""
+        if not self._is_solved or getattr(self, "_solved_signature", None) != self._signature():
+            self.solve()
 
     def render_svg(self, path: Optional[Union[str, Path]] = None) -> str:
         """Render diagram to SVG string and optionally write to file."""
-        if not self._is_solved:
-            self.solve()
+        self._ensure_solved()
         renderer = SVGRenderer(self.theme)
         svg = renderer.render(
             elements=self.shapes,
@@ -714,8 +735,7 @@ class Diagram:
         include_connections: bool = True,
     ) -> str:
         """Generate living documentation README with diagram graphic link and BOM table."""
-        if not self._is_solved:
-            self.solve()
+        self._ensure_solved()
         return self.bom.generate_readme(
             image_file=image_file,
             diagram_name=self.title,

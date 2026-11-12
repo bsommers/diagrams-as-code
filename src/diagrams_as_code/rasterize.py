@@ -31,6 +31,9 @@ def _cairosvg(svg: str, path: Path) -> Optional[bytes]:
 def _run_converter(argv_for: Callable[[Path], list[str]], svg: str, path: Path) -> Optional[bytes]:
     temp_svg = path.with_suffix(".temp.svg")
     try:
+        # Remove any earlier output so a converter that exits 0 without writing
+        # cannot hand back a stale image.
+        path.unlink(missing_ok=True)
         temp_svg.write_text(svg, encoding="utf-8")
         res = subprocess.run(argv_for(temp_svg), capture_output=True)
         if res.returncode == 0 and path.exists():

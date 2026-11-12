@@ -74,6 +74,8 @@ class _LayoutState:
     """What the first run saw, so later runs start from the same place."""
 
     bounds: dict[int, tuple[Element, Rect, float, float]] = field(default_factory=dict)
+    #: (width, height) each element had when the previous run finished.
+    solved: dict[int, tuple[float, float]] = field(default_factory=dict)
     base_size: tuple[float, float] = (0.0, 0.0)
     #: (width, height) the pipeline itself left the canvas at after the previous
     #: run. Used to tell "the pipeline grew the canvas" apart from "the user
@@ -99,18 +101,21 @@ def run_layout(diagram: Any) -> None:
         canvas=Rect(0.0, 0.0, diagram.width, diagram.height),
     )
     edge_router = EdgeRouter()
+    styles = {edge: resolve_edge_style(edge, diagram) for edge in diagram.edges}
+    scene = scene.with_anchor_offsets(_spread_ports(diagram.edges, styles, edge_router, scene))
     routes: dict[Any, RoutedPath] = {}
     for edge in diagram.edges:
+        style = styles[edge]
         if edge.manual_waypoints:
             path = RoutedPath(
                 kind=PathKind.POLYLINE,
                 points=tuple(edge.manual_waypoints),
-                corner_radius=edge.corner_radius or 0.0,
+                corner_radius=style.corner_radius,
             )
         else:
-            style = resolve_edge_style(edge, diagram)
             path = edge_router.route(edge, scene=scene, style=style)
         edge._resolved_path = path
+        edge._resolved_style = style
         routes[edge] = path
         routes[id(edge)] = path
     diagram.routes = routes
@@ -119,8 +124,55 @@ def run_layout(diagram: Any) -> None:
     _frame(elements, groups, routes)
     _grow_canvas(diagram, elements, routes)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
+    diagram._layout_state.solved = {id(el): (el.width, el.height) for el in elements}
     if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
+
+
+def _spread_ports(
+    edges: list[Edge],
+    styles: dict[Edge, EdgeStyle],
+    router: EdgeRouter,
+    scene: RoutingScene,
+) -> dict[Edge, tuple[float, float]]:
+    """Shift port anchors so incoming and outgoing edges on one side do not overlap.
+
+    Edges leaving a side keep sharing one anchor (a fan-out trunk reads well),
+    and so do edges arriving at it. When a side carries both, the two sets are
+    moved to a third and two thirds of the way along it, ordered by where their
+    other ends lie so the lines do not cross.
+    """
+    # (element, port) -> role -> [(edge index, edge, other end's centre)]
+    sides: dict[tuple[Element, Any], dict[str, list[tuple[int, Edge, Point]]]] = {}
+    for idx, edge in enumerate(edges):
+        if edge.manual_waypoints or edge.source is edge.target:
+            continue
+        obstacles = scene.obstacles_for(edge, clearance=0.0)
+        sp, tp = router.resolve_ports(edge, obstacles=obstacles, style=styles[edge])
+        sides.setdefault((edge.source, sp), {}).setdefault("out", []).append(
+            (idx, edge, edge.target.bounds.center)
+        )
+        sides.setdefault((edge.target, tp), {}).setdefault("in", []).append(
+            (idx, edge, edge.source.bounds.center)
+        )
+
+    offsets: dict[Edge, list[float]] = {}
+    for (element, port), roles in sides.items():
+        if len(roles) < 2:
+            continue
+        horizontal_side = port.value in ("north", "south")
+        length = element.bounds.width if horizontal_side else element.bounds.height
+
+        def sort_key(role: str) -> tuple[float, int]:
+            members = roles[role]
+            along = [c.x if horizontal_side else c.y for _, _, c in members]
+            return (round(sum(along) / len(along), 6), min(i for i, _, _ in members))
+
+        for slot, role in enumerate(sorted(roles, key=sort_key)):
+            shift = (-1.0 if slot == 0 else 1.0) * length / 6.0
+            for _, edge, _ in roles[role]:
+                offsets.setdefault(edge, [0.0, 0.0])[0 if role == "out" else 1] = shift
+    return {e: (v[0], v[1]) for e, v in offsets.items()}
 
 
 def _reset(diagram: Any, elements: list[Element]) -> None:
@@ -142,7 +194,18 @@ def _reset(diagram: Any, elements: list[Element]) -> None:
         if saved is None:
             state.bounds[id(el)] = (el, el.bounds, el.width, el.height)
         else:
-            _, el.bounds, el.width, el.height = saved
+            _, base, width, height = saved
+            left = state.solved.get(id(el))
+            if (
+                left is not None
+                and not isinstance(el, Group)
+                and (el.width, el.height) != left
+            ):
+                # The user resized the element since the last solve; keep that.
+                width, height = el.width, el.height
+                base = Rect(base.x, base.y, width, height)
+                state.bounds[id(el)] = (el, base, width, height)
+            el.bounds, el.width, el.height = base, width, height
         el.constraints[:] = [c for c in el.constraints if SOURCE_KEY not in c]
 
 
