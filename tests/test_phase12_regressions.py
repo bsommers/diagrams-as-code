@@ -299,10 +299,10 @@ def test_auto_layout_leaves_room_for_wide_labels_and_badges():
         d.connect(a, c, label="a fairly long protocol label here")
         d.connect(b, c)
     d.solve()
-    from diagrams_as_code.metrics import badge_width
+    from diagrams_as_code.labels import badge_size
 
     # stacked nodes' labels do not collide vertically, and the badge fits the gap
     top, bottom = sorted((a, b), key=lambda s: s.bounds.y)
     assert bottom.bounds.y - top.bounds.bottom >= 40
-    assert c.bounds.left - a.bounds.right >= badge_width("a fairly long protocol label here")
+    assert c.bounds.left - a.bounds.right >= badge_size("a fairly long protocol label here")[0]
     assert a.bounds.x >= 0

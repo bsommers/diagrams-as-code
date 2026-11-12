@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from typing import ClassVar, Optional
 from diagrams_as_code.icon_glyphs import GLYPHS
-from diagrams_as_code.metrics import badge_width
+from diagrams_as_code.labels import badge_block
 
 
 class ShapeLibrary:
@@ -423,17 +423,17 @@ class ShapeLibrary:
         if height <= 0:
             raise ValueError(f"height must be positive, got {height}")
 
-        badge_w = badge_width(text, font_size, padding_x)
-        rx = height / 2.0
-        text_x = x + badge_w / 2.0
-        text_y = y + height / 2.0 + font_size * 0.35
-        escaped_text = html.escape(text)
-        escaped_font_family = html.escape(font_family, quote=True)
+        block = badge_block(text, font_size)
+        badge_w = max(block.width + 2 * padding_x, 24.0)
+        height = max(height, block.height + 4.0)
+        rx = min(height, 18.0) / 2.0
+        body = block.to_svg(
+            x + badge_w / 2.0, y + height / 2.0, fill=text_color, font_family=font_family, indent="  "
+        )
         return (
             f'<g class="badge">\n'
             f'  <rect x="{x}" y="{y}" width="{badge_w}" height="{height}" rx="{rx}" fill="{fill}" />\n'
-            f'  <text x="{text_x}" y="{text_y}" fill="{text_color}" font-size="{font_size}" '
-            f'font-family="{escaped_font_family}" font-weight="600" text-anchor="middle">{escaped_text}</text>\n'
+            f'{body}\n'
             f'</g>'
         )
 

@@ -347,8 +347,11 @@ class Diagram:
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
         routing: Optional[Union[Routing, str]] = None,
+        fit_labels: bool = True,
     ) -> None:
         self.title = title
+        #: Grow shapes whose inside label would otherwise spill out of them.
+        self.fit_labels = bool(fit_labels)
         self.width = float(width)
         self.height = float(height)
         base_t = get_theme(theme)

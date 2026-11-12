@@ -13,115 +13,115 @@
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Campus Core Layer</text>
+    <text x="76" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Campus Core Layer</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Distribution Aggregation</text>
+    <text x="326" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Distribution Aggregation</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Access Edge Layer</text>
+    <text x="576" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Access Edge Layer</text>
   </g>
   <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="84.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#133663" />
-  <text x="145.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">100G Interconnect</text>
-</g>
   <path d="M 205.0 160.0 L 335.0 160.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="231.0" y="151.0" width="78.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270.0" y="163.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G Uplink</text>
-</g>
   <path d="M 205.0 270.0 L 335.0 270.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="231.0" y="261.0" width="78.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270.0" y="273.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G Uplink</text>
-</g>
   <path d="M 335.0 180.0 L 270.0 180.0 L 270.0 250.0 L 205.0 250.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="231.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Cross-Link</text>
-</g>
   <path d="M 335.0 250.0 L 270.0 250.0 L 270.0 180.0 L 205.0 180.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="231.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Cross-Link</text>
-</g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="484.1" y="161.0" width="71.8" height="18.0" rx="9.0" fill="#133663" />
-  <text x="520.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">10G Trunk</text>
-</g>
   <path d="M 455.0 260.0 L 585.0 260.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="484.1" y="251.0" width="71.8" height="18.0" rx="9.0" fill="#133663" />
-  <text x="520.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">10G Trunk</text>
+  <rect x="95.8623046875" y="206.0" width="98.275390625" height="18.0" rx="9.0" fill="#133663" />
+  <text x="145" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">100G Interconnect</text>
+</g>
+  <g class="badge">
+  <rect x="237.26611328125" y="151.0" width="65.4677734375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="270" y="163.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">40G Uplink</text>
+</g>
+  <g class="badge">
+  <rect x="237.26611328125" y="261.0" width="65.4677734375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="270" y="273.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">40G Uplink</text>
+</g>
+  <g class="badge">
+  <rect x="238.10595703125" y="206.0" width="63.7880859375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="270" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cross-Link</text>
+</g>
+  <g class="badge">
+  <rect x="238.10595703125" y="206.0" width="63.7880859375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="270" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cross-Link</text>
+</g>
+  <g class="badge">
+  <rect x="488.37939453125" y="161.0" width="63.2412109375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">10G Trunk</text>
+</g>
+  <g class="badge">
+  <rect x="488.37939453125" y="251.0" width="63.2412109375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="520" y="263.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">10G Trunk</text>
 </g>
   <g id="core1" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-switch" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Core Switch</tspan> <tspan x="145.0" dy="13.75">Alpha</tspan></text>
+    <text x="145" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Core Switch Alpha</text>
   </g>
   <g id="core2" filter="url(#shadow)">
     <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(133.6, 239.6) scale(0.9500000000000001)">
+    <g class="icon icon-switch" transform="translate(133.6, 239.8) scale(0.9500000000000001)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="145.0" y="276.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Core Switch Beta</text>
+    <text x="145" y="276.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Core Switch Beta</text>
   </g>
   <g id="dist1" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-switch" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Distribution</tspan> <tspan x="395.0" dy="13.75">Switch 1</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Distribution</tspan> <tspan x="395" dy="14.4">Switch 1</tspan></text>
   </g>
   <g id="dist2" filter="url(#shadow)">
     <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(383.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-switch" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="395.0" y="268.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Distribution</tspan> <tspan x="395.0" dy="13.75">Switch 2</tspan></text>
+    <text x="395" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Distribution</tspan> <tspan x="395" dy="14.4">Switch 2</tspan></text>
   </g>
   <g id="acc1" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-switch" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Floor 1 Access</tspan> <tspan x="645.0" dy="13.75">Switch</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Floor 1</tspan> <tspan x="645" dy="14.4">Access Switch</tspan></text>
   </g>
   <g id="acc2" filter="url(#shadow)">
     <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-switch" transform="translate(633.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-switch" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="6" y1="10" x2="13" y2="10" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="11,8 13,10 11,12" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="645.0" y="268.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Floor 2 Access</tspan> <tspan x="645.0" dy="13.75">Switch</tspan></text>
+    <text x="645" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Floor 2</tspan> <tspan x="645" dy="14.4">Access Switch</tspan></text>
   </g>
 </svg>

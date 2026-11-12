@@ -10,6 +10,7 @@ A task-oriented guide to writing diagrams as Python code and rendering them to S
 - [Building blocks](#building-blocks)
 - [Positioning: manual, relative, auto](#positioning-manual-relative-auto)
 - [Edges and routing](#edges-and-routing)
+- [Text, markup and math](#text-markup-and-math)
 - [Themes](#themes)
 - [Icons](#icons)
 - [Outputs and the BOM](#outputs-and-the-bom)
@@ -99,6 +100,46 @@ See [Recipe 7 in how-to.md](how-to.md#recipe-7-let-the-engine-lay-out-a-diagram)
 By default edges are routed orthogonally (Manhattan style). Pass `routing="curve"` for cubic Bézier curves that deflect around obstacles (see `Routing.CURVE`). Set `corner_radius` on a diagram or an edge to round orthogonal corners. Declare shapes before edges so routing can avoid them; use `clearance=` to widen the buffer around obstacles.
 
 Recipes: [curved routing](how-to.md#recipe-8-routing-curved-bezier-edges-with-obstacle-deflection), [corner fillets](how-to.md#recipe-9-smoothing-orthogonal-edges-with-rounded-corner-fillets).
+
+## Text, markup and math
+
+Every label (shape, group title, edge badge) accepts a small markup:
+
+| Write | Get |
+|---|---|
+| `**bold**` | bold |
+| `*italic*` | italic |
+| `\n` or a real newline | line break |
+| `$E_{t+1} \in \Omega_{\mathrm{safe}}$` | typeset math |
+| `\$`, `\*` | a literal `$` or `*` |
+
+Ordinary labels need no escaping: `"Under $50k"`, `"2 * 3"` and `snake_case_names` are left alone, because math needs a closing `$` and emphasis needs a closing marker.
+
+```python
+d.add(Shape(
+    "policy",
+    "**Policy Decision Function**\n"
+    r"$\Pi(E_t, E_{t+1}) \to \{\mathrm{allow}, \mathrm{deny}\}$",
+    width=260, height=70,
+))
+d.connect(a, b, label=r"$g_k(I, C, D, T) \leq 0$")
+```
+
+**Math** is a TeX-like subset: letters are set in math italic and digits upright; `_` and `^` take one character or a `{group}`; Greek letters (`\alpha` … `\Omega`); relations and operators (`\leq \geq \neq \approx \in \subseteq \to \leadsto \land \lor \cap \cup \times \cdot \forall \exists` and more); `\mathrm{}`, `\text{}`, `\mathbf{}`; named functions (`\min`, `\max`, `\log` …); big operators with limits underneath (`\sum_{i=1}^{n}`, `\bigcap_{k}`; add `\nolimits` to set them beside); and the spaces `\,` `\;` `\quad`. Fractions, radicals and matrices are not supported and raise `MathError` rather than rendering wrongly.
+
+Math is drawn as vector outlines, so it looks identical in every browser, in PNG and in print. Ordinary text stays real, selectable SVG text.
+
+**Fitting.** Label width is measured from bundled font metrics, not guessed. A label that cannot fit its shape at the smallest size makes the shape grow, so text never spills out. To keep a size exactly as given, pass `fit_label=False` on the shape or `Diagram(fit_labels=False)`. To pin the text size, pass `font_size=14` on the shape.
+
+To measure or lay out text yourself:
+
+```python
+from diagrams_as_code.text import TextStyle, layout, measure
+
+width, height = measure("Edge Gateway", TextStyle(size=13))
+block = layout(r"State $E_{t+1}$", TextStyle(size=16), max_width=200)
+svg_fragment = block.to_svg(x=100, y=50, anchor="middle", fill="#111")
+```
 
 ## Themes
 

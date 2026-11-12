@@ -35,7 +35,7 @@ def test_routing_defects_stay_at_zero():
 
 def test_audit_detects_a_label_overflow_and_a_badge_over_a_node():
     with Diagram("t", theme="monochrome") as d:
-        a = d.add(Shape("a", "An extremely long label that cannot fit in this box", width=80, height=30)).at(100, 100)
+        a = d.add(Shape("a", "An extremely long label that cannot fit in this box", width=80, height=30, fit_label=False)).at(100, 100)
         b = d.add(Shape("b", "B")).at(200, 100)
         d.connect(a, b, label="a long protocol label")
     counts = audit_diagram(d)
@@ -49,3 +49,13 @@ def test_audit_is_clean_for_a_simple_diagram():
         b = d.add(Shape("b", "B")).at(340, 100)
         d.connect(a, b, label="ok")
     assert audit_diagram(d) == {}
+
+
+def test_shapes_grow_to_fit_their_labels_by_default():
+    with Diagram("t", theme="monochrome") as d:
+        a = d.add(Shape("a", "An extremely long label that cannot fit in this box", width=80, height=30)).at(100, 100)
+        b = d.add(Shape("b", "B")).right_of(a, margin=40)
+    counts = audit_diagram(d)
+    assert counts["label_overflow"] == 0
+    assert a.bounds.height > 30
+    assert b.bounds.x == a.bounds.right + 40

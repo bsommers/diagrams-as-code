@@ -11,7 +11,7 @@ from collections import Counter
 from typing import Any, Iterator, Optional
 
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
-from diagrams_as_code.metrics import AVG_CHAR_EM, badge_width, wrap_text
+from diagrams_as_code.labels import badge_size, node_label
 
 EPS = 0.5
 
@@ -135,22 +135,11 @@ def _shared_run(s1: tuple[Point, Point], s2: tuple[Point, Point]) -> float:
     return 0.0
 
 
-def label_overflows(shape: Any, label_position: str) -> bool:
-    """True if a label drawn inside ``shape`` needs more height than it has."""
-    if not shape.label or getattr(shape, "kind", "box") == "icon":
+def label_overflows(shape: Any) -> bool:
+    """True if a label drawn inside ``shape`` does not fit it at any size."""
+    if not shape.label:
         return False
-    pos = shape.label_position if shape.label_position != "auto" else "inside"
-    if pos != "inside":
-        return False
-    b = shape.bounds
-    lines = wrap_text(shape.label, max(10, int(b.width / 7.2)))
-    font = 12.0 if len(lines) == 1 else (11.0 if len(lines) == 2 else 10.0)
-    need = len(lines) * font * 1.25
-    if getattr(shape, "icon", None):
-        need += min(24.0, max(16.0, b.height * 0.38)) + 4.0
-    too_tall = need > b.height - 4.0
-    too_wide = max(len(line) for line in lines) * font * AVG_CHAR_EM * 0.9 > b.width - 4.0
-    return too_tall or too_wide
+    return not node_label(shape).fits
 
 
 def audit_diagram(diagram: Any) -> Counter[str]:
@@ -176,7 +165,7 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             lx, ly = path.label_anchor()
             meta = getattr(edge, "metadata", {}) or {}
             font = float(meta.get("font_size", 10.0))
-            w, h = badge_width(edge.label, font), float(meta.get("badge_height", 18.0))
+            w, h = badge_size(edge.label, font, float(meta.get("badge_height", 18.0)))
             badges.append((edge, (lx - w / 2, ly - h / 2, lx + w / 2, ly + h / 2)))
 
     for i, (e1, segs1) in enumerate(flat):
@@ -203,9 +192,7 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             if _overlap(boxes[i], boxes[j]):
                 counts["node_overlap"] += 1
 
-    counts["label_overflow"] += sum(
-        1 for s in shapes if label_overflows(s, getattr(diagram, "label_position", "inside"))
-    )
+    counts["label_overflow"] += sum(1 for s in shapes if label_overflows(s))
 
     extents = [s.bounds for s in shapes] + [g.bounds for g in diagram.groups]
     if extents:

@@ -13,39 +13,39 @@
   <rect width="100%" height="100%" fill="#0B1713"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Shop Floor</text>
+    <text x="76" y="104" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Shop Floor</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Edge Industrial PC</text>
+    <text x="326" y="104" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Edge Industrial PC</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#11241E" stroke="#1D3D32" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Enterprise ERP</text>
+    <text x="576" y="104" fill="#10B981" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Enterprise ERP</text>
   </g>
   <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="212.4" y="161.0" width="115.2" height="18.0" rx="9.0" fill="#163028" />
-  <text x="270.0" y="173.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Work Order Start</text>
-</g>
   <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="227.9" y="206.0" width="84.2" height="18.0" rx="9.0" fill="#163028" />
-  <text x="270.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Serial Scan</text>
-</g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="471.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#163028" />
-  <text x="520.0" y="173.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">REST API :443</text>
-</g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="606.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#163028" />
-  <text x="645.0" y="218.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Batch Sync</text>
+  <rect x="224.216796875" y="161.0" width="91.56640625" height="18.0" rx="9.0" fill="#163028" />
+  <text x="270" y="173.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Work Order Start</text>
+</g>
+  <g class="badge">
+  <rect x="236.43115234375" y="206.0" width="67.1376953125" height="18.0" rx="9.0" fill="#163028" />
+  <text x="270" y="218.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Serial Scan</text>
+</g>
+  <g class="badge">
+  <rect x="478.09619140625" y="161.0" width="83.8076171875" height="18.0" rx="9.0" fill="#163028" />
+  <text x="520" y="173.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">REST API :443</text>
+</g>
+  <g class="badge">
+  <rect x="611.70947265625" y="206.0" width="66.5810546875" height="18.0" rx="9.0" fill="#163028" />
+  <text x="645" y="218.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Batch Sync</text>
 </g>
   <g id="hmi_station" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
-    <g class="icon icon-hmi" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-hmi" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <circle cx="6" cy="20" r="1" fill="#10B981"/>
   <circle cx="10" cy="20" r="1" fill="#10B981"/>
@@ -53,21 +53,21 @@
   <circle cx="18" cy="20" r="1" fill="#10B981"/>
   <rect x="6" y="7" width="12" height="8" rx="1" fill="none" stroke="#10B981" stroke-width="2.0"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Line Operator</tspan> <tspan x="145.0" dy="13.75">HMI</tspan></text>
+    <text x="145" y="186.87" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Line Operator HMI</text>
   </g>
   <g id="barcode_scan" filter="url(#shadow)">
     <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
-    <g class="icon icon-sensor" transform="translate(133.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-sensor" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
   <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <line x1="8" y1="17" x2="16" y2="17" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="268.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Pallet RFID /</tspan> <tspan x="145.0" dy="13.75">Barcode</tspan></text>
+    <text x="145" y="269.33" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Pallet RFID</tspan> <tspan x="145" dy="14.4">/ Barcode</tspan></text>
   </g>
   <g id="ipc_worker" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
-    <g class="icon icon-gateway" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-gateway" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
   <line x1="6" y1="9" x2="6" y2="3" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="18" y1="9" x2="18" y2="3" stroke="#10B981" stroke-width="2.0" stroke-linecap="round"/>
   <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
@@ -75,11 +75,11 @@
   <circle cx="12" cy="15" r="1.5" fill="#10B981"/>
   <circle cx="17" cy="15" r="1.5" fill="#10B981"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">IPC Edge</tspan> <tspan x="395.0" dy="13.75">Controller</tspan></text>
+    <text x="395" y="186.53" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">IPC Edge Controller</text>
   </g>
   <g id="mes_core" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
-    <g class="icon icon-server" transform="translate(633.6, 149.6) scale(0.9500000000000001)">
+    <g class="icon icon-server" transform="translate(633.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <circle cx="6" cy="7" r="1" fill="#10B981"/>
@@ -87,17 +87,17 @@
   <circle cx="6" cy="17" r="1" fill="#10B981"/>
   <circle cx="9" cy="17" r="1" fill="#10B981"/>
 </g>
-    <text x="645.0" y="186.4" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Core MES Server</text>
+    <text x="645" y="186.87" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Core MES Server</text>
   </g>
   <g id="erp_db" filter="url(#shadow)">
     <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#163028" stroke="#10B981" stroke-width="2.0" />
-    <g class="icon icon-database" transform="translate(633.6, 239.6) scale(0.9500000000000001)">
+    <g class="icon icon-database" transform="translate(633.6, 240.4) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#10B981" stroke-width="2.0"/>
   <line x1="4" y1="6" x2="4" y2="18" stroke="#10B981" stroke-width="2.0"/>
   <line x1="20" y1="6" x2="20" y2="18" stroke="#10B981" stroke-width="2.0"/>
 </g>
-    <text x="645.0" y="276.4" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">SAP ERP Database</text>
+    <text x="645" y="276.53" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">SAP ERP Database</text>
   </g>
 </svg>

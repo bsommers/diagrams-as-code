@@ -10,10 +10,11 @@ from typing import Any, Optional
 from diagrams_as_code.elements import Element
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutEdge, LayoutGraph, LayoutNode
-from diagrams_as_code.metrics import LABEL_BELOW_EXTRA, below_label_extent
+from diagrams_as_code.labels import below_label_extent
+from diagrams_as_code.metrics import LABEL_BELOW_EXTRA
 
-#: Height of each additional wrapped line of a label drawn below a shape.
-LABEL_LINE_HEIGHT = 11.0 * 1.25
+#: Space kept under a below-label before the next element.
+BELOW_LABEL_CLEARANCE = 7.6
 
 __all__ = ["LABEL_BELOW_EXTRA", "build_scope_graph", "is_user_pinned", "lift", "node_inset", "node_size", "pinned_ids", "scope_children"]
 
@@ -98,14 +99,12 @@ def pinned_ids(elements: list[Element]) -> set[str]:
 def node_size(element: Element) -> tuple[float, float]:
     """Width and height the element occupies, including a label drawn below it."""
     w, h = element.bounds.width, element.bounds.height
-    label_below = getattr(element, "kind", None) == "icon" or getattr(
-        element, "label_position", None
-    ) in ("bottom", "below")
-    if not label_below:
+    if isinstance(element, Group):
         return (w, h)
-    label_w, lines = below_label_extent(getattr(element, "label", "") or "", w)
-    extra_lines = max(0, lines - 1) * LABEL_LINE_HEIGHT
-    return (max(w, label_w), h + LABEL_BELOW_EXTRA + extra_lines)
+    label_w, label_h = below_label_extent(element)
+    if not label_h:
+        return (w, h)
+    return (max(w, label_w), h + label_h + BELOW_LABEL_CLEARANCE)
 
 
 def node_inset(element: Element) -> float:

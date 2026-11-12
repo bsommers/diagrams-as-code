@@ -19,107 +19,107 @@
   <rect width="100%" height="100%" fill="#EFF1F5"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#E6E9EF" stroke="#CCD0DA" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Source Corpus</text>
+    <text x="76" y="104" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Source Corpus</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#E6E9EF" stroke="#CCD0DA" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Graph Construction</text>
+    <text x="326" y="104" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Graph Construction</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#E6E9EF" stroke="#CCD0DA" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Graph Store</text>
+    <text x="576" y="104" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Graph Store</text>
   </g>
   <g id="group_4">
     <rect x="810.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#E6E9EF" stroke="#CCD0DA" stroke-width="1.5" />
-    <text x="826.0" y="104.0" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Query Layer</text>
+    <text x="826" y="104" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Query Layer</text>
   </g>
   <g id="group_5">
     <rect x="1060.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#E6E9EF" stroke="#CCD0DA" stroke-width="1.5" />
-    <text x="1076.0" y="104.0" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">End Consumer</text>
+    <text x="1076" y="104" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">End Consumer</text>
   </g>
   <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <g class="badge">
-  <rect x="215.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="270.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Document Chunks</text>
-</g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <g class="badge">
-  <rect x="450.0" y="161.0" width="140.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="520.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Merge Cypher Triples</text>
-</g>
   <path d="M 1085.0 160.0 L 1020.0 160.0 L 1020.0 170.0 L 955.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <g class="badge">
-  <rect x="943.8" y="156.0" width="152.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="1020.0" y="168.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Natural Language Query</text>
-</g>
   <path d="M 835.0 170.0 L 705.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <g class="badge">
-  <rect x="690.7" y="161.0" width="158.6" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="770.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Execute Graph Traversal</text>
-</g>
   <path d="M 895.0 200.0 L 895.0 230.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <g class="badge">
-  <rect x="834.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="895.0" y="218.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Sub-graph Context</text>
-</g>
   <path d="M 955.0 260.0 L 1020.0 260.0 L 1020.0 180.0 L 1085.0 180.0" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="937.6" y="211.0" width="164.8" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="1020.0" y="223.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Grounded Graph Synthesis</text>
+  <rect x="220.86962890625" y="161.0" width="98.2607421875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="270" y="173.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Document Chunks</text>
+</g>
+  <g class="badge">
+  <rect x="463.9287109375" y="161.0" width="112.142578125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="520" y="173.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Merge Cypher Triples</text>
+</g>
+  <g class="badge">
+  <rect x="957.24169921875" y="156.0" width="125.5166015625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="1020" y="168.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Natural Language Query</text>
+</g>
+  <g class="badge">
+  <rect x="706.42138671875" y="161.0" width="127.1572265625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="770" y="173.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Execute Graph Traversal</text>
+</g>
+  <g class="badge">
+  <rect x="845.02978515625" y="206.0" width="99.9404296875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="895" y="218.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Sub-graph Context</text>
+</g>
+  <g class="badge">
+  <rect x="951.4091796875" y="211.0" width="137.181640625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="1020" y="223.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Grounded Graph Synthesis</text>
 </g>
   <g id="raw_corpus" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
-    <g class="icon icon-document" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-document" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="14,2 14,8 20,8" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <line x1="8" y1="13" x2="16" y2="13" stroke="#7287FD" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="8" y1="17" x2="14" y2="17" stroke="#7287FD" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Unstructured PDF</tspan> <tspan x="145.0" dy="13.75">/ Confluence</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Unstructured</tspan> <tspan x="145" dy="14.4">PDF / Confluence</tspan></text>
   </g>
   <g id="extractor" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
-    <g class="icon icon-brain" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-brain" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <line x1="12" y1="4" x2="12" y2="20" stroke="#7287FD" stroke-width="2.0" stroke-dasharray="2,2"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Entity/Relation</tspan> <tspan x="395.0" dy="13.75">Extractor</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Entity/Relation</tspan> <tspan x="395" dy="14.4">Extractor</tspan></text>
   </g>
   <g id="neo4j" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
-    <g class="icon icon-database" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-database" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <line x1="4" y1="6" x2="4" y2="18" stroke="#7287FD" stroke-width="2.0"/>
   <line x1="20" y1="6" x2="20" y2="18" stroke="#7287FD" stroke-width="2.0"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Neo4j Knowledge</tspan> <tspan x="645.0" dy="13.75">Graph</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Neo4j Knowledge</tspan> <tspan x="645" dy="14.4">Graph</tspan></text>
   </g>
   <g id="graph_retriever" filter="url(#shadow)">
     <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
-    <g class="icon icon-workflow" transform="translate(883.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-workflow" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#7287FD" stroke-width="2.0"/>
 </g>
-    <text x="895.0" y="178.65" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">Multi-Hop Cypher</tspan> <tspan x="895.0" dy="13.75">Retriever</tspan></text>
+    <text x="895" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Multi-Hop</tspan> <tspan x="895" dy="14.4">Cypher Retriever</tspan></text>
   </g>
   <g id="synth_llm" filter="url(#shadow)">
     <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
-    <g class="icon icon-model" transform="translate(883.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-model" transform="translate(883.6, 233.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
 </g>
-    <text x="895.0" y="268.65" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">Synthesis LLM</tspan> <tspan x="895.0" dy="13.75">Engine</tspan></text>
+    <text x="895" y="269.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Synthesis</tspan> <tspan x="895" dy="14.4">LLM Engine</tspan></text>
   </g>
   <g id="analyst" filter="url(#shadow)">
     <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
-    <g class="icon icon-user" transform="translate(1133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-user" transform="translate(1133.6, 150.4) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="1145.0" y="178.65" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="1145.0" dy="0">Intelligence</tspan> <tspan x="1145.0" dy="13.75">Analyst</tspan></text>
+    <text x="1145" y="186.53" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Intelligence Analyst</text>
   </g>
 </svg>

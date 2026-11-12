@@ -358,7 +358,7 @@ def test_text_wrapping_multiline_tspan() -> None:
     theme = get_theme("iiot_dark_gold")
     renderer = SVGRenderer(theme)
 
-    s = Shape("s_long", label="Cloud IdP (Okta/Entra)", icon="key", width=120, height=60).at(50, 50)
+    s = Shape("s_long", label="Cloud IdP (Okta/Entra)", icon="key", width=90, height=70).at(50, 50)
     svg = renderer.render(elements=[s], width=400, height=300)
     assert "<tspan" in svg
     assert "Cloud IdP" in svg
@@ -383,7 +383,10 @@ def test_label_position_bottom() -> None:
     assert "Hardware" in svg
     assert "Security Key" in svg
     # The text y coordinate must be strictly below the graphic tile (50 + 60 = 110)
-    assert 'y="124.0"' in svg or 'y="125.0"' in svg or 'y="126.0"' in svg or 'y="128.0"' in svg
+    import re
+
+    (text_el,) = re.findall(r'<text x="[\d.]+" y="([\d.]+)"[^>]*>(?:<tspan[^>]*>)?Hardware', svg)
+    assert 118.0 <= float(text_el) <= 130.0
 
 
 

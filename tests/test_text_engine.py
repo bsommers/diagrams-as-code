@@ -204,3 +204,9 @@ def test_output_coordinates_have_at_most_two_decimals():
     svg = layout("x $a_i$ y", TextStyle(size=13.37)).to_svg(101.123456, 55.987654)
     for attr in re.findall(r'(?: x| y|textLength)="([^"]+)"', svg):
         assert len(attr.split(".")[-1]) <= 2 or "." not in attr
+
+
+def test_wrapping_balances_lines_instead_of_leaving_an_orphan():
+    block = layout("Hardware Security Key", TextStyle(size=12, weight=600), max_width=100)
+    assert [ln.runs[0].text for ln in block.lines] == ["Hardware", "Security Key"]
+    assert all(ln.width <= 100 for ln in block.lines)

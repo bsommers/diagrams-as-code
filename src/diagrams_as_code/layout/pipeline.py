@@ -33,7 +33,7 @@ from diagrams_as_code.layout.graph import (
     pinned_ids,
     scope_children,
 )
-from diagrams_as_code.metrics import badge_width
+from diagrams_as_code.labels import badge_size, node_label
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
 from diagrams_as_code.router import EdgeRouter, RoutingScene, path_collides
@@ -96,6 +96,7 @@ def run_layout(diagram: Any) -> None:
     """Position every element and route every edge of diagram."""
     elements = diagram.solver.all_elements()
     _reset(diagram, elements)
+    _grow_to_fit_labels(elements, getattr(diagram, "fit_labels", True))
     _apply_layout_file(diagram, elements)
     auto_ids: set[str] = set()
     if diagram.layout == "auto":
@@ -144,6 +145,31 @@ def run_layout(diagram: Any) -> None:
     diagram._layout_state.solved = {id(el): (el.width, el.height) for el in elements}
     if diagram.layout == "auto":
         _warn_pinned_overlaps(diagram, elements, auto_ids)
+
+
+def _grow_to_fit_labels(elements: list[Element], default: bool = True) -> None:
+    """Enlarge shapes whose inside label cannot fit even at the smallest size.
+
+    A label must never spill out of its box. Growing happens before placement,
+    so relative constraints and auto-layout see the final size.
+    """
+    for el in elements:
+        if isinstance(el, Group) or not getattr(el, "label", None):
+            continue
+        wanted = getattr(el, "fit_label", None)
+        if not (default if wanted is None else wanted):
+            continue
+        label = node_label(el)
+        if label.fits:
+            continue
+        b = el.bounds
+        w, h = max(b.width, label.needed_width), max(b.height, label.needed_height)
+        # Widening changes how the text wraps; settle the height for the new width.
+        el.bounds = Rect(b.x, b.y, w, h)
+        again = node_label(el)
+        h = max(h, again.needed_height) if not again.fits else h
+        el.bounds = Rect(b.x, b.y, w, h)
+        el.width, el.height = w, h
 
 
 def _spread_ports(
@@ -261,7 +287,7 @@ def _place(diagram: Any, group: Optional[Group], pinned: set[str], engine: Layer
                 continue
             s, t = lift(edge.source, group), lift(edge.target, group)
             if s is not None and t is not None and s is not t and s.id in free and t.id in free:
-                widest = max(widest, badge_width(edge.label))
+                widest = max(widest, badge_size(edge.label)[0])
         if widest + BADGE_MARGIN * 2.0 > engine.rank_gap:
             engine = LayeredLayout(
                 engine.direction, widest + BADGE_MARGIN * 2.0, engine.node_gap, engine.sweeps

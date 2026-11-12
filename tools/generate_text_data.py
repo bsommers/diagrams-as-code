@@ -92,7 +92,7 @@ def build_math(font_path: Path) -> str:
         "",
         "Outlines are derived from STIX Two Math 2.13 b171,",
         "Copyright 2001-2021 The STIX Fonts Project Authors (https://github.com/stipub/stixfonts),",
-        "licensed under the SIL Open Font License, Version 1.1 (see docs/licenses/OFL-STIX.txt).",
+        "licensed under the SIL Open Font License, Version 1.1 (see OFL-STIX.txt beside this file).",
         f"Source file sha256: {_sha256(font_path)}",
         '"""',
         "",

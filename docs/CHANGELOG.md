@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.9.0] - 2026-11-12
+
+Text engine: measured text, label markup and typeset math.
+
+### Added
+- **`diagrams_as_code.text`:** font-metric text measurement, rich text layout with balanced word wrap, and a TeX-like math typesetter. `layout()`, `measure()`, `TextStyle`, `typeset()`.
+- **Label markup** in shape labels, group titles and edge badges: `**bold**`, `*italic*`, explicit line breaks, and `$math$`. Ordinary labels containing `$`, `*` or `_` are unaffected.
+- **Math** drawn as vector outlines: sub/superscripts, grouping, Greek, operators and relations, `\mathrm` / `\text` / `\mathbf`, named functions, limits under big operators. Unsupported constructs raise `MathError`.
+- **Grow-to-fit:** a shape whose label cannot fit at the smallest size grows so the text never spills. Opt out with `Shape(fit_label=False)` or `Diagram(fit_labels=False)`; pin the text size with `font_size=`.
+- `tools/generate_text_data.py` (development-time; uses fontTools via `uv run --with`), `docs/licenses/OFL-STIX.txt`, and a provenance section in `docs/sources.md`.
+
+### Changed
+- Node labels, group titles and edge badges are sized and wrapped from real advance widths. The three separate `0.62 x font size` guesses are gone; layout, drawing and the audit share `diagrams_as_code.labels`.
+- Wrapped labels are balanced ("Hardware" / "Security Key", not "Hardware Security" / "Key").
+- Edge badges are drawn above all edge lines, so no line strikes through a label.
+- Gallery SVG output regenerated.
+
+### Licensing
+- Math glyph outlines are derived from STIX Two Math 2.13 (SIL Open Font License 1.1) and are redistributed under that license; the license text ships in the package. Advance widths come from Arimo (Apache-2.0). No runtime dependency is added.
+
+### Verification Evidence
+- `uv run pytest` -> 654 passed.
+- `tools/audit_gallery.py`, v0.8.4 -> v0.9.0: label overflow 29 -> 0, badges over nodes 80 -> 21, badges over badges 28 -> 16, edges through a badge 188 -> 183. Unchanged: overlapping edges 22, mostly-empty canvas 90 (both scheduled for v0.10.0).
+- Every formula in the reference figure renders in SVG and PNG (checked by eye).
+
 ## [v0.8.4] - 2026-11-12
 
 First release of the Technical Figures program (`docs/plans/2026-11-12-technical-figures-and-quality.md`): a bug-fix baseline and a visual defect gate.

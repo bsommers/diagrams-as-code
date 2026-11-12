@@ -10,12 +10,9 @@ from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
-from diagrams_as_code.metrics import (
-    LABEL_BELOW_OFFSET,
-    badge_width,
-    below_label_budget,
-    wrap_text,
-)
+from diagrams_as_code.labels import BELOW_GAP, ICON_GAP, badge_size, node_label
+from diagrams_as_code.metrics import wrap_text
+from diagrams_as_code.text import TextStyle, layout
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
 
@@ -54,6 +51,15 @@ class SVGRenderer:
     def wrap_text(text: str, max_chars: int = 15) -> list[str]:
         """Break label text into visually balanced lines at word boundaries."""
         return wrap_text(text, max_chars)
+
+    def _group_label(self, label: str, x: float, top: float, indent: str) -> str:
+        """A group's title, set on the same baseline as before (24px below its top)."""
+        block = layout(label, TextStyle(size=14.0, bold=True))
+        first = block.baselines(0.0)[0]
+        return block.to_svg(
+            x, top + 24.0 - first, anchor="start", valign="top",
+            fill=self.theme.accent, font_family=self.theme.font_family, indent=indent,
+        )
 
     def _render_interactive_styles(self) -> str:
         contrast = self._contrast_color(self.theme.accent)
@@ -545,10 +551,7 @@ class SVGRenderer:
                     f'      <text class="group-toggle" x="{b.x + 14}" y="{b.y + 22}">▼</text>'
                 )
                 if g.label:
-                    lines.append(
-                        f'      <text x="{b.x + 32}" y="{b.y + 24}" fill="{self.theme.accent}" '
-                        f'font-family="{self.theme.font_family}" font-size="14" font-weight="bold">{html.escape(g.label)}</text>'
-                    )
+                    lines.append(self._group_label(g.label, b.x + 32, b.y, "      "))
                 lines.append("    </g>")
                 lines.append("  </g>")
             else:
@@ -558,10 +561,7 @@ class SVGRenderer:
                     f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
                 )
                 if g.label:
-                    lines.append(
-                        f'    <text x="{b.x + 16}" y="{b.y + 24}" fill="{self.theme.accent}" '
-                        f'font-family="{self.theme.font_family}" font-size="14" font-weight="bold">{html.escape(g.label)}</text>'
-                    )
+                    lines.append(self._group_label(g.label, b.x + 16, b.y, "    "))
                 lines.append("  </g>")
 
         # 3. Render Edges
@@ -572,6 +572,7 @@ class SVGRenderer:
                 return elem.parent.id
             return None
 
+        badge_layer: list[str] = []
         for e in edge_list:
             path: Optional[Any] = None
             if routes is not None:
@@ -683,8 +684,9 @@ class SVGRenderer:
                     "badge_text_color", self.theme.text
                 )
                 font_size = float(edge_meta.get("font_size", 10.0))
-                badge_h = float(edge_meta.get("badge_height", 18.0))
-                badge_w = badge_width(e.label, font_size)
+                badge_w, badge_h = badge_size(
+                    e.label, font_size, float(edge_meta.get("badge_height", 18.0))
+                )
                 bx = lx - badge_w / 2.0
                 by = ly - badge_h / 2.0
                 badge_svg = self.shapes.render_badge(
@@ -697,11 +699,17 @@ class SVGRenderer:
                     height=badge_h,
                     font_family=self.theme.font_family,
                 )
-                indent = "    " if interactive else "  "
-                lines.append(f"{indent}{badge_svg}")
+                if interactive:
+                    # Kept with its edge so collapsing a group hides both together.
+                    lines.append(f"    {badge_svg}")
+                else:
+                    badge_layer.append(f"  {badge_svg}")
 
             if interactive:
                 lines.append("  </g>")
+
+        # Badges go above every edge line, so no line strikes through a label.
+        lines.extend(badge_layer)
 
         # 4. Render Shapes
         for el in element_list:
@@ -775,129 +783,49 @@ class SVGRenderer:
                     text_color = self.theme.text
 
             icon_name = getattr(el, "icon", None)
+            label = node_label(el)
+            family = self.theme.font_family
 
-            if kind == "icon":
-                # Render pure vector icon centered in bounds
-                icon_size = float(
-                    el.metadata.get("icon_size", min(36.0, max(24.0, min(b.width, b.height) * 0.6)))
-                )
-                icon_color = str(el.metadata.get("icon_color", self.theme.accent))
-                icon_x = b.center.x - icon_size / 2.0
-                icon_y = b.y + max(2.0, (b.height - icon_size) / 2.0)
+            if label.position == "bottom":
+                # Icon centred in the shape (or alone, for kind="icon"); label underneath.
                 if icon_name:
-                    lines.append(
-                        f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
-                    )
-                if el.label:
-                    text_y = b.y + b.height + LABEL_BELOW_OFFSET
-                    lines.append(
-                        f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
-                        f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                        f'font-size="12" font-weight="600">{html.escape(el.label)}</text>'
-                    )
-            elif label_pos == "bottom":
-                # Render icon centered inside the container tile, with label below the container
-                if icon_name:
-                    icon_size = float(
-                        el.metadata.get("icon_size", min(28.0, max(18.0, b.height * 0.45)))
-                    )
-                    icon_color = str(el.metadata.get("icon_color", self.theme.accent))
-                    icon_x = b.center.x - icon_size / 2.0
-                    icon_y = b.center.y - icon_size / 2.0
-                    lines.append(
-                        f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
-                    )
-                if el.label:
-                    text_y = b.y + b.height + LABEL_BELOW_OFFSET
-                    char_budget = below_label_budget(b.width)
-                    label_lines = self.wrap_text(el.label, max_chars=char_budget)
-                    if len(label_lines) <= 1:
-                        lines.append(
-                            f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
-                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                            f'font-size="12" font-weight="600">{html.escape(el.label)}</text>'
+                    if kind == "icon":
+                        icon_size = float(
+                            el.metadata.get("icon_size", min(36.0, max(24.0, min(b.width, b.height) * 0.6)))
                         )
+                        icon_y = b.y + max(2.0, (b.height - icon_size) / 2.0)
                     else:
-                        font_size = 11.0
-                        line_h = font_size * 1.25
-                        tspan_parts = [
-                            f'<tspan x="{b.center.x}" dy="{0 if i == 0 else line_h}">{html.escape(line)}</tspan>'
-                            for i, line in enumerate(label_lines)
-                        ]
-                        lines.append(
-                            f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
-                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                            f'font-size="{font_size}" font-weight="600">{" ".join(tspan_parts)}</text>'
+                        icon_size = float(
+                            el.metadata.get("icon_size", min(28.0, max(18.0, b.height * 0.45)))
                         )
-            else:
-                # label_pos == "inside": Render embedded icon and wrapped label inside the card
-                if icon_name:
-                    icon_size = float(
-                        el.metadata.get("icon_size", min(24.0, max(16.0, b.height * 0.38)))
-                    )
-                    icon_color = str(el.metadata.get("icon_color", self.theme.accent))
-                    if el.label:
-                        char_budget = max(10, int(b.width / 7.2))
-                        label_lines = self.wrap_text(el.label, max_chars=char_budget)
-                        if len(label_lines) <= 1:
-                            icon_x = b.center.x - icon_size / 2.0
-                            icon_y = b.y + max(4.0, (b.height - icon_size - 18.0) / 2.0)
-                            lines.append(
-                                f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
-                            )
-                            text_y = icon_y + icon_size + 14.0
-                            lines.append(
-                                f'    <text x="{b.center.x}" y="{text_y}" text-anchor="middle" '
-                                f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                                f'font-size="12" font-weight="500">{html.escape(el.label)}</text>'
-                            )
-                        else:
-                            font_size = 11.0 if len(label_lines) == 2 else 10.0
-                            line_h = font_size * 1.25
-                            total_text_h = len(label_lines) * line_h
-                            icon_x = b.center.x - icon_size / 2.0
-                            icon_y = b.y + max(3.0, (b.height - icon_size - total_text_h - 2.0) / 2.0)
-                            lines.append(
-                                f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
-                            )
-                            text_start_y = icon_y + icon_size + font_size + 1.0
-                            tspan_parts = [
-                                f'<tspan x="{b.center.x}" dy="{0 if i == 0 else line_h}">{html.escape(line)}</tspan>'
-                                for i, line in enumerate(label_lines)
-                            ]
-                            lines.append(
-                                f'    <text x="{b.center.x}" y="{text_start_y}" text-anchor="middle" '
-                                f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                                f'font-size="{font_size}" font-weight="500">{" ".join(tspan_parts)}</text>'
-                            )
-                    else:
-                        icon_x = b.center.x - icon_size / 2.0
                         icon_y = b.center.y - icon_size / 2.0
-                        lines.append(
-                            f"    {self.shapes.render_icon(icon_name, icon_x, icon_y, size=icon_size, color=icon_color)}"
+                    icon_color = str(el.metadata.get("icon_color", self.theme.accent))
+                    lines.append(
+                        f"    {self.shapes.render_icon(icon_name, b.center.x - icon_size / 2.0, icon_y, size=icon_size, color=icon_color)}"
+                    )
+                if label.block is not None:
+                    lines.append(
+                        label.block.to_svg(
+                            b.center.x, b.bottom + BELOW_GAP, valign="top",
+                            fill=text_color, font_family=family, indent="    ",
                         )
-                elif el.label:
-                    char_budget = max(10, int(b.width / 7.2))
-                    label_lines = self.wrap_text(el.label, max_chars=char_budget)
-                    if len(label_lines) <= 1:
-                        lines.append(
-                            f'    <text x="{b.center.x}" y="{b.center.y + 4}" text-anchor="middle" '
-                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                            f'font-size="13" font-weight="500">{html.escape(el.label)}</text>'
+                    )
+            else:
+                # Icon (if any) stacked above the label, the pair centred in the shape.
+                top = b.y + (b.height - label.content_height) / 2.0
+                if icon_name:
+                    icon_color = str(el.metadata.get("icon_color", self.theme.accent))
+                    lines.append(
+                        f"    {self.shapes.render_icon(icon_name, b.center.x - label.icon_size / 2.0, top, size=label.icon_size, color=icon_color)}"
+                    )
+                    top += label.icon_size + (ICON_GAP if label.block is not None else 0.0)
+                if label.block is not None:
+                    lines.append(
+                        label.block.to_svg(
+                            b.center.x, top, valign="top",
+                            fill=text_color, font_family=family, indent="    ",
                         )
-                    else:
-                        font_size = 11.5
-                        line_h = font_size * 1.25
-                        start_y = b.center.y - ((len(label_lines) - 1) * line_h) / 2.0 + 4.0
-                        tspan_parts = [
-                            f'<tspan x="{b.center.x}" dy="{0 if i == 0 else line_h}">{html.escape(line)}</tspan>'
-                            for i, line in enumerate(label_lines)
-                        ]
-                        lines.append(
-                            f'    <text x="{b.center.x}" y="{start_y}" text-anchor="middle" '
-                            f'fill="{text_color}" font-family="{self.theme.font_family}" '
-                            f'font-size="{font_size}" font-weight="500">{" ".join(tspan_parts)}</text>'
-                        )
+                    )
 
             lines.append("  </g>")
 

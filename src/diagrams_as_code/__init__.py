@@ -69,7 +69,7 @@ from diagrams_as_code.theme import (
     reset_themes,
 )
 
-__version__ = "0.8.4"
+__version__ = "0.9.0"
 __all__ = [
     "AbsoluteConstraint",
     "AlignConstraint",

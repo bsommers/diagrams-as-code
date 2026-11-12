@@ -19,39 +19,39 @@
   <rect width="100%" height="100%" fill="#FAFAFA"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Primary Datacenter</text>
+    <text x="76" y="104" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Primary Datacenter</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Air-Gap Boundary</text>
+    <text x="326" y="104" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Air-Gap Boundary</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Isolated Recovery Vault</text>
+    <text x="576" y="104" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Isolated Recovery Vault</text>
   </g>
   <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <g class="badge">
-  <rect x="90.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="145.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Snapshot Export</text>
-</g>
   <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <g class="badge">
-  <rect x="209.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="270.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Unidirectional Tx</text>
-</g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <g class="badge">
-  <rect x="468.6" y="161.0" width="102.8" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="520.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Zero-ACK Pulse</text>
-</g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="590.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="645.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Read-Only Mount</text>
+  <rect x="100.0322265625" y="206.0" width="89.935546875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="145" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Snapshot Export</text>
+</g>
+  <g class="badge">
+  <rect x="224.763671875" y="206.0" width="90.47265625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="270" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Unidirectional Tx</text>
+</g>
+  <g class="badge">
+  <rect x="475.876953125" y="161.0" width="88.24609375" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="520" y="173.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zero-ACK Pulse</text>
+</g>
+  <g class="badge">
+  <rect x="597.8154296875" y="206.0" width="94.369140625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="645" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Read-Only Mount</text>
 </g>
   <g id="prod_san" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-storage_array" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-storage_array" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <line x1="3" y1="9" x2="21" y2="9" stroke="#18181B" stroke-width="2.0"/>
   <line x1="3" y1="15" x2="21" y2="15" stroke="#18181B" stroke-width="2.0"/>
@@ -62,11 +62,11 @@
   <line x1="10" y1="12" x2="18" y2="12" stroke="#18181B" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="18" y2="18" stroke="#18181B" stroke-width="2.0"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Production SAN</tspan> <tspan x="145.0" dy="13.75">Volume</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Production</tspan> <tspan x="145" dy="14.4">SAN Volume</tspan></text>
   </g>
   <g id="backup_mgr" filter="url(#shadow)">
     <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-server" transform="translate(133.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-server" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <circle cx="6" cy="7" r="1" fill="#18181B"/>
@@ -74,20 +74,20 @@
   <circle cx="6" cy="17" r="1" fill="#18181B"/>
   <circle cx="9" cy="17" r="1" fill="#18181B"/>
 </g>
-    <text x="145.0" y="268.65" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Backup Master</tspan> <tspan x="145.0" dy="13.75">Node</tspan></text>
+    <text x="145" y="269.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Backup</tspan> <tspan x="145" dy="14.4">Master Node</tspan></text>
   </g>
   <g id="diode" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-lock" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-lock" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
   <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <circle cx="12" cy="16" r="1.5" fill="#18181B"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Optical Data</tspan> <tspan x="395.0" dy="13.75">Diode</tspan></text>
+    <text x="395" y="186.53" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Optical Data Diode</text>
   </g>
   <g id="immutable_vault" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-vault" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-vault" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <circle cx="12" cy="12" r="5" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <line x1="12" y1="7" x2="12" y2="9" stroke="#18181B" stroke-width="2.0"/>
@@ -96,11 +96,11 @@
   <line x1="15" y1="12" x2="17" y2="12" stroke="#18181B" stroke-width="2.0"/>
   <circle cx="12" cy="12" r="1.5" fill="#18181B"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Immutable WORM</tspan> <tspan x="645.0" dy="13.75">Vault</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Immutable</tspan> <tspan x="645" dy="14.4">WORM Vault</tspan></text>
   </g>
   <g id="clean_vm" filter="url(#shadow)">
     <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
-    <g class="icon icon-malware_scan" transform="translate(633.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-malware_scan" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <path d="M 4 8 V 4 H 8" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 16 4 H 20 V 8" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 4 16 V 20 H 8" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
@@ -111,6 +111,6 @@
   <line x1="12" y1="8" x2="12" y2="6" stroke="#18181B" stroke-width="2.0"/>
   <line x1="12" y1="16" x2="12" y2="18" stroke="#18181B" stroke-width="2.0"/>
 </g>
-    <text x="645.0" y="268.65" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Cleanroom</tspan> <tspan x="645.0" dy="13.75">Analysis VM</tspan></text>
+    <text x="645" y="269.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Cleanroom</tspan> <tspan x="645" dy="14.4">Analysis VM</tspan></text>
   </g>
 </svg>

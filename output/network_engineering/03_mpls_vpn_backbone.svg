@@ -19,39 +19,39 @@
   <rect width="100%" height="100%" fill="#2E3440"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Customer Site Alpha</text>
+    <text x="76" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Customer Site Alpha</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Service Provider MPLS Core</text>
+    <text x="326" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Service Provider MPLS Core</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Customer Site Beta</text>
+    <text x="576" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Customer Site Beta</text>
   </g>
   <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <g class="badge">
-  <rect x="227.9" y="161.0" width="84.2" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="270.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">BGP Peering</text>
-</g>
   <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <g class="badge">
-  <rect x="340.5" y="206.0" width="109.0" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="395.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">MPLS Label Push</text>
-</g>
   <path d="M 395.0 290.0 L 395.0 320.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <g class="badge">
-  <rect x="340.5" y="296.0" width="109.0" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="395.0" y="308.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">MPLS Label Swap</text>
-</g>
   <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="468.6" y="251.0" width="102.8" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="520.0" y="263.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">MPLS Label Pop</text>
+  <rect x="232.81787109375" y="161.0" width="74.3642578125" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="270" y="173.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">BGP Peering</text>
+</g>
+  <g class="badge">
+  <rect x="346.9755859375" y="206.0" width="96.048828125" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="395" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MPLS Label Push</text>
+</g>
+  <g class="badge">
+  <rect x="345.86474609375" y="296.0" width="98.2705078125" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="395" y="308.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MPLS Label Swap</text>
+</g>
+  <g class="badge">
+  <rect x="474.4755859375" y="251.0" width="91.048828125" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="520" y="263.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MPLS Label Pop</text>
 </g>
   <g id="ce1" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-router" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-router" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="17" y1="12" x2="17" y2="5" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -61,22 +61,22 @@
   <circle cx="12" cy="16" r="1.2" fill="#88C0D0"/>
   <circle cx="16" cy="16" r="1.2" fill="#88C0D0"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Customer Router</tspan> <tspan x="145.0" dy="13.75">Alpha</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Customer</tspan> <tspan x="145" dy="14.4">Router Alpha</tspan></text>
   </g>
   <g id="pe1" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-mpls" transform="translate(383.6, 149.6) scale(0.9500000000000001)">
+    <g class="icon icon-mpls" transform="translate(383.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="5" width="8" height="6" rx="1.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <rect x="13" y="5" width="8" height="6" rx="1.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <rect x="8" y="14" width="8" height="6" rx="1.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 7 11 V 13 H 10 V 14" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 17 11 V 13 H 14 V 14" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
 </g>
-    <text x="395.0" y="186.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Provider Edge 1</text>
+    <text x="395" y="186.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Provider Edge 1</text>
   </g>
   <g id="p_core" filter="url(#shadow)">
     <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-core_router" transform="translate(383.6, 239.6) scale(0.9500000000000001)">
+    <g class="icon icon-core_router" transform="translate(383.6, 239.8) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#88C0D0" stroke-width="2.0"/>
   <polyline points="9.5,7 12,4.5 14.5,7" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -85,22 +85,22 @@
   <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="395.0" y="276.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Core Transit LSR</text>
+    <text x="395" y="276.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Core Transit LSR</text>
   </g>
   <g id="pe2" filter="url(#shadow)">
     <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-mpls" transform="translate(383.6, 329.6) scale(0.9500000000000001)">
+    <g class="icon icon-mpls" transform="translate(383.6, 329.8) scale(0.9500000000000001)">
   <rect x="3" y="5" width="8" height="6" rx="1.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <rect x="13" y="5" width="8" height="6" rx="1.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <rect x="8" y="14" width="8" height="6" rx="1.5" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 7 11 V 13 H 10 V 14" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 17 11 V 13 H 14 V 14" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
 </g>
-    <text x="395.0" y="366.40000000000003" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Provider Edge 2</text>
+    <text x="395" y="366.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Provider Edge 2</text>
   </g>
   <g id="ce2" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-router" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-router" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="17" y1="12" x2="17" y2="5" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -110,6 +110,6 @@
   <circle cx="12" cy="16" r="1.2" fill="#88C0D0"/>
   <circle cx="16" cy="16" r="1.2" fill="#88C0D0"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Customer Router</tspan> <tspan x="645.0" dy="13.75">Beta</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Customer</tspan> <tspan x="645" dy="14.4">Router Beta</tspan></text>
   </g>
 </svg>

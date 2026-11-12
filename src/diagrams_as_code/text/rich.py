@@ -122,8 +122,24 @@ class TextBlock:
         ``textLength`` so its width matches the layout in any font.
         """
         top = y if valign == "top" else (y - self.height if valign == "bottom" else y - self.height / 2.0)
-        family = html.escape(font_family, quote=True)
+        family = html.escape(font_family, quote=False).replace('"', "&quot;")
         out: list[str] = []
+        if self.is_plain and not precise and len(self.lines) > 1:
+            # Plain wrapped text: one <text> with a <tspan> per line.
+            bases = self.baselines(top)
+            attrs = [f'text-anchor="{anchor}"', f'fill="{fill}"', f'font-family="{family}"',
+                     f'font-size="{_n(self.style.size)}"']
+            weight = self.style.weight or (700 if self.style.bold else None)
+            if weight:
+                attrs.append(f'font-weight="{weight}"')
+            if self.style.italic:
+                attrs.append('font-style="italic"')
+            spans = " ".join(
+                f'<tspan x="{_n(x)}" dy="{_n(0 if i == 0 else bases[i] - bases[i - 1])}">'
+                f"{html.escape(ln.runs[0].text)}</tspan>"  # type: ignore[union-attr]
+                for i, ln in enumerate(self.lines)
+            )
+            return f'{indent}<text x="{_n(x)}" y="{_n(bases[0])}" {" ".join(attrs)}>{spans}</text>'
         for ln, base in zip(self.lines, self.baselines(top)):
             if anchor == "middle":
                 cx = x - ln.width / 2.0
@@ -349,6 +365,48 @@ def _make_line(runs: Sequence[Run], style: TextStyle) -> Line:
     return Line(merged, width, ascent, depth, height)
 
 
+def _wrap(words: Sequence[Run], limit: float) -> list[list[Run]]:
+    """Greedy word wrap: each line takes as many words as fit in ``limit``."""
+    lines: list[list[Run]] = []
+    current: list[Run] = []
+    width = 0.0
+    for word in words:
+        is_space = isinstance(word, TextRun) and word.text == " "
+        if current and not is_space and width + word.width > limit:
+            lines.append(_strip(current))
+            current, width = [], 0.0
+        if is_space and not current:
+            continue
+        current.append(word)
+        width += word.width
+    if _strip(current):
+        lines.append(current)
+    return lines
+
+
+def _wrap_balanced(runs: Sequence[Run], max_width: float) -> list[list[Run]]:
+    """Wrap into as few lines as ``max_width`` allows, then even the lines out.
+
+    Greedy wrapping alone leaves a short last line ("Hardware Security" / "Key").
+    Narrowing the limit as far as the line count allows gives lines of similar
+    length without ever exceeding ``max_width``.
+    """
+    words = _split_words(runs)
+    lines = _wrap(words, max_width)
+    if len(lines) <= 1:
+        return lines
+    target = len(lines)
+    lo = sum(r.width for r in runs) / target
+    hi = max_width
+    for _ in range(12):
+        mid = (lo + hi) / 2.0
+        if len(_wrap(words, mid)) <= target:
+            hi = mid
+        else:
+            lo = mid
+    return _wrap(words, hi)
+
+
 def layout(source: str, style: Optional[TextStyle] = None, max_width: Optional[float] = None) -> TextBlock:
     """Lay out ``source`` (plain text or markup), wrapping at ``max_width`` if given."""
     style = style or TextStyle()
@@ -357,20 +415,8 @@ def layout(source: str, style: Optional[TextStyle] = None, max_width: Optional[f
         runs: list[Run] = [r for sp in spans for r in _measure_span(sp, style)]
         if max_width is None or sum(r.width for r in runs) <= max_width:
             lines.append(_make_line(runs, style))
-            continue
-        current: list[Run] = []
-        width = 0.0
-        for word in _split_words(runs):
-            is_space = isinstance(word, TextRun) and word.text == " "
-            if current and not is_space and width + word.width > max_width:
-                lines.append(_make_line(_strip(current), style))
-                current, width = [], 0.0
-            if is_space and not current:
-                continue
-            current.append(word)
-            width += word.width
-        if _strip(current):
-            lines.append(_make_line(current, style))
+        else:
+            lines.extend(_make_line(ln, style) for ln in _wrap_balanced(runs, max_width))
     if not lines:
         lines = [_make_line([], style)]
     return TextBlock(

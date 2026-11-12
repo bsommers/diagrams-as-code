@@ -13,49 +13,49 @@
   <rect width="100%" height="100%" fill="#181B20"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Remote Lift Stations</text>
+    <text x="76" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Remote Lift Stations</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Cellular Network</text>
+    <text x="326" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Cellular Network</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Central Utility SCADA</text>
+    <text x="576" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Central Utility SCADA</text>
   </g>
   <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="99.8" y="206.0" width="90.4" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="145.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Analog Input</text>
-</g>
   <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="231.0" y="206.0" width="78.0" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="270.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">DNP3 LTE-M</text>
-</g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="462.4" y="161.0" width="115.2" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="520.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">IPSec VPN Tunnel</text>
-</g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="581.2" y="206.0" width="127.6" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="645.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">High Alarm Trigger</text>
+  <rect x="108.92138671875" y="206.0" width="72.1572265625" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="145" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Analog Input</text>
+</g>
+  <g class="badge">
+  <rect x="232.2734375" y="206.0" width="75.453125" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="270" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DNP3 LTE-M</text>
+</g>
+  <g class="badge">
+  <rect x="470.31298828125" y="161.0" width="99.3740234375" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">IPSec VPN Tunnel</text>
+</g>
+  <g class="badge">
+  <rect x="595.04443359375" y="206.0" width="99.9111328125" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="645" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">High Alarm Trigger</text>
 </g>
   <g id="pump_sens" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-sensor" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-sensor" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="8" y1="17" x2="16" y2="17" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Well Level &amp;</tspan> <tspan x="145.0" dy="13.75">Flow Sensor</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Well Level &amp;</tspan> <tspan x="145" dy="14.4">Flow Sensor</tspan></text>
   </g>
   <g id="solar_rtu" filter="url(#shadow)">
     <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-plc" transform="translate(133.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-plc" transform="translate(133.6, 240.4) scale(0.9500000000000001)">
   <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="4" y1="9" x2="20" y2="9" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="8" y1="4" x2="8" y2="9" stroke="#00E5A3" stroke-width="2.0"/>
@@ -65,11 +65,11 @@
   <circle cx="12" cy="15" r="1.5" fill="#00E5A3"/>
   <circle cx="16" cy="15" r="1.5" fill="#00E5A3"/>
 </g>
-    <text x="145.0" y="268.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Solar Powered</tspan> <tspan x="145.0" dy="13.75">RTU</tspan></text>
+    <text x="145" y="276.53" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Solar Powered RTU</text>
   </g>
   <g id="cell_tower" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-router" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-router" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="17" y1="12" x2="17" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -79,25 +79,25 @@
   <circle cx="12" cy="16" r="1.2" fill="#00E5A3"/>
   <circle cx="16" cy="16" r="1.2" fill="#00E5A3"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Cellular LTE-M</tspan> <tspan x="395.0" dy="13.75">Tower</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Cellular</tspan> <tspan x="395" dy="14.4">LTE-M Tower</tspan></text>
   </g>
   <g id="scada_hub" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-scada" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-scada" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="8" y1="21" x2="16" y2="21" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="12" y1="17" x2="12" y2="21" stroke="#00E5A3" stroke-width="2.0"/>
   <polyline points="5 11 8 8 12 12 16 7 19 10" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Central Utility</tspan> <tspan x="645.0" dy="13.75">SCADA</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Central Utility</tspan> <tspan x="645" dy="14.4">SCADA</tspan></text>
   </g>
   <g id="alert_sys" filter="url(#shadow)">
     <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
-    <g class="icon icon-mobile" transform="translate(633.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-mobile" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="14" y2="18" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="10" y1="5" x2="14" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
 </g>
-    <text x="645.0" y="268.65" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Emergency</tspan> <tspan x="645.0" dy="13.75">Dialout System</tspan></text>
+    <text x="645" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Emergency</tspan> <tspan x="645" dy="14.4">Dialout System</tspan></text>
   </g>
 </svg>

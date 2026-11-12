@@ -19,59 +19,59 @@
   <rect width="100%" height="100%" fill="#1A0F14"/>
   <g id="group_1">
     <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">East Datacenter (Active)</text>
+    <text x="76" y="104" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">East Datacenter (Active)</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Inter-DC Transport</text>
+    <text x="326" y="104" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Inter-DC Transport</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">West Datacenter (Standby)</text>
+    <text x="576" y="104" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">West Datacenter (Standby)</text>
   </g>
   <g id="group_4">
     <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#26171E" stroke="#3F2432" stroke-width="1.5" />
-    <text x="826.0" y="104.0" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">DR Automation</text>
+    <text x="826" y="104" fill="#F43F5E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">DR Automation</text>
   </g>
   <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
-  <g class="badge">
-  <rect x="84.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="145.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SAN Fiber Channel</text>
-</g>
   <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
-  <g class="badge">
-  <rect x="190.7" y="206.0" width="158.6" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="270.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Synchronous Replication</text>
-</g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" marker-end="url(#arrow-FB7185)" />
-  <g class="badge">
-  <rect x="465.5" y="161.0" width="109.0" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="520.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">DWDM Wavelength</text>
-</g>
   <path d="M 835.0 170.0 L 770.0 170.0 L 770.0 260.0 L 705.0 260.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
-  <g class="badge">
-  <rect x="706.2" y="206.0" width="127.6" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="770.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Automated Power On</text>
-</g>
   <path d="M 835.0 170.0 L 705.0 170.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="724.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="770.0" y="173.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Promote LUNs</text>
+  <rect x="93.923828125" y="206.0" width="102.15234375" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="145" y="218.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SAN Fiber Channel</text>
+</g>
+  <g class="badge">
+  <rect x="206.68994140625" y="206.0" width="126.6201171875" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="270" y="218.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Synchronous Replication</text>
+</g>
+  <g class="badge">
+  <rect x="468.10107421875" y="161.0" width="103.7978515625" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="520" y="173.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DWDM Wavelength</text>
+</g>
+  <g class="badge">
+  <rect x="714.197265625" y="206.0" width="111.60546875" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="770" y="218.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Automated Power On</text>
+</g>
+  <g class="badge">
+  <rect x="729.2119140625" y="161.0" width="81.576171875" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="770" y="173.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Promote LUNs</text>
 </g>
   <g id="dc_east_compute" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-cluster" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-cluster" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="14" y="13" width="7" height="7" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="8.5" y="3" width="7" height="7" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="12" y1="10" x2="6.5" y2="13" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="12" y1="10" x2="17.5" y2="13" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Primary DC</tspan> <tspan x="145.0" dy="13.75">Compute Farm</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Primary DC</tspan> <tspan x="145" dy="14.4">Compute Farm</tspan></text>
   </g>
   <g id="dc_east_san" filter="url(#shadow)">
     <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-storage_array" transform="translate(133.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-storage_array" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="3" y1="9" x2="21" y2="9" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="3" y1="15" x2="21" y2="15" stroke="#F43F5E" stroke-width="2.0"/>
@@ -82,11 +82,11 @@
   <line x1="10" y1="12" x2="18" y2="12" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="18" y2="18" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="145.0" y="268.65" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Primary</tspan> <tspan x="145.0" dy="13.75">All-Flash Array</tspan></text>
+    <text x="145" y="269.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Primary</tspan> <tspan x="145" dy="14.4">All-Flash Array</tspan></text>
   </g>
   <g id="dwdm" filter="url(#shadow)">
     <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-router" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-router" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="17" y1="12" x2="17" y2="5" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
@@ -96,11 +96,11 @@
   <circle cx="12" cy="16" r="1.2" fill="#F43F5E"/>
   <circle cx="16" cy="16" r="1.2" fill="#F43F5E"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Dark Fiber DWDM</tspan> <tspan x="395.0" dy="13.75">Metro Link</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Dark Fiber DWDM</tspan> <tspan x="395" dy="14.4">Metro Link</tspan></text>
   </g>
   <g id="dc_west_san" filter="url(#shadow)">
     <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-storage_array" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
+    <g class="icon icon-storage_array" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="3" y1="9" x2="21" y2="9" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="3" y1="15" x2="21" y2="15" stroke="#F43F5E" stroke-width="2.0"/>
@@ -111,27 +111,27 @@
   <line x1="10" y1="12" x2="18" y2="12" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="18" y2="18" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Standby Array</tspan> <tspan x="645.0" dy="13.75">Replica</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Standby</tspan> <tspan x="645" dy="14.4">Array Replica</tspan></text>
   </g>
   <g id="dc_west_compute" filter="url(#shadow)">
     <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-cluster" transform="translate(633.6, 233.85) scale(0.9500000000000001)">
+    <g class="icon icon-cluster" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="14" y="13" width="7" height="7" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="8.5" y="3" width="7" height="7" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="12" y1="10" x2="6.5" y2="13" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="12" y1="10" x2="17.5" y2="13" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="645.0" y="268.65" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">Standby Recovery</tspan> <tspan x="645.0" dy="13.75">Compute</tspan></text>
+    <text x="645" y="269.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Standby Recovery</tspan> <tspan x="645" dy="14.4">Compute</tspan></text>
   </g>
   <g id="dr_orchestrator" filter="url(#shadow)">
     <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
-    <g class="icon icon-workflow" transform="translate(883.6, 143.0) scale(0.9500000000000001)">
+    <g class="icon icon-workflow" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
 </g>
-    <text x="895.0" y="176.8" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.0" font-weight="500"><tspan x="895.0" dy="0">Disaster</tspan> <tspan x="895.0" dy="12.5">Recovery</tspan> <tspan x="895.0" dy="12.5">Orchestrator</tspan></text>
+    <text x="895" y="179.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Disaster Recovery</tspan> <tspan x="895" dy="14.4">Orchestrator</tspan></text>
   </g>
 </svg>

@@ -27,12 +27,12 @@
 
 ### Phase 13 — Text Engine
 
-- [ ] **TEXT-01**: Bundled font metric tables and a single `measure()` used by layout, badges, wrapping and rendering.
-- [ ] **TEXT-02**: Rich text runs (bold, italic, size, font role, baseline shift) with exact line boxes.
-- [ ] **TEXT-03**: Math markup inside `$…$`: sub/superscripts, grouping, Greek, operators, relations, `\mathrm`, `\text`, limits under big operators.
-- [ ] **TEXT-04**: Math glyphs drawn as vector outlines generated at development time from an open-licensed font; no runtime dependency.
-- [ ] **TEXT-05**: All labels accept the markup and explicit line breaks.
-- [ ] **TEXT-06**: Shapes can size themselves to their text.
+- [x] **TEXT-01**: Bundled font metric tables and a single `measure()` used by layout, badges, wrapping and rendering.
+- [x] **TEXT-02**: Rich text runs (bold, italic, size, font role, baseline shift) with exact line boxes.
+- [x] **TEXT-03**: Math markup inside `$…$`: sub/superscripts, grouping, Greek, operators, relations, `\mathrm`, `\text`, limits under big operators.
+- [x] **TEXT-04**: Math glyphs drawn as vector outlines generated at development time from an open-licensed font; no runtime dependency.
+- [x] **TEXT-05**: All labels accept the markup and explicit line breaks.
+- [x] **TEXT-06**: Shapes grow to fit their text by default (`fit_label` / `fit_labels` to opt out, `font_size` to pin).
 
 ### Phase 14 — Style Model & Layout Correctness
 

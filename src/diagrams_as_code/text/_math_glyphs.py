@@ -2,7 +2,7 @@
 
 Outlines are derived from STIX Two Math 2.13 b171,
 Copyright 2001-2021 The STIX Fonts Project Authors (https://github.com/stipub/stixfonts),
-licensed under the SIL Open Font License, Version 1.1 (see docs/licenses/OFL-STIX.txt).
+licensed under the SIL Open Font License, Version 1.1 (see OFL-STIX.txt beside this file).
 Source file sha256: 3a5f3f26f40d5698b3c62dd085d48d6663696a3f80825aab8b553d5097518e8c
 """
 

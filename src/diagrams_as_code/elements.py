@@ -320,6 +320,7 @@ class Shape(Element):
         icon: Optional[str] = None,
         label_position: str = "auto",
         metadata: Optional[dict[str, Any]] = None,
+        fit_label: Optional[bool] = None,
         **kwargs: Any,
     ) -> None:
         super().__init__(
@@ -333,6 +334,9 @@ class Shape(Element):
         self.kind = kind
         self.icon = icon
         self.label_position = label_position
+        #: Grow the shape when its inside label cannot fit. ``None`` follows the
+        #: diagram's ``fit_labels`` setting; ``False`` keeps the size as given.
+        self.fit_label = fit_label
 
 
     def at(
@@ -470,6 +474,8 @@ class Shape(Element):
             kind=kind,
             icon=icon,
             metadata=metadata,
+            label_position=overrides.pop("label_position", self.label_position),
+            fit_label=overrides.pop("fit_label", self.fit_label),
             **overrides,
         )
         return cloned
