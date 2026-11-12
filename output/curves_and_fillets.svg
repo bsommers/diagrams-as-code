@@ -27,10 +27,10 @@
   <rect x="410.33128469931" y="78.75618546233858" width="84.2" height="18.0" rx="9.0" fill="#24242A" />
   <text x="452.43128469931" y="91.25618546233858" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Async Event</text>
 </g>
-  <path d="M 405.0 420.0 L 405.0 550.0 L 470.0 550.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 405.0 420.0 L 405.0 505.0 L 485.0 505.0 L 485.0 550.0 L 470.0 550.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="372.2" y="476.0" width="65.6" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="405.0" y="488.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL Sync</text>
+  <rect x="412.2" y="496.0" width="65.6" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="445.0" y="508.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL Sync</text>
 </g>
   <g id="shape_1" filter="url(#shadow)">
     <path d="M 112.5 271.0 L 177.5 271.0 C 197.0 271.0 210.0 263.2 210.0 254.8 C 210.0 246.4 194.4 239.2 177.5 239.2 C 171.0 229.0 145.0 229.0 132.0 236.8 C 116.4 233.2 95.6 239.2 95.6 248.8 C 80.0 253.0 80.0 265.0 112.5 271.0 Z" fill="#24242A" stroke="#FFC000" stroke-width="2.0"/>

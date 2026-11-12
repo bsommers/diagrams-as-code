@@ -26,13 +26,22 @@ from diagrams_as_code.elements import AbsoluteConstraint, Element
 from diagrams_as_code.geometry import Anchor, PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
-from diagrams_as_code.layout.graph import build_scope_graph, pinned_ids, scope_children
+from diagrams_as_code.layout.graph import (
+    build_scope_graph,
+    lift,
+    node_inset,
+    pinned_ids,
+    scope_children,
+)
+from diagrams_as_code.metrics import badge_width
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
-from diagrams_as_code.router import EdgeRouter, RoutingScene
+from diagrams_as_code.router import EdgeRouter, RoutingScene, path_collides
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
+#: Clear space kept on each side of an edge badge between two ranks.
+BADGE_MARGIN = 12.0
 
 
 def resolve_edge_style(edge: Edge, diagram: Any) -> EdgeStyle:
@@ -114,6 +123,14 @@ def run_layout(diagram: Any) -> None:
             )
         else:
             path = edge_router.route(edge, scene=scene, style=style)
+            if style.routing != Routing.DIRECT and path_collides(edge, path, scene):
+                warnings.warn(
+                    LayoutWarning(
+                        f"edge {edge.source.label!r} -> {edge.target.label!r} could not be "
+                        "routed clear of other elements; move them apart or set ports"
+                    ),
+                    stacklevel=4,
+                )
         edge._resolved_path = path
         edge._resolved_style = style
         routes[edge] = path
@@ -235,11 +252,27 @@ def _auto_constraint(x: float, y: float) -> AbsoluteConstraint:
 def _place(diagram: Any, group: Optional[Group], pinned: set[str], engine: LayeredLayout,
            origin: Point) -> set[str]:
     graph = build_scope_graph(diagram, group, pinned)
+    if diagram.direction == "LR":
+        # A badge sits in the gap between two ranks; make the gap wide enough.
+        free = {n.id for n in graph.nodes}
+        widest = 0.0
+        for edge in diagram.edges:
+            if not edge.label:
+                continue
+            s, t = lift(edge.source, group), lift(edge.target, group)
+            if s is not None and t is not None and s is not t and s.id in free and t.id in free:
+                widest = max(widest, badge_width(edge.label))
+        if widest + BADGE_MARGIN * 2.0 > engine.rank_gap:
+            engine = LayeredLayout(
+                engine.direction, widest + BADGE_MARGIN * 2.0, engine.node_gap, engine.sweeps
+            )
     positions = engine.arrange(graph)
     for child in scope_children(diagram, group):
         pos = positions.get(child.id)
         if pos is not None:
-            child.constraints.append(_auto_constraint(origin.x + pos.x, origin.y + pos.y))
+            child.constraints.append(
+                _auto_constraint(origin.x + pos.x + node_inset(child), origin.y + pos.y)
+            )
     return set(positions)
 
 

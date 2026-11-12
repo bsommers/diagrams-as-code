@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.8.4] - 2026-11-12
+
+First release of the Technical Figures program (`docs/plans/2026-11-12-technical-figures-and-quality.md`): a bug-fix baseline and a visual defect gate.
+
+### Fixed
+- **Orthogonal routing:** routes leave and arrive perpendicular to their ports and treat the boxes they connect as obstacles, so no edge ends along a node's border or passes back through its own source or target. Automatic port choice uses the free axis when two boxes overlap on the other.
+- **Self-loops:** `connect(a, a)` draws a loop outside the node instead of a line across it.
+- **Shared sides:** when a node side carries both incoming and outgoing edges, the two sets are moved apart, so `A → B` and `B → A` no longer coincide and their labels no longer stack. Fan-out and fan-in trunks are unchanged.
+- **Curved routing:** a spline that still collides after deflection falls back to a rounded orthogonal route. Any edge that cannot be routed clear now raises a `LayoutWarning` instead of failing silently.
+- **Stale solves:** shapes, edges and constraints added after the first solve are laid out on the next render; resizing a shape between solves is kept.
+- **Style cascade:** edges with manual waypoints inherit diagram-level `corner_radius`; the BOM reports the resolved routing (`Diagram(routing="direct")` was listed as orthogonal).
+- **Auto-layout:** spacing accounts for the width of labels drawn below shapes and for edge badges between ranks.
+- **Layout files:** non-finite coordinates are rejected.
+- **CLI:** a missing `--layout-file` is an error; two scripts that would write the same output no longer overwrite each other silently; scripts can import modules beside them; `sys.exit()` inside one script no longer aborts the batch; `layout export -o <dir>` blames `-o`; an input directory with no diagram scripts is reported.
+- **Rasterizer:** an external converter that exits 0 without writing can no longer return a stale PNG.
+
+### Added
+- `diagrams_as_code.audit`: counts visual defects in a solved diagram (edges through nodes, tangent arrivals, overlapping edges, badges over nodes or each other, label overflow, clipped or mostly empty canvas).
+- `tools/audit_gallery.py` with `--check` / `--update`, and `tools/audit_baseline.json`. The test suite fails if any gallery defect count rises above the baseline.
+
+### Changed
+- Gallery SVG output regenerated for the routing fixes.
+- Shared text-width estimates moved to `diagrams_as_code.metrics`.
+
+### Verification Evidence
+- `uv run pytest` -> 602 passed.
+- `uv run python tools/audit_gallery.py` across 92 diagrams, before -> after: tangent arrivals 47 -> 0, edges through own endpoint 1 -> 0, overlapping edges 48 -> 22, edges through a badge 196 -> 188, badges over nodes 95 -> 80, badges over badges 37 -> 28. Label overflow (29) and mostly-empty canvas (90) are unchanged and are scheduled for v0.9.0 and v0.10.0.
+
 ## [v0.8.3] - 2026-09-28
 
 ### Added

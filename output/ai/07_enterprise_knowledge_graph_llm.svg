@@ -47,10 +47,10 @@
   <rect x="450.0" y="161.0" width="140.0" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="520.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Merge Cypher Triples</text>
 </g>
-  <path d="M 1085.0 170.0 L 955.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 1085.0 160.0 L 1020.0 160.0 L 1020.0 170.0 L 955.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="943.8" y="161.0" width="152.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="1020.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Natural Language Query</text>
+  <rect x="943.8" y="156.0" width="152.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="1020.0" y="168.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Natural Language Query</text>
 </g>
   <path d="M 835.0 170.0 L 705.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
@@ -62,10 +62,10 @@
   <rect x="834.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="895.0" y="218.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Sub-graph Context</text>
 </g>
-  <path d="M 955.0 260.0 L 1020.0 260.0 L 1020.0 170.0 L 1085.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 955.0 260.0 L 1020.0 260.0 L 1020.0 180.0 L 1085.0 180.0" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="937.6" y="206.0" width="164.8" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="1020.0" y="218.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Grounded Graph Synthesis</text>
+  <rect x="937.6" y="211.0" width="164.8" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="1020.0" y="223.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Grounded Graph Synthesis</text>
 </g>
   <g id="raw_corpus" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />

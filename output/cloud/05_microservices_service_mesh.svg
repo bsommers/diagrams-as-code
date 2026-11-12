@@ -46,12 +46,12 @@
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="471.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="471.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#434C5E" />
   <text x="520.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Cache Session</text>
 </g>
   <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 260.0 L 585.0 260.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="471.7" y="296.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="471.7" y="296.0" width="96.6" height="18.0" rx="9.0" fill="#434C5E" />
   <text x="520.0" y="308.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Persist Order</text>
 </g>
   <g id="ingress" filter="url(#shadow)">

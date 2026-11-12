@@ -30,7 +30,7 @@
 </g>
   <path d="M 210.0 305.0 L 280.0 305.0 L 280.0 135.0 L 350.0 135.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="216.2" y="211.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="216.2" y="211.0" width="127.6" height="18.0" rx="9.0" fill="#24242A" />
   <text x="280.0" y="223.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Secure MQTT Bridge</text>
 </g>
   <path d="M 510.0 135.0 L 650.0 135.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />

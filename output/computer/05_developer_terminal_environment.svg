@@ -41,7 +41,7 @@
 </g>
   <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="331.2" y="206.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="331.2" y="206.0" width="127.6" height="18.0" rx="9.0" fill="#434C5E" />
   <text x="395.0" y="218.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Git Blame / Commit</text>
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />

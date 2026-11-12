@@ -35,7 +35,7 @@
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="471.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#163028" />
+  <rect x="471.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#163028" />
   <text x="520.0" y="173.5" fill="#ECFDF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">REST API :443</text>
 </g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)" />

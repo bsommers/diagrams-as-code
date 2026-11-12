@@ -139,6 +139,45 @@ def edge_endpoints(
     )
 
 
+def _flatten(path: RoutedPath, steps: int = 12) -> list[Point]:
+    """Polyline approximation of ``path`` for collision checks."""
+    pts = list(path.points)
+    if path.kind != PathKind.BEZIER_CHAIN or len(pts) < 4:
+        return pts
+    out = [pts[0]]
+    for i in range(0, len(pts) - 3, 3):
+        curve = CubicBezier(*pts[i : i + 4])
+        out.extend(curve.point_at(k / steps) for k in range(1, steps + 1))
+    return out
+
+
+def path_collides(edge: Edge, path: RoutedPath, scene: RoutingScene) -> bool:
+    """True if ``path`` passes through an unrelated element or through the
+    interior of the elements it connects."""
+    pts = _flatten(path)
+    sb, tb = edge.source.bounds, edge.target.bounds
+    # Elements that overlap an endpoint's box cannot be routed around.
+    rects = [
+        r.expand(-1.0)
+        for r in scene.obstacles_for(edge, clearance=0.0)
+        if not (r.intersects(sb) or r.intersects(tb))
+    ]
+    if edge.source is edge.target or not sb.intersects(tb):
+        rects += [sb.expand(-1.0), tb.expand(-1.0)]
+    rects = [r for r in rects if r.width > 0.0 and r.height > 0.0]
+    # An obstacle that contains an endpoint (an enclosing box) cannot be avoided.
+    rects = [
+        r
+        for r in rects
+        if not any(r.left < q.x < r.right and r.top < q.y < r.bottom for q in (pts[0], pts[-1]))
+    ]
+    return any(
+        segment_intersects_rect(pts[i], pts[i + 1], r)
+        for i in range(len(pts) - 1)
+        for r in rects
+    )
+
+
 def self_loop_path(edge: Edge, clearance: float, rounded: bool) -> RoutedPath:
     """An external loop leaving the east side and re-entering the top of the same node."""
     b = edge.source.bounds
@@ -1312,9 +1351,21 @@ class EdgeRouter:
             return RoutedPath(kind=PathKind.POLYLINE, points=(p_start, p_end), corner_radius=0.0)
 
         if routing == Routing.CURVE:
-            return self.curve.route(
+            path = self.curve.route(
                 edge, scene=scene, style=style, obstacles=obstacles, clearance=clearance
             )
+            if scene is not None and path_collides(edge, path, scene):
+                # The spline could not be bent clear. A rounded orthogonal route
+                # is always able to go around, and still reads as a curve.
+                rounded = EdgeStyle(
+                    routing=Routing.ORTHOGONAL,
+                    corner_radius=max(style.corner_radius, 14.0),
+                    clearance=style.clearance,
+                )
+                alt = self.orthogonal.route(edge, scene=scene, style=rounded)
+                if not path_collides(edge, alt, scene):
+                    return alt
+            return path
 
         return self.orthogonal.route(
             edge, scene=scene, style=style, obstacles=obstacles, clearance=clearance

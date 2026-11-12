@@ -55,12 +55,12 @@
 </g>
   <path d="M 605.0 170.0 L 465.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="499.1" y="161.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="499.1" y="161.0" width="71.8" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="535.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">TOR Trunk</text>
 </g>
   <path d="M 605.0 260.0 L 465.0 260.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="499.1" y="251.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="499.1" y="251.0" width="71.8" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="535.0" y="263.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">TOR Trunk</text>
 </g>
   <g id="spine1" filter="url(#shadow)">

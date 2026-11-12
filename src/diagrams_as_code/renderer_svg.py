@@ -10,7 +10,12 @@ from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
-from diagrams_as_code.metrics import LABEL_BELOW_OFFSET
+from diagrams_as_code.metrics import (
+    LABEL_BELOW_OFFSET,
+    badge_width,
+    below_label_budget,
+    wrap_text,
+)
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
 
@@ -48,27 +53,7 @@ class SVGRenderer:
     @staticmethod
     def wrap_text(text: str, max_chars: int = 15) -> list[str]:
         """Break label text into visually balanced lines at word boundaries."""
-        if not text:
-            return []
-        words = text.split()
-        if not words:
-            return []
-        lines: list[str] = []
-        curr: list[str] = []
-        curr_len = 0
-        for w in words:
-            addition = len(w) + (1 if curr else 0)
-            if curr_len + addition <= max_chars:
-                curr.append(w)
-                curr_len += addition
-            else:
-                if curr:
-                    lines.append(" ".join(curr))
-                curr = [w]
-                curr_len = len(w)
-        if curr:
-            lines.append(" ".join(curr))
-        return lines
+        return wrap_text(text, max_chars)
 
     def _render_interactive_styles(self) -> str:
         contrast = self._contrast_color(self.theme.accent)
@@ -699,8 +684,7 @@ class SVGRenderer:
                 )
                 font_size = float(edge_meta.get("font_size", 10.0))
                 badge_h = float(edge_meta.get("badge_height", 18.0))
-                char_w = font_size * 0.62
-                badge_w = max(len(e.label) * char_w + 16.0, 24.0)
+                badge_w = badge_width(e.label, font_size)
                 bx = lx - badge_w / 2.0
                 by = ly - badge_h / 2.0
                 badge_svg = self.shapes.render_badge(
@@ -825,7 +809,7 @@ class SVGRenderer:
                     )
                 if el.label:
                     text_y = b.y + b.height + LABEL_BELOW_OFFSET
-                    char_budget = max(14, int(max(b.width, 100.0) / 7.0))
+                    char_budget = below_label_budget(b.width)
                     label_lines = self.wrap_text(el.label, max_chars=char_budget)
                     if len(label_lines) <= 1:
                         lines.append(

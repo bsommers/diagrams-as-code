@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from typing import ClassVar, Optional
 from diagrams_as_code.icon_glyphs import GLYPHS
+from diagrams_as_code.metrics import badge_width
 
 
 class ShapeLibrary:
@@ -422,8 +423,7 @@ class ShapeLibrary:
         if height <= 0:
             raise ValueError(f"height must be positive, got {height}")
 
-        char_w = font_size * 0.62
-        badge_w = max(len(text) * char_w + 2 * padding_x, 24.0)
+        badge_w = badge_width(text, font_size, padding_x)
         rx = height / 2.0
         text_x = x + badge_w / 2.0
         text_y = y + height / 2.0 + font_size * 0.35

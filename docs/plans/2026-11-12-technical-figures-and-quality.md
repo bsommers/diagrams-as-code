@@ -75,8 +75,6 @@ Renderer and model, from my own reading:
   after Phase 11 the pipeline always supplies `routes`, so most of those are dead weight.
 - `.planning/STATE.md` says Phase 11 is "ready to plan"; git shows it merged
   (PRs #16–#18). The GSD state is stale.
-- `CHANGELOG.md` / `CAPABILITIES.md` exist in both the root and `docs/` and must be kept
-  in sync by hand.
 
 ### 1.3 Gap to the reference figure
 

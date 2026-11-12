@@ -33,15 +33,15 @@
     <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#343746" stroke="#44475A" stroke-width="1.5" />
     <text x="826.0" y="104.0" fill="#FF79C6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Memory Tier</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
+  <path d="M 205.0 160.0 L 335.0 160.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
-  <rect x="224.8" y="161.0" width="90.4" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="270.0" y="173.5" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Task Request</text>
+  <rect x="224.8" y="151.0" width="90.4" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="270.0" y="163.5" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Task Request</text>
 </g>
-  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 65.0 L 835.0 65.0 L 835.0 170.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
+  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 65.0 L 820.0 65.0 L 820.0 170.0 L 835.0 170.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
-  <rect x="493.6" y="108.5" width="102.8" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="545.0" y="121.0" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Recall History</text>
+  <rect x="631.1" y="56.0" width="102.8" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="682.5" y="68.5" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Recall History</text>
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
@@ -55,13 +55,13 @@
 </g>
   <path d="M 455.0 170.0 L 520.0 170.0 L 520.0 350.0 L 585.0 350.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
-  <rect x="484.1" y="251.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#383A59" />
+  <rect x="484.1" y="251.0" width="71.8" height="18.0" rx="9.0" fill="#383A59" />
   <text x="520.0" y="263.5" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Run Query</text>
 </g>
-  <path d="M 335.0 170.0 L 205.0 170.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
+  <path d="M 335.0 180.0 L 205.0 180.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
-  <rect x="193.8" y="161.0" width="152.4" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="270.0" y="173.5" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verified Plan &amp; Result</text>
+  <rect x="193.8" y="171.0" width="152.4" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="270.0" y="183.5" fill="#F8F8F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Verified Plan &amp; Result</text>
 </g>
   <g id="user" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />

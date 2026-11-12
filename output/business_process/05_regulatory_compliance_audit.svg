@@ -44,7 +44,7 @@
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="456.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="456.2" y="161.0" width="127.6" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="520.0" y="173.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Evaluate Pass/Fail</text>
 </g>
   <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />

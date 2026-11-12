@@ -42,10 +42,10 @@
   <rect x="337.4" y="206.0" width="115.2" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="395.0" y="218.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 10 Internal</text>
 </g>
-  <path d="M 205.0 260.0 L 295.0 260.0 L 295.0 330.0 L 585.0 330.0 L 585.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 260.0 L 295.0 260.0 L 295.0 330.0 L 570.0 330.0 L 570.0 170.0 L 585.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="249.8" y="286.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="295.0" y="298.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 0 Trunk</text>
+  <rect x="387.3" y="321.0" width="90.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="432.5" y="333.5" fill="#111111" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Area 0 Trunk</text>
 </g>
   <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">

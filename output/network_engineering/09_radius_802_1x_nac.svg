@@ -32,30 +32,30 @@
   <rect x="227.9" y="161.0" width="84.2" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="270.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">EAPoL-Start</text>
 </g>
-  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 180.0 L 520.0 180.0 L 520.0 160.0 L 585.0 160.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="468.6" y="161.0" width="102.8" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="520.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Access-Request</text>
 </g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="596.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="596.7" y="206.0" width="96.6" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="645.0" y="218.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Validate Cert</text>
 </g>
-  <path d="M 585.0 170.0 L 455.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 585.0 180.0 L 520.0 180.0 L 520.0 160.0 L 455.0 160.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="471.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="471.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="520.0" y="173.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Access-Accept</text>
 </g>
-  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 65.0 L 835.0 65.0 L 835.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455.0 180.0 L 545.0 180.0 L 545.0 65.0 L 820.0 65.0 L 820.0 170.0 L 835.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="490.5" y="108.5" width="109.0" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="545.0" y="121.0" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Assign VLAN 100</text>
+  <rect x="628.0" y="56.0" width="109.0" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="682.5" y="68.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Assign VLAN 100</text>
 </g>
-  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 330.0 L 835.0 330.0 L 835.0 260.0" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 455.0 180.0 L 545.0 180.0 L 545.0 330.0 L 820.0 330.0 L 820.0 260.0 L 835.0 260.0" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="484.3" y="241.0" width="121.4" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="545.0" y="253.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Assign Quarantine</text>
+  <rect x="621.8" y="321.0" width="121.4" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="682.5" y="333.5" fill="#F0F3F6" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Assign Quarantine</text>
 </g>
   <g id="supplicant" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />

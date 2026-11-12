@@ -8,7 +8,7 @@ import pytest
 from diagrams_as_code import Diagram, Port, Shape
 from diagrams_as_code.geometry import PathKind, Point
 
-from routing_invariants import edge_problems
+from diagrams_as_code.audit import edge_problems
 
 
 def _problems(d: Diagram) -> list[tuple[str, str]]:
@@ -78,7 +78,7 @@ def test_fuzzed_layouts_keep_routing_invariants(routing):
                 a, b = rng.sample(shapes, 2)
                 d.connect(a, b)
         d.solve()
-        kinds = {"through_own_endpoint", "tangent_arrival", "non_finite", "degenerate"}
+        kinds = {"edge_through_own_endpoint", "tangent_arrival", "non_finite", "degenerate"}
         if routing == "direct":
             kinds -= {"tangent_arrival"}
         bad += [(trial, *p) for p in _problems(d) if p[1] in kinds]
@@ -245,3 +245,64 @@ def test_cli_layout_export_blames_output_when_it_is_a_directory(tmp_path, capsys
     s = _script(tmp_path / "x.py")
     assert main(["layout", "export", str(s), "-o", str(tmp_path)]) == 2
     assert "--output" in capsys.readouterr().err
+
+
+# R4 / R7 ----------------------------------------------------------------
+def test_curve_edges_never_pass_through_nodes_in_fuzzed_layouts():
+    import warnings
+
+    rng = random.Random(99)
+    bad = []
+    for trial in range(120):
+        with Diagram("t", theme="monochrome", routing="curve") as d:
+            shapes = []
+            for i in range(5):
+                for _ in range(50):
+                    s = Shape(f"n{i}", f"N{i}", width=rng.choice([80, 120, 200]), height=60)
+                    s.at(rng.randrange(60, 900, 10), rng.randrange(60, 600, 10))
+                    if not any(s.bounds.expand(40).intersects(o.bounds) for o in shapes):
+                        shapes.append(d.add(s))
+                        break
+            for _ in range(5):
+                a, b = rng.sample(shapes, 2)
+                d.connect(a, b)
+        with warnings.catch_warnings(record=True) as caught:
+            warnings.simplefilter("always")
+            d.solve()
+        warned = len(caught)
+        found = [p for p in _problems(d) if p[1] in ("edge_through_own_endpoint", "edge_through_node")]
+        # Anything still colliding must have been reported, never silent.
+        if found and not warned:
+            bad.append((trial, found))
+    assert bad == []
+
+
+def test_unroutable_edge_warns():
+    from diagrams_as_code import LayoutWarning
+
+    with Diagram("t", theme="monochrome") as d:
+        a = d.add(Shape("a", "A")).at(100, 100)
+        b = d.add(Shape("b", "B")).at(500, 100)
+        # A wall that fully encloses the target's approach on every side.
+        for i, (x, y, w, h) in enumerate([(440, 20, 240, 40), (440, 200, 240, 40), (440, 60, 30, 140), (650, 60, 30, 140)]):
+            d.add(Shape(f"w{i}", "", width=w, height=h)).at(x, y)
+        d.connect(a, b)
+    with pytest.warns(LayoutWarning, match="could not be routed clear"):
+        d.solve()
+
+
+def test_auto_layout_leaves_room_for_wide_labels_and_badges():
+    with Diagram("t", theme="monochrome", layout="auto", direction="LR", label_position="bottom") as d:
+        a = d.add(Shape("a", "A very long label that is much wider than its icon box", width=64, height=64, label_position="bottom"))
+        b = d.add(Shape("b", "Another quite long label under a small box", width=64, height=64, label_position="bottom"))
+        c = d.add(Shape("c", "Third", width=64, height=64, label_position="bottom"))
+        d.connect(a, c, label="a fairly long protocol label here")
+        d.connect(b, c)
+    d.solve()
+    from diagrams_as_code.metrics import badge_width
+
+    # stacked nodes' labels do not collide vertically, and the badge fits the gap
+    top, bottom = sorted((a, b), key=lambda s: s.bounds.y)
+    assert bottom.bounds.y - top.bounds.bottom >= 40
+    assert c.bounds.left - a.bounds.right >= badge_width("a fairly long protocol label here")
+    assert a.bounds.x >= 0

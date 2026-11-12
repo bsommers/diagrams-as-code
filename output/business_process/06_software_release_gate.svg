@@ -40,7 +40,7 @@
 </g>
   <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="196.89999999999998" y="206.0" width="146.20000000000002" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="196.9" y="206.0" width="146.2" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="270.0" y="218.5" fill="#4C4F69" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Trigger CI Test Suite</text>
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />

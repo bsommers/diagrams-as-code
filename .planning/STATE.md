@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v0.8.4
 milestone_name: Technical Figures Program
-current_phase: 12
-current_phase_name: Baseline & Bug Fixes
-status: executing
-stopped_at: Phase 12 started
+current_phase: 13
+current_phase_name: Text Engine
+status: ready_to_plan
+stopped_at: Phase 12 complete on branch feat/technical-figures-m1 (not pushed, not tagged)
 last_updated: "2026-11-12T00:00:00.000Z"
 last_activity: 2026-11-12
-last_activity_desc: Repository review, plan approved, roadmap rewritten for Phases 12-17
+last_activity_desc: Phase 12 complete - 14 defects fixed test-first, gallery audit gate added (602 tests)
 progress:
   total_phases: 6
-  completed_phases: 0
-  percent: 0
+  completed_phases: 1
+  percent: 17
 ---
 
 # Project State
@@ -22,7 +22,13 @@ progress:
 See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
 `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Current focus:** Phase 12 — Baseline & Bug Fixes (branch `feat/technical-figures-m1`)
+**Current focus:** Phase 13 — Text Engine. Phase 12 is complete on branch `feat/technical-figures-m1`, awaiting push/PR and the v0.8.4 tag.
+
+## Phase 12 result
+
+Audit across 92 diagrams, before -> after: tangent arrivals 47 -> 0, edges through own endpoint 1 -> 0, overlapping edges 48 -> 22, edges through a badge 196 -> 188, badges over nodes 95 -> 80, badges over badges 37 -> 28. Unchanged and owned by later phases: label overflow 29 (Phase 13), mostly-empty canvas 90 and the remaining badge/overlap counts (Phase 14).
+
+Known gap: the PNG backend ignores italic and serif switches inside a text run (found while prototyping); Phase 13 starts by settling the outline-glyph approach for math.
 
 ## Decisions
 

@@ -54,10 +54,10 @@
   <rect x="731.0" y="161.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
   <text x="770.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Sync State</text>
 </g>
-  <path d="M 705.0 170.0 L 795.0 170.0 L 795.0 240.0 L 1085.0 240.0 L 1085.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705.0 170.0 L 795.0 170.0 L 795.0 240.0 L 1070.0 240.0 L 1070.0 170.0 L 1085.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="721.9" y="196.0" width="146.20000000000002" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="795.0" y="208.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">High Frequency Stream</text>
+  <rect x="859.4" y="231.0" width="146.2" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="932.5" y="243.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">High Frequency Stream</text>
 </g>
   <path d="M 1205.0 170.0 L 1335.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
@@ -66,7 +66,7 @@
 </g>
   <path d="M 1455.0 170.0 L 1585.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="1484.1" y="161.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="1484.1" y="161.0" width="71.8" height="18.0" rx="9.0" fill="#24242A" />
   <text x="1520.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SQL Query</text>
 </g>
   <g id="fleet" filter="url(#shadow)">

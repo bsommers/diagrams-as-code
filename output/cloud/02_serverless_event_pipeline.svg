@@ -43,7 +43,7 @@
 </g>
   <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="721.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="721.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#133663" />
   <text x="770.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Enqueue Event</text>
 </g>
   <path d="M 955.0 170.0 L 1085.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />

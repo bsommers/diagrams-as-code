@@ -22,42 +22,42 @@
     <text x="76.0" y="154.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Ingress</text>
   </g>
   <g id="group_4">
-    <rect x="530.0" y="80.0" width="180.0" height="245.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="546.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Compute</text>
+    <rect x="533.4" y="80.0" width="180.0" height="245.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="549.4" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Compute</text>
   </g>
   <g id="group_7">
-    <rect x="790.0" y="80.0" width="180.0" height="245.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
-    <text x="806.0" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Data</text>
+    <rect x="796.8" y="80.0" width="180.0" height="245.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <text x="812.8" y="104.0" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Data</text>
   </g>
   <path d="M 215.0 220.0 L 295.0 220.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
   <rect x="231.5" y="211.0" width="47.0" height="18.0" rx="9.0" fill="#434C5E" />
   <text x="255.0" y="223.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">HTTPS</text>
 </g>
-  <path d="M 425.0 220.0 L 490.0 220.0 L 490.0 170.0 L 555.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 425.0 220.0 L 491.7 220.0 L 491.7 170.0 L 558.4 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="463.4" y="186.0" width="53.2" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="490.0" y="198.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">invoke</text>
+  <rect x="465.09999999999997" y="186.0" width="53.2" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="491.7" y="198.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">invoke</text>
 </g>
-  <path d="M 425.0 220.0 L 490.0 220.0 L 490.0 270.0 L 555.0 270.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 425.0 220.0 L 491.7 220.0 L 491.7 270.0 L 558.4 270.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="463.4" y="236.0" width="53.2" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="490.0" y="248.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">invoke</text>
+  <rect x="465.09999999999997" y="236.0" width="53.2" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="491.7" y="248.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">invoke</text>
 </g>
-  <path d="M 685.0 170.0 L 815.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 688.4 170.0 L 755.0999999999999 170.0 L 755.0999999999999 160.0 L 821.8 160.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="720.3" y="161.0" width="59.4" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="750.0" y="173.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">publish</text>
+  <rect x="725.3999999999999" y="156.0" width="59.4" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="755.0999999999999" y="168.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">publish</text>
 </g>
-  <path d="M 685.0 270.0 L 815.0 270.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 688.4 280.0 L 755.0999999999999 280.0 L 755.0999999999999 270.0 L 821.8 270.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="726.5" y="261.0" width="47.0" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="750.0" y="273.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">write</text>
+  <rect x="731.5999999999999" y="266.0" width="47.0" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="755.0999999999999" y="278.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">write</text>
 </g>
-  <path d="M 815.0 170.0 L 750.0 170.0 L 750.0 270.0 L 685.0 270.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 821.8 180.0 L 755.0999999999999 180.0 L 755.0999999999999 260.0 L 688.4 260.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="720.3" y="211.0" width="59.4" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="750.0" y="223.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">consume</text>
+  <rect x="725.3999999999999" y="211.0" width="59.4" height="18.0" rx="9.0" fill="#434C5E" />
+  <text x="755.0999999999999" y="223.5" fill="#ECEFF4" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">consume</text>
 </g>
   <g id="shape_2" filter="url(#shadow)">
     <rect x="85.0" y="190.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
@@ -77,8 +77,8 @@
     <text x="360.0" y="236.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">API Gateway</text>
   </g>
   <g id="shape_5" filter="url(#shadow)">
-    <rect x="555.0" y="140.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-server" transform="translate(608.6, 149.6) scale(0.9500000000000001)">
+    <rect x="558.4" y="140.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-server" transform="translate(612.0, 149.6) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <circle cx="6" cy="7" r="1" fill="#88C0D0"/>
@@ -86,11 +86,11 @@
   <circle cx="6" cy="17" r="1" fill="#88C0D0"/>
   <circle cx="9" cy="17" r="1" fill="#88C0D0"/>
 </g>
-    <text x="620.0" y="186.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Order Function</text>
+    <text x="623.4" y="186.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Order Function</text>
   </g>
   <g id="shape_6" filter="url(#shadow)">
-    <rect x="555.0" y="240.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-server" transform="translate(608.6, 249.6) scale(0.9500000000000001)">
+    <rect x="558.4" y="240.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-server" transform="translate(612.0, 249.6) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <circle cx="6" cy="7" r="1" fill="#88C0D0"/>
@@ -98,11 +98,11 @@
   <circle cx="6" cy="17" r="1" fill="#88C0D0"/>
   <circle cx="9" cy="17" r="1" fill="#88C0D0"/>
 </g>
-    <text x="620.0" y="286.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Billing Function</text>
+    <text x="623.4" y="286.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Billing Function</text>
   </g>
   <g id="shape_8" filter="url(#shadow)">
-    <rect x="815.0" y="140.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-queue" transform="translate(868.6, 149.6) scale(0.9500000000000001)">
+    <rect x="821.8" y="140.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-queue" transform="translate(875.4, 149.6) scale(0.9500000000000001)">
   <line x1="2" y1="6" x2="18" y2="6" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="2" y1="18" x2="18" y2="18" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="6" y1="6" x2="6" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
@@ -110,17 +110,17 @@
   <line x1="16" y1="6" x2="16" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 18 12 H 22 M 20 9 L 23 12 L 20 15" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="880.0" y="186.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Event Queue</text>
+    <text x="886.8" y="186.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Event Queue</text>
   </g>
   <g id="shape_9" filter="url(#shadow)">
-    <rect x="815.0" y="240.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
-    <g class="icon icon-database" transform="translate(868.6, 249.6) scale(0.9500000000000001)">
+    <rect x="821.8" y="240.0" width="130.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <g class="icon icon-database" transform="translate(875.4, 249.6) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
   <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
 </g>
-    <text x="880.0" y="286.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Orders DB</text>
+    <text x="886.8" y="286.4" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Orders DB</text>
   </g>
 </svg>

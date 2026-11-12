@@ -8,22 +8,22 @@
 
 ### Phase 12 — Baseline & Bug Fixes
 
-- [ ] **FIX-01** (R1): Orthogonal routes arrive perpendicular to the target port; no final segment runs along a node border.
-- [ ] **FIX-02** (R2): Routes never pass through their own source or target.
-- [ ] **FIX-03** (R3): Self-loops are drawn as an external loop.
-- [ ] **FIX-04** (R4): The curve router retries wider detours and emits a `LayoutWarning` if a collision remains.
-- [ ] **FIX-05** (R5): Layout files with non-finite numbers are rejected.
-- [ ] **FIX-06** (R6): An explicitly passed layout file that does not exist is an error.
-- [ ] **FIX-07** (R7): Auto-layout spacing accounts for label and badge widths.
-- [ ] **FIX-08** (R8): Opposite edges between the same pair are offset, with separate badges.
-- [ ] **FIX-09** (R9): Adding or changing shapes and edges after a solve invalidates it.
-- [ ] **FIX-10** (R10): Re-solving keeps user changes to element size.
-- [ ] **FIX-11** (R11): Manual-waypoint edges take part in the style cascade.
-- [ ] **FIX-12** (R12): The BOM reports the resolved routing.
-- [ ] **FIX-13** (R13): CLI: no silent output overwrite, sibling imports work, `SystemExit` in a script is contained, correct blame for `-o`, empty input is reported.
-- [ ] **FIX-14** (R14): Rasterizer never returns a stale PNG; obstacles touching a port anchor are kept.
-- [ ] **AUDIT-01**: `tools/audit_gallery.py` counts visual defects across all examples and `--check` fails if any count exceeds the stored baseline.
-- [ ] **AUDIT-02**: The audit also counts edge-on-edge overlap, tangent arrivals and routes through own endpoints.
+- [x] **FIX-01** (R1): Orthogonal routes arrive perpendicular to the target port; no final segment runs along a node border.
+- [x] **FIX-02** (R2): Routes never pass through their own source or target.
+- [x] **FIX-03** (R3): Self-loops are drawn as an external loop.
+- [x] **FIX-04** (R4): A curve that still collides falls back to a rounded orthogonal route; any edge left colliding emits a `LayoutWarning`.
+- [x] **FIX-05** (R5): Layout files with non-finite numbers are rejected.
+- [x] **FIX-06** (R6): An explicitly passed layout file that does not exist is an error.
+- [x] **FIX-07** (R7): Auto-layout spacing accounts for label and badge widths.
+- [x] **FIX-08** (R8): Opposite edges between the same pair are offset, with separate badges.
+- [x] **FIX-09** (R9): Adding or changing shapes and edges after a solve invalidates it.
+- [x] **FIX-10** (R10): Re-solving keeps user changes to element size.
+- [x] **FIX-11** (R11): Manual-waypoint edges take part in the style cascade.
+- [x] **FIX-12** (R12): The BOM reports the resolved routing.
+- [x] **FIX-13** (R13): CLI: no silent output overwrite, sibling imports work, `SystemExit` in a script is contained, correct blame for `-o`, empty input is reported.
+- [x] **FIX-14** (R14): Rasterizer never returns a stale PNG; obstacles touching a port anchor are kept.
+- [x] **AUDIT-01**: `tools/audit_gallery.py` counts visual defects across all examples and `--check` fails if any count exceeds the stored baseline.
+- [x] **AUDIT-02**: The audit also counts edge-on-edge overlap, tangent arrivals and routes through own endpoints.
 
 ### Phase 13 — Text Engine
 

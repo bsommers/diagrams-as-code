@@ -39,7 +39,7 @@
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#FFFF00" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="471.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#000000" />
+  <rect x="471.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#000000" />
   <text x="520.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Publishes CRL</text>
 </g>
   <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 240.0 L 820.0 240.0 L 820.0 170.0 L 835.0 170.0" fill="none" stroke="#FFFF00" stroke-width="2" marker-end="url(#arrow)" />

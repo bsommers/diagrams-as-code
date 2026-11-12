@@ -39,7 +39,7 @@
 </g>
   <path d="M 455.0 260.0 L 520.0 260.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="446.9" y="206.0" width="146.20000000000002" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="446.9" y="206.0" width="146.2" height="18.0" rx="9.0" fill="#133663" />
   <text x="520.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Award Contract &amp; Ship</text>
 </g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />

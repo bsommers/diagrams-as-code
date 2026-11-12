@@ -32,6 +32,7 @@ LAYERS: dict[str, int] = {
     "renderer_svg": 4,
     "bom": 4,
     "layout": 4,
+    "audit": 4,
     "diagram": 5,
     "output": 6,
     "cli": 7,

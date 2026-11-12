@@ -35,17 +35,17 @@
   </g>
   <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#F7768E" stroke-width="2" marker-end="url(#arrow-F7768E)" />
   <g class="badge">
-  <rect x="234.1" y="161.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#292E42" />
+  <rect x="234.1" y="161.0" width="71.8" height="18.0" rx="9.0" fill="#292E42" />
   <text x="270.0" y="173.5" fill="#C0CAF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">RTSP Feed</text>
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#F7768E" stroke-width="2" marker-end="url(#arrow-F7768E)" />
   <g class="badge">
-  <rect x="456.2" y="161.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#292E42" />
+  <rect x="456.2" y="161.0" width="127.6" height="18.0" rx="9.0" fill="#292E42" />
   <text x="520.0" y="173.5" fill="#C0CAF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Normalized Tensors</text>
 </g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#F7768E" stroke-width="2" marker-end="url(#arrow-F7768E)" />
   <g class="badge">
-  <rect x="581.2" y="206.0" width="127.60000000000001" height="18.0" rx="9.0" fill="#292E42" />
+  <rect x="581.2" y="206.0" width="127.6" height="18.0" rx="9.0" fill="#292E42" />
   <text x="645.0" y="218.5" fill="#C0CAF5" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Feature Embeddings</text>
 </g>
   <path d="M 705.0 260.0 L 770.0 260.0 L 770.0 170.0 L 835.0 170.0" fill="none" stroke="#F7768E" stroke-width="2" marker-end="url(#arrow-F7768E)" />

@@ -26,7 +26,7 @@ Process: one plan per phase, no separate research / plan-check / Nyquist documen
 
 ## Phases
 
-- [ ] **Phase 12 (v0.8.4): Baseline & Bug Fixes** — router, layout, CLI and model defects fixed test-first; gallery defect audit added as a ratchet.
+- [x] **Phase 12 (v0.8.4): Baseline & Bug Fixes** — router, layout, CLI and model defects fixed test-first; gallery defect audit added as a ratchet.
 - [ ] **Phase 13 (v0.9.0): Text Engine** — font metrics, rich text runs, math markup with outline glyphs from an open-licensed font, fit-to-text sizing.
 - [ ] **Phase 14 (v0.10.0): Style Model & Layout Correctness** — `Style` cascade, `paper` theme, fit-to-content canvas, badge and port collision fixes, renderer split.
 - [ ] **Phase 15 (v0.11.0): Technical Drawing Primitives** — text, caption, bands, nesting, polygons, projected solids, arrow styles, leaders, fractional anchors, alignment helpers.

@@ -25,17 +25,17 @@
   </g>
   <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="221.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="221.7" y="161.0" width="96.6" height="18.0" rx="9.0" fill="#133663" />
   <text x="270.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Analog 4-20mA</text>
 </g>
   <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="221.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="221.7" y="206.0" width="96.6" height="18.0" rx="9.0" fill="#133663" />
   <text x="270.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Modbus RS-485</text>
 </g>
   <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="346.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="346.7" y="206.0" width="96.6" height="18.0" rx="9.0" fill="#133663" />
   <text x="395.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">OPC UA Stream</text>
 </g>
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />

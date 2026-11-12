@@ -61,7 +61,7 @@
 </g>
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#FB7185" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-FB7185)" />
   <g class="badge">
-  <rect x="596.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#331E29" />
+  <rect x="596.7" y="206.0" width="96.6" height="18.0" rx="9.0" fill="#331E29" />
   <text x="645.0" y="218.5" fill="#FFF1F2" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Status Report</text>
 </g>
   <g id="edr" filter="url(#shadow)">

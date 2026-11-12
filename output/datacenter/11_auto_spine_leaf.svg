@@ -33,15 +33,15 @@
   <rect x="260.2" y="273.5" width="34.6" height="18.0" rx="9.0" fill="#133663" />
   <text x="277.5" y="286.0" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G</text>
 </g>
-  <path d="M 300.0 170.0 L 325.0 170.0 L 325.0 350.0 L 425.0 350.0 L 425.0 395.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 300.0 170.0 L 325.0 170.0 L 325.0 350.0 L 410.0 350.0 L 410.0 395.0 L 425.0 395.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="307.7" y="251.0" width="34.6" height="18.0" rx="9.0" fill="#133663" />
-  <text x="325.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G</text>
+  <rect x="350.2" y="341.0" width="34.6" height="18.0" rx="9.0" fill="#133663" />
+  <text x="367.5" y="353.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G</text>
 </g>
-  <path d="M 340.0 170.0 L 315.0 170.0 L 315.0 350.0 L 215.0 350.0 L 215.0 395.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 340.0 170.0 L 315.0 170.0 L 315.0 350.0 L 230.0 350.0 L 230.0 395.0 L 215.0 395.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="297.7" y="251.0" width="34.6" height="18.0" rx="9.0" fill="#133663" />
-  <text x="315.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G</text>
+  <rect x="255.2" y="341.0" width="34.6" height="18.0" rx="9.0" fill="#133663" />
+  <text x="272.5" y="353.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">40G</text>
 </g>
   <path d="M 405.0 200.0 L 405.0 282.5 L 320.0 282.5 L 320.0 365.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">

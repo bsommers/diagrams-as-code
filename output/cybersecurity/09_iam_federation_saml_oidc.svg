@@ -29,17 +29,17 @@
     <rect x="580.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
     <text x="596.0" y="104.0" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Service Providers</text>
   </g>
-  <path d="M 205.0 170.0 L 345.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 205.0 170.0 L 275.0 170.0 L 275.0 160.0 L 345.0 160.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="214.3" y="161.0" width="121.4" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="275.0" y="173.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SSO Login Request</text>
+  <rect x="214.3" y="156.0" width="121.4" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="275.0" y="168.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">SSO Login Request</text>
 </g>
-  <path d="M 345.0 170.0 L 275.0 170.0 L 275.0 260.0 L 205.0 260.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 345.0 180.0 L 275.0 180.0 L 275.0 250.0 L 205.0 250.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="226.7" y="206.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="226.7" y="206.0" width="96.6" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="275.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Challenge MFA</text>
 </g>
-  <path d="M 205.0 260.0 L 275.0 260.0 L 275.0 170.0 L 345.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 205.0 270.0 L 275.0 270.0 L 275.0 160.0 L 345.0 160.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
   <rect x="217.4" y="206.0" width="115.2" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="275.0" y="218.5" fill="#09090B" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">FIDO Attestation</text>

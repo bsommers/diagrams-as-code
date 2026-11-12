@@ -25,7 +25,7 @@
   </g>
   <path d="M 130.0 160.0 L 130.0 220.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="81.69999999999999" y="181.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="81.7" y="181.0" width="96.6" height="18.0" rx="9.0" fill="#24242A" />
   <text x="130.0" y="193.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Modbus/OPC UA</text>
 </g>
   <path d="M 200.0 250.0 L 270.0 250.0 L 270.0 242.5 L 340.0 242.5" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
@@ -35,12 +35,12 @@
 </g>
   <path d="M 490.0 242.5 L 540.0 242.5 L 540.0 177.5 L 590.0 177.5" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="504.1" y="201.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="504.1" y="201.0" width="71.8" height="18.0" rx="9.0" fill="#24242A" />
   <text x="540.0" y="213.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Extension</text>
 </g>
   <path d="M 490.0 242.5 L 540.0 242.5 L 540.0 257.5 L 590.0 257.5" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="504.1" y="241.0" width="71.80000000000001" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="504.1" y="241.0" width="71.8" height="18.0" rx="9.0" fill="#24242A" />
   <text x="540.0" y="253.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Extension</text>
 </g>
   <path d="M 490.0 242.5 L 540.0 242.5 L 540.0 337.5 L 590.0 337.5" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
