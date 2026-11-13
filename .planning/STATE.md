@@ -1,18 +1,21 @@
 ---
-gsd_state_version: 1.0
+gsd_state_version: "1.0"
 milestone: v0.8.4
-milestone_name: Technical Figures Program
-current_phase: 14
-current_phase_name: Style Model & Layout Correctness
+milestone_name: → v0.13.0)
 status: ready_to_plan
-stopped_at: Phases 12 and 13 complete on branch feat/technical-figures-m1 (not pushed, not tagged)
-last_updated: "2026-11-12T00:00:00.000Z"
-last_activity: 2026-11-12
-last_activity_desc: Phase 13 complete - text engine, label markup, math outlines, grow-to-fit (654 tests)
+stopped_at: Phase 14 complete at 338b560 (v0.10.0), gate green, 5 residual audit defects carried; Phase 15 not started; nothing pushed or tagged
+last_updated: "2026-11-13T03:56:00.736Z"
+state_head: 338b56095d23021d4ae337698a68bf6666be855f
 progress:
   total_phases: 6
   completed_phases: 2
-  percent: 33
+  total_plans: 0
+  completed_plans: 0
+  percent: 50
+last_activity: 2026-11-12
+current_phase: 15
+current_phase_name: Technical Drawing Primitives
+last_activity_desc: Phase 14 complete - style cascade, paper theme, fit-to-content canvas, badge/lane/port layout fixes, renderer split (727 tests)
 ---
 
 # Project State
@@ -22,7 +25,7 @@ progress:
 See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
 `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Current focus:** Phase 14 — Style Model & Layout Correctness. Phases 12 (v0.8.4) and 13 (v0.9.0) are complete on branch `feat/technical-figures-m1`, awaiting push/PR and tags.
+**Current focus:** Phase 15 — Technical Drawing Primitives. Phases 12 (v0.8.4), 13 (v0.9.0) and 14 (v0.10.0) are complete on branch `feat/technical-figures-m1`, awaiting push/PR and tags.
 
 ## Phase 12 result
 
@@ -36,7 +39,9 @@ Font spike outcome: the PNG backend (resvg-py) does honour italic, bold, serif a
 
 Behaviour change to be aware of: shapes now grow when their label cannot fit (`fit_label=False` / `Diagram(fit_labels=False)` restores fixed sizes). One existing test needed `fit_label=False`; three renderer tests that asserted exact text markup were loosened to assert intent.
 
-Carried into Phase 14: per-diagram font-size consistency (sibling nodes can get 13px and 12px labels), `paper` theme font stack should be the Arial-compatible stack the metrics describe.
+Phase 14 outcome (v0.10.0, `338b560`): STYLE-01..04 and LAYOUT-01..04 done. Audit, v0.9.0 -> v0.10.0: mostly-empty canvas 90 -> 0 (root cause: 1200x800 default that could only grow), overlapping edges 22 -> 0, badges over nodes 21 -> 0, badges over badges 16 -> 0, edges through a badge 183 -> 4, title overflow 29 -> 0 (new check). The `paper` theme uses the Arial-compatible stack.
+
+Carried into Phase 15: the five remaining audit defects (4 edges through a badge in computer/01, datacenter/01, network_engineering/09; 1 edge through a group title in cloud/06), per-diagram font-size consistency (sibling nodes can get 13px and 12px labels), edges crossing unrelated group frames in tight hand-placed examples (not yet an audit count).
 
 ## Decisions
 
@@ -51,3 +56,9 @@ Carried into Phase 14: per-diagram font-size consistency (sibling nodes can get 
 ## Blockers / Concerns
 
 - None.
+
+## Session
+
+**Last session:** 2026-11-13T03:56:00.722Z
+**Stopped at:** Phase 14 complete at 338b560 (v0.10.0), gate green, 5 residual audit defects carried; Phase 15 not started; nothing pushed or tagged
+**Resume file:** .planning/CHECKPOINT.md
