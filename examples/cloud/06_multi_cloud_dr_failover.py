@@ -36,7 +36,7 @@ def diagram() -> Diagram:
 
         # Establish inter-element connections with protocol annotations
         dns_mgr >> diag.edge("Active (Weight 100)", style="solid") >> aws_alb
-        dns_mgr >> diag.edge("Standby (Weight 0)", style="dashed") >> azure_agw
+        dns_mgr >> diag.edge("Standby (Weight 0)", style="dashed", clearance=45) >> azure_agw
         aws_alb >> diag.edge("Proxy Route", style="solid") >> aws_app
         aws_app >> diag.edge("SQL R/W", style="solid") >> aws_db
         azure_agw >> diag.edge("Failover Traffic", style="dashed") >> azure_app
