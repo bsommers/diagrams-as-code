@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 305" width="1050" height="305">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
@@ -12,81 +12,81 @@
   </defs>
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Field Sensors</text>
+    <rect x="60" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="76" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Field Sensors</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Edge Node</text>
+    <rect x="310" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="326" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Edge Node</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Unified Namespace</text>
+    <rect x="560" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="576" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Unified Namespace</text>
   </g>
   <g id="group_4">
-    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="826.0" y="104.0" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Consumer Applications</text>
+    <rect x="800.43" y="80" width="189.13" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="816.43" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Consumer Applications</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 170 L 335 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455 170 L 585 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705 170 L 835 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="231.0" y="161.0" width="78.0" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Modbus RTU</text>
+  <rect x="232.55" y="161" width="74.91" height="18" rx="9" fill="#133663" />
+  <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Modbus RTU</text>
 </g>
-  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="468.6" y="161.0" width="102.8" height="18.0" rx="9.0" fill="#133663" />
-  <text x="520.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">NBIRTH / NDATA</text>
+  <rect x="472.28" y="161" width="95.45" height="18" rx="9" fill="#133663" />
+  <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">NBIRTH / NDATA</text>
 </g>
-  <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="709.3" y="161.0" width="121.4" height="18.0" rx="9.0" fill="#133663" />
-  <text x="770.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">MQTT Subscription</text>
+  <rect x="718.93" y="161" width="102.13" height="18" rx="9" fill="#133663" />
+  <text x="770" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MQTT Subscription</text>
 </g>
   <g id="sensors" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-sensor" transform="translate(133.6, 149.6) scale(0.9500000000000001)">
-  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="8" y1="17" x2="16" y2="17" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-sensor" transform="translate(133.6, 149.8) scale(0.95)">
+  <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="8" y1="17" x2="16" y2="17" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="145.0" y="186.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Sensors &amp; PLCs</text>
+    <text x="145" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Sensors &amp; PLCs</text>
   </g>
   <g id="eon" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-gateway" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
-  <line x1="6" y1="9" x2="6" y2="3" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="18" y1="9" x2="18" y2="3" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-gateway" transform="translate(383.6, 143.2) scale(0.95)">
+  <line x1="6" y1="9" x2="6" y2="3" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="9" x2="18" y2="3" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
   <circle cx="7" cy="15" r="1.5" fill="#00D2FF"/>
   <circle cx="12" cy="15" r="1.5" fill="#00D2FF"/>
   <circle cx="17" cy="15" r="1.5" fill="#00D2FF"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Sparkplug B Edge</tspan> <tspan x="395.0" dy="13.75">Node</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Sparkplug B</tspan> <tspan x="395" dy="14.4">Edge Node</tspan></text>
   </g>
   <g id="broker" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-broker" transform="translate(633.6, 143.85) scale(0.9500000000000001)">
-  <circle cx="12" cy="12" r="3.5" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-broker" transform="translate(633.6, 150.4) scale(0.95)">
+  <circle cx="12" cy="12" r="3.5" fill="none" stroke="#00D2FF" stroke-width="2"/>
   <circle cx="12" cy="3.5" r="2" fill="#00D2FF"/>
   <circle cx="12" cy="20.5" r="2" fill="#00D2FF"/>
   <circle cx="3.5" cy="12" r="2" fill="#00D2FF"/>
   <circle cx="20.5" cy="12" r="2" fill="#00D2FF"/>
-  <line x1="12" y1="5.5" x2="12" y2="8.5" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="12" y1="15.5" x2="12" y2="18.5" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="5.5" y1="12" x2="8.5" y2="12" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="15.5" y1="12" x2="18.5" y2="12" stroke="#00D2FF" stroke-width="2.0"/>
+  <line x1="12" y1="5.5" x2="12" y2="8.5" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="12" y1="15.5" x2="12" y2="18.5" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="5.5" y1="12" x2="8.5" y2="12" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="15.5" y1="12" x2="18.5" y2="12" stroke="#00D2FF" stroke-width="2"/>
 </g>
-    <text x="645.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="645.0" dy="0">UNS Central</tspan> <tspan x="645.0" dy="13.75">Broker</tspan></text>
+    <text x="645" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">UNS Central Broker</text>
   </g>
   <g id="scada" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
-    <g class="icon icon-scada" transform="translate(883.6, 143.85) scale(0.9500000000000001)">
-  <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="8" y1="21" x2="16" y2="21" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="12" y1="17" x2="12" y2="21" stroke="#00D2FF" stroke-width="2.0"/>
-  <polyline points="5 11 8 8 12 12 16 7 19 10" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="835" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-scada" transform="translate(883.6, 143.2) scale(0.95)">
+  <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="8" y1="21" x2="16" y2="21" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="17" x2="12" y2="21" stroke="#00D2FF" stroke-width="2"/>
+  <polyline points="5 11 8 8 12 12 16 7 19 10" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="895.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">Host SCADA</tspan> <tspan x="895.0" dy="13.75">Application</tspan></text>
+    <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Host SCADA</tspan> <tspan x="895" dy="14.4">Application</tspan></text>
   </g>
 </svg>

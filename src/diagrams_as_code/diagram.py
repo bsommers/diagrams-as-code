@@ -16,7 +16,12 @@ from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
+from diagrams_as_code.style import Style
 from diagrams_as_code.theme import Theme, get_theme
+
+#: Nominal canvas used while laying out an axis that is fitted to content afterwards.
+DEFAULT_WIDTH = 1200.0
+DEFAULT_HEIGHT = 800.0
 
 
 class _EdgeBuilder:
@@ -332,8 +337,8 @@ class Diagram:
     def __init__(
         self,
         title: str = "IIoT Architecture",
-        width: float = 1200.0,
-        height: float = 800.0,
+        width: Optional[float] = None,
+        height: Optional[float] = None,
         theme: Union[Theme, str] = "iiot_dark_gold",
         theme_overrides: Optional[dict[str, str]] = None,
         label_position: str = "inside",
@@ -347,10 +352,24 @@ class Diagram:
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
         routing: Optional[Union[Routing, str]] = None,
+        fit_labels: bool = True,
+        precision: int = 2,
+        pixel_snap: bool = False,
     ) -> None:
         self.title = title
-        self.width = float(width)
-        self.height = float(height)
+        #: Grow shapes whose inside label would otherwise spill out of them.
+        self.fit_labels = bool(fit_labels)
+        #: Decimal places kept in SVG coordinates.
+        self.precision = int(precision)
+        #: Round every position and size to whole pixels and draw odd-width
+        #: strokes on pixel centres, so hairlines are one crisp pixel wide.
+        self.pixel_snap = bool(pixel_snap)
+        #: An axis left as ``None`` is fitted to the content after layout; a
+        #: given size is a minimum that still grows if content would be clipped.
+        self._fit_width = width is None
+        self._fit_height = height is None
+        self.width = DEFAULT_WIDTH if width is None else float(width)
+        self.height = DEFAULT_HEIGHT if height is None else float(height)
         base_t = get_theme(theme)
         if theme_overrides:
             self.theme = dataclasses.replace(
@@ -539,6 +558,8 @@ class Diagram:
         header_height: float = 35.0,
         id: Optional[str] = None,
         metadata: Optional[dict[str, Any]] = None,
+        style: Optional[Style] = None,
+        child_style: Optional[Style] = None,
     ) -> _GroupContext:
         """Create, track, and enter a hierarchical Group context."""
         self._counter += 1
@@ -553,6 +574,8 @@ class Diagram:
             padding=padding,
             header_height=header_height,
             metadata=metadata,
+            style=style,
+            child_style=child_style,
         )
         g._diagram = self
         g.explicit_id = id is not None
@@ -674,12 +697,33 @@ class Diagram:
         """Place every element: auto-layout, layout file, constraints, framing."""
         run_layout(self)
         self._is_solved = True
+        self._solved_signature = self._signature()
+
+    def _signature(self) -> tuple[Any, ...]:
+        """Everything a solve depends on, so a stale solve can be detected."""
+        elements = tuple(
+            (id(el), el.width, el.height, len(el.constraints), id(el.parent))
+            for el in self.solver.all_elements()
+        )
+        edges = tuple(
+            (
+                id(e), id(e.source), id(e.target), e.source_port, e.target_port,
+                e._routing, e._corner_radius, e._clearance, bool(e.label),
+                tuple(e.manual_waypoints) if e.manual_waypoints else None,
+            )
+            for e in self.edges
+        )
+        return (elements, edges, self.width, self.height)
+
+    def _ensure_solved(self) -> None:
+        """Solve if never solved, or if the model changed since the last solve."""
+        if not self._is_solved or getattr(self, "_solved_signature", None) != self._signature():
+            self.solve()
 
     def render_svg(self, path: Optional[Union[str, Path]] = None) -> str:
         """Render diagram to SVG string and optionally write to file."""
-        if not self._is_solved:
-            self.solve()
-        renderer = SVGRenderer(self.theme)
+        self._ensure_solved()
+        renderer = SVGRenderer(self.theme, precision=self.precision, crisp=self.pixel_snap)
         svg = renderer.render(
             elements=self.shapes,
             groups=self.groups,
@@ -714,8 +758,7 @@ class Diagram:
         include_connections: bool = True,
     ) -> str:
         """Generate living documentation README with diagram graphic link and BOM table."""
-        if not self._is_solved:
-            self.solve()
+        self._ensure_solved()
         return self.bom.generate_readme(
             image_file=image_file,
             diagram_name=self.title,

@@ -137,11 +137,23 @@ def load_script(path: Path) -> tuple[Diagram, str]:
     if spec is None or spec.loader is None:
         raise ValueError("cannot be loaded as a Python module")
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    build = getattr(module, "diagram", None)
-    if not callable(build):
-        raise ValueError("defines no diagram() function")
-    diag = build()
+    # Let the script import helper modules that sit beside it.
+    script_dir = str(path.resolve().parent)
+    sys.path.insert(0, script_dir)
+    try:
+        try:
+            spec.loader.exec_module(module)
+            build = getattr(module, "diagram", None)
+            if not callable(build):
+                raise ValueError("defines no diagram() function")
+            diag = build()
+        except SystemExit as exc:
+            raise RuntimeError(f"script called sys.exit({exc.code!r}) while loading") from exc
+    finally:
+        try:
+            sys.path.remove(script_dir)
+        except ValueError:
+            pass
     if not isinstance(diag, Diagram):
         raise ValueError(f"diagram() returned {type(diag).__name__}, not Diagram")
     return diag, str(getattr(module, "OUTPUT_STEM", path.stem))
@@ -163,9 +175,20 @@ def _report(path: Path, exc: Exception, debug: bool) -> None:
     print(f"error: {path}: {exc}", file=sys.stderr)
 
 
+def _missing_layout_file(args: argparse.Namespace) -> bool:
+    """Report a ``--layout-file`` that was named but does not exist."""
+    layout_file = getattr(args, "layout_file", None)
+    if layout_file is not None and not Path(layout_file).is_file():
+        print(f"error: --layout-file: {layout_file} does not exist", file=sys.stderr)
+        return True
+    return False
+
+
 def _render(args: argparse.Namespace) -> int:
     if args.out.is_file():
         print(f"error: --out: {args.out} is an existing file, not a directory", file=sys.stderr)
+        return 2
+    if _missing_layout_file(args):
         return 2
     status = 0
     errors: list[tuple[Path, Exception]] = []
@@ -173,9 +196,21 @@ def _render(args: argparse.Namespace) -> int:
     for script, exc in errors:
         _report(script, exc, args.debug)
         status = 1
+    if not scripts and not errors:
+        listed = ", ".join(str(p) for p in args.paths)
+        print(f"error: no diagram scripts found in {listed}", file=sys.stderr)
+        return 1
+    written_by: dict[Path, Path] = {}
     for script, subdir in scripts:
         try:
             diag, stem = load_script(script)
+            target = args.out / subdir / stem
+            if target in written_by:
+                raise ValueError(
+                    f"output {target}.* was already written by {written_by[target]}; "
+                    "rename one script or set OUTPUT_STEM"
+                )
+            written_by[target] = script
             _configure(diag, args, theme=args.theme)
             for written in render_all(diag, args.out / subdir, stem, args.format).values():
                 print(f"wrote {written}")
@@ -186,10 +221,15 @@ def _render(args: argparse.Namespace) -> int:
 
 
 def _layout_export(args: argparse.Namespace) -> int:
+    if _missing_layout_file(args):
+        return 2
+    target = args.output or args.script.with_suffix(".layout.json")
+    if Path(target).is_dir():
+        print(f"error: --output: {target} is a directory, not a file", file=sys.stderr)
+        return 2
     try:
         diag, _stem = load_script(args.script)
         _configure(diag, args)
-        target = args.output or args.script.with_suffix(".layout.json")
         print(f"wrote {export_layout(diag, target)}")
         return 0
     except Exception as exc:

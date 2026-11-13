@@ -6,6 +6,87 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.10.0] - 2026-11-12
+
+Style model and layout correctness. `uv run python tools/audit_gallery.py` across 92 diagrams, v0.9.0 -> v0.10.0: mostly-empty canvases 90 -> 0, overlapping edges 22 -> 0, badges over nodes 21 -> 0, badges over badges 16 -> 0, lines through badges 183 -> 4, group titles wider than their group 29 -> 0. Still open: 4 lines through badges in 3 diagrams and 1 edge through a group title, all in hand-placed examples whose gaps are narrower than their labels.
+
+### Added
+- **`Style`** (`diagrams_as_code.Style`): fill, stroke, stroke width, corner radius, dash, shadow, text colour, font size and opacity for a node or group. Resolved theme -> enclosing groups' `child_style` -> element `style` -> legacy keyword overrides (`fill=`, `stroke=`, ...), which keep working. `Diagram.group(style=, child_style=)`, `Diagram.shape(style=)`.
+- **`paper` theme:** black on white, 1 px strokes, square corners, dashed group frames, no shadows. Themes gained `node_stroke_width`, `node_radius`, `group_stroke_width`, `group_radius`, `group_dash`, `edge_width` and `shadow`; the defaults are the previous look. Arrowheads keep a readable size on hairline edges.
+- **Group titles fit.** An auto-sized group widens evenly when its title is wider than its contents (`group.fit_title = False` to opt out); edge badges avoid group titles.
+- Audit checks `badge_over_title`, `title_overflow` (29 in the gallery before the fix, now 0) and `group_overlap`.
+
+### Changed
+- **Fit-to-content canvas (default).** `Diagram(width=None, height=None)`: an axis left unset is sized to the content after layout, with a trailing margin that mirrors the leading one (at most 60 x 80, at least 24). Previously every diagram defaulted to 1200 x 800 and the canvas could only grow, so 89 of 92 gallery diagrams filled a median 23% of their canvas. A size you pass is still honoured as a minimum and still grows if content would be clipped; setting `diagram.width` / `.height` later pins that axis. Edge badges now count as content when sizing.
+- **Edge badge placement.** New `layout/badges.py` pass: a badge that would cover a node, another badge or another edge's line slides along its own route to a clear spot; a label too wide for the gap is wrapped onto two or three lines; edges carrying the same label along a shared trunk draw one badge between them. The renderer, the audit and canvas sizing all read the badge box from `labels.edge_badge_rect`. Gallery audit: badge over node 21 -> 0.
+- **Lane separation.** New `layout/lanes.py` pass: detours that were routed along the same corridor are shifted onto parallel lanes 14 px apart. An end segment is moved only when no interior one can be, by sliding its port along the node side; arrival directions are untouched.
+- **Consistent port spreading.** When a node side carries both incoming and outgoing edges, the order now takes account of the shift already given to each edge's other end, so a request/reply pair is drawn as two straight parallel lines instead of two overlapping Z shapes.
+- A badge with no clear spot on its line may sit just beside the line.
+- The audit no longer counts a bus as overlapping edges when every source on it feeds every target on it (`connections.may_share_a_line`); a partial bus is still counted. 
+- **Labels clear of shape artwork.** `labels.label_area(shape)` gives the part of a shape an inside label and icon may use: below the rim of a cylinder or database, between the lobes of a cloud, the inscribed rectangle of a diamond. Fitting, grow-to-fit, drawing and the audit all use it. Server racks and databases, whose artwork fills the body, draw a plain plate behind the label. Cylinders, clouds and diamonds with long labels or icons may now grow slightly (opt out with `fit_label=False`).
+- **Renderer split.** `SVGRenderer.render` now runs four passes (`_defs`, `_groups_pass`, `_edges_pass`, `_nodes_pass`); the pan/zoom/minimap overlay moved to `renderer_interactive.py`. The route fallback for edges drawn without a layout is one helper, and its unreachable branch is gone. Output is byte-identical.
+- **Fixed-precision coordinates.** Every coordinate and length in the SVG is written to two decimals (`Diagram(precision=)`), with trailing zeros dropped; text content and names are never touched, and scale factors keep four more places so math glyphs keep their size. `Diagram(pixel_snap=True)` rounds positions to whole pixels and draws odd-width strokes on pixel centres.
+- Lane separation now takes any move that shortens the overlap, over three passes, so two crossing Z routes are separated by sliding a port.
+- The audit no longer counts a line under a badge that carries that line's own label.
+- `flatten` and `segment_enters` moved from `audit` to `geometry` (still importable from `audit`).
+- Gallery SVG output regenerated at the fitted sizes; `main.py` and the three root examples no longer hard-code a canvas size.
+
+### Fixed
+- `docs/licenses/OFL-STIX.txt` was a byte-identical copy of the packaged licence and failed the repository hygiene test; it is now a symlink.
+
+## [v0.9.0] - 2026-11-12
+
+Text engine: measured text, label markup and typeset math.
+
+### Added
+- **`diagrams_as_code.text`:** font-metric text measurement, rich text layout with balanced word wrap, and a TeX-like math typesetter. `layout()`, `measure()`, `TextStyle`, `typeset()`.
+- **Label markup** in shape labels, group titles and edge badges: `**bold**`, `*italic*`, explicit line breaks, and `$math$`. Ordinary labels containing `$`, `*` or `_` are unaffected.
+- **Math** drawn as vector outlines: sub/superscripts, grouping, Greek, operators and relations, `\mathrm` / `\text` / `\mathbf`, named functions, limits under big operators. Unsupported constructs raise `MathError`.
+- **Grow-to-fit:** a shape whose label cannot fit at the smallest size grows so the text never spills. Opt out with `Shape(fit_label=False)` or `Diagram(fit_labels=False)`; pin the text size with `font_size=`.
+- `tools/generate_text_data.py` (development-time; uses fontTools via `uv run --with`), `docs/licenses/OFL-STIX.txt`, and a provenance section in `docs/sources.md`.
+
+### Changed
+- Node labels, group titles and edge badges are sized and wrapped from real advance widths. The three separate `0.62 x font size` guesses are gone; layout, drawing and the audit share `diagrams_as_code.labels`.
+- Wrapped labels are balanced ("Hardware" / "Security Key", not "Hardware Security" / "Key").
+- Edge badges are drawn above all edge lines, so no line strikes through a label.
+- Gallery SVG output regenerated.
+
+### Licensing
+- Math glyph outlines are derived from STIX Two Math 2.13 (SIL Open Font License 1.1) and are redistributed under that license; the license text ships in the package. Advance widths come from Arimo (Apache-2.0). No runtime dependency is added.
+
+### Verification Evidence
+- `uv run pytest` -> 654 passed.
+- `tools/audit_gallery.py`, v0.8.4 -> v0.9.0: label overflow 29 -> 0, badges over nodes 80 -> 21, badges over badges 28 -> 16, edges through a badge 188 -> 183. Unchanged: overlapping edges 22, mostly-empty canvas 90 (both scheduled for v0.10.0).
+- Every formula in the reference figure renders in SVG and PNG (checked by eye).
+
+## [v0.8.4] - 2026-11-12
+
+First release of the Technical Figures program (`docs/plans/2026-11-12-technical-figures-and-quality.md`): a bug-fix baseline and a visual defect gate.
+
+### Fixed
+- **Orthogonal routing:** routes leave and arrive perpendicular to their ports and treat the boxes they connect as obstacles, so no edge ends along a node's border or passes back through its own source or target. Automatic port choice uses the free axis when two boxes overlap on the other.
+- **Self-loops:** `connect(a, a)` draws a loop outside the node instead of a line across it.
+- **Shared sides:** when a node side carries both incoming and outgoing edges, the two sets are moved apart, so `A → B` and `B → A` no longer coincide and their labels no longer stack. Fan-out and fan-in trunks are unchanged.
+- **Curved routing:** a spline that still collides after deflection falls back to a rounded orthogonal route. Any edge that cannot be routed clear now raises a `LayoutWarning` instead of failing silently.
+- **Stale solves:** shapes, edges and constraints added after the first solve are laid out on the next render; resizing a shape between solves is kept.
+- **Style cascade:** edges with manual waypoints inherit diagram-level `corner_radius`; the BOM reports the resolved routing (`Diagram(routing="direct")` was listed as orthogonal).
+- **Auto-layout:** spacing accounts for the width of labels drawn below shapes and for edge badges between ranks.
+- **Layout files:** non-finite coordinates are rejected.
+- **CLI:** a missing `--layout-file` is an error; two scripts that would write the same output no longer overwrite each other silently; scripts can import modules beside them; `sys.exit()` inside one script no longer aborts the batch; `layout export -o <dir>` blames `-o`; an input directory with no diagram scripts is reported.
+- **Rasterizer:** an external converter that exits 0 without writing can no longer return a stale PNG.
+
+### Added
+- `diagrams_as_code.audit`: counts visual defects in a solved diagram (edges through nodes, tangent arrivals, overlapping edges, badges over nodes or each other, label overflow, clipped or mostly empty canvas).
+- `tools/audit_gallery.py` with `--check` / `--update`, and `tools/audit_baseline.json`. The test suite fails if any gallery defect count rises above the baseline.
+
+### Changed
+- Gallery SVG output regenerated for the routing fixes.
+- Shared text-width estimates moved to `diagrams_as_code.metrics`.
+
+### Verification Evidence
+- `uv run pytest` -> 602 passed.
+- `uv run python tools/audit_gallery.py` across 92 diagrams, before -> after: tangent arrivals 47 -> 0, edges through own endpoint 1 -> 0, overlapping edges 48 -> 22, edges through a badge 196 -> 188, badges over nodes 95 -> 80, badges over badges 37 -> 28. Label overflow (29) and mostly-empty canvas (90) are unchanged and are scheduled for v0.9.0 and v0.10.0.
+
 ## [v0.8.3] - 2026-09-28
 
 ### Added

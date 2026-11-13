@@ -10,9 +10,13 @@ from typing import Any, Optional
 from diagrams_as_code.elements import Element
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutEdge, LayoutGraph, LayoutNode
+from diagrams_as_code.labels import below_label_extent
 from diagrams_as_code.metrics import LABEL_BELOW_EXTRA
 
-__all__ = ["LABEL_BELOW_EXTRA", "build_scope_graph", "is_user_pinned", "lift", "node_size", "pinned_ids", "scope_children"]
+#: Space kept under a below-label before the next element.
+BELOW_LABEL_CLEARANCE = 7.6
+
+__all__ = ["LABEL_BELOW_EXTRA", "build_scope_graph", "is_user_pinned", "lift", "node_inset", "node_size", "pinned_ids", "scope_children"]
 
 
 def scope_children(diagram: Any, group: Optional[Group]) -> list[Element]:
@@ -95,10 +99,17 @@ def pinned_ids(elements: list[Element]) -> set[str]:
 def node_size(element: Element) -> tuple[float, float]:
     """Width and height the element occupies, including a label drawn below it."""
     w, h = element.bounds.width, element.bounds.height
-    label_below = getattr(element, "kind", None) == "icon" or getattr(
-        element, "label_position", None
-    ) in ("bottom", "below")
-    return (w, h + LABEL_BELOW_EXTRA) if label_below else (w, h)
+    if isinstance(element, Group):
+        return (w, h)
+    label_w, label_h = below_label_extent(element)
+    if not label_h:
+        return (w, h)
+    return (max(w, label_w), h + label_h + BELOW_LABEL_CLEARANCE)
+
+
+def node_inset(element: Element) -> float:
+    """How far the element sits in from the left of the space ``node_size`` reserves."""
+    return (node_size(element)[0] - element.bounds.width) / 2.0
 
 
 def build_scope_graph(diagram: Any, group: Optional[Group], pinned: set[str]) -> LayoutGraph:

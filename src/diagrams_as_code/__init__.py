@@ -69,7 +69,9 @@ from diagrams_as_code.theme import (
     reset_themes,
 )
 
-__version__ = "0.8.3"
+from diagrams_as_code.style import Style  # noqa: E402
+
+__version__ = "0.10.0"
 __all__ = [
     "AbsoluteConstraint",
     "AlignConstraint",
@@ -119,6 +121,7 @@ __all__ = [
     "ShapeLibrary",
     "ShapeRenderer",
     "Size",
+    "Style",
     "THEMES",
     "Theme",
     "UnitBasis",

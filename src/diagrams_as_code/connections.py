@@ -126,12 +126,21 @@ class Edge:
             list(manual_waypoints) if manual_waypoints else None
         )
         self._resolved_path: Optional[RoutedPath] = None
+        self._resolved_style: Optional[EdgeStyle] = None
+        #: Centre of the label badge, chosen by the layout; ``None`` means the path midpoint.
+        self._label_anchor: Optional[Point] = None
+        #: Text width the badge is wrapped at, when it would not fit unwrapped.
+        self._label_wrap: Optional[float] = None
+        #: Another edge whose identical badge, on a shared trunk, labels this edge too.
+        self._label_owner: Optional[Edge] = None
 
     @property
     def routing(self) -> Routing:
         """Routing strategy for edges."""
         if self._routing is not None:
             return self._routing
+        if self._resolved_style is not None:
+            return self._resolved_style.routing
         if self._resolved_path is not None:
             return (
                 Routing.CURVE
@@ -231,3 +240,15 @@ class Edge:
     def clearance(self, val: Optional[Union[int, float]]) -> None:
         self._clearance = self._validate_clearance(val)
 
+
+def may_share_a_line(e1: Any, e2: Any, links: set[tuple[int, int]]) -> bool:
+    """True if drawing ``e1`` and ``e2`` along one line misleads nobody.
+
+    That holds for a fan-out from one source, a fan-in to one target, and a bus
+    on which every source feeds every target, so that the merged line implies
+    only connections that exist. ``links`` is the set of
+    ``(id(source), id(target))`` pairs of every edge in the diagram.
+    """
+    if e1.source is e2.source or e1.target is e2.target:
+        return True
+    return (id(e1.source), id(e2.target)) in links and (id(e2.source), id(e1.target)) in links

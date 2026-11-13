@@ -171,7 +171,7 @@
       F1:HELP   F2:RENDER   F3:LAYOUT   F4:THEMES   F5:ICONS   F6:BOM   F7:BEZIER   F8:EXIT
     </text>
     <text x="810" y="331" font-family="monospace" font-size="10" font-weight="bold" fill="#38bdf8">
-      BUILD: v0.8.3
+      BUILD: v0.9.0
     </text>
 
   </g>

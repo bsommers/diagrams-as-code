@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from typing import ClassVar, Optional
 from diagrams_as_code.icon_glyphs import GLYPHS
+from diagrams_as_code.labels import badge_block
 
 
 class ShapeLibrary:
@@ -220,12 +221,14 @@ class ShapeLibrary:
         stroke: str,
         stroke_width: float = 2.0,
         radius: float = 6.0,
+        dash: str = "",
     ) -> str:
-        """Render a rounded rectangular box."""
+        """Render a rectangular box; ``radius`` 0 gives square corners."""
         self._validate_dimensions(w, h)
+        dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
         return (
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" '
-            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" />'
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}"{dash_attr} />'
         )
 
     def render_cylinder(
@@ -415,6 +418,7 @@ class ShapeLibrary:
         font_family: str = (
             "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
         ),
+        max_width: Optional[float] = None,
     ) -> str:
         """Render a status or protocol badge pill with centered text."""
         if font_size <= 0:
@@ -422,18 +426,17 @@ class ShapeLibrary:
         if height <= 0:
             raise ValueError(f"height must be positive, got {height}")
 
-        char_w = font_size * 0.62
-        badge_w = max(len(text) * char_w + 2 * padding_x, 24.0)
-        rx = height / 2.0
-        text_x = x + badge_w / 2.0
-        text_y = y + height / 2.0 + font_size * 0.35
-        escaped_text = html.escape(text)
-        escaped_font_family = html.escape(font_family, quote=True)
+        block = badge_block(text, font_size, max_width)
+        badge_w = max(block.width + 2 * padding_x, 24.0)
+        height = max(height, block.height + 4.0)
+        rx = min(height, 18.0) / 2.0
+        body = block.to_svg(
+            x + badge_w / 2.0, y + height / 2.0, fill=text_color, font_family=font_family, indent="  "
+        )
         return (
             f'<g class="badge">\n'
             f'  <rect x="{x}" y="{y}" width="{badge_w}" height="{height}" rx="{rx}" fill="{fill}" />\n'
-            f'  <text x="{text_x}" y="{text_y}" fill="{text_color}" font-size="{font_size}" '
-            f'font-family="{escaped_font_family}" font-weight="600" text-anchor="middle">{escaped_text}</text>\n'
+            f'{body}\n'
             f'</g>'
         )
 

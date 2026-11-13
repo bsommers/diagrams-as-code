@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import heapq
 import math
-from typing import Any, Iterable, Optional, Sequence
+import warnings
+from typing import Any, Iterable, Mapping, Optional, Sequence
 
 from diagrams_as_code.connections import Edge, EdgeStyle, Port, Routing
 from diagrams_as_code.elements import Element
@@ -18,6 +19,15 @@ class RoutingScene:
     rects: dict[Element, Rect]
     ancestors: dict[Element, frozenset[Group]]
     canvas: Rect
+    #: Per-edge ``(source, target)`` shifts of the port anchor along its side, in
+    #: pixels from the side's midpoint. Lets edges that share a side not overlap.
+    anchor_offsets: Mapping[Any, tuple[float, float]] = field(default_factory=dict)
+
+    def with_anchor_offsets(
+        self, offsets: Mapping[Any, tuple[float, float]]
+    ) -> RoutingScene:
+        """Return a copy of this scene carrying per-edge anchor offsets."""
+        return RoutingScene(self.rects, self.ancestors, self.canvas, dict(offsets))
 
     @classmethod
     def build(
@@ -102,6 +112,88 @@ PORT_NORMALS: dict[Port, Point] = {
     Port.SOUTH: Point(0.0, 1.0),
     Port.NORTH: Point(0.0, -1.0),
 }
+
+
+def port_point(bounds: Rect, port: Port, offset: float = 0.0) -> Point:
+    """Anchor point of ``port`` on ``bounds``, shifted ``offset`` px along that side."""
+    p = bounds.get_anchor(port.to_anchor())
+    if not offset:
+        return p
+    if port in (Port.EAST, Port.WEST):
+        half = max(0.0, bounds.height / 2.0 - 2.0)
+        return Point(p.x, p.y + max(-half, min(half, offset)))
+    half = max(0.0, bounds.width / 2.0 - 2.0)
+    return Point(p.x + max(-half, min(half, offset)), p.y)
+
+
+def edge_endpoints(
+    edge: Edge, src_port: Port, tgt_port: Port, scene: Optional[RoutingScene]
+) -> tuple[Point, Point]:
+    """Start and end anchor points of ``edge``, honouring the scene's anchor offsets."""
+    so, to = (0.0, 0.0)
+    if scene is not None and scene.anchor_offsets:
+        so, to = scene.anchor_offsets.get(edge, (0.0, 0.0))
+    return (
+        port_point(edge.source.bounds, src_port, so),
+        port_point(edge.target.bounds, tgt_port, to),
+    )
+
+
+def _flatten(path: RoutedPath, steps: int = 12) -> list[Point]:
+    """Polyline approximation of ``path`` for collision checks."""
+    pts = list(path.points)
+    if path.kind != PathKind.BEZIER_CHAIN or len(pts) < 4:
+        return pts
+    out = [pts[0]]
+    for i in range(0, len(pts) - 3, 3):
+        curve = CubicBezier(*pts[i : i + 4])
+        out.extend(curve.point_at(k / steps) for k in range(1, steps + 1))
+    return out
+
+
+def path_collides(edge: Edge, path: RoutedPath, scene: RoutingScene) -> bool:
+    """True if ``path`` passes through an unrelated element or through the
+    interior of the elements it connects."""
+    pts = _flatten(path)
+    sb, tb = edge.source.bounds, edge.target.bounds
+    # Elements that overlap an endpoint's box cannot be routed around.
+    rects = [
+        r.expand(-1.0)
+        for r in scene.obstacles_for(edge, clearance=0.0)
+        if not (r.intersects(sb) or r.intersects(tb))
+    ]
+    if edge.source is edge.target or not sb.intersects(tb):
+        rects += [sb.expand(-1.0), tb.expand(-1.0)]
+    rects = [r for r in rects if r.width > 0.0 and r.height > 0.0]
+    # An obstacle that contains an endpoint (an enclosing box) cannot be avoided.
+    rects = [
+        r
+        for r in rects
+        if not any(r.left < q.x < r.right and r.top < q.y < r.bottom for q in (pts[0], pts[-1]))
+    ]
+    return any(
+        segment_intersects_rect(pts[i], pts[i + 1], r)
+        for i in range(len(pts) - 1)
+        for r in rects
+    )
+
+
+def self_loop_path(edge: Edge, clearance: float, rounded: bool) -> RoutedPath:
+    """An external loop leaving the east side and re-entering the top of the same node."""
+    b = edge.source.bounds
+    reach = max(float(clearance), 18.0)
+    y_out = b.top + b.height * 0.3
+    x_in = b.left + b.width * 0.75
+    pts = (
+        Point(b.right, y_out),
+        Point(b.right + reach, y_out),
+        Point(b.right + reach, b.top - reach),
+        Point(x_in, b.top - reach),
+        Point(x_in, b.top),
+    )
+    return RoutedPath(
+        kind=PathKind.POLYLINE, points=pts, corner_radius=reach * 0.6 if rounded else 0.0
+    )
 
 
 def _normalize_route_args(
@@ -369,8 +461,7 @@ class CurveRouter:
             res_obstacles = obstacles
 
         src_port, tgt_port = self.resolve_ports(edge, obstacles=res_obstacles)
-        p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
-        p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
+        p_start, p_end = edge_endpoints(edge, src_port, tgt_port, scene)
 
         norm_obstacles = self._normalize_obstacles(edge, cand_obstacles, p_start, p_end)
         if (scene is not None or obstacles is not None) and self._is_reverse_flow_explicit(edge, src_port, tgt_port):
@@ -717,7 +808,18 @@ class OrthogonalRouter:
         dx = tb.center.x - sb.center.x
         dy = tb.center.y - sb.center.y
 
-        if abs(dx) >= abs(dy):
+        # Free space between the facing sides on each axis (negative = the
+        # boxes overlap on that axis, so ports on it would route through them).
+        gap_x = max(tb.left - sb.right, sb.left - tb.right)
+        gap_y = max(tb.top - sb.bottom, sb.top - tb.bottom)
+        if gap_x >= 0.0 and gap_y < 0.0:
+            horizontal = True
+        elif gap_y >= 0.0 and gap_x < 0.0:
+            horizontal = False
+        else:
+            horizontal = abs(dx) >= abs(dy)
+
+        if horizontal:
             src_p = Port.EAST if dx > 0 else Port.WEST
             tgt_p = Port.WEST if dx > 0 else Port.EAST
         else:
@@ -826,8 +928,7 @@ class OrthogonalRouter:
             eff_routing = Routing(eff_routing)
 
         src_port, tgt_port = self.resolve_ports(edge)
-        p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
-        p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
+        p_start, p_end = edge_endpoints(edge, src_port, tgt_port, scene)
 
         if eff_routing == Routing.DIRECT:
             return RoutedPath(kind=PathKind.POLYLINE, points=(p_start, p_end), corner_radius=0.0)
@@ -841,8 +942,8 @@ class OrthogonalRouter:
                 r
                 for r in raw_obs
                 if not (
-                    (r.left <= p_start.x <= r.right and r.top <= p_start.y <= r.bottom)
-                    or (r.left <= p_end.x <= r.right and r.top <= p_end.y <= r.bottom)
+                    (r.left < p_start.x < r.right and r.top < p_start.y < r.bottom)
+                    or (r.left < p_end.x < r.right and r.top < p_end.y < r.bottom)
                 )
             ]
         elif obstacles is not None:
@@ -850,28 +951,39 @@ class OrthogonalRouter:
         else:
             norm_obstacles = []
 
-        if not norm_obstacles:
+        sb, tb = edge.source.bounds, edge.target.bounds
+        # The endpoints' own boxes are obstacles too, unless they overlap or nest
+        # (a group and its child), where "outside both" has no meaning.
+        own = [] if sb.intersects(tb) else [sb, tb]
+
+        def collides(path: Sequence[Point]) -> bool:
+            return any(
+                segment_intersects_rect(path[i], path[i + 1], obs)
+                for i in range(len(path) - 1)
+                for obs in norm_obstacles
+            )
+
+        if self._respects_endpoints(default_pts, own, src_port, tgt_port) and not collides(
+            default_pts
+        ):
             pts = default_pts
         else:
-            # Fast path: check if default path has collision
-            has_collision = False
-            for i in range(len(default_pts) - 1):
-                p_a, p_b = default_pts[i], default_pts[i + 1]
-                for obs in norm_obstacles:
-                    if segment_intersects_rect(p_a, p_b, obs):
-                        has_collision = True
+            pts = default_pts
+            if own:
+                for stub in self._stub_lengths(sb, tb, src_port, tgt_port, eff_clearance):
+                    cand = self._find_stubbed_path(
+                        p_start, p_end, src_port, tgt_port, sb, tb,
+                        norm_obstacles, eff_clearance, stub,
+                    )
+                    if cand is not None:
+                        pts = cand
                         break
-                if has_collision:
-                    break
-
-            if not has_collision:
-                pts = default_pts
             else:
-                # Compute detour path around obstacles
                 detour = self._find_detour_path(
                     p_start, p_end, src_port, tgt_port, norm_obstacles, eff_clearance
                 )
-                pts = detour if detour is not None else default_pts
+                if detour is not None:
+                    pts = detour
 
         # Clamping fillet corner radius against obstacles (D-16)
         if eff_cr > 0.0:
@@ -884,6 +996,86 @@ class OrthogonalRouter:
             clamped_cr = 0.0
 
         return RoutedPath(kind=PathKind.POLYLINE, points=tuple(pts), corner_radius=clamped_cr)
+
+    @staticmethod
+    def _respects_endpoints(
+        pts: Sequence[Point], own: Sequence[Rect], src_port: Port, tgt_port: Port
+    ) -> bool:
+        """True if the path leaves and arrives along the port normals and stays
+        out of the interiors of the boxes it connects."""
+        if not own:
+            return True
+        if len(pts) < 2:
+            return False
+        n_s, n_t = PORT_NORMALS[src_port], PORT_NORMALS[tgt_port]
+        d0 = Point(pts[1].x - pts[0].x, pts[1].y - pts[0].y)
+        d1 = Point(pts[-1].x - pts[-2].x, pts[-1].y - pts[-2].y)
+        if d0.x * n_s.x + d0.y * n_s.y <= 0.0 or d1.x * n_t.x + d1.y * n_t.y >= 0.0:
+            return False
+        # Leaving or arriving must be perpendicular to the side, not along it.
+        if abs(d0.x * n_s.y - d0.y * n_s.x) > 1e-9 or abs(d1.x * n_t.y - d1.y * n_t.x) > 1e-9:
+            return False
+        return not any(
+            segment_intersects_rect(pts[i], pts[i + 1], r)
+            for i in range(len(pts) - 1)
+            for r in own
+        )
+
+    @staticmethod
+    def _stub_lengths(
+        sb: Rect, tb: Rect, src_port: Port, tgt_port: Port, clearance: float
+    ) -> list[float]:
+        """Candidate lengths for the perpendicular stub at each port, longest first."""
+        limit = max(float(clearance), 4.0)
+        n_s, n_t = PORT_NORMALS[src_port], PORT_NORMALS[tgt_port]
+        if n_s.x == -n_t.x and n_s.y == -n_t.y:
+            # Facing ports: the two stubs share the gap between the boxes.
+            if n_s.x != 0.0:
+                gap = (tb.left - sb.right) if n_s.x > 0 else (sb.left - tb.right)
+            else:
+                gap = (tb.top - sb.bottom) if n_s.y > 0 else (sb.top - tb.bottom)
+            if gap > 0.0:
+                limit = min(limit, gap / 2.0)
+        out: list[float] = []
+        for v in (limit, limit / 2.0, 4.0):
+            if v > 0.0 and v <= limit and all(abs(v - o) > 1e-9 for o in out):
+                out.append(v)
+        return out
+
+    def _find_stubbed_path(
+        self,
+        p_start: Point,
+        p_end: Point,
+        src_port: Port,
+        tgt_port: Port,
+        sb: Rect,
+        tb: Rect,
+        obstacles: list[Rect],
+        clearance: float,
+        stub: float,
+    ) -> list[Point] | None:
+        """Route between perpendicular stubs, treating both end boxes as obstacles."""
+        n_s, n_t = PORT_NORMALS[src_port], PORT_NORMALS[tgt_port]
+        s2 = Point(p_start.x + n_s.x * stub, p_start.y + n_s.y * stub)
+        e2 = Point(p_end.x + n_t.x * stub, p_end.y + n_t.y * stub)
+        fixed = [sb.expand(stub), tb.expand(stub)]
+        for r in fixed:
+            for q in (s2, e2):
+                if r.left < q.x < r.right and r.top < q.y < r.bottom:
+                    return None
+        if s2 == e2:
+            inner: list[Point] = [s2]
+        else:
+            found = self._find_detour_path(
+                s2, e2, src_port, tgt_port, obstacles, clearance, fixed=fixed
+            )
+            if found is None:
+                return None
+            inner = found
+        pts = self._simplify_collinear(self._dedup([p_start, *inner, p_end]))
+        if not self._respects_endpoints(pts, [sb, tb], src_port, tgt_port):
+            return None
+        return pts
 
     def _default_manhattan(
         self, p_start: Point, p_end: Point, src_port: Port, tgt_port: Port
@@ -939,6 +1131,7 @@ class OrthogonalRouter:
         tgt_port: Port,
         obstacles: list[Rect],
         clearance: float,
+        fixed: Sequence[Rect] = (),
     ) -> list[Point] | None:
         expanded: list[Rect] = []
         for obs in obstacles:
@@ -948,6 +1141,8 @@ class OrthogonalRouter:
             ):
                 exp = obs
             expanded.append(exp)
+        # Rects taken exactly as given (already sized by the caller).
+        expanded.extend(fixed)
 
         xs = {p_start.x, p_end.x}
         ys = {p_start.y, p_end.y}
@@ -1090,10 +1285,14 @@ class EdgeRouter:
         self.curve = CurveRouter()
 
     def resolve_ports(
-        self, edge: Edge, obstacles: Optional[Iterable[Any]] = None
+        self,
+        edge: Edge,
+        obstacles: Optional[Iterable[Any]] = None,
+        style: Optional[EdgeStyle] = None,
     ) -> tuple[Port, Port]:
         """Determine connection ports for source and target elements."""
-        if edge.routing in (Routing.CURVE, "curve"):
+        routing = style.routing if style is not None else edge.routing
+        if routing in (Routing.CURVE, "curve"):
             return self.curve.resolve_ports(edge, obstacles=obstacles)
         return self.orthogonal.resolve_ports(edge, obstacles=obstacles)
 
@@ -1142,17 +1341,31 @@ class EdgeRouter:
         if isinstance(routing, str):
             routing = Routing(routing)
 
+        if edge.source is edge.target:
+            return self_loop_path(edge, style.clearance, rounded=routing == Routing.CURVE)
+
         if routing == Routing.DIRECT:
             obs = obstacles or (scene.obstacles_for(edge, clearance=0.0) if scene else None)
             src_port, tgt_port = self.resolve_ports(edge, obstacles=obs)
-            p_start = edge.source.bounds.get_anchor(src_port.to_anchor())
-            p_end = edge.target.bounds.get_anchor(tgt_port.to_anchor())
+            p_start, p_end = edge_endpoints(edge, src_port, tgt_port, scene)
             return RoutedPath(kind=PathKind.POLYLINE, points=(p_start, p_end), corner_radius=0.0)
 
         if routing == Routing.CURVE:
-            return self.curve.route(
+            path = self.curve.route(
                 edge, scene=scene, style=style, obstacles=obstacles, clearance=clearance
             )
+            if scene is not None and path_collides(edge, path, scene):
+                # The spline could not be bent clear. A rounded orthogonal route
+                # is always able to go around, and still reads as a curve.
+                rounded = EdgeStyle(
+                    routing=Routing.ORTHOGONAL,
+                    corner_radius=max(style.corner_radius, 14.0),
+                    clearance=style.clearance,
+                )
+                alt = self.orthogonal.route(edge, scene=scene, style=rounded)
+                if not path_collides(edge, alt, scene):
+                    return alt
+            return path
 
         return self.orthogonal.route(
             edge, scene=scene, style=style, obstacles=obstacles, clearance=clearance

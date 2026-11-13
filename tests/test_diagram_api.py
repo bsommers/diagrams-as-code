@@ -169,7 +169,9 @@ def test_shape_cloning_from_template():
 
     assert d1.bounds.x == 50
     assert d1.bounds.y == 100
-    assert d2.bounds.y == 100 + 70 + 25
+    # The cylinder grows a little so its icon and label clear the top rim.
+    assert d1.bounds.height >= 70
+    assert d2.bounds.y == d1.bounds.bottom + 25
 
 
 def test_solver_graceful_handling_of_unconstrained_elements():

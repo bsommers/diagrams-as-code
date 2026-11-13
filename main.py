@@ -17,8 +17,6 @@ OUTPUT_STEM = "main_architecture"
 def diagram() -> Diagram:
     diag = Diagram(
         "IIoT Reference Architecture",
-        width=1200,
-        height=700,
         theme="iiot_dark_gold",
     )
 

@@ -127,10 +127,11 @@ The routing subsystem computes collision-free trajectories between node ports, s
 - **Reverse-Flow Escape Routing**: Detects backward flow (e.g. source to the right of target in LR diagrams), automatically routes out of North/South ports, and offsets control handles into dedicated lateral escape corridors (>= 30px clearance).
 
 ### 2.7 Theme Engine (`diagrams_as_code.theme`)
-- 13 built-in themes:
+- 14 built-in themes:
   - **Dark Themes:** `iiot_dark_gold`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `dracula`, `synthwave`.
-  - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`.
+  - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`, `paper`.
   - **Accessibility Themes:** `high_contrast` (WCAG AAA compliant).
+- A theme also carries line weights, corner radii, the group dash pattern, edge width and the shadow switch. `diagrams_as_code.style.Style` holds per-node or per-group overrides, merged theme -> enclosing groups' `child_style` -> element `style` -> legacy `metadata` keys by `resolve_node_style` / `resolve_group_style`.
 - Auto-calculates W3C relative luminance to determine optimal foreground text contrast against custom container fill colors.
 - Dynamic theme derivation via `create_theme(name, base="...", **overrides)`.
 
@@ -144,9 +145,9 @@ The routing subsystem computes collision-free trajectories between node ports, s
 - **`graph.py`**: Turns one scope of a diagram (the canvas, or a single group) into a `LayoutGraph` — collecting that scope's unpinned children and the edges between them, duck-typed against `solver.elements`/`edges` so it never imports `diagram`.
 - **`layered.py`**: `LayeredLayout` — deterministic Sugiyama-style placement. Ranks nodes by edge direction (`LR` or `TB`), orders each rank to reduce crossings, and spaces ranks evenly; ties always break by declaration index, so a re-run of the same script reproduces the same layout.
 - **`sidecar.py`**: The editable layout file. `element_key()` derives a stable key (explicit `id=`, else the ancestor-label path joined by `/`); `load_layout_file()` / `export_layout()` round-trip a JSON file of `{key: {x, y}}` entries; `apply_entries()` inserts each entry as the winning constraint, warning on any stale key that matches no element.
-- **`pipeline.py`**: `run_layout()` — the ordered steps `Diagram.solve()` runs: drop the previous run's generated constraints, apply layout-file entries first, place unpinned elements scope-by-scope with `layout="auto"`, solve, recompute group bounds and frame negative coordinates, grow the canvas to fit any content past its declared `width`/`height`, and (with `layout="auto"`) warn about pins overlapping auto-placed siblings, then route every edge. Canvas growth is unconditional — it runs in `layout="manual"` with no layout file too. With `layout="manual"` and no layout file this otherwise reproduces the original solve exactly.
+- **`pipeline.py`**: `run_layout()` — the ordered steps `Diagram.solve()` runs: drop the previous run's generated constraints, apply layout-file entries first, place unpinned elements scope-by-scope with `layout="auto"`, solve, recompute group bounds and frame negative coordinates, size the canvas (an axis the user left unset is fitted to the content; a declared `width`/`height` is a minimum that grows if content would be clipped), and (with `layout="auto"`) warn about pins overlapping auto-placed siblings, then route every edge. Canvas sizing is unconditional — it runs in `layout="manual"` with no layout file too. With `layout="manual"` and no layout file this otherwise reproduces the original solve exactly.
 
-### 2.10 Interactive SVG Engine (`diagrams_as_code.renderer_svg`)
+### 2.10 Interactive SVG Engine (`diagrams_as_code.renderer_interactive`)
 - **Zero-Dependency Vector Interactivity**: Embeds pure vanilla JavaScript directly into emitted SVG documents without requiring external scripts or web frameworks.
 - **Client-Side Pan & Zoom**: Handles mouse drag and wheel events via SVG root matrix transforms (`transform="matrix(...)"`), supporting infinite canvas panning and smooth zoom scaling from 0.1x to 10.0x.
 - **Node Search & Focus Highlighting**: Real-time client-side search bar HUD. Matches node labels, dims non-matching nodes, pulses active matches with focus outlines, and navigates match results with Enter/Tab keyboard navigation.
@@ -167,7 +168,7 @@ The routing subsystem computes collision-free trajectories between node ports, s
    - Runs the constraint solver: topological ordering of relative constraints (`right_of`, `below`, `above`, `left_of`).
    - Computes group bounds from leaf elements upwards.
    - Detects any negative bounds and translates canvas into visible viewport coordinates `(60.0, 80.0)`.
-   - Grows the canvas to fit any content past its declared `width`/`height` — unconditionally, in every layout mode.
+   - Sizes the canvas: fits an unset axis to the content, and grows a declared `width`/`height` when content would be clipped — in every layout mode.
    - With `layout="auto"`, warns (`LayoutWarning`) about any pinned element overlapping an auto-placed sibling.
 5. **Path Routing**: `run_layout()` dispatches edge routing to `OrthogonalRouter` (for Manhattan routing and corner filleting) or `CurveRouter` (for cubic Bezier curves, obstacle collision deflection, and reverse-flow escape corridors). Port waypoints and badge rects are computed and cached on the diagram.
 6. **SVG Assembly**: SVGRenderer generates the XML document with markers, filters, groups, paths, icons, multi-line wrapped labels (`<tspan>`), and interactive HUD controllers (pan/zoom, search, minimap) when interactive mode is active.
@@ -196,12 +197,19 @@ src/
 │   │   ├── graph.py                # Diagram scope -> LayoutGraph
 │   │   ├── layered.py              # LayeredLayout: deterministic Sugiyama-style placement
 │   │   ├── sidecar.py              # Editable layout file: keys, load/export, apply_entries
+│   │   ├── lanes.py                # Moves edges routed along one corridor onto separate lanes
+│   │   ├── badges.py               # Places edge badges clear of nodes, titles, badges and lines
 │   │   └── pipeline.py             # run_layout(): the ordered steps Diagram.solve() runs
 │   ├── router.py                   # Orthogonal Manhattan & Cubic Bezier routing with obstacle deflection
 │   ├── connections.py              # Edge connection models & fluent >> operator overloading
-│   ├── renderer_svg.py             # SVGRenderer with theme integration, fillets, defs, and interactive HUD
+│   ├── renderer_svg.py             # SVGRenderer: defs, group, edge and node passes
+│   ├── renderer_interactive.py     # Pan/zoom/search/minimap overlay for interactive SVG
+│   ├── style.py                    # Style value object and theme -> group -> element cascade
+│   ├── labels.py                   # Label, badge and group-title geometry shared by layout, drawing and audit
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
-│   ├── theme.py                    # 13 built-in palette themes (nord, emerald, crimson, …)
+│   ├── theme.py                    # 14 built-in themes (nord, emerald, crimson, paper, …)
+│   ├── text/                       # Font metrics, rich text layout, math typesetting
+│   ├── audit.py                    # Visual defect checks on a solved diagram
 │   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation
 │   ├── output.py                   # Writes a diagram's SVG, PNG and BOM to a directory
 │   ├── cli.py                      # `diagrams-as-code render|layout export|themes|icons`

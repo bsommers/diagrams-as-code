@@ -32,16 +32,11 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - [x] Obstacle-aware orthogonal Manhattan routing with clearance corridors and multi-rank crossing minimization (`v0.7.0`).
 - [x] Foundational cubic Bezier geometry primitives, port normal tangency heuristics, native SVG `<path d="M... C...">` generation, and arc-length midpoint protocol badge placement (`v0.8.0` - Phase 8).
 
-## Current Milestone: v0.8.0 Curved & Bezier Edge Routing Engine
+## Current Milestone: Technical Figures Program (v0.8.4 → v0.13.0)
 
-**Goal:** Provide deterministic, publication-quality cubic Bezier and curved edge routing with obstacle deflection, rounded corner fillets for orthogonal paths, and unified diagram/edge routing controls with zero external dependencies.
+**Goal:** Fix shipped defects, then produce precise paper-style technical figures (typeset math, monochrome line art, layer bands, 3D solids, leaders, captions) with a technical example set and vector PDF export.
 
-**Target features:**
-- Cubic Bezier curve routing with port tangent vector calculation and control point generation (`Routing.CURVE`).
-- Rounded corner fillets (`arc_radius`) on orthogonal Manhattan routing paths (`Routing.ORTHOGONAL`).
-- Obstacle-aware Bezier splines routing through intermediate avoidance waypoints.
-- Diagram-level default routing configuration (`Diagram(routing=...)`) and per-edge override (`Edge(..., routing=...)`).
-- SVG renderer support for cubic Bezier path (`C`) commands and fillet arcs (`A`/`Q`).
+**Phases:** 12 Baseline & Bug Fixes · 13 Text Engine · 14 Style Model & Layout Correctness · 15 Technical Drawing Primitives · 16 Technical Examples & Visual Regression · 17 Vector PDF Export. See `ROADMAP.md`.
 
 ### Out of Scope
 
@@ -60,6 +55,7 @@ Zero external binary dependencies (no Graphviz `dot`, Cairo, or ImageMagick requ
 - **Tooling:** Always use `uv` for all environment management, script execution, and testing.
 - **Dependencies:** Strictly zero runtime dependencies. Stdlib only.
 - **Verification:** Pre-commit and CI diff gate on `README.md`, `docs/`, `icons/`, `output/`.
+- **Visual verification:** Tests alone are not sufficient evidence. Every phase must pass the gallery defect audit (`tools/audit_gallery.py --check`), golden-image comparison once available, and a direct look at the rendered PNGs. See the phase gate in `ROADMAP.md`.
 - **Compatibility:** Tested and passing on Python 3.10, 3.11, 3.12, and 3.13.
 
 ## Evolution

@@ -1,0 +1,1 @@
+../../src/diagrams_as_code/text/OFL-STIX.txt

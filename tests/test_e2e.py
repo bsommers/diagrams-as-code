@@ -378,7 +378,7 @@ def test_e2e_curved_obstacle_avoidance_single_and_wide() -> None:
         # Pair 1: Compact obstacle (width 20px <= 2 * 15px)
         s1 = diag.shape("Source 1", width=80.0, height=50.0).at(50.0, 100.0)
         t1 = diag.shape("Target 1", width=80.0, height=50.0).at(450.0, 100.0)
-        obs_c = diag.shape("Compact Obstacle", width=20.0, height=60.0).at(250.0, 95.0)
+        obs_c = diag.shape("Compact Obstacle", width=20.0, height=60.0, fit_label=False).at(250.0, 95.0)
         e1 = diag.connect(s1, t1, label="COMPACT_CORR", routing=Routing.CURVE)
 
         # Pair 2: Wide obstacle (width 120px > 2 * 15px)
@@ -506,7 +506,7 @@ def test_e2e_mixed_orthogonal_and_curved_routing_with_obstacles() -> None:
     assert has_c, "Expected at least one curved path with C bezier commands"
 
     # Both badges are rendered and readable
-    badges = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    badges = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9"]
     assert len(badges) == 2
 
 

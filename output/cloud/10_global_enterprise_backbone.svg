@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1290 800" width="1290" height="800">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1290 410" width="1290" height="410">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFC000"/>
@@ -12,123 +12,119 @@
   </defs>
   <rect width="100%" height="100%" fill="#000000"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
-    <text x="76.0" y="104.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Americas Region</text>
+    <rect x="60" y="80" width="170" height="235" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="76" y="104" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Americas Region</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
-    <text x="326.0" y="104.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Europe Region</text>
+    <rect x="310" y="80" width="170" height="235" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="326" y="104" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Europe Region</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
-    <text x="576.0" y="104.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Asia-Pacific Region</text>
+    <rect x="560" y="80" width="170" height="145" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="576" y="104" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Asia-Pacific Region</text>
   </g>
   <g id="group_4">
-    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
-    <text x="826.0" y="104.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Global Core</text>
+    <rect x="810" y="80" width="170" height="145" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="826" y="104" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Global Core</text>
   </g>
   <g id="group_5">
-    <rect x="1060.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
-    <text x="1076.0" y="104.0" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold">Governance</text>
+    <rect x="1060" y="80" width="170" height="145" rx="8" fill="#1A1A1E" stroke="#2E2E36" stroke-width="1.5" />
+    <text x="1076" y="104" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Governance</text>
   </g>
-  <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 145 200 L 145 230" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 395 200 L 395 230" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 260 L 295 260 L 295 330 L 820 330 L 820 170 L 835 170" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455 260 L 820 260 L 820 170 L 835 170" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705 170 L 835 170" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 955 170 L 1085 170" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="84.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="145.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">DirectConnect 10G</text>
+  <rect x="94.48" y="206" width="101.04" height="18" rx="9" fill="#24242A" />
+  <text x="145" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DirectConnect 10G</text>
 </g>
-  <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="334.3" y="206.0" width="121.4" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="395.0" y="218.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">DirectConnect 10G</text>
+  <rect x="344.48" y="206" width="101.04" height="18" rx="9" fill="#24242A" />
+  <text x="395" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DirectConnect 10G</text>
 </g>
-  <path d="M 205.0 260.0 L 295.0 260.0 L 295.0 330.0 L 835.0 330.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="256.0" y="286.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="295.0" y="298.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
+  <rect x="786.43" y="206" width="67.14" height="18" rx="9" fill="#24242A" />
+  <text x="820" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Core Route</text>
 </g>
-  <path d="M 455.0 260.0 L 835.0 260.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="606.0" y="251.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="645.0" y="263.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
+  <rect x="736.43" y="161" width="67.14" height="18" rx="9" fill="#24242A" />
+  <text x="770" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Core Route</text>
 </g>
-  <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="731.0" y="161.0" width="78.0" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="770.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">Core Route</text>
-</g>
-  <path d="M 955.0 170.0 L 1085.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
-  <g class="badge">
-  <rect x="971.7" y="161.0" width="96.60000000000001" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="1020.0" y="173.5" fill="#FFFFFF" font-size="10.0" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif" font-weight="600" text-anchor="middle">VPC Flow Logs</text>
+  <rect x="977.54" y="161" width="84.92" height="18" rx="9" fill="#24242A" />
+  <text x="1020" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">VPC Flow Logs</text>
 </g>
   <g id="us_dc" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-router" transform="translate(133.6, 143.85) scale(0.9500000000000001)">
-  <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="17" y1="12" x2="17" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-router" transform="translate(133.6, 143.2) scale(0.95)">
+  <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="12" x2="17" y2="5" stroke="#FFC000" stroke-width="2" stroke-linecap="round"/>
   <circle cx="7" cy="4" r="1.2" fill="#FFC000"/>
   <circle cx="17" cy="4" r="1.2" fill="#FFC000"/>
   <circle cx="8" cy="16" r="1.2" fill="#FFC000"/>
   <circle cx="12" cy="16" r="1.2" fill="#FFC000"/>
   <circle cx="16" cy="16" r="1.2" fill="#FFC000"/>
 </g>
-    <text x="145.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="145.0" dy="0">Americas On-Prem</tspan> <tspan x="145.0" dy="13.75">DC</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Americas</tspan> <tspan x="145" dy="14.4">On-Prem DC</tspan></text>
   </g>
   <g id="us_vpc" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-vpc" transform="translate(133.6, 239.6) scale(0.9500000000000001)">
-  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-dasharray="3,3"/>
-  <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+    <rect x="85" y="230" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-vpc" transform="translate(133.6, 240.4) scale(0.95)">
+  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="3,3"/>
+  <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#FFC000"/>
 </g>
-    <text x="145.0" y="276.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWS US-East VPC</text>
+    <text x="145" y="276.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">AWS US-East VPC</text>
   </g>
   <g id="eu_dc" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-router" transform="translate(383.6, 143.85) scale(0.9500000000000001)">
-  <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="17" y1="12" x2="17" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-router" transform="translate(383.6, 143.2) scale(0.95)">
+  <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="12" x2="17" y2="5" stroke="#FFC000" stroke-width="2" stroke-linecap="round"/>
   <circle cx="7" cy="4" r="1.2" fill="#FFC000"/>
   <circle cx="17" cy="4" r="1.2" fill="#FFC000"/>
   <circle cx="8" cy="16" r="1.2" fill="#FFC000"/>
   <circle cx="12" cy="16" r="1.2" fill="#FFC000"/>
   <circle cx="16" cy="16" r="1.2" fill="#FFC000"/>
 </g>
-    <text x="395.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">Europe On-Prem</tspan> <tspan x="395.0" dy="13.75">DC</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Europe</tspan> <tspan x="395" dy="14.4">On-Prem DC</tspan></text>
   </g>
   <g id="eu_vpc" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-vpc" transform="translate(383.6, 233.85) scale(0.9500000000000001)">
-  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-dasharray="3,3"/>
-  <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+    <rect x="335" y="230" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-vpc" transform="translate(383.6, 233.2) scale(0.95)">
+  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="3,3"/>
+  <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#FFC000"/>
 </g>
-    <text x="395.0" y="268.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="395.0" dy="0">AWS EU-Central</tspan> <tspan x="395.0" dy="13.75">VPC</tspan></text>
+    <text x="395" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">AWS</tspan> <tspan x="395" dy="14.4">EU-Central VPC</tspan></text>
   </g>
   <g id="ap_vpc" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-vpc" transform="translate(633.6, 149.6) scale(0.9500000000000001)">
-  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-dasharray="3,3"/>
-  <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-vpc" transform="translate(633.6, 150.4) scale(0.95)">
+  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="3,3"/>
+  <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#FFC000"/>
 </g>
-    <text x="645.0" y="186.4" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">AWS AP-East VPC</text>
+    <text x="645" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">AWS AP-East VPC</text>
   </g>
   <g id="cloud_wan" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-cloud" transform="translate(883.6, 143.85) scale(0.9500000000000001)">
-  <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linejoin="round"/>
+    <rect x="835" y="140" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-cloud" transform="translate(883.6, 143.2) scale(0.95)">
+  <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#FFC000" stroke-width="2" stroke-linejoin="round"/>
 </g>
-    <text x="895.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="895.0" dy="0">AWS Cloud WAN</tspan> <tspan x="895.0" dy="13.75">Backbone</tspan></text>
+    <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">AWS Cloud</tspan> <tspan x="895" dy="14.4">WAN Backbone</tspan></text>
   </g>
   <g id="sec_hub" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
-    <g class="icon icon-shield" transform="translate(1133.6, 143.85) scale(0.9500000000000001)">
-  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linejoin="round"/>
-  <polyline points="9,12 11,14 15,10" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1085" y="140" width="120" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-shield" transform="translate(1133.6, 143.2) scale(0.95)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#FFC000" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#FFC000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="1145.0" y="178.65" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.0" font-weight="500"><tspan x="1145.0" dy="0">Security Hub &amp;</tspan> <tspan x="1145.0" dy="13.75">Audit</tspan></text>
+    <text x="1145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="1145" dy="0">Security</tspan> <tspan x="1145" dy="14.4">Hub &amp; Audit</tspan></text>
   </g>
 </svg>

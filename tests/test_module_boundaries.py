@@ -16,22 +16,27 @@ import pytest
 PKG = Path(__file__).resolve().parent.parent / "src" / "diagrams_as_code"
 
 #: Lower number = lower layer. A new module must be classified here.
-LAYERS: dict[str, int] = {
+LAYERS: dict[str, float] = {
     "geometry": 0,
     "theme": 0,
     "context": 0,
     "icon_glyphs": 0,
     "rasterize": 0,
     "metrics": 0,
+    "text": 0,
+    "labels": 0.5,
+    "style": 0.5,
     "shapes": 1,
     "elements": 1,
     "connections": 2,
     "groups": 2,
     "constraints": 3,
     "router": 3,
+    "renderer_interactive": 3,
     "renderer_svg": 4,
     "bom": 4,
     "layout": 4,
+    "audit": 4,
     "diagram": 5,
     "output": 6,
     "cli": 7,

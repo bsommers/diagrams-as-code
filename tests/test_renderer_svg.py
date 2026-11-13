@@ -358,7 +358,7 @@ def test_text_wrapping_multiline_tspan() -> None:
     theme = get_theme("iiot_dark_gold")
     renderer = SVGRenderer(theme)
 
-    s = Shape("s_long", label="Cloud IdP (Okta/Entra)", icon="key", width=120, height=60).at(50, 50)
+    s = Shape("s_long", label="Cloud IdP (Okta/Entra)", icon="key", width=90, height=70).at(50, 50)
     svg = renderer.render(elements=[s], width=400, height=300)
     assert "<tspan" in svg
     assert "Cloud IdP" in svg
@@ -383,7 +383,10 @@ def test_label_position_bottom() -> None:
     assert "Hardware" in svg
     assert "Security Key" in svg
     # The text y coordinate must be strictly below the graphic tile (50 + 60 = 110)
-    assert 'y="124.0"' in svg or 'y="125.0"' in svg or 'y="126.0"' in svg or 'y="128.0"' in svg
+    import re
+
+    (text_el,) = re.findall(r'<text x="[\d.]+" y="([\d.]+)"[^>]*>(?:<tspan[^>]*>)?Hardware', svg)
+    assert 118.0 <= float(text_el) <= 130.0
 
 
 
@@ -709,7 +712,7 @@ def test_svg_badge_arc_length_centering_on_asymmetric_curve() -> None:
     # Find badge pill <rect rx="9.0" ... />
     rects = root.findall(".//svg:g[@class='badge']/svg:rect", ns)
     if not rects:
-        rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+        rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9"]
     assert len(rects) == 1, f"Expected 1 badge rect, found {len(rects)}"
     badge_rect = rects[0]
 
@@ -768,7 +771,7 @@ def test_svg_multi_segment_bezier_path_rendering() -> None:
     assert len(paths) == 1
     d = paths[0].attrib["d"]
 
-    assert d.startswith("M 150.0 75.0")
+    assert d.startswith("M 150 75 ")
     assert d.count("C ") == 2
     assert " L " not in d
 
@@ -942,13 +945,13 @@ def test_orthogonal_fillet_badge_placement() -> None:
     paths = [p for p in root.findall(".//svg:path", ns) if "marker-end" in p.attrib]
     assert len(paths) == 1
     d = paths[0].attrib["d"]
-    assert "Q 350.0 75.0" in d
-    assert "Q 350.0 200.0" in d
+    assert "Q 350 75," in d
+    assert "Q 350 200," in d
 
     # Verify badge rect is centered on longest segment midpoint ((150+350)/2, 75) = (250, 75)
     rects = root.findall(".//svg:g[@class='badge']/svg:rect", ns)
     if not rects:
-        rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+        rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9"]
     assert len(rects) == 1
     badge_rect = rects[0]
     bx = float(badge_rect.attrib["x"])
@@ -1074,7 +1077,7 @@ def test_svg_multi_segment_spline_badge_on_longest_segment() -> None:
     root = ET.fromstring(svg)
     ns = {"svg": "http://www.w3.org/2000/svg"}
 
-    rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    rects = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9"]
     assert len(rects) == 1
     badge = rects[0]
     bx = float(badge.attrib["x"])
@@ -1124,7 +1127,7 @@ def test_svg_render_deflected_spline_path() -> None:
     d = paths[0].attrib["d"]
 
     # Must start with M, have 2 C commands, and no L commands
-    assert d.startswith("M 150.0 125.0")
+    assert d.startswith("M 150 125 ")
     c_count = d.count("C ")
     assert c_count == 2
     assert " L " not in d

@@ -1,0 +1,17 @@
+{
+  "edge_through_node": 0,
+  "edge_through_own_endpoint": 0,
+  "tangent_arrival": 0,
+  "edge_on_edge": 0,
+  "edge_through_badge": 4,
+  "badge_over_node": 0,
+  "badge_over_badge": 0,
+  "badge_over_title": 0,
+  "edge_through_title": 1,
+  "title_overflow": 0,
+  "label_overflow": 0,
+  "node_overlap": 0,
+  "group_overlap": 0,
+  "content_clipped": 0,
+  "canvas_mostly_empty": 0
+}

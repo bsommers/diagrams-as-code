@@ -5,6 +5,7 @@ from dataclasses import dataclass, fields, is_dataclass
 from typing import Any, Literal, Optional, Union
 from diagrams_as_code.geometry import Anchor, Rect
 from diagrams_as_code import context
+from diagrams_as_code.style import Style
 
 
 class Constraint(MutableMapping):
@@ -209,10 +210,13 @@ class Element:
         width: float = 120.0,
         height: float = 60.0,
         metadata: Optional[dict[str, Any]] = None,
+        style: Optional[Style] = None,
         **kwargs: Any,
     ) -> None:
         self.id = id
         self.label = label
+        #: How this element is drawn, over the theme and enclosing groups.
+        self.style: Optional[Style] = style
         self.width = float(width)
         self.height = float(height)
         self.bounds: Rect = Rect(0.0, 0.0, self.width, self.height)
@@ -320,6 +324,7 @@ class Shape(Element):
         icon: Optional[str] = None,
         label_position: str = "auto",
         metadata: Optional[dict[str, Any]] = None,
+        fit_label: Optional[bool] = None,
         **kwargs: Any,
     ) -> None:
         super().__init__(
@@ -333,6 +338,9 @@ class Shape(Element):
         self.kind = kind
         self.icon = icon
         self.label_position = label_position
+        #: Grow the shape when its inside label cannot fit. ``None`` follows the
+        #: diagram's ``fit_labels`` setting; ``False`` keeps the size as given.
+        self.fit_label = fit_label
 
 
     def at(
@@ -470,6 +478,9 @@ class Shape(Element):
             kind=kind,
             icon=icon,
             metadata=metadata,
+            label_position=overrides.pop("label_position", self.label_position),
+            fit_label=overrides.pop("fit_label", self.fit_label),
+            style=overrides.pop("style", self.style),
             **overrides,
         )
         return cloned

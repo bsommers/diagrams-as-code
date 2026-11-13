@@ -17,8 +17,6 @@ OUTPUT_STEM = "mockup_slide"
 def diagram() -> Diagram:
     diag = Diagram(
         "IIoT Client Reference UNS",
-        width=1200,
-        height=700,
         theme="iiot_dark_gold",
     )
 

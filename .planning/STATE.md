@@ -1,54 +1,64 @@
 ---
-gsd_state_version: 1.0
-milestone: v0.8.0
-milestone_name: Curved & Bezier Edge Routing Engine
-current_phase: 11
-current_phase_name: Configuration Hierarchy, Layout & Extrema Integration
+gsd_state_version: "1.0"
+milestone: v0.8.4
+milestone_name: → v0.13.0)
 status: ready_to_plan
-stopped_at: Checkpoint saved: v0.8.3 released, docs refreshed, Phase 11 research complete
-last_updated: "2026-09-28T18:48:00.000Z"
-last_activity: 2026-09-28
-last_activity_desc: v0.8.3 shipped, Apache-2.0 license migrated, documentation suite refreshed with retro DOS logo, Phase 11 research complete
+stopped_at: Phase 14 complete at 338b560 (v0.10.0), gate green, 5 residual audit defects carried; Phase 15 not started; nothing pushed or tagged
+last_updated: "2026-11-13T03:56:00.736Z"
+state_head: 338b56095d23021d4ae337698a68bf6666be855f
 progress:
-  total_phases: 4
-  completed_phases: 3
-  total_plans: 10
-  completed_plans: 10
-  percent: 75
+  total_phases: 6
+  completed_phases: 2
+  total_plans: 0
+  completed_plans: 0
+  percent: 50
+last_activity: 2026-11-12
+current_phase: 15
+current_phase_name: Technical Drawing Primitives
+last_activity_desc: Phase 14 complete - style cascade, paper theme, fit-to-content canvas, badge/lane/port layout fixes, renderer split (727 tests)
 ---
 
 # Project State
 
 ## Project Reference
 
-See: `.planning/PROJECT.md` (updated 2026-09-24)
+See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
+`docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Core value:** Zero external binary dependencies producing deterministic, publication-grade architecture diagrams from clean Python code.  
-**Current focus:** Phase 11 (Configuration Hierarchy, Layout & Extrema Integration) — Ready to Plan
+**Current focus:** Phase 15 — Technical Drawing Primitives. Phases 12 (v0.8.4), 13 (v0.9.0) and 14 (v0.10.0) are complete on branch `feat/technical-figures-m1`, awaiting push/PR and tags.
 
-## Current Position
+## Phase 12 result
 
-Phase: 11 — Configuration Hierarchy, Layout & Extrema Integration
-Status: Ready to plan (Research complete in 11-RESEARCH.md)
-Last activity: 2026-09-28 — Shipped v0.8.3, Apache-2.0 license migration, refreshed documentation with retro DOS CRT logo, Phase 11 research complete (520 tests green, 0 diff)
+Audit across 92 diagrams, before -> after: tangent arrivals 47 -> 0, edges through own endpoint 1 -> 0, overlapping edges 48 -> 22, edges through a badge 196 -> 188, badges over nodes 95 -> 80, badges over badges 37 -> 28. Unchanged and owned by later phases: label overflow 29 (Phase 13), mostly-empty canvas 90 and the remaining badge/overlap counts (Phase 14).
 
-## Accumulated Context
+## Phase 13 result
 
-### Decisions
+Audit, v0.8.4 -> v0.9.0: label overflow 29 -> 0, badges over nodes 80 -> 21, badges over badges 28 -> 16, edges through a badge 188 -> 183. Remaining for Phase 14: overlapping edges 22, mostly-empty canvas 90, the remaining badge counts, and labels drawn over a shape's own artwork (server rack, database, cloud).
 
-- 2026-09-22: Onboarded GSD framework (`.planning/`) following completion of `v0.4.0`.
-- 2026-09-23: Shipped `v0.5.0` (Polish, Typed Constraints, Interactive SVG Pan-Zoom).
-- 2026-09-23: Shipped `v0.6.0` (CLI `--interactive`, Client-Side Search, Viewport Minimap Navigator).
-- 2026-09-24: Shipped `v0.7.0` (Obstacle-Aware Orthogonal Routing & Multi-Rank Layout Crossing Minimization).
-- 2026-09-24: Defined 4-phase roadmap for Milestone v0.8.0 (Phases 8–11) covering all 15 requirements.
-- 2026-09-28: Code review (v0.8.2..HEAD, 15 findings) and edge-routing architecture review (`docs/reviews/2026-09-28-edge-routing-architecture.md`). Folded review Batches 1–2 into Phase 11 (11-CONTEXT D-05–D-08 revised, D-13–D-19 added); Batches 4–5 deferred to a follow-up phase.
+Font spike outcome: the PNG backend (resvg-py) does honour italic, bold, serif and `textLength`. The earlier failed prototype was caused by a quoted family name inside a tspan fallback list, not a backend limit. Math is still drawn as outlines (STIX Two Math, OFL 1.1) for viewer independence and symbol coverage.
 
-### Blockers / Concerns
+Behaviour change to be aware of: shapes now grow when their label cannot fit (`fit_label=False` / `Diagram(fit_labels=False)` restores fixed sizes). One existing test needed `fit_label=False`; three renderer tests that asserted exact text markup were loosened to assert intent.
+
+Phase 14 outcome (v0.10.0, `338b560`): STYLE-01..04 and LAYOUT-01..04 done. Audit, v0.9.0 -> v0.10.0: mostly-empty canvas 90 -> 0 (root cause: 1200x800 default that could only grow), overlapping edges 22 -> 0, badges over nodes 21 -> 0, badges over badges 16 -> 0, edges through a badge 183 -> 4, title overflow 29 -> 0 (new check). The `paper` theme uses the Arial-compatible stack.
+
+Carried into Phase 15: the five remaining audit defects (4 edges through a badge in computer/01, datacenter/01, network_engineering/09; 1 edge through a group title in cloud/06), per-diagram font-size consistency (sibling nodes can get 13px and 12px labels), edges crossing unrelated group frames in tight hand-placed examples (not yet an audit count).
+
+## Decisions
+
+- 2026-11-12: v0.8.0 milestone closed; Phase 11 was merged via PRs #16–#18 while this file still said "ready to plan".
+- 2026-11-12: Fonts — math as vector outlines generated from an open-licensed font; ordinary text stays live SVG text measured from bundled metrics.
+- 2026-11-12: Fit-to-content canvas on by default; gallery output regenerated once in Phase 14.
+- 2026-11-12: Reference figure reproduced in style and structure with its slips corrected.
+- 2026-11-12: Vector PDF export in scope (Phase 17).
+- 2026-11-12: Stay on 0.x versions.
+- 2026-11-12: GSD used for roadmap, requirements, state and atomic commits only. Research, plan-check and Nyquist steps turned off in `config.json`. Visual gates (gallery audit, golden images, looking at renders) added to the phase gate in `ROADMAP.md`.
+
+## Blockers / Concerns
 
 - None.
 
 ## Session
 
-**Last session:** 2026-09-28T12:45:00.000Z
-**Stopped at:** Checkpoint saved at Phase 11 boundary (ready to plan)
-**Resume file:** .planning/phases/11-configuration-hierarchy-layout-extrema-integration/.continue-here.md
+**Last session:** 2026-11-13T03:56:00.722Z
+**Stopped at:** Phase 14 complete at 338b560 (v0.10.0), gate green, 5 residual audit defects carried; Phase 15 not started; nothing pushed or tagged
+**Resume file:** .planning/CHECKPOINT.md
