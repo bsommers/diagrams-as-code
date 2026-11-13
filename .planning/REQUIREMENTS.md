@@ -47,15 +47,15 @@
 
 ### Phase 15 — Technical Drawing Primitives
 
-- [ ] **PRIM-01**: `Text`, `Caption`, `Bracket`.
-- [ ] **PRIM-02**: `Polygon`, `Polyline`, `Path`.
-- [ ] **PRIM-03**: `Band` layer container (dashed, title, side notes).
-- [ ] **PRIM-04**: Shapes nested in shapes; double border.
-- [ ] **PRIM-05**: Edge stroke weight, arrowhead styles and sizes, two-way arrows.
-- [ ] **PRIM-06**: Edge endpoints at points and fractional anchors; shared-trunk fan-out; leaders; free splines; ellipsis connector.
-- [ ] **PRIM-07**: Projected solids (oblique, isometric) with hidden-edge dashing and translucent faces.
-- [ ] **PRIM-08**: Z-order control.
-- [ ] **PRIM-09**: `align()`, `distribute()`, grid snap, px/pt/mm lengths.
+- [x] **PRIM-01**: `Text`, `Caption`, `Bracket`.
+- [x] **PRIM-02**: `Polygon`, `Polyline`, `Path`.
+- [x] **PRIM-03**: `Band` layer container (dashed, title, side notes).
+- [x] **PRIM-04**: Shapes nested in shapes; double border.
+- [x] **PRIM-05**: Edge stroke weight, arrowhead styles and sizes, two-way arrows.
+- [x] **PRIM-06**: Edge endpoints at points and fractional anchors; shared-trunk fan-out; leaders; free splines; ellipsis connector.
+- [x] **PRIM-07**: Projected solids (oblique, isometric) with hidden-edge dashing and translucent faces.
+- [x] **PRIM-08**: Z-order control.
+- [x] **PRIM-09**: `align()`, `distribute()`, grid snap, px/pt/mm lengths.
 
 ### Phase 16 — Technical Examples & Visual Regression
 
