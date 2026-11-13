@@ -3,7 +3,7 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: ready_to_plan
-stopped_at: Phase 15 complete (v0.11.0) on branch feat/phase15-drawing-primitives, gate green, audit all zero; Phase 16 not started; Phases 12-14 are in PR 19; Phase 15 branch not pushed; no tags
+stopped_at: Phase 16 complete (v0.12.0) on branch feat/phase16-technical-examples (stacked on feat/phase15-drawing-primitives, PR 20), gate green, 935 tests, lint 0 findings; PR 19 merged; Phase 16 branch not pushed; no tags; Phase 17 not started
 last_updated: "2026-11-13T12:00:00.000Z"
 state_head: 338b56095d23021d4ae337698a68bf6666be855f
 progress:
@@ -13,9 +13,9 @@ progress:
   completed_plans: 0
   percent: 67
 last_activity: 2026-11-13
-current_phase: 16
-current_phase_name: Technical Examples & Visual Regression
-last_activity_desc: Phase 15 complete - drawing primitives, edge options, solids, bands, nesting, z-order, arranging (881 tests)
+current_phase: 17
+current_phase_name: Vector PDF Export
+last_activity_desc: Phase 16 complete - eleven technical figures, lint command, golden images, technical-figures guide and math reference (935 tests)
 ---
 
 # Project State
@@ -25,7 +25,7 @@ last_activity_desc: Phase 15 complete - drawing primitives, edge options, solids
 See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
 `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Current focus:** Phase 16 — Technical Examples & Visual Regression. Phases 12 (v0.8.4), 13 (v0.9.0) and 14 (v0.10.0) are in PR #19 from `feat/technical-figures-m1`. Phase 15 (v0.11.0) is complete on `feat/phase15-drawing-primitives`, stacked on that branch and not yet pushed. Tags follow the merges.
+**Current focus:** Phase 17 — Vector PDF Export. Phases 12–14 (v0.8.4, v0.9.0, v0.10.0) are merged to master via PR #19. Phase 15 (v0.11.0) is PR #20 from `feat/phase15-drawing-primitives`. Phase 16 (v0.12.0) is complete on `feat/phase16-technical-examples`, stacked on the Phase 15 branch and not yet pushed. Tags follow the merges.
 
 ## Phase 12 result
 
@@ -51,6 +51,14 @@ Design points Phase 16 and 17 rely on: every primitive draws itself as `PathItem
 
 Known limits: serif text is measured with the sans metrics and pinned with `textLength`; a cutting plane is drawn over the whole solid rather than hidden behind its near faces; overlapping 1 px trunk lines look heavier unless `pixel_snap=True`; `tests/test_domain_examples.py` still hard-codes 88 scripts / 8 domains (now scoped to those domains).
 
+## Phase 16 result
+
+v0.12.0. EX-01, EX-02, VIS-01, VIS-02, DOC-01 done. `examples/technical/01..11` (the reference reproduction and ten more), each lint-clean with a golden image in `tests/golden/technical/`. `audit.audit_findings()` returns named `Finding`s; `diagrams-as-code lint` prints them and exits 1 on any. `tools/golden_images.py` renders at 800 px with only the fonts in `tests/fixtures/fonts` (Latin subset of Arimo, OFL 1.1) and compares within a tolerance; the renders were byte-identical on macOS arm64, Linux arm64 and Linux x86-64. Docs: `docs/technical-figures.md`, `docs/math-markup.md`. 935 tests.
+
+Engine fixes found by writing the figures: `\n` inside math was treated as a line break (`\nabla`, `\neq`, `\nu`); a caption wider than the drawing was clipped on the left. Audit now exempts a line ending at a bare point inside a shape, a bracket beside shapes nested in a panel, and free outlines (path, polygon, polyline).
+
+Gaps the figure authors worked around, candidates for later: no circle/ellipse shape kind (an unknown `kind` silently draws a box); no self-loop helper; no text-beside-the-line edge label (figures place `text()` by hand); anchor names `left_center`/`right_center` versus `top_center` with no aliases; no math accents (`\hat`, `\bar`, `\overline`), `\mathcal`, `\triangle`; no monospace text; no dimension-line or circle/arc helper; projected solid corners are not exposed for attaching lines; the audit tests a solid's bounding rectangle, not its outline; a translucent filled outline declared before edges is painted over them unless given `z=-1`; edge-label badge text size is not adjustable.
+
 ## Decisions
 
 - 2026-11-12: v0.8.0 milestone closed; Phase 11 was merged via PRs #16–#18 while this file still said "ready to plan".
@@ -68,5 +76,5 @@ Known limits: serif text is measured with the sans metrics and pinned with `text
 ## Session
 
 **Last session:** 2026-11-13T03:56:00.722Z
-**Stopped at:** Phase 14 complete at 338b560 (v0.10.0), gate green, 5 residual audit defects carried; Phase 15 not started; nothing pushed or tagged
+**Stopped at:** Phase 16 complete (v0.12.0), gate green; PR 19 merged, PR 20 open (Phase 15), Phase 16 branch local only; no tags; Phase 17 not started
 **Resume file:** .planning/CHECKPOINT.md

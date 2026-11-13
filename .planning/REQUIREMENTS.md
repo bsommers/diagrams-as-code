@@ -59,11 +59,11 @@
 
 ### Phase 16 — Technical Examples & Visual Regression
 
-- [ ] **EX-01**: Reproduction of the reference figure, slips corrected.
-- [ ] **EX-02**: Ten further technical figures.
-- [ ] **VIS-01**: Golden-image regression tests.
-- [ ] **VIS-02**: `diagrams-as-code lint`.
-- [ ] **DOC-01**: Technical-figures guide and math markup reference.
+- [x] **EX-01**: Reproduction of the reference figure, slips corrected.
+- [x] **EX-02**: Ten further technical figures.
+- [x] **VIS-01**: Golden-image regression tests.
+- [x] **VIS-02**: `diagrams-as-code lint`.
+- [x] **DOC-01**: Technical-figures guide and math markup reference.
 
 ### Phase 17 — Vector PDF Export
 
