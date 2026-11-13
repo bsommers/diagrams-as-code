@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-12 (v0.10.0)  
+**Last Updated:** 2026-11-13 (v0.11.0)  
 
 ---
 
@@ -239,6 +239,14 @@
 - **Features:** Pinned overview minimap thumbnail widget rendered in the bottom-right corner of interactive SVG canvases. Features scaled live diagram rendering (`<use href="#diagram-content">`) under a clipped viewport, a responsive viewport rectangle (`#minimap-viewport`) tracking current view bounds during zoom and pan, and smooth click-and-drag navigation to pan across extensive architectural topologies.
 - **Verification:** `uv run pytest tests/test_renderer_svg.py`
 
+---
 
+### 2.16 Technical Drawing Primitives
 
-
+#### `CAP-DIAG-PRIMITIVES`: Technical Drawing Primitives
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.11.0`
+- **Python API:** `diagrams_as_code.primitives`, `diagrams_as_code.solids`, `diagrams_as_code.drawing`, `diagrams_as_code.arrange`
+- **Exports:** `Text`, `Caption`, `Bracket`, `Polygon`, `Polyline`, `Path`, `Band`, `SolidShape`, `Solid`, `Projection`, `oblique`, `isometric`, `Junction`, `AnchorRef`, `PathItem`, `TextItem`, `align`, `distribute`, `mm`, `pt`, `to_px`; `Diagram.text()`, `.caption()`, `.bracket()`, `.polygon()`, `.polyline()`, `.path()`, `.band()`, `.point()`, `.solid()`, `.cuboid()`, `.leader()`, `.fan_out()`, `.fan_in()`
+- **Features:** Free text, captions and brackets; polygons, polylines and SVG paths; dashed layer bands with side notes; shapes nested in shapes (`shape.inside()`) and double borders (`Style(double=)`); edge stroke weight, seven arrowhead styles, two-way arrows and ellipsis connectors; edge ends at fractional side anchors (`box.anchor("right", 0.25)`) or bare points, shared-trunk fan-out, leaders and splines through given points; convex solids in oblique and isometric projection with hidden-edge dashing, translucent faces and cutting planes; z-order (`z=`, `obstacle=`); `align()`, `distribute()`, `Diagram(grid=)` and lengths in px, pt, mm, cm and in. Nine focused figures in `examples/primitives/`.
+- **Verification:** `uv run pytest tests/test_primitives.py tests/test_edge_options.py tests/test_solids.py tests/test_drawing.py tests/test_primitive_examples.py`

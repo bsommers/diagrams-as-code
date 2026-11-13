@@ -178,6 +178,24 @@ Edge-to-cloud UNS architectures, high-availability broker clusters, Sparkplug B 
 
 ---
 
+## 9. Technical Drawing Primitives (`examples/primitives/`)
+
+Nine focused figures, one per primitive family, all in the `paper` theme. They are separate from the 88 domain diagrams above.
+
+| # | Script & Output | Shows |
+|---|---|---|
+| 01 | [`01_text_caption_bracket.py`](primitives/01_text_caption_bracket.py) | Free text with markup and math, a caption, curly, square and round brackets |
+| 02 | [`02_polygon_polyline_path.py`](primitives/02_polygon_polyline_path.py) | Polygons, a polyline, SVG path data with curves and arcs |
+| 03 | [`03_layer_bands.py`](primitives/03_layer_bands.py) | Dashed layer bands with titles and side notes |
+| 04 | [`04_nested_and_double_border.py`](primitives/04_nested_and_double_border.py) | Shapes nested three deep, double borders |
+| 05 | [`05_edge_weights_and_arrowheads.py`](primitives/05_edge_weights_and_arrowheads.py) | Six arrowhead styles, line weights, a two-way arrow, an ellipsis |
+| 06 | [`06_anchors_leaders_splines.py`](primitives/06_anchors_leaders_splines.py) | Fractional anchors, a point endpoint, a shared trunk, leaders, a spline |
+| 07 | [`07_projected_solids.py`](primitives/07_projected_solids.py) | Cuboids in oblique and isometric projection, a polyhedron with a cutting plane, a prism |
+| 08 | [`08_z_order.py`](primitives/08_z_order.py) | A backdrop under the edges, stacking by `z`, an edge drawn over a box |
+| 09 | [`09_align_distribute_units.py`](primitives/09_align_distribute_units.py) | `align()`, `distribute()`, grid snap, lengths in pt and mm |
+
+---
+
 ## Executing the Gallery
 
 To regenerate all diagrams and documentation artifacts across all domains:
@@ -189,6 +207,6 @@ uv run diagrams-as-code render examples --out output --format svg,png,bom
 To run automated verification tests across the entire gallery:
 
 ```bash
-uv run pytest tests/test_domain_examples.py
+uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py
 ```
 
