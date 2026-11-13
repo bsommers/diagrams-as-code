@@ -8,6 +8,7 @@ entry point; ``tools/audit_gallery.py`` runs it over every example.
 from __future__ import annotations
 
 from collections import Counter
+from dataclasses import dataclass
 from typing import Any, Iterator, Optional
 
 from diagrams_as_code.connections import may_share_a_line
@@ -107,15 +108,51 @@ def label_overflows(shape: Any) -> bool:
     return not node_label(shape).fits
 
 
+@dataclass(frozen=True)
+class Finding:
+    """One visual defect: its kind (a name in ``DEFECTS``) and what it is about."""
+
+    kind: str
+    detail: str
+
+    def __str__(self) -> str:
+        return f"{self.kind}: {self.detail}"
+
+
+def _name(el: Any) -> str:
+    label = " ".join((getattr(el, "label", "") or "").split())
+    if len(label) > 40:
+        label = label[:37] + "..."
+    return f"'{label}'" if label else str(getattr(el, "id", "?"))
+
+
+def _edge_name(edge: Any) -> str:
+    return f"{_name(edge.source)} -> {_name(edge.target)}"
+
+
 def audit_diagram(diagram: Any) -> Counter[str]:
     """Count the visual defects in ``diagram`` (solving it first if needed)."""
+    return Counter(f.kind for f in audit_findings(diagram))
+
+
+def audit_findings(diagram: Any) -> list[Finding]:
+    """Every visual defect in ``diagram``, each named so it can be found and fixed."""
     diagram._ensure_solved()
-    counts: Counter[str] = Counter()
-    # Annotations edges may cross (a caption, a junction point) are not nodes.
-    shapes = [s for s in diagram.shapes if getattr(s, "obstacle", True)]
+    found: list[Finding] = []
+
+    def add(kind: str, detail: str) -> None:
+        found.append(Finding(kind, detail))
+
+    # Annotations edges may cross (a caption, a junction point) are not nodes. Nor
+    # are free outlines (a path, a polygon, a polyline): they are drawing, laid
+    # over one another and written on by design, and only their bounding boxes
+    # are known here.
+    shapes = [
+        s for s in diagram.shapes
+        if getattr(s, "obstacle", True) and not getattr(s, "self_placed", False)
+    ]
     # A shape holding others is a frame: badges and lines inside it are in place.
     solid = [s for s in shapes if not getattr(s, "children", None)]
-    boxes = [_box(s.bounds) for s in solid]
 
     def _within(inner: Any, outer: Any) -> bool:
         parent = getattr(inner, "parent", None)
@@ -125,21 +162,40 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             parent = getattr(parent, "parent", None)
         return False
 
+    def _spans_inside(el: Any, outer: Any) -> bool:
+        """True if ``el`` is a bracket along things that are all in ``outer``."""
+        spans = [c for c in getattr(el, "constraints", []) if getattr(c, "type", "") == "span"]
+        return bool(spans) and all(
+            t is None or _within(t, outer) for c in spans for t in (c.target, c.other)
+        )
+
+    def _pinned_in(end: Any, shape: Any) -> bool:
+        """True if ``end`` is a bare point set inside ``shape``: a line drawn to a spot on it."""
+        b = end.bounds
+        r, c = shape.bounds, b.center
+        return b.width <= 0.0 and b.height <= 0.0 and r.left <= c.x <= r.right and r.top <= c.y <= r.bottom
+
     flat: list[tuple[Any, list[tuple[Point, Point]]]] = []
     badges: list[tuple[Any, tuple[float, float, float, float]]] = []
     for edge in diagram.edges:
         path = diagram.routes.get(edge)
         if path is None:
-            counts["edge_through_node"] += 1
+            add("edge_through_node", f"{_edge_name(edge)} has no route")
             continue
         ends = (edge.source, edge.target)
         others = [
-            s.bounds
+            s
             for s in shapes
-            if s not in ends and not any(_within(e, s) or _within(s, e) for e in ends)
+            if s not in ends
+            and not any(_within(e, s) or _within(s, e) or _pinned_in(e, s) for e in ends)
         ]
-        for problem in edge_problems(edge, path, others):
-            counts[problem] += 1
+        for problem in edge_problems(edge, path, [s.bounds for s in others]):
+            detail = _edge_name(edge)
+            if problem == "edge_through_node":
+                segs = list(zip(flatten(path), flatten(path)[1:]))
+                hit = [s for s in others if any(segment_enters(a, b, s.bounds) for a, b in segs)]
+                detail += " crosses " + ", ".join(_name(s) for s in hit)
+            add(problem, detail)
         pts = flatten(path)
         flat.append((edge, list(zip(pts, pts[1:]))))
         rect = edge_badge_rect(edge, path)
@@ -152,10 +208,12 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             if may_share_a_line(e1, e2, links):
                 continue
             if any(_shared_run(a, b) > 6.0 for a in segs1 for b in segs2):
-                counts["edge_on_edge"] += 1
+                add("edge_on_edge", f"{_edge_name(e1)} runs along {_edge_name(e2)}")
 
     for edge, bb in badges:
-        counts["badge_over_node"] += sum(1 for box in boxes if _overlap(bb, box))
+        for s in solid:
+            if _overlap(bb, _box(s.bounds)):
+                add("badge_over_node", f"label '{edge.label}' covers {_name(s)}")
         inner = Rect(bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1])
         for other, segs in flat:
             # A line under a badge that carries that line's own label is labelled
@@ -163,49 +221,55 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             if other is edge or other.label == edge.label:
                 continue
             if any(segment_enters(a, b, inner, 2.0) for a, b in segs):
-                counts["edge_through_badge"] += 1
+                add("edge_through_badge", f"{_edge_name(other)} crosses label '{edge.label}'")
     titles = [(g, t) for g in diagram.groups for t in [group_title_rect(g)] if t is not None]
-    for _, bb in badges:
-        counts["badge_over_title"] += sum(1 for _, t in titles if _overlap(bb, _box(t)))
-    for _, segs in flat:
-        counts["edge_through_title"] += sum(
-            1 for _, t in titles if any(segment_enters(p, q, t, 1.0) for p, q in segs)
-        )
+    for edge, bb in badges:
+        for g, t in titles:
+            if _overlap(bb, _box(t)):
+                add("badge_over_title", f"label '{edge.label}' covers the title of {_name(g)}")
+    for edge, segs in flat:
+        for g, t in titles:
+            if any(segment_enters(p, q, t, 1.0) for p, q in segs):
+                add("edge_through_title", f"{_edge_name(edge)} crosses the title of {_name(g)}")
     # A title wider than its group runs out over the frame.
-    counts["title_overflow"] += sum(1 for g, t in titles if t.right > g.bounds.right - 4.0)
+    for g, t in titles:
+        if t.right > g.bounds.right - 4.0:
+            add("title_overflow", f"the title of {_name(g)} is wider than its frame")
     for i in range(len(badges)):
         for j in range(i + 1, len(badges)):
             if _overlap(badges[i][1], badges[j][1]):
-                counts["badge_over_badge"] += 1
+                add("badge_over_badge", f"labels '{badges[i][0].label}' and '{badges[j][0].label}' overlap")
 
     for i, s1 in enumerate(shapes):
         for s2 in shapes[i + 1 :]:
             if _within(s1, s2) or _within(s2, s1):
                 continue  # nested on purpose
+            if _spans_inside(s1, s2) or _spans_inside(s2, s1):
+                continue  # a bracket beside shapes nested in the other
             if _overlap(_box(s1.bounds), _box(s2.bounds)):
-                counts["node_overlap"] += 1
-
-    _inside = _within
+                add("node_overlap", f"{_name(s1)} overlaps {_name(s2)}")
 
     # Two groups, or a group and a node outside it, that cover each other.
     groups = list(diagram.groups)
     for i, g1 in enumerate(groups):
         for g2 in groups[i + 1 :]:
-            if not _inside(g1, g2) and not _inside(g2, g1) and _overlap(_box(g1.bounds), _box(g2.bounds)):
-                counts["group_overlap"] += 1
+            if not _within(g1, g2) and not _within(g2, g1) and _overlap(_box(g1.bounds), _box(g2.bounds)):
+                add("group_overlap", f"groups {_name(g1)} and {_name(g2)} overlap")
         for s in shapes:
-            if not _inside(s, g1) and _overlap(_box(g1.bounds), _box(s.bounds)):
-                counts["group_overlap"] += 1
+            if not _within(s, g1) and not _spans_inside(s, g1) and _overlap(_box(g1.bounds), _box(s.bounds)):
+                add("group_overlap", f"{_name(s)} overlaps group {_name(g1)} without being in it")
 
-    counts["label_overflow"] += sum(
-        1 for s in shapes if not getattr(s, "annotation", False) and label_overflows(s)
-    )
+    for s in shapes:
+        if not getattr(s, "annotation", False) and label_overflows(s):
+            add("label_overflow", f"the label of {_name(s)} does not fit its shape")
 
     extents = [s.bounds for s in diagram.shapes] + [g.bounds for g in diagram.groups]
     if extents:
         right, bottom = max(r.right for r in extents), max(r.bottom for r in extents)
         if right > diagram.width + EPS or bottom > diagram.height + EPS:
-            counts["content_clipped"] += 1
+            add("content_clipped", f"content reaches ({right:.0f}, {bottom:.0f}) on a "
+                f"{diagram.width:.0f} x {diagram.height:.0f} canvas")
         if right < diagram.width * 0.6 or bottom < diagram.height * 0.6:
-            counts["canvas_mostly_empty"] += 1
-    return Counter({k: v for k, v in counts.items() if v})
+            add("canvas_mostly_empty", f"content ends at ({right:.0f}, {bottom:.0f}) on a "
+                f"{diagram.width:.0f} x {diagram.height:.0f} canvas")
+    return found

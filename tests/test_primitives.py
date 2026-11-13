@@ -469,3 +469,16 @@ def test_sizes_and_positions_accept_units():
     with Diagram("t", theme="paper") as d:
         s = d.shape("S", "72pt", "1in", fit_label=False).at("25.4mm", "2.54cm")
     assert (s.bounds.x, s.bounds.y, s.bounds.width, s.bounds.height) == pytest.approx((96, 96, 96, 96))
+
+
+def test_a_caption_wider_than_the_drawing_is_not_clipped():
+    with Diagram("t", theme="paper") as d:
+        d.shape("A", 80, 40).at(40, 40)
+        caption = d.caption("A caption that is a good deal wider than the one small box drawn above it")
+    d.solve()
+    assert caption.bounds.width > 300
+    assert caption.bounds.x >= 0.0
+    assert caption.bounds.right <= d.width
+    # Still centred under the drawing it describes.
+    box = next(s for s in d.shapes if s.label == "A")
+    assert abs(caption.bounds.center.x - box.bounds.center.x) < 0.5

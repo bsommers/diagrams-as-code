@@ -171,6 +171,7 @@ def run_layout(diagram: Any) -> None:
     # 2. Frame & Grow Canvas
     _frame(elements, groups, routes)
     _place_floating(diagram, elements, routes)
+    _frame(elements, groups, routes, floating=True)  # a caption wider than the drawing
     if getattr(diagram, "pixel_snap", False):
         _snap_to_pixels(elements, diagram.edges, routes)
     keep_clear = [
@@ -473,13 +474,18 @@ def _frame(
     elements: list[Element],
     groups: list[Group],
     routes: Optional[dict[Any, RoutedPath]] = None,
+    floating: bool = False,
 ) -> None:
-    """Translate the canvas when content or routes have negative or tight coordinates."""
+    """Translate the canvas when content or routes have negative or tight coordinates.
+
+    Floating elements (captions) are placed after the first framing; pass
+    ``floating=True`` to frame again with them included.
+    """
     if routes is None:
         routes = {}
     roots = [
         e for e in elements
-        if getattr(e, "parent", None) is None and not getattr(e, "floating", False)
+        if getattr(e, "parent", None) is None and (floating or not getattr(e, "floating", False))
     ]
     if not roots and not routes:
         return
