@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841 517" width="841" height="517">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 47 220 L 72.8 220" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 80 220 L 71 223.6 L 71 216.4 Z" fill="#000000" />
+  <path d="M 220 220 L 332.8 220" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 340 220 L 331 223.6 L 331 216.4 Z" fill="#000000" />
+  <path d="M 480 220 L 622.8 220" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 630 220 L 621 223.6 L 621 216.4 Z" fill="#000000" />
+  <path d="M 700 245 L 700 367.8" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 700 375 L 696.4 366 L 703.6 366 Z" fill="#000000" />
+  <path d="M 630 400 L 487.2 400" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 480 400 L 489 396.4 L 489 403.6 Z" fill="#000000" />
+  <path d="M 410 245 L 410 367.8" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 410 375 L 406.4 366 L 413.6 366 Z" fill="#000000" />
+  <path d="M 382 195 L 382 102.2" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 382 95 L 385.6 104 L 378.4 104 Z" fill="#000000" />
+  <path d="M 438 95 L 438 187.8" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 438 195 L 434.4 186 L 441.6 186 Z" fill="#000000" />
+  <path d="M 672 195 C 670 187.5, 655.33 160.5, 660 150 C 664.67 139.5, 686.67 132, 700 132 C 713.33 132, 735.33 139.5, 740 150 C 744.67 160.5, 730 187.5, 729.8 188.25" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 728 195 L 727.29 185.33 L 734.15 187.51 Z" fill="#000000" />
+  <g id="shape_1">
+    <rect x="33" y="213" width="14" height="14" rx="7" fill="#000000" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_2">
+    <rect x="80" y="195" width="140" height="50" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="150" y="224.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Idle</text>
+  </g>
+  <g id="shape_3">
+    <rect x="340" y="195" width="140" height="50" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="410" y="224.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Connecting</text>
+  </g>
+  <g id="shape_4">
+    <rect x="630" y="195" width="140" height="50" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="700" y="224.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Established</text>
+  </g>
+  <g id="shape_5">
+    <rect x="340" y="45" width="140" height="50" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="410" y="74.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Backoff</text>
+  </g>
+  <g id="shape_6">
+    <rect x="630" y="375" width="140" height="50" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="700" y="404.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Closing</text>
+  </g>
+  <g id="shape_7">
+    <rect x="340" y="375" width="140" height="50" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <rect x="344" y="379" width="132" height="42" rx="21" fill="none" stroke="#000000" stroke-width="1" />
+    <text x="410" y="404.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Closed</text>
+  </g>
+  <g id="text_8">
+    <text x="224.64" y="208.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="26.7" lengthAdjust="spacingAndGlyphs">open</text>
+    <text x="251.33" y="208.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="64.03" lengthAdjust="spacingAndGlyphs"> / send SYN</text>
+  </g>
+  <g id="text_9">
+    <text x="494.81" y="208.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="56.36" lengthAdjust="spacingAndGlyphs">SYN+ACK</text>
+    <text x="551.16" y="208.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="64.03" lengthAdjust="spacingAndGlyphs"> / send ACK</text>
+  </g>
+  <g id="text_10">
+    <text x="649.47" y="118.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="23.36" lengthAdjust="spacingAndGlyphs">data</text>
+    <text x="672.83" y="118.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="3.33" lengthAdjust="spacingAndGlyphs"> </text>
+    <path d="M299 -196V-164H169V704H299V736H90V-196Z" transform="translate(676.16 118.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M394 468 354 259C339 176 301 55 218 55C170 55 153 99 153 151C153 196 166 249 175 284L222 476H200L53 465V437C53 437 83 440 99 440C117 440 123 426 123 409C123 389 116 365 113 354L93 278C82 236 71 183 71 135C71 58 100 -9 186 -9C278 -9 314 45 348 131H353C352 120 351 105 351 92C351 36 376 -9 442 -9C615 -9 702 206 702 358C702 429 671 479 626 479C605 479 588 464 588 437C588 393 649 369 649 299C649 206 600 55 480 55C441 55 417 80 417 142C417 178 424 223 424 223L473 468Z" transform="translate(680.35 118.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M650 255V265L71 547V478L513 260L71 42V-25Z" transform="translate(692.41 118.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(704.38 118.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M259 -196V736H50V704H180V-164H50V-196Z" transform="translate(710.32 118.63) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="714.51" y="118.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="36.02" lengthAdjust="spacingAndGlyphs"> / send</text>
+  </g>
+  <g id="text_11">
+    <text x="370" y="141.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" text-anchor="end">timeout</text>
+    <path d="M299 -196V-164H169V704H299V736H90V-196Z" transform="translate(316.7 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(320.89 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M650 -25V42L207 260L650 478V547L71 265V255Z" transform="translate(331.01 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(342.98 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M185 357C214 384 258 421 310 421C356 421 390 399 390 314V116C390 46 384 29 313 29V0H550V29C478 29 473 47 473 116V359C506 387 547 421 588 421C635 421 674 399 674 308V116C674 55 671 29 603 29V0H829V29C760 29 757 53 757 116V320C757 441 706 485 628 485C575 485 524 456 469 402H465C445 450 411 485 354 485C286 485 240 448 186 401H182V482H158L33 453V424C33 424 45 426 60 426C88 426 102 417 102 381V101C102 41 95 29 32 29V0H260V29C198 29 185 41 185 97Z" transform="translate(350.12 159.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M308 62C314 18 324 -5 368 -5C419 -5 443 16 476 64L461 80C447 65 433 55 414 55C393 55 384 63 384 104V331C384 435 343 485 234 485C125 485 58 431 58 375C58 342 80 327 100 327C128 327 144 342 144 373C144 433 154 454 211 454C271 454 301 421 301 334V290C215 263 38 237 38 105C38 41 80 -7 157 -7C221 -7 257 21 304 62ZM301 92C267 64 231 48 198 48C155 48 126 79 126 129C126 207 210 234 301 257Z" transform="translate(357.28 159.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M482 0V29C445 29 430 47 402 87L279 261L385 397C408 426 431 444 465 444V473H300V445C332 445 341 436 341 421C341 405 332 390 305 353L258 285H254L230 329C196 385 178 406 178 422C178 437 194 445 226 445V473H11V444C52 444 64 434 99 384L203 235L83 79C50 40 32 29 -2 29V0H165V29C132 29 120 33 120 44C120 52 134 70 144 86L226 204H230L250 169L313 72C318 64 320 58 320 51C320 34 308 29 273 29V0Z" transform="translate(361.31 159.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M259 -196V736H50V704H180V-164H50V-196Z" transform="translate(365.81 156.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_12">
+    <text x="450" y="141.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="24.01" lengthAdjust="spacingAndGlyphs">after</text>
+    <text x="474.01" y="141.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="3.33" lengthAdjust="spacingAndGlyphs"> </text>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(477.35 141.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(483.65 137.31) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(488.87 141.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(493.29 144.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="450" y="156.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="6.67" lengthAdjust="spacingAndGlyphs">/ </text>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(456.67 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50ZM183 414C183 448 161 478 122 478C85 478 62 449 62 415C62 381 81 356 121 356C161 356 183 383 183 414Z" transform="translate(466.78 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(469.72 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(481.69 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(491.14 156.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(502.45 156.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_13">
+    <text x="422" y="306.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" text-anchor="start">timeout</text>
+    <path d="M299 -196V-164H169V704H299V736H90V-196Z" transform="translate(422 321.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(426.19 321.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M650 332V342L71 623V557L514 337L71 116V52ZM650 -106V-38H71V-106Z" transform="translate(436.3 321.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(448.27 321.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M185 357C214 384 258 421 310 421C356 421 390 399 390 314V116C390 46 384 29 313 29V0H550V29C478 29 473 47 473 116V359C506 387 547 421 588 421C635 421 674 399 674 308V116C674 55 671 29 603 29V0H829V29C760 29 757 53 757 116V320C757 441 706 485 628 485C575 485 524 456 469 402H465C445 450 411 485 354 485C286 485 240 448 186 401H182V482H158L33 453V424C33 424 45 426 60 426C88 426 102 417 102 381V101C102 41 95 29 32 29V0H260V29C198 29 185 41 185 97Z" transform="translate(455.41 324.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M308 62C314 18 324 -5 368 -5C419 -5 443 16 476 64L461 80C447 65 433 55 414 55C393 55 384 63 384 104V331C384 435 343 485 234 485C125 485 58 431 58 375C58 342 80 327 100 327C128 327 144 342 144 373C144 433 154 454 211 454C271 454 301 421 301 334V290C215 263 38 237 38 105C38 41 80 -7 157 -7C221 -7 257 21 304 62ZM301 92C267 64 231 48 198 48C155 48 126 79 126 129C126 207 210 234 301 257Z" transform="translate(462.57 324.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M482 0V29C445 29 430 47 402 87L279 261L385 397C408 426 431 444 465 444V473H300V445C332 445 341 436 341 421C341 405 332 390 305 353L258 285H254L230 329C196 385 178 406 178 422C178 437 194 445 226 445V473H11V444C52 444 64 434 99 384L203 235L83 79C50 40 32 29 -2 29V0H165V29C132 29 120 33 120 44C120 52 134 70 144 86L226 204H230L250 169L313 72C318 64 320 58 320 51C320 34 308 29 273 29V0Z" transform="translate(466.6 324.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M259 -196V736H50V704H180V-164H50V-196Z" transform="translate(471.11 321.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_14">
+    <text x="712" y="314.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="28.01" lengthAdjust="spacingAndGlyphs">close</text>
+    <text x="740.01" y="314.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="58.69" lengthAdjust="spacingAndGlyphs"> / send FIN</text>
+  </g>
+  <g id="text_15">
+    <text x="505.77" y="388.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="24.67" lengthAdjust="spacingAndGlyphs">ACK</text>
+    <text x="530.44" y="388.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="3.33" lengthAdjust="spacingAndGlyphs"> </text>
+    <path d="M604 549H531L319 106L105 549H32L314 -30H324Z" transform="translate(533.78 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M299 -196V-164H169V704H299V736H90V-196Z" transform="translate(544.74 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(548.93 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M650 255V265L71 547V478L513 260L71 42V-25Z" transform="translate(556.32 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(568.29 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M850 0V30C778 30 762 46 762 119V536C762 610 778 627 849 627V657H659L449 154H445L234 657H30V627C109 627 123 610 123 535V146C123 43 109 30 28 30V0H263V30C187 30 172 43 172 146V549H176L412 0H436L669 550H673V119C673 46 661 30 584 30V0Z" transform="translate(576.23 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M440 467 433 667H407C402 646 392 638 376 638C352 638 330 669 239 669C135 668 49 612 49 507C49 402 130 354 210 308C292 261 376 226 376 138C376 62 329 32 254 32C152 31 101 63 66 201H35L44 -15H75C76 5 88 18 102 18C125 18 164 -12 268 -12C384 -12 471 51 471 167C471 286 372 331 283 381C208 424 136 460 136 535C136 597 175 629 243 629C344 630 382 577 410 467Z" transform="translate(586.97 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M568 195H536C497 79 481 42 347 42H301C242 42 225 51 225 95V529C225 607 242 627 323 627V657H42V627C122 627 133 607 133 530V123C133 45 122 30 42 30V0H538Z" transform="translate(593.02 388.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M259 -196V736H50V704H180V-164H50V-196Z" transform="translate(600.04 388.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_16">
+    <text x="80" y="376.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="86.04" lengthAdjust="spacingAndGlyphs">Transitions read</text>
+    <text x="80" y="391.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="29.36" lengthAdjust="spacingAndGlyphs">event</text>
+    <text x="109.36" y="391.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="86.05" lengthAdjust="spacingAndGlyphs"> [guard] / action;</text>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(80 406.63) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="86.78" y="406.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="152.75" lengthAdjust="spacingAndGlyphs"> counts connection attempts,</text>
+    <path d="M394 468 354 259C339 176 301 55 218 55C170 55 153 99 153 151C153 196 166 249 175 284L222 476H200L53 465V437C53 437 83 440 99 440C117 440 123 426 123 409C123 389 116 365 113 354L93 278C82 236 71 183 71 135C71 58 100 -9 186 -9C278 -9 314 45 348 131H353C352 120 351 105 351 92C351 36 376 -9 442 -9C615 -9 702 206 702 358C702 429 671 479 626 479C605 479 588 464 588 437C588 393 649 369 649 299C649 206 600 55 480 55C441 55 417 80 417 142C417 178 424 223 424 223L473 468Z" transform="translate(80 421.63) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="88.72" y="421.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="108.06" lengthAdjust="spacingAndGlyphs"> is the send window.</text>
+  </g>
+  <g id="caption_17">
+    <text x="17.22" y="467.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 4:</text>
+    <text x="91.39" y="467.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="725.1" lengthAdjust="spacingAndGlyphs"> CONNECTION LIFECYCLE WITH BOUNDED RETRIES; A DOUBLE BORDER MARKS THE FINAL STATE</text>
+  </g>
+</svg>

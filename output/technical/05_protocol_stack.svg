@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1008 522" width="1008" height="522">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 320 120 L 710 120" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 701 123.6 L 710 120 L 701 116.4" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 329 116.4 L 320 120 L 329 123.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 320 186 L 710 186" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 701 189.6 L 710 186 L 701 182.4" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 329 182.4 L 320 186 L 329 189.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 320 252 L 440 252" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 431 255.6 L 440 252 L 431 248.4" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 329 248.4 L 320 252 L 329 255.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 590 252 L 710 252" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 701 255.6 L 710 252 L 701 248.4" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 599 248.4 L 590 252 L 599 255.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 320 318 L 440 318" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 431 321.6 L 440 318 L 431 314.4" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 329 314.4 L 320 318 L 329 321.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 590 318 L 710 318" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 701 321.6 L 710 318 L 701 314.4" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 599 314.4 L 590 318 L 599 321.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 245 140 L 245 156.4" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 245 166 L 240.2 154 L 249.8 154 Z" fill="#000000" />
+  <path d="M 785 166 L 785 149.6" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 785 140 L 789.8 152 L 780.2 152 Z" fill="#000000" />
+  <path d="M 245 206 L 245 222.4" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 245 232 L 240.2 220 L 249.8 220 Z" fill="#000000" />
+  <path d="M 785 232 L 785 215.6" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 785 206 L 789.8 218 L 780.2 218 Z" fill="#000000" />
+  <path d="M 245 272 L 245 288.4" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 245 298 L 240.2 286 L 249.8 286 Z" fill="#000000" />
+  <path d="M 785 298 L 785 281.6" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 785 272 L 789.8 284 L 780.2 284 Z" fill="#000000" />
+  <path d="M 485 298 L 485 281.6" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 485 272 L 489.8 284 L 480.2 284 Z" fill="#000000" />
+  <path d="M 545 272 L 545 288.4" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 545 298 L 540.2 286 L 549.8 286 Z" fill="#000000" />
+  <path d="M 245 338 L 245 354.4" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 245 364 L 240.2 352 L 249.8 352 Z" fill="#000000" />
+  <path d="M 785 364 L 785 347.6" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 785 338 L 789.8 350 L 780.2 350 Z" fill="#000000" />
+  <path d="M 485 364 L 485 347.6" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 485 338 L 489.8 350 L 480.2 350 Z" fill="#000000" />
+  <path d="M 545 338 L 545 354.4" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 545 364 L 540.2 352 L 549.8 352 Z" fill="#000000" />
+  <path d="M 320 384 L 430.4 384" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 440 384 L 428 388.8 L 428 379.2 Z" fill="#000000" />
+  <path d="M 590 384 L 700.4 384" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 710 384 L 698 388.8 L 698 379.2 Z" fill="#000000" />
+  <g id="text_1">
+    <text x="222.44" y="84.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Host A</text>
+  </g>
+  <g id="shape_2">
+    <rect x="170" y="100" width="150" height="40" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="245" y="124.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Application</text>
+  </g>
+  <g id="shape_3">
+    <rect x="170" y="166" width="150" height="40" rx="0" fill="#F4F4F4" stroke="#000000" stroke-width="1" />
+    <text x="245" y="190.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Transport</text>
+  </g>
+  <g id="shape_4">
+    <rect x="170" y="232" width="150" height="40" rx="0" fill="#E9E9E9" stroke="#000000" stroke-width="1" />
+    <text x="245" y="256.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Network</text>
+  </g>
+  <g id="shape_5">
+    <rect x="170" y="298" width="150" height="40" rx="0" fill="#DEDEDE" stroke="#000000" stroke-width="1" />
+    <text x="245" y="322.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Link</text>
+  </g>
+  <g id="shape_6">
+    <rect x="170" y="364" width="150" height="40" rx="0" fill="#D3D3D3" stroke="#000000" stroke-width="1" />
+    <text x="245" y="388.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Physical</text>
+  </g>
+  <g id="text_7">
+    <text x="492.44" y="216.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Router</text>
+  </g>
+  <g id="shape_8">
+    <rect x="440" y="232" width="150" height="40" rx="0" fill="#E9E9E9" stroke="#000000" stroke-width="1" />
+    <text x="515" y="256.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Network</text>
+  </g>
+  <g id="shape_9">
+    <rect x="440" y="298" width="150" height="40" rx="0" fill="#DEDEDE" stroke="#000000" stroke-width="1" />
+    <text x="515" y="322.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Link</text>
+  </g>
+  <g id="shape_10">
+    <rect x="440" y="364" width="150" height="40" rx="0" fill="#D3D3D3" stroke="#000000" stroke-width="1" />
+    <text x="515" y="388.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Physical</text>
+  </g>
+  <g id="text_11">
+    <text x="762.44" y="84.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Host B</text>
+  </g>
+  <g id="shape_12">
+    <rect x="710" y="100" width="150" height="40" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="785" y="124.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Application</text>
+  </g>
+  <g id="shape_13">
+    <rect x="710" y="166" width="150" height="40" rx="0" fill="#F4F4F4" stroke="#000000" stroke-width="1" />
+    <text x="785" y="190.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Transport</text>
+  </g>
+  <g id="shape_14">
+    <rect x="710" y="232" width="150" height="40" rx="0" fill="#E9E9E9" stroke="#000000" stroke-width="1" />
+    <text x="785" y="256.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Network</text>
+  </g>
+  <g id="shape_15">
+    <rect x="710" y="298" width="150" height="40" rx="0" fill="#DEDEDE" stroke="#000000" stroke-width="1" />
+    <text x="785" y="322.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Link</text>
+  </g>
+  <g id="shape_16">
+    <rect x="710" y="364" width="150" height="40" rx="0" fill="#D3D3D3" stroke="#000000" stroke-width="1" />
+    <text x="785" y="388.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Physical</text>
+  </g>
+  <g id="text_17">
+    <text x="499.33" y="109.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">HTTP</text>
+  </g>
+  <g id="text_18">
+    <text x="503" y="175.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">TCP</text>
+  </g>
+  <g id="text_19">
+    <text x="374.33" y="241.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">IP</text>
+  </g>
+  <g id="text_20">
+    <text x="644.33" y="241.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">IP</text>
+  </g>
+  <g id="text_21">
+    <text x="357.32" y="307.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Ethernet</text>
+  </g>
+  <g id="text_22">
+    <text x="627.32" y="307.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Ethernet</text>
+  </g>
+  <g id="text_23">
+    <text x="124.66" y="84.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">PDU</text>
+  </g>
+  <g id="text_24">
+    <text x="101.31" y="124.13" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="48.69" lengthAdjust="spacingAndGlyphs">message</text>
+  </g>
+  <g id="text_25">
+    <text x="103.97" y="190.13" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="46.03" lengthAdjust="spacingAndGlyphs">segment</text>
+  </g>
+  <g id="text_26">
+    <text x="114.64" y="256.13" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="35.36" lengthAdjust="spacingAndGlyphs">packet</text>
+  </g>
+  <g id="text_27">
+    <text x="119.33" y="322.13" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="30.67" lengthAdjust="spacingAndGlyphs">frame</text>
+  </g>
+  <g id="text_28">
+    <text x="131.33" y="388.13" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="18.67" lengthAdjust="spacingAndGlyphs">bits</text>
+  </g>
+  <g id="bracket_29">
+    <path d="M 872 100 C 877 100 877 100 877 108 L 877 145 C 877 153 877 153 882 153 C 877 153 877 153 877 161 L 877 198 C 877 206 877 206 872 206" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="944.72" y="157.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="end">end to end</text>
+  </g>
+  <g id="bracket_30">
+    <path d="M 872 232 C 877 232 877 232 877 240 L 877 310 C 877 318 877 318 882 318 C 877 318 877 318 877 326 L 877 396 C 877 404 877 404 872 404" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="947.38" y="322.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="end">hop by hop</text>
+  </g>
+  <g id="caption_31">
+    <text x="169.71" y="446.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 5:</text>
+    <text x="243.88" y="446.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="635.1" lengthAdjust="spacingAndGlyphs"> LAYERED COMMUNICATION THROUGH A ROUTER; DASHED LINES JOIN PEER LAYERS</text>
+  </g>
+</svg>
