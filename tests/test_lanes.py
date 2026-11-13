@@ -88,3 +88,20 @@ def test_opposite_edges_between_one_pair_are_two_straight_lines():
     assert len(there.points) == 2 and len(back.points) == 2
     assert there.points[0].y == there.points[1].y != back.points[0].y
     assert "edge_on_edge" not in audit_diagram(d)
+
+
+def test_facing_end_segments_are_separated_by_sliding_a_port():
+    with Diagram("t", theme="monochrome") as d:
+        a = d.shape("A", width=120, height=60).at(60, 80)
+        b = d.shape("B", width=120, height=60).at(310, 80)
+        up = d.shape("Up", width=120, height=60).at(310, 240)
+        far = d.shape("Far", width=120, height=60).at(60, 400)
+        d.connect(a, up)
+        d.connect(b, far)
+    d.solve()
+    assert "edge_on_edge" not in audit_diagram(d)
+    for edge in d.edges:
+        path = d.routes[edge]
+        sb, tb = edge.source.bounds, edge.target.bounds
+        assert sb.left <= path.points[0].x <= sb.right and sb.top <= path.points[0].y <= sb.bottom
+        assert tb.left <= path.points[-1].x <= tb.right and tb.top <= path.points[-1].y <= tb.bottom

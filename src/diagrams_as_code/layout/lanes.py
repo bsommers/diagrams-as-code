@@ -3,8 +3,9 @@
 Each edge is routed on its own, so two detours around the same obstacle pick
 the same corridor and are drawn on top of each other. This pass finds interior
 segments of different edges that run along one line and shifts all but one of
-them sideways onto a free parallel lane. End segments stay where they are, so
-ports and arrival directions are untouched. Edges that may share a line (one
+them sideways onto a free parallel lane. An end segment is moved only when no
+interior one can be, by sliding its port along the node side; arrival
+directions are untouched. Edges that may share a line (one
 source, one target, or an exact bus) are left alone.
 """
 from __future__ import annotations
@@ -21,6 +22,8 @@ PITCH = 14.0
 MAX_LANES = 4
 #: Overlap shorter than this is a crossing or a touch, not a shared run.
 MIN_RUN = 6.0
+#: A port moved along a node side stays this far from the corners.
+PORT_MARGIN = 8.0
 EPS = 0.5
 
 Segment = tuple[Point, Point]
@@ -41,21 +44,32 @@ def _orthogonal(pts: Sequence[Point]) -> bool:
 
 
 def _shifted(pts: list[Point], i: int, offset: float) -> Optional[list[Point]]:
-    """``pts`` with interior segment ``i`` moved sideways, or None if that would fold the path."""
+    """``pts`` with segment ``i`` moved sideways, or None if that would fold the path."""
     a, b = pts[i], pts[i + 1]
     horizontal = abs(a.y - b.y) <= EPS
     dx, dy = (0.0, offset) if horizontal else (offset, 0.0)
     out = list(pts)
     out[i], out[i + 1] = Point(a.x + dx, a.y + dy), Point(b.x + dx, b.y + dy)
     # The neighbours must stay perpendicular stubs that still point the same way.
-    for p, q, r, s in ((pts[i - 1], a, out[i - 1], out[i]), (b, pts[i + 2], out[i + 1], out[i + 2])):
-        before = (q.x - p.x, q.y - p.y)
-        after = (s.x - r.x, s.y - r.y)
+    for j in (i - 1, i + 1):
+        if j < 0 or j + 1 >= len(pts):
+            continue
+        before = (pts[j + 1].x - pts[j].x, pts[j + 1].y - pts[j].y)
+        after = (out[j + 1].x - out[j].x, out[j + 1].y - out[j].y)
         if before[0] * after[0] + before[1] * after[1] <= 0.0:
             return None
         if abs(after[0]) > EPS and abs(after[1]) > EPS:
             return None
     return out
+
+
+def _on_side(p: Point, box: Rect) -> bool:
+    """True if ``p`` is on the border of ``box``, clear of its corners."""
+    on_x = abs(p.x - box.left) <= EPS or abs(p.x - box.right) <= EPS
+    on_y = abs(p.y - box.top) <= EPS or abs(p.y - box.bottom) <= EPS
+    if on_x and box.top + PORT_MARGIN <= p.y <= box.bottom - PORT_MARGIN:
+        return True
+    return on_y and box.left + PORT_MARGIN <= p.x <= box.right - PORT_MARGIN
 
 
 def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: Sequence[Rect]) -> None:
@@ -75,7 +89,7 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
         if path.kind != PathKind.POLYLINE or not _orthogonal(pts):
             continue
         points[id(edge)] = pts
-        if not getattr(edge, "manual_waypoints", None) and len(pts) >= 4:
+        if not getattr(edge, "manual_waypoints", None) and len(pts) >= 3:
             movable.append(edge)
 
     def segments(edge: Any) -> list[Segment]:
@@ -85,6 +99,8 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
     def clashes(edge: Any, pts: list[Point], i: int) -> bool:
         """True if segment ``i`` of ``pts``, or a stub beside it, is in the way."""
         for j in (i - 1, i, i + 1):
+            if j < 0 or j + 1 >= len(pts):
+                continue
             seg = (pts[j], pts[j + 1])
             if any(segment_enters(seg[0], seg[1], n) for n in nodes):
                 return True
@@ -96,9 +112,12 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
         return False
 
     changed: set[int] = set()
-    for edge in movable:
+    # A second pass lets a segment move once its neighbour's port has slid clear.
+    for edge in movable + movable:
         pts = points[id(edge)]
-        for i in range(1, len(pts) - 2):
+        # Interior segments first; an end segment moves its port, so only if needed.
+        last = len(pts) - 2
+        for i in list(range(1, last)) + [0, last]:
             seg = (pts[i], pts[i + 1])
             overlapping = any(
                 _shared(seg, s) > MIN_RUN
@@ -108,11 +127,21 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
             )
             if not overlapping:
                 continue
+
+            def usable(cand: Optional[list[Point]]) -> bool:
+                if cand is None or clashes(edge, cand, i):
+                    return False
+                if i == 0 and not _on_side(cand[0], edge.source.bounds):
+                    return False
+                if i == last and not _on_side(cand[-1], edge.target.bounds):
+                    return False
+                return True
+
             for lane in range(1, MAX_LANES + 1):
                 moved = next(
                     (
                         cand for cand in (_shifted(pts, i, lane * PITCH), _shifted(pts, i, -lane * PITCH))
-                        if cand is not None and not clashes(edge, cand, i)
+                        if usable(cand)
                     ),
                     None,
                 )
