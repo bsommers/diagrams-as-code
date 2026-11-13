@@ -604,3 +604,43 @@ class RoutedPath:
         return " ".join(parts)
 
 
+def segment_enters(a: Point, b: Point, r: Rect, inset: float = 1.0) -> bool:
+    """True if segment a-b passes through the interior of ``r`` shrunk by ``inset``."""
+    x0, y0, x1, y1 = r.left + inset, r.top + inset, r.right - inset, r.bottom - inset
+    if x0 >= x1 or y0 >= y1:
+        return False
+    dx, dy = b.x - a.x, b.y - a.y
+    t0, t1 = 0.0, 1.0
+    for p, q in ((-dx, a.x - x0), (dx, x1 - a.x), (-dy, a.y - y0), (dy, y1 - a.y)):
+        if p == 0:
+            if q <= 0:
+                return False
+        else:
+            t = q / p
+            if p < 0:
+                t0 = max(t0, t)
+            else:
+                t1 = min(t1, t)
+            if t0 >= t1:
+                return False
+    return True
+
+
+def flatten(path: RoutedPath, steps: int = 16) -> list[Point]:
+    """Polyline approximation of a routed path."""
+    pts = list(path.points)
+    if path.kind != PathKind.BEZIER_CHAIN or len(pts) < 4:
+        return pts
+    out = [pts[0]]
+    for i in range(0, len(pts) - 3, 3):
+        p0, p1, p2, p3 = pts[i : i + 4]
+        for k in range(1, steps + 1):
+            t = k / steps
+            u = 1 - t
+            out.append(
+                Point(
+                    u**3 * p0.x + 3 * u * u * t * p1.x + 3 * u * t * t * p2.x + t**3 * p3.x,
+                    u**3 * p0.y + 3 * u * u * t * p1.y + 3 * u * t * t * p2.y + t**3 * p3.y,
+                )
+            )
+    return out

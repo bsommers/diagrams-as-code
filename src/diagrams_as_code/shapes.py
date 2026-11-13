@@ -416,6 +416,7 @@ class ShapeLibrary:
         font_family: str = (
             "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
         ),
+        max_width: Optional[float] = None,
     ) -> str:
         """Render a status or protocol badge pill with centered text."""
         if font_size <= 0:
@@ -423,7 +424,7 @@ class ShapeLibrary:
         if height <= 0:
             raise ValueError(f"height must be positive, got {height}")
 
-        block = badge_block(text, font_size)
+        block = badge_block(text, font_size, max_width)
         badge_w = max(block.width + 2 * padding_x, 24.0)
         height = max(height, block.height + 4.0)
         rx = min(height, 18.0) / 2.0

@@ -127,6 +127,12 @@ class Edge:
         )
         self._resolved_path: Optional[RoutedPath] = None
         self._resolved_style: Optional[EdgeStyle] = None
+        #: Centre of the label badge, chosen by the layout; ``None`` means the path midpoint.
+        self._label_anchor: Optional[Point] = None
+        #: Text width the badge is wrapped at, when it would not fit unwrapped.
+        self._label_wrap: Optional[float] = None
+        #: Another edge whose identical badge, on a shared trunk, labels this edge too.
+        self._label_owner: Optional[Edge] = None
 
     @property
     def routing(self) -> Routing:

@@ -46,24 +46,24 @@
   <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Source Feed 1</text>
 </g>
   <g class="badge">
-  <rect x="529.2021484375" y="206.0" width="81.595703125" height="18.0" rx="9.0" fill="#133663" />
-  <text x="570" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Source Feed 2</text>
+  <rect x="529.2021484375" y="244.0" width="81.595703125" height="18.0" rx="9.0" fill="#133663" />
+  <text x="570" y="256.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Source Feed 2</text>
 </g>
   <g class="badge">
-  <rect x="883.9287109375" y="231.0" width="97.142578125" height="18.0" rx="9.0" fill="#133663" />
-  <text x="932.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power Bus Duct A</text>
+  <rect x="642.4287109375" y="231.0" width="97.142578125" height="18.0" rx="9.0" fill="#133663" />
+  <text x="691" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power Bus Duct A</text>
 </g>
   <g class="badge">
-  <rect x="1008.9287109375" y="231.0" width="97.142578125" height="18.0" rx="9.0" fill="#133663" />
-  <text x="1057.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power Bus Duct B</text>
+  <rect x="746.4287109375" y="215.0" width="97.142578125" height="18.0" rx="9.0" fill="#133663" />
+  <text x="795" y="227.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power Bus Duct B</text>
 </g>
   <g class="badge">
-  <rect x="1129.75390625" y="231.0" width="105.4921875" height="18.0" rx="9.0" fill="#133663" />
-  <text x="1182.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Underfloor Supply A</text>
+  <rect x="992.25390625" y="215.0" width="105.4921875" height="18.0" rx="9.0" fill="#133663" />
+  <text x="1045" y="227.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Underfloor Supply A</text>
 </g>
   <g class="badge">
-  <rect x="1217.25390625" y="161.0" width="105.4921875" height="18.0" rx="9.0" fill="#133663" />
-  <text x="1270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Underfloor Supply B</text>
+  <rect x="1206.25390625" y="161.0" width="105.4921875" height="18.0" rx="9.0" fill="#133663" />
+  <text x="1259" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Underfloor Supply B</text>
 </g>
   <g id="grid_a" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />

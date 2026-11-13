@@ -39,10 +39,6 @@
   <text x="270" y="173.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Blast Extreme :443</text>
 </g>
   <g class="badge">
-  <rect x="219.7587890625" y="206.0" width="100.482421875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="270" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Blast Extreme :443</text>
-</g>
-  <g class="badge">
   <rect x="351.98779296875" y="206.0" width="86.0244140625" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="395" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Kerberos Ticket</text>
 </g>

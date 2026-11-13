@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 - **Fit-to-content canvas (default).** `Diagram(width=None, height=None)`: an axis left unset is sized to the content after layout, with a trailing margin that mirrors the leading one (at most 60 x 80, at least 24). Previously every diagram defaulted to 1200 x 800 and the canvas could only grow, so 89 of 92 gallery diagrams filled a median 23% of their canvas. A size you pass is still honoured as a minimum and still grows if content would be clipped; setting `diagram.width` / `.height` later pins that axis. Edge badges now count as content when sizing.
+- **Edge badge placement.** New `layout/badges.py` pass: a badge that would cover a node, another badge or another edge's line slides along its own route to a clear spot; a label too wide for the gap is wrapped onto two or three lines; edges carrying the same label along a shared trunk draw one badge between them. The renderer, the audit and canvas sizing all read the badge box from `labels.edge_badge_rect`. Gallery audit: badge over node 21 -> 0, badge over badge 16 -> 1, line through badge 183 -> 40.
+- `flatten` and `segment_enters` moved from `audit` to `geometry` (still importable from `audit`).
 - Gallery SVG output regenerated at the fitted sizes; `main.py` and the three root examples no longer hard-code a canvas size.
 
 ### Fixed

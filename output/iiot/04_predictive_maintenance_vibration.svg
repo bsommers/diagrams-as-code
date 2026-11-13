@@ -28,8 +28,8 @@
   <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="227.53466796875" y="161.0" width="84.9306640625" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Analog 4-20mA</text>
+  <rect x="215.49267578125" y="155.5" width="51.0146484375" height="29.0" rx="9.0" fill="#133663" />
+  <text x="241" y="167.19" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="241" dy="0">Analog</tspan> <tspan x="241" dy="12.5">4-20mA</tspan></text>
 </g>
   <g class="badge">
   <rect x="225.86962890625" y="206.0" width="88.2607421875" height="18.0" rx="9.0" fill="#133663" />

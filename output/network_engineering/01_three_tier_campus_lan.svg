@@ -47,10 +47,6 @@
   <text x="270" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cross-Link</text>
 </g>
   <g class="badge">
-  <rect x="238.10595703125" y="206.0" width="63.7880859375" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cross-Link</text>
-</g>
-  <g class="badge">
   <rect x="488.37939453125" y="161.0" width="63.2412109375" height="18.0" rx="9.0" fill="#133663" />
   <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">10G Trunk</text>
 </g>

@@ -35,16 +35,12 @@
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 260.0 L 585.0 260.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="232.2685546875" y="161.0" width="75.462890625" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="270" y="173.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Validate JWT</text>
+  <rect x="274.93115234375" y="155.5" width="52.1376953125" height="29.0" rx="9.0" fill="#434C5E" />
+  <text x="301" y="167.19" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="301" dy="0">Validate</tspan> <tspan x="301" dy="12.5">JWT</tspan></text>
 </g>
   <g class="badge">
   <rect x="233.93359375" y="206.0" width="72.1328125" height="18.0" rx="9.0" fill="#434C5E" />
   <text x="270" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">mTLS Route</text>
-</g>
-  <g class="badge">
-  <rect x="233.93359375" y="251.0" width="72.1328125" height="18.0" rx="9.0" fill="#434C5E" />
-  <text x="270" y="263.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">mTLS Route</text>
 </g>
   <g class="badge">
   <rect x="478.36962890625" y="161.0" width="83.2607421875" height="18.0" rx="9.0" fill="#434C5E" />

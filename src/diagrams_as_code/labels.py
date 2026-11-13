@@ -7,6 +7,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Optional
 
+from diagrams_as_code.geometry import Rect
 from diagrams_as_code.text import TextBlock, TextStyle, layout
 
 #: Font sizes tried, largest first, for a label drawn inside its shape.
@@ -120,13 +121,37 @@ def below_label_extent(shape: Any) -> tuple[float, float]:
     return (nl.block.width, BELOW_GAP + nl.block.height)
 
 
-def badge_block(label: str, font_size: float = BADGE_FONT_SIZE) -> TextBlock:
-    """The text of an edge label badge."""
-    return layout(label, TextStyle(size=font_size, weight=BADGE_WEIGHT))
+def badge_block(label: str, font_size: float = BADGE_FONT_SIZE,
+                max_width: Optional[float] = None) -> TextBlock:
+    """The text of an edge label badge, wrapped at ``max_width`` if given."""
+    return layout(label, TextStyle(size=font_size, weight=BADGE_WEIGHT), max_width)
 
 
 def badge_size(label: str, font_size: float = BADGE_FONT_SIZE, height: float = 18.0,
-               padding_x: float = BADGE_PAD_X) -> tuple[float, float]:
+               padding_x: float = BADGE_PAD_X, max_width: Optional[float] = None) -> tuple[float, float]:
     """(width, height) of an edge label badge."""
-    block = badge_block(label, font_size)
+    block = badge_block(label, font_size, max_width)
     return (max(block.width + 2.0 * padding_x, 24.0), max(height, block.height + 4.0))
+
+
+def edge_badge_rect(edge: Any, path: Any) -> Optional[Rect]:
+    """The box of an edge's label badge, or ``None`` if the edge draws none.
+
+    An edge draws no badge when it has no label, or when the layout let it share
+    the badge of another edge carrying the same label along a common trunk
+    (``edge._label_owner``). Otherwise the badge is centred on the anchor the
+    layout chose (``edge._label_anchor``), or on the path's own midpoint when no
+    layout ran, and its text is wrapped at ``edge._label_wrap`` if that is set.
+    """
+    if not getattr(edge, "label", None) or getattr(edge, "_label_owner", None) is not None:
+        return None
+    meta = getattr(edge, "metadata", {}) or {}
+    w, h = badge_size(
+        edge.label,
+        float(meta.get("font_size", BADGE_FONT_SIZE)),
+        float(meta.get("badge_height", 18.0)),
+        max_width=getattr(edge, "_label_wrap", None),
+    )
+    anchor = getattr(edge, "_label_anchor", None)
+    x, y = (anchor.x, anchor.y) if anchor is not None else path.label_anchor()
+    return Rect(x - w / 2.0, y - h / 2.0, w, h)

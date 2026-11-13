@@ -26,6 +26,7 @@ from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import AbsoluteConstraint, Element
 from diagrams_as_code.geometry import Anchor, PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
+from diagrams_as_code.layout.badges import place_badges
 from diagrams_as_code.layout.base import SOURCE_KEY, LayoutWarning
 from diagrams_as_code.layout.graph import (
     build_scope_graph,
@@ -34,7 +35,7 @@ from diagrams_as_code.layout.graph import (
     pinned_ids,
     scope_children,
 )
-from diagrams_as_code.labels import badge_size, node_label
+from diagrams_as_code.labels import badge_size, edge_badge_rect, node_label
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
 from diagrams_as_code.router import EdgeRouter, RoutingScene, path_collides
@@ -143,6 +144,7 @@ def run_layout(diagram: Any) -> None:
 
     # 2. Frame & Grow Canvas
     _frame(elements, groups, routes)
+    place_badges(diagram.edges, routes, [s.bounds for s in diagram.shapes])
     _grow_canvas(diagram, elements, routes)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
     diagram._layout_state.solved = {id(el): (el.width, el.height) for el in elements}
@@ -401,13 +403,9 @@ def _grow_canvas(
         if not isinstance(key, Edge):
             continue
         boxes.append(path.bbox())
-        if key.label:
-            meta = getattr(key, "metadata", {}) or {}
-            w, h = badge_size(
-                key.label, float(meta.get("font_size", 10.0)), float(meta.get("badge_height", 18.0))
-            )
-            anchor = path.label_anchor()
-            boxes.append(Rect(anchor[0] - w / 2, anchor[1] - h / 2, w, h))
+        badge = edge_badge_rect(key, path)
+        if badge is not None:
+            boxes.append(badge)
     if not boxes:
         return
 

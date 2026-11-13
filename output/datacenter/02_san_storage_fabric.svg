@@ -38,20 +38,12 @@
   <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">32G FC Link</text>
 </g>
   <g class="badge">
-  <rect x="396.43359375" y="231.0" width="72.1328125" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="432.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">32G FC Link</text>
-</g>
-  <g class="badge">
   <rect x="641.9853515625" y="231.0" width="81.029296875" height="18.0" rx="9.0" fill="#24242A" />
   <text x="682.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Target Port A1</text>
 </g>
   <g class="badge">
   <rect x="729.4853515625" y="206.0" width="81.029296875" height="18.0" rx="9.0" fill="#24242A" />
   <text x="770" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Target Port B1</text>
-</g>
-  <g class="badge">
-  <rect x="774.197265625" y="251.0" width="91.60546875" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="820" y="263.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SAS-4 24G Loop</text>
 </g>
   <g class="badge">
   <rect x="849.197265625" y="296.0" width="91.60546875" height="18.0" rx="9.0" fill="#24242A" />

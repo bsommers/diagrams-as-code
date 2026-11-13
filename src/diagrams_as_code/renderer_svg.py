@@ -10,7 +10,7 @@ from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
-from diagrams_as_code.labels import BELOW_GAP, ICON_GAP, badge_size, node_label
+from diagrams_as_code.labels import BELOW_GAP, ICON_GAP, badge_size, edge_badge_rect, node_label
 from diagrams_as_code.metrics import wrap_text
 from diagrams_as_code.text import TextStyle, layout
 from diagrams_as_code.shapes import ShapeLibrary
@@ -676,19 +676,15 @@ class SVGRenderer:
                 )
 
             # Centered protocol badge so edge lines don't cross text
-            if e.label:
-                lx, ly = path.label_anchor()
+            badge_rect = edge_badge_rect(e, path)
+            if badge_rect is not None:
                 edge_meta = getattr(e, "metadata", {}) or {}
                 badge_fill = edge_meta.get("badge_fill", self.theme.node_fill)
                 badge_text_color = edge_meta.get(
                     "badge_text_color", self.theme.text
                 )
                 font_size = float(edge_meta.get("font_size", 10.0))
-                badge_w, badge_h = badge_size(
-                    e.label, font_size, float(edge_meta.get("badge_height", 18.0))
-                )
-                bx = lx - badge_w / 2.0
-                by = ly - badge_h / 2.0
+                bx, by, badge_h = badge_rect.x, badge_rect.y, badge_rect.height
                 badge_svg = self.shapes.render_badge(
                     bx,
                     by,
@@ -698,6 +694,7 @@ class SVGRenderer:
                     font_size=font_size,
                     height=badge_h,
                     font_family=self.theme.font_family,
+                    max_width=getattr(e, "_label_wrap", None),
                 )
                 if interactive:
                     # Kept with its edge so collapsing a group hides both together.

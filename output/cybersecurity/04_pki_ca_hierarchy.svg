@@ -37,16 +37,12 @@
   <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Signs Sub-CA</text>
 </g>
   <g class="badge">
-  <rect x="230.59619140625" y="206.0" width="78.8076171875" height="18.0" rx="9.0" fill="#000000" />
-  <text x="270" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Signs Sub-CA</text>
-</g>
-  <g class="badge">
   <rect x="478.9287109375" y="161.0" width="82.142578125" height="18.0" rx="9.0" fill="#000000" />
   <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Publishes CRL</text>
 </g>
   <g class="badge">
-  <rect x="638.6552734375" y="231.0" width="87.689453125" height="18.0" rx="9.0" fill="#000000" />
-  <text x="682.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issues TLS Cert</text>
+  <rect x="701.1552734375" y="231.0" width="87.689453125" height="18.0" rx="9.0" fill="#000000" />
+  <text x="745" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issues TLS Cert</text>
 </g>
   <g class="badge">
   <rect x="593.6455078125" y="251.0" width="102.708984375" height="18.0" rx="9.0" fill="#000000" />

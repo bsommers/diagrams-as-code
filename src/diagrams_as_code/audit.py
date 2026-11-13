@@ -10,8 +10,8 @@ from __future__ import annotations
 from collections import Counter
 from typing import Any, Iterator, Optional
 
-from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
-from diagrams_as_code.labels import badge_size, node_label
+from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath, flatten, segment_enters
+from diagrams_as_code.labels import edge_badge_rect, node_label
 
 EPS = 0.5
 
@@ -29,48 +29,6 @@ DEFECTS: tuple[str, ...] = (
     "content_clipped",
     "canvas_mostly_empty",
 )
-
-
-def segment_enters(a: Point, b: Point, r: Rect, inset: float = 1.0) -> bool:
-    """True if segment a-b passes through the interior of ``r`` shrunk by ``inset``."""
-    x0, y0, x1, y1 = r.left + inset, r.top + inset, r.right - inset, r.bottom - inset
-    if x0 >= x1 or y0 >= y1:
-        return False
-    dx, dy = b.x - a.x, b.y - a.y
-    t0, t1 = 0.0, 1.0
-    for p, q in ((-dx, a.x - x0), (dx, x1 - a.x), (-dy, a.y - y0), (dy, y1 - a.y)):
-        if p == 0:
-            if q <= 0:
-                return False
-        else:
-            t = q / p
-            if p < 0:
-                t0 = max(t0, t)
-            else:
-                t1 = min(t1, t)
-            if t0 >= t1:
-                return False
-    return True
-
-
-def flatten(path: RoutedPath, steps: int = 16) -> list[Point]:
-    """Polyline approximation of a routed path."""
-    pts = list(path.points)
-    if path.kind != PathKind.BEZIER_CHAIN or len(pts) < 4:
-        return pts
-    out = [pts[0]]
-    for i in range(0, len(pts) - 3, 3):
-        p0, p1, p2, p3 = pts[i : i + 4]
-        for k in range(1, steps + 1):
-            t = k / steps
-            u = 1 - t
-            out.append(
-                Point(
-                    u**3 * p0.x + 3 * u * u * t * p1.x + 3 * u * t * t * p2.x + t**3 * p3.x,
-                    u**3 * p0.y + 3 * u * u * t * p1.y + 3 * u * t * t * p2.y + t**3 * p3.y,
-                )
-            )
-    return out
 
 
 def _side(p: Point, r: Rect) -> Optional[str]:
@@ -161,12 +119,9 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             counts[problem] += 1
         pts = flatten(path)
         flat.append((edge, list(zip(pts, pts[1:]))))
-        if edge.label:
-            lx, ly = path.label_anchor()
-            meta = getattr(edge, "metadata", {}) or {}
-            font = float(meta.get("font_size", 10.0))
-            w, h = badge_size(edge.label, font, float(meta.get("badge_height", 18.0)))
-            badges.append((edge, (lx - w / 2, ly - h / 2, lx + w / 2, ly + h / 2)))
+        rect = edge_badge_rect(edge, path)
+        if rect is not None:
+            badges.append((edge, _box(rect)))
 
     for i, (e1, segs1) in enumerate(flat):
         for e2, segs2 in flat[i + 1 :]:
@@ -180,7 +135,9 @@ def audit_diagram(diagram: Any) -> Counter[str]:
         counts["badge_over_node"] += sum(1 for box in boxes if _overlap(bb, box))
         inner = Rect(bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1])
         for other, segs in flat:
-            if other is not edge and any(segment_enters(a, b, inner, 2.0) for a, b in segs):
+            if other is edge or getattr(other, "_label_owner", None) is edge:
+                continue
+            if any(segment_enters(a, b, inner, 2.0) for a, b in segs):
                 counts["edge_through_badge"] += 1
     for i in range(len(badges)):
         for j in range(i + 1, len(badges)):

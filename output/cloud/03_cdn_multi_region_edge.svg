@@ -38,10 +38,6 @@
   <text x="270" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DNS Query</text>
 </g>
   <g class="badge">
-  <rect x="236.4384765625" y="206.0" width="67.123046875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="270" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DNS Query</text>
-</g>
-  <g class="badge">
   <rect x="488.10107421875" y="161.0" width="63.7978515625" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="520" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Anycast IP</text>
 </g>
@@ -50,8 +46,8 @@
   <text x="645" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Filter Threats</text>
 </g>
   <g class="badge">
-  <rect x="733.65283203125" y="161.0" width="72.6943359375" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="770" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Static Cache</text>
+  <rect x="778.546875" y="155.5" width="44.90625" height="29.0" rx="9.0" fill="#FFFFFF" />
+  <text x="801" y="167.19" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="801" dy="0">Static</tspan> <tspan x="801" dy="12.5">Cache</tspan></text>
 </g>
   <g class="badge">
   <rect x="734.21435546875" y="206.0" width="71.5712890625" height="18.0" rx="9.0" fill="#FFFFFF" />

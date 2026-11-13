@@ -33,16 +33,16 @@
   <text x="270" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Raw Ingress</text>
 </g>
   <g class="badge">
-  <rect x="341.42626953125" y="206.0" width="87.1474609375" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="385" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Encrypted Copy</text>
+  <rect x="347.48779296875" y="200.5" width="61.0244140625" height="29.0" rx="9.0" fill="#2B313B" />
+  <text x="378" y="212.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="378" dy="0">Encrypted</tspan> <tspan x="378" dy="12.5">Copy</tspan></text>
 </g>
   <g class="badge">
-  <rect x="336.70703125" y="296.0" width="96.5859375" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="385" y="308.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Decrypted Stream</text>
+  <rect x="349.2119140625" y="290.5" width="61.576171875" height="29.0" rx="9.0" fill="#2B313B" />
+  <text x="380" y="302.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="380" dy="0">Decrypted</tspan> <tspan x="380" dy="12.5">Stream</tspan></text>
 </g>
   <g class="badge">
-  <rect x="428.650390625" y="251.0" width="82.69921875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="470" y="263.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
+  <rect x="428.650390625" y="210.0" width="82.69921875" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="470" y="222.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
 </g>
   <g class="badge">
   <rect x="471.4287109375" y="161.0" width="97.142578125" height="18.0" rx="9.0" fill="#2B313B" />

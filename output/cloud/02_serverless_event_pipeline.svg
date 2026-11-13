@@ -49,8 +49,8 @@
   <text x="770" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Enqueue Event</text>
 </g>
   <g class="badge">
-  <rect x="987.27099609375" y="161.0" width="65.4580078125" height="18.0" rx="9.0" fill="#133663" />
-  <text x="1020" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Write State</text>
+  <rect x="1025.3251953125" y="155.5" width="39.349609375" height="29.0" rx="9.0" fill="#133663" />
+  <text x="1045" y="167.19" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="1045" dy="0">Write</tspan> <tspan x="1045" dy="12.5">State</tspan></text>
 </g>
   <g class="badge">
   <rect x="979.76123046875" y="206.0" width="80.4775390625" height="18.0" rx="9.0" fill="#133663" />

@@ -28,12 +28,8 @@
   <path d="M 205.0 180.0 L 295.0 180.0 L 295.0 65.0 L 570.0 65.0 L 570.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 205.0 180.0 L 295.0 180.0 L 295.0 330.0 L 570.0 330.0 L 570.0 260.0 L 585.0 260.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="228.6455078125" y="156.0" width="82.708984375" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270" y="168.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Backplane Bus</text>
-</g>
-  <g class="badge">
-  <rect x="228.6455078125" y="201.0" width="82.708984375" height="18.0" rx="9.0" fill="#133663" />
-  <text x="270" y="213.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Backplane Bus</text>
+  <rect x="207.6455078125" y="151.0" width="82.708984375" height="18.0" rx="9.0" fill="#133663" />
+  <text x="249" y="163.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Backplane Bus</text>
 </g>
   <g class="badge">
   <rect x="390.59375" y="56.0" width="83.8125" height="18.0" rx="9.0" fill="#133663" />

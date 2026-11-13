@@ -36,24 +36,8 @@
   <text x="275" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ECMP Route</text>
 </g>
   <g class="badge">
-  <rect x="237.82275390625" y="206.0" width="74.3544921875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="275" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ECMP Route</text>
-</g>
-  <g class="badge">
-  <rect x="237.82275390625" y="206.0" width="74.3544921875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="275" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ECMP Route</text>
-</g>
-  <g class="badge">
   <rect x="237.82275390625" y="251.0" width="74.3544921875" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="275" y="263.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ECMP Route</text>
-</g>
-  <g class="badge">
-  <rect x="237.82275390625" y="251.0" width="74.3544921875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="275" y="263.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ECMP Route</text>
-</g>
-  <g class="badge">
-  <rect x="237.82275390625" y="296.0" width="74.3544921875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="275" y="308.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ECMP Route</text>
 </g>
   <g class="badge">
   <rect x="502.27587890625" y="161.0" width="65.4482421875" height="18.0" rx="9.0" fill="#2B313B" />

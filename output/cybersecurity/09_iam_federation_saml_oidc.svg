@@ -36,24 +36,24 @@
   <path d="M 465.0 170.0 L 605.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <path d="M 465.0 170.0 L 535.0 170.0 L 535.0 260.0 L 605.0 260.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="222.8056640625" y="156.0" width="104.388671875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="275" y="168.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SSO Login Request</text>
+  <rect x="214.376953125" y="149.25" width="53.24609375" height="41.5" rx="9.0" fill="#FFFFFF" />
+  <text x="241" y="160.94" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="241" dy="0">SSO</tspan> <tspan x="241" dy="12.5">Login</tspan> <tspan x="241" dy="12.5">Request</tspan></text>
 </g>
   <g class="badge">
-  <rect x="232.53955078125" y="206.0" width="84.9208984375" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="275" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Challenge MFA</text>
+  <rect x="278.48291015625" y="165.5" width="61.0341796875" height="29.0" rx="9.0" fill="#FFFFFF" />
+  <text x="309" y="177.19" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="309" dy="0">Challenge</tspan> <tspan x="309" dy="12.5">MFA</tspan></text>
 </g>
   <g class="badge">
-  <rect x="230.0419921875" y="206.0" width="89.916015625" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="275" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">FIDO Attestation</text>
+  <rect x="230.0419921875" y="253.0" width="89.916015625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="275" y="265.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">FIDO Attestation</text>
 </g>
   <g class="badge">
   <rect x="340.03466796875" y="206.0" width="129.9306640625" height="18.0" rx="9.0" fill="#FFFFFF" />
   <text x="405" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Verify Group Membership</text>
 </g>
   <g class="badge">
-  <rect x="479.7587890625" y="161.0" width="110.482421875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="535" y="173.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SAML Assertion Post</text>
+  <rect x="538.15771484375" y="149.25" width="57.6845703125" height="41.5" rx="9.0" fill="#FFFFFF" />
+  <text x="567" y="160.94" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="567" dy="0">SAML</tspan> <tspan x="567" dy="12.5">Assertion</tspan> <tspan x="567" dy="12.5">Post</tspan></text>
 </g>
   <g class="badge">
   <rect x="488.93115234375" y="206.0" width="92.1376953125" height="18.0" rx="9.0" fill="#FFFFFF" />

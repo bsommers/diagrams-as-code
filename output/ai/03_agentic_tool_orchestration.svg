@@ -48,16 +48,16 @@
   <text x="682.5" y="68.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Recall History</text>
 </g>
   <g class="badge">
-  <rect x="480.59130859375" y="161.0" width="78.8173828125" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="520" y="173.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Execute Code</text>
+  <rect x="524.93359375" y="155.5" width="52.1328125" height="29.0" rx="9.0" fill="#383A59" />
+  <text x="551" y="167.19" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="551" dy="0">Execute</tspan> <tspan x="551" dy="12.5">Code</tspan></text>
 </g>
   <g class="badge">
   <rect x="473.36474609375" y="206.0" width="93.2705078125" height="18.0" rx="9.0" fill="#383A59" />
   <text x="520" y="218.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Semantic Lookup</text>
 </g>
   <g class="badge">
-  <rect x="487.82275390625" y="251.0" width="64.3544921875" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="520" y="263.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Run Query</text>
+  <rect x="487.82275390625" y="264.0" width="64.3544921875" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="520" y="276.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Run Query</text>
 </g>
   <g class="badge">
   <rect x="213.36474609375" y="171.0" width="113.2705078125" height="18.0" rx="9.0" fill="#383A59" />

@@ -48,20 +48,20 @@
   <text x="270" y="168.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Signed Offer Letter</text>
 </g>
   <g class="badge">
-  <rect x="450.02734375" y="156.0" width="139.9453125" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="520" y="168.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Trigger Equipment Dispatch</text>
+  <rect x="488.09619140625" y="144.25" width="63.8076171875" height="41.5" rx="9.0" fill="#FFFFFF" />
+  <text x="520" y="155.94" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="520" dy="0">Trigger</tspan> <tspan x="520" dy="12.5">Equipment</tspan> <tspan x="520" dy="12.5">Dispatch</tspan></text>
 </g>
   <g class="badge">
-  <rect x="463.083984375" y="206.0" width="113.83203125" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="520" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Create Cloud Account</text>
+  <rect x="463.083984375" y="246.0" width="113.83203125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="520" y="258.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Create Cloud Account</text>
 </g>
   <g class="badge">
-  <rect x="630.8720703125" y="56.0" width="103.255859375" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="682.5" y="68.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issue Security Card</text>
+  <rect x="768.3720703125" y="72.0" width="103.255859375" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="820" y="84.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issue Security Card</text>
 </g>
   <g class="badge">
-  <rect x="767.26123046875" y="56.0" width="80.4775390625" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="807.5" y="68.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Enroll Benefits</text>
+  <rect x="879.76123046875" y="56.0" width="80.4775390625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="920" y="68.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Enroll Benefits</text>
 </g>
   <g class="badge">
   <rect x="306.1552734375" y="231.0" width="102.689453125" height="18.0" rx="9.0" fill="#FFFFFF" />

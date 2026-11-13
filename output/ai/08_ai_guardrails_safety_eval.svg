@@ -56,8 +56,8 @@
   <text x="520" y="218.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Anonymized Prompt</text>
 </g>
   <g class="badge">
-  <rect x="727.26123046875" y="156.0" width="85.4775390625" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="770" y="168.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Draft Response</text>
+  <rect x="748.26123046875" y="151.0" width="85.4775390625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="791" y="163.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Draft Response</text>
 </g>
   <g class="badge">
   <rect x="956.68994140625" y="161.0" width="126.6201171875" height="18.0" rx="9.0" fill="#FFFFFF" />

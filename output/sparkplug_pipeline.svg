@@ -45,8 +45,8 @@
   <text x="540" y="253.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Extension</text>
 </g>
   <g class="badge">
-  <rect x="488.93359375" y="281.0" width="102.1328125" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="540" y="293.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MQTT Subscription</text>
+  <rect x="488.93359375" y="285.5" width="102.1328125" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="540" y="297.94" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MQTT Subscription</text>
 </g>
   <g id="shape_2" filter="url(#shadow)">
     <rect x="60.0" y="100.0" width="140.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />

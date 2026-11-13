@@ -32,14 +32,6 @@
   <text x="270" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">LoRa Wireless</text>
 </g>
   <g class="badge">
-  <rect x="229.490234375" y="206.0" width="81.01953125" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="270" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">LoRa Wireless</text>
-</g>
-  <g class="badge">
-  <rect x="229.490234375" y="251.0" width="81.01953125" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="270" y="263.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">LoRa Wireless</text>
-</g>
-  <g class="badge">
   <rect x="480.60107421875" y="161.0" width="78.7978515625" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">HTTPS Ingest</text>
 </g>

@@ -28,8 +28,8 @@
   <text x="442.55" y="163.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">approved</text>
 </g>
   <g class="badge">
-  <rect x="442.6103515625" y="176.0" width="51.576171875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="468.4" y="188.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">rejected</text>
+  <rect x="442.6103515625" y="192.30078125" width="51.576171875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="468.4" y="204.74" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">rejected</text>
 </g>
   <g class="badge">
   <rect x="839.87841796875" y="176.0" width="52.1376953125" height="18.0" rx="9.0" fill="#FFFFFF" />

@@ -44,10 +44,6 @@
   <rect x="480.3203125" y="161.0" width="79.359375" height="18.0" rx="9.0" fill="#133663" />
   <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">OSPF Internal</text>
 </g>
-  <g class="badge">
-  <rect x="480.3203125" y="206.0" width="79.359375" height="18.0" rx="9.0" fill="#133663" />
-  <text x="520" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">OSPF Internal</text>
-</g>
   <g id="isp1" filter="url(#shadow)">
     <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
     <g class="icon icon-bgp" transform="translate(133.6, 143.2) scale(0.9500000000000001)">

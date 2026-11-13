@@ -55,10 +55,6 @@
   <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Conditioned Power</text>
 </g>
   <g class="badge">
-  <rect x="632.25146484375" y="231.0" width="100.4970703125" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="682.5" y="243.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Conditioned Power</text>
-</g>
-  <g class="badge">
   <rect x="889.47802734375" y="231.0" width="86.0439453125" height="18.0" rx="9.0" fill="#2B313B" />
   <text x="932.5" y="243.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Isolated Feed A</text>
 </g>

@@ -46,12 +46,12 @@
   <text x="395" y="218.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Present to CAB Review</text>
 </g>
   <g class="badge">
-  <rect x="450.857421875" y="206.0" width="138.28515625" height="18.0" rx="9.0" fill="#163028" />
-  <text x="520" y="218.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Approve Execution Window</text>
+  <rect x="490.0419921875" y="194.25" width="59.916015625" height="41.5" rx="9.0" fill="#163028" />
+  <text x="520" y="205.94" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="520" dy="0">Approve</tspan> <tspan x="520" dy="12.5">Execution</tspan> <tspan x="520" dy="12.5">Window</tspan></text>
 </g>
   <g class="badge">
-  <rect x="696.130859375" y="163.0" width="147.73828125" height="18.0" rx="9.0" fill="#163028" />
-  <text x="770" y="175.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Run Post-Change Verification</text>
+  <rect x="732.8154296875" y="151.25" width="74.369140625" height="41.5" rx="9.0" fill="#163028" />
+  <text x="770" y="162.94" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="770" dy="0">Run</tspan> <tspan x="770" dy="12.5">Post-Change</tspan> <tspan x="770" dy="12.5">Verification</tspan></text>
 </g>
   <g class="badge">
   <rect x="826.41162109375" y="214.0" width="137.1767578125" height="18.0" rx="9.0" fill="#163028" />

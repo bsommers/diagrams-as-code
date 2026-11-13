@@ -41,12 +41,12 @@
   <text x="270" y="173.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">gRPC Telemetry</text>
 </g>
   <g class="badge">
-  <rect x="246.99267578125" y="206.0" width="46.0146484375" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="270" y="218.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Syslog</text>
+  <rect x="217.99267578125" y="251.0" width="46.0146484375" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="241" y="263.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Syslog</text>
 </g>
   <g class="badge">
-  <rect x="233.3720703125" y="251.0" width="73.255859375" height="18.0" rx="9.0" fill="#331E29" />
-  <text x="270" y="263.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Event Bridge</text>
+  <rect x="233.3720703125" y="274.0" width="73.255859375" height="18.0" rx="9.0" fill="#331E29" />
+  <text x="270" y="286.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Event Bridge</text>
 </g>
   <g class="badge">
   <rect x="349.76123046875" y="206.0" width="90.4775390625" height="18.0" rx="9.0" fill="#331E29" />
