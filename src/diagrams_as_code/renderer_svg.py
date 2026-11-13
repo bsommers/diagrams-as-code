@@ -10,7 +10,16 @@ from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
-from diagrams_as_code.labels import BELOW_GAP, ICON_GAP, badge_size, edge_badge_rect, node_label
+from diagrams_as_code.labels import (
+    BELOW_GAP,
+    ICON_GAP,
+    PLATE_KINDS,
+    badge_size,
+    edge_badge_rect,
+    label_area,
+    node_label,
+    shape_kind,
+)
 from diagrams_as_code.metrics import wrap_text
 from diagrams_as_code.text import TextStyle, layout
 from diagrams_as_code.shapes import ShapeLibrary
@@ -808,18 +817,30 @@ class SVGRenderer:
                         )
                     )
             else:
-                # Icon (if any) stacked above the label, the pair centred in the shape.
-                top = b.y + (b.height - label.content_height) / 2.0
+                # Icon (if any) stacked above the label, the pair centred in the
+                # part of the shape its artwork leaves free.
+                area = label_area(el)
+                cx = area.center.x
+                top = area.y + (area.height - label.content_height) / 2.0
+                if shape_kind(el) in PLATE_KINDS and (icon_name or label.block is not None):
+                    # The artwork fills the body: clear a plate for the label to sit on.
+                    plate_w = max(label.block.width if label.block is not None else 0.0, label.icon_size) + 12.0
+                    plate_w = min(plate_w, b.width - 8.0)
+                    plate_h = min(label.content_height + 6.0, b.height - 4.0)
+                    lines.append(
+                        f'    <rect class="label-plate" x="{cx - plate_w / 2.0}" y="{top - 3.0}" '
+                        f'width="{plate_w}" height="{plate_h}" rx="3" fill="{fill}" />'
+                    )
                 if icon_name:
                     icon_color = str(el.metadata.get("icon_color", self.theme.accent))
                     lines.append(
-                        f"    {self.shapes.render_icon(icon_name, b.center.x - label.icon_size / 2.0, top, size=label.icon_size, color=icon_color)}"
+                        f"    {self.shapes.render_icon(icon_name, cx - label.icon_size / 2.0, top, size=label.icon_size, color=icon_color)}"
                     )
                     top += label.icon_size + (ICON_GAP if label.block is not None else 0.0)
                 if label.block is not None:
                     lines.append(
                         label.block.to_svg(
-                            b.center.x, top, valign="top",
+                            cx, top, valign="top",
                             fill=text_color, font_family=family, indent="    ",
                         )
                     )

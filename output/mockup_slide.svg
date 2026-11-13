@@ -80,6 +80,7 @@
 <line x1="360.0" y1="159.375" x2="486.0" y2="159.375" stroke="#FFC000" stroke-width="1" />
 <circle cx="494.0" cy="159.375" r="1.2" fill="#FFC000" />
 <circle cx="500.0" cy="159.375" r="1.2" fill="#FFC000" />
+    <rect class="label-plate" x="382.095947265625" y="111.2" width="95.80810546875" height="47.6" rx="3" fill="#24242A" />
     <g class="icon icon-broker" transform="translate(418.0, 114.2) scale(1.0)">
   <circle cx="12" cy="12" r="3.5" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <circle cx="12" cy="3.5" r="2" fill="#FFC000"/>

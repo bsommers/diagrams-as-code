@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Consistent port spreading.** When a node side carries both incoming and outgoing edges, the order now takes account of the shift already given to each edge's other end, so a request/reply pair is drawn as two straight parallel lines instead of two overlapping Z shapes.
 - A badge with no clear spot on its line may sit just beside the line.
 - The audit no longer counts a bus as overlapping edges when every source on it feeds every target on it (`connections.may_share_a_line`); a partial bus is still counted. Gallery audit: overlapping edges 22 -> 1, line through badge 183 -> 11, badge over badge 16 -> 0.
+- **Labels clear of shape artwork.** `labels.label_area(shape)` gives the part of a shape an inside label and icon may use: below the rim of a cylinder or database, between the lobes of a cloud, the inscribed rectangle of a diamond. Fitting, grow-to-fit, drawing and the audit all use it. Server racks and databases, whose artwork fills the body, draw a plain plate behind the label. Cylinders, clouds and diamonds with long labels or icons may now grow slightly (opt out with `fit_label=False`).
 - `flatten` and `segment_enters` moved from `audit` to `geometry` (still importable from `audit`).
 - Gallery SVG output regenerated at the fitted sizes; `main.py` and the three root examples no longer hard-code a canvas size.
 

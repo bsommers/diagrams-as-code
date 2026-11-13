@@ -51,11 +51,43 @@ class NodeLabel:
 
 def label_position(shape: Any) -> str:
     """'inside' or 'bottom' for ``shape``."""
-    kind = (getattr(shape, "kind", "box") or "box").lower().replace("-", "_")
+    kind = shape_kind(shape)
     pos = getattr(shape, "label_position", "auto")
     if pos == "auto":
         return "bottom" if kind == "icon" else "inside"
     return "bottom" if pos in ("below", "bottom") else "inside"
+
+
+#: Kinds whose artwork fills the body; an inside label gets a plain plate behind it.
+PLATE_KINDS = frozenset({"server_rack", "database"})
+
+
+def shape_kind(shape: Any) -> str:
+    return (getattr(shape, "kind", "box") or "box").lower().replace("-", "_")
+
+
+def label_area(shape: Any) -> Rect:
+    """The part of ``shape`` an inside label (and its icon) may occupy.
+
+    It leaves out the artwork of the shape's kind: the rim of a cylinder, the
+    lobes of a cloud, the corners of a diamond. Layout, drawing and the audit
+    all use it, so a label that fits here is clear of the outline.
+    """
+    b = shape.bounds
+    kind = shape_kind(shape)
+    if kind == "cylinder":
+        ry = min(12.0, b.height / 4.0)
+        return Rect(b.x, b.y + 2.0 * ry, b.width, max(b.height - 2.5 * ry, 1.0))
+    if kind == "database":
+        tiers = max(1, int(getattr(shape, "metadata", {}).get("num_tiers", 3)))
+        ry = min(12.0, b.height / (tiers * 2.0))
+        return Rect(b.x, b.y + 2.0 * ry, b.width, max(b.height - 2.5 * ry, 1.0))
+    if kind == "cloud":
+        return Rect(b.x + 0.14 * b.width, b.y + 0.34 * b.height, 0.72 * b.width, 0.5 * b.height)
+    if kind == "diamond":
+        # A rectangle inscribed in a rhombus: its width and height shares sum to one.
+        return Rect(b.x + 0.18 * b.width, b.y + 0.32 * b.height, 0.64 * b.width, 0.36 * b.height)
+    return b
 
 
 def _fit(
@@ -100,16 +132,20 @@ def node_label(shape: Any) -> NodeLabel:
     if not text:
         return NodeLabel(position, None, icon, True, b.width, b.height)
     chrome = icon + (ICON_GAP if icon else 0.0)
-    max_w = max(b.width - 2 * PAD_X, 1.0)
-    max_h = max(b.height - 2 * PAD_Y - chrome, 1.0)
+    area = label_area(shape)
+    max_w = max(area.width - 2 * PAD_X, 1.0)
+    max_h = max(area.height - 2 * PAD_Y - chrome, 1.0)
     block, fits = _fit(text, max_w, max_h, _sizes(shape, INSIDE_SIZES), INSIDE_WEIGHT)
+    # The artwork takes the same share of a larger shape, so scale the need up.
+    share_w = area.width / b.width if b.width > 0 else 1.0
+    share_h = area.height / b.height if b.height > 0 else 1.0
     return NodeLabel(
         position,
         block,
         icon,
         fits,
-        needed_width=max(b.width, block.width + 2 * PAD_X),
-        needed_height=max(b.height, block.height + chrome + 2 * PAD_Y),
+        needed_width=max(b.width, (block.width + 2 * PAD_X) / max(share_w, 0.1)),
+        needed_height=max(b.height, (block.height + chrome + 2 * PAD_Y) / max(share_h, 0.1)),
     )
 
 
