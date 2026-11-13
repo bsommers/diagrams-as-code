@@ -37,12 +37,12 @@
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
   <path d="M 585.0 260.0 L 495.0 260.0 L 495.0 330.0 L 220.0 330.0 L 220.0 180.0 L 205.0 180.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
-  <rect x="208.9384765625" y="145.5" width="52.123046875" height="29.0" rx="9.0" fill="#383A59" />
-  <text x="235" y="157.19" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="235" dy="0">Process</tspan> <tspan x="235" dy="12.5">Events</tspan></text>
+  <rect x="230.263671875" y="148.0" width="85.47265625" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="273" y="160.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Process Events</text>
 </g>
   <g class="badge">
-  <rect x="224.20703125" y="206.0" width="91.5859375" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="270" y="218.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Auditd Telemetry</text>
+  <rect x="274.0" y="202.5" width="60.453125" height="29.0" rx="9.0" fill="#383A59" />
+  <text x="304.23" y="214.19" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="304.23" dy="0">Auditd</tspan> <tspan x="304.23" dy="12.5">Telemetry</tspan></text>
 </g>
   <g class="badge">
   <rect x="225.58642578125" y="268.0" width="88.8271484375" height="18.0" rx="9.0" fill="#383A59" />

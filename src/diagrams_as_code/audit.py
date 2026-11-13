@@ -10,6 +10,7 @@ from __future__ import annotations
 from collections import Counter
 from typing import Any, Iterator, Optional
 
+from diagrams_as_code.connections import may_share_a_line
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath, flatten, segment_enters
 from diagrams_as_code.labels import edge_badge_rect, node_label
 
@@ -123,10 +124,10 @@ def audit_diagram(diagram: Any) -> Counter[str]:
         if rect is not None:
             badges.append((edge, _box(rect)))
 
+    links = {(id(e.source), id(e.target)) for e in diagram.edges}
     for i, (e1, segs1) in enumerate(flat):
         for e2, segs2 in flat[i + 1 :]:
-            # A shared trunk out of one source, or into one target, is intended.
-            if e1.source is e2.source or e1.target is e2.target:
+            if may_share_a_line(e1, e2, links):
                 continue
             if any(_shared_run(a, b) > 6.0 for a in segs1 for b in segs2):
                 counts["edge_on_edge"] += 1

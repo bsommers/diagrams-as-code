@@ -36,6 +36,7 @@ from diagrams_as_code.layout.graph import (
     scope_children,
 )
 from diagrams_as_code.labels import badge_size, edge_badge_rect, node_label
+from diagrams_as_code.layout.lanes import separate_lanes
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
 from diagrams_as_code.router import EdgeRouter, RoutingScene, path_collides
@@ -140,6 +141,7 @@ def run_layout(diagram: Any) -> None:
         edge._resolved_style = style
         routes[edge] = path
         routes[id(edge)] = path
+    separate_lanes(diagram.edges, routes, [s.bounds for s in diagram.shapes])
     diagram.routes = routes
 
     # 2. Frame & Grow Canvas
@@ -192,11 +194,13 @@ def _spread_ports(
     """
     # (element, port) -> role -> [(edge index, edge, other end's centre)]
     sides: dict[tuple[Element, Any], dict[str, list[tuple[int, Edge, Point]]]] = {}
+    ports: dict[Edge, tuple[Any, Any]] = {}
     for idx, edge in enumerate(edges):
         if edge.manual_waypoints or edge.source is edge.target:
             continue
         obstacles = scene.obstacles_for(edge, clearance=0.0)
         sp, tp = router.resolve_ports(edge, obstacles=obstacles, style=styles[edge])
+        ports[edge] = (sp, tp)
         sides.setdefault((edge.source, sp), {}).setdefault("out", []).append(
             (idx, edge, edge.target.bounds.center)
         )
@@ -211,9 +215,21 @@ def _spread_ports(
         horizontal_side = port.value in ("north", "south")
         length = element.bounds.width if horizontal_side else element.bounds.height
 
+        def far_end(role: str, edge: Edge, centre: Point) -> float:
+            """Where the edge's other end sits along this side's axis.
+
+            Counts a shift already given to that end, so the two ends of an
+            edge are moved the same way and the edge stays straight.
+            """
+            other_port = ports[edge][1 if role == "out" else 0]
+            along = centre.x if horizontal_side else centre.y
+            if (other_port.value in ("north", "south")) == horizontal_side:
+                along += offsets.get(edge, [0.0, 0.0])[1 if role == "out" else 0]
+            return along
+
         def sort_key(role: str) -> tuple[float, int]:
             members = roles[role]
-            along = [c.x if horizontal_side else c.y for _, _, c in members]
+            along = [far_end(role, e, c) for _, e, c in members]
             return (round(sum(along) / len(along), 6), min(i for i, _, _ in members))
 
         for slot, role in enumerate(sorted(roles, key=sort_key)):

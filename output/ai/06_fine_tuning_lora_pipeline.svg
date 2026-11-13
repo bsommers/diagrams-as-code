@@ -33,8 +33,8 @@
   <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 895.0 200.0 L 895.0 230.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="208.9384765625" y="149.25" width="52.123046875" height="41.5" rx="9.0" fill="#2B313B" />
-  <text x="235" y="160.94" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="235" dy="0">Load</tspan> <tspan x="235" dy="12.5">Frozen</tspan> <tspan x="235" dy="12.5">Weights</tspan></text>
+  <rect x="215.4755859375" y="148.0" width="111.048828125" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="271" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Load Frozen Weights</text>
 </g>
   <g class="badge">
   <rect x="208.08154296875" y="206.0" width="123.8369140625" height="18.0" rx="9.0" fill="#2B313B" />

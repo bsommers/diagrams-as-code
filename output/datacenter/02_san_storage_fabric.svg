@@ -28,8 +28,8 @@
     <text x="826" y="104" fill="#FFC000" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Storage Array</text>
   </g>
   <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 205.0 170.0 L 295.0 170.0 L 295.0 240.0 L 570.0 240.0 L 570.0 170.0 L 585.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
-  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 240.0 L 820.0 240.0 L 820.0 170.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205.0 170.0 L 295.0 170.0 L 295.0 254.0 L 570.0 254.0 L 570.0 170.0 L 585.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 240.0 L 834.0 240.0 L 834.0 170.0 L 835.0 170.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 705.0 170.0 L 770.0 170.0 L 770.0 260.0 L 835.0 260.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <path d="M 895.0 200.0 L 895.0 215.0 L 820.0 215.0 L 820.0 305.0 L 895.0 305.0 L 895.0 320.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 895.0 290.0 L 895.0 320.0" fill="none" stroke="#FFC000" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
@@ -38,8 +38,8 @@
   <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">32G FC Link</text>
 </g>
   <g class="badge">
-  <rect x="641.9853515625" y="231.0" width="81.029296875" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="682.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Target Port A1</text>
+  <rect x="648.9853515625" y="231.0" width="81.029296875" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="689.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Target Port A1</text>
 </g>
   <g class="badge">
   <rect x="729.4853515625" y="206.0" width="81.029296875" height="18.0" rx="9.0" fill="#24242A" />

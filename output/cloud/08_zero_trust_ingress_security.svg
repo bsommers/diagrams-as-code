@@ -54,8 +54,8 @@
   <text x="770" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Forward to DMZ</text>
 </g>
   <g class="badge">
-  <rect x="987.556640625" y="161.0" width="64.88671875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="1020" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Verify JWT</text>
+  <rect x="988.556640625" y="148.0" width="64.88671875" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="1021" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Verify JWT</text>
 </g>
   <g class="badge">
   <rect x="1143.0986328125" y="231.0" width="78.802734375" height="18.0" rx="9.0" fill="#2B313B" />

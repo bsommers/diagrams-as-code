@@ -54,8 +54,8 @@
   <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Filter Topic</text>
 </g>
   <g class="badge">
-  <rect x="737.8203125" y="161.0" width="64.359375" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="770" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Sync State</text>
+  <rect x="738.8203125" y="148.0" width="64.359375" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="771" y="160.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Sync State</text>
 </g>
   <g class="badge">
   <rect x="871.69970703125" y="231.0" width="121.6005859375" height="18.0" rx="9.0" fill="#24242A" />

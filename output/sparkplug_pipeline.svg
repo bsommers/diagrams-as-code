@@ -37,12 +37,12 @@
   <text x="270" y="249.69" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">spBv1.0 Payload</text>
 </g>
   <g class="badge">
-  <rect x="510.0419921875" y="201.0" width="59.916015625" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="540" y="213.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Extension</text>
+  <rect x="510.0419921875" y="199.5" width="59.916015625" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="540" y="211.94" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Extension</text>
 </g>
   <g class="badge">
-  <rect x="510.0419921875" y="241.0" width="59.916015625" height="18.0" rx="9.0" fill="#24242A" />
-  <text x="540" y="253.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Extension</text>
+  <rect x="508.0419921875" y="220.5" width="59.916015625" height="18.0" rx="9.0" fill="#24242A" />
+  <text x="538" y="232.94" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Extension</text>
 </g>
   <g class="badge">
   <rect x="488.93359375" y="285.5" width="102.1328125" height="18.0" rx="9.0" fill="#24242A" />

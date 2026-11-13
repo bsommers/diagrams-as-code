@@ -45,8 +45,8 @@
   <text x="520" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">BGP Peering</text>
 </g>
   <g class="badge">
-  <rect x="731.9853515625" y="161.0" width="76.029296875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="770" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Attachment A</text>
+  <rect x="732.9853515625" y="148.0" width="76.029296875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="771" y="160.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Attachment A</text>
 </g>
   <g class="badge">
   <rect x="731.9853515625" y="206.0" width="76.029296875" height="18.0" rx="9.0" fill="#FFFFFF" />

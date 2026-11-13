@@ -28,8 +28,8 @@
   <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="206.99267578125" y="155.5" width="56.0146484375" height="29.0" rx="9.0" fill="#2B313B" />
-  <text x="235" y="167.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="235" dy="0">OPC UA</tspan> <tspan x="235" dy="12.5">Graphics</tspan></text>
+  <rect x="222.43359375" y="148.0" width="97.1328125" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="271" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">OPC UA Graphics</text>
 </g>
   <g class="badge">
   <rect x="225.59619140625" y="206.0" width="88.8076171875" height="18.0" rx="9.0" fill="#2B313B" />

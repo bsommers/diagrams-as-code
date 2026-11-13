@@ -49,7 +49,7 @@ def test_two_badges_do_not_overlap():
     routes = {a: _line((0, 0), (300, 0)), b: _line((0, 6), (300, 6))}
     place_badges([a, b], routes, [])
     ra, rb = edge_badge_rect(a, routes[a]), edge_badge_rect(b, routes[b])
-    assert ra.right <= rb.left or rb.right <= ra.left
+    assert ra.right <= rb.left or rb.right <= ra.left or ra.bottom <= rb.top or rb.bottom <= ra.top
 
 
 def test_long_label_in_a_short_gap_is_wrapped():
@@ -94,3 +94,12 @@ def test_diagram_badges_are_drawn_where_the_audit_looks():
     counts = audit_diagram(d)
     assert "badge_over_node" not in counts
     assert svg.count('class="badge"') == 1
+
+
+def test_badge_sits_beside_its_line_when_the_line_is_shared_end_to_end():
+    e, other = _Edge("Alpha"), _Edge("Beta")
+    path = _line((0, 0), (120, 0))
+    routes = {e: path, other: _line((0, 0), (120, 0))}
+    place_badges([other, e], routes, [])
+    rect = edge_badge_rect(e, path)
+    assert rect.bottom < 0 or rect.top > 0

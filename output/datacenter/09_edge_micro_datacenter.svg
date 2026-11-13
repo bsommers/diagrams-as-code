@@ -40,8 +40,8 @@
   <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">AC Power Feed</text>
 </g>
   <g class="badge">
-  <rect x="732.8251953125" y="155.5" width="74.349609375" height="29.0" rx="9.0" fill="#133663" />
-  <text x="770" y="167.19" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="770" dy="0">Remote IPMI</tspan> <tspan x="770" dy="12.5">Console</tspan></text>
+  <rect x="714.09130859375" y="148.0" width="113.8173828125" height="18.0" rx="9.0" fill="#133663" />
+  <text x="771" y="160.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Remote IPMI Console</text>
 </g>
   <g class="badge">
   <rect x="503.65771484375" y="231.0" width="107.6845703125" height="18.0" rx="9.0" fill="#133663" />

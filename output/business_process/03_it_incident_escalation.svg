@@ -49,8 +49,8 @@
   <text x="520" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Escalate to Sev-1</text>
 </g>
   <g class="badge">
-  <rect x="716.970703125" y="161.0" width="106.05859375" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="770" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Publish Degradation</text>
+  <rect x="717.970703125" y="148.0" width="106.05859375" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="771" y="160.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Publish Degradation</text>
 </g>
   <g class="badge">
   <rect x="880.3203125" y="231.0" width="104.359375" height="18.0" rx="9.0" fill="#FFFFFF" />

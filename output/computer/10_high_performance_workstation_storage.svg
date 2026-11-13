@@ -37,8 +37,8 @@
   <text x="270" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">GPUDirect Storage (GDS)</text>
 </g>
   <g class="badge">
-  <rect x="219.1083984375" y="155.5" width="43.783203125" height="29.0" rx="9.0" fill="#2B313B" />
-  <text x="241" y="167.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="241" dy="0">NVMe</tspan> <tspan x="241" dy="12.5">Driver</tspan></text>
+  <rect x="234.38671875" y="148.0" width="73.2265625" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="271" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">NVMe Driver</text>
 </g>
   <g class="badge">
   <rect x="485.32763671875" y="251.0" width="99.3447265625" height="18.0" rx="9.0" fill="#2B313B" />

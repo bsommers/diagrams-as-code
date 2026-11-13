@@ -46,8 +46,8 @@
   <text x="395" y="218.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Present to CAB Review</text>
 </g>
   <g class="badge">
-  <rect x="490.0419921875" y="194.25" width="59.916015625" height="41.5" rx="9.0" fill="#163028" />
-  <text x="520" y="205.94" text-anchor="middle" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="520" dy="0">Approve</tspan> <tspan x="520" dy="12.5">Execution</tspan> <tspan x="520" dy="12.5">Window</tspan></text>
+  <rect x="524.0" y="208.0" width="138.28515625" height="18.0" rx="9.0" fill="#163028" />
+  <text x="593.14" y="220.44" fill="#ECFDF5" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Approve Execution Window</text>
 </g>
   <g class="badge">
   <rect x="732.8154296875" y="151.25" width="74.369140625" height="41.5" rx="9.0" fill="#163028" />

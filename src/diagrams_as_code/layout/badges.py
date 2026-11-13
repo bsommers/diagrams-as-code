@@ -3,7 +3,8 @@
 A badge starts at the midpoint of its edge. If that spot covers a node, another
 badge, or another edge's line, the badge slides along its own route to the
 nearest spot that is clear. If no spot is clear it is wrapped onto two or three
-lines and tried again; failing that it takes the spot with the fewest conflicts.
+lines, or set just beside its line, and tried again; failing that it takes the
+spot with the fewest conflicts.
 Edges that carry the same label along a shared trunk get one badge between
 them. The edge geometry is never changed.
 """
@@ -26,24 +27,27 @@ LINE_COST = 30.0
 DRIFT_COST = 0.02
 #: Cost of each extra line of wrapping; an unwrapped badge wins when equally clear.
 WRAP_COST = 1.0
+#: Cost of sitting beside the line instead of on it.
+BESIDE_COST = 8.0
 #: Fractions of the unwrapped text width to wrap at: about two lines, then three.
 WRAP_FRACTIONS = (0.6, 0.42)
 
 Segment = tuple[Point, Point]
 
 
-def _samples(points: Sequence[Point]) -> list[Point]:
-    """Points every ``STEP`` along a polyline, end points excluded."""
-    out: list[Point] = []
+def _samples(points: Sequence[Point]) -> list[tuple[Point, float, float]]:
+    """(point, unit normal x, unit normal y) every ``STEP`` along a polyline, ends excluded."""
+    out: list[tuple[Point, float, float]] = []
     carry = STEP
     for a, b in zip(points, points[1:]):
         length = math.hypot(b.x - a.x, b.y - a.y)
         if length <= 0.0:
             continue
+        nx, ny = -(b.y - a.y) / length, (b.x - a.x) / length
         at = carry
         while at < length:
             t = at / length
-            out.append(Point(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t))
+            out.append((Point(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t), nx, ny))
             at += STEP
         carry = at - length
     return out
@@ -130,10 +134,22 @@ def place_badges(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: Seq
                 )
                 return total + WRAP_COST * penalty + DRIFT_COST * math.hypot(x - hx, y - hy)
 
-            for cand in [Point(hx, hy)] + candidates:
-                c = cost(cand.x, cand.y)
+            def consider(cand: Point, extra: float = 0.0) -> None:
+                nonlocal best
+                c = cost(cand.x, cand.y) + extra
                 if best is None or c < best[0] - 1e-9:
                     best = (c, cand, wrap, Rect(cand.x - w / 2.0, cand.y - h / 2.0, w, h))
+
+            consider(Point(hx, hy))
+            for cand, _, _ in candidates:
+                consider(cand)
+            if best is not None and best[0] < LINE_COST:
+                break
+            # Nothing on the line is clear: try just beside it.
+            for cand, nx, ny in candidates:
+                reach = abs(nx) * w / 2.0 + abs(ny) * h / 2.0 + GAP + 1.0
+                for side in (-1.0, 1.0):
+                    consider(Point(cand.x + side * nx * reach, cand.y + side * ny * reach), BESIDE_COST)
             if best is not None and best[0] < LINE_COST:
                 break
         assert best is not None

@@ -35,28 +35,28 @@
   <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="275.77099609375" y="149.25" width="50.4580078125" height="41.5" rx="9.0" fill="#2B313B" />
-  <text x="301" y="160.94" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="301" dy="0">Brute</tspan> <tspan x="301" dy="12.5">Force</tspan> <tspan x="301" dy="12.5">Attempt</tspan></text>
+  <rect x="218.26123046875" y="148.0" width="105.4775390625" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="271" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Brute Force Attempt</text>
 </g>
   <g class="badge">
-  <rect x="275.77099609375" y="239.25" width="50.4580078125" height="41.5" rx="9.0" fill="#2B313B" />
-  <text x="301" y="250.94" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="301" dy="0">HTTP</tspan> <tspan x="301" dy="12.5">Exploit</tspan> <tspan x="301" dy="12.5">Attempt</tspan></text>
+  <rect x="274.0" y="204.0" width="112.1376953125" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="330.07" y="216.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">HTTP Exploit Attempt</text>
 </g>
   <g class="badge">
-  <rect x="231.98291015625" y="288.0" width="76.0341796875" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="270" y="300.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL Injection</text>
+  <rect x="231.98291015625" y="264.0" width="76.0341796875" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="270" y="276.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL Injection</text>
 </g>
   <g class="badge">
-  <rect x="465.2119140625" y="155.5" width="51.576171875" height="29.0" rx="9.0" fill="#2B313B" />
-  <text x="491" y="167.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="491" dy="0">Session</tspan> <tspan x="491" dy="12.5">PCAP</tspan></text>
+  <rect x="480.20703125" y="148.0" width="81.5859375" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="521" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Session PCAP</text>
 </g>
   <g class="badge">
-  <rect x="458.93115234375" y="245.5" width="52.1376953125" height="29.0" rx="9.0" fill="#2B313B" />
-  <text x="485" y="257.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="485" dy="0">Payload</tspan> <tspan x="485" dy="12.5">Dump</tspan></text>
+  <rect x="434.4091796875" y="208.0" width="81.5908203125" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="475.2" y="220.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Payload Dump</text>
 </g>
   <g class="badge">
-  <rect x="466.14794921875" y="280.0" width="107.7041015625" height="18.0" rx="9.0" fill="#2B313B" />
-  <text x="520" y="292.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Honeytoken Tripwire</text>
+  <rect x="466.14794921875" y="268.0" width="107.7041015625" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="520" y="280.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Honeytoken Tripwire</text>
 </g>
   <g class="badge">
   <rect x="732.546875" y="161.0" width="74.90625" height="18.0" rx="9.0" fill="#2B313B" />

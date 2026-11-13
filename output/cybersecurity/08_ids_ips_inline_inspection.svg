@@ -33,12 +33,12 @@
   <text x="270" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Raw Ingress</text>
 </g>
   <g class="badge">
-  <rect x="347.48779296875" y="200.5" width="61.0244140625" height="29.0" rx="9.0" fill="#2B313B" />
-  <text x="378" y="212.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="378" dy="0">Encrypted</tspan> <tspan x="378" dy="12.5">Copy</tspan></text>
+  <rect x="303.8525390625" y="207.0" width="87.1474609375" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="347.43" y="219.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Encrypted Copy</text>
 </g>
   <g class="badge">
-  <rect x="349.2119140625" y="290.5" width="61.576171875" height="29.0" rx="9.0" fill="#2B313B" />
-  <text x="380" y="302.19" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="380" dy="0">Decrypted</tspan> <tspan x="380" dy="12.5">Stream</tspan></text>
+  <rect x="294.4140625" y="293.0" width="96.5859375" height="18.0" rx="9.0" fill="#2B313B" />
+  <text x="342.71" y="305.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Decrypted Stream</text>
 </g>
   <g class="badge">
   <rect x="428.650390625" y="210.0" width="82.69921875" height="18.0" rx="9.0" fill="#2B313B" />

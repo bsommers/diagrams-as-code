@@ -54,8 +54,8 @@
   <text x="395" y="308.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Ring AllReduce</text>
 </g>
   <g class="badge">
-  <rect x="352.537109375" y="386.0" width="84.92578125" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="395" y="398.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Ring AllReduce</text>
+  <rect x="399.0" y="383.0" width="84.92578125" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="441.46" y="395.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Ring AllReduce</text>
 </g>
   <g class="badge">
   <rect x="466.1357421875" y="161.0" width="107.728515625" height="18.0" rx="9.0" fill="#383A59" />

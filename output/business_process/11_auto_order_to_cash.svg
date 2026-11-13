@@ -24,8 +24,8 @@
   <path d="M 825.09765625 160.0 L 865.947265625 160.0 L 865.947265625 110.0 L 906.796875 110.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <path d="M 825.09765625 160.0 L 865.947265625 160.0 L 865.947265625 210.0 L 906.796875 210.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="413.69921875" y="151.0" width="57.69921875" height="18.0" rx="9.0" fill="#FFFFFF" />
-  <text x="442.55" y="163.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">approved</text>
+  <rect x="414.849609375" y="138.0" width="57.69921875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <text x="443.7" y="150.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">approved</text>
 </g>
   <g class="badge">
   <rect x="442.6103515625" y="192.30078125" width="51.576171875" height="18.0" rx="9.0" fill="#FFFFFF" />
