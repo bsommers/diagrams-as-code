@@ -213,7 +213,7 @@ src/
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
 │   ├── theme.py                    # 14 built-in themes (nord, emerald, crimson, paper, …)
 │   ├── text/                       # Font metrics, rich text layout, math typesetting
-│   ├── audit.py                    # Visual defect checks on a solved diagram
+│   ├── audit.py                    # Visual defect checks on a solved diagram; named findings for `lint`
 │   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation
 │   ├── output.py                   # Writes a diagram's SVG, PNG and BOM to a directory
 │   ├── cli.py                      # `diagrams-as-code render|layout export|themes|icons`

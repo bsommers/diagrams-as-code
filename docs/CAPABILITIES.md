@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-13 (v0.11.0)  
+**Last Updated:** 2026-11-13 (v0.12.0)  
 
 ---
 
@@ -250,3 +250,15 @@
 - **Exports:** `Text`, `Caption`, `Bracket`, `Polygon`, `Polyline`, `Path`, `Band`, `SolidShape`, `Solid`, `Projection`, `oblique`, `isometric`, `Junction`, `AnchorRef`, `PathItem`, `TextItem`, `align`, `distribute`, `mm`, `pt`, `to_px`; `Diagram.text()`, `.caption()`, `.bracket()`, `.polygon()`, `.polyline()`, `.path()`, `.band()`, `.point()`, `.solid()`, `.cuboid()`, `.leader()`, `.fan_out()`, `.fan_in()`
 - **Features:** Free text, captions and brackets; polygons, polylines and SVG paths; dashed layer bands with side notes; shapes nested in shapes (`shape.inside()`) and double borders (`Style(double=)`); edge stroke weight, seven arrowhead styles, two-way arrows and ellipsis connectors; edge ends at fractional side anchors (`box.anchor("right", 0.25)`) or bare points, shared-trunk fan-out, leaders and splines through given points; convex solids in oblique and isometric projection with hidden-edge dashing, translucent faces and cutting planes; z-order (`z=`, `obstacle=`); `align()`, `distribute()`, `Diagram(grid=)` and lengths in px, pt, mm, cm and in. Nine focused figures in `examples/primitives/`.
 - **Verification:** `uv run pytest tests/test_primitives.py tests/test_edge_options.py tests/test_solids.py tests/test_drawing.py tests/test_primitive_examples.py`
+
+---
+
+### 2.17 Technical Figures & Visual Regression
+
+#### `CAP-DIAG-TECHNICAL-FIGURES`: Technical Figures, Lint and Golden Images
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.12.0`
+- **Python API:** `diagrams_as_code.audit` (`audit_findings`, `audit_diagram`, `Finding`)
+- **CLI:** `diagrams-as-code lint PATH... [--ignore KIND[,KIND]] [--quiet]`
+- **Features:** Eleven paper-style figures in `examples/technical/`, the first a reproduction of a reference figure with its slips corrected. `lint` lays each diagram out and reports every visual defect as `script: kind: detail`, naming the elements involved; exit code 1 if any are found. Golden-image regression: every technical figure is rendered at a fixed width with pinned fonts (`tests/fixtures/fonts`) and compared with `tests/golden/technical/*.png` within an anti-aliasing tolerance; `tools/golden_images.py --update` stores new pictures. Guides: `docs/technical-figures.md`, `docs/math-markup.md`.
+- **Verification:** `uv run pytest tests/test_technical_examples.py tests/test_golden_images.py tests/test_lint.py && uv run diagrams-as-code lint examples`
