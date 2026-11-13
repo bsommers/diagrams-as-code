@@ -44,7 +44,7 @@
   <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Serial DNP3 Over IP</text>
 </g>
   <g id="hmi_left" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-dashboard" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="3" y1="8" x2="21" y2="8" stroke="#00E5A3" stroke-width="2.0"/>
@@ -55,7 +55,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Primary Operator</tspan> <tspan x="145" dy="14.4">Touchscreen</tspan></text>
   </g>
   <g id="hmi_right" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-dashboard" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="3" y1="8" x2="21" y2="8" stroke="#00E5A3" stroke-width="2.0"/>
@@ -66,7 +66,7 @@
     <text x="145" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Secondary</tspan> <tspan x="145" dy="14.4">Alarm Monitor</tspan></text>
   </g>
   <g id="scada_pri" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-server_rack" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="4" y1="7" x2="20" y2="7" stroke="#00E5A3" stroke-width="2.0"/>
@@ -80,7 +80,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">SCADA</tspan> <tspan x="395" dy="14.4">Server Primary</tspan></text>
   </g>
   <g id="scada_sec" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-server_rack" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="4" y1="7" x2="20" y2="7" stroke="#00E5A3" stroke-width="2.0"/>
@@ -94,7 +94,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">SCADA Server</tspan> <tspan x="395" dy="14.4">Secondary</tspan></text>
   </g>
   <g id="field_rtu" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-plc" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="4" y1="9" x2="20" y2="9" stroke="#00E5A3" stroke-width="2.0"/>

@@ -53,7 +53,7 @@
   <text x="770" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Attachment B</text>
 </g>
   <g id="onprem_gw" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-router" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#268BD2" stroke-width="2.0" stroke-linecap="round"/>
@@ -67,7 +67,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Corporate</tspan> <tspan x="145" dy="14.4">VPN Gateway</tspan></text>
   </g>
   <g id="onprem_srv" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-server" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0"/>
@@ -79,7 +79,7 @@
     <text x="145" y="269.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Active Directory</tspan> <tspan x="145" dy="14.4">Server</tspan></text>
   </g>
   <g id="ipsec" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-firewall" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-linejoin="round"/>
   <line x1="8" y1="11" x2="16" y2="11" stroke="#268BD2" stroke-width="2.0"/>
@@ -88,7 +88,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Dual IPSec</tspan> <tspan x="395" dy="14.4">VPN Tunnels</tspan></text>
   </g>
   <g id="tgw" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#268BD2" stroke-width="2.0"/>
@@ -97,7 +97,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">AWS Transit</tspan> <tspan x="645" dy="14.4">Gateway</tspan></text>
   </g>
   <g id="prod_vpc" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(883.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#268BD2" stroke-width="2.0"/>
@@ -106,7 +106,7 @@
     <text x="895" y="186.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Production VPC</text>
   </g>
   <g id="stage_vpc" filter="url(#shadow)">
-    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(883.6, 239.8) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#268BD2" stroke-width="2.0"/>

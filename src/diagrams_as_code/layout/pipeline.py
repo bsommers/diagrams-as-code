@@ -35,7 +35,13 @@ from diagrams_as_code.layout.graph import (
     pinned_ids,
     scope_children,
 )
-from diagrams_as_code.labels import badge_size, edge_badge_rect, node_label
+from diagrams_as_code.labels import (
+    GROUP_TITLE_INSET,
+    badge_size,
+    edge_badge_rect,
+    group_title_rect,
+    node_label,
+)
 from diagrams_as_code.layout.lanes import separate_lanes
 from diagrams_as_code.layout.layered import LayeredLayout
 from diagrams_as_code.layout.sidecar import apply_entries, load_layout_file
@@ -146,7 +152,9 @@ def run_layout(diagram: Any) -> None:
 
     # 2. Frame & Grow Canvas
     _frame(elements, groups, routes)
-    place_badges(diagram.edges, routes, [s.bounds for s in diagram.shapes])
+    keep_clear = [s.bounds for s in diagram.shapes]
+    keep_clear += [t for t in (group_title_rect(g) for g in diagram.groups) if t is not None]
+    place_badges(diagram.edges, routes, keep_clear)
     _grow_canvas(diagram, elements, routes)
     diagram._layout_state.grown_size = (diagram.width, diagram.height)
     diagram._layout_state.solved = {id(el): (el.width, el.height) for el in elements}
@@ -354,9 +362,16 @@ def _auto_place(diagram: Any, elements: list[Element]) -> set[str]:
 
 
 def _refresh_group_bounds(groups: list[Group]) -> None:
+    """Recompute auto-sized groups, deepest first, widening any too narrow for its title."""
     for g in groups:
         if g.is_auto_sized and g.children:
-            g.calculate_bounds()
+            b = g.calculate_bounds()
+            title = group_title_rect(g)
+            if title is not None and getattr(g, "fit_title", True):
+                extra = title.width + 2.0 * GROUP_TITLE_INSET - b.width
+                if extra > 0.0:
+                    g.bounds = Rect(b.x - extra / 2.0, b.y, b.width + extra, b.height)
+                    g.width = g.bounds.width
 
 
 def _frame(

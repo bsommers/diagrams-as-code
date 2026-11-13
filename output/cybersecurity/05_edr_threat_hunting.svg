@@ -22,8 +22,8 @@
     <text x="76" y="104" fill="#FF79C6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Managed Endpoints</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#343746" stroke="#44475A" stroke-width="1.5" />
-    <text x="326" y="104" fill="#FF79C6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Threat Analytics Engine</text>
+    <rect x="299.2587890625" y="80.0" width="191.482421875" height="235.0" rx="8" fill="#343746" stroke="#44475A" stroke-width="1.5" />
+    <text x="315.26" y="104" fill="#FF79C6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Threat Analytics Engine</text>
   </g>
   <g id="group_3">
     <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#343746" stroke="#44475A" stroke-width="1.5" />
@@ -35,7 +35,7 @@
   <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
   <path d="M 455.0 274.0 L 520.0 274.0 L 520.0 170.0 L 585.0 170.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
   <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#BD93F9" stroke-width="2" marker-end="url(#arrow-BD93F9)" />
-  <path d="M 585.0 260.0 L 495.0 260.0 L 495.0 330.0 L 220.0 330.0 L 220.0 180.0 L 205.0 180.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
+  <path d="M 585.0 260.0 L 505.7412109375 260.0 L 505.7412109375 330.0 L 220.0 330.0 L 220.0 180.0 L 205.0 180.0" fill="none" stroke="#BD93F9" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-BD93F9)" />
   <g class="badge">
   <rect x="230.263671875" y="148.0" width="85.47265625" height="18.0" rx="9.0" fill="#383A59" />
   <text x="273" y="160.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Process Events</text>
@@ -61,11 +61,11 @@
   <text x="645" y="218.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Execute Containment</text>
 </g>
   <g class="badge">
-  <rect x="324.7685546875" y="321.0" width="65.462890625" height="18.0" rx="9.0" fill="#383A59" />
-  <text x="357.5" y="333.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Isolate NIC</text>
+  <rect x="330.13916015625" y="321.0" width="65.462890625" height="18.0" rx="9.0" fill="#383A59" />
+  <text x="362.87" y="333.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Isolate NIC</text>
 </g>
   <g id="win_host" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-laptop" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="4" y="5" width="16" height="11" rx="1" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 2 19 H 22 L 20 16 H 4 Z" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-linejoin="round"/>
@@ -73,7 +73,7 @@
     <text x="145" y="186.87" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Finance Desktop</text>
   </g>
   <g id="linux_srv" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-server" transform="translate(133.6, 239.8) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
@@ -85,7 +85,7 @@
     <text x="145" y="276.87" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Production Server</text>
   </g>
   <g id="mac_host" filter="url(#shadow)">
-    <rect x="85.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="85.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-laptop" transform="translate(133.6, 329.8) scale(0.9500000000000001)">
   <rect x="4" y="5" width="16" height="11" rx="1" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 2 19 H 22 L 20 16 H 4 Z" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-linejoin="round"/>
@@ -93,7 +93,7 @@
     <text x="145" y="366.87" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Executive Laptop</text>
   </g>
   <g id="sensor_hub" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-malware_scan" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
   <path d="M 4 8 V 4 H 8" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 16 4 H 20 V 8" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-linecap="round"/>
@@ -108,7 +108,7 @@
     <text x="395" y="186.53" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Telemetry Ingestion</text>
   </g>
   <g id="mitre_engine" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-siem" transform="translate(383.6, 240.4) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <circle cx="12" cy="12" r="5" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-dasharray="2 2"/>
@@ -118,7 +118,7 @@
     <text x="395" y="276.53" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ATT&amp;CK Correlator</text>
   </g>
   <g id="analyst_ws" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-soc" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <line x1="8" y1="20" x2="16" y2="20" stroke="#FF79C6" stroke-width="2.0" stroke-linecap="round"/>
@@ -129,7 +129,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Threat Hunter</tspan> <tspan x="645" dy="14.4">Console</tspan></text>
   </g>
   <g id="quarantine" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-lock" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#FF79C6" stroke-width="2.0"/>

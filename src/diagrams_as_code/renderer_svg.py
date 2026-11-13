@@ -10,12 +10,15 @@ from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
 from diagrams_as_code.groups import Group
+from diagrams_as_code.style import resolve_group_style, resolve_node_style
 from diagrams_as_code.labels import (
     BELOW_GAP,
+    GROUP_TITLE_BASELINE,
     ICON_GAP,
     PLATE_KINDS,
     badge_size,
     edge_badge_rect,
+    group_title_block,
     label_area,
     node_label,
     shape_kind,
@@ -24,6 +27,12 @@ from diagrams_as_code.metrics import wrap_text
 from diagrams_as_code.text import TextStyle, layout
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
+
+
+def _num(value: Any) -> str:
+    """A number as SVG text: no trailing ``.0``, at most three decimals."""
+    number = round(float(value), 3)
+    return str(int(number)) if number == int(number) else repr(number)
 
 
 class SVGRenderer:
@@ -63,10 +72,10 @@ class SVGRenderer:
 
     def _group_label(self, label: str, x: float, top: float, indent: str) -> str:
         """A group's title, set on the same baseline as before (24px below its top)."""
-        block = layout(label, TextStyle(size=14.0, bold=True))
+        block = group_title_block(label)
         first = block.baselines(0.0)[0]
         return block.to_svg(
-            x, top + 24.0 - first, anchor="start", valign="top",
+            x, top + GROUP_TITLE_BASELINE - first, anchor="start", valign="top",
             fill=self.theme.accent, font_family=self.theme.font_family, indent=indent,
         )
 
@@ -471,15 +480,18 @@ class SVGRenderer:
         h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
 
         svg_class = ' class="diagram-interactive"' if interactive else ""
+        # Marker size is in stroke widths; keep arrowheads readable on hairlines.
+        edge_w = max(float(self.theme.edge_width), 0.1)
+        marker = _num(6.0 * max(edge_w, 1.5) / edge_w)
         lines: list[str] = [
             f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_val} {h_val}" width="{w_val}" height="{h_val}"{svg_class}>',
 
 
             "  <defs>",
-            '    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">',
+            f'    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto-start-reverse">',
             f'      <path d="M 0 1 L 10 5 L 0 9 z" fill="{self.theme.accent}"/>',
             "    </marker>",
-            '    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">',
+            f'    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto">',
             f'      <path d="M 10 1 L 0 5 L 10 9 z" fill="{self.theme.accent}"/>',
             "    </marker>",
         ]
@@ -492,14 +504,14 @@ class SVGRenderer:
                 registered_colors.add(c)
                 m_id = self._marker_id_for_color(c)
                 lines.append(
-                    f'    <marker id="{m_id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+                    f'    <marker id="{m_id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto-start-reverse">'
                 )
                 lines.append(
                     f'      <path d="M 0 1 L 10 5 L 0 9 z" fill="{c}"/>'
                 )
                 lines.append("    </marker>")
                 lines.append(
-                    f'    <marker id="{m_id}-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">'
+                    f'    <marker id="{m_id}-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto">'
                 )
                 lines.append(
                     f'      <path d="M 10 1 L 0 5 L 10 9 z" fill="{c}"/>'
@@ -536,9 +548,11 @@ class SVGRenderer:
         for g in sorted_groups:
             b = g.bounds
             escaped_g_id = html.escape(g.id, quote=True)
-            g_meta = getattr(g, "metadata", {}) or {}
-            g_fill = g_meta.get("fill", self.theme.group_bg)
-            g_stroke = g_meta.get("stroke", self.theme.group_stroke)
+            g_style = resolve_group_style(self.theme, g)
+            g_fill, g_stroke = g_style.fill, g_style.stroke
+            g_frame = f'rx="{_num(g_style.radius)}" fill="{g_fill}" stroke="{g_stroke}" stroke-width="{_num(g_style.stroke_width)}"'
+            if g_style.dash:
+                g_frame += f' stroke-dasharray="{g_style.dash}"'
             if interactive:
                 p_attr = f' data-parent-group="{html.escape(g.parent.id, quote=True)}"' if g.parent is not None else ""
                 h_h = getattr(g, "header_height", 35.0)
@@ -549,8 +563,8 @@ class SVGRenderer:
                     f'data-collapsed="false" data-orig-height="{b.height}" data-header-height="{h_h}"{p_attr}>'
                 )
                 lines.append(
-                    f'    <rect class="group-box" x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" rx="8" '
-                    f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
+                    f'    <rect class="group-box" x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" '
+                    f'{g_frame} />'
                 )
                 lines.append(f'    <g class="group-header" data-group-id="{escaped_g_id}">')
                 lines.append(
@@ -566,8 +580,8 @@ class SVGRenderer:
             else:
                 lines.append(f'  <g id="{escaped_g_id}">')
                 lines.append(
-                    f'    <rect x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" rx="8" '
-                    f'fill="{g_fill}" stroke="{g_stroke}" stroke-width="1.5" />'
+                    f'    <rect x="{b.x}" y="{b.y}" width="{b.width}" height="{b.height}" '
+                    f'{g_frame} />'
                 )
                 if g.label:
                     lines.append(self._group_label(g.label, b.x + 16, b.y, "    "))
@@ -677,11 +691,11 @@ class SVGRenderer:
                     edge_attrs += f' data-target-group="{html.escape(tgt_gid, quote=True)}"'
                 lines.append(f'  <g class="diagram-edge"{edge_attrs}>')
                 lines.append(
-                    f'    <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="2"{dash}{marker_start}{marker_end} />'
+                    f'    <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="{_num(self.theme.edge_width)}"{dash}{marker_start}{marker_end} />'
                 )
             else:
                 lines.append(
-                    f'  <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="2"{dash}{marker_start}{marker_end} />'
+                    f'  <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="{_num(self.theme.edge_width)}"{dash}{marker_start}{marker_end} />'
                 )
 
             # Centered protocol badge so edge lines don't cross text
@@ -721,14 +735,18 @@ class SVGRenderer:
         for el in element_list:
             b = el.bounds
             escaped_el_id = html.escape(el.id, quote=True)
+            style = resolve_node_style(self.theme, el)
+            node_attrs = ' filter="url(#shadow)"' if style.shadow else ""
+            if style.opacity is not None and style.opacity < 1.0:
+                node_attrs += f' opacity="{_num(style.opacity)}"'
             if interactive:
                 escaped_label = html.escape(el.label or "", quote=True)
                 p_attr = f' data-parent-group="{html.escape(el.parent.id, quote=True)}"' if getattr(el, "parent", None) is not None else ""
                 lines.append(
-                    f'  <g id="{escaped_el_id}" class="diagram-node" data-node-id="{escaped_el_id}" data-label="{escaped_label}"{p_attr} filter="url(#shadow)">'
+                    f'  <g id="{escaped_el_id}" class="diagram-node" data-node-id="{escaped_el_id}" data-label="{escaped_label}"{p_attr}{node_attrs}>'
                 )
             else:
-                lines.append(f'  <g id="{escaped_el_id}" filter="url(#shadow)">')
+                lines.append(f'  <g id="{escaped_el_id}"{node_attrs}>')
 
             kind_raw = getattr(el, "kind", "box")
             kind = (kind_raw or "box").lower().replace("-", "_")
@@ -739,17 +757,15 @@ class SVGRenderer:
             elif label_pos == "below":
                 label_pos = "bottom"
 
-            fill = el.metadata.get("fill", self.theme.node_fill)
-            stroke = el.metadata.get("stroke", self.theme.node_stroke)
-            stroke_width = float(el.metadata.get("stroke_width", 2.0))
+            fill, stroke = style.fill, style.stroke
+            stroke_width = _num(style.stroke_width)
 
             if kind == "icon":
                 # Pure icon: no container background box
                 pass
             elif kind == "box":
-                radius = float(el.metadata.get("radius", 6.0))
                 lines.append(
-                    f"    {self.shapes.render_box(b.x, b.y, b.width, b.height, fill, stroke, stroke_width, radius=radius)}"
+                    f"    {self.shapes.render_box(b.x, b.y, b.width, b.height, fill, stroke, stroke_width, radius=_num(style.radius), dash=style.dash or '')}"
                 )
             elif kind == "cylinder":
                 lines.append(
@@ -779,7 +795,7 @@ class SVGRenderer:
                 )
 
             # Determine text color with proper contrast
-            text_color = el.metadata.get("text_color")
+            text_color = style.text_color
             if text_color is None:
                 if label_pos == "bottom" or kind == "icon":
                     text_color = self.theme.text

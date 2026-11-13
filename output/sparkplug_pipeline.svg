@@ -49,7 +49,7 @@
   <text x="540" y="333.43" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MQTT Subscription</text>
 </g>
   <g id="shape_2" filter="url(#shadow)">
-    <rect x="60.0" y="100.0" width="140.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="60.0" y="100.0" width="140.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-sensor" transform="translate(118.6, 109.8) scale(0.9500000000000001)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -59,7 +59,7 @@
     <text x="130" y="146.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Sensors &amp; PLCs</text>
   </g>
   <g id="shape_3" filter="url(#shadow)">
-    <rect x="60.0" y="220.0" width="140.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="60.0" y="220.0" width="140.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-gateway" transform="translate(118.6, 229.8) scale(0.9500000000000001)">
   <line x1="6" y1="9" x2="6" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="18" y1="9" x2="18" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -71,7 +71,7 @@
     <text x="130" y="266.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">IIoT Edge</text>
   </g>
   <g id="shape_5" filter="url(#shadow)">
-    <rect x="340.0" y="227.49" width="150.0" height="65.0" rx="3" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="340.0" y="227.49" width="150.0" height="65.0" rx="3" fill="#24242A" stroke="#FFC000" stroke-width="2" />
 <line x1="344.0" y1="229.49" x2="344.0" y2="290.49" stroke="#FFC000" stroke-width="1" stroke-dasharray="2,3" />
 <line x1="486.0" y1="229.49" x2="486.0" y2="290.49" stroke="#FFC000" stroke-width="1" stroke-dasharray="2,3" />
 <rect x="344.0" y="231.49" width="142.0" height="12.0" rx="1.5" fill="#24242A" stroke="#FFC000" stroke-width="1" />
@@ -105,7 +105,7 @@
     <text x="415" y="277.46" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">IIoT Broker</text>
   </g>
   <g id="shape_7" filter="url(#shadow)">
-    <rect x="590.0" y="150.0" width="150.0" height="55.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="590.0" y="150.0" width="150.0" height="55.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-queue" transform="translate(654.55, 158.25) scale(0.8708333333333332)">
   <line x1="2" y1="6" x2="18" y2="6" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="2" y1="18" x2="18" y2="18" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -117,8 +117,8 @@
     <text x="665" y="193.42" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Kafka</text>
   </g>
   <g id="shape_8" filter="url(#shadow)">
-    <path d="M 590.0 242.0 A 75.0 12.0 0 0 1 740.0 242.0 L 740.0 307.98 A 75.0 12.0 0 0 1 590.0 307.98 Z" fill="#24242A" stroke="#FFC000" stroke-width="2.0"/>
-<ellipse cx="665.0" cy="242.0" rx="75.0" ry="12.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0"/>
+    <path d="M 590.0 242.0 A 75.0 12.0 0 0 1 740.0 242.0 L 740.0 307.98 A 75.0 12.0 0 0 1 590.0 307.98 Z" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
+<ellipse cx="665.0" cy="242.0" rx="75.0" ry="12.0" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
     <g class="icon icon-database" transform="translate(653.0, 263.19) scale(1.0)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -129,7 +129,7 @@
     <text x="665" y="301.46" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">InfluxDB</text>
   </g>
   <g id="shape_9" filter="url(#shadow)">
-    <rect x="590.0" y="344.98" width="150.0" height="55.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="590.0" y="344.98" width="150.0" height="55.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-dashboard" transform="translate(654.55, 353.23) scale(0.8708333333333332)">
   <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <line x1="3" y1="8" x2="21" y2="8" stroke="#FFC000" stroke-width="2.0"/>

@@ -16,6 +16,7 @@ from diagrams_as_code.groups import Group
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
+from diagrams_as_code.style import Style
 from diagrams_as_code.theme import Theme, get_theme
 
 #: Nominal canvas used while laying out an axis that is fitted to content afterwards.
@@ -550,6 +551,8 @@ class Diagram:
         header_height: float = 35.0,
         id: Optional[str] = None,
         metadata: Optional[dict[str, Any]] = None,
+        style: Optional[Style] = None,
+        child_style: Optional[Style] = None,
     ) -> _GroupContext:
         """Create, track, and enter a hierarchical Group context."""
         self._counter += 1
@@ -564,6 +567,8 @@ class Diagram:
             padding=padding,
             header_height=header_height,
             metadata=metadata,
+            style=style,
+            child_style=child_style,
         )
         g._diagram = self
         g.explicit_id = id is not None

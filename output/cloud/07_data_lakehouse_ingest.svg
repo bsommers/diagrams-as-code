@@ -62,7 +62,7 @@
   <text x="995" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Direct SQL</text>
 </g>
   <g id="producers" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-mobile" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="14" y2="18" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -71,7 +71,7 @@
     <text x="145" y="186.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Event Producers</text>
   </g>
   <g id="kinesis" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-queue" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <line x1="2" y1="6" x2="18" y2="6" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="2" y1="18" x2="18" y2="18" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -83,7 +83,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Amazon</tspan> <tspan x="395" dy="14.4">Kinesis Stream</tspan></text>
   </g>
   <g id="firehose" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-serverless" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <path d="M 4 20 L 10 7 L 14 16 L 20 4" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="12" x2="18" y2="20" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -91,7 +91,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Kinesis Data</tspan> <tspan x="395" dy="14.4">Firehose</tspan></text>
   </g>
   <g id="s3_raw" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(633.6, 149.8) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
@@ -100,7 +100,7 @@
     <text x="645" y="186.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">S3 Raw Bucket</text>
   </g>
   <g id="s3_curated" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(633.6, 239.8) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
@@ -109,7 +109,7 @@
     <text x="645" y="276.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">S3 Curated Lake</text>
   </g>
   <g id="glue" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
@@ -119,7 +119,7 @@
     <text x="895" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">AWS Glue</tspan> <tspan x="895" dy="14.4">Metastore</tspan></text>
   </g>
   <g id="athena" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(1133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>

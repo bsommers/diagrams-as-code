@@ -112,8 +112,18 @@ def inside_icon_size(shape: Any) -> float:
 
 
 def _sizes(shape: Any, default: tuple[float, ...]) -> tuple[float, ...]:
-    """Font sizes to try: the shape's own ``font_size`` if it set one."""
+    """Font sizes to try: just the pinned one, if the shape or a group pins it.
+
+    ``metadata["font_size"]`` wins, then the shape's ``style``, then the
+    ``child_style`` of the nearest enclosing group that sets one.
+    """
     pinned = getattr(shape, "metadata", {}).get("font_size")
+    if not pinned:
+        pinned = getattr(getattr(shape, "style", None), "font_size", None)
+    parent, seen = getattr(shape, "parent", None), 0
+    while not pinned and parent is not None and seen < 64:
+        pinned = getattr(getattr(parent, "child_style", None), "font_size", None)
+        parent, seen = getattr(parent, "parent", None), seen + 1
     return (float(pinned),) if pinned else default
 
 
@@ -155,6 +165,27 @@ def below_label_extent(shape: Any) -> tuple[float, float]:
     if nl.position != "bottom" or nl.block is None:
         return (0.0, 0.0)
     return (nl.block.width, BELOW_GAP + nl.block.height)
+
+
+GROUP_TITLE_SIZE = 14.0
+GROUP_TITLE_BASELINE = 24.0  # below the group's top edge
+GROUP_TITLE_INSET = 16.0  # from the group's left edge
+
+
+def group_title_block(label: str) -> TextBlock:
+    """The text of a group's title."""
+    return layout(label, TextStyle(size=GROUP_TITLE_SIZE, bold=True))
+
+
+def group_title_rect(group: Any, inset: float = GROUP_TITLE_INSET) -> Optional[Rect]:
+    """The box a group's title is drawn in, or ``None`` if it has no title."""
+    label = getattr(group, "label", None)
+    if not label:
+        return None
+    block = group_title_block(label)
+    b = group.bounds
+    top = b.y + GROUP_TITLE_BASELINE - block.baselines(0.0)[0]
+    return Rect(b.x + inset, top, block.width, block.height)
 
 
 def badge_block(label: str, font_size: float = BADGE_FONT_SIZE,

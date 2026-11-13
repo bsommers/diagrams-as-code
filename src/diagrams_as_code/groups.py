@@ -8,6 +8,7 @@ from diagrams_as_code.elements import (
     RelativeConstraint,
 )
 from diagrams_as_code.geometry import Anchor, Rect
+from diagrams_as_code.style import Style
 
 _LAYOUT_ENGINES: dict[str, type] = {}
 
@@ -42,8 +43,12 @@ class Group(Element):
         padding: float = 25.0,
         header_height: float = 35.0,
         metadata: Optional[dict[str, Any]] = None,
+        style: Optional[Style] = None,
+        child_style: Optional[Style] = None,
     ) -> None:
-        super().__init__(id, label, width=120.0, height=60.0, metadata=metadata)
+        super().__init__(id, label, width=120.0, height=60.0, metadata=metadata, style=style)
+        #: Style given to every node inside this group, over the theme.
+        self.child_style: Optional[Style] = child_style
         self.children: list[Element] = []
         self.padding = float(padding)
         self.header_height = float(header_height)

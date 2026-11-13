@@ -127,10 +127,11 @@ The routing subsystem computes collision-free trajectories between node ports, s
 - **Reverse-Flow Escape Routing**: Detects backward flow (e.g. source to the right of target in LR diagrams), automatically routes out of North/South ports, and offsets control handles into dedicated lateral escape corridors (>= 30px clearance).
 
 ### 2.7 Theme Engine (`diagrams_as_code.theme`)
-- 13 built-in themes:
+- 14 built-in themes:
   - **Dark Themes:** `iiot_dark_gold`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `dracula`, `synthwave`.
-  - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`.
+  - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`, `paper`.
   - **Accessibility Themes:** `high_contrast` (WCAG AAA compliant).
+- A theme also carries line weights, corner radii, the group dash pattern, edge width and the shadow switch. `diagrams_as_code.style.Style` holds per-node or per-group overrides, merged theme -> enclosing groups' `child_style` -> element `style` -> legacy `metadata` keys by `resolve_node_style` / `resolve_group_style`.
 - Auto-calculates W3C relative luminance to determine optimal foreground text contrast against custom container fill colors.
 - Dynamic theme derivation via `create_theme(name, base="...", **overrides)`.
 

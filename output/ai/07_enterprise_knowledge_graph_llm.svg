@@ -68,7 +68,7 @@
   <text x="1020" y="223.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Grounded Graph Synthesis</text>
 </g>
   <g id="raw_corpus" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-document" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="14,2 14,8 20,8" fill="none" stroke="#7287FD" stroke-width="2.0"/>
@@ -78,7 +78,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Unstructured</tspan> <tspan x="145" dy="14.4">PDF / Confluence</tspan></text>
   </g>
   <g id="extractor" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-brain" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <line x1="12" y1="4" x2="12" y2="20" stroke="#7287FD" stroke-width="2.0" stroke-dasharray="2,2"/>
@@ -86,7 +86,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Entity/Relation</tspan> <tspan x="395" dy="14.4">Extractor</tspan></text>
   </g>
   <g id="neo4j" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-database" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#7287FD" stroke-width="2.0"/>
@@ -97,7 +97,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Neo4j Knowledge</tspan> <tspan x="645" dy="14.4">Graph</tspan></text>
   </g>
   <g id="graph_retriever" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
@@ -107,7 +107,7 @@
     <text x="895" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Multi-Hop</tspan> <tspan x="895" dy="14.4">Cypher Retriever</tspan></text>
   </g>
   <g id="synth_llm" filter="url(#shadow)">
-    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-model" transform="translate(883.6, 233.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
@@ -115,7 +115,7 @@
     <text x="895" y="269.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Synthesis</tspan> <tspan x="895" dy="14.4">LLM Engine</tspan></text>
   </g>
   <g id="analyst" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-user" transform="translate(1133.6, 150.4) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linecap="round"/>

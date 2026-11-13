@@ -25,6 +25,7 @@ LAYERS: dict[str, float] = {
     "metrics": 0,
     "text": 0,
     "labels": 0.5,
+    "style": 0.5,
     "shapes": 1,
     "elements": 1,
     "connections": 2,

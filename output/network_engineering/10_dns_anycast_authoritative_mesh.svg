@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 404" width="1040" height="404">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1017 404" width="1017" height="404">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
@@ -12,8 +12,8 @@
   </defs>
   <rect width="100%" height="100%" fill="#181B20"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="76" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Global Client Query Ingress</text>
+    <rect x="36.810546875" y="80.0" width="216.37890625" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="52.81" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Global Client Query Ingress</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
@@ -54,7 +54,7 @@
   <text x="770" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zone Replication</text>
 </g>
   <g id="client_query" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-user" transform="translate(133.6, 150.4) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -62,7 +62,7 @@
     <text x="145" y="186.53" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Global DNS Clients</text>
   </g>
   <g id="rtr_us" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-core_router" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9.5" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#00E5A3" stroke-width="2.0"/>
@@ -75,7 +75,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">BGP Router</tspan> <tspan x="395" dy="14.4">US-East</tspan></text>
   </g>
   <g id="dns_us" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-server" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
@@ -87,7 +87,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Authoritative</tspan> <tspan x="395" dy="14.4">BIND US</tspan></text>
   </g>
   <g id="rtr_eu" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-core_router" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9.5" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="12" y1="4.5" x2="12" y2="19.5" stroke="#00E5A3" stroke-width="2.0"/>
@@ -100,7 +100,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">BGP Router</tspan> <tspan x="645" dy="14.4">EU-Central</tspan></text>
   </g>
   <g id="dns_eu" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-server" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
@@ -112,7 +112,7 @@
     <text x="645" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Authoritative</tspan> <tspan x="645" dy="14.4">BIND EU</tspan></text>
   </g>
   <g id="master_db" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-database" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#00E5A3" stroke-width="2.0"/>

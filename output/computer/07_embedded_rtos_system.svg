@@ -46,7 +46,7 @@
   <text x="395" y="268.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Sign Outgoing Packet</text>
 </g>
   <g id="arm_mcu" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
     <g class="icon icon-chip" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#18181B" stroke-width="2.0"/>
@@ -62,7 +62,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">ARM Cortex-M4</tspan> <tspan x="145" dy="14.4">Microcontroller</tspan></text>
   </g>
   <g id="crypto" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
     <g class="icon icon-shield" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -70,7 +70,7 @@
     <text x="145" y="269.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Hardware</tspan> <tspan x="145" dy="14.4">Security Enclave</tspan></text>
   </g>
   <g id="freertos" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#18181B" stroke-width="2.0"/>
@@ -80,7 +80,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">FreeRTOS</tspan> <tspan x="395" dy="14.4">Preemptive Kernel</tspan></text>
   </g>
   <g id="task_sensor" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
     <g class="icon icon-sensor" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
@@ -90,7 +90,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Sensor</tspan> <tspan x="645" dy="14.4">Acquisition Task</tspan></text>
   </g>
   <g id="task_comms" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#18181B" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
     <g class="icon icon-router" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>

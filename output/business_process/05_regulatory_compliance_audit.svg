@@ -63,14 +63,14 @@
   <text x="1020" y="173.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issue Clean Opinion</text>
 </g>
   <g id="cloud_env" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-cloud" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
 </g>
     <text x="145" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">AWS / Azure</tspan> <tspan x="145" dy="14.4">Infrastructure</tspan></text>
   </g>
   <g id="evidence_bot" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-agent" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="4" y="8" width="16" height="12" rx="3" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <line x1="12" y1="4" x2="12" y2="8" stroke="#7287FD" stroke-width="2.0"/>
@@ -82,7 +82,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Automated</tspan> <tspan x="395" dy="14.4">Evidence Collector</tspan></text>
   </g>
   <g id="sec_controls" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-shield" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -90,7 +90,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Access &amp;</tspan> <tspan x="645" dy="14.4">Encryption Controls</tspan></text>
   </g>
   <g id="auditor" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-user" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linecap="round"/>
@@ -98,7 +98,7 @@
     <text x="895" y="179.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Independent</tspan> <tspan x="895" dy="14.4">External Auditor</tspan></text>
   </g>
   <g id="remediation" filter="url(#shadow)">
-    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(883.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#7287FD" stroke-width="2.0"/>
@@ -108,7 +108,7 @@
     <text x="895" y="269.33" text-anchor="middle" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Engineering</tspan> <tspan x="895" dy="14.4">Remediation Task</tspan></text>
   </g>
   <g id="attestation" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <g class="icon icon-document" transform="translate(1133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#7287FD" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="14,2 14,8 20,8" fill="none" stroke="#7287FD" stroke-width="2.0"/>

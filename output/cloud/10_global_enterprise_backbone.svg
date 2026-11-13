@@ -58,7 +58,7 @@
   <text x="1020" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">VPC Flow Logs</text>
 </g>
   <g id="us_dc" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-router" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -72,7 +72,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Americas</tspan> <tspan x="145" dy="14.4">On-Prem DC</tspan></text>
   </g>
   <g id="us_vpc" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(133.6, 240.4) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -81,7 +81,7 @@
     <text x="145" y="276.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">AWS US-East VPC</text>
   </g>
   <g id="eu_dc" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-router" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -95,7 +95,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Europe</tspan> <tspan x="395" dy="14.4">On-Prem DC</tspan></text>
   </g>
   <g id="eu_vpc" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -104,7 +104,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">AWS</tspan> <tspan x="395" dy="14.4">EU-Central VPC</tspan></text>
   </g>
   <g id="ap_vpc" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(633.6, 150.4) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -113,14 +113,14 @@
     <text x="645" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">AWS AP-East VPC</text>
   </g>
   <g id="cloud_wan" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-cloud" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linejoin="round"/>
 </g>
     <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">AWS Cloud</tspan> <tspan x="895" dy="14.4">WAN Backbone</tspan></text>
   </g>
   <g id="sec_hub" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-shield" transform="translate(1133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>

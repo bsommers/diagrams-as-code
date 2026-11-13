@@ -221,12 +221,14 @@ class ShapeLibrary:
         stroke: str,
         stroke_width: float = 2.0,
         radius: float = 6.0,
+        dash: str = "",
     ) -> str:
-        """Render a rounded rectangular box."""
+        """Render a rectangular box; ``radius`` 0 gives square corners."""
         self._validate_dimensions(w, h)
+        dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
         return (
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" '
-            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" />'
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}"{dash_attr} />'
         )
 
     def render_cylinder(

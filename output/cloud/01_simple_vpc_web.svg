@@ -45,7 +45,7 @@
   <text x="770" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">TCP :5432</text>
 </g>
   <g id="client" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-mobile" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="14" y2="18" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
@@ -54,7 +54,7 @@
     <text x="145" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Web Client</text>
   </g>
   <g id="alb" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-api_gateway" transform="translate(383.6, 149.8) scale(0.9500000000000001)">
   <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -62,7 +62,7 @@
     <text x="395" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Application LB</text>
   </g>
   <g id="web1" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-server" transform="translate(633.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
@@ -74,7 +74,7 @@
     <text x="645" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Web Server 01</text>
   </g>
   <g id="web2" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-server" transform="translate(633.6, 239.8) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
@@ -86,7 +86,7 @@
     <text x="645" y="276.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Web Server 02</text>
   </g>
   <g id="db" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-database" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#00D2FF" stroke-width="2.0"/>

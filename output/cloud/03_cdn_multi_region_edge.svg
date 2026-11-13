@@ -54,7 +54,7 @@
   <text x="770" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">API Forward</text>
 </g>
   <g id="user_na" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-user" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-linecap="round"/>
@@ -62,7 +62,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">North America</tspan> <tspan x="145" dy="14.4">Clients</tspan></text>
   </g>
   <g id="user_eu" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-user" transform="translate(133.6, 239.8) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-linecap="round"/>
@@ -70,7 +70,7 @@
     <text x="145" y="276.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Europe Clients</text>
   </g>
   <g id="dns" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-dns" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="1" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="1" fill="none" stroke="#268BD2" stroke-width="2.0"/>
@@ -82,7 +82,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Route 53</tspan> <tspan x="395" dy="14.4">Global DNS</tspan></text>
   </g>
   <g id="cdn" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-cdn" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <ellipse cx="12" cy="12" rx="4" ry="9" fill="none" stroke="#268BD2" stroke-width="2.0"/>
@@ -91,7 +91,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">CloudFront</tspan> <tspan x="645" dy="14.4">CDN Edge</tspan></text>
   </g>
   <g id="waf" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-firewall" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-linejoin="round"/>
   <line x1="8" y1="11" x2="16" y2="11" stroke="#268BD2" stroke-width="2.0"/>
@@ -100,7 +100,7 @@
     <text x="645" y="269.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">AWS WAF</tspan> <tspan x="645" dy="14.4">Perimeter</tspan></text>
   </g>
   <g id="s3_static" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(883.6, 149.8) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#268BD2" stroke-width="2.0"/>
@@ -109,7 +109,7 @@
     <text x="895" y="186.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">S3 Static Assets</text>
   </g>
   <g id="alb_api" filter="url(#shadow)">
-    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#268BD2" stroke-width="2.0" />
+    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-api_gateway" transform="translate(883.6, 240.4) scale(0.9500000000000001)">
   <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#268BD2" stroke-width="2.0"/>
   <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#268BD2" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>

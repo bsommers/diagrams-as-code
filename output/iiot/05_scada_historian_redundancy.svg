@@ -45,7 +45,7 @@
   <text x="645" y="218.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">DB Replication</text>
 </g>
   <g id="plc_main" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-plc" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <line x1="4" y1="9" x2="20" y2="9" stroke="#0066CC" stroke-width="2.0"/>
@@ -59,7 +59,7 @@
     <text x="145" y="186.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Plant Main PLC</text>
   </g>
   <g id="scada_pri" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-scada" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <line x1="8" y1="21" x2="16" y2="21" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
@@ -69,7 +69,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Primary</tspan> <tspan x="395" dy="14.4">SCADA Server</tspan></text>
   </g>
   <g id="scada_sec" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-scada" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <line x1="8" y1="21" x2="16" y2="21" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
@@ -79,7 +79,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Standby</tspan> <tspan x="395" dy="14.4">SCADA Server</tspan></text>
   </g>
   <g id="hist_pri" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-historian" transform="translate(633.6, 149.8) scale(0.9500000000000001)">
   <ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <path d="M 4 5 V 12 C 4 14 20 14 20 12 V 5" fill="none" stroke="#0066CC" stroke-width="2.0"/>
@@ -90,7 +90,7 @@
     <text x="645" y="186.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Primary Historian</text>
   </g>
   <g id="hist_sec" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-historian" transform="translate(633.6, 239.8) scale(0.9500000000000001)">
   <ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <path d="M 4 5 V 12 C 4 14 20 14 20 12 V 5" fill="none" stroke="#0066CC" stroke-width="2.0"/>

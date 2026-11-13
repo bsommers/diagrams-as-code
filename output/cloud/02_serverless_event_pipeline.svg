@@ -57,7 +57,7 @@
   <text x="1020" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Parquet Dump</text>
 </g>
   <g id="app" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-mobile" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
   <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="14" y2="18" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
@@ -66,7 +66,7 @@
     <text x="145" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Mobile App Client</text>
   </g>
   <g id="apigw" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-api_gateway" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
   <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -74,7 +74,7 @@
     <text x="395" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">REST API Gateway</text>
   </g>
   <g id="worker" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-serverless" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <path d="M 4 20 L 10 7 L 14 16 L 20 4" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="12" x2="18" y2="20" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
@@ -82,7 +82,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Lambda</tspan> <tspan x="645" dy="14.4">Ingest Worker</tspan></text>
   </g>
   <g id="queue" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-queue" transform="translate(883.6, 150.4) scale(0.9500000000000001)">
   <line x1="2" y1="6" x2="18" y2="6" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="2" y1="18" x2="18" y2="18" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
@@ -94,7 +94,7 @@
     <text x="895" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">SQS Buffer Queue</text>
   </g>
   <g id="dynamo" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(1133.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
@@ -103,7 +103,7 @@
     <text x="1145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="1145" dy="0">DynamoDB</tspan> <tspan x="1145" dy="14.4">Real-Time State</tspan></text>
   </g>
   <g id="s3" filter="url(#shadow)">
-    <rect x="1085.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="1085.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(1133.6, 239.8) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00D2FF" stroke-width="2.0"/>

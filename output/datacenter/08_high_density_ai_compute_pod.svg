@@ -64,7 +64,7 @@
   <text x="557.5" y="68.44" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">IPMI / BMC Telemetry</text>
 </g>
   <g id="dgx_rack1" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#331E29" stroke="#F43F5E" stroke-width="2" />
     <g class="icon icon-server_rack" transform="translate(133.6, 150.4) scale(0.9500000000000001)">
   <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="4" y1="7" x2="20" y2="7" stroke="#F43F5E" stroke-width="2.0"/>
@@ -78,7 +78,7 @@
     <text x="145" y="186.53" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">DGX H100 Rack 01</text>
   </g>
   <g id="dgx_rack2" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#331E29" stroke="#F43F5E" stroke-width="2" />
     <g class="icon icon-server_rack" transform="translate(133.6, 240.4) scale(0.9500000000000001)">
   <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="4" y1="7" x2="20" y2="7" stroke="#F43F5E" stroke-width="2.0"/>
@@ -92,7 +92,7 @@
     <text x="145" y="276.53" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">DGX H100 Rack 02</text>
   </g>
   <g id="ib_spine" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#331E29" stroke="#F43F5E" stroke-width="2" />
     <g class="icon icon-router" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
@@ -106,7 +106,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Quantum-2</tspan> <tspan x="395" dy="14.4">InfiniBand Switch</tspan></text>
   </g>
   <g id="nvlink_switch" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#331E29" stroke="#F43F5E" stroke-width="2" />
     <g class="icon icon-router" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#F43F5E" stroke-width="2.0" stroke-linecap="round"/>
@@ -120,7 +120,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">NVLink Network</tspan> <tspan x="395" dy="14.4">Switch Tray</tspan></text>
   </g>
   <g id="storage_appliance" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#331E29" stroke="#F43F5E" stroke-width="2" />
     <g class="icon icon-storage_array" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="3" y1="9" x2="21" y2="9" stroke="#F43F5E" stroke-width="2.0"/>
@@ -135,7 +135,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">AI Lustre Parallel</tspan> <tspan x="645" dy="14.4">File Appliance</tspan></text>
   </g>
   <g id="telemetry_node" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#331E29" stroke="#F43F5E" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#331E29" stroke="#F43F5E" stroke-width="2" />
     <g class="icon icon-dashboard" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#F43F5E" stroke-width="2.0"/>
   <line x1="3" y1="8" x2="21" y2="8" stroke="#F43F5E" stroke-width="2.0"/>

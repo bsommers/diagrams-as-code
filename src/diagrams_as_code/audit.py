@@ -12,7 +12,7 @@ from typing import Any, Iterator, Optional
 
 from diagrams_as_code.connections import may_share_a_line
 from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath, flatten, segment_enters
-from diagrams_as_code.labels import edge_badge_rect, node_label
+from diagrams_as_code.labels import edge_badge_rect, group_title_rect, node_label
 
 EPS = 0.5
 
@@ -25,8 +25,12 @@ DEFECTS: tuple[str, ...] = (
     "edge_through_badge",
     "badge_over_node",
     "badge_over_badge",
+    "badge_over_title",
+    "edge_through_title",
+    "title_overflow",
     "label_overflow",
     "node_overlap",
+    "group_overlap",
     "content_clipped",
     "canvas_mostly_empty",
 )
@@ -140,6 +144,15 @@ def audit_diagram(diagram: Any) -> Counter[str]:
                 continue
             if any(segment_enters(a, b, inner, 2.0) for a, b in segs):
                 counts["edge_through_badge"] += 1
+    titles = [(g, t) for g in diagram.groups for t in [group_title_rect(g)] if t is not None]
+    for _, bb in badges:
+        counts["badge_over_title"] += sum(1 for _, t in titles if _overlap(bb, _box(t)))
+    for _, segs in flat:
+        counts["edge_through_title"] += sum(
+            1 for _, t in titles if any(segment_enters(p, q, t, 1.0) for p, q in segs)
+        )
+    # A title wider than its group runs out over the frame.
+    counts["title_overflow"] += sum(1 for g, t in titles if t.right > g.bounds.right - 4.0)
     for i in range(len(badges)):
         for j in range(i + 1, len(badges)):
             if _overlap(badges[i][1], badges[j][1]):
@@ -149,6 +162,24 @@ def audit_diagram(diagram: Any) -> Counter[str]:
         for j in range(i + 1, len(boxes)):
             if _overlap(boxes[i], boxes[j]):
                 counts["node_overlap"] += 1
+
+    def _inside(inner: Any, outer: Any) -> bool:
+        parent = getattr(inner, "parent", None)
+        while parent is not None:
+            if parent is outer:
+                return True
+            parent = getattr(parent, "parent", None)
+        return False
+
+    # Two groups, or a group and a node outside it, that cover each other.
+    groups = list(diagram.groups)
+    for i, g1 in enumerate(groups):
+        for g2 in groups[i + 1 :]:
+            if not _inside(g1, g2) and not _inside(g2, g1) and _overlap(_box(g1.bounds), _box(g2.bounds)):
+                counts["group_overlap"] += 1
+        for s in shapes:
+            if not _inside(s, g1) and _overlap(_box(g1.bounds), _box(s.bounds)):
+                counts["group_overlap"] += 1
 
     counts["label_overflow"] += sum(1 for s in shapes if label_overflows(s))
 

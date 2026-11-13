@@ -48,7 +48,7 @@
   <text x="535" y="263.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">TOR Trunk</text>
 </g>
   <g id="spine1" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-router" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -62,7 +62,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Core Spine</tspan> <tspan x="145" dy="14.4">Switch 01</tspan></text>
   </g>
   <g id="spine2" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-router" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -76,7 +76,7 @@
     <text x="145" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Core Spine</tspan> <tspan x="145" dy="14.4">Switch 02</tspan></text>
   </g>
   <g id="leaf1" filter="url(#shadow)">
-    <rect x="345.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="345.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-router" transform="translate(393.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -90,7 +90,7 @@
     <text x="405" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="405" dy="0">Leaf Switch</tspan> <tspan x="405" dy="14.4">01 (Rack A)</tspan></text>
   </g>
   <g id="leaf2" filter="url(#shadow)">
-    <rect x="345.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="345.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-router" transform="translate(393.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -104,7 +104,7 @@
     <text x="405" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="405" dy="0">Leaf Switch</tspan> <tspan x="405" dy="14.4">02 (Rack B)</tspan></text>
   </g>
   <g id="leaf3" filter="url(#shadow)">
-    <rect x="345.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="345.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-router" transform="translate(393.6, 323.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
@@ -118,7 +118,7 @@
     <text x="405" y="359.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="405" dy="0">Leaf Switch</tspan> <tspan x="405" dy="14.4">03 (Rack C)</tspan></text>
   </g>
   <g id="pod1" filter="url(#shadow)">
-    <rect x="605.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="605.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-cluster" transform="translate(653.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <rect x="14" y="13" width="7" height="7" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
@@ -129,7 +129,7 @@
     <text x="665" y="186.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Compute Pod 01</text>
   </g>
   <g id="pod2" filter="url(#shadow)">
-    <rect x="605.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#2B313B" stroke="#00E5A3" stroke-width="2.0" />
+    <rect x="605.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-cluster" transform="translate(653.6, 239.8) scale(0.9500000000000001)">
   <rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
   <rect x="14" y="13" width="7" height="7" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>

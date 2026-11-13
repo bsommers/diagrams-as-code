@@ -56,7 +56,7 @@
   <text x="770" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Condenser Water Loop</text>
 </g>
   <g id="hot_aisle" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
     <g class="icon icon-cooling" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -64,7 +64,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Hot Aisle</tspan> <tspan x="145" dy="14.4">Enclosure (38°C)</tspan></text>
   </g>
   <g id="crac1" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
     <g class="icon icon-cooling" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -72,7 +72,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">In-Row CRAC</tspan> <tspan x="395" dy="14.4">Unit 01</tspan></text>
   </g>
   <g id="crac2" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
     <g class="icon icon-cooling" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -80,7 +80,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">In-Row CRAC</tspan> <tspan x="395" dy="14.4">Unit 02</tspan></text>
   </g>
   <g id="water_loop" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
     <g class="icon icon-cooling" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -88,7 +88,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Chilled Water</tspan> <tspan x="645" dy="14.4">Primary Loop</tspan></text>
   </g>
   <g id="chiller" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
     <g class="icon icon-cooling" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
@@ -96,7 +96,7 @@
     <text x="645" y="269.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Variable Speed</tspan> <tspan x="645" dy="14.4">Centrifugal Chiller</tspan></text>
   </g>
   <g id="towers" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#434C5E" stroke="#88C0D0" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
     <g class="icon icon-cooling" transform="translate(883.6, 144.4) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
   <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>

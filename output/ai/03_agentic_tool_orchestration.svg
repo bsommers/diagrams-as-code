@@ -64,7 +64,7 @@
   <text x="269" y="196.44" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Verified Plan &amp; Result</text>
 </g>
   <g id="user" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-user" transform="translate(133.6, 150.4) scale(0.9500000000000001)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-linecap="round"/>
@@ -72,7 +72,7 @@
     <text x="145" y="186.53" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Enterprise Operator</text>
   </g>
   <g id="agent" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-agent" transform="translate(383.6, 149.8) scale(0.9500000000000001)">
   <rect x="4" y="8" width="16" height="12" rx="3" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <line x1="12" y1="4" x2="12" y2="8" stroke="#FF79C6" stroke-width="2.0"/>
@@ -84,7 +84,7 @@
     <text x="395" y="186.87" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Agent Controller</text>
   </g>
   <g id="tool_repl" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#FF79C6" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -93,7 +93,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Python REPL</tspan> <tspan x="645" dy="14.4">Sandbox</tspan></text>
   </g>
   <g id="tool_search" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-vector_db" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="5" rx="7" ry="2.5" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 5 5 V 19 C 5 20.5 19 20.5 19 19 V 5" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
@@ -106,7 +106,7 @@
     <text x="645" y="269.33" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Vector Document</tspan> <tspan x="645" dy="14.4">Search</tspan></text>
   </g>
   <g id="tool_sql" filter="url(#shadow)">
-    <rect x="585.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="585.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-database" transform="translate(633.6, 323.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
@@ -117,7 +117,7 @@
     <text x="645" y="359.33" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">SQL Analytics</tspan> <tspan x="645" dy="14.4">Engine</tspan></text>
   </g>
   <g id="memory" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#383A59" stroke="#BD93F9" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#383A59" stroke="#BD93F9" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(883.6, 150.4) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FF79C6" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#FF79C6" stroke-width="2.0"/>

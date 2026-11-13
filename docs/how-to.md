@@ -52,7 +52,7 @@ from diagrams_as_code import Diagram
 
 # Built-in theme options:
 # Dark: "iiot_dark_gold", "blueprint", "cyber_slate", "nord", "emerald", "crimson", "dracula", "synthwave"
-# Light: "iiot_light", "monochrome", "solarized_light", "pastel_light"
+# Light: "iiot_light", "monochrome", "solarized_light", "pastel_light", "paper"
 # Accessibility: "high_contrast"
 
 with Diagram("Arctic Cloud Fabric", theme="nord") as diag:

@@ -38,7 +38,7 @@
   <text x="395" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Telemetry Bus</text>
 </g>
   <g id="tor1" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-router" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -52,7 +52,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Top-of-Rack</tspan> <tspan x="145" dy="14.4">Switch A</tspan></text>
   </g>
   <g id="tor2" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-router" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -66,7 +66,7 @@
     <text x="145" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Top-of-Rack</tspan> <tspan x="145" dy="14.4">Switch B</tspan></text>
   </g>
   <g id="chassis_mgmt" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(383.6, 144.4) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -75,7 +75,7 @@
     <text x="395" y="179.58" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500"><tspan x="395" dy="0">Chassis</tspan> <tspan x="395" dy="13.2">Management Module</tspan></text>
   </g>
   <g id="blade1" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-server" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -87,7 +87,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Blade Compute</tspan> <tspan x="395" dy="14.4">Node 01</tspan></text>
   </g>
   <g id="blade2" filter="url(#shadow)">
-    <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-server" transform="translate(383.6, 323.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -99,7 +99,7 @@
     <text x="395" y="359.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Blade Compute</tspan> <tspan x="395" dy="14.4">Node 02</tspan></text>
   </g>
   <g id="blade3" filter="url(#shadow)">
-    <rect x="335.0" y="410.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="410.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-server" transform="translate(383.6, 413.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>

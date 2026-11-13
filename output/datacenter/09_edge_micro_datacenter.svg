@@ -12,20 +12,20 @@
   </defs>
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="76" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Facilities Automation</text>
+    <rect x="58.2138671875" y="80.0" width="173.572265625" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="74.21" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Facilities Automation</text>
   </g>
   <g id="group_2">
     <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="326" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Critical Power</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="576" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Compute &amp; Virtualization</text>
+    <rect x="545.77587890625" y="80.0" width="198.4482421875" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="561.78" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Compute &amp; Virtualization</text>
   </g>
   <g id="group_4">
-    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="826" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Remote Management</text>
+    <rect x="808.5966796875" y="80.0" width="172.806640625" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <text x="824.6" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Remote Management</text>
   </g>
   <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
@@ -48,7 +48,7 @@
   <text x="557.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Telemetry Telemetry</text>
 </g>
   <g id="env_sensors" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-sensor" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
@@ -58,7 +58,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Environmental &amp;</tspan> <tspan x="145" dy="14.4">Smoke Sensors</tspan></text>
   </g>
   <g id="fire_suppress" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-shield" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -66,7 +66,7 @@
     <text x="145" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Clean Agent Fire</tspan> <tspan x="145" dy="14.4">Extinguishing</tspan></text>
   </g>
   <g id="ups_lithium" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-ups" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
@@ -76,7 +76,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Modular Lithium-Ion</tspan> <tspan x="395" dy="14.4">UPS (10kVA)</tspan></text>
   </g>
   <g id="hyperconverged" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-cluster" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <rect x="14" y="13" width="7" height="7" rx="1" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
@@ -87,7 +87,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">3-Node Proxmox</tspan> <tspan x="645" dy="14.4">Micro-Cluster</tspan></text>
   </g>
   <g id="cellular_oob" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#133663" stroke="#4DA6FF" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-router" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>

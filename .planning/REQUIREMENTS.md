@@ -36,14 +36,14 @@
 
 ### Phase 14 — Style Model & Layout Correctness
 
-- [ ] **STYLE-01**: `Style` value object resolved theme → group → element; legacy `metadata` keys still work.
-- [ ] **STYLE-02**: `paper` theme.
+- [x] **STYLE-01**: `Style` value object resolved theme → group → element; legacy `metadata` keys still work.
+- [x] **STYLE-02**: `paper` theme.
 - [ ] **STYLE-03**: Renderer split into passes; dead route fallbacks removed.
 - [ ] **STYLE-04**: Fixed-precision coordinates; optional half-pixel alignment.
-- [ ] **LAYOUT-01**: Fit-to-content canvas with margin, on by default.
-- [ ] **LAYOUT-02**: Badges avoid nodes and other badges.
-- [ ] **LAYOUT-03**: Edges sharing a node side are spread across it.
-- [ ] **LAYOUT-04**: Labels do not overlap a shape's own artwork.
+- [x] **LAYOUT-01**: Fit-to-content canvas with margin, on by default.
+- [x] **LAYOUT-02**: Badges avoid nodes and other badges.
+- [x] **LAYOUT-03**: Edges sharing a node side are spread across it.
+- [x] **LAYOUT-04**: Labels do not overlap a shape's own artwork.
 
 ### Phase 15 — Technical Drawing Primitives
 

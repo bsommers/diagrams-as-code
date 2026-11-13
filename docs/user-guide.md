@@ -143,11 +143,15 @@ svg_fragment = block.to_svg(x=100, y=50, anchor="middle", fill="#111")
 
 ## Themes
 
-Thirteen built-in themes:
+Fourteen built-in themes:
 
 - Dark: `iiot_dark_gold` (default), `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `dracula`, `synthwave`
-- Light: `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`
+- Light: `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`, `paper`
 - Accessibility: `high_contrast`
+
+`paper` is for figures in papers: black on white, 1 px strokes, square corners, dashed group frames, no shadows.
+
+A theme also sets line weights, corner radii, the group dash pattern and whether nodes cast a shadow (`node_stroke_width`, `node_radius`, `group_stroke_width`, `group_radius`, `group_dash`, `edge_width`, `shadow`). To restyle part of a diagram, pass a `Style`: `d.group("Layer", child_style=Style(fill="#EEEEEE"))` styles every node in the group, `d.group(..., style=Style(dash=""))` styles the group's own frame, and `d.shape("A", style=Style(stroke_width=2))` styles one node. Order of precedence: theme, enclosing groups (outermost first), the element's `style`, then legacy keyword overrides such as `fill=`.
 
 Select with `Diagram(..., theme="nord")`, override single colours with `theme_overrides={...}`, or derive and register your own with `create_theme` / `register_theme`. List them with `uv run diagrams-as-code themes`. See [Recipe 2](how-to.md#recipe-2-switching-themes--creating-custom-brand-palettes).
 

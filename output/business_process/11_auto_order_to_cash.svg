@@ -36,27 +36,27 @@
   <text x="865.95" y="188.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">overdue</text>
 </g>
   <g id="shape_1" filter="url(#shadow)">
-    <rect x="60.0" y="130.0" width="130.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="60.0" y="130.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="125" y="164.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Order Received</text>
   </g>
   <g id="shape_2" filter="url(#shadow)">
-    <path d="M 336.69921875 130.0 L 401.69921875 160.0 L 336.69921875 190.0 L 271.69921875 160.0 Z" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0"/>
+    <path d="M 336.69921875 130.0 L 401.69921875 160.0 L 336.69921875 190.0 L 271.69921875 160.0 Z" fill="#FFFFFF" stroke="#7287FD" stroke-width="2"/>
     <text x="336.7" y="164.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Credit Check</text>
   </g>
   <g id="shape_3" filter="url(#shadow)">
-    <rect x="483.3984375" y="130.0" width="130.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="483.3984375" y="130.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="548.4" y="164.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Fulfil Order</text>
   </g>
   <g id="shape_4" filter="url(#shadow)">
-    <rect x="695.09765625" y="130.0" width="130.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="695.09765625" y="130.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="760.1" y="164.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Invoice</text>
   </g>
   <g id="shape_5" filter="url(#shadow)">
-    <rect x="906.796875" y="80.0" width="130.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="906.796875" y="80.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="971.8" y="114.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Payment Received</text>
   </g>
   <g id="shape_6" filter="url(#shadow)">
-    <rect x="906.796875" y="180.0" width="130.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#7287FD" stroke-width="2.0" />
+    <rect x="906.796875" y="180.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="971.8" y="214.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Collections</text>
   </g>
 </svg>

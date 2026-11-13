@@ -23,6 +23,16 @@ class Theme:
     font_family: str = (
         "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
     )
+    #: Line weights, corner radii and effects. The defaults are the look every
+    #: theme had before these were configurable.
+    node_stroke_width: float = 2.0
+    node_radius: float = 6.0
+    group_stroke_width: float = 1.5
+    group_radius: float = 8.0
+    #: SVG dash pattern for group frames; ``""`` is a solid line.
+    group_dash: str = ""
+    edge_width: float = 2.0
+    shadow: bool = True
 
     @property
     def accent_gold(self) -> str:
@@ -65,6 +75,28 @@ def _build_default_themes() -> dict[str, Theme]:
             text="#111111",
             subtext="#666666",
             edge_color="#0066CC",
+        ),
+        # Black on white, hairline strokes, square corners, no shadows: the look
+        # of a figure in a paper.
+        "paper": Theme(
+            name="paper",
+            background="#FFFFFF",
+            group_bg="#FFFFFF",
+            group_stroke="#000000",
+            node_fill="#FFFFFF",
+            node_stroke="#000000",
+            accent="#000000",
+            text="#000000",
+            subtext="#333333",
+            edge_color="#000000",
+            font_family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif",
+            node_stroke_width=1.0,
+            node_radius=0.0,
+            group_stroke_width=1.0,
+            group_radius=0.0,
+            group_dash="6,4",
+            edge_width=1.0,
+            shadow=False,
         ),
         "blueprint": Theme(
             name="blueprint",
@@ -220,7 +252,7 @@ DRACULA = THEMES["dracula"]
 SYNTHWAVE = THEMES["synthwave"]
 HIGH_CONTRAST = THEMES["high_contrast"]
 
-_LIGHT_THEME_NAMES = {"iiot_light", "monochrome", "solarized_light", "pastel_light", "light"}
+_LIGHT_THEME_NAMES = {"iiot_light", "monochrome", "solarized_light", "pastel_light", "paper", "light"}
 
 
 def list_themes() -> list[str]:

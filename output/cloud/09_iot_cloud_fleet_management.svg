@@ -70,7 +70,7 @@
   <text x="1520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL Query</text>
 </g>
   <g id="fleet" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-sensor" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
   <path d="M 7 7 A 7 7 0 0 1 17 7" fill="none" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -80,7 +80,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Connected</tspan> <tspan x="145" dy="14.4">Vehicle Fleet</tspan></text>
   </g>
   <g id="iot_core" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-broker" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
   <circle cx="12" cy="12" r="3.5" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <circle cx="12" cy="3.5" r="2" fill="#FFC000"/>
@@ -95,7 +95,7 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">AWS IoT</tspan> <tspan x="395" dy="14.4">Core Broker</tspan></text>
   </g>
   <g id="rules" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(633.6, 149.8) scale(0.9500000000000001)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -105,7 +105,7 @@
     <text x="645" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">IoT Rules Engine</text>
   </g>
   <g id="shadow" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-database" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -116,7 +116,7 @@
     <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Device</tspan> <tspan x="895" dy="14.4">Shadow Store</tspan></text>
   </g>
   <g id="kinesis" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-queue" transform="translate(1133.6, 149.8) scale(0.9500000000000001)">
   <line x1="2" y1="6" x2="18" y2="6" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
   <line x1="2" y1="18" x2="18" y2="18" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
@@ -128,7 +128,7 @@
     <text x="1145" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Kinesis Analytics</text>
   </g>
   <g id="timescale" filter="url(#shadow)">
-    <rect x="1335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="1335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-database" transform="translate(1383.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FFC000" stroke-width="2.0"/>
@@ -139,7 +139,7 @@
     <text x="1395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="1395" dy="0">TimescaleDB</tspan> <tspan x="1395" dy="14.4">Cluster</tspan></text>
   </g>
   <g id="dash" filter="url(#shadow)">
-    <rect x="1585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2.0" />
+    <rect x="1585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
     <g class="icon icon-dashboard" transform="translate(1633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
   <line x1="3" y1="8" x2="21" y2="8" stroke="#FFC000" stroke-width="2.0"/>

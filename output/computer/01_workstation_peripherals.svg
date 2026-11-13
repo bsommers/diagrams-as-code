@@ -57,7 +57,7 @@
   <text x="918" y="68.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Thunderbolt 4</text>
 </g>
   <g id="pc_host" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-laptop" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
   <rect x="4" y="5" width="16" height="11" rx="1" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <path d="M 2 19 H 22 L 20 16 H 4 Z" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linejoin="round"/>
@@ -65,7 +65,7 @@
     <text x="145" y="179.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Workstation</tspan> <tspan x="145" dy="14.4">Host Tower</tspan></text>
   </g>
   <g id="display1" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-mobile" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
   <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="14" y2="18" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
@@ -74,7 +74,7 @@
     <text x="395" y="186.53" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Primary 4K Monitor</text>
   </g>
   <g id="display2" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-mobile" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
   <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <line x1="10" y1="18" x2="14" y2="18" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
@@ -83,7 +83,7 @@
     <text x="395" y="269.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Secondary</tspan> <tspan x="395" dy="14.4">Vertical Display</tspan></text>
   </g>
   <g id="keyboard" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
@@ -92,7 +92,7 @@
     <text x="645" y="179.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Custom Mechanical</tspan> <tspan x="645" dy="14.4">Keyboard</tspan></text>
   </g>
   <g id="dac" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-router" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <line x1="7" y1="12" x2="7" y2="5" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
@@ -106,7 +106,7 @@
     <text x="895" y="179.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">USB High-Res</tspan> <tspan x="895" dy="14.4">DAC Audio</tspan></text>
   </g>
   <g id="backup_ssd" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6.0" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.0" />
+    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(1133.6, 143.2) scale(0.9500000000000001)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#0066CC" stroke-width="2.0"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#0066CC" stroke-width="2.0"/>
