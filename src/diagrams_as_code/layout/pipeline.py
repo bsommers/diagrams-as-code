@@ -16,6 +16,7 @@ With ``layout="manual"`` and no layout file this reproduces the original
 """
 from __future__ import annotations
 
+import dataclasses
 import math
 import warnings
 from dataclasses import dataclass, field
@@ -152,6 +153,8 @@ def run_layout(diagram: Any) -> None:
 
     # 2. Frame & Grow Canvas
     _frame(elements, groups, routes)
+    if getattr(diagram, "pixel_snap", False):
+        _snap_to_pixels(elements, diagram.edges, routes)
     keep_clear = [s.bounds for s in diagram.shapes]
     keep_clear += [t for t in (group_title_rect(g) for g in diagram.groups) if t is not None]
     place_badges(diagram.edges, routes, keep_clear)
@@ -413,6 +416,24 @@ def _frame(
             routes[k] = shifted
             if isinstance(k, Edge):
                 k._resolved_path = shifted
+
+
+def _snap_to_pixels(elements: list[Element], edges: list[Edge], routes: dict[Any, RoutedPath]) -> None:
+    """Round every bound and route point to a whole pixel."""
+    def px(value: float) -> float:
+        return float(math.floor(value + 0.5))
+
+    for el in elements:
+        b = el.bounds
+        left, top = px(b.x), px(b.y)
+        el.bounds = Rect(left, top, px(b.right) - left, px(b.bottom) - top)
+    for edge in edges:
+        path = routes.get(edge)
+        if path is None:
+            continue
+        snapped = dataclasses.replace(path, points=tuple(Point(px(p.x), px(p.y)) for p in path.points))
+        routes[edge] = routes[id(edge)] = snapped
+        edge._resolved_path = snapped
 
 
 def _grow_canvas(

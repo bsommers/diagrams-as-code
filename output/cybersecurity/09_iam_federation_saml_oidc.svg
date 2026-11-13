@@ -18,97 +18,97 @@
   </defs>
   <rect width="100%" height="100%" fill="#FAFAFA"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="235" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
     <text x="76" y="104" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">User Principal</text>
   </g>
   <g id="group_2">
-    <rect x="318.98291015625" y="80.0" width="172.0341796875" height="235.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <rect x="318.98" y="80" width="172.03" height="235" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
     <text x="334.98" y="104" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Identity Provider Tier</text>
   </g>
   <g id="group_3">
-    <rect x="580.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
+    <rect x="580" y="80" width="170" height="235" rx="8" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="1.5" />
     <text x="596" y="104" fill="#18181B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Service Providers</text>
   </g>
-  <path d="M 205.0 170.0 L 275.0 170.0 L 275.0 160.0 L 345.0 160.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <path d="M 345.0 180.0 L 289.0 180.0 L 289.0 270.0 L 205.0 270.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <path d="M 205.0 250.0 L 275.0 250.0 L 275.0 160.0 L 345.0 160.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <path d="M 405.0 200.0 L 405.0 230.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <path d="M 465.0 170.0 L 605.0 170.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
-  <path d="M 465.0 170.0 L 535.0 170.0 L 535.0 260.0 L 605.0 260.0" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 205 170 L 275 170 L 275 160 L 345 160" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 345 180 L 289 180 L 289 270 L 205 270" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 205 250 L 275 250 L 275 160 L 345 160" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 405 200 L 405 230" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 465 170 L 605 170" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
+  <path d="M 465 170 L 535 170 L 535 260 L 605 260" fill="none" stroke="#27272A" stroke-width="2" marker-end="url(#arrow-27272A)" />
   <g class="badge">
-  <rect x="226.8056640625" y="138.0" width="104.388671875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="226.81" y="138" width="104.39" height="18" rx="9" fill="#FFFFFF" />
   <text x="279" y="150.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SSO Login Request</text>
 </g>
   <g class="badge">
-  <rect x="246.53955078125" y="253.0" width="84.9208984375" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="246.54" y="253" width="84.92" height="18" rx="9" fill="#FFFFFF" />
   <text x="289" y="265.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Challenge MFA</text>
 </g>
   <g class="badge">
-  <rect x="181.083984375" y="203.0" width="89.916015625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="181.08" y="203" width="89.92" height="18" rx="9" fill="#FFFFFF" />
   <text x="226.04" y="215.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">FIDO Attestation</text>
 </g>
   <g class="badge">
-  <rect x="340.03466796875" y="206.0" width="129.9306640625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="340.03" y="206" width="129.93" height="18" rx="9" fill="#FFFFFF" />
   <text x="405" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Verify Group Membership</text>
 </g>
   <g class="badge">
-  <rect x="481.7587890625" y="148.0" width="110.482421875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="481.76" y="148" width="110.48" height="18" rx="9" fill="#FFFFFF" />
   <text x="537" y="160.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SAML Assertion Post</text>
 </g>
   <g class="badge">
-  <rect x="488.93115234375" y="206.0" width="92.1376953125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="488.93" y="206" width="92.14" height="18" rx="9" fill="#FFFFFF" />
   <text x="535" y="218.44" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ID Token / PKCE</text>
 </g>
   <g id="user_node" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-    <g class="icon icon-user" transform="translate(133.6, 149.8) scale(0.9500000000000001)">
-  <circle cx="12" cy="7" r="4" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+    <g class="icon icon-user" transform="translate(133.6, 149.8) scale(0.95)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#18181B" stroke-width="2"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="145" y="186.87" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Corporate User</text>
   </g>
   <g id="fido_mfa" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-    <g class="icon icon-mobile" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
-  <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <line x1="10" y1="18" x2="14" y2="18" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="10" y1="5" x2="14" y2="5" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85" y="230" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+    <g class="icon icon-mobile" transform="translate(133.6, 233.2) scale(0.95)">
+  <rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#18181B" stroke-width="2"/>
+  <line x1="10" y1="18" x2="14" y2="18" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="10" y1="5" x2="14" y2="5" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="145" y="269.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Hardware</tspan> <tspan x="145" dy="14.4">Security Key</tspan></text>
   </g>
   <g id="idp_cloud" filter="url(#shadow)">
-    <rect x="345.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-    <g class="icon icon-key" transform="translate(393.6, 143.2) scale(0.9500000000000001)">
-  <circle cx="8" cy="14" r="5" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <line x1="12" y1="10" x2="21" y2="3" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="17" y1="5" x2="19" y2="7" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="19" y1="7" x2="21" y2="9" stroke="#18181B" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="345" y="140" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+    <g class="icon icon-key" transform="translate(393.6, 143.2) scale(0.95)">
+  <circle cx="8" cy="14" r="5" fill="none" stroke="#18181B" stroke-width="2"/>
+  <line x1="12" y1="10" x2="21" y2="3" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="5" x2="19" y2="7" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19" y1="7" x2="21" y2="9" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="405" y="179.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="405" dy="0">Cloud IdP</tspan> <tspan x="405" dy="14.4">(Okta/Entra)</tspan></text>
   </g>
   <g id="directory" filter="url(#shadow)">
-    <rect x="345.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-    <g class="icon icon-database" transform="translate(393.6, 233.2) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <line x1="4" y1="6" x2="4" y2="18" stroke="#18181B" stroke-width="2.0"/>
-  <line x1="20" y1="6" x2="20" y2="18" stroke="#18181B" stroke-width="2.0"/>
+    <rect x="345" y="230" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(393.6, 233.2) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#18181B" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#18181B" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#18181B" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#18181B" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#18181B" stroke-width="2"/>
 </g>
     <text x="405" y="269.33" text-anchor="middle" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="405" dy="0">Enterprise</tspan> <tspan x="405" dy="14.4">LDAP/AD</tspan></text>
   </g>
   <g id="saas_app" filter="url(#shadow)">
-    <rect x="605.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-    <g class="icon icon-cloud" transform="translate(653.6, 150.4) scale(0.9500000000000001)">
-  <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#18181B" stroke-width="2.0" stroke-linejoin="round"/>
+    <rect x="605" y="140" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+    <g class="icon icon-cloud" transform="translate(653.6, 150.4) scale(0.95)">
+  <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#18181B" stroke-width="2" stroke-linejoin="round"/>
 </g>
     <text x="665" y="186.53" fill="#09090B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">SaaS Business App</text>
   </g>
   <g id="portal_app" filter="url(#shadow)">
-    <rect x="605.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-    <g class="icon icon-server" transform="translate(653.6, 233.2) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
-  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#18181B" stroke-width="2.0"/>
+    <rect x="605" y="230" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(653.6, 233.2) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#18181B" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#18181B" stroke-width="2"/>
   <circle cx="6" cy="7" r="1" fill="#18181B"/>
   <circle cx="9" cy="7" r="1" fill="#18181B"/>
   <circle cx="6" cy="17" r="1" fill="#18181B"/>

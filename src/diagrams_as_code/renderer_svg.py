@@ -36,11 +36,60 @@ def _num(value: Any) -> str:
     return str(int(number)) if number == int(number) else repr(number)
 
 
+#: Attributes whose values are lengths or coordinates.
+_NUMERIC_ATTRS = (
+    "x|y|x1|y1|x2|y2|cx|cy|r|rx|ry|width|height|d|points|transform|dx|dy|"
+    "stroke-width|font-size|viewBox|opacity|fill-opacity"
+)
+_ATTR_RE = re.compile(rf'(?<=\s)({_NUMERIC_ATTRS})="([^"]*)"')
+_DECIMAL_RE = re.compile(r"-?\d+\.\d+(?:[eE][-+]?\d+)?")
+_TRANSFORM_RE = re.compile(r"(\w+)\(([^)]*)\)")
+
+
+def fix_precision(markup: str, places: int = 2) -> str:
+    """``markup`` with every coordinate and length rounded to ``places`` decimals.
+
+    Only numeric attributes are touched, never text content or names, so a
+    label such as "p < 0.00125" is left as written. Scale and rotation factors
+    in a ``transform`` keep four more places, since a glyph scale of 0.013
+    rounded to 0.01 would shrink the glyph by a quarter. Trailing zeros are
+    dropped and a negative zero is written as 0.
+    """
+    def rounded(text: str, digits: int) -> str:
+        value = round(float(text), digits)
+        out = f"{value:.{digits}f}".rstrip("0").rstrip(".") if digits > 0 else f"{value:.0f}"
+        return "0" if out in ("-0", "") else out
+
+    def length(match: re.Match[str]) -> str:
+        return rounded(match.group(0), places)
+
+    def factor(match: re.Match[str]) -> str:
+        return rounded(match.group(0), places + 4)
+
+    def transform(match: re.Match[str]) -> str:
+        # Offsets are lengths; scale and rotation factors need their precision.
+        digits = length if match.group(1) == "translate" else factor
+        return f"{match.group(1)}({_DECIMAL_RE.sub(digits, match.group(2))})"
+
+    def attribute(match: re.Match[str]) -> str:
+        name, value = match.group(1), match.group(2)
+        if name == "transform":
+            return f'{name}="{_TRANSFORM_RE.sub(transform, value)}"'
+        return f'{name}="{_DECIMAL_RE.sub(length, value)}"'
+
+    return _ATTR_RE.sub(attribute, markup)
+
+
 class SVGRenderer(InteractiveOverlay):
     """Renderer converting diagram elements, groups, and edges into crisp SVG XML."""
 
-    def __init__(self, theme: Theme) -> None:
+    def __init__(self, theme: Theme, precision: int = 2, crisp: bool = False) -> None:
         self.theme = theme
+        #: Decimal places kept in coordinates and lengths.
+        self.precision = max(0, int(precision))
+        #: Shift the drawing half a pixel so odd-width strokes on whole-pixel
+        #: coordinates cover whole pixels instead of straddling two.
+        self.crisp = bool(crisp)
         self.shapes = ShapeLibrary()
 
     def _marker_id_for_color(self, color: str) -> str:
@@ -112,9 +161,15 @@ class SVGRenderer(InteractiveOverlay):
             lines.append('  <g id="diagram-content">')
 
         # Painted back to front: group frames, edge lines, edge badges, nodes.
+        half_pixel = self.crisp and round(float(self.theme.node_stroke_width)) % 2 == 1
+        if half_pixel:
+            lines.append('  <g transform="translate(0.5 0.5)">')
         lines.extend(self._groups_pass(group_list, interactive))
         lines.extend(self._edges_pass(edge_list, routes, interactive))
         lines.extend(self._nodes_pass(element_list, interactive))
+        if half_pixel:
+            lines.append("  </g>")
+        lines = [fix_precision(line, self.precision) for line in lines]
 
         if interactive:
             lines.append("  </g>")

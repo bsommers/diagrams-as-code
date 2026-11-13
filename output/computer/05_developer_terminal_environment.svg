@@ -18,94 +18,94 @@
   </defs>
   <rect width="100%" height="100%" fill="#2E3440"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="235" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="76" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">User Shell</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="310" y="80" width="170" height="235" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="326" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Developer Tools</text>
   </g>
   <g id="group_3">
-    <rect x="556.2724609375" y="80.0" width="177.455078125" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="556.27" y="80" width="177.46" height="235" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="572.27" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Runtime Environment</text>
   </g>
-  <path d="M 145.0 200.0 L 145.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 145 200 L 145 230" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205 260 L 270 260 L 270 170 L 335 170" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 395 200 L 395 230" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 455 170 L 585 170" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 645 200 L 645 230" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="99.7587890625" y="206.0" width="90.482421875" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="99.76" y="206" width="90.48" height="18" rx="9" fill="#434C5E" />
   <text x="145" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Launch Terminal</text>
 </g>
   <g class="badge">
-  <rect x="235.31787109375" y="206.0" width="69.3642578125" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="235.32" y="206" width="69.36" height="18" rx="9" fill="#434C5E" />
   <text x="270" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Active Pane</text>
 </g>
   <g class="badge">
-  <rect x="343.66015625" y="206.0" width="102.6796875" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="343.66" y="206" width="102.68" height="18" rx="9" fill="#434C5E" />
   <text x="395" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Git Blame / Commit</text>
 </g>
   <g class="badge">
-  <rect x="476.70703125" y="161.0" width="86.5859375" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="476.71" y="161" width="86.59" height="18" rx="9" fill="#434C5E" />
   <text x="520" y="173.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Test Containers</text>
 </g>
   <g class="badge">
-  <rect x="610.876953125" y="206.0" width="68.24609375" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="610.88" y="206" width="68.25" height="18" rx="9" fill="#434C5E" />
   <text x="645" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Spin Up DB</text>
 </g>
   <g id="terminal" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-terminal" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <polyline points="7,9 10,12 7,15" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="12" y1="15" x2="17" y2="15" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-terminal" transform="translate(133.6, 143.2) scale(0.95)">
+  <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <polyline points="7,9 10,12 7,15" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="15" x2="17" y2="15" stroke="#88C0D0" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="145" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">GPU Accelerated</tspan> <tspan x="145" dy="14.4">Terminal</tspan></text>
   </g>
   <g id="tmux" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-workflow" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
-  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="85" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-workflow" transform="translate(133.6, 233.2) scale(0.95)">
+  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="145" y="269.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Tmux Session</tspan> <tspan x="145" dy="14.4">Multiplexer</tspan></text>
   </g>
   <g id="neovim" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-document" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
-  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
-  <polyline points="14,2 14,8 20,8" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="8" y1="13" x2="16" y2="13" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="8" y1="17" x2="14" y2="17" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-document" transform="translate(383.6, 150.4) scale(0.95)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#88C0D0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#88C0D0" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="395" y="186.53" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Neovim IDE Engine</text>
   </g>
   <g id="git_daemon" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-shield" transform="translate(383.6, 240.4) scale(0.9500000000000001)">
-  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
-  <polyline points="9,12 11,14 15,10" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="335" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-shield" transform="translate(383.6, 240.4) scale(0.95)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
     <text x="395" y="276.53" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Git Version Control</text>
   </g>
   <g id="docker_sock" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-container" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
-  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-container" transform="translate(633.6, 143.2) scale(0.95)">
+  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linejoin="round"/>
 </g>
     <text x="645" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Docker</tspan> <tspan x="645" dy="14.4">Daemon Socket</tspan></text>
   </g>
   <g id="local_db" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-database" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="585" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(633.6, 233.2) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="645" y="269.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Local PostgreSQL</tspan> <tspan x="645" dy="14.4">Container</tspan></text>
   </g>

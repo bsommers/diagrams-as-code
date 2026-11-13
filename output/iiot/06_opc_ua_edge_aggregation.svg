@@ -12,45 +12,45 @@
   </defs>
   <rect width="100%" height="100%" fill="#FFFFFF"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="325" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
     <text x="76" y="104" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Cell Devices</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <rect x="310" y="80" width="170" height="145" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
     <text x="326" y="104" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Aggregation Layer</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
+    <rect x="560" y="80" width="170" height="145" rx="8" fill="#F4F4F6" stroke="#E0E0E6" stroke-width="1.5" />
     <text x="576" y="104" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">MES &amp; UNS</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 205.0 350.0 L 270.0 350.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 170 L 335 170" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 260 L 270 260 L 270 170 L 335 170" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 350 L 270 350 L 270 170 L 335 170" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455 170 L 585 170" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="229.65771484375" y="148.0" width="82.6845703125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="229.66" y="148" width="82.68" height="18" rx="9" fill="#FFFFFF" />
   <text x="271" y="160.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">OPC UA Client</text>
 </g>
   <g class="badge">
-  <rect x="198.310546875" y="208.0" width="67.689453125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="198.31" y="208" width="67.69" height="18" rx="9" fill="#FFFFFF" />
   <text x="232.16" y="220.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">EtherNet/IP</text>
 </g>
   <g class="badge">
-  <rect x="238.10107421875" y="268.0" width="63.7978515625" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="238.1" y="268" width="63.8" height="18" rx="9" fill="#FFFFFF" />
   <text x="270" y="280.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Profinet IO</text>
 </g>
   <g class="badge">
-  <rect x="473.93359375" y="161.0" width="92.1328125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="473.93" y="161" width="92.13" height="18" rx="9" fill="#FFFFFF" />
   <text x="520" y="173.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">MQTT Sparkplug</text>
 </g>
   <g id="plc_cell1" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <g class="icon icon-plc" transform="translate(133.6, 150.4) scale(0.9500000000000001)">
-  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="4" y1="9" x2="20" y2="9" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="8" y1="4" x2="8" y2="9" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="12" y1="4" x2="12" y2="9" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="16" y1="4" x2="16" y2="9" stroke="#0066CC" stroke-width="2.0"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <g class="icon icon-plc" transform="translate(133.6, 150.4) scale(0.95)">
+  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
+  <line x1="4" y1="9" x2="20" y2="9" stroke="#0066CC" stroke-width="2"/>
+  <line x1="8" y1="4" x2="8" y2="9" stroke="#0066CC" stroke-width="2"/>
+  <line x1="12" y1="4" x2="12" y2="9" stroke="#0066CC" stroke-width="2"/>
+  <line x1="16" y1="4" x2="16" y2="9" stroke="#0066CC" stroke-width="2"/>
   <circle cx="8" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="12" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="16" cy="15" r="1.5" fill="#0066CC"/>
@@ -58,13 +58,13 @@
     <text x="145" y="186.53" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Assembly Cell PLC</text>
   </g>
   <g id="plc_cell2" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <g class="icon icon-plc" transform="translate(133.6, 240.4) scale(0.9500000000000001)">
-  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="4" y1="9" x2="20" y2="9" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="8" y1="4" x2="8" y2="9" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="12" y1="4" x2="12" y2="9" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="16" y1="4" x2="16" y2="9" stroke="#0066CC" stroke-width="2.0"/>
+    <rect x="85" y="230" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <g class="icon icon-plc" transform="translate(133.6, 240.4) scale(0.95)">
+  <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
+  <line x1="4" y1="9" x2="20" y2="9" stroke="#0066CC" stroke-width="2"/>
+  <line x1="8" y1="4" x2="8" y2="9" stroke="#0066CC" stroke-width="2"/>
+  <line x1="12" y1="4" x2="12" y2="9" stroke="#0066CC" stroke-width="2"/>
+  <line x1="16" y1="4" x2="16" y2="9" stroke="#0066CC" stroke-width="2"/>
   <circle cx="8" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="12" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="16" cy="15" r="1.5" fill="#0066CC"/>
@@ -72,25 +72,25 @@
     <text x="145" y="276.53" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Packaging Cell PLC</text>
   </g>
   <g id="robot_cell" filter="url(#shadow)">
-    <rect x="85.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <g class="icon icon-robot" transform="translate(133.6, 323.2) scale(0.9500000000000001)">
-  <rect x="5" y="6" width="14" height="12" rx="3" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+    <rect x="85" y="320" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <g class="icon icon-robot" transform="translate(133.6, 323.2) scale(0.95)">
+  <rect x="5" y="6" width="14" height="12" rx="3" fill="none" stroke="#0066CC" stroke-width="2"/>
   <circle cx="9" cy="11" r="1.5" fill="#0066CC"/>
   <circle cx="15" cy="11" r="1.5" fill="#0066CC"/>
-  <line x1="9" y1="15" x2="15" y2="15" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="12" y1="2" x2="12" y2="6" stroke="#0066CC" stroke-width="2.0"/>
+  <line x1="9" y1="15" x2="15" y2="15" stroke="#0066CC" stroke-width="2"/>
+  <line x1="12" y1="2" x2="12" y2="6" stroke="#0066CC" stroke-width="2"/>
   <circle cx="12" cy="2" r="1" fill="#0066CC"/>
-  <line x1="2" y1="12" x2="5" y2="12" stroke="#0066CC" stroke-width="2.0"/>
-  <line x1="19" y1="12" x2="22" y2="12" stroke="#0066CC" stroke-width="2.0"/>
+  <line x1="2" y1="12" x2="5" y2="12" stroke="#0066CC" stroke-width="2"/>
+  <line x1="19" y1="12" x2="22" y2="12" stroke="#0066CC" stroke-width="2"/>
 </g>
     <text x="145" y="359.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Welding Robot</tspan> <tspan x="145" dy="14.4">Controller</tspan></text>
   </g>
   <g id="agg_gw" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <g class="icon icon-gateway" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
-  <line x1="6" y1="9" x2="6" y2="3" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="18" y1="9" x2="18" y2="3" stroke="#0066CC" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <g class="icon icon-gateway" transform="translate(383.6, 143.2) scale(0.95)">
+  <line x1="6" y1="9" x2="6" y2="3" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="9" x2="18" y2="3" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
+  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
   <circle cx="7" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="12" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="17" cy="15" r="1.5" fill="#0066CC"/>
@@ -98,10 +98,10 @@
     <text x="395" y="179.33" text-anchor="middle" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">OPC UA Edge</tspan> <tspan x="395" dy="14.4">Aggregator</tspan></text>
   </g>
   <g id="mes" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <g class="icon icon-server" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
-  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#0066CC" stroke-width="2.0"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(633.6, 143.2) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
   <circle cx="6" cy="7" r="1" fill="#0066CC"/>
   <circle cx="9" cy="7" r="1" fill="#0066CC"/>
   <circle cx="6" cy="17" r="1" fill="#0066CC"/>

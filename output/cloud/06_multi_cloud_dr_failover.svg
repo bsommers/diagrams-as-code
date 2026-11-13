@@ -18,113 +18,113 @@
   </defs>
   <rect width="100%" height="100%" fill="#2E3440"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="145" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="76" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Traffic Routing</text>
   </g>
   <g id="group_2">
-    <rect x="307.03466796875" y="80.0" width="175.9306640625" height="325.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="307.03" y="80" width="175.93" height="325" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="323.03" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">AWS Primary (Active)</text>
   </g>
   <g id="group_3">
-    <rect x="546.51416015625" y="80.0" width="196.9716796875" height="325.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="546.51" y="80" width="196.97" height="325" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="562.51" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Azure Disaster Recovery</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 205.0 170.0 L 292.03466796875 170.0 L 292.03466796875 65.0 L 570.0 65.0 L 570.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 395.0 200.0 L 395.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 395.0 290.0 L 395.0 320.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 645.0 200.0 L 645.0 230.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 645.0 290.0 L 645.0 320.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 455.0 350.0 L 585.0 350.0" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205 170 L 335 170" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205 170 L 292.03 170 L 292.03 65 L 570 65 L 570 170 L 585 170" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 395 200 L 395 230" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 395 290 L 395 320" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 645 200 L 645 230" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 645 290 L 645 320" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 455 350 L 585 350" fill="none" stroke="#81A1C1" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="219.3720703125" y="174.0" width="103.255859375" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="219.37" y="174" width="103.26" height="18" rx="9" fill="#434C5E" />
   <text x="271" y="186.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Active (Weight 100)</text>
 </g>
   <g class="badge">
-  <rect x="380.219482421875" y="56.0" width="101.595703125" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="380.22" y="56" width="101.6" height="18" rx="9" fill="#434C5E" />
   <text x="431.02" y="68.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Standby (Weight 0)</text>
 </g>
   <g class="badge">
-  <rect x="359.48779296875" y="206.0" width="71.0244140625" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="359.49" y="206" width="71.02" height="18" rx="9" fill="#434C5E" />
   <text x="395" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Proxy Route</text>
 </g>
   <g class="badge">
-  <rect x="365.88671875" y="296.0" width="58.2265625" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="365.89" y="296" width="58.23" height="18" rx="9" fill="#434C5E" />
   <text x="395" y="308.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL R/W</text>
 </g>
   <g class="badge">
-  <rect x="603.9384765625" y="206.0" width="82.123046875" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="603.94" y="206" width="82.12" height="18" rx="9" fill="#434C5E" />
   <text x="645" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Failover Traffic</text>
 </g>
   <g class="badge">
-  <rect x="610.0419921875" y="296.0" width="69.916015625" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="610.04" y="296" width="69.92" height="18" rx="9" fill="#434C5E" />
   <text x="645" y="308.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Read Query</text>
 </g>
   <g class="badge">
-  <rect x="458.0888671875" y="341.0" width="123.822265625" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="458.09" y="341" width="123.82" height="18" rx="9" fill="#434C5E" />
   <text x="520" y="353.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cross-Cloud Replication</text>
 </g>
   <g id="dns_mgr" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-dns" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="3" y="14" width="18" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-dns" transform="translate(133.6, 143.2) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="1" fill="none" stroke="#88C0D0" stroke-width="2"/>
   <circle cx="7" cy="7" r="1.2" fill="#88C0D0"/>
   <circle cx="7" cy="17" r="1.2" fill="#88C0D0"/>
-  <line x1="14" y1="7" x2="18" y2="7" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="14" y1="17" x2="18" y2="17" stroke="#88C0D0" stroke-width="2.0"/>
+  <line x1="14" y1="7" x2="18" y2="7" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="14" y1="17" x2="18" y2="17" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="145" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Global Traffic</tspan> <tspan x="145" dy="14.4">Manager</tspan></text>
   </g>
   <g id="aws_alb" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-api_gateway" transform="translate(383.6, 143.2) scale(0.9500000000000001)">
-  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-api_gateway" transform="translate(383.6, 143.2) scale(0.95)">
+  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
     <text x="395" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Primary</tspan> <tspan x="395" dy="14.4">AWS Ingress</tspan></text>
   </g>
   <g id="aws_app" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-container" transform="translate(383.6, 233.2) scale(0.9500000000000001)">
-  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
+    <rect x="335" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-container" transform="translate(383.6, 233.2) scale(0.95)">
+  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linejoin="round"/>
 </g>
     <text x="395" y="269.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">AWS ECS</tspan> <tspan x="395" dy="14.4">Application</tspan></text>
   </g>
   <g id="aws_db" filter="url(#shadow)">
-    <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-database" transform="translate(383.6, 330.4) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="335" y="320" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(383.6, 330.4) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="395" y="366.53" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">AWS Aurora Master</text>
   </g>
   <g id="azure_agw" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-api_gateway" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
-  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-api_gateway" transform="translate(633.6, 143.2) scale(0.95)">
+  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
     <text x="645" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Secondary</tspan> <tspan x="645" dy="14.4">Azure Gateway</tspan></text>
   </g>
   <g id="azure_app" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-container" transform="translate(633.6, 233.2) scale(0.9500000000000001)">
-  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linejoin="round"/>
+    <rect x="585" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-container" transform="translate(633.6, 233.2) scale(0.95)">
+  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linejoin="round"/>
 </g>
     <text x="645" y="269.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Azure</tspan> <tspan x="645" dy="14.4">Container App</tspan></text>
   </g>
   <g id="azure_db" filter="url(#shadow)">
-    <rect x="585.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-database" transform="translate(633.6, 323.2) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="585" y="320" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(633.6, 323.2) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="645" y="359.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Azure Postgres</tspan> <tspan x="645" dy="14.4">Replica</tspan></text>
   </g>

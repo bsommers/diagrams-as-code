@@ -140,7 +140,9 @@ def audit_diagram(diagram: Any) -> Counter[str]:
         counts["badge_over_node"] += sum(1 for box in boxes if _overlap(bb, box))
         inner = Rect(bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1])
         for other, segs in flat:
-            if other is edge or getattr(other, "_label_owner", None) is edge:
+            # A line under a badge that carries that line's own label is labelled
+            # correctly: edges with one label on a shared trunk share the badge.
+            if other is edge or other.label == edge.label:
                 continue
             if any(segment_enters(a, b, inner, 2.0) for a, b in segs):
                 counts["edge_through_badge"] += 1

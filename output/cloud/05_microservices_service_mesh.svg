@@ -18,59 +18,59 @@
   </defs>
   <rect width="100%" height="100%" fill="#2E3440"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="145" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="76" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Edge Routing</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="325.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="310" y="80" width="170" height="325" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="326" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Services Mesh</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
+    <rect x="560" y="80" width="170" height="235" rx="8" fill="#3B4252" stroke="#4C566A" stroke-width="1.5" />
     <text x="576" y="104" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Data Layer</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 205.0 170.0 L 270.0 170.0 L 270.0 260.0 L 335.0 260.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 205.0 170.0 L 270.0 170.0 L 270.0 350.0 L 335.0 350.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
-  <path d="M 455.0 350.0 L 520.0 350.0 L 520.0 260.0 L 585.0 260.0" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205 170 L 335 170" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205 170 L 270 170 L 270 260 L 335 260" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 205 170 L 270 170 L 270 350 L 335 350" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 455 170 L 585 170" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
+  <path d="M 455 350 L 520 350 L 520 260 L 585 260" fill="none" stroke="#81A1C1" stroke-width="2" marker-end="url(#arrow-81A1C1)" />
   <g class="badge">
-  <rect x="233.2685546875" y="148.0" width="75.462890625" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="233.27" y="148" width="75.46" height="18" rx="9" fill="#434C5E" />
   <text x="271" y="160.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Validate JWT</text>
 </g>
   <g class="badge">
-  <rect x="233.93359375" y="206.0" width="72.1328125" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="233.93" y="206" width="72.13" height="18" rx="9" fill="#434C5E" />
   <text x="270" y="218.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">mTLS Route</text>
 </g>
   <g class="badge">
-  <rect x="478.36962890625" y="161.0" width="83.2607421875" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="478.37" y="161" width="83.26" height="18" rx="9" fill="#434C5E" />
   <text x="520" y="173.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cache Session</text>
 </g>
   <g class="badge">
-  <rect x="482.54931640625" y="296.0" width="74.9013671875" height="18.0" rx="9.0" fill="#434C5E" />
+  <rect x="482.55" y="296" width="74.9" height="18" rx="9" fill="#434C5E" />
   <text x="520" y="308.44" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Persist Order</text>
 </g>
   <g id="ingress" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-api_gateway" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
-  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-api_gateway" transform="translate(133.6, 143.2) scale(0.95)">
+  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 8 12 H 16 M 13 9 L 16 12 L 13 15" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
     <text x="145" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Ingress Envoy</tspan> <tspan x="145" dy="14.4">Gateway</tspan></text>
   </g>
   <g id="auth_svc" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-serverless" transform="translate(383.6, 149.8) scale(0.9500000000000001)">
-  <path d="M 4 20 L 10 7 L 14 16 L 20 4" fill="none" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="12" y1="12" x2="18" y2="20" stroke="#88C0D0" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-serverless" transform="translate(383.6, 149.8) scale(0.95)">
+  <path d="M 4 20 L 10 7 L 14 16 L 20 4" fill="none" stroke="#88C0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="12" x2="18" y2="20" stroke="#88C0D0" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="395" y="186.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Auth Microservice</text>
   </g>
   <g id="catalog_svc" filter="url(#shadow)">
-    <rect x="335.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-server" transform="translate(383.6, 239.8) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="335" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(383.6, 239.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
   <circle cx="6" cy="7" r="1" fill="#88C0D0"/>
   <circle cx="9" cy="7" r="1" fill="#88C0D0"/>
   <circle cx="6" cy="17" r="1" fill="#88C0D0"/>
@@ -79,10 +79,10 @@
     <text x="395" y="276.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Catalog Service</text>
   </g>
   <g id="order_svc" filter="url(#shadow)">
-    <rect x="335.0" y="320.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-server" transform="translate(383.6, 329.8) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="335" y="320" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(383.6, 329.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#88C0D0" stroke-width="2"/>
   <circle cx="6" cy="7" r="1" fill="#88C0D0"/>
   <circle cx="9" cy="7" r="1" fill="#88C0D0"/>
   <circle cx="6" cy="17" r="1" fill="#88C0D0"/>
@@ -91,22 +91,22 @@
     <text x="395" y="366.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Order Service</text>
   </g>
   <g id="redis" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-storage" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-storage" transform="translate(633.6, 143.2) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="645" y="179.33" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Redis Session</tspan> <tspan x="645" dy="14.4">Cache</tspan></text>
   </g>
   <g id="db_orders" filter="url(#shadow)">
-    <rect x="585.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
-    <g class="icon icon-database" transform="translate(633.6, 239.8) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
-  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2.0"/>
+    <rect x="585" y="230" width="120" height="60" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(633.6, 239.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#88C0D0" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#88C0D0" stroke-width="2"/>
 </g>
     <text x="645" y="276.87" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Orders Database</text>
   </g>

@@ -353,10 +353,17 @@ class Diagram:
         clearance: Optional[float] = None,
         routing: Optional[Union[Routing, str]] = None,
         fit_labels: bool = True,
+        precision: int = 2,
+        pixel_snap: bool = False,
     ) -> None:
         self.title = title
         #: Grow shapes whose inside label would otherwise spill out of them.
         self.fit_labels = bool(fit_labels)
+        #: Decimal places kept in SVG coordinates.
+        self.precision = int(precision)
+        #: Round every position and size to whole pixels and draw odd-width
+        #: strokes on pixel centres, so hairlines are one crisp pixel wide.
+        self.pixel_snap = bool(pixel_snap)
         #: An axis left as ``None`` is fitted to the content after layout; a
         #: given size is a minimum that still grows if content would be clipped.
         self._fit_width = width is None
@@ -716,7 +723,7 @@ class Diagram:
     def render_svg(self, path: Optional[Union[str, Path]] = None) -> str:
         """Render diagram to SVG string and optionally write to file."""
         self._ensure_solved()
-        renderer = SVGRenderer(self.theme)
+        renderer = SVGRenderer(self.theme, precision=self.precision, crisp=self.pixel_snap)
         svg = renderer.render(
             elements=self.shapes,
             groups=self.groups,

@@ -12,122 +12,122 @@
   </defs>
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="235" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="76" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Utility Service</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <rect x="310" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="326" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Power Path A</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <rect x="560" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="576" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Power Path B</text>
   </g>
   <g id="group_4">
-    <rect x="810.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <rect x="810" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="826" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Cooling Path A</text>
   </g>
   <g id="group_5">
-    <rect x="1060.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <rect x="1060" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="1076" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Cooling Path B</text>
   </g>
   <g id="group_6">
-    <rect x="1310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
+    <rect x="1310" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
     <text x="1326" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">White Space Floor</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 205.0 260.0 L 570.0 260.0 L 570.0 170.0 L 585.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 455.0 170.0 L 545.0 170.0 L 545.0 240.0 L 1320.0 240.0 L 1320.0 170.0 L 1335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 705.0 170.0 L 795.0 170.0 L 795.0 240.0 L 1320.0 240.0 L 1320.0 170.0 L 1335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
-  <path d="M 955.0 170.0 L 1045.0 170.0 L 1045.0 240.0 L 1320.0 240.0 L 1320.0 170.0 L 1335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 1205.0 170.0 L 1335.0 170.0" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 205 170 L 335 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 260 L 570 260 L 570 170 L 585 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455 170 L 545 170 L 545 240 L 1320 240 L 1320 170 L 1335 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705 170 L 795 170 L 795 240 L 1320 240 L 1320 170 L 1335 170" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 955 170 L 1045 170 L 1045 240 L 1320 240 L 1320 170 L 1335 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 1205 170 L 1335 170" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="229.2021484375" y="161.0" width="81.595703125" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="229.2" y="161" width="81.6" height="18" rx="9" fill="#133663" />
   <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Source Feed 1</text>
 </g>
   <g class="badge">
-  <rect x="529.2021484375" y="244.0" width="81.595703125" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="529.2" y="244" width="81.6" height="18" rx="9" fill="#133663" />
   <text x="570" y="256.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Source Feed 2</text>
 </g>
   <g class="badge">
-  <rect x="642.4287109375" y="231.0" width="97.142578125" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="642.43" y="231" width="97.14" height="18" rx="9" fill="#133663" />
   <text x="691" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power Bus Duct A</text>
 </g>
   <g class="badge">
-  <rect x="746.4287109375" y="215.0" width="97.142578125" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="746.43" y="215" width="97.14" height="18" rx="9" fill="#133663" />
   <text x="795" y="227.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power Bus Duct B</text>
 </g>
   <g class="badge">
-  <rect x="992.25390625" y="215.0" width="105.4921875" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="992.25" y="215" width="105.49" height="18" rx="9" fill="#133663" />
   <text x="1045" y="227.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Underfloor Supply A</text>
 </g>
   <g class="badge">
-  <rect x="1206.25390625" y="161.0" width="105.4921875" height="18.0" rx="9.0" fill="#133663" />
+  <rect x="1206.25" y="161" width="105.49" height="18" rx="9" fill="#133663" />
   <text x="1259" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Underfloor Supply B</text>
 </g>
   <g id="grid_a" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-ups" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
-  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-ups" transform="translate(133.6, 143.2) scale(0.95)">
+  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2"/>
   <polygon points="12,8 9,13 12,13 11,17 15,12 12,12" fill="#00D2FF"/>
 </g>
     <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Substation</tspan> <tspan x="145" dy="14.4">Grid Line A</tspan></text>
   </g>
   <g id="grid_b" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-ups" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
-  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="85" y="230" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-ups" transform="translate(133.6, 233.2) scale(0.95)">
+  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2"/>
   <polygon points="12,8 9,13 12,13 11,17 15,12 12,12" fill="#00D2FF"/>
 </g>
     <text x="145" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Substation</tspan> <tspan x="145" dy="14.4">Grid Line B</tspan></text>
   </g>
   <g id="ups_train_a" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-ups" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
-  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-ups" transform="translate(383.6, 150.4) scale(0.95)">
+  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2"/>
   <polygon points="12,8 9,13 12,13 11,17 15,12 12,12" fill="#00D2FF"/>
 </g>
     <text x="395" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">UPS 2(N+1) Train A</text>
   </g>
   <g id="ups_train_b" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-ups" transform="translate(633.6, 150.4) scale(0.9500000000000001)">
-  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-ups" transform="translate(633.6, 150.4) scale(0.95)">
+  <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="8" y1="2" x2="8" y2="5" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2"/>
   <polygon points="12,8 9,13 12,13 11,17 15,12 12,12" fill="#00D2FF"/>
 </g>
     <text x="645" y="186.53" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">UPS 2(N+1) Train B</text>
   </g>
   <g id="crac_loop_a" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-cooling" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
-  <circle cx="12" cy="12" r="9" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="835" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-cooling" transform="translate(883.6, 143.2) scale(0.95)">
+  <circle cx="12" cy="12" r="9" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Chilled</tspan> <tspan x="895" dy="14.4">Water Path A</tspan></text>
   </g>
   <g id="crac_loop_b" filter="url(#shadow)">
-    <rect x="1085.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-cooling" transform="translate(1133.6, 143.2) scale(0.9500000000000001)">
-  <circle cx="12" cy="12" r="9" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#00D2FF" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="1085" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-cooling" transform="translate(1133.6, 143.2) scale(0.95)">
+  <circle cx="12" cy="12" r="9" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <path d="M 12 12 A 4 4 0 0 1 12 4 A 4 4 0 0 1 15 11 M 12 12 A 4 4 0 0 1 19 15 A 4 4 0 0 1 11 16 M 12 12 A 4 4 0 0 1 5 9 A 4 4 0 0 1 13 8" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="1145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="1145" dy="0">Chilled</tspan> <tspan x="1145" dy="14.4">Water Path B</tspan></text>
   </g>
   <g id="mission_rack" filter="url(#shadow)">
-    <rect x="1335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
-    <g class="icon icon-server_rack" transform="translate(1383.6, 143.2) scale(0.9500000000000001)">
-  <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="4" y1="7" x2="20" y2="7" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="4" y1="12" x2="20" y2="12" stroke="#00D2FF" stroke-width="2.0"/>
-  <line x1="4" y1="17" x2="20" y2="17" stroke="#00D2FF" stroke-width="2.0"/>
+    <rect x="1335" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
+    <g class="icon icon-server_rack" transform="translate(1383.6, 143.2) scale(0.95)">
+  <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="4" y1="7" x2="20" y2="7" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="4" y1="12" x2="20" y2="12" stroke="#00D2FF" stroke-width="2"/>
+  <line x1="4" y1="17" x2="20" y2="17" stroke="#00D2FF" stroke-width="2"/>
   <circle cx="7" cy="4.5" r="0.8" fill="#00D2FF"/>
   <circle cx="7" cy="9.5" r="0.8" fill="#00D2FF"/>
   <circle cx="7" cy="14.5" r="0.8" fill="#00D2FF"/>

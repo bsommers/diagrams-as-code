@@ -3,7 +3,7 @@
 Each edge is routed on its own, so two detours around the same obstacle pick
 the same corridor and are drawn on top of each other. This pass finds interior
 segments of different edges that run along one line and shifts all but one of
-them sideways onto a free parallel lane. An end segment is moved only when no
+them sideways onto a parallel lane, whenever that shortens the overlap. An end segment is moved only when no
 interior one can be, by sliding its port along the node side; arrival
 directions are untouched. Edges that may share a line (one
 source, one target, or an exact bus) are left alone.
@@ -25,6 +25,7 @@ MIN_RUN = 6.0
 #: A port moved along a node side stays this far from the corners.
 PORT_MARGIN = 8.0
 EPS = 0.5
+PASSES = 3
 
 Segment = tuple[Point, Point]
 
@@ -96,59 +97,51 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
         pts = points[id(edge)]
         return list(zip(pts, pts[1:]))
 
-    def clashes(edge: Any, pts: list[Point], i: int) -> bool:
-        """True if segment ``i`` of ``pts``, or a stub beside it, is in the way."""
-        for j in (i - 1, i, i + 1):
-            if j < 0 or j + 1 >= len(pts):
-                continue
-            seg = (pts[j], pts[j + 1])
-            if any(segment_enters(seg[0], seg[1], n) for n in nodes):
-                return True
+    def overlap(edge: Any, pts: list[Point]) -> float:
+        """Total length ``pts`` runs on top of edges it may not share a line with."""
+        total = 0.0
+        for seg in zip(pts, pts[1:]):
             for other in edges:
                 if other is edge or id(other) not in points or _related(edge, other):
                     continue
-                if any(_shared(seg, s) > MIN_RUN for s in segments(other)):
-                    return True
-        return False
+                total += sum(run for run in (_shared(seg, s) for s in segments(other)) if run > MIN_RUN)
+        return total
+
+    def hits_node(pts: list[Point], i: int) -> bool:
+        return any(
+            segment_enters(pts[j], pts[j + 1], n)
+            for j in (i - 1, i, i + 1)
+            if 0 <= j < len(pts) - 1
+            for n in nodes
+        )
 
     changed: set[int] = set()
-    # A second pass lets a segment move once its neighbour's port has slid clear.
-    for edge in movable + movable:
-        pts = points[id(edge)]
-        # Interior segments first; an end segment moves its port, so only if needed.
-        last = len(pts) - 2
-        for i in list(range(1, last)) + [0, last]:
-            seg = (pts[i], pts[i + 1])
-            overlapping = any(
-                _shared(seg, s) > MIN_RUN
-                for other in edges
-                if other is not edge and id(other) in points and not _related(edge, other)
-                for s in segments(other)
-            )
-            if not overlapping:
-                continue
-
-            def usable(cand: Optional[list[Point]]) -> bool:
-                if cand is None or clashes(edge, cand, i):
-                    return False
-                if i == 0 and not _on_side(cand[0], edge.source.bounds):
-                    return False
-                if i == last and not _on_side(cand[-1], edge.target.bounds):
-                    return False
-                return True
-
-            for lane in range(1, MAX_LANES + 1):
-                moved = next(
-                    (
-                        cand for cand in (_shifted(pts, i, lane * PITCH), _shifted(pts, i, -lane * PITCH))
-                        if usable(cand)
-                    ),
-                    None,
-                )
-                if moved is not None:
-                    pts = points[id(edge)] = moved
-                    changed.add(id(edge))
+    # Repeat: a segment may only be able to move once a neighbour has.
+    for _ in range(PASSES):
+        for edge in movable:
+            pts = points[id(edge)]
+            last = len(pts) - 2
+            # Interior segments first; an end segment moves its port, so only if needed.
+            for i in list(range(1, last)) + [0, last]:
+                current = overlap(edge, pts)
+                if current <= 0.0:
                     break
+                best, best_overlap = None, current - 1.0
+                for lane in range(1, MAX_LANES + 1):
+                    for offset in (lane * PITCH, -lane * PITCH):
+                        cand = _shifted(pts, i, offset)
+                        if cand is None or hits_node(cand, i):
+                            continue
+                        if i == 0 and not _on_side(cand[0], edge.source.bounds):
+                            continue
+                        if i == last and not _on_side(cand[-1], edge.target.bounds):
+                            continue
+                        score = overlap(edge, cand)
+                        if score < best_overlap - 1e-9:
+                            best, best_overlap = cand, score
+                if best is not None:
+                    pts = points[id(edge)] = best
+                    changed.add(id(edge))
 
     for edge in movable:
         if id(edge) in changed:

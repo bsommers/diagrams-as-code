@@ -131,6 +131,14 @@ Math is drawn as vector outlines, so it looks identical in every browser, in PNG
 
 **Fitting.** Label width is measured from bundled font metrics, not guessed. A label that cannot fit its shape at the smallest size makes the shape grow, so text never spills out. To keep a size exactly as given, pass `fit_label=False` on the shape or `Diagram(fit_labels=False)`. To pin the text size, pass `font_size=14` on the shape.
 
+**Canvas size.** Leave `width` and `height` off and the canvas is fitted to the content with an even margin. Pass either one to fix that axis; it still grows if content would otherwise be clipped.
+
+**Shape artwork.** An inside label stays clear of the shape's own drawing: below the rim of a cylinder or database, between the lobes of a cloud, inside the diamond. Racks and databases draw a plain plate behind the label. A shape grows if that leaves too little room.
+
+**Edge labels.** A badge is moved along its edge to a spot clear of nodes, group titles, other badges and other edges. A label too wide for the gap is wrapped; if nothing on the line is clear it sits just beside the line. Edges that carry the same label along a shared trunk draw one badge.
+
+**Coordinates.** SVG coordinates are written to two decimals (`Diagram(precision=2)`). `Diagram(pixel_snap=True)` rounds every position to a whole pixel and draws 1 px strokes on pixel centres, so hairlines in the `paper` theme are exactly one pixel wide.
+
 To measure or lay out text yourself:
 
 ```python

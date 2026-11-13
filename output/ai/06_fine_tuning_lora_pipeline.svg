@@ -12,104 +12,104 @@
   </defs>
   <rect width="100%" height="100%" fill="#181B20"/>
   <g id="group_1">
-    <rect x="60.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <rect x="60" y="80" width="170" height="235" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
     <text x="76" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Input Artifacts</text>
   </g>
   <g id="group_2">
-    <rect x="310.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <rect x="310" y="80" width="170" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
     <text x="326" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Training Compute</text>
   </g>
   <g id="group_3">
-    <rect x="560.0" y="80.0" width="170.0" height="145.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <rect x="560" y="80" width="170" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
     <text x="576" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Trained Artifacts</text>
   </g>
   <g id="group_4">
-    <rect x="810.0" y="80.0" width="170.0" height="235.0" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <rect x="810" y="80" width="170" height="235" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
     <text x="826" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Packaging Tier</text>
   </g>
-  <path d="M 205.0 170.0 L 335.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 205.0 260.0 L 270.0 260.0 L 270.0 170.0 L 335.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 455.0 170.0 L 585.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 705.0 170.0 L 835.0 170.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 895.0 200.0 L 895.0 230.0" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 170 L 335 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 205 260 L 270 260 L 270 170 L 335 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 455 170 L 585 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705 170 L 835 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 895 200 L 895 230" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="215.4755859375" y="148.0" width="111.048828125" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="215.48" y="148" width="111.05" height="18" rx="9" fill="#2B313B" />
   <text x="271" y="160.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Load Frozen Weights</text>
 </g>
   <g class="badge">
-  <rect x="208.08154296875" y="206.0" width="123.8369140625" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="208.08" y="206" width="123.84" height="18" rx="9" fill="#2B313B" />
   <text x="270" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Instruction Tuning Batch</text>
 </g>
   <g class="badge">
-  <rect x="465.037109375" y="161.0" width="109.92578125" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="465.04" y="161" width="109.93" height="18" rx="9" fill="#2B313B" />
   <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Export Delta Weights</text>
 </g>
   <g class="badge">
-  <rect x="724.7587890625" y="161.0" width="90.482421875" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="724.76" y="161" width="90.48" height="18" rx="9" fill="#2B313B" />
   <text x="770" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Fuse &amp; Quantize</text>
 </g>
   <g class="badge">
-  <rect x="832.52734375" y="206.0" width="124.9453125" height="18.0" rx="9.0" fill="#2B313B" />
+  <rect x="832.53" y="206" width="124.95" height="18" rx="9" fill="#2B313B" />
   <text x="895" y="218.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Register Model Package</text>
 </g>
   <g id="base_model" filter="url(#shadow)">
-    <rect x="85.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
-    <g class="icon icon-model" transform="translate(133.6, 143.2) scale(0.9500000000000001)">
-  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
-  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
+    <rect x="85" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-model" transform="translate(133.6, 143.2) scale(0.95)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linejoin="round"/>
 </g>
     <text x="145" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Base Llama-3</tspan> <tspan x="145" dy="14.4">70B Weights</tspan></text>
   </g>
   <g id="dataset" filter="url(#shadow)">
-    <rect x="85.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
-    <g class="icon icon-document" transform="translate(133.6, 233.2) scale(0.9500000000000001)">
-  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
-  <polyline points="14,2 14,8 20,8" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <line x1="8" y1="13" x2="16" y2="13" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="8" y1="17" x2="14" y2="17" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="85" y="230" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-document" transform="translate(133.6, 233.2) scale(0.95)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="145" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Curated</tspan> <tspan x="145" dy="14.4">Instruction Corpus</tspan></text>
   </g>
   <g id="lora_trainer" filter="url(#shadow)">
-    <rect x="335.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
-    <g class="icon icon-chip" transform="translate(383.6, 150.4) scale(0.9500000000000001)">
-  <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <line x1="9" y1="2" x2="9" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="15" y1="2" x2="15" y2="5" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="9" y1="19" x2="9" y2="22" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="15" y1="19" x2="15" y2="22" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="2" y1="9" x2="5" y2="9" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="2" y1="15" x2="5" y2="15" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="19" y1="9" x2="22" y2="9" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="19" y1="15" x2="22" y2="15" stroke="#00E5A3" stroke-width="2.0" stroke-linecap="round"/>
+    <rect x="335" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-chip" transform="translate(383.6, 150.4) scale(0.95)">
+  <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="9" y1="2" x2="9" y2="5" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="15" y1="2" x2="15" y2="5" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="9" y1="19" x2="9" y2="22" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="15" y1="19" x2="15" y2="22" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="9" x2="5" y2="9" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="15" x2="5" y2="15" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19" y1="9" x2="22" y2="9" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19" y1="15" x2="22" y2="15" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
     <text x="395" y="186.53" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">LoRA PEFT Trainer</text>
   </g>
   <g id="adapter" filter="url(#shadow)">
-    <rect x="585.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
-    <g class="icon icon-brain" transform="translate(633.6, 143.2) scale(0.9500000000000001)">
-  <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#00E5A3" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="12" y1="4" x2="12" y2="20" stroke="#00E5A3" stroke-width="2.0" stroke-dasharray="2,2"/>
+    <rect x="585" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-brain" transform="translate(633.6, 143.2) scale(0.95)">
+  <path d="M 9.5 2 A 4.5 4.5 0 0 0 5 6.5 A 4 4 0 0 0 4 12 A 4 4 0 0 0 7 17 A 3 3 0 0 0 10 20 L 12 20 L 14 20 A 3 3 0 0 0 17 17 A 4 4 0 0 0 20 12 A 4 4 0 0 0 19 6.5 A 4.5 4.5 0 0 0 14.5 2 C 13.5 2 12.5 2.5 12 3.2 C 11.5 2.5 10.5 2 9.5 2 Z" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="12" y1="4" x2="12" y2="20" stroke="#00E5A3" stroke-width="2" stroke-dasharray="2,2"/>
 </g>
     <text x="645" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">LoRA Adapter</tspan> <tspan x="645" dy="14.4">Checkpoint</tspan></text>
   </g>
   <g id="quantizer" filter="url(#shadow)">
-    <rect x="835.0" y="140.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
-    <g class="icon icon-workflow" transform="translate(883.6, 143.2) scale(0.9500000000000001)">
-  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+    <rect x="835" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-workflow" transform="translate(883.6, 143.2) scale(0.95)">
+  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
 </g>
     <text x="895" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">AWQ / GGUF</tspan> <tspan x="895" dy="14.4">Quantizer</tspan></text>
   </g>
   <g id="registry" filter="url(#shadow)">
-    <rect x="835.0" y="230.0" width="120.0" height="60.0" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
-    <g class="icon icon-storage" transform="translate(883.6, 233.2) scale(0.9500000000000001)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2.0"/>
+    <rect x="835" y="230" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-storage" transform="translate(883.6, 233.2) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
 </g>
     <text x="895" y="269.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Hugging Face</tspan> <tspan x="895" dy="14.4">Model Registry</tspan></text>
   </g>

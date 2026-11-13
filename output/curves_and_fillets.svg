@@ -17,27 +17,27 @@
     </filter>
   </defs>
   <rect width="100%" height="100%" fill="#000000"/>
-  <path d="M 210.0 264.0 L 259.0 264.0 Q 275.0 264.0, 275.0 280.0 L 275.0 374.0 Q 275.0 390.0, 291.0 390.0 L 340.0 390.0" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
-  <path d="M 705.0 360.0 C 705.0 80.0, 145.0 -60.0, 145.0 220.0" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-8B5CF6)" />
-  <path d="M 405.0 420.0 L 405.0 505.0 L 485.0 505.0 L 485.0 557.2173913043479 L 470.0 557.2173913043479" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 210 264 L 259 264 Q 275 264, 275 280 L 275 374 Q 275 390, 291 390 L 340 390" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 705 360 C 705 80, 145 -60, 145 220" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-8B5CF6)" />
+  <path d="M 405 420 L 405 505 L 485 505 L 485 557.22 L 470 557.22" fill="none" stroke="#FFC000" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
-  <rect x="250.61083984375" y="318.0" width="48.7783203125" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="250.61" y="318" width="48.78" height="18" rx="9" fill="#24242A" />
   <text x="275" y="330.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">HTTPS</text>
 </g>
   <g class="badge">
-  <rect x="416.64075735556" y="78.75618546233858" width="71.5810546875" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="416.64" y="78.76" width="71.58" height="18" rx="9" fill="#24242A" />
   <text x="452.43" y="91.2" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Async Event</text>
 </g>
   <g class="badge">
-  <rect x="414.490234375" y="496.0" width="61.01953125" height="18.0" rx="9.0" fill="#24242A" />
+  <rect x="414.49" y="496" width="61.02" height="18" rx="9" fill="#24242A" />
   <text x="445" y="508.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL Sync</text>
 </g>
   <g id="shape_1" filter="url(#shadow)">
-    <path d="M 112.5 294.8 L 177.5 294.8 C 197.0 294.8 210.0 283.36 210.0 271.04 C 210.0 258.72 194.4 248.16 177.5 248.16 C 171.0 233.2 145.0 233.2 132.0 244.64 C 116.4 239.36 95.6 248.16 95.6 262.24 C 80.0 268.4 80.0 286.0 112.5 294.8 Z" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
-    <g class="icon icon-gateway" transform="translate(133.0, 252.92000000000002) scale(1.0)">
-  <line x1="6" y1="9" x2="6" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="18" y1="9" x2="18" y2="3" stroke="#FFC000" stroke-width="2.0" stroke-linecap="round"/>
-  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+    <path d="M 112.5 294.8 L 177.5 294.8 C 197 294.8 210 283.36 210 271.04 C 210 258.72 194.4 248.16 177.5 248.16 C 171 233.2 145 233.2 132 244.64 C 116.4 239.36 95.6 248.16 95.6 262.24 C 80 268.4 80 286 112.5 294.8 Z" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
+    <g class="icon icon-gateway" transform="translate(133, 252.92) scale(1)">
+  <line x1="6" y1="9" x2="6" y2="3" stroke="#FFC000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="9" x2="18" y2="3" stroke="#FFC000" stroke-width="2" stroke-linecap="round"/>
+  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#FFC000" stroke-width="2"/>
   <circle cx="7" cy="15" r="1.5" fill="#FFC000"/>
   <circle cx="12" cy="15" r="1.5" fill="#FFC000"/>
   <circle cx="17" cy="15" r="1.5" fill="#FFC000"/>
@@ -45,19 +45,19 @@
     <text x="145" y="288.36" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500" text-anchor="middle">API Gateway</text>
   </g>
   <g id="shape_2" filter="url(#shadow)">
-    <rect x="340.0" y="360.0" width="130.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2" />
-    <g class="icon icon-lock" transform="translate(393.6, 369.8) scale(0.9500000000000001)">
-  <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+    <rect x="340" y="360" width="130" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-lock" transform="translate(393.6, 369.8) scale(0.95)">
+  <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#FFC000" stroke-width="2"/>
   <circle cx="12" cy="16" r="1.5" fill="#FFC000"/>
 </g>
     <text x="405" y="406.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Auth Service</text>
   </g>
   <g id="shape_3" filter="url(#shadow)">
-    <rect x="640.0" y="360.0" width="130.0" height="60.0" rx="6.0" fill="#24242A" stroke="#FFC000" stroke-width="2" />
-    <g class="icon icon-server" transform="translate(693.6, 369.8) scale(0.9500000000000001)">
-  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2.0"/>
+    <rect x="640" y="360" width="130" height="60" rx="6" fill="#24242A" stroke="#FFC000" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(693.6, 369.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#FFC000" stroke-width="2"/>
   <circle cx="6" cy="7" r="1" fill="#FFC000"/>
   <circle cx="9" cy="7" r="1" fill="#FFC000"/>
   <circle cx="6" cy="17" r="1" fill="#FFC000"/>
@@ -66,17 +66,17 @@
     <text x="705" y="406.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Analytics Engine</text>
   </g>
   <g id="shape_4" filter="url(#shadow)">
-    <path d="M 340.0 532.0 L 340.0 582.4347826086956 A 65.0 12.0 0 0 0 470.0 582.4347826086956 L 470.0 532.0 A 65.0 12.0 0 0 1 340.0 532.0 Z" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
-<path d="M 340.0 548.8115942028985 A 65.0 12.0 0 0 0 470.0 548.8115942028985" fill="none" stroke="#FFC000" stroke-width="2"/>
-<path d="M 340.0 565.6231884057971 A 65.0 12.0 0 0 0 470.0 565.6231884057971" fill="none" stroke="#FFC000" stroke-width="2"/>
-<ellipse cx="405.0" cy="532.0" rx="65.0" ry="12.0" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
-    <rect class="label-plate" x="373.443359375" y="544.2173913043479" width="63.11328125" height="44.0" rx="3" fill="#24242A" />
-    <g class="icon icon-database" transform="translate(393.0, 547.2173913043479) scale(1.0)">
-  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#FFC000" stroke-width="2.0"/>
-  <line x1="4" y1="6" x2="4" y2="18" stroke="#FFC000" stroke-width="2.0"/>
-  <line x1="20" y1="6" x2="20" y2="18" stroke="#FFC000" stroke-width="2.0"/>
+    <path d="M 340 532 L 340 582.43 A 65 12 0 0 0 470 582.43 L 470 532 A 65 12 0 0 1 340 532 Z" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
+<path d="M 340 548.81 A 65 12 0 0 0 470 548.81" fill="none" stroke="#FFC000" stroke-width="2"/>
+<path d="M 340 565.62 A 65 12 0 0 0 470 565.62" fill="none" stroke="#FFC000" stroke-width="2"/>
+<ellipse cx="405" cy="532" rx="65" ry="12" fill="#24242A" stroke="#FFC000" stroke-width="2"/>
+    <rect class="label-plate" x="373.44" y="544.22" width="63.11" height="44" rx="3" fill="#24242A" />
+    <g class="icon icon-database" transform="translate(393, 547.22) scale(1)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#FFC000" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#FFC000" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#FFC000" stroke-width="2"/>
 </g>
     <text x="405" y="582.66" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500" text-anchor="middle">Primary DB</text>
   </g>

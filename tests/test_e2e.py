@@ -506,7 +506,7 @@ def test_e2e_mixed_orthogonal_and_curved_routing_with_obstacles() -> None:
     assert has_c, "Expected at least one curved path with C bezier commands"
 
     # Both badges are rendered and readable
-    badges = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9.0"]
+    badges = [r for r in root.findall(".//svg:rect", ns) if r.attrib.get("rx") == "9"]
     assert len(badges) == 2
 
 

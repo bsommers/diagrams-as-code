@@ -73,7 +73,8 @@ def test_badge_size_matches_what_is_drawn():
     root = _render(d)
     rect = root.find(".//svg:g[@class='badge']/svg:rect", NS)
     w, h = badge_size("Protocol label")
-    assert float(rect.attrib["width"]) == w and float(rect.attrib["height"]) == h
+    # Drawn at the measured size, to the two decimals the SVG keeps.
+    assert float(rect.attrib["width"]) == round(w, 2) and float(rect.attrib["height"]) == round(h, 2)
 
 
 def test_no_module_guesses_text_width_from_character_counts():

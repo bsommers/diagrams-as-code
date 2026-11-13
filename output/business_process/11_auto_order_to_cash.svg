@@ -17,46 +17,46 @@
     </filter>
   </defs>
   <rect width="100%" height="100%" fill="#EFF1F5"/>
-  <path d="M 190.0 160.0 L 271.69921875 160.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <path d="M 401.69921875 160.0 L 483.3984375 160.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <path d="M 401.69921875 160.0 L 468.3984375 160.0 L 468.3984375 210.0 L 906.796875 210.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <path d="M 613.3984375 160.0 L 695.09765625 160.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <path d="M 825.09765625 160.0 L 865.947265625 160.0 L 865.947265625 110.0 L 906.796875 110.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
-  <path d="M 825.09765625 160.0 L 865.947265625 160.0 L 865.947265625 210.0 L 906.796875 210.0" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 190 160 L 271.7 160" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 401.7 160 L 483.4 160" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 401.7 160 L 468.4 160 L 468.4 210 L 906.8 210" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 613.4 160 L 695.1 160" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 825.1 160 L 865.95 160 L 865.95 110 L 906.8 110" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 825.1 160 L 865.95 160 L 865.95 210 L 906.8 210" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
   <g class="badge">
-  <rect x="414.849609375" y="138.0" width="57.69921875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="414.85" y="138" width="57.7" height="18" rx="9" fill="#FFFFFF" />
   <text x="443.7" y="150.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">approved</text>
 </g>
   <g class="badge">
-  <rect x="442.6103515625" y="192.30078125" width="51.576171875" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="442.61" y="192.3" width="51.58" height="18" rx="9" fill="#FFFFFF" />
   <text x="468.4" y="204.74" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">rejected</text>
 </g>
   <g class="badge">
-  <rect x="839.87841796875" y="176.0" width="52.1376953125" height="18.0" rx="9.0" fill="#FFFFFF" />
+  <rect x="839.88" y="176" width="52.14" height="18" rx="9" fill="#FFFFFF" />
   <text x="865.95" y="188.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">overdue</text>
 </g>
   <g id="shape_1" filter="url(#shadow)">
-    <rect x="60.0" y="130.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <rect x="60" y="130" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="125" y="164.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Order Received</text>
   </g>
   <g id="shape_2" filter="url(#shadow)">
-    <path d="M 336.69921875 130.0 L 401.69921875 160.0 L 336.69921875 190.0 L 271.69921875 160.0 Z" fill="#FFFFFF" stroke="#7287FD" stroke-width="2"/>
+    <path d="M 336.7 130 L 401.7 160 L 336.7 190 L 271.7 160 Z" fill="#FFFFFF" stroke="#7287FD" stroke-width="2"/>
     <text x="336.7" y="164.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Credit Check</text>
   </g>
   <g id="shape_3" filter="url(#shadow)">
-    <rect x="483.3984375" y="130.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <rect x="483.4" y="130" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="548.4" y="164.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Fulfil Order</text>
   </g>
   <g id="shape_4" filter="url(#shadow)">
-    <rect x="695.09765625" y="130.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <rect x="695.1" y="130" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="760.1" y="164.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Invoice</text>
   </g>
   <g id="shape_5" filter="url(#shadow)">
-    <rect x="906.796875" y="80.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <rect x="906.8" y="80" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="971.8" y="114.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Payment Received</text>
   </g>
   <g id="shape_6" filter="url(#shadow)">
-    <rect x="906.796875" y="180.0" width="130.0" height="60.0" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <rect x="906.8" y="180" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
     <text x="971.8" y="214.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Collections</text>
   </g>
 </svg>

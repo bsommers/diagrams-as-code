@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.10.0] - 2026-11-12
+
+Style model and layout correctness. `uv run python tools/audit_gallery.py` across 92 diagrams, v0.9.0 -> v0.10.0: mostly-empty canvases 90 -> 0, overlapping edges 22 -> 0, badges over nodes 21 -> 0, badges over badges 16 -> 0, lines through badges 183 -> 4, group titles wider than their group 29 -> 0. Still open: 4 lines through badges in 3 diagrams and 1 edge through a group title, all in hand-placed examples whose gaps are narrower than their labels.
+
 ### Added
 - **`Style`** (`diagrams_as_code.Style`): fill, stroke, stroke width, corner radius, dash, shadow, text colour, font size and opacity for a node or group. Resolved theme -> enclosing groups' `child_style` -> element `style` -> legacy keyword overrides (`fill=`, `stroke=`, ...), which keep working. `Diagram.group(style=, child_style=)`, `Diagram.shape(style=)`.
 - **`paper` theme:** black on white, 1 px strokes, square corners, dashed group frames, no shadows. Themes gained `node_stroke_width`, `node_radius`, `group_stroke_width`, `group_radius`, `group_dash`, `edge_width` and `shadow`; the defaults are the previous look. Arrowheads keep a readable size on hairline edges.
@@ -18,9 +22,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Lane separation.** New `layout/lanes.py` pass: detours that were routed along the same corridor are shifted onto parallel lanes 14 px apart. An end segment is moved only when no interior one can be, by sliding its port along the node side; arrival directions are untouched.
 - **Consistent port spreading.** When a node side carries both incoming and outgoing edges, the order now takes account of the shift already given to each edge's other end, so a request/reply pair is drawn as two straight parallel lines instead of two overlapping Z shapes.
 - A badge with no clear spot on its line may sit just beside the line.
-- The audit no longer counts a bus as overlapping edges when every source on it feeds every target on it (`connections.may_share_a_line`); a partial bus is still counted. Gallery audit: overlapping edges 22 -> 1, line through badge 183 -> 11, badge over badge 16 -> 0.
+- The audit no longer counts a bus as overlapping edges when every source on it feeds every target on it (`connections.may_share_a_line`); a partial bus is still counted. 
 - **Labels clear of shape artwork.** `labels.label_area(shape)` gives the part of a shape an inside label and icon may use: below the rim of a cylinder or database, between the lobes of a cloud, the inscribed rectangle of a diamond. Fitting, grow-to-fit, drawing and the audit all use it. Server racks and databases, whose artwork fills the body, draw a plain plate behind the label. Cylinders, clouds and diamonds with long labels or icons may now grow slightly (opt out with `fit_label=False`).
 - **Renderer split.** `SVGRenderer.render` now runs four passes (`_defs`, `_groups_pass`, `_edges_pass`, `_nodes_pass`); the pan/zoom/minimap overlay moved to `renderer_interactive.py`. The route fallback for edges drawn without a layout is one helper, and its unreachable branch is gone. Output is byte-identical.
+- **Fixed-precision coordinates.** Every coordinate and length in the SVG is written to two decimals (`Diagram(precision=)`), with trailing zeros dropped; text content and names are never touched, and scale factors keep four more places so math glyphs keep their size. `Diagram(pixel_snap=True)` rounds positions to whole pixels and draws odd-width strokes on pixel centres.
+- Lane separation now takes any move that shortens the overlap, over three passes, so two crossing Z routes are separated by sliding a port.
+- The audit no longer counts a line under a badge that carries that line's own label.
 - `flatten` and `segment_enters` moved from `audit` to `geometry` (still importable from `audit`).
 - Gallery SVG output regenerated at the fitted sizes; `main.py` and the three root examples no longer hard-code a canvas size.
 
