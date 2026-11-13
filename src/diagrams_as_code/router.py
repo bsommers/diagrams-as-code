@@ -39,7 +39,8 @@ class RoutingScene:
         rects: dict[Element, Rect] = {}
         ancestors: dict[Element, set[Group]] = {}
         for el in elements:
-            rects[el] = el.bounds
+            if getattr(el, "obstacle", True):
+                rects[el] = el.bounds
             curr = getattr(el, "parent", None)
             anc: set[Group] = set()
             while curr is not None:
@@ -59,8 +60,10 @@ class RoutingScene:
         excluded.update(self.ancestors.get(edge.target, frozenset()))
 
         result: list[Rect] = []
+        ends = {edge.source, edge.target}
         for el, r in self.rects.items():
-            if el not in excluded:
+            # Shapes nested in an endpoint sit inside it; they cannot be gone around.
+            if el not in excluded and not (ends & self.ancestors.get(el, frozenset())):
                 result.append(r.expand(clearance) if clearance > 0.0 else r)
         return result
 
@@ -137,6 +140,68 @@ def edge_endpoints(
         port_point(edge.source.bounds, src_port, so),
         port_point(edge.target.bounds, tgt_port, to),
     )
+
+
+def port_facing(bounds: Rect, toward: Point) -> Port:
+    """The side of ``bounds`` that faces ``toward``."""
+    c = bounds.center
+    dx, dy = toward.x - c.x, toward.y - c.y
+    if abs(dx) * max(bounds.height, 1e-6) >= abs(dy) * max(bounds.width, 1e-6):
+        return Port.EAST if dx >= 0.0 else Port.WEST
+    return Port.SOUTH if dy >= 0.0 else Port.NORTH
+
+
+def smooth_chain(points: Sequence[Point]) -> tuple[Point, ...]:
+    """Control points of a cubic chain passing smoothly through ``points`` (Catmull-Rom)."""
+    pts = list(points)
+    if len(pts) < 2:
+        return tuple(pts)
+    out = [pts[0]]
+    for i in range(len(pts) - 1):
+        before = pts[i - 1] if i > 0 else pts[i]
+        after = pts[i + 2] if i + 2 < len(pts) else pts[i + 1]
+        a, b = pts[i], pts[i + 1]
+        out.append(Point(a.x + (b.x - before.x) / 6.0, a.y + (b.y - before.y) / 6.0))
+        out.append(Point(b.x - (after.x - a.x) / 6.0, b.y - (after.y - a.y) / 6.0))
+        out.append(b)
+    return tuple(out)
+
+
+def via_path(edge: Edge, scene: Optional[RoutingScene], style: EdgeStyle) -> RoutedPath:
+    """The line through ``edge.via``: a smooth curve for SPLINE routing, else straight runs."""
+    via = list(edge.via or [])
+    sp = edge.source_port or port_facing(edge.source.bounds, via[0])
+    tp = edge.target_port or port_facing(edge.target.bounds, via[-1])
+    start, end = edge_endpoints(edge, sp, tp, scene)
+    pts = [start, *via, end]
+    if style.routing == Routing.SPLINE:
+        return RoutedPath(kind=PathKind.BEZIER_CHAIN, points=smooth_chain(pts))
+    return RoutedPath(kind=PathKind.POLYLINE, points=tuple(pts), corner_radius=style.corner_radius)
+
+
+def trunk_path(
+    edge: Edge, src_port: Port, tgt_port: Port, scene: Optional[RoutingScene], style: EdgeStyle
+) -> RoutedPath:
+    """A three-segment line that turns ``edge.trunk`` px out from the source port.
+
+    Edges leaving one port with the same ``trunk`` run along the same first
+    segment and split at the same place: a fan-out bus. A negative ``trunk``
+    measures from the target port instead, for a fan-in.
+    """
+    start, end = edge_endpoints(edge, src_port, tgt_port, scene)
+    distance = float(edge.trunk or 0.0)
+    base, normal = (start, PORT_NORMALS[src_port]) if distance >= 0.0 else (end, PORT_NORMALS[tgt_port])
+    turn = Point(base.x + normal.x * abs(distance), base.y + normal.y * abs(distance))
+    axis_port = src_port if distance >= 0.0 else tgt_port
+    if axis_port in (Port.NORTH, Port.SOUTH):
+        pts = [start, Point(start.x, turn.y), Point(end.x, turn.y), end]
+    else:
+        pts = [start, Point(turn.x, start.y), Point(turn.x, end.y), end]
+    deduped = [pts[0]]
+    for p in pts[1:]:
+        if p != deduped[-1]:
+            deduped.append(p)
+    return RoutedPath(kind=PathKind.POLYLINE, points=tuple(deduped), corner_radius=style.corner_radius)
 
 
 def _flatten(path: RoutedPath, steps: int = 12) -> list[Point]:
@@ -1292,7 +1357,7 @@ class EdgeRouter:
     ) -> tuple[Port, Port]:
         """Determine connection ports for source and target elements."""
         routing = style.routing if style is not None else edge.routing
-        if routing in (Routing.CURVE, "curve"):
+        if routing in (Routing.CURVE, "curve", Routing.SPLINE, "spline"):
             return self.curve.resolve_ports(edge, obstacles=obstacles)
         return self.orthogonal.resolve_ports(edge, obstacles=obstacles)
 
@@ -1340,9 +1405,20 @@ class EdgeRouter:
         routing = style.routing
         if isinstance(routing, str):
             routing = Routing(routing)
+        if edge.via:
+            return via_path(edge, scene, style)
+        if routing == Routing.SPLINE:
+            # A spline with no points to pass through is an ordinary curve.
+            routing = Routing.CURVE
+            style = EdgeStyle(routing=routing, corner_radius=style.corner_radius, clearance=style.clearance)
 
         if edge.source is edge.target:
             return self_loop_path(edge, style.clearance, rounded=routing == Routing.CURVE)
+
+        if edge.trunk is not None:
+            obs = obstacles or (scene.obstacles_for(edge, clearance=0.0) if scene else None)
+            src_port, tgt_port = self.resolve_ports(edge, obstacles=obs, style=style)
+            return trunk_path(edge, src_port, tgt_port, scene, style)
 
         if routing == Routing.DIRECT:
             obs = obstacles or (scene.obstacles_for(edge, clearance=0.0) if scene else None)

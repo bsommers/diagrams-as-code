@@ -5,8 +5,10 @@ from diagrams_as_code.elements import (
     AbsoluteConstraint,
     AlignConstraint,
     Constraint,
+    DEPENDENT_TYPES,
     Element,
     RelativeConstraint,
+    constraint_targets,
     to_constraint,
 )
 from diagrams_as_code.geometry import Anchor, Rect
@@ -83,7 +85,7 @@ class ConstraintSolver:
             if has_children:
                 continue
             has_rel = any(
-                c["type"] in ("relative_dir", "align") for c in el.constraints
+                c["type"] in DEPENDENT_TYPES for c in el.constraints
             )
             for c in el.constraints:
                 if c["type"] == "absolute":
@@ -118,7 +120,7 @@ class ConstraintSolver:
                         rel_constraints = [
                             c
                             for c in el.constraints
-                            if c["type"] in ("relative_dir", "align")
+                            if c["type"] in DEPENDENT_TYPES
                         ]
                         if abs_constraints:
                             self._apply_absolute(el, abs_constraints[0])
@@ -138,11 +140,11 @@ class ConstraintSolver:
                 rel_list = [
                     c
                     for c in el.constraints
-                    if c["type"] in ("relative_dir", "align")
+                    if c["type"] in DEPENDENT_TYPES
                 ]
                 if not rel_list:
                     continue
-                if all(c["target"] in solved for c in rel_list):
+                if all(t in solved for c in rel_list for t in constraint_targets(c)):
                     for c in rel_list:
                         if c["type"] == "relative_dir":
                             self._apply_relative(
@@ -159,6 +161,10 @@ class ConstraintSolver:
                                 c.get("align", "center"),
                                 c.get("axis", "horizontal"),
                             )
+                        elif c["type"] == "inside":
+                            self._apply_inside(el, c)
+                        elif c["type"] == "span":
+                            self._apply_span(el, c)
                     solved.add(el)
                     progress = True
 
@@ -185,6 +191,43 @@ class ConstraintSolver:
         dx = target_x - el.bounds.x
         dy = target_y - el.bounds.y
         el.translate(dx, dy)
+
+    @staticmethod
+    def _anchor(value: Any) -> Anchor:
+        if isinstance(value, Anchor):
+            return value
+        try:
+            return Anchor(value)
+        except ValueError:
+            return Anchor(str(value).lower())
+
+    def _apply_inside(self, el: Element, c: Any) -> None:
+        """Pin an anchor of ``el`` to the same anchor of its container, plus an offset."""
+        anchor = self._anchor(c.get("anchor", Anchor.CENTER))
+        want = c["target"].bounds.get_anchor(anchor)
+        have = el.bounds.get_anchor(anchor)
+        el.translate(
+            want.x + float(c.get("dx", 0.0)) - have.x, want.y + float(c.get("dy", 0.0)) - have.y
+        )
+
+    def _apply_span(self, el: Element, c: Any) -> None:
+        """Stretch ``el`` along one side of the box around its two targets."""
+        box = c["target"].bounds
+        if c.get("other") is not None:
+            box = box.union(c["other"].bounds)
+        side, gap = c.get("side", "right"), float(c.get("gap", 8.0))
+        resize = getattr(el, "set_length", None)
+        if side in ("left", "right"):
+            if resize is not None:
+                resize(box.height)
+            x = box.right + gap if side == "right" else box.left - gap - el.bounds.width
+            y = box.top + (box.height - el.bounds.height) / 2.0
+        else:
+            if resize is not None:
+                resize(box.width)
+            x = box.left + (box.width - el.bounds.width) / 2.0
+            y = box.bottom + gap if side == "bottom" else box.top - gap - el.bounds.height
+        el.translate(x - el.bounds.x, y - el.bounds.y)
 
     def _apply_relative(
         self,

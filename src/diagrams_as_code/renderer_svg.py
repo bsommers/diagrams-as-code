@@ -6,9 +6,12 @@ import math
 import re
 from typing import Any, Mapping, Optional, Sequence
 
+import dataclasses
+
+from diagrams_as_code import drawing
 from diagrams_as_code.connections import Edge, Routing
 from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath
+from diagrams_as_code.geometry import PathKind, Point, Rect, RoutedPath, flatten
 from diagrams_as_code.groups import Group
 from diagrams_as_code.renderer_interactive import InteractiveOverlay
 from diagrams_as_code.style import resolve_group_style, resolve_node_style
@@ -21,6 +24,7 @@ from diagrams_as_code.labels import (
     edge_badge_rect,
     group_title_block,
     label_area,
+    label_valign,
     node_label,
     shape_kind,
 )
@@ -164,9 +168,20 @@ class SVGRenderer(InteractiveOverlay):
         half_pixel = self.crisp and round(float(self.theme.node_stroke_width)) % 2 == 1
         if half_pixel:
             lines.append('  <g transform="translate(0.5 0.5)">')
+        # Within the nodes, lower ``z`` first; a negative ``z`` goes under the
+        # edges and an edge with a positive ``z`` goes over the nodes.
+        # A shape that holds others is a frame, like a group: it also goes under
+        # the edges, so a line to a shape inside it is not hidden by its fill.
+        ordered = sorted(element_list, key=lambda el: getattr(el, "z", 0.0))
+
+        def backdrop(el: Element) -> bool:
+            return getattr(el, "z", 0.0) < 0.0 or bool(getattr(el, "children", None))
+
         lines.extend(self._groups_pass(group_list, interactive))
-        lines.extend(self._edges_pass(edge_list, routes, interactive))
-        lines.extend(self._nodes_pass(element_list, interactive))
+        lines.extend(self._nodes_pass([el for el in ordered if backdrop(el)], interactive))
+        lines.extend(self._edges_pass([e for e in edge_list if getattr(e, "z", 0.0) <= 0.0], routes, interactive))
+        lines.extend(self._nodes_pass([el for el in ordered if not backdrop(el)], interactive))
+        lines.extend(self._edges_pass([e for e in edge_list if getattr(e, "z", 0.0) > 0.0], routes, interactive))
         if half_pixel:
             lines.append("  </g>")
         lines = [fix_precision(line, self.precision) for line in lines]
@@ -272,6 +287,7 @@ class SVGRenderer(InteractiveOverlay):
                 if g.label:
                     lines.append(self._group_label(g.label, b.x + 32, b.y, "      "))
                 lines.append("    </g>")
+                lines.extend(self._group_notes(g, "    "))
                 lines.append("  </g>")
             else:
                 lines.append(f'  <g id="{escaped_g_id}">')
@@ -281,8 +297,94 @@ class SVGRenderer(InteractiveOverlay):
                 )
                 if g.label:
                     lines.append(self._group_label(g.label, b.x + 16, b.y, "    "))
+                lines.extend(self._group_notes(g, "    "))
                 lines.append("  </g>")
         return lines
+
+    def _group_notes(self, g: Group, indent: str) -> list[str]:
+        """Side notes of a band, if the group has any."""
+        notes = getattr(g, "note_items", None)
+        return drawing.items_svg(notes(self.theme), indent) if notes is not None else []
+
+    def _custom_edge(self, e: Edge, path: RoutedPath, color: str, dash: str) -> list[str]:
+        """An edge whose weight or arrowheads are its own: heads drawn as shapes.
+
+        The line stops short of each filled head so its square end does not
+        show through the point. With ``ellipsis`` the middle is three dots.
+        """
+        width = float(e.width if e.width is not None else self.theme.edge_width)
+        length = drawing.arrow_length(width, e.arrow_size)
+        pts = list(path.points)
+        ends: list[tuple[Point, Point, str]] = []  # tip, direction, style
+        flat = flatten(path)
+
+        def direction(a: Point, b: Point) -> Point:
+            return Point(b.x - a.x, b.y - a.y)
+
+        def distinct(points: list[Point]) -> Point:
+            return next((p for p in points[1:] if p.distance_to(points[0]) > 1e-6), points[0])
+
+        if e.arrow_head and e.head != "none":
+            ends.append((flat[-1], direction(distinct(flat[::-1]), flat[-1]), e.head))
+            pts[-1] = self._pulled_back(pts[-1], distinct(pts[::-1]), drawing.arrow_trim(e.head, length))
+        if e.arrow_tail and e.tail != "none":
+            ends.append((flat[0], direction(distinct(flat), flat[0]), e.tail))
+            pts[0] = self._pulled_back(pts[0], distinct(pts), drawing.arrow_trim(e.tail, length))
+        line = dataclasses.replace(path, points=tuple(pts))
+        attrs = f'fill="none" stroke="{color}" stroke-width="{_num(width)}"{dash}'
+        out: list[str] = []
+        if e.ellipsis:
+            # Centre the dots on the whole line, not on what is left after trimming.
+            skew = (path.points[-1].distance_to(pts[-1]) - path.points[0].distance_to(pts[0])) / 2.0
+            before, dots, after = self._ellipsis(flatten(line), max(6.0, 3.0 * width), skew)
+            for part in (before, after):
+                if len(part) >= 2:
+                    out.append(f'<path d="{drawing.svg_d(drawing.polyline(part))}" {attrs} />')
+            radius = max(1.25, 0.75 * width)
+            out += [drawing.PathItem(drawing.ellipse(p.x, p.y, radius), fill=color).to_svg() for p in dots]
+        else:
+            out.append(f'<path d="{line.svg_d()}" {attrs} />')
+        for tip, toward, style in ends:
+            out += drawing.items_svg(drawing.arrowhead(tip, toward, style, length, color, width))
+        return out
+
+    @staticmethod
+    def _pulled_back(end: Point, neighbour: Point, distance: float) -> Point:
+        """``end`` moved ``distance`` towards ``neighbour``, at most most of the way."""
+        span = end.distance_to(neighbour)
+        if distance <= 0.0 or span <= 1e-6:
+            return end
+        t = min(distance, 0.9 * span) / span
+        return Point(end.x + (neighbour.x - end.x) * t, end.y + (neighbour.y - end.y) * t)
+
+    @staticmethod
+    def _ellipsis(
+        pts: list[Point], pitch: float, skew: float = 0.0
+    ) -> tuple[list[Point], list[Point], list[Point]]:
+        """Split a polyline around its middle: (before, three dot centres, after).
+
+        ``skew`` moves the middle along the line, towards its end when positive.
+        """
+        lengths = [a.distance_to(b) for a, b in zip(pts, pts[1:])]
+        total = sum(lengths)
+        gap = min(4.0 * pitch, total * 0.6)
+
+        def at(distance: float) -> tuple[Point, int]:
+            run = 0.0
+            for i, seg in enumerate(lengths):
+                if run + seg >= distance and seg > 0.0:
+                    t = (distance - run) / seg
+                    a, b = pts[i], pts[i + 1]
+                    return Point(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t), i
+                run += seg
+            return pts[-1], len(pts) - 2
+
+        mid = total / 2.0 + skew
+        start, i0 = at(mid - gap / 2.0)
+        stop, i1 = at(mid + gap / 2.0)
+        step = gap / 4.0
+        dots = [at(mid + k * step)[0] for k in (-1, 0, 1)]
+        return pts[: i0 + 1] + [start], dots, [stop] + pts[i1 + 1 :]
 
     def _edge_path(self, e: Edge, routes: Optional[Mapping[Any, RoutedPath]]) -> RoutedPath:
         """The path to draw for ``e``.
@@ -345,10 +447,11 @@ class SVGRenderer(InteractiveOverlay):
             )
 
             m_id = self._marker_id_for_color(edge_color)
-            marker_end = f' marker-end="url(#{m_id})"' if e.arrow_head else ""
+            marker_end = f' marker-end="url(#{m_id})"' if e.arrow_head and e.head != "none" else ""
             marker_start = (
-                f' marker-start="url(#{m_id}-tail)"' if e.arrow_tail else ""
+                f' marker-start="url(#{m_id}-tail)"' if e.arrow_tail and e.tail != "none" else ""
             )
+            custom = self._custom_edge(e, path, edge_color, dash) if getattr(e, "custom_arrows", False) else None
 
             if interactive:
                 src_gid = _get_group_id(e.source)
@@ -365,9 +468,14 @@ class SVGRenderer(InteractiveOverlay):
                 if tgt_gid:
                     edge_attrs += f' data-target-group="{html.escape(tgt_gid, quote=True)}"'
                 lines.append(f'  <g class="diagram-edge"{edge_attrs}>')
-                lines.append(
-                    f'    <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="{_num(self.theme.edge_width)}"{dash}{marker_start}{marker_end} />'
-                )
+                if custom is not None:
+                    lines.extend(f"    {part}" for part in custom)
+                else:
+                    lines.append(
+                        f'    <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="{_num(self.theme.edge_width)}"{dash}{marker_start}{marker_end} />'
+                    )
+            elif custom is not None:
+                lines.extend(f"  {part}" for part in custom)
             else:
                 lines.append(
                     f'  <path d="{path_d}" fill="none" stroke="{edge_color}" stroke-width="{_num(self.theme.edge_width)}"{dash}{marker_start}{marker_end} />'
@@ -415,7 +523,10 @@ class SVGRenderer(InteractiveOverlay):
             b = el.bounds
             escaped_el_id = html.escape(el.id, quote=True)
             style = resolve_node_style(self.theme, el)
-            node_attrs = ' filter="url(#shadow)"' if style.shadow else ""
+            items = el.draw(style, self.theme) if hasattr(el, "draw") else None
+            if items is not None and not items:
+                continue  # an element that draws itself and has nothing to show
+            node_attrs = ' filter="url(#shadow)"' if style.shadow and items is None else ""
             if style.opacity is not None and style.opacity < 1.0:
                 node_attrs += f' opacity="{_num(style.opacity)}"'
             if interactive:
@@ -426,6 +537,11 @@ class SVGRenderer(InteractiveOverlay):
                 )
             else:
                 lines.append(f'  <g id="{escaped_el_id}"{node_attrs}>')
+
+            if items is not None:
+                lines.extend(drawing.items_svg(items, "    "))
+                lines.append("  </g>")
+                continue
 
             kind_raw = getattr(el, "kind", "box")
             kind = (kind_raw or "box").lower().replace("-", "_")
@@ -444,8 +560,14 @@ class SVGRenderer(InteractiveOverlay):
                 pass
             elif kind == "box":
                 lines.append(
-                    f"    {self.shapes.render_box(b.x, b.y, b.width, b.height, fill, stroke, stroke_width, radius=_num(style.radius), dash=style.dash or '')}"
+                    f"    {self.shapes.render_box(b.x, b.y, b.width, b.height, fill, stroke, stroke_width, radius=_num(style.radius), dash=style.dash or '', fill_opacity=style.fill_opacity)}"
                 )
+                gap = float(style.double or 0.0)
+                if gap > 0.0 and b.width > 2.0 * gap and b.height > 2.0 * gap:
+                    # Second border, inset; its corners follow the outer ones.
+                    lines.append(
+                        f"    {self.shapes.render_box(b.x + gap, b.y + gap, b.width - 2.0 * gap, b.height - 2.0 * gap, 'none', stroke, stroke_width, radius=_num(max(float(style.radius or 0.0) - gap, 0.0)), dash=style.dash or '')}"
+                    )
             elif kind == "cylinder":
                 lines.append(
                     f"    {self.shapes.render_cylinder(b.x, b.y, b.width, b.height, fill, stroke, stroke_width)}"
@@ -517,6 +639,8 @@ class SVGRenderer(InteractiveOverlay):
                 area = label_area(el)
                 cx = area.center.x
                 top = area.y + (area.height - label.content_height) / 2.0
+                if label_valign(el) == "top":
+                    top = area.y + 6.0 + float(style.double or 0.0)
                 if shape_kind(el) in PLATE_KINDS and (icon_name or label.block is not None):
                     # The artwork fills the body: clear a plate for the label to sit on.
                     plate_w = max(label.block.width if label.block is not None else 0.0, label.icon_size) + 12.0

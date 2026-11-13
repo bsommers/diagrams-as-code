@@ -90,7 +90,7 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
         if path.kind != PathKind.POLYLINE or not _orthogonal(pts):
             continue
         points[id(edge)] = pts
-        if not getattr(edge, "manual_waypoints", None) and len(pts) >= 3:
+        if not getattr(edge, "fixed_route", getattr(edge, "manual_waypoints", None)) and len(pts) >= 3:
             movable.append(edge)
 
     def segments(edge: Any) -> list[Segment]:
@@ -132,9 +132,16 @@ def separate_lanes(edges: Sequence[Any], routes: dict[Any, RoutedPath], nodes: S
                         cand = _shifted(pts, i, offset)
                         if cand is None or hits_node(cand, i):
                             continue
-                        if i == 0 and not _on_side(cand[0], edge.source.bounds):
+                        # An end the author anchored stays where it was put.
+                        if i == 0 and (
+                            getattr(edge, "source_anchor", None) is not None
+                            or not _on_side(cand[0], edge.source.bounds)
+                        ):
                             continue
-                        if i == last and not _on_side(cand[-1], edge.target.bounds):
+                        if i == last and (
+                            getattr(edge, "target_anchor", None) is not None
+                            or not _on_side(cand[-1], edge.target.bounds)
+                        ):
                             continue
                         score = overlap(edge, cand)
                         if score < best_overlap - 1e-9:

@@ -66,8 +66,10 @@ def edge_problems(edge: Any, path: RoutedPath, others: list[Rect]) -> Iterator[s
     if not nested:
         if any(segment_enters(a, b, sb) or segment_enters(a, b, tb) for a, b in segs):
             yield "edge_through_own_endpoint"
-        if path.kind == PathKind.POLYLINE and not edge.manual_waypoints:
+        if path.kind == PathKind.POLYLINE and not getattr(edge, "fixed_route", edge.manual_waypoints):
             for end_pt, nxt, box in ((pts[-1], pts[-2], tb), (pts[0], pts[1], sb)):
+                if box.width <= 0.0 or box.height <= 0.0:
+                    continue  # a point has no side to arrive along
                 side = _side(end_pt, box)
                 along_ew = abs(nxt.x - end_pt.x) <= EPS and abs(nxt.y - end_pt.y) > EPS
                 along_ns = abs(nxt.y - end_pt.y) <= EPS and abs(nxt.x - end_pt.x) > EPS
@@ -109,8 +111,19 @@ def audit_diagram(diagram: Any) -> Counter[str]:
     """Count the visual defects in ``diagram`` (solving it first if needed)."""
     diagram._ensure_solved()
     counts: Counter[str] = Counter()
-    shapes = list(diagram.shapes)
-    boxes = [_box(s.bounds) for s in shapes]
+    # Annotations edges may cross (a caption, a junction point) are not nodes.
+    shapes = [s for s in diagram.shapes if getattr(s, "obstacle", True)]
+    # A shape holding others is a frame: badges and lines inside it are in place.
+    solid = [s for s in shapes if not getattr(s, "children", None)]
+    boxes = [_box(s.bounds) for s in solid]
+
+    def _within(inner: Any, outer: Any) -> bool:
+        parent = getattr(inner, "parent", None)
+        while parent is not None:
+            if parent is outer:
+                return True
+            parent = getattr(parent, "parent", None)
+        return False
 
     flat: list[tuple[Any, list[tuple[Point, Point]]]] = []
     badges: list[tuple[Any, tuple[float, float, float, float]]] = []
@@ -119,7 +132,12 @@ def audit_diagram(diagram: Any) -> Counter[str]:
         if path is None:
             counts["edge_through_node"] += 1
             continue
-        others = [s.bounds for s in shapes if s is not edge.source and s is not edge.target]
+        ends = (edge.source, edge.target)
+        others = [
+            s.bounds
+            for s in shapes
+            if s not in ends and not any(_within(e, s) or _within(s, e) for e in ends)
+        ]
         for problem in edge_problems(edge, path, others):
             counts[problem] += 1
         pts = flatten(path)
@@ -160,18 +178,14 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             if _overlap(badges[i][1], badges[j][1]):
                 counts["badge_over_badge"] += 1
 
-    for i in range(len(boxes)):
-        for j in range(i + 1, len(boxes)):
-            if _overlap(boxes[i], boxes[j]):
+    for i, s1 in enumerate(shapes):
+        for s2 in shapes[i + 1 :]:
+            if _within(s1, s2) or _within(s2, s1):
+                continue  # nested on purpose
+            if _overlap(_box(s1.bounds), _box(s2.bounds)):
                 counts["node_overlap"] += 1
 
-    def _inside(inner: Any, outer: Any) -> bool:
-        parent = getattr(inner, "parent", None)
-        while parent is not None:
-            if parent is outer:
-                return True
-            parent = getattr(parent, "parent", None)
-        return False
+    _inside = _within
 
     # Two groups, or a group and a node outside it, that cover each other.
     groups = list(diagram.groups)
@@ -183,9 +197,11 @@ def audit_diagram(diagram: Any) -> Counter[str]:
             if not _inside(s, g1) and _overlap(_box(g1.bounds), _box(s.bounds)):
                 counts["group_overlap"] += 1
 
-    counts["label_overflow"] += sum(1 for s in shapes if label_overflows(s))
+    counts["label_overflow"] += sum(
+        1 for s in shapes if not getattr(s, "annotation", False) and label_overflows(s)
+    )
 
-    extents = [s.bounds for s in shapes] + [g.bounds for g in diagram.groups]
+    extents = [s.bounds for s in diagram.shapes] + [g.bounds for g in diagram.groups]
     if extents:
         right, bottom = max(r.right for r in extents), max(r.bottom for r in extents)
         if right > diagram.width + EPS or bottom > diagram.height + EPS:

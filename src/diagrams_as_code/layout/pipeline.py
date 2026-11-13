@@ -23,6 +23,8 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from diagrams_as_code.connections import Edge, EdgeStyle, Routing
+from diagrams_as_code.drawing import items_bbox
+from diagrams_as_code.style import resolve_node_style
 from diagrams_as_code.constraints import ConstraintSolver
 from diagrams_as_code.elements import AbsoluteConstraint, Element
 from diagrams_as_code.geometry import Anchor, PathKind, Point, Rect, RoutedPath
@@ -108,6 +110,8 @@ def run_layout(diagram: Any) -> None:
     """Position every element and route every edge of diagram."""
     elements = diagram.solver.all_elements()
     _reset(diagram, elements)
+    for el in elements:
+        el.prepare()
     _grow_to_fit_labels(elements, getattr(diagram, "fit_labels", True))
     _apply_layout_file(diagram, elements)
     auto_ids: set[str] = set()
@@ -115,6 +119,7 @@ def run_layout(diagram: Any) -> None:
         auto_ids = _auto_place(diagram, elements)
     diagram.solver.solve()
     groups = _deepest_first(diagram.groups)
+    _snap_to_grid(elements, float(getattr(diagram, "grid", 0.0) or 0.0))
     _refresh_group_bounds(groups)
 
     # 1. Build Scene & Route Edges
@@ -124,7 +129,9 @@ def run_layout(diagram: Any) -> None:
     )
     edge_router = EdgeRouter()
     styles = {edge: resolve_edge_style(edge, diagram) for edge in diagram.edges}
-    scene = scene.with_anchor_offsets(_spread_ports(diagram.edges, styles, edge_router, scene))
+    offsets = _spread_ports(diagram.edges, styles, edge_router, scene)
+    offsets.update(_explicit_anchors(diagram.edges, offsets))
+    scene = scene.with_anchor_offsets(offsets)
     routes: dict[Any, RoutedPath] = {}
     for edge in diagram.edges:
         style = styles[edge]
@@ -136,7 +143,11 @@ def run_layout(diagram: Any) -> None:
             )
         else:
             path = edge_router.route(edge, scene=scene, style=style)
-            if style.routing != Routing.DIRECT and path_collides(edge, path, scene):
+            if (
+                style.routing != Routing.DIRECT
+                and not edge.fixed_route
+                and path_collides(edge, path, scene)
+            ):
                 warnings.warn(
                     LayoutWarning(
                         f"edge {edge.source.label!r} -> {edge.target.label!r} could not be "
@@ -148,14 +159,25 @@ def run_layout(diagram: Any) -> None:
         edge._resolved_style = style
         routes[edge] = path
         routes[id(edge)] = path
-    separate_lanes(diagram.edges, routes, [s.bounds for s in diagram.shapes])
+    # Shapes lines and badges must stay off: not annotations, not frames around others.
+    solid = [
+        s.bounds
+        for s in diagram.shapes
+        if getattr(s, "obstacle", True) and not getattr(s, "children", None)
+    ]
+    separate_lanes(diagram.edges, routes, solid)
     diagram.routes = routes
 
     # 2. Frame & Grow Canvas
     _frame(elements, groups, routes)
+    _place_floating(diagram, elements, routes)
     if getattr(diagram, "pixel_snap", False):
         _snap_to_pixels(elements, diagram.edges, routes)
-    keep_clear = [s.bounds for s in diagram.shapes]
+    keep_clear = [
+        s.bounds
+        for s in diagram.shapes
+        if getattr(s, "obstacle", True) and not getattr(s, "children", None)
+    ]
     keep_clear += [t for t in (group_title_rect(g) for g in diagram.groups) if t is not None]
     place_badges(diagram.edges, routes, keep_clear)
     _grow_canvas(diagram, elements, routes)
@@ -190,6 +212,76 @@ def _grow_to_fit_labels(elements: list[Element], default: bool = True) -> None:
         el.width, el.height = w, h
 
 
+def _explicit_anchors(
+    edges: list[Edge], spread: dict[Edge, tuple[float, float]]
+) -> dict[Edge, tuple[float, float]]:
+    """Port offsets for ends attached at a fraction of their side (``box.anchor(...)``)."""
+    out: dict[Edge, tuple[float, float]] = {}
+    for edge in edges:
+        if edge.source_anchor is None and edge.target_anchor is None:
+            continue
+        current = list(spread.get(edge, (0.0, 0.0)))
+        for i, (el, port, fraction) in enumerate(
+            ((edge.source, edge.source_port, edge.source_anchor),
+             (edge.target, edge.target_port, edge.target_anchor))
+        ):
+            if fraction is None or port is None:
+                continue
+            horizontal_side = port.value in ("north", "south")
+            length = el.bounds.width if horizontal_side else el.bounds.height
+            current[i] = (fraction - 0.5) * length
+        out[edge] = (current[0], current[1])
+    return out
+
+
+def _snap_to_grid(elements: list[Element], grid: float) -> None:
+    """Move every shape's top-left corner to the nearest grid point."""
+    if grid <= 0.0:
+        return
+    for el in elements:
+        if isinstance(el, Group) or getattr(el, "floating", False):
+            continue
+        b = el.bounds
+        el.translate(round(b.x / grid) * grid - b.x, round(b.y / grid) * grid - b.y)
+
+
+def _drawn_extents(diagram: Any, elements: list[Element]) -> list[Rect]:
+    """What self-drawing elements really cover, where that is more than their bounds
+    (a solid's label underneath it, say)."""
+    out: list[Rect] = []
+    theme = getattr(diagram, "theme", None)
+    if theme is None:
+        return out
+    for el in elements:
+        if isinstance(el, Group):
+            continue
+        box = items_bbox(el.draw(resolve_node_style(theme, el), theme) or [])
+        if box is not None:
+            out.append(box)
+    return out
+
+
+def _place_floating(diagram: Any, elements: list[Element], routes: dict[Any, RoutedPath]) -> None:
+    """Centre each unpositioned caption under everything else."""
+    floating = [e for e in elements if getattr(e, "floating", False)]
+    if not floating:
+        return
+    rest = [e for e in elements if not getattr(e, "floating", False)]
+    boxes = [e.bounds for e in rest if getattr(e, "parent", None) is None]
+    boxes += _drawn_extents(diagram, rest)
+    boxes += [path.bbox() for key, path in routes.items() if isinstance(key, Edge)]
+    if not boxes:
+        return
+    left, right = min(b.x for b in boxes), max(b.right for b in boxes)
+    bottom = max(b.bottom for b in boxes)
+    for el in floating:
+        gap = float(getattr(el, "gap", 24.0))
+        el.translate(
+            (left + right) / 2.0 - el.bounds.width / 2.0 - el.bounds.x, bottom + gap - el.bounds.y
+        )
+        bottom = el.bounds.bottom
+
+
 def _spread_ports(
     edges: list[Edge],
     styles: dict[Edge, EdgeStyle],
@@ -207,7 +299,7 @@ def _spread_ports(
     sides: dict[tuple[Element, Any], dict[str, list[tuple[int, Edge, Point]]]] = {}
     ports: dict[Edge, tuple[Any, Any]] = {}
     for idx, edge in enumerate(edges):
-        if edge.manual_waypoints or edge.source is edge.target:
+        if edge.fixed_route or edge.source is edge.target:
             continue
         obstacles = scene.obstacles_for(edge, clearance=0.0)
         sp, tp = router.resolve_ports(edge, obstacles=obstacles, style=styles[edge])
@@ -385,7 +477,10 @@ def _frame(
     """Translate the canvas when content or routes have negative or tight coordinates."""
     if routes is None:
         routes = {}
-    roots = [e for e in elements if getattr(e, "parent", None) is None]
+    roots = [
+        e for e in elements
+        if getattr(e, "parent", None) is None and not getattr(e, "floating", False)
+    ]
     if not roots and not routes:
         return
 
@@ -450,7 +545,7 @@ def _grow_canvas(
     if routes is None:
         routes = {}
     roots = [e for e in elements if getattr(e, "parent", None) is None]
-    boxes: list[Rect] = [e.bounds for e in roots]
+    boxes: list[Rect] = [e.bounds for e in roots] + _drawn_extents(diagram, elements)
     for key, path in routes.items():
         if not isinstance(key, Edge):
             continue

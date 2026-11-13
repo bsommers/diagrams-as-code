@@ -222,10 +222,13 @@ class ShapeLibrary:
         stroke_width: float = 2.0,
         radius: float = 6.0,
         dash: str = "",
+        fill_opacity: Optional[float] = None,
     ) -> str:
         """Render a rectangular box; ``radius`` 0 gives square corners."""
         self._validate_dimensions(w, h)
         dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
+        if fill_opacity is not None and fill_opacity < 1.0:
+            dash_attr += f' fill-opacity="{fill_opacity}"'
         return (
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" '
             f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}"{dash_attr} />'

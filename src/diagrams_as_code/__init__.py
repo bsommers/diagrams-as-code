@@ -9,8 +9,22 @@ from diagrams_as_code.constraints import (
     RelativeConstraint,
     to_constraint,
 )
+from diagrams_as_code.arrange import align, distribute
 from diagrams_as_code.diagram import Diagram
-from diagrams_as_code.elements import Element, Shape
+from diagrams_as_code.drawing import PathItem, TextItem
+from diagrams_as_code.elements import AnchorRef, Element, Junction, Shape
+from diagrams_as_code.primitives import (
+    Band,
+    Bracket,
+    Caption,
+    Path,
+    Polygon,
+    Polyline,
+    Primitive,
+    SolidShape,
+    Text,
+)
+from diagrams_as_code.solids import Projection, Solid, isometric, oblique
 from diagrams_as_code.geometry import (
     Anchor,
     CubicBezier,
@@ -21,6 +35,9 @@ from diagrams_as_code.geometry import (
     RoutedPath,
     Size,
     UnitBasis,
+    mm,
+    pt,
+    to_px,
 )
 from diagrams_as_code.groups import Group
 from diagrams_as_code.layout import (
@@ -76,10 +93,14 @@ __all__ = [
     "AbsoluteConstraint",
     "AlignConstraint",
     "Anchor",
+    "AnchorRef",
     "BLUEPRINT",
     "BOMGenerator",
+    "Band",
+    "Bracket",
     "CRIMSON",
     "CYBER_SLATE",
+    "Caption",
     "Constraint",
     "ConstraintSolver",
     "CubicBezier",
@@ -98,6 +119,7 @@ __all__ = [
     "HorizontalFlowLayout",
     "IIOT_DARK_GOLD",
     "IIOT_LIGHT",
+    "Junction",
     "LayeredLayout",
     "LayoutWarning",
     "MONOCHROME",
@@ -105,9 +127,15 @@ __all__ = [
     "OrthogonalRouter",
     "PASTEL_LIGHT",
     "PORT_NORMALS",
+    "Path",
+    "PathItem",
     "PathKind",
     "Point",
+    "Polygon",
+    "Polyline",
     "Port",
+    "Primitive",
+    "Projection",
     "QuadraticBezier",
     "Rect",
     "RelativeConstraint",
@@ -121,23 +149,34 @@ __all__ = [
     "ShapeLibrary",
     "ShapeRenderer",
     "Size",
+    "Solid",
+    "SolidShape",
     "Style",
     "THEMES",
+    "Text",
+    "TextItem",
     "Theme",
     "UnitBasis",
     "VerticalFlowLayout",
+    "align",
     "create_theme",
+    "distribute",
     "export_layout",
     "get_dark_themes",
     "get_light_themes",
     "get_theme",
+    "isometric",
     "list_themes",
     "load_layout_file",
+    "mm",
+    "oblique",
+    "pt",
     "register_theme",
     "render_all",
     "reset_themes",
     "route_all",
     "to_constraint",
+    "to_px",
 ]
 
 
