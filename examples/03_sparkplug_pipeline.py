@@ -17,8 +17,6 @@ OUTPUT_STEM = "sparkplug_pipeline"
 def diagram() -> Diagram:
     diag = Diagram(
         "IIoT Unified Namespace (UNS) with Sparkplug B",
-        width=1300,
-        height=750,
         theme="iiot_dark_gold",
     )
 

@@ -18,6 +18,10 @@ from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
 from diagrams_as_code.theme import Theme, get_theme
 
+#: Nominal canvas used while laying out an axis that is fitted to content afterwards.
+DEFAULT_WIDTH = 1200.0
+DEFAULT_HEIGHT = 800.0
+
 
 class _EdgeBuilder:
     """Intermediate builder for fluent edge syntax (e.g. s1 >> diag.edge(...) >> s2)."""
@@ -332,8 +336,8 @@ class Diagram:
     def __init__(
         self,
         title: str = "IIoT Architecture",
-        width: float = 1200.0,
-        height: float = 800.0,
+        width: Optional[float] = None,
+        height: Optional[float] = None,
         theme: Union[Theme, str] = "iiot_dark_gold",
         theme_overrides: Optional[dict[str, str]] = None,
         label_position: str = "inside",
@@ -352,8 +356,12 @@ class Diagram:
         self.title = title
         #: Grow shapes whose inside label would otherwise spill out of them.
         self.fit_labels = bool(fit_labels)
-        self.width = float(width)
-        self.height = float(height)
+        #: An axis left as ``None`` is fitted to the content after layout; a
+        #: given size is a minimum that still grows if content would be clipped.
+        self._fit_width = width is None
+        self._fit_height = height is None
+        self.width = DEFAULT_WIDTH if width is None else float(width)
+        self.height = DEFAULT_HEIGHT if height is None else float(height)
         base_t = get_theme(theme)
         if theme_overrides:
             self.theme = dataclasses.replace(

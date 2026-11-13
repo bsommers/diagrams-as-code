@@ -17,8 +17,6 @@ OUTPUT_STEM = "high_availability"
 def diagram() -> Diagram:
     diag = Diagram(
         "IIoT High Availability UNS",
-        width=1200,
-        height=700,
         theme="iiot_dark_gold",
     )
 

@@ -16,6 +16,7 @@ With ``layout="manual"`` and no layout file this reproduces the original
 """
 from __future__ import annotations
 
+import math
 import warnings
 from dataclasses import dataclass, field
 from typing import Any, Optional
@@ -40,6 +41,8 @@ from diagrams_as_code.router import EdgeRouter, RoutingScene, path_collides
 
 FRAME_X = 60.0
 FRAME_Y = 80.0
+#: Smallest trailing margin a fitted canvas keeps, however close content starts to the origin.
+FIT_MARGIN_MIN = 24.0
 #: Clear space kept on each side of an edge badge between two ranks.
 BADGE_MARGIN = 12.0
 
@@ -230,7 +233,12 @@ def _reset(diagram: Any, elements: list[Element]) -> None:
             # Nothing but the pipeline's own last growth changed the size; undo it.
             diagram.width, diagram.height = state.base_size
         else:
-            # The user set width/height since the last solve; treat that as new.
+            # The user set width/height since the last solve; treat that as new,
+            # and stop fitting an axis they have now sized themselves.
+            if current[0] != state.grown_size[0]:
+                diagram._fit_width = False
+            if current[1] != state.grown_size[1]:
+                diagram._fit_height = False
             state.base_size = current
     for el in elements:
         saved = state.bounds.get(id(el))
@@ -379,21 +387,39 @@ def _grow_canvas(
     elements: list[Element],
     routes: Optional[dict[Any, RoutedPath]] = None,
 ) -> None:
+    """Size the canvas to the content.
+
+    An axis the user sized is a minimum: it grows when content would be clipped
+    and is otherwise left alone. An axis left unset is fitted, with a trailing
+    margin that mirrors the leading one so the content sits evenly in the frame.
+    """
     if routes is None:
         routes = {}
     roots = [e for e in elements if getattr(e, "parent", None) is None]
-    maxs_x: list[float] = [e.bounds.right for e in roots]
-    maxs_y: list[float] = [e.bounds.bottom for e in roots]
-    for path in set(routes.values()):
-        bb = path.bbox()
-        maxs_x.append(bb.right)
-        maxs_y.append(bb.bottom)
+    boxes: list[Rect] = [e.bounds for e in roots]
+    for key, path in routes.items():
+        if not isinstance(key, Edge):
+            continue
+        boxes.append(path.bbox())
+        if key.label:
+            meta = getattr(key, "metadata", {}) or {}
+            w, h = badge_size(
+                key.label, float(meta.get("font_size", 10.0)), float(meta.get("badge_height", 18.0))
+            )
+            anchor = path.label_anchor()
+            boxes.append(Rect(anchor[0] - w / 2, anchor[1] - h / 2, w, h))
+    if not boxes:
+        return
 
-    if maxs_x:
-        right = max(maxs_x)
+    left, top = min(b.x for b in boxes), min(b.y for b in boxes)
+    right, bottom = max(b.right for b in boxes), max(b.bottom for b in boxes)
+    if getattr(diagram, "_fit_width", False):
+        diagram.width = math.ceil(right + min(max(left, FIT_MARGIN_MIN), FRAME_X))
+    else:
         diagram.width = max(diagram.width, right + FRAME_X)
-    if maxs_y:
-        bottom = max(maxs_y)
+    if getattr(diagram, "_fit_height", False):
+        diagram.height = math.ceil(bottom + min(max(top, FIT_MARGIN_MIN), FRAME_Y))
+    else:
         diagram.height = max(diagram.height, bottom + FRAME_Y)
 
 

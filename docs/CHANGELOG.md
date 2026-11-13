@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+- **Fit-to-content canvas (default).** `Diagram(width=None, height=None)`: an axis left unset is sized to the content after layout, with a trailing margin that mirrors the leading one (at most 60 x 80, at least 24). Previously every diagram defaulted to 1200 x 800 and the canvas could only grow, so 89 of 92 gallery diagrams filled a median 23% of their canvas. A size you pass is still honoured as a minimum and still grows if content would be clipped; setting `diagram.width` / `.height` later pins that axis. Edge badges now count as content when sizing.
+- Gallery SVG output regenerated at the fitted sizes; `main.py` and the three root examples no longer hard-code a canvas size.
+
+### Fixed
+- `docs/licenses/OFL-STIX.txt` was a byte-identical copy of the packaged licence and failed the repository hygiene test; it is now a symlink.
+
 ## [v0.9.0] - 2026-11-12
 
 Text engine: measured text, label markup and typeset math.
