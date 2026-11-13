@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 382" width="690" height="382">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="shape_1">
+    <rect x="60" y="60" width="120" height="45.35" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="120" y="87.15" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">90 pt x 12 mm</text>
+  </g>
+  <g id="shape_2">
+    <rect x="210" y="60" width="120" height="45.35" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="270" y="87.15" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">B</text>
+  </g>
+  <g id="shape_3">
+    <rect x="360" y="60" width="120" height="45.35" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="420" y="87.15" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_4">
+    <rect x="510" y="60" width="120" height="45.35" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="570" y="87.15" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">D</text>
+  </g>
+  <g id="shape_5">
+    <rect x="60" y="200" width="90" height="40" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="224.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">short</text>
+  </g>
+  <g id="shape_6">
+    <rect x="180" y="170" width="90" height="70" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="225" y="209.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">medium</text>
+  </g>
+  <g id="shape_7">
+    <rect x="300" y="140" width="90" height="100" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="345" y="194.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">tall</text>
+  </g>
+  <g id="shape_8">
+    <rect x="450" y="210" width="160" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="530" y="231.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">wide</text>
+  </g>
+  <g id="shape_9">
+    <rect x="500" y="160" width="110" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="555" y="181.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">mid</text>
+  </g>
+  <g id="shape_10">
+    <rect x="540" y="110" width="70" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="575" y="131.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">narrow</text>
+  </g>
+  <g id="text_11">
+    <text x="60" y="271.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">bottoms aligned  |  right edges aligned</text>
+  </g>
+  <g id="caption_12">
+    <text x="69.99" y="317.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 9:</text>
+    <text x="144.17" y="317.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="475.84" lengthAdjust="spacingAndGlyphs"> ROWS AND COLUMNS SET OUT WITH ALIGN() AND DISTRIBUTE()</text>
+  </g>
+</svg>

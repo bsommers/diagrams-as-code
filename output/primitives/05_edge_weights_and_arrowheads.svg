@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 407" width="780" height="407">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 150 85 L 300 85" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 150 127 L 295.05 127" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 300 127 L 291 130.6 L 294.15 127 L 291 123.4 Z" fill="#000000" />
+  <path d="M 150 169 L 300 169" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 291 172.6 L 300 169 L 291 165.4" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 150 211 L 291 211" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 300 211 L 295.5 213.7 L 291 211 L 295.5 208.3 Z" fill="#000000" />
+  <path d="M 150 253 L 293.7 253" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 300 253 C 300 254.74 298.59 256.15 296.85 256.15 C 295.11 256.15 293.7 254.74 293.7 253 C 293.7 251.26 295.11 249.85 296.85 249.85 C 298.59 249.85 300 251.26 300 253 Z" fill="#000000" />
+  <path d="M 150 295 L 300 295" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 300 298.6 L 300 291.4" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 530 85 L 672.8 85" fill="none" stroke="#000000" stroke-width="0.75" />
+  <path d="M 680 85 L 671 88.6 L 671 81.4 Z" fill="#000000" />
+  <path d="M 530 127 L 672.8 127" fill="none" stroke="#000000" stroke-width="1.5" />
+  <path d="M 680 127 L 671 130.6 L 671 123.4 Z" fill="#000000" />
+  <path d="M 530 169 L 665.6 169" fill="none" stroke="#000000" stroke-width="3" />
+  <path d="M 680 169 L 662 176.2 L 662 161.8 Z" fill="#000000" />
+  <path d="M 530 211 L 665.6 211" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 680 211 L 662 218.2 L 662 203.8 Z" fill="#000000" />
+  <path d="M 534.95 263 L 675.05 263" fill="none" stroke="#000000" stroke-width="1.5" />
+  <path d="M 680 263 L 671 266.6 L 674.15 263 L 671 259.4 Z" fill="#000000" />
+  <path d="M 530 263 L 539 259.4 L 535.85 263 L 539 266.6 Z" fill="#000000" />
+  <path d="M 530 305 L 593 305" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 617 305 L 672.8 305" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 600.25 305 C 600.25 305.69 599.69 306.25 599 306.25 C 598.31 306.25 597.75 305.69 597.75 305 C 597.75 304.31 598.31 303.75 599 303.75 C 599.69 303.75 600.25 304.31 600.25 305 Z" fill="#000000" />
+  <path d="M 606.25 305 C 606.25 305.69 605.69 306.25 605 306.25 C 604.31 306.25 603.75 305.69 603.75 305 C 603.75 304.31 604.31 303.75 605 303.75 C 605.69 303.75 606.25 304.31 606.25 305 Z" fill="#000000" />
+  <path d="M 612.25 305 C 612.25 305.69 611.69 306.25 611 306.25 C 610.31 306.25 609.75 305.69 609.75 305 C 609.75 304.31 610.31 303.75 611 303.75 C 611.69 303.75 612.25 304.31 612.25 305 Z" fill="#000000" />
+  <path d="M 680 305 L 671 308.6 L 671 301.4 Z" fill="#000000" />
+  <g id="text_1">
+    <text x="60" y="52.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Arrowheads</text>
+  </g>
+  <g id="shape_2">
+    <rect x="60" y="70" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="89.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">triangle</text>
+  </g>
+  <g id="shape_3">
+    <rect x="300" y="70" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_4">
+    <rect x="60" y="112" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="131.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">stealth</text>
+  </g>
+  <g id="shape_5">
+    <rect x="300" y="112" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_6">
+    <rect x="60" y="154" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="173.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">open</text>
+  </g>
+  <g id="shape_7">
+    <rect x="300" y="154" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_8">
+    <rect x="60" y="196" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">diamond</text>
+  </g>
+  <g id="shape_9">
+    <rect x="300" y="196" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_10">
+    <rect x="60" y="238" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="257.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">circle</text>
+  </g>
+  <g id="shape_11">
+    <rect x="300" y="238" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_12">
+    <rect x="60" y="280" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="105" y="299.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">bar</text>
+  </g>
+  <g id="shape_13">
+    <rect x="300" y="280" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="text_14">
+    <text x="420" y="52.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Weights and sizes</text>
+  </g>
+  <g id="shape_15">
+    <rect x="420" y="70" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="475" y="89.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">0.75 px</text>
+  </g>
+  <g id="shape_16">
+    <rect x="680" y="70" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_17">
+    <rect x="420" y="112" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="475" y="131.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1.5 px</text>
+  </g>
+  <g id="shape_18">
+    <rect x="680" y="112" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_19">
+    <rect x="420" y="154" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="475" y="173.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3 px spine</text>
+  </g>
+  <g id="shape_20">
+    <rect x="680" y="154" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_21">
+    <rect x="420" y="196" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="475" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 px, 2x head</text>
+  </g>
+  <g id="shape_22">
+    <rect x="680" y="196" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_23">
+    <rect x="420" y="248" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="475" y="267.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">request</text>
+  </g>
+  <g id="shape_24">
+    <rect x="680" y="248" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="shape_25">
+    <rect x="420" y="290" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="475" y="309.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">stage 1</text>
+  </g>
+  <g id="shape_26">
+    <rect x="680" y="290" width="40" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="700" y="309.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">n</text>
+  </g>
+  <g id="caption_27">
+    <text x="94.13" y="362.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 5:</text>
+    <text x="168.31" y="362.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="517.56" lengthAdjust="spacingAndGlyphs"> LINE WEIGHTS, ARROWHEADS, A TWO-WAY ARROW AND AN ELLIPSIS</text>
+  </g>
+</svg>
