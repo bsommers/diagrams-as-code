@@ -38,7 +38,7 @@
 
 - [x] **STYLE-01**: `Style` value object resolved theme → group → element; legacy `metadata` keys still work.
 - [x] **STYLE-02**: `paper` theme.
-- [ ] **STYLE-03**: Renderer split into passes; dead route fallbacks removed.
+- [x] **STYLE-03**: Renderer split into passes; dead route fallbacks removed.
 - [ ] **STYLE-04**: Fixed-precision coordinates; optional half-pixel alignment.
 - [x] **LAYOUT-01**: Fit-to-content canvas with margin, on by default.
 - [x] **LAYOUT-02**: Badges avoid nodes and other badges.

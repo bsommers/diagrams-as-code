@@ -32,6 +32,7 @@ LAYERS: dict[str, float] = {
     "groups": 2,
     "constraints": 3,
     "router": 3,
+    "renderer_interactive": 3,
     "renderer_svg": 4,
     "bom": 4,
     "layout": 4,
