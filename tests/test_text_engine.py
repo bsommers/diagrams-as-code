@@ -210,3 +210,13 @@ def test_wrapping_balances_lines_instead_of_leaving_an_orphan():
     block = layout("Hardware Security Key", TextStyle(size=12, weight=600), max_width=100)
     assert [ln.runs[0].text for ln in block.lines] == ["Hardware", "Security Key"]
     assert all(ln.width <= 100 for ln in block.lines)
+
+
+def test_backslash_n_inside_math_is_a_command_not_a_line_break():
+    # \nabla, \neq, \nu and \nolimits all begin with a backslash and an n.
+    for formula in (r"$\nabla_\theta L$", r"$a \neq b$", r"$\nu$", r"$\sum\nolimits_i x_i$"):
+        block = layout(formula, TextStyle(size=13))
+        assert len(block.lines) == 1, formula
+    # Outside math a typed backslash-n still breaks the line, as a real newline does.
+    assert len(layout(r"one\ntwo", TextStyle(size=13)).lines) == 2
+    assert len(layout(r"$\nu$ first\n$\neq$ second", TextStyle(size=13)).lines) == 2

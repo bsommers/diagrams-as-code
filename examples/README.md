@@ -196,6 +196,26 @@ Nine focused figures, one per primitive family, all in the `paper` theme. They a
 
 ---
 
+## 10. Technical Figures (`examples/technical/`)
+
+Eleven complete paper-style figures in the `paper` theme, each with a caption. Every one lints clean and has a golden image in `tests/golden/technical/`. The guide is [`docs/technical-figures.md`](../docs/technical-figures.md).
+
+| # | Script & Output | Shows |
+|---|---|---|
+| 01 | [`01_composition_enforcement.py`](technical/01_composition_enforcement.py) | Four layer bands, shaded panels, a cuboid, a clipped polyhedron, formulas, leaders, a heavy spine: a reproduction of a reference figure |
+| 02 | [`02_control_loop.py`](technical/02_control_loop.py) | Feedback control loop with summing junctions, transfer functions and a disturbance |
+| 03 | [`03_transformer_block.py`](technical/03_transformer_block.py) | Transformer encoder block with residual connections and tensor shapes |
+| 04 | [`04_state_machine.py`](technical/04_state_machine.py) | Connection lifecycle state machine with guards, a self-loop and a final state |
+| 05 | [`05_protocol_stack.py`](technical/05_protocol_stack.py) | Two protocol stacks and a router; peer-to-peer and hop-by-hop paths |
+| 06 | [`06_memory_layout.py`](technical/06_memory_layout.py) | Process address space with a zoomed stack frame |
+| 07 | [`07_timing_diagram.py`](technical/07_timing_diagram.py) | Valid/ready handshake timing diagram with a bus and setup and hold times |
+| 08 | [`08_pipeline_equations.py`](technical/08_pipeline_equations.py) | Training pipeline with the equation of each stage and a feedback line |
+| 09 | [`09_tensor_shapes.py`](technical/09_tensor_shapes.py) | Tensor shapes through a convolutional network, drawn as solids |
+| 10 | [`10_geometric_construction.py`](technical/10_geometric_construction.py) | A geometric construction from computed coordinates |
+| 11 | [`11_constraint_region.py`](technical/11_constraint_region.py) | Feasible region, constraints and objective beside a block diagram |
+
+---
+
 ## Executing the Gallery
 
 To regenerate all diagrams and documentation artifacts across all domains:
@@ -207,6 +227,7 @@ uv run diagrams-as-code render examples --out output --format svg,png,bom
 To run automated verification tests across the entire gallery:
 
 ```bash
-uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py
+uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_golden_images.py
+uv run diagrams-as-code lint examples
 ```
 

@@ -1,4 +1,4 @@
-"""Command-line interface: ``diagrams-as-code render|layout export|themes|icons``."""
+"""Command-line interface: ``diagrams-as-code render|lint|layout export|themes|icons``."""
 from __future__ import annotations
 
 import argparse
@@ -6,9 +6,11 @@ import ast
 import importlib.util
 import sys
 import traceback
+import warnings
 from pathlib import Path
 from typing import Optional
 
+from diagrams_as_code.audit import DEFECTS, audit_findings
 from diagrams_as_code.diagram import Diagram
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.sidecar import export_layout
@@ -37,6 +39,14 @@ def _formats(value: str) -> tuple[str, ...]:
     unknown = sorted(set(chosen) - set(FORMATS))
     if unknown or not chosen:
         raise argparse.ArgumentTypeError(f"choose from {','.join(FORMATS)}; got {value!r}")
+    return chosen
+
+
+def _defects(value: str) -> tuple[str, ...]:
+    chosen = tuple(v.strip() for v in value.split(",") if v.strip())
+    unknown = sorted(set(chosen) - set(DEFECTS))
+    if unknown:
+        raise argparse.ArgumentTypeError(f"unknown defect kind {', '.join(unknown)}")
     return chosen
 
 
@@ -70,6 +80,21 @@ def build_parser() -> argparse.ArgumentParser:
         help="disable interactive SVG output",
     )
     _add_layout_flags(render)
+
+    lint = sub.add_parser(
+        "lint",
+        help="report visual defects in scripts or directories of scripts",
+        description="Lay out each diagram and report what a reader would see as a defect: "
+        "a line through a node, labels on top of each other, text spilling out of its box. "
+        "Exits 1 if anything is found.",
+    )
+    lint.add_argument("paths", nargs="+", type=Path, metavar="PATH")
+    lint.add_argument(
+        "--ignore", type=_defects, default=(), metavar="KIND[,KIND]",
+        help="defect kinds not to report; choose from " + ", ".join(DEFECTS),
+    )
+    lint.add_argument("--quiet", action="store_true", help="print findings only, no summary")
+    _add_layout_flags(lint)
 
     layout = sub.add_parser("layout", help="layout file tools")
     layout_sub = layout.add_subparsers(dest="layout_command", required=True, parser_class=_Parser)
@@ -220,6 +245,43 @@ def _render(args: argparse.Namespace) -> int:
     return status
 
 
+def _lint(args: argparse.Namespace) -> int:
+    """Report visual defects; 0 if clean, 1 if any were found or a script failed."""
+    if _missing_layout_file(args):
+        return 2
+    errors: list[tuple[Path, Exception]] = []
+    scripts = discover(args.paths, errors)
+    failed = len(errors)
+    for script, exc in errors:
+        _report(script, exc, args.debug)
+    if not scripts and not errors:
+        listed = ", ".join(str(p) for p in args.paths)
+        print(f"error: no diagram scripts found in {listed}", file=sys.stderr)
+        return 1
+    total = 0
+    for script, _subdir in scripts:
+        try:
+            with warnings.catch_warnings(record=True) as caught:
+                warnings.simplefilter("always")
+                diag, _stem = load_script(script)
+                _configure(diag, args)
+                findings = [f for f in audit_findings(diag) if f.kind not in args.ignore]
+        except Exception as exc:
+            _report(script, exc, args.debug)
+            failed += 1
+            continue
+        for finding in findings:
+            print(f"{script}: {finding}")
+        for warning in caught:
+            print(f"{script}: layout_warning: {warning.message}")
+        total += len(findings) + len(caught)
+    if not args.quiet:
+        checked = len(scripts) - (failed - len(errors))
+        print(f"{checked} diagram{'s' if checked != 1 else ''} checked, "
+              f"{total} finding{'s' if total != 1 else ''}")
+    return 1 if (total or failed) else 0
+
+
 def _layout_export(args: argparse.Namespace) -> int:
     if _missing_layout_file(args):
         return 2
@@ -254,6 +316,8 @@ def main(argv: Optional[list[str]] = None) -> int:
         return int(exc.code or 0)
     if args.command == "render":
         return _render(args)
+    if args.command == "lint":
+        return _lint(args)
     if args.command == "layout":
         return _layout_export(args)
     if args.command == "themes":

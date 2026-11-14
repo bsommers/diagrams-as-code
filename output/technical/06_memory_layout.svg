@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 938 681" width="938" height="681">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="shape_7">
+    <rect x="250" y="192" width="190" height="74" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+  </g>
+  <g id="shape_10">
+    <rect x="250" y="320" width="190" height="74" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+  </g>
+  <path d="M 345 192 L 345 214.8" fill="none" stroke="#000000" stroke-width="1.5" />
+  <path d="M 345 222 L 341.4 213 L 348.6 213 Z" fill="#000000" />
+  <path d="M 345 394 L 345 371.2" fill="none" stroke="#000000" stroke-width="1.5" />
+  <path d="M 345 364 L 348.6 373 L 341.4 373 Z" fill="#000000" />
+  <path d="M 440 172 L 570 140" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,5" />
+  <path d="M 440 190 L 570 238" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,5" />
+  <path d="M 784 189 L 757.2 189" fill="none" stroke="#000000" stroke-width="0.75" />
+  <path d="M 750 189 L 759 185.4 L 759 192.6 Z" fill="#000000" />
+  <path d="M 784 240 L 757.2 240" fill="none" stroke="#000000" stroke-width="0.75" />
+  <path d="M 750 240 L 759 236.4 L 759 243.6 Z" fill="#000000" />
+  <g id="text_1">
+    <text x="174.63" y="63.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0xFFFFFFFF</text>
+  </g>
+  <g id="shape_2">
+    <rect x="250" y="60" width="190" height="64" rx="0" fill="#C4C7D0" stroke="#000000" stroke-width="1" />
+    <text x="345" y="96.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Kernel space</text>
+  </g>
+  <g id="text_3">
+    <text x="177.61" y="127.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0xC0000000</text>
+  </g>
+  <g id="shape_4">
+    <rect x="250" y="124" width="190" height="46" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="345" y="151.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Stack</text>
+  </g>
+  <g id="shape_5">
+    <rect x="250" y="170" width="190" height="22" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+    <text x="345" y="184.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">frame of the running function</text>
+  </g>
+  <g id="text_6">
+    <text x="212.48" y="195.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">%esp</text>
+  </g>
+  <g id="shape_8">
+    <rect x="250" y="266" width="190" height="54" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="345" y="289.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Memory-mapped region</text>
+    <text x="345" y="305.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">shared libraries, mmap()</text>
+  </g>
+  <g id="text_9">
+    <text x="179.44" y="323.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0x40000000</text>
+  </g>
+  <g id="text_11">
+    <text x="224.72" y="397.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">brk</text>
+  </g>
+  <g id="shape_12">
+    <rect x="250" y="394" width="190" height="46" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="345" y="421.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Heap</text>
+  </g>
+  <g id="shape_13">
+    <rect x="250" y="440" width="190" height="34" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="281.41" y="461.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="26.73" lengthAdjust="spacingAndGlyphs">BSS</text>
+    <text x="308.14" y="461.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" textLength="100.46" lengthAdjust="spacingAndGlyphs"> uninitialised data</text>
+  </g>
+  <g id="shape_14">
+    <rect x="250" y="474" width="190" height="34" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="287.91" y="495.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="28.18" lengthAdjust="spacingAndGlyphs">Data</text>
+    <text x="316.09" y="495.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" textLength="86" lengthAdjust="spacingAndGlyphs"> initialised data</text>
+  </g>
+  <g id="shape_15">
+    <rect x="250" y="508" width="190" height="40" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="289.72" y="532.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="26.73" lengthAdjust="spacingAndGlyphs">Text</text>
+    <text x="316.45" y="532.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" textLength="83.82" lengthAdjust="spacingAndGlyphs"> program code</text>
+  </g>
+  <g id="text_16">
+    <text x="179.44" y="551.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0x08048000</text>
+  </g>
+  <g id="shape_17">
+    <rect x="250" y="548" width="190" height="26" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="345" y="564.78" fill="#666666" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">reserved</text>
+  </g>
+  <g id="text_18">
+    <text x="179.44" y="577.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0x00000000</text>
+  </g>
+  <g id="text_20">
+    <text x="345" y="243.16" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle">grows down</text>
+    <text x="345" y="256.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle">unmapped</text>
+  </g>
+  <g id="text_22">
+    <text x="345" y="336.66" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle">unmapped</text>
+    <text x="345" y="350.41" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle">grows up</text>
+  </g>
+  <g id="bracket_23">
+    <path d="M 158 60 C 153 60 153 60 153 68 L 153 84 C 153 92 153 92 148 92 C 153 92 153 92 153 100 L 153 116 C 153 124 153 124 158 124" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="73.96" y="88.63" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="73.96" dy="0">kernel space</tspan> <tspan x="73.96" dy="15">1 GiB</tspan></text>
+  </g>
+  <g id="bracket_24">
+    <path d="M 158 124 C 153 124 153 124 153 132 L 153 341 C 153 349 153 349 148 349 C 153 349 153 349 153 357 L 153 566 C 153 574 153 574 158 574" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="83.3" y="345.63" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="83.3" dy="0">user space</tspan> <tspan x="83.3" dy="15">3 GiB</tspan></text>
+  </g>
+  <g id="text_25">
+    <text x="609.42" y="92.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">One stack frame</text>
+  </g>
+  <g id="shape_26">
+    <rect x="570" y="104" width="180" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="660" y="124.78" fill="#666666" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">arguments of the call</text>
+  </g>
+  <g id="shape_27">
+    <rect x="570" y="138" width="180" height="34" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+    <text x="660" y="158.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">return address</text>
+  </g>
+  <g id="shape_28">
+    <rect x="570" y="172" width="180" height="34" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+    <text x="660" y="192.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">saved frame pointer</text>
+  </g>
+  <g id="shape_29">
+    <rect x="570" y="206" width="180" height="34" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+    <text x="660" y="226.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">local variables</text>
+  </g>
+  <g id="shape_30">
+    <rect x="570" y="240" width="180" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="660" y="260.78" fill="#666666" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">free</text>
+  </g>
+  <g id="text_31">
+    <text x="787" y="192.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">%ebp</text>
+  </g>
+  <g id="text_32">
+    <text x="787" y="243.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">%esp</text>
+  </g>
+  <g id="text_34">
+    <path d="M462 434C384 502 308 579 266 678H256C215 579 138 502 61 435L81 414C114 437 150 469 179 498C189 509 195 513 205 513C215 513 227 504 227 485V-160H295V485C295 504 305 512 315 512C323 512 335 507 344 497C376 467 408 437 442 413Z" transform="translate(784 124.78) scale(0.011 -0.011)" fill="#555555"/>
+    <text x="789.75" y="124.78" xml:space="preserve" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="87.44" lengthAdjust="spacingAndGlyphs"> higher addresses</text>
+  </g>
+  <g id="text_35">
+    <text x="570" y="298.66" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="155.93" lengthAdjust="spacingAndGlyphs">The shaded cells are pushed by</text>
+    <text x="570" y="312.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="44.03" lengthAdjust="spacingAndGlyphs">one call. </text>
+    <text x="614.03" y="312.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" textLength="28.13" lengthAdjust="spacingAndGlyphs">%ebp</text>
+    <text x="642.16" y="312.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="70.91" lengthAdjust="spacingAndGlyphs"> stays fixed for</text>
+    <text x="570" y="326.16" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="72.76" lengthAdjust="spacingAndGlyphs">the whole call; </text>
+    <text x="642.76" y="326.16" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" textLength="27.52" lengthAdjust="spacingAndGlyphs">%esp</text>
+    <text x="670.28" y="326.16" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="50.13" lengthAdjust="spacingAndGlyphs"> moves as</text>
+    <text x="570" y="339.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="150.45" lengthAdjust="spacingAndGlyphs">locals are pushed and popped.</text>
+  </g>
+  <g id="caption_36">
+    <text x="127.19" y="623.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 6:</text>
+    <text x="201.36" y="623.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="622.61" lengthAdjust="spacingAndGlyphs"> VIRTUAL ADDRESS SPACE OF A PROCESS AND THE LAYOUT OF ONE STACK FRAME</text>
+  </g>
+</svg>

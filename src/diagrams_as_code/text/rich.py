@@ -235,14 +235,17 @@ def parse_markup(source: str) -> list[list[_Span]]:
             lines[-1].append(_Span("text", "".join(buf), bold, italic))
             buf.clear()
 
-    s = source.replace("\\n", "\n")
+    s = source
     i = 0
     while i < len(s):
         ch = s[i]
         if ch == "\\" and i + 1 < len(s) and s[i + 1] in "*$\\":
             buf.append(s[i + 1])
             i += 2
-        elif ch == "\n":
+        elif ch == "\n" or s.startswith("\\n", i):
+            # A typed backslash-n breaks the line too, but only out here: inside
+            # math it starts a command (\nabla, \neq, \nu).
+            i += 0 if ch == "\n" else 1
             flush()
             lines.append([])
             i += 1

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 475" width="730" height="475">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 392.32 316 L 435.68 316" fill="none" stroke="#000000" stroke-width="0.75" />
+  <path d="M 440 316 L 434.6 318.16 L 434.6 313.84 Z" fill="#000000" />
+  <path d="M 388 316 L 393.4 313.84 L 393.4 318.16 Z" fill="#000000" />
+  <path d="M 444.32 316 L 463.68 316" fill="none" stroke="#000000" stroke-width="0.75" />
+  <path d="M 468 316 L 462.6 318.16 L 462.6 313.84 Z" fill="#000000" />
+  <path d="M 440 316 L 445.4 313.84 L 445.4 318.16 Z" fill="#000000" />
+  <g id="text_1">
+    <text x="128.11" y="95.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">clk</text>
+  </g>
+  <g id="text_2">
+    <text x="117.26" y="143.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">valid</text>
+  </g>
+  <g id="text_3">
+    <text x="111.48" y="191.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">ready</text>
+  </g>
+  <g id="text_4">
+    <text x="69.25" y="239.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="30.35" lengthAdjust="spacingAndGlyphs">valid </text>
+    <path d="M604 -30 322 549H312L32 -30H105L317 412L531 -30Z" transform="translate(99.6 239.47) scale(0.013 -0.013)" fill="#000000"/>
+    <text x="107.87" y="239.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="36.13" lengthAdjust="spacingAndGlyphs"> ready</text>
+  </g>
+  <g id="text_5">
+    <text x="93.4" y="287.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">data[7:0]</text>
+  </g>
+  <g id="polyline_6">
+    <path d="M 200 68 L 200 334" fill="none" stroke="#666666" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="196.94" y="60.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="polyline_8">
+    <path d="M 280 68 L 280 334" fill="none" stroke="#666666" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_9">
+    <text x="276.94" y="60.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">2</text>
+  </g>
+  <g id="polyline_10">
+    <path d="M 360 68 L 360 334" fill="none" stroke="#666666" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_11">
+    <text x="356.94" y="60.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">3</text>
+  </g>
+  <g id="polyline_12">
+    <path d="M 440 68 L 440 334" fill="none" stroke="#666666" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_13">
+    <text x="436.94" y="60.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">4</text>
+  </g>
+  <g id="polyline_14">
+    <path d="M 520 68 L 520 334" fill="none" stroke="#666666" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_15">
+    <text x="516.94" y="60.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">5</text>
+  </g>
+  <g id="polyline_16">
+    <path d="M 600 68 L 600 334" fill="none" stroke="#666666" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <text x="596.94" y="60.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">6</text>
+  </g>
+  <g id="polyline_18">
+    <path d="M 160 102 L 198 102 L 202 80 L 238 80 L 242 102 L 278 102 L 282 80 L 318 80 L 322 102 L 358 102 L 362 80 L 398 80 L 402 102 L 438 102 L 442 80 L 478 80 L 482 102 L 518 102 L 522 80 L 558 80 L 562 102 L 598 102 L 602 80 L 638 80 L 642 102 L 660 102" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_19">
+    <path d="M 160 150 L 226 150 L 230 128 L 546 128 L 550 150 L 660 150" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_20">
+    <path d="M 160 198 L 306 198 L 310 176 L 546 176 L 550 198 L 660 198" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_21">
+    <path d="M 160 246 L 306 246 L 310 224 L 546 224 L 550 246 L 660 246" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_22">
+    <path d="M 160 283 L 228 283" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_23">
+    <path d="M 228 283 L 232 272 L 384 272 L 388 283 L 384 294 L 232 294 Z" fill="#E4E4E8" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+    <text x="308" y="287.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0xA5</text>
+  </g>
+  <g id="polygon_24">
+    <path d="M 388 283 L 392 272 L 464 272 L 468 283 L 464 294 L 392 294 Z" fill="#E4E4E8" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+    <text x="428" y="287.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0x3C</text>
+  </g>
+  <g id="polygon_25">
+    <path d="M 468 283 L 472 272 L 544 272 L 548 283 L 544 294 L 472 294 Z" fill="#E4E4E8" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+    <text x="508" y="287.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0x7E</text>
+  </g>
+  <g id="polyline_26">
+    <path d="M 548 283 L 660 283" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_27">
+    <path d="M 388 296 L 388 322" fill="none" stroke="#666666" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_28">
+    <path d="M 468 296 L 468 322" fill="none" stroke="#666666" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_33">
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(407.02 333.6) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M378 479H359L333 452H330C318 459 281 479 228 479C137 479 92 425 92 357C92 295 139 260 180 221C218 185 254 150 254 96C254 44 222 23 176 23C108 23 82 69 72 156H47L21 -11H43L67 16H70C84 10 122 -11 185 -11C298 -11 337 55 337 113C337 177 301 214 258 260C214 307 163 343 163 385C163 414 184 449 236 449C295 449 328 400 331 323H355Z" transform="translate(411.8 336.33) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M42 355C58 375 82 409 116 409C130 409 137 401 137 389C137 376 133 362 133 362L77 135C73 121 67 88 67 62C67 25 82 -10 133 -10C250 -10 330 127 368 197H377C360 132 345 92 345 45C345 1 378 -9 405 -9C466 -9 503 32 547 96L526 111C526 111 489 59 453 59C437 59 432 68 432 76C432 91 438 119 438 119L510 470H427L397 332C374 230 257 62 183 62C160 62 153 79 153 103C153 123 160 151 160 151L220 380C221 385 225 402 225 419C225 448 210 477 162 477C91 477 47 408 22 371Z" transform="translate(415.32 336.33) scale(0.0091 -0.0091)" fill="#000000"/>
+  </g>
+  <g id="text_34">
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(474 320.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M528 112C513 93 489 60 453 60C440 60 434 68 434 79C434 91 438 103 438 103L494 334C497 348 503 382 503 408C503 444 488 479 437 479C319 479 227 334 185 259H177L278 706H255L117 695V668C117 668 137 670 150 670C173 670 182 660 182 644C182 629 179 610 179 610L47 0H129L165 158C197 227 313 407 387 407C410 407 417 390 417 367C417 347 410 319 410 319L351 88C349 83 346 65 346 49C346 19 361 -10 411 -10C483 -10 523 60 549 97Z" transform="translate(478.78 323.2) scale(0.0091 -0.0091)" fill="#000000"/>
+  </g>
+  <g id="text_35">
+    <text x="160" y="359.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="237.47" lengthAdjust="spacingAndGlyphs">A byte is taken on each rising edge at which </text>
+    <text x="397.47" y="359.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="24.68" lengthAdjust="spacingAndGlyphs">valid</text>
+    <text x="422.15" y="359.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="26.69" lengthAdjust="spacingAndGlyphs"> and </text>
+    <text x="448.84" y="359.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="30.02" lengthAdjust="spacingAndGlyphs">ready</text>
+    <text x="478.86" y="359.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="136.1" lengthAdjust="spacingAndGlyphs"> are both high: edges 3, 4</text>
+    <text x="160" y="374.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="464.94" lengthAdjust="spacingAndGlyphs">and 5. At edge 2 the receiver is not ready, so the sender holds 0xA5 for a second cycle.</text>
+  </g>
+  <g id="caption_36">
+    <text x="43.75" y="420.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="117.92" y="420.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="567.58" lengthAdjust="spacingAndGlyphs"> VALID/READY HANDSHAKE WITH SETUP AND HOLD TIMES OF THE DATA BUS</text>
+  </g>
+</svg>

@@ -2,7 +2,7 @@
 
 [← Back to Documentation Hub](README.md) · [Project README](../README.md)
 
-A task-oriented guide to writing diagrams as Python code and rendering them to SVG, PNG and Markdown/JSON Bill-of-Materials (BOM) files. For deeper recipes see [how-to.md](how-to.md); for installation details see [running.md](running.md); for internals see [architecture.md](architecture.md).
+A task-oriented guide to writing diagrams as Python code and rendering them to SVG, PNG and Markdown/JSON Bill-of-Materials (BOM) files. For paper-style figures see [technical-figures.md](technical-figures.md) and the [math markup reference](math-markup.md); for deeper recipes see [how-to.md](how-to.md); for installation details see [running.md](running.md); for internals see [architecture.md](architecture.md).
 
 ## Table of Contents
 - [Concepts](#concepts)
@@ -126,7 +126,7 @@ d.add(Shape(
 d.connect(a, b, label=r"$g_k(I, C, D, T) \leq 0$")
 ```
 
-**Math** is a TeX-like subset: letters are set in math italic and digits upright; `_` and `^` take one character or a `{group}`; Greek letters (`\alpha` … `\Omega`); relations and operators (`\leq \geq \neq \approx \in \subseteq \to \leadsto \land \lor \cap \cup \times \cdot \forall \exists` and more); `\mathrm{}`, `\text{}`, `\mathbf{}`; named functions (`\min`, `\max`, `\log` …); big operators with limits underneath (`\sum_{i=1}^{n}`, `\bigcap_{k}`; add `\nolimits` to set them beside); and the spaces `\,` `\;` `\quad`. Fractions, radicals and matrices are not supported and raise `MathError` rather than rendering wrongly.
+**Math** is a TeX-like subset: letters are set in math italic and digits upright; `_` and `^` take one character or a `{group}`; Greek letters (`\alpha` … `\Omega`); relations and operators (`\leq \geq \neq \approx \in \subseteq \to \leadsto \land \lor \cap \cup \times \cdot \forall \exists` and more); `\mathrm{}`, `\text{}`, `\mathbf{}`; named functions (`\min`, `\max`, `\log` …); big operators with limits underneath (`\sum_{i=1}^{n}`, `\bigcap_{k}`; add `\nolimits` to set them beside); and the spaces `\,` `\;` `\quad`. Fractions, radicals, accents and matrices are not supported and raise `MathError` rather than rendering wrongly. Every supported command is listed in the [math markup reference](math-markup.md).
 
 Math is drawn as vector outlines, so it looks identical in every browser, in PNG and in print. Ordinary text stays real, selectable SVG text.
 
@@ -174,6 +174,8 @@ For figures in papers and specifications. Each has a focused example in [`exampl
 
 Annotations are not components, so none of these appear in the BOM.
 
+For putting these together into a whole figure, and for checking it with `lint` and golden images, see [Technical figures](technical-figures.md) and the eleven figures in [`examples/technical/`](../examples/technical/).
+
 ## Themes
 
 Fourteen built-in themes:
@@ -216,6 +218,7 @@ The BOM is built from shape and edge `metadata`, so documentation stays in step 
 diagrams-as-code render PATH... [--out DIR] [--format svg,png,bom] [--theme T]
                  [--interactive | --no-interactive] [--layout manual|auto]
                  [--direction LR|TB] [--layout-file FILE] [--debug]
+diagrams-as-code lint PATH... [--ignore KIND[,KIND]] [--quiet] [--layout ...] [--direction ...] [--layout-file ...] [--debug]
 diagrams-as-code layout export SCRIPT [-o FILE] [--layout ...] [--direction ...] [--layout-file ...] [--debug]
 diagrams-as-code themes
 diagrams-as-code icons [--domain DOMAIN]
@@ -223,6 +226,7 @@ diagrams-as-code icons [--domain DOMAIN]
 
 - `--format` defaults to `svg,bom`; PNG is opt-in because its bytes vary by backend.
 - `render` accepts scripts or directories; directories are scanned recursively for files defining `diagram()`.
+- `lint` lays each diagram out and reports visual defects (a line through a node, overlapping labels, text that does not fit), one per line as `script: kind: detail`. It exits `1` if anything is found. See [Technical figures](technical-figures.md#7-check-the-figure) for the kinds.
 - Also runnable as `uv run python -m diagrams_as_code ...`.
 - Exit codes: `0` success, `1` one or more scripts failed (the rest still run), `2` usage error.
 

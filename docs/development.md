@@ -41,7 +41,7 @@ Python 3.10 to 3.13 are exercised in CI. Docker is optional: `./docker-build-n-r
 | `src/iiot_diagrams/` | Backward-compatibility facade that re-exports the engine |
 | `examples/` | Runnable diagram scripts, grouped by domain (ai, business_process, cloud, computer, cybersecurity, datacenter, iiot, network_engineering) |
 | `icons/` | Source SVG icons, `icons.yaml` and `icons.csv` catalogs |
-| `tools/` | `generate_icons.py`, `eval_bezier.py` |
+| `tools/` | `generate_icons.py`, `eval_bezier.py`, `audit_gallery.py` (visual defect ratchet), `golden_images.py` (golden pictures of the technical figures), `generate_text_data.py` |
 | `output/` | Committed reference renders; must not drift |
 | `tests/` | pytest suite, including module-boundary and repo-hygiene checks |
 | `docs/` | Living documentation; `docs/plans`, `docs/reviews` and `docs/superpowers` are historical working notes |
@@ -64,6 +64,9 @@ Run all of these before pushing or opening a PR:
 uv run pytest                                   # full suite must pass
 uv run python main.py                           # regenerate reference output
 uv run python tools/generate_icons.py --check   # icons match their catalog
+uv run python tools/audit_gallery.py --check    # visual defect counts have not risen
+uv run diagrams-as-code lint examples           # the same checks, each finding named
+uv run python tools/golden_images.py --check   # technical figures match their golden images
 git diff --exit-code -- output/ icons/ README.md docs/   # must produce no diff
 ```
 

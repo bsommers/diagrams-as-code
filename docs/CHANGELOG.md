@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.12.0] - 2026-11-13
+
+Technical figures, a linter and golden-image regression tests. `uv run diagrams-as-code lint examples` reports no findings across every example.
+
+### Added
+- **Eleven technical figures** in `examples/technical/`, rendered to `output/technical/`. `01_composition_enforcement.py` reproduces a reference figure element for element (four layer bands, shaded panels, a cuboid, a clipped polyhedron with trajectories through it, typeset formulas, leaders, a heavy spine, a two-way arrow, a bracket, a serif caption) and corrects its slips: a label used twice, "Taint Tracking Tracker", an unbalanced bracket and an unexplained frame. The other ten: control loop, transformer block, state machine, protocol stack, memory layout, timing diagram, training pipeline with equations, tensor shapes, geometric construction, constraint region.
+- **`diagrams-as-code lint PATH...`**: lays each diagram out and prints every visual defect as `script: kind: detail`, naming the elements involved (`edge_through_node: 'Idle' -> 'Closed' crosses 'Connecting'`). Layout warnings are reported too. Exit code 1 if anything is found; `--ignore KIND[,KIND]` drops kinds; `--quiet` prints findings only.
+- **`audit_findings(diagram)`** returns the defects as `Finding(kind, detail)`; `audit_diagram()` is now their tally.
+- **Golden images** (`tools/golden_images.py`, `tests/test_golden_images.py`, `tests/golden/technical/`). Every technical figure is rendered at 800 px wide and compared with a stored picture; a pixel counts as changed when a channel differs by more than 48, and a picture fails when more than 0.05% of its pixels changed. Rendering uses only the fonts in `tests/fixtures/fonts` (a Latin subset of Arimo, SIL OFL 1.1), so pictures match across machines. The PNG decoder is standard library.
+- `docs/technical-figures.md` (how to build, lint and pin a figure) and `docs/math-markup.md` (every supported math command, and what to write for the unsupported ones).
+
+### Fixed
+- **`\n` inside math is no longer a line break.** `$\nabla L$`, `$a \neq b$`, `$\nu$` and `\nolimits` were split into two lines at the `\n`. A typed backslash-n still breaks the line outside math.
+- **A caption wider than the drawing was clipped on the left.** The canvas is now framed again after the caption is placed.
+
+### Changed
+- The audit no longer counts these as defects: a line that ends at a bare point set inside a shape (a leader to a spot on it), a bracket beside shapes nested in a panel overlapping that panel, and free outlines (`path`, `polygon`, `polyline`) overlapping each other or being written on. Free outlines are drawing, and only their bounding boxes are known to the audit.
+
 ## [v0.11.0] - 2026-11-13
 
 Technical drawing primitives. Everything here is additive: the 92 existing gallery diagrams render byte-identically except the four whose spacing was changed to clear the last audit defects. `uv run python tools/audit_gallery.py` across 101 diagrams: every count is 0 (v0.10.0 left 4 lines through badges and 1 edge through a group title).

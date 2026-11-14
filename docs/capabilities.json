@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
   "last_updated": "2026-11-13T00:00:00Z",
@@ -293,6 +293,17 @@
       "classes": ["Text", "Caption", "Bracket", "Polygon", "Polyline", "Path", "Band", "SolidShape", "Solid", "Junction", "AnchorRef", "PathItem", "TextItem"],
       "details": "Free text, captions and brackets; polygons, polylines and SVG paths; dashed layer bands with side notes; shapes nested in shapes and double borders; edge stroke weight, seven arrowhead styles, two-way arrows and ellipsis connectors; edge ends at fractional side anchors or bare points, shared-trunk fan-out, leaders and splines through given points; convex solids in oblique and isometric projection with hidden-edge dashing, translucent faces and cutting planes; z-order; align(), distribute(), grid snap and px/pt/mm lengths. Nine focused figures in examples/primitives.",
       "verification": "uv run pytest tests/test_primitives.py tests/test_edge_options.py tests/test_solids.py tests/test_drawing.py tests/test_primitive_examples.py"
+    },
+    {
+      "id": "CAP-DIAG-TECHNICAL-FIGURES",
+      "name": "Technical Figures, Lint and Golden Images",
+      "category": "Technical Figures & Visual Regression",
+      "status": "OPERATIONAL",
+      "target_release": "v0.12.0",
+      "python_api": "diagrams_as_code.audit",
+      "classes": ["Finding", "audit_findings", "audit_diagram"],
+      "details": "Eleven paper-style figures in examples/technical, the first a reproduction of a reference figure; `diagrams-as-code lint` reports visual defects by name and exits 1 if any are found; golden-image regression tests compare every technical figure with a stored picture, rendered with pinned fonts so results match across machines; a technical-figures guide and a math markup reference.",
+      "verification": "uv run pytest tests/test_technical_examples.py tests/test_golden_images.py tests/test_lint.py && uv run diagrams-as-code lint examples"
     }
   ]
 }
