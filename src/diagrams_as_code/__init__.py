@@ -24,6 +24,7 @@ from diagrams_as_code.primitives import (
     SolidShape,
     Text,
 )
+from diagrams_as_code.pdf import PDFExportError, svg_to_pdf
 from diagrams_as_code.solids import Projection, Solid, isometric, oblique
 from diagrams_as_code.geometry import (
     Anchor,
@@ -88,7 +89,7 @@ from diagrams_as_code.theme import (
 
 from diagrams_as_code.style import Style  # noqa: E402
 
-__version__ = "0.12.0"
+__version__ = "0.13.0"
 __all__ = [
     "AbsoluteConstraint",
     "AlignConstraint",
@@ -126,6 +127,7 @@ __all__ = [
     "NORD",
     "OrthogonalRouter",
     "PASTEL_LIGHT",
+    "PDFExportError",
     "PORT_NORMALS",
     "Path",
     "PathItem",
@@ -175,6 +177,7 @@ __all__ = [
     "render_all",
     "reset_themes",
     "route_all",
+    "svg_to_pdf",
     "to_constraint",
     "to_px",
 ]

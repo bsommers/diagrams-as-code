@@ -122,10 +122,30 @@ uv run python tools/golden_images.py --update   # after a deliberate change: sto
 
 Golden images are rendered at a fixed width with the fonts in `tests/fixtures/fonts`, so they come out the same on every machine. A pixel counts as changed when a colour channel differs by more than 48 of 255; a picture fails when more than 0.05% of its pixels changed.
 
+## 8. Export a PDF
+
+```python
+diag.render_pdf("figure.pdf")
+```
+
+or, from the command line:
+
+```bash
+uv run diagrams-as-code render examples/technical --out build --format svg,pdf
+```
+
+The PDF is one page the size of the figure (0.75 pt per px) and is all vector: it can be placed in a LaTeX or Word document and scaled freely. Nothing has to be installed; the writer is part of the package.
+
+It is drawn from the same SVG `render_svg` writes, so what you checked in section 7 is what the PDF holds. Three things to know:
+
+- **Fonts.** Text is set in the standard PDF fonts (Helvetica for sans, Times for serif), which every viewer supplies, so no font is embedded. Formulas are outlines and look the same everywhere. If a publisher requires every font to be embedded, convert the file with their tool of choice or use the SVG.
+- **Characters.** Latin text, Greek letters, arrows and common math signs are covered. A character outside those (CJK, emoji) is drawn as `?`, and a warning names it. Inside `$...$` every supported symbol is an outline and always works.
+- **Shadows.** Themes other than `paper` draw drop shadows; in the PDF they are approximated with translucent rings rather than a true blur.
+
 ## Limits to know about
 
 - Shape kinds are boxes, cylinders, clouds, diamonds and the like; there is no circle or ellipse kind. A circle is a box with `Style(radius=...)` set to half its side, or an arc path.
 - A self-loop is drawn as a spline between two anchors on one side with `via` points.
-- Serif text is measured with the sans metrics and pinned to that width.
+- Serif text is measured with the sans metrics and pinned to that width (in the PDF it is stretched to that same width).
 - A cutting plane is drawn over the whole solid, not hidden behind its near faces.
 - Text is `sans` or `serif`; there is no monospace option.

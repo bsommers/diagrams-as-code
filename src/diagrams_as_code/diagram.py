@@ -6,7 +6,7 @@ import dataclasses
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
-from diagrams_as_code import context, rasterize
+from diagrams_as_code import context, pdf, rasterize
 from diagrams_as_code.bom import BOMGenerator
 from diagrams_as_code.connections import Edge, Port, Routing, _coerce_enum
 from diagrams_as_code.constraints import ConstraintSolver
@@ -894,6 +894,30 @@ class Diagram:
         p = Path(path)
         p.parent.mkdir(parents=True, exist_ok=True)
         return rasterize.svg_to_png(svg_content, p)
+
+    def render_pdf(self, path: Optional[Union[str, Path]] = None) -> bytes:
+        """Render diagram to a one-page vector PDF and optionally write to file.
+
+        The PDF is drawn from the same SVG ``render_svg`` writes (without the
+        interactive overlay), at 0.75 pt per px. Pure standard library.
+        """
+        self._ensure_solved()
+        renderer = SVGRenderer(self.theme, precision=self.precision, crisp=self.pixel_snap)
+        svg = renderer.render(
+            elements=self.shapes,
+            groups=self.groups,
+            edges=self.edges,
+            width=self.width,
+            height=self.height,
+            routes=self.routes,
+            interactive=False,
+        )
+        data = pdf.svg_to_pdf(svg, title=self.title or None)
+        if path is not None:
+            p = Path(path)
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_bytes(data)
+        return data
 
     @property
     def bom(self) -> BOMGenerator:

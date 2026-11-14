@@ -2,20 +2,20 @@
 gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
-status: ready_to_plan
-stopped_at: Phase 16 complete (v0.12.0) on branch feat/phase16-technical-examples (stacked on feat/phase15-drawing-primitives, PR 20), gate green, 935 tests, lint 0 findings; PR 19 merged; Phase 16 branch not pushed; no tags; Phase 17 not started
-last_updated: "2026-11-13T12:00:00.000Z"
-state_head: 338b56095d23021d4ae337698a68bf6666be855f
-progress:
-  total_phases: 6
-  completed_phases: 4
-  total_plans: 0
-  completed_plans: 0
-  percent: 67
-last_activity: 2026-11-13
+status: phase_complete
+stopped_at: "Phase 17 complete on feat/phase17-vector-pdf (local commits, not pushed); Phases 12-16 merged to master and tagged v0.8.4..v0.12.0; v0.13.0 not tagged"
+last_updated: "2026-11-14T08:00:00.000Z"
+state_head: 0f0e46b
+last_activity: 2026-11-14
 current_phase: 17
 current_phase_name: Vector PDF Export
-last_activity_desc: Phase 16 complete - eleven technical figures, lint command, golden images, technical-figures guide and math reference (935 tests)
+last_activity_desc: Phase 17 complete - pure-stdlib vector PDF export, render_pdf, --format pdf (1121 tests)
+progress:
+  total_phases: 6
+  completed_phases: 6
+  total_plans: 0
+  completed_plans: 0
+  percent: 100
 ---
 
 # Project State
@@ -25,7 +25,7 @@ last_activity_desc: Phase 16 complete - eleven technical figures, lint command, 
 See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
 `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Current focus:** Phase 17 — Vector PDF Export. Phases 12–14 (v0.8.4, v0.9.0, v0.10.0) are merged to master via PR #19. Phase 15 (v0.11.0) is PR #20 from `feat/phase15-drawing-primitives`. Phase 16 (v0.12.0) is complete on `feat/phase16-technical-examples`, stacked on the Phase 15 branch and not yet pushed. Tags follow the merges.
+**Current focus:** All six phases (12–17) are done. Phases 12–16 are merged to master (PRs #19, #20, #21) and tagged v0.8.4, v0.9.0, v0.10.0, v0.11.0, v0.12.0. Phase 17 (v0.13.0) is complete on `feat/phase17-vector-pdf`, committed locally; pushing it, opening its PR and tagging v0.13.0 each need the user's go-ahead.
 
 ## Phase 12 result
 
@@ -59,6 +59,14 @@ Engine fixes found by writing the figures: `\n` inside math was treated as a lin
 
 Gaps the figure authors worked around, candidates for later: no circle/ellipse shape kind (an unknown `kind` silently draws a box); no self-loop helper; no text-beside-the-line edge label (figures place `text()` by hand); anchor names `left_center`/`right_center` versus `top_center` with no aliases; no math accents (`\hat`, `\bar`, `\overline`), `\mathcal`, `\triangle`; no monospace text; no dimension-line or circle/arc helper; projected solid corners are not exposed for attaching lines; the audit tests a solid's bounding rectangle, not its outline; a translucent filled outline declared before edges is painted over them unless given `z=-1`; edge-label badge text size is not adjustable.
 
+## Phase 17 result
+
+v0.13.0. PDF-01..03 done in `pdf.py` (layer 4, imports only `drawing` and `text`). Design: the PDF is drawn from the SVG the renderer writes rather than from a second display list, so nothing in the renderer changed and gallery SVG is byte-identical. `ELEMENTS` / `ATTRIBUTES` list the SVG vocabulary the writer knows; anything else raises `PDFExportError`, and `tests/test_pdf.py` fails if the gallery uses a construct outside them. Text: standard 14 fonts with `/Widths` and a descriptor, WinAnsi plus Symbol fallback, serif placed with `text/_serif_metrics.py` (Tinos widths, OFL 1.1). Group opacity is a transparency-group form XObject. Shadows are six translucent stroke rings plus a fill.
+
+Verified: 1121 tests on macOS (py3.14); 1107 pass + 14 skip on Linux arm64 py3.10–3.13 (2 hygiene skips without git, 12 rendered-comparison skips without `pdftoppm`); all 113 gallery PDFs clean in `pdfinfo` and Ghostscript; reference figure checked by eye in poppler, Ghostscript and Quartz.
+
+Known limits: fonts are not embedded (not PDF/A); a character outside Windows-1252 and Symbol is drawn as `?` with a warning; Symbol glyphs sit at the left of the slot the sans metrics give them; stroke-only shapes and text cast no shadow; compressed bytes may differ between zlib builds. Homebrew poppler on macOS draws Helvetica-Bold with the regular face (its font substitution; Ghostscript and Quartz draw bold). Found on the way, not fixed: resvg-py 0.5.0 drops every shadowed node when rasterizing `output/cloud/09_iot_cloud_fleet_management.svg` to PNG (the SVG and PDF are correct; PNGs are untracked).
+
 ## Decisions
 
 - 2026-11-12: v0.8.0 milestone closed; Phase 11 was merged via PRs #16–#18 while this file still said "ready to plan".
@@ -75,6 +83,6 @@ Gaps the figure authors worked around, candidates for later: no circle/ellipse s
 
 ## Session
 
-**Last session:** 2026-11-13T03:56:00.722Z
-**Stopped at:** Phase 16 complete (v0.12.0), gate green; PR 19 merged, PR 20 open (Phase 15), Phase 16 branch local only; no tags; Phase 17 not started
+**Last session:** 2026-11-14T08:00:00.000Z
+**Stopped at:** Phase 17 complete on feat/phase17-vector-pdf (local commits, not pushed); Phases 12-16 merged to master and tagged v0.8.4..v0.12.0; v0.13.0 not tagged
 **Resume file:** .planning/CHECKPOINT.md

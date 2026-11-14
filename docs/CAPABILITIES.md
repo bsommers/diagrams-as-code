@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-13 (v0.12.0)  
+**Last Updated:** 2026-11-14 (v0.13.0)  
 
 ---
 
@@ -262,3 +262,13 @@
 - **CLI:** `diagrams-as-code lint PATH... [--ignore KIND[,KIND]] [--quiet]`
 - **Features:** Eleven paper-style figures in `examples/technical/`, the first a reproduction of a reference figure with its slips corrected. `lint` lays each diagram out and reports every visual defect as `script: kind: detail`, naming the elements involved; exit code 1 if any are found. Golden-image regression: every technical figure is rendered at a fixed width with pinned fonts (`tests/fixtures/fonts`) and compared with `tests/golden/technical/*.png` within an anti-aliasing tolerance; `tools/golden_images.py --update` stores new pictures. Guides: `docs/technical-figures.md`, `docs/math-markup.md`.
 - **Verification:** `uv run pytest tests/test_technical_examples.py tests/test_golden_images.py tests/test_lint.py && uv run diagrams-as-code lint examples`
+
+### 2.18 Vector PDF Export
+
+#### `CAP-DIAG-PDF`: Vector PDF Export
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.13.0`
+- **Python API:** `Diagram.render_pdf(path=None)`, `diagrams_as_code.svg_to_pdf(svg)`, `PDFExportError`
+- **CLI:** `diagrams-as-code render PATH... --format pdf`
+- **Features:** One-page vector PDF written with the standard library alone, at 0.75 pt per px. It is drawn from the SVG the renderer writes, so paths, fills, dashes, arrowheads, opacity, text and math match the SVG. Text uses the standard PDF fonts (nothing embedded); math is outlines. SVG the writer does not understand raises `PDFExportError`. Drop shadows are approximated with translucent rings.
+- **Verification:** `uv run pytest tests/test_pdf.py`

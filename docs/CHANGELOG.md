@@ -6,6 +6,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.13.0] - 2026-11-14
+
+Vector PDF export, in the standard library alone. Every diagram in the gallery (113) exports; the eleven technical figures were rasterized from PDF and from SVG and compared.
+
+### Added
+- **`Diagram.render_pdf(path=None)`** returns (and optionally writes) a one-page vector PDF at 0.75 pt per px. Lines, fills, dashes, arrowheads, rounded corners, translucent fills, group opacity, text and typeset math are all vector.
+- **`--format pdf`** for `diagrams-as-code render`, and `"pdf"` in `render_all(..., formats=...)`. PDF is opt-in: the defaults (`svg,bom` on the command line, `svg,png,bom` for `render_all`) are unchanged. `output.DEFAULT_FORMATS` names the `render_all` default.
+- **`svg_to_pdf(svg)`** and **`PDFExportError`** (`diagrams_as_code.pdf`). The PDF is written from the SVG the renderer produces, so the two cannot drift. The writer understands exactly the SVG the engine writes; anything else raises `PDFExportError` rather than being left out, and a test fails if the renderer starts writing an element or attribute the writer does not know.
+- `text/_serif_metrics.py`: advance widths of Tinos (SIL Open Font License 1.1, metric-compatible with Times), used to place serif text in the PDF. `tools/generate_text_data.py` gained `--serif-*` options; each group of options is now optional.
+
+### How text is handled
+- Text uses the 14 standard PDF fonts (Helvetica, Times, Courier, Symbol), so no font is embedded and files stay small (the reference figure is about 18 KB). Each font carries its widths and a descriptor, so a viewer that substitutes another face keeps the layout. Math is drawn as outlines, as in the SVG.
+- Characters outside Windows-1252 are taken from the Symbol font (Greek, arrows, common operators). A character neither has, such as CJK text, is drawn as `?` and a `UserWarning` names it.
+
+### Known differences from the SVG
+- A drop shadow is a Gaussian blur in SVG; in the PDF it is six translucent rings with the same falloff. It is not clipped at the filter region the way some SVG rasterizers clip it.
+- The PDF never includes the interactive overlay.
+- Output has no timestamp, so the same diagram gives the same bytes on one machine. Compressed bytes can differ between zlib builds; `svg_to_pdf(svg, compress=False)` is identical everywhere.
+
+### Verification Evidence
+- `uv run pytest` -> 1121 passed.
+- All 113 gallery PDFs open without warnings in poppler (`pdfinfo`) and Ghostscript; the reference figure was also checked by eye in macOS Preview's renderer.
+- Technical figures, PDF against SVG at 96 dpi in 8 px tiles: at most 0.6% of tiles differ (font rendering); the test limit is 1%.
+
 ## [v0.12.0] - 2026-11-13
 
 Technical figures, a linter and golden-image regression tests. `uv run diagrams-as-code lint examples` reports no findings across every example.

@@ -31,7 +31,7 @@ Process: one plan per phase, no separate research / plan-check / Nyquist documen
 - [x] **Phase 14 (v0.10.0): Style Model & Layout Correctness** — `Style` cascade, `paper` theme, fit-to-content canvas, badge and port collision fixes, renderer split. All eight requirements done. Success criterion 1 is short by five defects (4 lines through badges in 3 diagrams, 1 edge through a group title), carried to Phase 15 where edge anchors and escape distance become configurable.
 - [x] **Phase 15 (v0.11.0): Technical Drawing Primitives** — text, caption, bands, nesting, polygons, projected solids, arrow styles, leaders, fractional anchors, alignment helpers. All nine requirements done, each with unit tests and a focused example in `examples/primitives/`. The five audit defects carried from Phase 14 are fixed; every audit count is 0 across 101 diagrams.
 - [x] **Phase 16 (v0.12.0): Technical Examples & Visual Regression** — reference reproduction plus ten technical figures in `examples/technical/`, golden images for all eleven (byte-identical on macOS and Linux, arm64 and x86-64), `diagrams-as-code lint` with named findings, technical-figures guide and math markup reference. `lint examples` reports 0 findings across 112 diagrams.
-- [ ] **Phase 17 (v0.13.0): Vector PDF Export** — pure-stdlib PDF writer for all primitives and text.
+- [x] **Phase 17 (v0.13.0): Vector PDF Export** — pure-stdlib PDF writer drawn from the renderer's SVG; `render_pdf()`, `svg_to_pdf()`, `--format pdf`. All 113 gallery diagrams export; technical figures compared PDF against SVG (at most 0.6% of 8 px tiles differ).
 
 ## Phase Details
 

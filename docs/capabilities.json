@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-11-13T00:00:00Z",
+  "last_updated": "2026-11-14T00:00:00Z",
   "summary": {
-    "total_capabilities": 20,
-    "operational": 20,
+    "total_capabilities": 21,
+    "operational": 21,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -21,7 +21,9 @@
       "Layout Engine",
       "Command-Line Interface",
       "Domain Reference Architectures",
-      "Technical Drawing Primitives"
+      "Technical Drawing Primitives",
+      "Technical Figures & Visual Regression",
+      "Vector PDF Export"
     ]
   },
   "quick_answers": {
@@ -304,6 +306,17 @@
       "classes": ["Finding", "audit_findings", "audit_diagram"],
       "details": "Eleven paper-style figures in examples/technical, the first a reproduction of a reference figure; `diagrams-as-code lint` reports visual defects by name and exits 1 if any are found; golden-image regression tests compare every technical figure with a stored picture, rendered with pinned fonts so results match across machines; a technical-figures guide and a math markup reference.",
       "verification": "uv run pytest tests/test_technical_examples.py tests/test_golden_images.py tests/test_lint.py && uv run diagrams-as-code lint examples"
+    },
+    {
+      "id": "CAP-DIAG-PDF",
+      "name": "Vector PDF Export",
+      "category": "Vector PDF Export",
+      "status": "OPERATIONAL",
+      "target_release": "v0.13.0",
+      "python_api": "Diagram.render_pdf()",
+      "classes": ["svg_to_pdf", "PDFExportError"],
+      "details": "One-page vector PDF written with the standard library alone, at 0.75 pt per px, drawn from the SVG the renderer writes so the two match: paths, fills, dashes, arrowheads, opacity, text and math. Text uses the standard PDF fonts with nothing embedded; math is outlines; drop shadows are approximated with translucent rings. `diagrams-as-code render --format pdf` writes it from the command line.",
+      "verification": "uv run pytest tests/test_pdf.py"
     }
   ]
 }

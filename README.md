@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 935 TESTS • 88 ARCHITECTURES ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1121 TESTS • 88 ARCHITECTURES ]  ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,7 +21,7 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-935%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-1121%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
@@ -56,6 +56,7 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 - **Topological Constraint Solving**: Decouples shape instantiation from placement. Elements can be positioned with relative constraints (`right_of`, `below`, `above`, `left_of`) and negative coordinate auto-framing.
 - **Technical Drawing Primitives**: free text, captions, brackets, polygons and SVG paths, dashed layer bands with side notes, shapes nested in shapes, double borders, line weights and arrowhead styles, lines attached anywhere on a side or at bare points, shared trunks, leaders, splines, and convex solids in oblique or isometric projection with hidden edges dashed. Nine focused figures in [`examples/primitives/`](examples/primitives/).
 - **Technical Figures, Lint & Golden Images**: eleven complete paper-style figures in [`examples/technical/`](examples/technical/) (a four-layer architecture reproduced from a reference figure, a control loop, a transformer block, a state machine, a protocol stack, a memory layout, a timing diagram, a training pipeline, tensor shapes, a geometric construction, a constraint region). `diagrams-as-code lint` reports visual defects by name, and golden-image tests catch any change to how a figure looks. See the [technical figures guide](docs/technical-figures.md) and the [math markup reference](docs/math-markup.md).
+- **Vector PDF Export**: `diag.render_pdf("figure.pdf")` or `--format pdf` writes a one-page vector PDF with the standard library alone — no Cairo, Ghostscript or LaTeX. It is drawn from the same SVG, so lines, arrowheads, text and formulas match; see [Export a PDF](docs/technical-figures.md#8-export-a-pdf).
 - **88 Production Reference Architectures**: 11 comprehensive reference diagrams across 8 architectural domains in [`examples/`](examples/), including auto-layout examples per domain.
 - **Auto-Layout Engine**: `Diagram(layout="auto")` places unpinned shapes and groups deterministically from the edge structure; pinned shapes can still coexist via `.at()` / `.right_of()`.
 - **CLI**: `diagrams-as-code render|layout export|themes|icons` for batch rendering, layout-file export, and catalog discovery without writing a script.
@@ -113,9 +114,10 @@ with Diagram("Zero Trust Microservices", theme="nord") as diag:
     waf >> diag.edge("mTLS :8443") >> api
     api >> diag.edge("Verify Token") >> auth
 
-# Render vector SVG, high-DPI PNG, and Bill of Materials
+# Render vector SVG, high-DPI PNG, vector PDF, and Bill of Materials
 diag.render_svg("output/quickstart.svg")
 diag.render_png("output/quickstart.png")
+diag.render_pdf("output/quickstart.pdf")
 diag.generate_readme("output/quickstart.svg", "output/quickstart_README.md")
 ```
 

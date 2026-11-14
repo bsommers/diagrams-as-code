@@ -38,6 +38,7 @@ with Diagram("3-Tier Web Architecture", theme="blueprint") as diag:
 # 6. Render outputs
 diag.render_svg("architecture.svg")
 diag.render_png("architecture.png")
+diag.render_pdf("architecture.pdf")  # vector PDF, no extra software needed
 diag.generate_readme("architecture.svg", "README.md")
 ```
 

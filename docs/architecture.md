@@ -172,7 +172,7 @@ The routing subsystem computes collision-free trajectories between node ports, s
    - With `layout="auto"`, warns (`LayoutWarning`) about any pinned element overlapping an auto-placed sibling.
 5. **Path Routing**: `run_layout()` dispatches edge routing to `OrthogonalRouter` (for Manhattan routing and corner filleting) or `CurveRouter` (for cubic Bezier curves, obstacle collision deflection, and reverse-flow escape corridors). Port waypoints and badge rects are computed and cached on the diagram.
 6. **SVG Assembly**: SVGRenderer generates the XML document with markers, filters, groups, paths, icons, multi-line wrapped labels (`<tspan>`), and interactive HUD controllers (pan/zoom, search, minimap) when interactive mode is active.
-7. **Output Writing**: `render_svg()`/`render_png()`/`generate_readme()`/`generate_bom_json()` write individually, or `output.render_all()` writes every requested format (`svg,png,bom` by default) in one call — the CLI always uses `render_all()`. PNG rasterization tries `rasterize.py`'s four backends in order (`resvg-py` → CairoSVG → Inkscape → ImageMagick) until one is available; `BOMGenerator` emits the living Markdown and JSON documentation.
+7. **Output Writing**: `render_svg()`/`render_png()`/`render_pdf()`/`generate_readme()`/`generate_bom_json()` write individually, or `output.render_all()` writes every requested format (`svg,png,bom` by default) in one call — the CLI always uses `render_all()`. PNG rasterization tries `rasterize.py`'s four backends in order (`resvg-py` → CairoSVG → Inkscape → ImageMagick) until one is available; `BOMGenerator` emits the living Markdown and JSON documentation.
 
 ---
 
@@ -211,13 +211,14 @@ src/
 │   ├── primitives.py               # Text, Caption, Bracket, Polygon, Polyline, Path, SolidShape, Band
 │   ├── arrange.py                  # align() and distribute() helpers
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
+│   ├── pdf.py                      # Vector PDF writer: draws the renderer's SVG with PDF operators
 │   ├── theme.py                    # 14 built-in themes (nord, emerald, crimson, paper, …)
 │   ├── text/                       # Font metrics, rich text layout, math typesetting
 │   ├── audit.py                    # Visual defect checks on a solved diagram; named findings for `lint`
 │   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation
-│   ├── output.py                   # Writes a diagram's SVG, PNG and BOM to a directory
+│   ├── output.py                   # Writes a diagram's SVG, PNG, PDF and BOM to a directory
 │   ├── cli.py                      # `diagrams-as-code render|layout export|themes|icons`
-│   └── diagram.py                  # Diagram canvas context manager, render_svg, render_png
+│   └── diagram.py                  # Diagram canvas context manager, render_svg, render_png, render_pdf
 │
 └── iiot_diagrams/                  # Backward Compatibility Facade
     ├── __init__.py                 # Re-exports diagrams_as_code symbols and __all__
