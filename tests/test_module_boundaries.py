@@ -38,6 +38,7 @@ LAYERS: dict[str, float] = {
     "router": 3,
     "renderer_interactive": 3,
     "renderer_svg": 4,
+    "pdf": 4,
     "bom": 4,
     "layout": 4,
     "audit": 4,

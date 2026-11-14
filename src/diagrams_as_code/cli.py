@@ -64,7 +64,12 @@ def build_parser() -> argparse.ArgumentParser:
     render = sub.add_parser("render", help="render scripts or directories of scripts")
     render.add_argument("paths", nargs="+", type=Path, metavar="PATH")
     render.add_argument("--out", type=Path, default=Path("output"))
-    render.add_argument("--format", type=_formats, default=_formats(DEFAULT_FORMATS))
+    render.add_argument(
+        "--format",
+        type=_formats,
+        default=_formats(DEFAULT_FORMATS),
+        help=f"comma-separated list from {','.join(FORMATS)} (default: {DEFAULT_FORMATS})",
+    )
     render.add_argument("--theme", choices=list_themes())
     render.add_argument(
         "--interactive",
