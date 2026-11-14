@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1046 264" width="1046" height="264">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="solid_1">
+    <path d="M 60 91.82 L 180 91.82 L 211.82 60 L 91.82 60 Z" fill="#F2F2F2" />
+    <path d="M 180 171.82 L 180 91.82 L 211.82 60 L 211.82 140 Z" fill="#F2F2F2" />
+    <path d="M 60 171.82 L 180 171.82 L 180 91.82 L 60 91.82 Z" fill="#F2F2F2" />
+    <path d="M 60 171.82 L 91.82 140" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 91.82 140 L 211.82 140" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 91.82 140 L 91.82 60" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 60 171.82 L 180 171.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 60 171.82 L 60 91.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 180 171.82 L 180 91.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 180 171.82 L 211.82 140" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 180 91.82 L 60 91.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 180 91.82 L 211.82 60" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 60 91.82 L 91.82 60" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 211.82 140 L 211.82 60" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 211.82 60 L 91.82 60" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <text x="135.91" y="189.45" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">cuboid, oblique</text>
+  </g>
+  <g id="solid_2">
+    <path d="M 358.42 71.82 L 445.02 121.82 L 445.02 61.82 L 358.42 11.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 358.42 71.82 L 358.42 11.82 L 271.82 61.82 L 271.82 121.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 358.42 71.82 L 445.02 121.82 L 358.42 171.82 L 271.82 121.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 358.42 11.82 L 445.02 61.82 L 358.42 111.82 L 271.82 61.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 271.82 121.82 L 358.42 171.82 L 358.42 111.82 L 271.82 61.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 445.02 121.82 L 445.02 61.82 L 358.42 111.82 L 358.42 171.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 358.42 71.82 L 445.02 121.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 358.42 71.82 L 358.42 11.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 358.42 71.82 L 271.82 121.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 445.02 121.82 L 445.02 61.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 445.02 121.82 L 358.42 171.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 445.02 61.82 L 358.42 11.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 445.02 61.82 L 358.42 111.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 358.42 11.82 L 271.82 61.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 271.82 121.82 L 358.42 171.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 271.82 121.82 L 271.82 61.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 358.42 171.82 L 358.42 111.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 358.42 111.82 L 271.82 61.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <text x="358.42" y="189.45" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">cuboid, isometric</text>
+  </g>
+  <g id="solid_3">
+    <path d="M 680.57 83.82 L 589.39 101.82 L 649.39 171.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 680.57 83.82 L 589.39 101.82 L 649.39 31.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 680.57 83.82 L 709.39 101.82 L 649.39 171.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 680.57 83.82 L 709.39 101.82 L 649.39 31.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 618.21 119.82 L 589.39 101.82 L 649.39 171.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 618.21 119.82 L 589.39 101.82 L 649.39 31.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 618.21 119.82 L 709.39 101.82 L 649.39 171.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 618.21 119.82 L 709.39 101.82 L 649.39 31.82 Z" fill="#DCE6F2" fill-opacity="0.55" />
+    <path d="M 709.39 101.82 L 680.57 83.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 589.39 101.82 L 680.57 83.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 649.39 31.82 L 680.57 83.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 649.39 171.82 L 680.57 83.82" fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="4,3" stroke-linecap="round" />
+    <path d="M 505.02 115.32 L 603.75 58.32 L 793.75 58.32 L 695.02 115.32 Z" fill="#888888" fill-opacity="0.25" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" />
+    <path d="M 673.88 72.68 L 696.53 86.82 L 624.89 100.96 L 602.25 86.82 Z" fill="#888888" fill-opacity="0.35" stroke="#000000" stroke-width="0.75" stroke-dasharray="2,2" stroke-linejoin="round" />
+    <path d="M 709.39 101.82 L 649.39 31.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 709.39 101.82 L 649.39 171.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 709.39 101.82 L 618.21 119.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 589.39 101.82 L 649.39 31.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 589.39 101.82 L 649.39 171.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 589.39 101.82 L 618.21 119.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 649.39 31.82 L 618.21 119.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 649.39 171.82 L 618.21 119.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <text x="649.39" y="189.45" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">polyhedron with a cutting plane</text>
+  </g>
+  <g id="solid_4">
+    <path d="M 943.75 171.82 L 898.75 101.82 L 940.88 66.47 L 985.88 136.47 Z" fill="#F2F2F2" />
+    <path d="M 853.75 171.82 L 943.75 171.82 L 898.75 101.82 Z" fill="#F2F2F2" />
+    <path d="M 853.75 171.82 L 943.75 171.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 853.75 171.82 L 898.75 101.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 943.75 171.82 L 898.75 101.82" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 943.75 171.82 L 985.88 136.47" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 898.75 101.82 L 940.88 66.47" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <path d="M 985.88 136.47 L 940.88 66.47" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" />
+    <text x="919.82" y="189.45" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">prism</text>
+  </g>
+  <g id="caption_5">
+    <text x="269.14" y="235.35" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="343.31" y="235.35" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="433.43" lengthAdjust="spacingAndGlyphs"> CONVEX SOLIDS; EDGES BEHIND THE SOLID ARE DASHED</text>
+  </g>
+</svg>

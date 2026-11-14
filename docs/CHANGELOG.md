@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.11.0] - 2026-11-13
+
+Technical drawing primitives. Everything here is additive: the 92 existing gallery diagrams render byte-identically except the four whose spacing was changed to clear the last audit defects. `uv run python tools/audit_gallery.py` across 101 diagrams: every count is 0 (v0.10.0 left 4 lines through badges and 1 edge through a group title).
+
+### Added
+- **`Text`, `Caption`, `Bracket`** (`Diagram.text()`, `.caption()`, `.bracket()`). Text with no box, sized to its content, taking the label markup and math; `font="serif"` uses the theme's new `serif_family`. A caption is centred under the whole drawing unless positioned. A bracket (curly, square or round) runs along one side of the elements it is given with `.spanning(a, b)` and may carry a label.
+- **`Polygon`, `Polyline`, `Path`** (`Diagram.polygon()`, `.polyline()`, `.path()`). Outlines from points or from SVG path data (every path command, arcs included). Drawn where their coordinates say until placed with `at()` or a relative placement.
+- **`Band`** (`Diagram.band()`): a layer container with a dashed square frame, a bold title and a column of side notes (`notes=`, `note_side=`, `note_width=`); `min_width`/`min_height` let stacked bands share a size.
+- **Nesting and double borders.** `shape.inside(container, anchor, dx, dy)` nests a shape in another; it moves with its container and edges to it may cross the container's outline. `label_position="top"` turns a container's label into a heading. `Style(double=4)` draws a second border inset by that many pixels; `Style(fill_opacity=)` makes a fill translucent.
+- **Edge weights and arrowheads.** `Edge(width=, head=, tail=, arrow_size=, two_way=, ellipsis=)`: head styles `triangle`, `stealth`, `open`, `diamond`, `circle`, `bar`, `none`. These are also accepted by `Diagram.edge()` and `Diagram.connect()`. An edge that uses them has its heads drawn as shapes with the tip exactly on the target; edges that do not are drawn as before.
+- **Anchors, points, trunks, leaders, splines.** `box.anchor("right", 0.25)` is a point a quarter of the way down a side and can be either end of an edge. A bare `(x, y)` or `Diagram.point(x, y, dot=True)` is an endpoint too. `Diagram.fan_out()` / `.fan_in()` (`Edge(trunk=)`) run several edges along one trunk that then splits. `Diagram.leader(text, target, at=)` is a note with a thin line to what it describes. `Edge(via=[...])` passes through given points, smoothly with `routing="spline"`.
+- **Projected solids** (`diagrams_as_code.solids`, `Diagram.solid()`, `.cuboid()`): `Solid.box`, `.prism`, `.pyramid`, `.hull` (convex hull of points), `.section` and `.clipped` for cutting planes; `oblique()` and `isometric()` projections. Hidden edges are dashed, faces may be translucent, and a cutting plane with its section can be drawn through the solid.
+- **Z-order.** `z=` on any shape or edge. A shape with `z` below zero, or one that contains other shapes, is painted under the edges; an edge with `z` above zero is painted over the nodes. `obstacle=False` lets edges pass over a shape (a backdrop).
+- **Arranging and units.** `align(elements, "top")`, `distribute(elements, "right", gap=40)`, `Diagram(grid=10)` to snap corners to a grid, and lengths as strings with units (`"30mm"`, `"12pt"`, `"1in"`) wherever a size or position is given; `mm()`, `pt()`, `to_px()`.
+- `diagrams_as_code.drawing`: backend-neutral `PathItem` / `TextItem`. Every primitive describes itself with these, in absolute `M`/`L`/`C`/`Z` commands, so the PDF writer planned for v0.13.0 needs only lines and cubic curves.
+- Nine focused examples in `examples/primitives/`, rendered to `output/primitives/`.
+
+### Changed
+- Annotations (text, captions, brackets, outlines, solids, points) are left out of the bill of materials.
+- The audit understands the new elements: a shape nested in another is not an overlap, a caption or point is not a node, and a point has no side for a line to arrive along.
+- Canvas sizing counts what a self-drawing element really covers (a solid's label underneath it, for example).
+- `tests/test_domain_examples.py` now checks only the eight domain galleries; `examples/primitives/` has `tests/test_primitive_examples.py`.
+
+### Fixed
+- The last five gallery audit defects. `computer/01`, `datacenter/01` and `network_engineering/09` had groups 80 px apart, narrower than the edge labels between them; the gaps are now wide enough. In `cloud/06` the standby route dropped through the title of the group it entered; it now turns in the gap before the group (`clearance=45` on that edge).
+
 ## [v0.10.0] - 2026-11-12
 
 Style model and layout correctness. `uv run python tools/audit_gallery.py` across 92 diagrams, v0.9.0 -> v0.10.0: mostly-empty canvases 90 -> 0, overlapping edges 22 -> 0, badges over nodes 21 -> 0, badges over badges 16 -> 0, lines through badges 183 -> 4, group titles wider than their group 29 -> 0. Still open: 4 lines through badges in 3 diagrams and 1 edge through a group title, all in hand-placed examples whose gaps are narrower than their labels.

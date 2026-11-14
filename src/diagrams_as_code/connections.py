@@ -5,8 +5,9 @@ from enum import Enum
 import math
 from typing import Any, Optional, Sequence, Type, TypeVar, Union
 
-from diagrams_as_code.elements import Element
-from diagrams_as_code.geometry import Anchor, PathKind, Point, RoutedPath
+from diagrams_as_code.drawing import ARROW_STYLES
+from diagrams_as_code.elements import AnchorRef, Element, Junction
+from diagrams_as_code.geometry import Anchor, PathKind, Point, RoutedPath, to_px
 
 E = TypeVar("E", bound=Enum)
 
@@ -59,6 +60,8 @@ class Routing(Enum):
     DIRECT = "direct"
     ORTHOGONAL = "orthogonal"
     CURVE = "curve"
+    #: A smooth curve through the edge's ``via`` points.
+    SPLINE = "spline"
 
 
 @dataclass(frozen=True)
@@ -66,6 +69,36 @@ class EdgeStyle:
     routing: Routing
     corner_radius: float
     clearance: float
+
+
+def _as_point(value: Any) -> Optional[Point]:
+    if isinstance(value, Point):
+        return value
+    if (
+        isinstance(value, (tuple, list))
+        and len(value) == 2
+        and all(isinstance(v, (int, float, str)) and not isinstance(v, bool) for v in value)
+    ):
+        return Point(to_px(value[0]), to_px(value[1]))
+    return None
+
+
+def _endpoint(value: Any, name: str) -> tuple[Element, Optional[Port], Optional[float]]:
+    """An edge end as (element, port, fraction along that side).
+
+    An end may be an element, a point on its side (``box.anchor("right", 0.25)``)
+    or a bare point, which becomes an invisible ``Junction``.
+    """
+    if isinstance(value, AnchorRef):
+        if not isinstance(value.element, Element):
+            raise TypeError(f"{name} anchor must be on an Element")
+        return value.element, Port(value.side), float(value.fraction)
+    point = _as_point(value)
+    if point is not None:
+        return Junction("point", point.x, point.y), None, None
+    if not isinstance(value, Element):
+        raise TypeError(f"{name} must be an Element instance, got {type(value).__name__}")
+    return value, None, None
 
 
 class Edge:
@@ -88,15 +121,22 @@ class Edge:
         clearance: Optional[float] = None,
         manual_waypoints: Optional[Sequence[Point]] = None,
         metadata: Optional[dict[str, Any]] = None,
+        width: Optional[float] = None,
+        head: str = "triangle",
+        tail: str = "triangle",
+        arrow_size: float = 1.0,
+        two_way: bool = False,
+        via: Optional[Sequence[Any]] = None,
+        trunk: Optional[float] = None,
+        ellipsis: bool = False,
+        z: float = 0.0,
     ) -> None:
-        if not isinstance(source, Element):
-            raise TypeError(
-                f"source must be an Element instance, got {type(source).__name__}"
-            )
-        if not isinstance(target, Element):
-            raise TypeError(
-                f"target must be an Element instance, got {type(target).__name__}"
-            )
+        source, anchor_port, source_anchor = _endpoint(source, "source")
+        if anchor_port is not None:
+            source_port = anchor_port
+        target, anchor_port, target_anchor = _endpoint(target, "target")
+        if anchor_port is not None:
+            target_port = anchor_port
 
         self.source = source
         self.target = target
@@ -110,6 +150,39 @@ class Edge:
         self.target_port = _coerce_enum(
             target_port, Port, "target_port", allow_none=True
         )
+        #: Where along its side each end attaches, 0 to 1; ``None`` is the layout's choice.
+        self.source_anchor: Optional[float] = source_anchor
+        self.target_anchor: Optional[float] = target_anchor
+        if width is not None and not (float(width) > 0.0 and math.isfinite(float(width))):
+            raise ValueError(f"width must be a positive finite number, got {width!r}")
+        #: Stroke weight in pixels; ``None`` uses the theme's.
+        self.width: Optional[float] = None if width is None else to_px(width)
+        for name, value in (("head", head), ("tail", tail)):
+            if value not in ARROW_STYLES:
+                raise ValueError(f"{name} must be one of {ARROW_STYLES}, got {value!r}")
+        #: Arrowhead shape at the target end and at the source end.
+        self.head = head
+        self.tail = tail
+        if not (float(arrow_size) > 0.0 and math.isfinite(float(arrow_size))):
+            raise ValueError(f"arrow_size must be a positive finite number, got {arrow_size!r}")
+        #: Arrowhead size as a multiple of the default for the stroke weight.
+        self.arrow_size = float(arrow_size)
+        #: Points the line passes through between its ends.
+        self.via: Optional[list[Point]] = None
+        if via:
+            self.via = []
+            for item in via:
+                point = _as_point(item)
+                if point is None:
+                    raise TypeError(f"via must be a sequence of points, got {item!r}")
+                self.via.append(point)
+        #: Distance from the source port (negative: from the target port) at which
+        #: the line turns, so edges from one source share a trunk up to there.
+        self.trunk: Optional[float] = None if trunk is None else to_px(trunk)
+        #: Draw the middle of the line as three dots, for "and so on".
+        self.ellipsis = bool(ellipsis)
+        #: Above zero the edge is painted over the nodes instead of under them.
+        self.z = float(z)
 
         self._routing: Optional[Routing] = _coerce_enum(
             routing, Routing, "routing", allow_none=True
@@ -120,7 +193,7 @@ class Edge:
         self._clearance: Optional[float] = self._validate_clearance(clearance)
 
         self.arrow_head = bool(arrow_head)
-        self.arrow_tail = bool(arrow_tail)
+        self.arrow_tail = bool(arrow_tail) or bool(two_way)
         self.metadata: dict[str, Any] = dict(metadata) if metadata else {}
         self.manual_waypoints: Optional[list[Point]] = (
             list(manual_waypoints) if manual_waypoints else None
@@ -133,6 +206,22 @@ class Edge:
         self._label_wrap: Optional[float] = None
         #: Another edge whose identical badge, on a shared trunk, labels this edge too.
         self._label_owner: Optional[Edge] = None
+
+    @property
+    def custom_arrows(self) -> bool:
+        """True when the line or its arrowheads differ from the theme's default."""
+        return (
+            self.width is not None
+            or self.arrow_size != 1.0
+            or self.ellipsis
+            or (self.arrow_head and self.head != "triangle")
+            or (self.arrow_tail and self.tail != "triangle")
+        )
+
+    @property
+    def fixed_route(self) -> bool:
+        """True when the author laid the line out, so the layout must not move it."""
+        return bool(self.manual_waypoints or self.via or self.trunk is not None)
 
     @property
     def routing(self) -> Routing:

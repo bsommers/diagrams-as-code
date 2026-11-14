@@ -34,14 +34,20 @@ class Style:
     text_color: Optional[str] = None
     font_size: Optional[float] = None
     opacity: Optional[float] = None
+    #: Opacity of the fill alone, leaving the outline and text solid.
+    fill_opacity: Optional[float] = None
+    #: Gap in pixels to a second border drawn inside the first; 0 for a single one.
+    double: Optional[float] = None
 
     def __post_init__(self) -> None:
-        for name in ("stroke_width", "radius", "font_size"):
+        for name in ("stroke_width", "radius", "font_size", "double"):
             value = getattr(self, name)
             if value is not None and not (float(value) >= 0.0 and float(value) != float("inf")):
                 raise ValueError(f"{name} must be a finite number >= 0, got {value!r}")
-        if self.opacity is not None and not 0.0 <= float(self.opacity) <= 1.0:
-            raise ValueError(f"opacity must be between 0 and 1, got {self.opacity!r}")
+        for name in ("opacity", "fill_opacity"):
+            value = getattr(self, name)
+            if value is not None and not 0.0 <= float(value) <= 1.0:
+                raise ValueError(f"{name} must be between 0 and 1, got {value!r}")
 
     def merged(self, over: Optional[Style]) -> Style:
         """This style with every field ``over`` sets replaced by ``over``'s value."""
@@ -62,7 +68,7 @@ class Style:
         for name in ("fill", "stroke", "text_color", "dash"):
             if meta.get(name) is not None:
                 picked[name] = str(meta[name])
-        for name in ("stroke_width", "radius", "font_size", "opacity"):
+        for name in ("stroke_width", "radius", "font_size", "opacity", "fill_opacity", "double"):
             if meta.get(name) is not None:
                 picked[name] = float(meta[name])
         if meta.get("shadow") is not None:

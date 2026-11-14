@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 547 TESTS • 88 ARCHITECTURES ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 881 TESTS • 88 ARCHITECTURES ]   ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,7 +21,7 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-547%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-881%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
@@ -54,6 +54,7 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 - **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 60 handcrafted 24x24 open-source vector icons across 8 domains, with support for `kind="icon"` (borderless icon graphics).
 - **Living Documentation & Automated BOM**: Instant emission of Markdown component tables and machine-readable JSON schemas tracking hardware, protocols, and infrastructure specs.
 - **Topological Constraint Solving**: Decouples shape instantiation from placement. Elements can be positioned with relative constraints (`right_of`, `below`, `above`, `left_of`) and negative coordinate auto-framing.
+- **Technical Drawing Primitives**: free text, captions, brackets, polygons and SVG paths, dashed layer bands with side notes, shapes nested in shapes, double borders, line weights and arrowhead styles, lines attached anywhere on a side or at bare points, shared trunks, leaders, splines, and convex solids in oblique or isometric projection with hidden edges dashed. Nine focused figures in [`examples/primitives/`](examples/primitives/).
 - **88 Production Reference Architectures**: 11 comprehensive reference diagrams across 8 architectural domains in [`examples/`](examples/), including auto-layout examples per domain.
 - **Auto-Layout Engine**: `Diagram(layout="auto")` places unpinned shapes and groups deterministically from the edge structure; pinned shapes can still coexist via `.at()` / `.right_of()`.
 - **CLI**: `diagrams-as-code render|layout export|themes|icons` for batch rendering, layout-file export, and catalog discovery without writing a script.

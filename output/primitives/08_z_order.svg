@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 576" width="720" height="576">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_1">
+    <path d="M 40 50 L 430 50 L 430 230 L 40 230 Z" fill="#EFEFEF" />
+  </g>
+  <path d="M 180 138 L 282.8 138" fill="none" stroke="#000000" stroke-width="1.5" />
+  <path d="M 290 138 L 281 141.6 L 281 134.4 Z" fill="#000000" />
+  <g id="shape_2">
+    <rect x="70" y="115" width="110" height="46" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="125" y="142.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Source</text>
+  </g>
+  <g id="shape_3">
+    <rect x="290" y="115" width="110" height="46" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="345" y="142.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Sink</text>
+  </g>
+  <g id="shape_5">
+    <rect x="480" y="70" width="120" height="70" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="540" y="88.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">z = 0</text>
+  </g>
+  <g id="shape_7">
+    <rect x="190" y="300" width="60" height="150" rx="0" fill="#F4F4F4" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="text_10">
+    <text x="70" y="475.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">an edge with z = 1 crosses over the box</text>
+  </g>
+  <g id="caption_11">
+    <text x="123.72" y="521.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 8:</text>
+    <text x="197.89" y="521.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="398.39" lengthAdjust="spacingAndGlyphs"> BACKDROPS, STACKING AND EDGES DRAWN ON TOP</text>
+  </g>
+  <g id="shape_6">
+    <rect x="520" y="98" width="120" height="70" rx="0" fill="#F4F4F4" stroke="#000000" stroke-width="1" />
+    <text x="580" y="116.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">z = 1</text>
+  </g>
+  <g id="shape_4">
+    <rect x="560" y="126" width="120" height="70" rx="0" fill="#DDDDDD" stroke="#000000" stroke-width="1" />
+    <text x="620" y="144.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">z = 2</text>
+  </g>
+  <path d="M 70 375 L 392.8 375" fill="none" stroke="#000000" stroke-width="1.5" />
+  <path d="M 400 375 L 391 378.6 L 391 371.4 Z" fill="#000000" />
+</svg>

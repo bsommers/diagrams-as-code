@@ -58,6 +58,15 @@ def label_position(shape: Any) -> str:
     return "bottom" if pos in ("below", "bottom") else "inside"
 
 
+def label_valign(shape: Any) -> str:
+    """'top' when an inside label is set against the top edge, else 'middle'.
+
+    ``label_position="top"`` suits a box that holds other shapes: the label
+    becomes its heading and the middle stays free.
+    """
+    return "top" if getattr(shape, "label_position", "auto") == "top" else "middle"
+
+
 #: Kinds whose artwork fills the body; an inside label gets a plain plate behind it.
 PLATE_KINDS = frozenset({"server_rack", "database"})
 

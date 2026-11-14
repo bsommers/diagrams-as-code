@@ -27,6 +27,8 @@ class BOMGenerator:
         """Extract inventory of all shapes, kinds, parent groups, and metadata."""
         result: list[dict[str, Any]] = []
         for s in getattr(self.diagram, "shapes", []):
+            if getattr(s, "annotation", False):
+                continue  # text, brackets, outlines: drawing aids, not components
             group_label: Optional[str] = None
             if getattr(s, "parent", None) is not None:
                 parent = s.parent

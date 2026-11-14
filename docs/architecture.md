@@ -206,6 +206,10 @@ src/
 │   ├── renderer_interactive.py     # Pan/zoom/search/minimap overlay for interactive SVG
 │   ├── style.py                    # Style value object and theme -> group -> element cascade
 │   ├── labels.py                   # Label, badge and group-title geometry shared by layout, drawing and audit
+│   ├── drawing.py                  # Backend-neutral PathItem/TextItem, SVG path parsing, arrowheads
+│   ├── solids.py                   # Convex solids, oblique/isometric projection, hidden-edge classification
+│   ├── primitives.py               # Text, Caption, Bracket, Polygon, Polyline, Path, SolidShape, Band
+│   ├── arrange.py                  # align() and distribute() helpers
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
 │   ├── theme.py                    # 14 built-in themes (nord, emerald, crimson, paper, …)
 │   ├── text/                       # Font metrics, rich text layout, math typesetting

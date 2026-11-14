@@ -11,8 +11,6 @@ from pathlib import Path
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-EXAMPLE_SCRIPTS = sorted(REPO_ROOT.glob("examples/*/*.py"))
-
 EXPECTED_DOMAINS = {
     "cloud",
     "ai",
@@ -23,6 +21,11 @@ EXPECTED_DOMAINS = {
     "network_engineering",
     "iiot",
 }
+
+#: The domain galleries. Other example sets (``examples/primitives``) have their own tests.
+EXAMPLE_SCRIPTS = sorted(
+    p for p in REPO_ROOT.glob("examples/*/*.py") if p.parent.name in EXPECTED_DOMAINS
+)
 
 
 def test_example_script_discovery() -> None:

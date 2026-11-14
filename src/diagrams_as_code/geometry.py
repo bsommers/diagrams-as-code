@@ -644,3 +644,44 @@ def flatten(path: RoutedPath, steps: int = 16) -> list[Point]:
                 )
             )
     return out
+
+
+#: CSS reference pixel: 96 px to the inch.
+PX_PER_INCH = 96.0
+_UNIT_PX = {
+    "px": 1.0,
+    "pt": PX_PER_INCH / 72.0,
+    "pc": PX_PER_INCH / 6.0,
+    "mm": PX_PER_INCH / 25.4,
+    "cm": PX_PER_INCH / 2.54,
+    "in": PX_PER_INCH,
+}
+
+
+def to_px(value: Union[float, int, str]) -> float:
+    """A length in pixels. Numbers are pixels; strings may carry a unit.
+
+    ``to_px(12)`` is 12.0, ``to_px("12pt")`` is 16.0, ``to_px("10mm")`` is about
+    37.8. Units: px, pt, pc, mm, cm, in.
+    """
+    if isinstance(value, bool):
+        raise TypeError(f"a length must be a number or a string, got {value!r}")
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        text = value.strip().lower()
+        for unit, factor in _UNIT_PX.items():
+            if text.endswith(unit):
+                return float(text[: -len(unit)]) * factor
+        return float(text)
+    raise TypeError(f"a length must be a number or a string, got {type(value).__name__}")
+
+
+def mm(value: float) -> float:
+    """Millimetres as pixels."""
+    return float(value) * _UNIT_PX["mm"]
+
+
+def pt(value: float) -> float:
+    """Points as pixels."""
+    return float(value) * _UNIT_PX["pt"]

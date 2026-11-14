@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 549 460" width="549" height="460">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="text_1">
+    <text x="60" y="54.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">Scheduler queues</text>
+  </g>
+  <g id="shape_2">
+    <rect x="60" y="80" width="110" height="44" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="115" y="106.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ready</text>
+  </g>
+  <g id="shape_3">
+    <rect x="60" y="140" width="110" height="44" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="115" y="166.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Waiting</text>
+  </g>
+  <g id="shape_4">
+    <rect x="60" y="200" width="110" height="44" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="115" y="226.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Blocked</text>
+  </g>
+  <g id="shape_5">
+    <rect x="60" y="284" width="110" height="44" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="115" y="310.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Done</text>
+  </g>
+  <g id="bracket_6">
+    <path d="M 178 80 C 183 80 183 80 183 88 L 183 154 C 183 162 183 162 188 162 C 183 162 183 162 183 170 L 183 236 C 183 244 183 244 178 244" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="267.37" y="158.63" text-anchor="end" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="267.37" dy="0">runnable or</tspan> <tspan x="267.37" dy="15">waiting on I/O</tspan></text>
+  </g>
+  <g id="bracket_7">
+    <path d="M 60 342 L 60 352 L 170 352 L 170 342" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="115" y="369.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">all states</text>
+  </g>
+  <g id="bracket_8">
+    <path d="M 52 80 C 38.7 112.8 38.7 211.2 52 244" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_9">
+    <text x="320" y="146.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="74.7" lengthAdjust="spacingAndGlyphs">A task leaves </text>
+    <text x="394.7" y="146.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" textLength="42.69" lengthAdjust="spacingAndGlyphs">Blocked</text>
+    <text x="437.39" y="146.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="32.02" lengthAdjust="spacingAndGlyphs"> when</text>
+    <text x="320" y="161.15" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">its resource is released;</text>
+    <text x="320" y="177.75" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="122.75" lengthAdjust="spacingAndGlyphs">the wait is bounded by </text>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(442.75 177.75) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(447.16 180.27) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M502 472H449L413 426H409C388 456 358 479 305 479C174 479 49 341 49 159C49 43 100 -12 172 -12C229 -12 288 22 339 85H346C343 67 339 53 339 38C339 5 359 -10 395 -10C455 -10 497 33 539 97L519 112C506 95 477 60 445 60C429 60 425 68 425 81C425 96 430 118 430 118ZM389 344C389 313 378 240 358 181C329 96 285 54 218 54C168 54 138 77 138 169C138 303 202 441 302 441C358 441 389 397 389 344Z" transform="translate(454.14 180.27) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M315 298H312L300 349C286 403 267 447 243 475H228L89 459V429C89 429 104 432 120 432C186 433 203 406 230 322L258 231L186 126C147 70 129 69 125 69C108 69 84 82 62 82C38 82 23 60 23 40C23 15 38 -9 81 -9C141 -9 174 38 206 90L270 194H274L299 93C313 28 335 -10 381 -10C449 -10 491 58 520 102L499 118C472 82 453 62 427 62C396 62 376 99 348 191L327 259L388 356C405 384 419 398 442 398C455 398 478 388 494 388C521 388 540 411 540 435C540 463 528 479 490 479C431 479 391 430 364 382Z" transform="translate(458.8 180.27) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(467.31 177.75) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M861 70H821C781 -66 746 -150 621 -150H196V-145L545 315V334L237 725V729H566C700 729 766 699 789 532H828L817 782H69V758L449 282L62 -224V-248H800Z" transform="translate(479.28 178.65) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M219 476H197L57 465V438C57 438 74 440 91 440C118 440 123 424 123 411C123 394 120 380 120 380L69 142C56 83 52 61 52 44C52 9 75 -9 115 -9C181 -9 220 47 255 96L235 111C219 93 191 59 157 59C145 59 139 65 139 78C139 92 144 120 144 120ZM243 610C243 643 224 665 191 665C158 665 136 644 136 610C136 575 158 556 188 556C218 556 243 576 243 610Z" transform="translate(485.15 189.4) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M358 123C327 85 288 57 219 57C161 57 109 77 109 184C109 300 170 446 280 446C312 446 329 434 329 419C329 403 310 375 310 349C310 327 324 314 348 314C385 314 404 346 404 386C404 451 353 479 290 479C146 479 26 335 26 169C26 68 71 -12 179 -12C269 -12 334 44 375 108Z" transform="translate(495.32 177.75) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M219 476H197L57 465V438C57 438 74 440 91 440C118 440 123 424 123 411C123 394 120 380 120 380L69 142C56 83 52 61 52 44C52 9 75 -9 115 -9C181 -9 220 47 255 96L235 111C219 93 191 59 157 59C145 59 139 65 139 78C139 92 144 120 144 120ZM243 610C243 643 224 665 191 665C158 665 136 644 136 610C136 575 158 556 188 556C218 556 243 576 243 610Z" transform="translate(500.65 180.27) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="503.43" y="177.75" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="3.33" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="text_10">
+    <text x="320" y="310.47" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="13" font-style="italic" textLength="127.13" lengthAdjust="spacingAndGlyphs">serif italic, for remarks</text>
+  </g>
+  <g id="caption_11">
+    <text x="106.44" y="415.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="180.61" y="415.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="261.71" lengthAdjust="spacingAndGlyphs"> TASK STATES OF THE SCHEDULER</text>
+  </g>
+</svg>

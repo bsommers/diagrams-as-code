@@ -33,6 +33,8 @@ class Theme:
     group_dash: str = ""
     edge_width: float = 2.0
     shadow: bool = True
+    #: Font stack for text set with ``font="serif"`` (captions, figure notes).
+    serif_family: str = "'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif"
 
     @property
     def accent_gold(self) -> str:

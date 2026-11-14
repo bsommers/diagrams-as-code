@@ -10,9 +10,20 @@ from diagrams_as_code import context, rasterize
 from diagrams_as_code.bom import BOMGenerator
 from diagrams_as_code.connections import Edge, Port, Routing, _coerce_enum
 from diagrams_as_code.constraints import ConstraintSolver
-from diagrams_as_code.elements import Element, Shape
-from diagrams_as_code.geometry import Anchor, Point, RoutedPath, Size, UnitBasis
+from diagrams_as_code import solids as _solids
+from diagrams_as_code.elements import AnchorRef, Element, Junction, Shape
+from diagrams_as_code.geometry import Anchor, Point, RoutedPath, Size, UnitBasis, to_px
 from diagrams_as_code.groups import Group
+from diagrams_as_code.primitives import (
+    Band,
+    Bracket,
+    Caption,
+    Path as PathShape,
+    Polygon,
+    Polyline,
+    SolidShape,
+    Text,
+)
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.pipeline import run_layout
 from diagrams_as_code.renderer_svg import SVGRenderer
@@ -22,6 +33,12 @@ from diagrams_as_code.theme import Theme, get_theme
 #: Nominal canvas used while laying out an axis that is fitted to content afterwards.
 DEFAULT_WIDTH = 1200.0
 DEFAULT_HEIGHT = 800.0
+
+
+#: ``Edge`` options that ``edge()`` and ``connect()`` pass straight through.
+EDGE_OPTIONS = frozenset(
+    {"width", "head", "tail", "arrow_size", "two_way", "via", "trunk", "ellipsis", "z"}
+)
 
 
 class _EdgeBuilder:
@@ -44,8 +61,14 @@ class _EdgeBuilder:
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
+        **options: Any,
     ) -> None:
         self.diagram = diagram
+        #: Further ``Edge`` options: width, head, tail, arrow_size, two_way, via, trunk, ellipsis, z.
+        for name in options:
+            if name not in EDGE_OPTIONS:
+                raise TypeError(f"edge() got an unexpected keyword argument {name!r}")
+        self.options = dict(options)
         self.label = label
         self.color = color
         self.style = style
@@ -141,30 +164,31 @@ class _EdgeBuilder:
                 "EdgeBuilder requires a source before connecting to a target"
             )
 
-        sources: list[Element]
+        ends = (Element, AnchorRef)
+        sources: list[Any]
         if isinstance(self.source, (list, tuple)):
             for s in self.source:
-                if not isinstance(s, Element):
+                if not isinstance(s, ends):
                     raise TypeError(
                         f"Expected Element in sources, got {type(s).__name__}"
                     )
             sources = list(self.source)
-        elif isinstance(self.source, Element):
+        elif isinstance(self.source, ends):
             sources = [self.source]
         else:
             raise TypeError(
                 f"Expected Element or sequence of Elements as source, got {type(self.source).__name__}"
             )
 
-        targets: list[Element]
+        targets: list[Any]
         if isinstance(target, (list, tuple)):
             for t in target:
-                if not isinstance(t, Element):
+                if not isinstance(t, ends):
                     raise TypeError(
                         f"Expected Element in targets, got {type(t).__name__}"
                     )
             targets = list(target)
-        elif isinstance(target, Element):
+        elif isinstance(target, ends):
             targets = [target]
         else:
             raise TypeError(
@@ -172,16 +196,13 @@ class _EdgeBuilder:
             )
 
         diag = self.diagram
+        def owner(end: Any) -> Any:
+            return getattr(getattr(end, "element", end), "_diagram", None)
+
         if diag is None:
-            for s in sources:
-                if getattr(s, "_diagram", None) is not None:
-                    diag = s._diagram
-                    break
+            diag = next((owner(s) for s in sources if owner(s) is not None), None)
         if diag is None:
-            for t in targets:
-                if getattr(t, "_diagram", None) is not None:
-                    diag = t._diagram
-                    break
+            diag = next((owner(t) for t in targets if owner(t) is not None), None)
         if diag is None:
             diag = Diagram.get_current()
 
@@ -202,6 +223,7 @@ class _EdgeBuilder:
                         corner_radius=self.corner_radius,
                         clearance=self.clearance,
                         metadata=self.metadata,
+                        **self.options,
                     )
                 else:
                     Edge(
@@ -218,6 +240,7 @@ class _EdgeBuilder:
                         corner_radius=self.corner_radius,
                         clearance=self.clearance,
                         metadata=self.metadata,
+                        **self.options,
                     )
 
         self.source = None
@@ -355,8 +378,11 @@ class Diagram:
         fit_labels: bool = True,
         precision: int = 2,
         pixel_snap: bool = False,
+        grid: float = 0.0,
     ) -> None:
         self.title = title
+        #: Snap every shape's top-left corner to multiples of this many pixels; 0 is off.
+        self.grid = to_px(grid)
         #: Grow shapes whose inside label would otherwise spill out of them.
         self.fit_labels = bool(fit_labels)
         #: Decimal places kept in SVG coordinates.
@@ -597,8 +623,13 @@ class Diagram:
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
+        **options: Any,
     ) -> _EdgeBuilder:
-        """Return an edge builder for fluent >> chaining."""
+        """Return an edge builder for fluent >> chaining.
+
+        Further keyword options are those of ``Edge``: ``width``, ``head``,
+        ``tail``, ``arrow_size``, ``two_way``, ``via``, ``trunk``, ``ellipsis``, ``z``.
+        """
         return _EdgeBuilder(
             diagram=self,
             label=label,
@@ -613,12 +644,13 @@ class Diagram:
             arc_radius=arc_radius,
             clearance=clearance,
             metadata=metadata,
+            **options,
         )
 
     def connect(
         self,
-        source: Element,
-        target: Element,
+        source: Any,
+        target: Any,
         label: str = "",
         color: Optional[str] = None,
         style: str = "solid",
@@ -631,8 +663,13 @@ class Diagram:
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
         metadata: Optional[dict[str, Any]] = None,
+        **options: Any,
     ) -> Edge:
-        """Directly connect two elements with an Edge and record it."""
+        """Connect two ends with an Edge and record it.
+
+        An end is an element, a point on one (``box.anchor("right", 0.25)``) or
+        a bare ``(x, y)``. Further options are those of ``Edge``.
+        """
         effective_r = corner_radius if corner_radius is not None else arc_radius
         e = Edge(
             source=source,
@@ -648,9 +685,119 @@ class Diagram:
             corner_radius=effective_r,
             clearance=clearance,
             metadata=metadata,
+            **options,
         )
+        for end in (e.source, e.target):
+            if isinstance(end, Junction) and end._diagram is None:
+                self._adopt(end, None, "point")
         self.edges.append(e)
         return e
+
+    # ------------------------------------------------------- drawing primitives
+
+    def _adopt(self, element: Shape, id: Optional[str], prefix: str, group: bool = False) -> Any:
+        """Give ``element`` an id unique in this diagram and register it."""
+        self._counter += 1
+        new_id = id or f"{prefix}_{self._counter}"
+        while any(s.id == new_id for s in self.shapes):
+            self._counter += 1
+            new_id = f"{prefix}_{self._counter}"
+        element.id = new_id
+        element._diagram = self
+        element.explicit_id = id is not None
+        self.shapes.append(element)
+        self.solver.add(element)
+        if group and self._active_group is not None:
+            self._active_group.add(element)
+        return element
+
+    def text(self, text: str, id: Optional[str] = None, **kwargs: Any) -> Text:
+        """Free text with no box: a note, a heading, a formula."""
+        return self._adopt(Text("_", text, **kwargs), id, "text", group=True)
+
+    def caption(self, text: str, id: Optional[str] = None, **kwargs: Any) -> Caption:
+        """A figure caption, centred under the drawing unless you position it."""
+        return self._adopt(Caption("_", text, **kwargs), id, "caption")
+
+    def bracket(self, label: str = "", id: Optional[str] = None, **kwargs: Any) -> Bracket:
+        """A brace or bracket; ``.spanning(a, b)`` runs it along two elements."""
+        return self._adopt(Bracket("_", label, **kwargs), id, "bracket", group=True)
+
+    def polygon(self, points: Sequence[Any], label: str = "", id: Optional[str] = None, **kwargs: Any) -> Polygon:
+        """A closed, filled outline through ``points``."""
+        return self._adopt(Polygon("_", points, label, **kwargs), id, "polygon", group=True)
+
+    def polyline(self, points: Sequence[Any], id: Optional[str] = None, **kwargs: Any) -> Polyline:
+        """An open line through ``points``."""
+        return self._adopt(Polyline("_", points, **kwargs), id, "polyline", group=True)
+
+    def path(self, d: str, label: str = "", id: Optional[str] = None, **kwargs: Any) -> PathShape:
+        """A free shape from SVG path data."""
+        return self._adopt(PathShape("_", d, label, **kwargs), id, "path", group=True)
+
+    def point(self, x: float, y: float, dot: bool = False, id: Optional[str] = None, **kwargs: Any) -> Junction:
+        """A point for edges to meet at, drawn as a dot if ``dot``."""
+        return self._adopt(Junction("_", x, y, dot=dot, **kwargs), id, "point")
+
+    def solid(self, solid: _solids.Solid, label: str = "", id: Optional[str] = None, **kwargs: Any) -> SolidShape:
+        """A convex solid in parallel projection, hidden edges dashed."""
+        return self._adopt(SolidShape("_", solid, label, **kwargs), id, "solid", group=True)
+
+    def cuboid(
+        self, label: str = "", width: float = 80.0, height: float = 60.0, depth: float = 40.0,
+        id: Optional[str] = None, **kwargs: Any,
+    ) -> SolidShape:
+        """A box drawn in three dimensions; sizes are in pixels."""
+        return self.solid(_solids.Solid.box(width, height, depth), label, id=id, **kwargs)
+
+    def band(
+        self, label: str, id: Optional[str] = None, **kwargs: Any
+    ) -> _GroupContext:
+        """A layer band: a dashed frame with a bold title and optional side notes."""
+        self._counter += 1
+        band_id = id or f"band_{self._counter}"
+        while any(g.id == band_id for g in self.groups):
+            self._counter += 1
+            band_id = f"band_{self._counter}"
+        b = Band(band_id, label, **kwargs)
+        b._diagram = self
+        b.explicit_id = id is not None
+        self.groups.append(b)
+        self.solver.add(b)
+        return _GroupContext(self, b)
+
+    def leader(
+        self, text: str, target: Any, at: Sequence[float], *, anchor: Union[Anchor, str] = Anchor.TOP_LEFT,
+        head: str = "none", width: float = 0.75, id: Optional[str] = None,
+        edge: Optional[dict[str, Any]] = None, **text_options: Any,
+    ) -> Text:
+        """A note at ``at`` with a thin straight line to ``target``.
+
+        ``target`` is an element, an anchor on one, or a point. ``head`` puts an
+        arrowhead or a dot (``"circle"``) on the target end.
+        """
+        text_options.setdefault("size", 11.0)
+        text_options.setdefault("padding", 3.0)
+        note = self.text(text, id=id, **text_options).at(at[0], at[1], anchor=anchor)
+        options = {"routing": Routing.DIRECT, "width": width, "head": head, "arrow_head": head != "none"}
+        options.update(edge or {})
+        self.connect(note, target, **options)
+        return note
+
+    def fan_out(
+        self, source: Any, targets: Sequence[Any], trunk: float = 30.0, **options: Any
+    ) -> list[Edge]:
+        """Connect ``source`` to each target along one shared trunk that then splits.
+
+        ``trunk`` is how far from the source the line runs before it splits.
+        """
+        return [self.connect(source, t, trunk=trunk, **options) for t in targets]
+
+    def fan_in(
+        self, sources: Sequence[Any], target: Any, trunk: float = 30.0, **options: Any
+    ) -> list[Edge]:
+        """Connect each source to ``target``, merging ``trunk`` px before it."""
+        return [self.connect(s, target, trunk=-abs(float(trunk)), **options) for s in sources]
 
     def add(
         self, *elements: Union[Element, Edge, Sequence[Union[Element, Edge]]]
@@ -710,10 +857,12 @@ class Diagram:
                 id(e), id(e.source), id(e.target), e.source_port, e.target_port,
                 e._routing, e._corner_radius, e._clearance, bool(e.label),
                 tuple(e.manual_waypoints) if e.manual_waypoints else None,
+                e.source_anchor, e.target_anchor, e.trunk,
+                tuple(e.via) if e.via else None,
             )
             for e in self.edges
         )
-        return (elements, edges, self.width, self.height)
+        return (elements, edges, self.width, self.height, self.grid)
 
     def _ensure_solved(self) -> None:
         """Solve if never solved, or if the model changed since the last solve."""

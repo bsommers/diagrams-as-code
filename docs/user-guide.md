@@ -11,6 +11,7 @@ A task-oriented guide to writing diagrams as Python code and rendering them to S
 - [Positioning: manual, relative, auto](#positioning-manual-relative-auto)
 - [Edges and routing](#edges-and-routing)
 - [Text, markup and math](#text-markup-and-math)
+- [Technical drawing primitives](#technical-drawing-primitives)
 - [Themes](#themes)
 - [Icons](#icons)
 - [Outputs and the BOM](#outputs-and-the-bom)
@@ -148,6 +149,30 @@ width, height = measure("Edge Gateway", TextStyle(size=13))
 block = layout(r"State $E_{t+1}$", TextStyle(size=16), max_width=200)
 svg_fragment = block.to_svg(x=100, y=50, anchor="middle", fill="#111")
 ```
+
+## Technical drawing primitives
+
+For figures in papers and specifications. Each has a focused example in [`examples/primitives/`](../examples/primitives/); the `paper` theme suits them.
+
+**Text, captions, brackets.** `d.text("**Note:** $x_i \\le 1$", size=12, max_width=200)` is text with no box; it takes the same markup as labels and is placed like a shape. `font="serif"` and `italic=True` set remarks. `d.caption("**Figure 1:** ...", small_caps=True)` is centred under the drawing unless you position it. `d.bracket("three states", side="right").spanning(first, last)` draws a brace beside the elements it is given; `shape=` is `curly`, `square` or `round`.
+
+**Outlines.** `d.polygon([(0, 0), (60, 0), (30, 50)], "A")`, `d.polyline(points)` and `d.path("M 0 40 A 60 60 0 0 1 100 40 Z")` draw free shapes. They are drawn where their coordinates say until you place them with `.at()` or `.right_of()`; style them with `Style(fill=, stroke_width=, dash=, fill_opacity=)`.
+
+**Bands.** `with d.band("Runtime layer", notes=["Checked on every call."], min_width=640):` is a group drawn as a dashed frame with a bold title and a column of italic side notes. Give stacked bands the same `min_width`.
+
+**Nesting and double borders.** `inner = d.shape("L1", 80, 34).inside(core, "bottom_center", 0, -14)` puts a shape inside another, pinned by the named anchor plus an offset; it moves with its container. Give the container `label_position="top"` so its label becomes a heading. `Style(double=4)` draws a second border 4 px inside the first.
+
+**Line weights and arrowheads.** `d.edge(width=3)` sets the stroke; `head=` and `tail=` choose `triangle`, `stealth`, `open`, `diamond`, `circle`, `bar` or `none`; `arrow_size=2` doubles the head; `two_way=True` puts a head on both ends; `ellipsis=True` replaces the middle of the line with three dots.
+
+**Where a line attaches.** `box.anchor("left", 0.25)` is the point a quarter of the way down the left side (fractions run top to bottom and left to right) and can be either end of an edge: `source >> mux.anchor("left", 0.25)`. A bare point is an end too: `d.connect((60, 300), box, routing="direct")`; `d.point(x, y, dot=True)` is a junction dot several edges can meet at. `d.fan_out(source, targets, trunk=40)` runs the edges along one trunk for 40 px and then splits them; `d.fan_in()` is the mirror. `d.connect(a, b, routing="spline", via=[(180, 20), (420, 30)])` draws a smooth curve through the given points; with any other routing `via` gives straight runs. `d.leader("note text", box.anchor("bottom", 0.75), at=(150, 330), head="circle")` is a note with a thin line to what it describes.
+
+**Solids.** `d.cuboid("label", 120, 80, 90)` draws a box in oblique projection with the edges behind it dashed. `d.solid(Solid.hull(points), projection=isometric(), style=Style(fill="#DCE6F2", fill_opacity=0.55))` draws any convex solid; `Solid.box`, `.prism` and `.pyramid` build common ones. `cut=((0, 15, 0), (0, 1, 0)), cut_size=95` draws a cutting plane through a point with a normal, and outlines the section. Model axes: x right, y up, z away from the viewer.
+
+**Paint order.** Shapes are painted in the order declared; `z=` overrides it. A shape with `z` below zero, or one that contains other shapes, goes under the edges, and an edge with `z` above zero goes over the nodes. `obstacle=False` lets edges cross a shape instead of going round it, as for a backdrop.
+
+**Arranging and units.** `distribute([a, b, c], "right", gap=30, align="bottom")` chains elements with equal gaps and `align([a, b], "left")` lines edges up; position the first element yourself. `Diagram(grid=10)` snaps every corner to a 10 px grid. Sizes and positions accept units: `d.shape("A", "30mm", "12mm").at("15mm", "15mm")`, `size="9pt"`; `mm()`, `pt()` and `to_px()` convert numbers.
+
+Annotations are not components, so none of these appear in the BOM.
 
 ## Themes
 

@@ -80,6 +80,13 @@ def pinned_ids(elements: list[Element]) -> set[str]:
     for el in elements:
         user = _user_constraints(el)
         if not user:
+            if getattr(el, "floating", False):
+                # Placed by the pipeline once everything else is; never a layout node.
+                pinned.add(el.id)
+            elif getattr(el, "self_placed", False):
+                # Drawn where its own coordinates say (a path, a junction point).
+                pinned.add(el.id)
+                pinned.update(g.id for g in _ancestors(el))
             continue
         pinned.add(el.id)
         ancestors = _ancestors(el)

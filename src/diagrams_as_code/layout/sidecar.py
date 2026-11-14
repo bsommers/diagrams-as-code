@@ -35,6 +35,10 @@ def keyed_elements(elements: list[Element]) -> dict[str, list[Element]]:
     """Group elements by key; more than one element per key is ambiguous."""
     keyed: dict[str, list[Element]] = {}
     for el in elements:
+        if not el.explicit_id and not el.label and getattr(el, "annotation", False):
+            # An unnamed drawing aid (a point, a bare bracket or outline) has no
+            # stable name to file a position under; give it an id= to include it.
+            continue
         keyed.setdefault(element_key(el), []).append(el)
     return keyed
 
