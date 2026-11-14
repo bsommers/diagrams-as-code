@@ -91,9 +91,10 @@ runnable as `uv run python -m diagrams_as_code ...`.
 
 Renders one or more scripts, or every `diagram()`-defining script found by
 recursively scanning a directory. `--format` is a comma-separated subset of
-`svg,png,bom`; it defaults to `svg,bom` because those two are the
+`svg,png,pdf,bom`; it defaults to `svg,bom` because those two are the
 byte-comparable, git-tracked artifacts — PNG bytes vary slightly by backend
-(Cairo vs. the pure-Python fallback), so they're opt-in. `--theme`,
+(Cairo vs. the pure-Python fallback), so they're opt-in. `pdf` writes a
+vector PDF beside the SVG; it needs no extra software and is also opt-in. `--theme`,
 `--layout`, `--direction`, and `--layout-file` override the script's own
 `Diagram(...)` settings for this render only. `--debug` prints full
 tracebacks for scripts that fail to load or render.

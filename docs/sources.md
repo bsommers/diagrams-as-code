@@ -45,16 +45,17 @@ Every icon is cataloged in both manifests, which are generated alongside the tre
 
 ## 1a. Bundled Font Data (`src/diagrams_as_code/text/`)
 
-The text engine ships two generated data modules. Neither is a font file, and neither adds a runtime dependency.
+The text engine ships three generated data modules. None is a font file, and none adds a runtime dependency.
 
 | Module | Derived from | License | What is taken |
 | :--- | :--- | :--- | :--- |
 | `_math_glyphs.py` | **STIX Two Math** 2.13 b171, [stipub/stixfonts](https://github.com/stipub/stixfonts) (tag `v2.13b171`, `fonts/static_otf/STIXTwoMath-Regular.otf`) | [SIL Open Font License 1.1](licenses/OFL-STIX.txt) | Outlines and advances of about 420 glyphs (ASCII, math italic and bold alphabets, Greek, operators and relations), plus a few layout constants |
 | `_sans_metrics.py` | **Arimo** (metric-compatible with Arial and Helvetica) | Apache License 2.0 | Advance widths only; no outlines |
+| `_serif_metrics.py` | **Tinos** 1.340 (metric-compatible with Times New Roman and Times), [google/fonts `ofl/tinos`](https://github.com/google/fonts/tree/main/ofl/tinos) | SIL Open Font License 1.1 | Advance widths of the Windows-1252 characters in four faces; no outlines. Used only to place serif text in PDF export |
 
 Copyright 2001-2021 The STIX Fonts Project Authors, with Reserved Font Name "TM Math". The outline data is a derivative of the font and is redistributed under the same Open Font License; a copy of the license ships in the package at `src/diagrams_as_code/text/OFL-STIX.txt`. The rest of this repository remains Apache-2.0.
 
-Both modules are produced by `tools/generate_text_data.py`, which records the SHA-256 of each source file in the generated module. The tool needs `fontTools` at development time only (`uv run --with fonttools python tools/generate_text_data.py ...`); it is not a project dependency.
+All three modules are produced by `tools/generate_text_data.py`, which records the SHA-256 of each source file in the generated module. The tool needs `fontTools` at development time only (`uv run --with fonttools python tools/generate_text_data.py ...`); it is not a project dependency.
 
 ## 2. Software Dependencies & Build Tooling
 

@@ -207,6 +207,7 @@ Canonical names and aliases live in [`icons/icons.yaml`](../icons/icons.yaml). P
 |---|---|
 | `diag.render_svg(path)` | SVG (add `interactive` options for pan/zoom, search and minimap; see [Recipe 10](how-to.md#recipe-10-generating-interactive-svgs-with-pan-zoom-search-and-minimap)) |
 | `diag.render_png(path)` | PNG raster |
+| `diag.render_pdf(path)` | One-page vector PDF, written with the standard library alone (see [Technical figures](technical-figures.md#8-export-a-pdf)) |
 | `diag.generate_readme(svg_path, readme_path)` | Markdown component tables |
 | `diag.generate_bom_json(path)` | Machine-readable JSON BOM |
 
@@ -215,7 +216,7 @@ The BOM is built from shape and edge `metadata`, so documentation stays in step 
 ## Command-line interface
 
 ```text
-diagrams-as-code render PATH... [--out DIR] [--format svg,png,bom] [--theme T]
+diagrams-as-code render PATH... [--out DIR] [--format svg,png,pdf,bom] [--theme T]
                  [--interactive | --no-interactive] [--layout manual|auto]
                  [--direction LR|TB] [--layout-file FILE] [--debug]
 diagrams-as-code lint PATH... [--ignore KIND[,KIND]] [--quiet] [--layout ...] [--direction ...] [--layout-file ...] [--debug]
@@ -224,7 +225,7 @@ diagrams-as-code themes
 diagrams-as-code icons [--domain DOMAIN]
 ```
 
-- `--format` defaults to `svg,bom`; PNG is opt-in because its bytes vary by backend.
+- `--format` defaults to `svg,bom`; PNG is opt-in because its bytes vary by backend, and PDF is opt-in (`--format svg,pdf`).
 - `render` accepts scripts or directories; directories are scanned recursively for files defining `diagram()`.
 - `lint` lays each diagram out and reports visual defects (a line through a node, overlapping labels, text that does not fit), one per line as `script: kind: detail`. It exits `1` if anything is found. See [Technical figures](technical-figures.md#7-check-the-figure) for the kinds.
 - Also runnable as `uv run python -m diagrams_as_code ...`.
