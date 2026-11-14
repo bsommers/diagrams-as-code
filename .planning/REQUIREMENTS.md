@@ -67,9 +67,9 @@
 
 ### Phase 17 — Vector PDF Export
 
-- [ ] **PDF-01**: Pure-stdlib PDF writer covering paths, fills, dashes, arrowheads and opacity.
-- [ ] **PDF-02**: Text and math in PDF match the SVG.
-- [ ] **PDF-03**: `Diagram.render_pdf()` and CLI `--format pdf`.
+- [x] **PDF-01**: Pure-stdlib PDF writer covering paths, fills, dashes, arrowheads and opacity.
+- [x] **PDF-02**: Text and math in PDF match the SVG.
+- [x] **PDF-03**: `Diagram.render_pdf()` and CLI `--format pdf`.
 
 ## Deferred
 
