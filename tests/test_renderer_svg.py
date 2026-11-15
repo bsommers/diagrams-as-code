@@ -1142,3 +1142,96 @@ def test_svg_render_deflected_spline_path() -> None:
 
 
 
+
+
+def _ids_and_references(svg: str) -> tuple[list[str], set[str]]:
+    """Every ``id`` in the drawing, and every id a ``url(#...)`` points at."""
+    import re
+
+    root = ET.fromstring(svg)
+    ids = [el.attrib["id"] for el in root.iter() if "id" in el.attrib]
+    return ids, set(re.findall(r"url\(#([^)]+)\)", svg))
+
+
+@pytest.mark.parametrize("interactive", [False, True])
+def test_node_ids_do_not_collide_with_definition_ids(interactive: bool) -> None:
+    """A node called ``shadow`` or ``arrow`` must not capture ``url(#shadow)``.
+
+    With two elements sharing an id, resvg resolved the filter reference to the
+    node and dropped every shadowed shape from the PNG.
+    """
+    renderer = SVGRenderer(get_theme("iiot_dark_gold"))
+    names = ["shadow", "arrow", "arrow-tail", "arrow-FF0000", "minimap-clip", "shadow-def"]
+    shapes = [Shape(name, label=name).at(40 + 200 * i, 80) for i, name in enumerate(names)]
+    edges = [
+        Edge(shapes[0], shapes[1], arrow_tail=True),
+        Edge(shapes[1], shapes[2], color="#FF0000", arrow_tail=True),
+    ]
+    routes = route_all(edges, shapes)
+    svg = renderer.render(
+        elements=shapes, edges=edges, width=1400, height=300, routes=routes, interactive=interactive
+    )
+    ids, references = _ids_and_references(svg)
+
+    assert len(ids) == len(set(ids)), sorted(i for i in set(ids) if ids.count(i) > 1)
+    assert references and references <= set(ids)
+    root = ET.fromstring(svg)
+    tags = {el.attrib["id"]: el.tag.rsplit("}", 1)[-1] for el in root.iter() if "id" in el.attrib}
+    for name in names:
+        assert tags[name] == "g"  # the nodes keep the ids they were given
+    filters = {r for r in references if tags[r] == "filter"}
+    assert len(filters) == 1 and not filters & set(names)
+    assert all(tags[r] in ("filter", "marker", "clipPath") for r in references)
+
+
+def test_definition_ids_are_unchanged_without_a_collision() -> None:
+    renderer = SVGRenderer(get_theme("iiot_dark_gold"))
+    a, b = Shape("a", label="A").at(40, 80), Shape("b", label="B").at(300, 80)
+    edge = Edge(a, b, color="#FF0000", arrow_tail=True)
+    svg = renderer.render(elements=[a, b], edges=[edge], width=600, height=300, routes=route_all([edge], [a, b]))
+    ids, references = _ids_and_references(svg)
+    assert {"shadow", "arrow", "arrow-tail", "arrow-FF0000", "arrow-FF0000-tail"} <= set(ids)
+    assert references == {"shadow", "arrow-FF0000", "arrow-FF0000-tail"}
+
+
+def test_node_ids_do_not_collide_with_interactive_overlay_ids() -> None:
+    """A node called ``svg-minimap`` must not be what the overlay's script finds."""
+    import re
+
+    from diagrams_as_code.renderer_interactive import OVERLAY_IDS
+
+    renderer = SVGRenderer(get_theme("iiot_dark_gold"))
+    shapes = [Shape(name, label=name).at(40 + 200 * i, 80) for i, name in enumerate(OVERLAY_IDS)]
+    edge = Edge(shapes[0], shapes[1])
+    svg = renderer.render(
+        elements=shapes, edges=[edge], width=1800, height=300,
+        routes=route_all([edge], shapes), interactive=True,
+    )
+    root = ET.fromstring(svg)
+    ids = [el.attrib["id"] for el in root.iter() if "id" in el.attrib]
+    assert len(ids) == len(set(ids)), sorted(i for i in set(ids) if ids.count(i) > 1)
+    classes = {el.attrib["id"]: el.attrib.get("class", "") for el in root.iter() if "id" in el.attrib}
+    for name in OVERLAY_IDS:
+        assert classes[name] == "diagram-node"  # the nodes keep their ids
+
+    # Everything the script, the stylesheet and <use> look up is an overlay
+    # element under its new name, never one of the nodes.
+    looked_up = set(re.findall(r"getElementById\('([^']+)'\)", svg))
+    looked_up |= set(re.findall(r"closest\('#([^']+)'\)", svg))
+    looked_up |= set(re.findall(r'href="#([^"]+)"', svg))
+    style = svg[svg.index("<style>"):svg.index("</style>")]
+    looked_up |= set(re.findall(r"^\s*#([A-Za-z][\w-]*)", style, re.M))  # selectors, not colours
+    assert looked_up == {f"{name}-def" for name in OVERLAY_IDS}
+    assert looked_up <= set(ids)
+
+
+def test_interactive_overlay_ids_are_unchanged_without_a_collision() -> None:
+    from diagrams_as_code.renderer_interactive import OVERLAY_IDS
+
+    renderer = SVGRenderer(get_theme("iiot_dark_gold"))
+    a = Shape("a", label="A").at(40, 80)
+    svg = renderer.render(elements=[a], width=600, height=300, interactive=True)
+    root = ET.fromstring(svg)
+    ids = {el.attrib["id"] for el in root.iter() if "id" in el.attrib}
+    assert set(OVERLAY_IDS) <= ids
+    assert "-def" not in svg

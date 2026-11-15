@@ -95,12 +95,30 @@ class SVGRenderer(InteractiveOverlay):
         #: coordinates cover whole pixels instead of straddling two.
         self.crisp = bool(crisp)
         self.shapes = ShapeLibrary()
+        #: Ids the diagram's own nodes and groups use in the drawing being rendered.
+        self._taken_ids: frozenset[str] = frozenset()
+
+    def _def_id(self, name: str, suffixes: Sequence[str] = ("",)) -> str:
+        """An id for one of the renderer's own definitions (filter, marker, clip).
+
+        A node or group may be called ``shadow`` or ``arrow`` too. Two elements
+        with one id make ``url(#shadow)`` ambiguous: a renderer that resolves it
+        to the node finds no filter there and drops every shape that asked for
+        the shadow. So the definition steps aside and keeps the plain name only
+        when nothing in the diagram has it. ``suffixes`` lists the endings the
+        caller appends to the result, all of which must be free.
+        """
+        candidate, n = name, 1
+        while any(candidate + suffix in self._taken_ids for suffix in suffixes):
+            n += 1
+            candidate = f"{name}-def" if n == 2 else f"{name}-def{n - 1}"
+        return candidate
 
     def _marker_id_for_color(self, color: str) -> str:
         if color == self.theme.accent:
-            return "arrow"
+            return self._def_id("arrow", ("", "-tail"))
         slug = re.sub(r"[^a-zA-Z0-9_-]", "", color)
-        return f"arrow-{slug}"
+        return self._def_id(f"arrow-{slug}", ("", "-tail"))
 
     def _contrast_color(self, hex_color: Any) -> str:
         if not isinstance(hex_color, str):
@@ -147,6 +165,7 @@ class SVGRenderer(InteractiveOverlay):
         element_list = list(elements) if elements is not None else []
         group_list = list(groups) if groups is not None else []
         edge_list = list(edges) if edges is not None else []
+        self._taken_ids = frozenset(str(item.id) for item in (*element_list, *group_list))
 
         w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
         h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
@@ -162,7 +181,7 @@ class SVGRenderer(InteractiveOverlay):
             f'  <rect width="100%" height="100%" fill="{self.theme.background}"/>'
         )
         if interactive:
-            lines.append('  <g id="diagram-content">')
+            lines.append(self._overlay_ids('  <g id="diagram-content">'))
 
         # Painted back to front: group frames, edge lines, edge badges, nodes.
         half_pixel = self.crisp and round(float(self.theme.node_stroke_width)) % 2 == 1
@@ -200,12 +219,13 @@ class SVGRenderer(InteractiveOverlay):
         # Marker size is in stroke widths; keep arrowheads readable on hairlines.
         edge_w = max(float(self.theme.edge_width), 0.1)
         marker = _num(6.0 * max(edge_w, 1.5) / edge_w)
+        arrow = self._marker_id_for_color(self.theme.accent)
         lines: list[str] = [
             "  <defs>",
-            f'    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto-start-reverse">',
+            f'    <marker id="{arrow}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto-start-reverse">',
             f'      <path d="M 0 1 L 10 5 L 0 9 z" fill="{self.theme.accent}"/>',
             "    </marker>",
-            f'    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto">',
+            f'    <marker id="{arrow}-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="{marker}" markerHeight="{marker}" orient="auto">',
             f'      <path d="M 10 1 L 0 5 L 10 9 z" fill="{self.theme.accent}"/>',
             "    </marker>",
         ]
@@ -232,13 +252,13 @@ class SVGRenderer(InteractiveOverlay):
                 )
                 lines.append("    </marker>")
 
-        lines.append('    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">')
+        lines.append(f'    <filter id="{self._def_id("shadow")}" x="-10%" y="-10%" width="120%" height="120%">')
         lines.append(
             '      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>'
         )
         lines.append("    </filter>")
         if interactive:
-            lines.append('    <clipPath id="minimap-clip"><rect x="0" y="0" width="160" height="100" rx="6"/></clipPath>')
+            lines.append(f'    <clipPath id="{self._def_id("minimap-clip")}"><rect x="0" y="0" width="160" height="100" rx="6"/></clipPath>')
             lines.append(self._render_interactive_styles())
         lines.append("  </defs>")
         return lines
@@ -526,7 +546,7 @@ class SVGRenderer(InteractiveOverlay):
             items = el.draw(style, self.theme) if hasattr(el, "draw") else None
             if items is not None and not items:
                 continue  # an element that draws itself and has nothing to show
-            node_attrs = ' filter="url(#shadow)"' if style.shadow and items is None else ""
+            node_attrs = f' filter="url(#{self._def_id("shadow")})"' if style.shadow and items is None else ""
             if style.opacity is not None and style.opacity < 1.0:
                 node_attrs += f' opacity="{_num(style.opacity)}"'
             if interactive:
