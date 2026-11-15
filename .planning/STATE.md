@@ -3,9 +3,9 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: phase_complete
-stopped_at: "Phase 17 complete on feat/phase17-vector-pdf (local commits, not pushed); Phases 12-16 merged to master and tagged v0.8.4..v0.12.0; v0.13.0 not tagged"
-last_updated: "2026-11-14T08:00:00.000Z"
-state_head: 0f0e46b
+stopped_at: No active phase (12–17 done). Post-Phase-17 fixes for SVG id collisions (shadow filter, markers, interactive overlay) built and verified, uncommitted on master
+last_updated: "2026-11-14T23:00:40.230Z"
+state_head: 41a6af7195f83ecf49e5afe6aacfcd56a179c159
 last_activity: 2026-11-14
 current_phase: 17
 current_phase_name: Vector PDF Export
@@ -65,7 +65,7 @@ v0.13.0. PDF-01..03 done in `pdf.py` (layer 4, imports only `drawing` and `text`
 
 Verified: 1121 tests on macOS (py3.14); 1107 pass + 14 skip on Linux arm64 py3.10–3.13 (2 hygiene skips without git, 12 rendered-comparison skips without `pdftoppm`); all 113 gallery PDFs clean in `pdfinfo` and Ghostscript; reference figure checked by eye in poppler, Ghostscript and Quartz.
 
-Known limits: fonts are not embedded (not PDF/A); a character outside Windows-1252 and Symbol is drawn as `?` with a warning; Symbol glyphs sit at the left of the slot the sans metrics give them; stroke-only shapes and text cast no shadow; compressed bytes may differ between zlib builds. Homebrew poppler on macOS draws Helvetica-Bold with the regular face (its font substitution; Ghostscript and Quartz draw bold). Found on the way, not fixed: resvg-py 0.5.0 drops every shadowed node when rasterizing `output/cloud/09_iot_cloud_fleet_management.svg` to PNG (the SVG and PDF are correct; PNGs are untracked).
+Known limits: fonts are not embedded (not PDF/A); a character outside Windows-1252 and Symbol is drawn as `?` with a warning; Symbol glyphs sit at the left of the slot the sans metrics give them; stroke-only shapes and text cast no shadow; compressed bytes may differ between zlib builds. Homebrew poppler on macOS draws Helvetica-Bold with the regular face (its font substitution; Ghostscript and Quartz draw bold). Fixed after Phase 17 (2026-11-14, uncommitted at the time of writing): the missing nodes in `output/cloud/09_iot_cloud_fleet_management.png` were not a resvg fault. The node id `shadow` duplicated the filter id, so `url(#shadow)` pointed at the node; `SVGRenderer._def_id` now moves the renderer's definition ids out of the way.
 
 ## Decisions
 
@@ -83,6 +83,6 @@ Known limits: fonts are not embedded (not PDF/A); a character outside Windows-12
 
 ## Session
 
-**Last session:** 2026-11-14T08:00:00.000Z
-**Stopped at:** Phase 17 complete on feat/phase17-vector-pdf (local commits, not pushed); Phases 12-16 merged to master and tagged v0.8.4..v0.12.0; v0.13.0 not tagged
+**Last session:** 2026-11-14T23:00:40.218Z
+**Stopped at:** No active phase (12–17 done). Post-Phase-17 fixes for SVG id collisions (shadow filter, markers, interactive overlay) built and verified, uncommitted on master
 **Resume file:** .planning/CHECKPOINT.md

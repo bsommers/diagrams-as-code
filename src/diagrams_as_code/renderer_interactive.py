@@ -5,7 +5,24 @@ the diagram's content, only on the theme and the canvas size.
 """
 from __future__ import annotations
 
+import re
+
 from diagrams_as_code.theme import Theme
+
+#: Ids the overlay gives its own elements. Its markup, stylesheet and script all
+#: name them, so they are written once here and renamed together (see
+#: ``InteractiveOverlay._overlay_ids``) when a node or group has the same id.
+OVERLAY_IDS = (
+    "diagram-content",
+    "svg-pan-zoom-controls",
+    "diagram-search-input",
+    "btn-zoom-in",
+    "btn-zoom-out",
+    "btn-zoom-reset",
+    "svg-minimap",
+    "minimap-viewport",
+)
+_OVERLAY_ID = re.compile(r"(?<![\w-])(" + "|".join(map(re.escape, OVERLAY_IDS)) + r")(?![\w-])")
 
 
 class InteractiveOverlay:
@@ -13,9 +30,19 @@ class InteractiveOverlay:
 
     theme: Theme
 
+    def _overlay_ids(self, text: str) -> str:
+        """``text`` with each overlay id swapped for one the diagram does not use.
+
+        The script finds the controls with ``getElementById`` and the stylesheet
+        with ``#id``; a node of the same name would be found instead. Overlay
+        text holds nothing from the diagram, so renaming by name is safe, and it
+        is returned untouched when there is no clash.
+        """
+        return _OVERLAY_ID.sub(lambda m: self._def_id(m.group(1)), text)
+
     def _render_interactive_styles(self) -> str:
         contrast = self._contrast_color(self.theme.accent)
-        return (
+        return self._overlay_ids(
             "    <style>\n"
             "      .diagram-interactive { cursor: grab; user-select: none; }\n"
             "      .diagram-interactive:active { cursor: grabbing; }\n"
@@ -47,10 +74,10 @@ class InteractiveOverlay:
         ctrl_h = 30.0
         ctrl_x = float(width) - ctrl_w - 16.0
         ctrl_y = 16.0
-        return [
+        return [self._overlay_ids(line) for line in (
             f'  <g id="svg-pan-zoom-controls" transform="translate({ctrl_x}, {ctrl_y})">',
             f'    <rect x="0" y="0" width="{ctrl_w}" height="{ctrl_h}" rx="6" '
-            f'fill="{self.theme.node_fill}" stroke="{self.theme.node_stroke}" stroke-width="1.5" filter="url(#shadow)"/>',
+            f'fill="{self.theme.node_fill}" stroke="{self.theme.node_stroke}" stroke-width="1.5" filter="url(#{self._def_id("shadow")})"/>',
             '    <foreignObject x="4" y="3" width="126" height="24">',
             f'      <input xmlns="http://www.w3.org/1999/xhtml" id="diagram-search-input" type="text" '
             f'placeholder="Search..." autocomplete="off" spellcheck="false" />',
@@ -68,7 +95,7 @@ class InteractiveOverlay:
             f'<text x="209" y="18" text-anchor="middle" fill="{self.theme.text}" font-family="{self.theme.font_family}" font-size="13" font-weight="bold">⟲</text>'
             '<title>Reset View</title></g>',
             '  </g>',
-        ]
+        )]
 
     def _render_interactive_minimap(self, width: float, height: float) -> list[str]:
         mm_w = 160.0
@@ -83,12 +110,12 @@ class InteractiveOverlay:
         init_vp_w = float(width) * mm_s
         init_vp_h = float(height) * mm_s
 
-        return [
+        return [self._overlay_ids(line) for line in (
             f'  <g id="svg-minimap" transform="translate({mm_x}, {mm_y})">',
             f'    <rect class="minimap-bg" x="0" y="0" width="{mm_w}" height="{mm_h}" rx="6" '
             f'fill="{self.theme.node_fill}" stroke="{self.theme.node_stroke}" stroke-width="1.5" '
-            f'filter="url(#shadow)" opacity="0.95"/>',
-            '    <g clip-path="url(#minimap-clip)">',
+            f'filter="url(#{self._def_id("shadow")})" opacity="0.95"/>',
+            f'    <g clip-path="url(#{self._def_id("minimap-clip")})">',
             f'      <g transform="translate({mm_off_x:.2f}, {mm_off_y:.2f}) scale({mm_s:.6f})" opacity="0.65" pointer-events="none">',
             '        <use href="#diagram-content" />',
             '      </g>',
@@ -96,7 +123,7 @@ class InteractiveOverlay:
             f'    <rect id="minimap-viewport" x="{mm_off_x:.2f}" y="{mm_off_y:.2f}" width="{init_vp_w:.2f}" height="{init_vp_h:.2f}" rx="2" '
             f'fill="{self.theme.accent}" fill-opacity="0.18" stroke="{self.theme.accent}" stroke-width="1.5" style="cursor: move;" />',
             '  </g>',
-        ]
+        )]
 
     def _render_interactive_script(self, width: float, height: float) -> list[str]:
         w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
@@ -391,6 +418,6 @@ class InteractiveOverlay:
 """
         return [
             '  <script type="text/javascript"><![CDATA[',
-            js.strip(),
+            self._overlay_ids(js.strip()),
             '  ]]></script>',
         ]
