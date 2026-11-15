@@ -3,9 +3,9 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: phase_complete
-stopped_at: No active phase (12–17 done). Post-Phase-17 fixes for SVG id collisions (shadow filter, markers, interactive overlay) built and verified, uncommitted on master
-last_updated: "2026-11-14T23:00:40.230Z"
-state_head: 41a6af7195f83ecf49e5afe6aacfcd56a179c159
+stopped_at: "No active phase: id-collision fixes merged (PR #23, 76ebc37); v0.13.1 release next"
+last_updated: "2026-11-15T14:49:07.725Z"
+state_head: 0ffcd263fe24cab2d5fac38ed179b5bdda9f0255
 last_activity: 2026-11-14
 current_phase: 17
 current_phase_name: Vector PDF Export
@@ -25,7 +25,7 @@ progress:
 See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
 `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Current focus:** All six phases (12–17) are done. Phases 12–16 are merged to master (PRs #19, #20, #21) and tagged v0.8.4, v0.9.0, v0.10.0, v0.11.0, v0.12.0. Phase 17 (v0.13.0) is complete on `feat/phase17-vector-pdf`, committed locally; pushing it, opening its PR and tagging v0.13.0 each need the user's go-ahead.
+**Current focus:** All six phases (12–17) are done. Phases 12–17 are merged to master (PRs #19–#22) and tagged v0.8.4 … v0.13.0. The SVG id-collision fixes are merged (PR #23) and unreleased; v0.13.1 is next.
 
 ## Phase 12 result
 
@@ -83,6 +83,6 @@ Known limits: fonts are not embedded (not PDF/A); a character outside Windows-12
 
 ## Session
 
-**Last session:** 2026-11-14T23:00:40.218Z
-**Stopped at:** No active phase (12–17 done). Post-Phase-17 fixes for SVG id collisions (shadow filter, markers, interactive overlay) built and verified, uncommitted on master
+**Last session:** 2026-11-15T14:49:07.707Z
+**Stopped at:** No active phase: id-collision fixes merged (PR #23, 76ebc37); v0.13.1 release next
 **Resume file:** .planning/CHECKPOINT.md
