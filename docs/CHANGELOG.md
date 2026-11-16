@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.13.1] - 2026-11-15
+
 ### Fixed
 - **A node or group whose id matched one of the renderer's own definitions lost its drawing in PNG output.** `examples/cloud/09_iot_cloud_fleet_management.py` has a node with the id `shadow`, the same id as the drop-shadow filter, so the SVG held two elements with one id. resvg resolved `url(#shadow)` to the node, found no filter, and dropped every shadowed shape. The renderer's filter, arrow markers and minimap clip now take another id (`shadow-def`) when the diagram already uses theirs. SVG output is unchanged for every diagram without such a clash.
 - **The same clash in interactive SVG.** A node or group named like one of the overlay's elements (`diagram-content`, `svg-pan-zoom-controls`, `diagram-search-input`, `btn-zoom-in`, `btn-zoom-out`, `btn-zoom-reset`, `svg-minimap`, `minimap-viewport`) was what the overlay's script, stylesheet and minimap `<use>` found instead of the control. The overlay now renames its element (`svg-minimap-def`) in the markup, the stylesheet and the script together. The names are listed once in `renderer_interactive.OVERLAY_IDS`.

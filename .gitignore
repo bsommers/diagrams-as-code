@@ -11,3 +11,4 @@ scratch/
 # SVG and BOM markdown stay tracked and CI-verified; PNG bytes depend on
 # which rasterizer backend is installed, so they are not a reliable artifact.
 output/**/*.png
+graphify-out/
