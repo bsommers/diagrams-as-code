@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- **`diagrams_as_code.plot.Plot`**: data-space plotting on a `Diagram` (axes, grid, linear and log mapping, function and parametric curves clipped to the window and broken at asymptotes, tangents, areas and bands, Riemann rectangles, slope and vector fields, RK4 trajectories, candlesticks, bar charts). Standard library only; 37 tests in `tests/test_plot.py`.
+- **Five textbook galleries, 50 figures** (10 each, `paper` theme, all computed by the scripts and lint-clean): `examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/` and `logic/`. `tests/test_textbook_examples.py` builds every script and checks its committed SVG.
+
 ## [v0.14.0] - 2026-11-16
 
 ### Added

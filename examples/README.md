@@ -316,6 +316,85 @@ Eleven complete paper-style figures in the `paper` theme, each with a caption. E
 
 ---
 
+## 16. Textbook Galleries (`examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/`, `logic/`)
+
+Fifty paper-style figures, ten per subject, in the `paper` theme with a caption each. The numbers in them are computed by the scripts (integration, root finding, mean-variance solving, Quine-McCluskey), not typed in. Plots are drawn with `diagrams_as_code.plot.Plot`. Each lints clean; `tests/test_textbook_examples.py` checks every script and that the committed SVG matches it.
+
+### Calculus & Math (`examples/calculus_math/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_derivative_limit.py`](calculus_math/01_derivative_limit.py) | The derivative as the limit of secant slopes. |
+| 02 | [`02_riemann_sums.py`](calculus_math/02_riemann_sums.py) | Left, right and midpoint Riemann sums beside the exact area. |
+| 03 | [`03_upper_lower_sums.py`](calculus_math/03_upper_lower_sums.py) | Upper and lower sums squeezing the integral of x^2 on [0, 2]. |
+| 04 | [`04_area_between_curves.py`](calculus_math/04_area_between_curves.py) | The area between a parabola and a line. |
+| 05 | [`05_taylor_sine.py`](calculus_math/05_taylor_sine.py) | Taylor polynomials of sin x converging. |
+| 06 | [`06_epsilon_delta.py`](calculus_math/06_epsilon_delta.py) | The epsilon-delta definition of a limit for f(x) = x^2 at a = 1. |
+| 07 | [`07_ivt_mvt.py`](calculus_math/07_ivt_mvt.py) | The Intermediate Value Theorem and the Mean Value Theorem. |
+| 08 | [`08_parabola_anatomy.py`](calculus_math/08_parabola_anatomy.py) | The anatomy of a parabola y = a x^2 + b x + c. |
+| 09 | [`09_unit_circle.py`](calculus_math/09_unit_circle.py) | Sine, cosine and tangent on the unit circle. |
+| 10 | [`10_discriminant.py`](calculus_math/10_discriminant.py) | The three cases of the quadratic discriminant. |
+
+### Differential Equations (`examples/differential_equations/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_slope_field.py`](differential_equations/01_slope_field.py) | Slope field of y' = x - y with Runge-Kutta solution curves. |
+| 02 | [`02_exponential.py`](differential_equations/02_exponential.py) | Exponential growth and decay: y' = k y. |
+| 03 | [`03_logistic.py`](differential_equations/03_logistic.py) | Logistic growth y' = r y (1 - y / K) with its equilibria. |
+| 04 | [`04_damped_oscillator.py`](differential_equations/04_damped_oscillator.py) | Damped spring-mass oscillator: x'' + 2 zeta w0 x' + w0^2 x = 0. |
+| 05 | [`05_saddle.py`](differential_equations/05_saddle.py) | Phase portrait of a saddle: x' = x + 2y, y' = 2x + y. |
+| 06 | [`06_stable_spiral.py`](differential_equations/06_stable_spiral.py) | Phase portrait of a stable spiral: x' = -0.25 x + y, y' = -x - 0.25 y. |
+| 07 | [`07_center.py`](differential_equations/07_center.py) | Phase portrait of a center: the undamped oscillator x' = v, v' = -w^2 x. |
+| 08 | [`08_lotka_volterra.py`](differential_equations/08_lotka_volterra.py) | Lotka-Volterra predator-prey: x' = x (a - b y), y' = y (-c + d x). |
+| 09 | [`09_pendulum.py`](differential_equations/09_pendulum.py) | Phase portrait of the pendulum: theta' = w, w' = -sin(theta). |
+| 10 | [`10_euler_vs_rk4.py`](differential_equations/10_euler_vs_rk4.py) | Euler against RK4 on y' = y, y(0) = 1, whose exact solution is e^x. |
+
+### Physics (`examples/physics/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_free_body_incline.py`](physics/01_free_body_incline.py) | Free-body diagram of a block at rest on a rough incline. |
+| 02 | [`02_projectile_motion.py`](physics/02_projectile_motion.py) | Projectile motion from a cliff, with the velocity resolved at five instants. |
+| 03 | [`03_series_rlc_circuit.py`](physics/03_series_rlc_circuit.py) | A driven series RLC circuit, drawn from circuit symbols built as paths. |
+| 04 | [`04_thin_lens_rays.py`](physics/04_thin_lens_rays.py) | Ray diagram for a converging thin lens, with the image found by construction. |
+| 05 | [`05_refraction_snell.py`](physics/05_refraction_snell.py) | Refraction at a plane interface: two panels governed by Snell's law. |
+| 06 | [`06_standing_waves.py`](physics/06_standing_waves.py) | Standing waves on a string fixed at both ends: the first five harmonics. |
+| 07 | [`07_superposition_beats.py`](physics/07_superposition_beats.py) | Superposition of two tones of nearby frequency, and the beats they make. |
+| 08 | [`08_carnot_cycle.py`](physics/08_carnot_cycle.py) | The Carnot cycle of an ideal gas on a pressure-volume diagram. |
+| 09 | [`09_dipole_field_lines.py`](physics/09_dipole_field_lines.py) | Electric field lines of a dipole, traced numerically. |
+| 10 | [`10_hydrogen_energy_levels.py`](physics/10_hydrogen_energy_levels.py) | Energy levels of the hydrogen atom with the Lyman and Balmer transitions. |
+
+### Finance (`examples/finance/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_candlestick_chart.py`](finance/01_candlestick_chart.py) | Candlestick chart with a 10-day moving average and volume bars (synthetic data). |
+| 02 | [`02_compound_interest.py`](finance/02_compound_interest.py) | Growth of 1,000 at several annual rates. |
+| 03 | [`03_present_value.py`](finance/03_present_value.py) | Present value of a cash-flow stream: each flow is discounted back to today. |
+| 04 | [`04_yield_curve.py`](finance/04_yield_curve.py) | Normal, flat and inverted yield curves from a three-factor (Nelson-Siegel) shape. |
+| 05 | [`05_option_payoffs.py`](finance/05_option_payoffs.py) | Profit at expiry of a long call, long put, long straddle and bull call spread. |
+| 06 | [`06_efficient_frontier.py`](finance/06_efficient_frontier.py) | Mean-variance frontier of three assets, the tangency portfolio and the capital market line. |
+| 07 | [`07_amortization.py`](finance/07_amortization.py) | Yearly interest and principal paid on a 30-year fixed-rate mortgage. |
+| 08 | [`08_supply_demand.py`](finance/08_supply_demand.py) | Supply and demand with the equilibrium and the consumer and producer surplus. |
+| 09 | [`09_black_scholes.py`](finance/09_black_scholes.py) | Black-Scholes European call price against spot, with the delta that is its slope. |
+| 10 | [`10_bond_convexity.py`](finance/10_bond_convexity.py) | Bond price against yield: convexity, and the duration tangent that approximates it. |
+
+### Logic (`examples/logic/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_truth_tables.py`](logic/01_truth_tables.py) | Truth tables of four two-input Boolean functions. |
+| 02 | [`02_logic_gates.py`](logic/02_logic_gates.py) | The six basic logic gate symbols, and a half adder built from two of them. |
+| 03 | [`03_full_adder.py`](logic/03_full_adder.py) | A full adder built from gates, with every signal traced for one input case. |
+| 04 | [`04_venn_de_morgan.py`](logic/04_venn_de_morgan.py) | Venn diagrams of two and three sets, with De Morgan's laws shaded. |
+| 05 | [`05_karnaugh_map.py`](logic/05_karnaugh_map.py) | A four-variable Karnaugh map with its grouped prime implicants. |
+| 06 | [`06_latch_flipflop.py`](logic/06_latch_flipflop.py) | An SR latch built from NOR gates, and a D flip-flop, each with a timing diagram. |
+| 07 | [`07_binary_decision_diagram.py`](logic/07_binary_decision_diagram.py) | A reduced ordered binary decision diagram built from a truth table. |
+| 08 | [`08_proof_tree.py`](logic/08_proof_tree.py) | A natural-deduction proof tree for hypothetical syllogism. |
+| 09 | [`09_syllogism_euler.py`](logic/09_syllogism_euler.py) | Three valid syllogisms shown as Euler diagrams. |
+| 10 | [`10_finite_automaton.py`](logic/10_finite_automaton.py) | A deterministic finite automaton for binary numbers divisible by three. |
+
 ## Executing the Gallery
 
 To regenerate all diagrams and documentation artifacts across all domains:
@@ -327,7 +406,6 @@ uv run diagrams-as-code render examples --out output --format svg,png,bom
 To run automated verification tests across the entire gallery:
 
 ```bash
-uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_golden_images.py
+uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_textbook_examples.py tests/test_golden_images.py
 uv run diagrams-as-code lint examples
 ```
-

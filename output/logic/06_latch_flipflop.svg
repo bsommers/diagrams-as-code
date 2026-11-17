@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 896 658" width="896" height="658">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 150 50 C 171 50 194.33 58.33 220 75 C 194.33 91.67 171 100 150 100 C 162.13 83.33 162.13 66.67 150 50 Z" fill="#F3F3F3" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_2">
+    <path d="M 220 75 C 220 72.24 222.24 70 225 70 C 227.76 70 230 72.24 230 75 C 230 77.76 227.76 80 225 80 C 222.24 80 220 77.76 220 75 Z" fill="#FFFFFF" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_3">
+    <path d="M 134 62.5 L 157 62.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_4">
+    <path d="M 134 87.5 L 157 87.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_5">
+    <path d="M 230 75 L 246 75" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="path_6">
+    <path d="M 150 150 C 171 150 194.33 158.33 220 175 C 194.33 191.67 171 200 150 200 C 162.13 183.33 162.13 166.67 150 150 Z" fill="#F3F3F3" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_7">
+    <path d="M 220 175 C 220 172.24 222.24 170 225 170 C 227.76 170 230 172.24 230 175 C 230 177.76 227.76 180 225 180 C 222.24 180 220 177.76 220 175 Z" fill="#FFFFFF" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_8">
+    <path d="M 134 162.5 L 157 162.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_9">
+    <path d="M 134 187.5 L 157 187.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_10">
+    <path d="M 230 175 L 246 175" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_11">
+    <path d="M 60 62.5 L 134 62.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_12">
+    <path d="M 60 187.5 L 134 187.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_13">
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(42.7 67.66) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_14">
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(43.99 192.66) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="polyline_15">
+    <path d="M 246 75 L 270 75 L 270 118 L 104 118 L 104 162.5 L 134 162.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_16">
+    <path d="M 246 175 L 270 175 L 270 132 L 80 132 L 80 87.5 L 134 87.5" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_17">
+    <path d="M 270 75 L 320 75" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_18">
+    <path d="M 270 175 L 320 175" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="point_19">
+    <path d="M 273 75 C 273 76.66 271.66 78 270 78 C 268.34 78 267 76.66 267 75 C 267 73.34 268.34 72 270 72 C 271.66 72 273 73.34 273 75 Z" fill="#000000" />
+  </g>
+  <g id="point_20">
+    <path d="M 273 175 C 273 176.66 271.66 178 270 178 C 268.34 178 267 176.66 267 175 C 267 173.34 268.34 172 270 172 C 271.66 172 273 173.34 273 175 Z" fill="#000000" />
+  </g>
+  <g id="text_21">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(328 80.16) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_22">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(328 180.16) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M66 414 100 399 217 623C222 635 228 647 228 660C228 683 216 703 190 703C155 703 144 676 136 650Z" transform="translate(338.61 180.16) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_23">
+    <text x="143.41" y="236.6" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="52.01" lengthAdjust="spacingAndGlyphs">SR latch</text>
+    <text x="195.43" y="236.6" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="41.16" lengthAdjust="spacingAndGlyphs"> (NOR)</text>
+  </g>
+  <g id="polygon_24">
+    <path d="M 560 70 L 660 70 L 660 190 L 560 190 Z" fill="#F3F3F3" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_25">
+    <path d="M 520 100 L 560 100" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_26">
+    <path d="M 520 160 L 560 160" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_27">
+    <path d="M 560 151 L 574 160 L 560 169" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_28">
+    <path d="M 660 100 L 700 100" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_29">
+    <path d="M 660 160 L 700 160" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_30">
+    <path d="M118 657 112 627C184 627 204 616 190 543L103 124C87 43 69 30 -7 30L-13 0H241C496 0 680 115 680 398C680 554 586 657 378 657ZM294 614C312 616 321 617 338 617C535 617 580 511 580 389C580 142 456 39 241 39C215 39 195 39 176 42Z" transform="translate(501.47 105.16) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_31">
+    <text x="486.71" y="164.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">CLK</text>
+  </g>
+  <g id="text_32">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(708 105.16) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_33">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(708 165.16) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M66 414 100 399 217 623C222 635 228 647 228 660C228 683 216 703 190 703C155 703 144 676 136 650Z" transform="translate(718.61 165.16) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_34">
+    <text x="610" y="126.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">D flip-flop</text>
+    <text x="610" y="142.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" text-anchor="middle">(rising-edge)</text>
+  </g>
+  <g id="text_35">
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(78.52 345.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_36">
+    <path d="M 100 352 L 136.5 352 L 139.5 330 L 174.5 330 L 177.5 352 L 288.5 352 L 291.5 330 L 326.5 330 L 329.5 352 L 423 352" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_37">
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(77.32 389.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_38">
+    <path d="M 100 396 L 212.5 396 L 215.5 374 L 250.5 374 L 253.5 396 L 423 396" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_39">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(76.1 433.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_40">
+    <path d="M 100 440 L 141.06 440 L 144.06 418 L 217.06 418 L 220.06 440 L 293.06 440 L 296.06 418 L 423 418" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_41">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(71.96 477.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M66 414 100 399 217 623C222 635 228 647 228 660C228 683 216 703 190 703C155 703 144 676 136 650Z" transform="translate(81.86 477.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_42">
+    <path d="M 100 462 L 146.38 462 L 149.38 484 L 222.38 484 L 225.38 462 L 298.38 462 L 301.38 484 L 423 484" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_43">
+    <text x="149.66" y="308.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="14.67" lengthAdjust="spacingAndGlyphs">set</text>
+  </g>
+  <g id="text_44">
+    <text x="220.77" y="308.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="24.45" lengthAdjust="spacingAndGlyphs">reset</text>
+  </g>
+  <g id="text_45">
+    <text x="301.66" y="308.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="14.67" lengthAdjust="spacingAndGlyphs">set</text>
+  </g>
+  <g id="text_46">
+    <text x="184.6" y="308.91" xml:space="preserve" fill="#666666" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="20.8" lengthAdjust="spacingAndGlyphs">hold</text>
+  </g>
+  <g id="text_47">
+    <text x="260.6" y="308.91" xml:space="preserve" fill="#666666" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="20.8" lengthAdjust="spacingAndGlyphs">hold</text>
+  </g>
+  <g id="text_48">
+    <text x="355.6" y="308.91" xml:space="preserve" fill="#666666" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="20.8" lengthAdjust="spacingAndGlyphs">hold</text>
+  </g>
+  <g id="polyline_49">
+    <path d="M 568 314 L 568 462" fill="none" stroke="#777777" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_50">
+    <path d="M 644 314 L 644 462" fill="none" stroke="#777777" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_51">
+    <path d="M 720 314 L 720 462" fill="none" stroke="#777777" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_52">
+    <path d="M 796 314 L 796 462" fill="none" stroke="#777777" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_53">
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(489.68 345.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M541 195H509C447 79 426 38 299 38H252C193 38 178 48 187 92L278 540C293 612 325 627 397 627L402 657H118L112 627C198 627 203 607 189 541L103 124C86 44 70 30 -7 30L-13 0H481Z" transform="translate(498.86 345.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M104 131C86 45 76 30 -7 30L-13 0H266L272 30C183 30 178 45 195 131L231 309H243L306 233C391 130 415 91 415 59C415 36 397 30 367 30H354L349 0H637L643 30C594 30 563 41 537 73L316 353L574 561C635 610 655 622 712 627L717 657H482L475 627H492C515 627 529 619 529 604C529 574 490 542 432 495L241 338H237L275 525C291 603 300 627 395 627L400 657H118L112 627C200 627 202 603 186 525Z" transform="translate(506.83 345.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_54">
+    <path d="M 530 352 L 566.5 352 L 569.5 330 L 604.5 330 L 607.5 352 L 642.5 352 L 645.5 330 L 680.5 330 L 683.5 352 L 718.5 352 L 721.5 330 L 756.5 330 L 759.5 352 L 794.5 352 L 797.5 330 L 832.5 330 L 835.5 352 L 853 352" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_55">
+    <path d="M118 657 112 627C184 627 204 616 190 543L103 124C87 43 69 30 -7 30L-13 0H241C496 0 680 115 680 398C680 554 586 657 378 657ZM294 614C312 616 321 617 338 617C535 617 580 511 580 389C580 142 456 39 241 39C215 39 195 39 176 42Z" transform="translate(506.17 389.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_56">
+    <path d="M 530 396 L 615.9 396 L 618.9 374 L 695.7 374 L 698.7 396 L 764.1 396 L 767.1 374 L 853 374" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_57">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(506.1 433.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_58">
+    <path d="M 530 440 L 648.2 440 L 651.2 418 L 724.2 418 L 727.2 440 L 800.2 440 L 803.2 418 L 853 418" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_59">
+    <text x="564.94" y="306.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="text_60">
+    <text x="640.94" y="306.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">2</text>
+  </g>
+  <g id="text_61">
+    <text x="716.94" y="306.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">3</text>
+  </g>
+  <g id="text_62">
+    <text x="792.94" y="306.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">4</text>
+  </g>
+  <g id="text_63">
+    <text x="530" y="286.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="129" lengthAdjust="spacingAndGlyphs">rising clock edges sample </text>
+    <path d="M118 657 112 627C184 627 204 616 190 543L103 124C87 43 69 30 -7 30L-13 0H241C496 0 680 115 680 398C680 554 586 657 378 657ZM294 614C312 616 321 617 338 617C535 617 580 511 580 389C580 142 456 39 241 39C215 39 195 39 176 42Z" transform="translate(659 286.91) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="text_64">
+    <text x="385.62" y="525.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="26" lengthAdjust="spacingAndGlyphs">time </text>
+    <path d="M876 264C778 305 700 382 634 459L613 439C636 405 667 369 697 341C707 331 711 324 711 315C711 305 695 293 685 293H71V225H684C702 225 710 215 710 205C710 196 705 185 696 176C665 144 636 111 612 78L633 58C700 136 778 212 876 254Z" transform="translate(411.62 525.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_65">
+    <text x="815.62" y="525.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="26" lengthAdjust="spacingAndGlyphs">time </text>
+    <path d="M876 264C778 305 700 382 634 459L613 439C636 405 667 369 697 341C707 331 711 324 711 315C711 305 695 293 685 293H71V225H684C702 225 710 215 710 205C710 196 705 185 696 176C665 144 636 111 612 78L633 58C700 136 778 212 876 254Z" transform="translate(841.62 525.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_66">
+    <text x="60" y="557.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="613.71" lengthAdjust="spacingAndGlyphs">S = R = 1 is the forbidden input of the NOR latch and is not applied. At each rising edge the flip-flop takes the value </text>
+    <path d="M118 657 112 627C184 627 204 616 190 543L103 124C87 43 69 30 -7 30L-13 0H241C496 0 680 115 680 398C680 554 586 657 378 657ZM294 614C312 616 321 617 338 617C535 617 580 511 580 389C580 142 456 39 241 39C215 39 195 39 176 42Z" transform="translate(673.71 557.63) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="682.13" y="557.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="95.39" lengthAdjust="spacingAndGlyphs"> had just before it.</text>
+  </g>
+  <g id="caption_67">
+    <text x="39.07" y="603.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 6:</text>
+    <text x="113.24" y="603.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="743.39" lengthAdjust="spacingAndGlyphs"> AN SR LATCH FROM NOR GATES AND A RISING-EDGE D FLIP-FLOP, EACH WITH ITS TIMING DIAGRAM</text>
+  </g>
+</svg>

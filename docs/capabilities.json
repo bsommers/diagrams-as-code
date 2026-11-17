@@ -308,6 +308,17 @@
       "verification": "uv run pytest tests/test_technical_examples.py tests/test_golden_images.py tests/test_lint.py && uv run diagrams-as-code lint examples"
     },
     {
+      "id": "CAP-DIAG-PLOT",
+      "name": "Plot Kit and Textbook Galleries",
+      "category": "Technical Figures & Visual Regression",
+      "status": "OPERATIONAL",
+      "target_release": "v0.15.0",
+      "python_api": "diagrams_as_code.plot.Plot",
+      "classes": ["Plot"],
+      "details": "Data-space plotting on a Diagram with the standard library alone: axes with ticks, grid, linear and log mapping, function and parametric curves clipped to the window and broken at asymptotes, tangents, shaded areas and bands, Riemann rectangles, slope and vector fields, RK4 trajectories and ODE solutions, candlesticks and bar charts. Fifty textbook figures in examples/calculus_math, differential_equations, physics, finance and logic.",
+      "verification": "uv run pytest tests/test_plot.py tests/test_textbook_examples.py && uv run diagrams-as-code lint examples"
+    },
+    {
       "id": "CAP-DIAG-PDF",
       "name": "Vector PDF Export",
       "category": "Vector PDF Export",
