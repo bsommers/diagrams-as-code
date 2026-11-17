@@ -11,6 +11,13 @@ other element. Pure standard library.
         p.axes(xlabel="$x$", ylabel="$y$")
         p.area(lambda x: x**0.5, 1, 3, fill="#DCE6F2")
         p.function(lambda x: x**0.5, stroke="#1F2F57")
+
+Beyond the basics: ``axes`` accepts ``xtick_labels`` / ``ytick_labels`` (value ->
+text, math markup allowed) and ``xlabels`` / ``ylabels`` to hide one axis' labels;
+log axes get decade ticks (``log_ticks``) labelled ``$10^{k}$``; ``dot`` takes
+``fill`` / ``stroke`` for open markers; ``legend`` draws line swatches with
+labels; ``stacked_bars`` stacks several series; ``orbit`` integrates a planar
+system backward and forward in time and marks the direction of flow.
 """
 from __future__ import annotations
 
@@ -38,8 +45,26 @@ def nice_step(span: float, target: int = 6) -> float:
     return 10 * mag
 
 
-def ticks(lo: float, hi: float, step: Optional[float] = None) -> list[float]:
-    """Tick positions inside [lo, hi] on multiples of ``step``."""
+def log_ticks(lo: float, hi: float) -> list[float]:
+    """Decade ticks (powers of ten) inside the positive range [lo, hi]."""
+    if lo <= 0 or hi <= 0:
+        return []
+    first = math.ceil(math.log10(lo) - 1e-9)
+    last = math.floor(math.log10(hi) + 1e-9)
+    return [10.0 ** k for k in range(first, last + 1)]
+
+
+def _log_label(v: float) -> str:
+    return f"$10^{{{round(math.log10(v))}}}$"
+
+
+def ticks(lo: float, hi: float, step: Optional[float] = None, scale: str = "linear") -> list[float]:
+    """Tick positions inside [lo, hi] on multiples of ``step``.
+
+    With ``scale="log"`` and no ``step`` the ticks are the decades in the range.
+    """
+    if scale == "log" and step is None:
+        return log_ticks(lo, hi)
     step = step or nice_step(hi - lo)
     first = math.ceil(lo / step - 1e-9)
     last = math.floor(hi / step + 1e-9)
@@ -158,10 +183,10 @@ class Plot:
         """Light grid lines at the tick positions."""
         style = Style(fill="none", stroke=color, stroke_width=0.6)
         parts = []
-        for tx in ticks(*self.x, xstep):
+        for tx in ticks(*self.x, xstep, self.xscale):
             a, b = self.px(tx, self.y[0]), self.px(tx, self.y[1])
             parts.append(f"M {a[0]:.2f} {a[1]:.2f} L {b[0]:.2f} {b[1]:.2f}")
-        for ty in ticks(*self.y, ystep):
+        for ty in ticks(*self.y, ystep, self.yscale):
             a, b = self.px(self.x[0], ty), self.px(self.x[1], ty)
             parts.append(f"M {a[0]:.2f} {a[1]:.2f} L {b[0]:.2f} {b[1]:.2f}")
         if parts:
@@ -171,12 +196,35 @@ class Plot:
         self, xlabel: str = "", ylabel: str = "", xstep: Optional[float] = None,
         ystep: Optional[float] = None, through_zero: bool = True, labels: bool = True,
         arrows: bool = True, size: float = 11,
+        xtick_labels: Optional[dict[float, str]] = None, ytick_labels: Optional[dict[float, str]] = None,
+        xlabels: Optional[bool] = None, ylabels: Optional[bool] = None,
     ) -> None:
         """Axes with tick marks and numeric labels.
 
         With ``through_zero`` the axes cross at the data origin when it lies in
         the window; otherwise they run along the bottom and left edges.
+        ``xtick_labels`` / ``ytick_labels`` map a tick value to its label text
+        (math markup allowed; keys inside the window become ticks too).
+        ``xlabels`` / ``ylabels`` default to ``labels`` and switch one axis'
+        labels on or off. Log axes are labelled ``$10^{k}$`` at each decade.
         """
+        xl = labels if xlabels is None else xlabels
+        yl = labels if ylabels is None else ylabels
+        xcustom, ycustom = xtick_labels or {}, ytick_labels or {}
+
+        def tick_set(lo, hi, step, scale, custom):
+            vals = ticks(lo, hi, step, scale)
+            for k in custom:
+                if lo - 1e-9 <= k <= hi + 1e-9 and not any(math.isclose(k, v, abs_tol=1e-9) for v in vals):
+                    vals.append(k)
+            return sorted(vals)
+
+        def text_for(v, custom, scale):
+            for k, t in custom.items():
+                if math.isclose(k, v, rel_tol=1e-9, abs_tol=1e-9):
+                    return t
+            return _log_label(v) if scale == "log" else _fmt(v)
+
         zx = 0.0 if through_zero and self.x[0] <= 0 <= self.x[1] and self.xscale == "linear" else self.x[0]
         zy = 0.0 if through_zero and self.y[0] <= 0 <= self.y[1] and self.yscale == "linear" else self.y[0]
         ax0, ax1 = self.px(self.x[0], zy), self.px(self.x[1], zy)
@@ -186,19 +234,29 @@ class Plot:
         self.d.connect(ax0, (ax1[0] + 12, ax1[1]), **opts)
         self.d.connect(ay0, (ay1[0], ay1[1] - 12), **opts)
         tick_parts = []
-        for tx in ticks(*self.x, xstep):
+        crosses = zx == 0 and zy == 0
+        xts = tick_set(*self.x, xstep, self.xscale, xcustom)
+        for tx in xts:
             p = self.px(tx, zy)
             tick_parts.append(f"M {p[0]:.2f} {p[1] - 3:.2f} v 6")
-            if labels and not (abs(tx) < 1e-12 and zx == 0 and zy == 0):  # shared origin label drawn once, below
-                self.d.text(_fmt(tx), size=size).at(p[0], p[1] + 6, anchor="top_center")
-        for ty in ticks(*self.y, ystep):
+            shared = abs(tx) < 1e-12 and crosses and not any(abs(k) < 1e-12 for k in xcustom)
+            if xl and not shared:  # shared origin label drawn once, below
+                self.d.text(text_for(tx, xcustom, self.xscale), size=size).at(p[0], p[1] + 6, anchor="top_center")
+        corner_x_labelled = xl and any(math.isclose(tx, self.x[0], abs_tol=1e-9) for tx in xts)
+        for ty in tick_set(*self.y, ystep, self.yscale, ycustom):
             p = self.px(zx, ty)
             tick_parts.append(f"M {p[0] - 3:.2f} {p[1]:.2f} h 6")
-            if labels:
-                if abs(ty) < 1e-12 and zx == 0 and zy == 0:
+            if yl:
+                if abs(ty) < 1e-12 and crosses and not any(abs(k) < 1e-12 for k in ycustom):
                     continue
-                self.d.text(_fmt(ty), size=size).at(p[0] - 7, p[1], anchor="right_center")
-        if labels and zx == 0 and zy == 0 and self.xscale == "linear" and self.yscale == "linear":
+                # Off-zero axes meet at the window corner; when both ranges start at the same
+                # value the two corner labels would read alike and collide, so keep the x one.
+                if (not crosses and zx == self.x[0] and zy == self.y[0] and corner_x_labelled and math.isclose(self.x[0], self.y[0], abs_tol=1e-9)
+                        and math.isclose(ty, self.y[0], abs_tol=1e-9)):
+                    continue
+                self.d.text(text_for(ty, ycustom, self.yscale), size=size).at(p[0] - 7, p[1], anchor="right_center")
+        if (xl or yl) and crosses and self.xscale == "linear" and self.yscale == "linear" \
+                and not any(abs(k) < 1e-12 for k in (*xcustom, *ycustom)):
             o = self.px(0, 0)
             self.d.text("0", size=size).at(o[0] - 6, o[1] + 4, anchor="top_right")
         if tick_parts:
@@ -446,10 +504,21 @@ class Plot:
 
     # ------------------------------------------------------------------ marks
     def dot(self, x: float, y: float, radius: float = 3.5, label: str = "", size: float = 12,
-            dx: float = 8, dy: float = -8, anchor: str = "bottom_left"):
-        """A marked data point with an optional label."""
+            dx: float = 8, dy: float = -8, anchor: str = "bottom_left",
+            fill: Optional[str] = None, stroke: Optional[str] = None):
+        """A marked data point with an optional label.
+
+        ``fill`` / ``stroke`` give a custom marker; ``fill="none"`` (or white)
+        with a ``stroke`` makes an open marker, as for an excluded endpoint.
+        """
         p = self.px(x, y)
-        mark = self.d.point(*p, dot=True, radius=radius)
+        if fill is None and stroke is None:
+            mark = self.d.point(*p, dot=True, radius=radius)
+        else:
+            ring = [(p[0] + radius * math.cos(2 * math.pi * k / 24), p[1] + radius * math.sin(2 * math.pi * k / 24))
+                    for k in range(24)]
+            mark = self.d.polygon(ring, style=Style(
+                fill=fill if fill is not None else INK, stroke=stroke or INK, stroke_width=1.3), z=2)
         if label:
             self.d.text(label, size=size).at(p[0] + dx, p[1] + dy, anchor=anchor)
         return mark
@@ -491,3 +560,102 @@ class Plot:
             pts = [self.px(x - width / 2, base), self.px(x - width / 2, v),
                    self.px(x + width / 2, v), self.px(x + width / 2, base)]
             self.d.polygon(pts, style=Style(fill=fill, stroke=stroke, stroke_width=0.9), z=0)
+
+    def stacked_bars(
+        self, data: Sequence[tuple[float, Sequence[float]]], fills: Sequence[str], width: float = 0.7,
+        stroke: str = INK,
+    ) -> None:
+        """Stacked bars from (x, [v1, v2, ...]); series stack upward from the baseline."""
+        base = max(self.y[0], 0.0)
+        for x, vals in data:
+            lo = base
+            for i, v in enumerate(vals):
+                hi = lo + v
+                pts = [self.px(x - width / 2, lo), self.px(x - width / 2, hi),
+                       self.px(x + width / 2, hi), self.px(x + width / 2, lo)]
+                self.d.polygon(pts, style=Style(fill=fills[i % len(fills)], stroke=stroke, stroke_width=0.9), z=0)
+                lo = hi
+
+    def legend(self, entries: Sequence[tuple[str, str, str]], at: Pt, size: float = 11,
+               row: Optional[float] = None) -> None:
+        """A stacked key at pixel ``at`` (top-left): a swatch and a label per row.
+
+        Each entry is ``(label, stroke, kind)``. ``kind`` is ``""`` for a solid
+        line, a dash pattern such as ``"5,4"`` for a dashed one, ``"fill"`` for a
+        filled box in ``stroke`` colour, or ``"dot"`` for a round marker.
+        """
+        row = row or size * 1.7
+        x0, y0 = at
+        for i, (label, colour, kind) in enumerate(entries):
+            cy = y0 + i * row + row / 2
+            if kind == "fill":
+                pts = [(x0, cy - 5), (x0 + 22, cy - 5), (x0 + 22, cy + 5), (x0, cy + 5)]
+                self.d.polygon(pts, style=Style(fill=colour, stroke=INK, stroke_width=0.8), z=2)
+            elif kind == "dot":
+                self.d.polygon([(x0 + 11 + 3.5 * math.cos(2 * math.pi * k / 16), cy + 3.5 * math.sin(2 * math.pi * k / 16))
+                                for k in range(16)], style=Style(fill=colour, stroke=colour, stroke_width=1.0), z=2)
+            else:
+                self.d.path(f"M {x0:.2f} {cy:.2f} h 22", style=Style(fill="none", stroke=colour, stroke_width=1.8, dash=kind), z=2)
+            self.d.text(label, size=size).at(x0 + 30, cy, anchor="left_center")
+
+    def orbit(
+        self, f: Callable[[float, float], Pt], start: Pt, t_back: float = 0.0, t_fwd: float = 10.0,
+        arrows: Sequence[float] = (0.5,), steps: int = 600, stroke: str = INK, width: float = 1.6,
+        head: float = 6.0,
+    ) -> list[Pt]:
+        """Integrate a planar system backward and forward from ``start`` and draw the orbit.
+
+        Arrowheads sit at the given fractions of the path length and point along
+        increasing time. Returns the points in time order.
+        """
+        def run(t_end: float) -> list[Pt]:
+            if t_end == 0:
+                return []
+            h = t_end / steps
+            x, y = start
+            out: list[Pt] = []
+            for _ in range(steps):
+                k1 = f(x, y)
+                k2 = f(x + h / 2 * k1[0], y + h / 2 * k1[1])
+                k3 = f(x + h / 2 * k2[0], y + h / 2 * k2[1])
+                k4 = f(x + h * k3[0], y + h * k3[1])
+                x += h / 6 * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0])
+                y += h / 6 * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1])
+                if not (math.isfinite(x) and math.isfinite(y)):
+                    break
+                out.append((x, y))
+            return out
+
+        back = run(-abs(t_back))
+        pts = back[::-1] + [start] + run(abs(t_fwd))
+        self.polyline(pts, stroke=stroke, width=width)
+        # Cumulative pixel arc length for placing the arrowheads.
+        px = [self.px(*p) for p in pts]
+        cum = [0.0]
+        for a, b in zip(px, px[1:]):
+            cum.append(cum[-1] + math.hypot(b[0] - a[0], b[1] - a[1]))
+        total = cum[-1]
+        parts = []
+        for frac in arrows:
+            if total <= 0 or not 0 < frac < 1:
+                continue
+            target = frac * total
+            i = next((k for k in range(1, len(cum)) if cum[k] >= target), len(cum) - 1)
+            if not self.inside(pts[i]):
+                continue
+            a, b = px[max(i - 1, 0)], px[i]
+            n = math.hypot(b[0] - a[0], b[1] - a[1])
+            if n < 1e-12:
+                continue
+            ux, uy = (b[0] - a[0]) / n, (b[1] - a[1]) / n
+            nx, ny = -uy, ux
+            hx, hy = b
+            parts.append(
+                f"M {hx:.2f} {hy:.2f} "
+                f"L {hx - ux * head + nx * head * 0.45:.2f} {hy - uy * head + ny * head * 0.45:.2f} "
+                f"L {hx - ux * head * 0.6:.2f} {hy - uy * head * 0.6:.2f} "
+                f"L {hx - ux * head - nx * head * 0.45:.2f} {hy - uy * head - ny * head * 0.45:.2f} Z"
+            )
+        if parts:
+            self.d.path(" ".join(parts), style=Style(fill=stroke, stroke=stroke, stroke_width=0.6), z=2)
+        return pts

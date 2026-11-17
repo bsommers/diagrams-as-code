@@ -8,7 +8,7 @@ import pytest
 
 from diagrams_as_code import Diagram
 from diagrams_as_code.output import render_all
-from diagrams_as_code.plot import Plot, nice_step, ticks
+from diagrams_as_code.plot import Plot, log_ticks, nice_step, ticks
 
 
 def _plot(**kw):
@@ -269,3 +269,116 @@ def test_candles_and_bar_chart_counts():
     d, p = _plot(x=(0, 5), y=(0, 5))
     p.candles([(1, 1, 3, 0.5, 2), (2, 3, 4, 2, 2.5)])
     assert len(d.shapes) >= 2
+
+
+# ------------------------------------------------------------------ extensions
+
+
+def _texts(d):
+    return re.findall(r"<text[^>]*>(.*?)</text>", d.render_svg(), flags=re.S)
+
+
+def test_axes_custom_tick_labels_replace_numbers():
+    d, p = _plot(x=(0, 4), y=(0, 4))
+    p.axes(xtick_labels={2: "two", 3.5: "mid"}, ytick_labels={4: "top"})
+    blob = " ".join(_texts(d))
+    assert "two" in blob and "top" in blob
+    d2, p2 = _plot(x=(0, 4), y=(0, 4))
+    p2.axes()
+    n_default = len(_texts(d2))
+    assert len(_texts(d)) == n_default + 1  # 3.5 added as an extra tick; others replaced
+
+
+def test_axes_xlabels_ylabels_flags():
+    d, p = _plot()
+    p.axes(ylabels=False)
+    d2, p2 = _plot()
+    p2.axes()
+    d3, p3 = _plot()
+    p3.axes(xlabels=False, ylabels=False)
+    d4, p4 = _plot()
+    p4.axes(labels=False)
+    assert len(_texts(d3)) == len(_texts(d4)) == 0
+    assert 0 < len(_texts(d)) < len(_texts(d2))
+
+
+def test_axes_off_zero_corner_skips_overlapping_y_label():
+    d, p = _plot(x=(1, 4), y=(1, 4))
+    p.axes()
+    xs, ys = ticks(1, 4), ticks(1, 4)
+    assert len(_texts(d)) == len(xs) + len(ys) - 1
+
+
+def test_log_ticks_decades():
+    assert log_ticks(1, 1000) == pytest.approx([1, 10, 100, 1000])
+    assert log_ticks(3, 5000) == pytest.approx([10, 100, 1000])
+    assert log_ticks(0.01, 1) == pytest.approx([0.01, 0.1, 1])
+    assert log_ticks(2, 5) == [] and log_ticks(0, 5) == []
+    assert ticks(1, 100, scale="log") == pytest.approx([1, 10, 100])
+    assert ticks(0, 10, 2, scale="log") == [0, 2, 4, 6, 8, 10]  # explicit step wins
+
+
+def test_log_axes_labels_and_grid_lines():
+    d, p = _plot(x=(1, 1000), y=(1, 100), xscale="log", yscale="log")
+    p.grid()
+    grid = max(_path_data(d), key=lambda s: s.count("M") + s.count("m"))
+    assert grid.upper().count("M") == 4 + 3
+    p.axes()
+    assert len(d.shapes) - 1 >= 7 and d.render_svg()  # one grid path plus a label per decade tick
+    d_lin, p_lin = _plot(x=(1, 1000), y=(1, 100))
+    p_lin.axes()
+    assert len(d.shapes) != len(d_lin.shapes)
+
+
+def test_dot_default_unchanged_and_open_marker():
+    d, p = _plot()
+    p.dot(1, 1)
+    assert len(d.shapes) == 1
+    d2, p2 = _plot()
+    m = p2.dot(1, 1, fill="none", stroke="#aa0000", radius=4)
+    assert m is not None and len(d2.shapes) == 1
+    svg = d2.render_svg()
+    assert 'fill="none"' in svg and "#aa0000" in svg
+
+
+def test_legend_rows_and_kinds():
+    d, p = _plot()
+    p.legend([("a", "#111111", ""), ("b", "#222222", "5,4"), ("c", "#33aa33", "fill"), ("d", "#444444", "dot")],
+             at=(120, 60))
+    assert sorted(_texts(d)) == ["a", "b", "c", "d"]
+    assert len(d.shapes) == 8  # four swatches plus four labels
+    assert "5,4" in d.render_svg()
+
+
+def test_stacked_bars_stack_from_baseline():
+    d, p = _plot(x=(0, 4), y=(0, 10))
+    p.stacked_bars([(1, [1, 2, 3]), (2, [2, 2])], fills=["#aaaaaa", "#bbbbbb", "#cccccc"])
+    assert len(d.shapes) == 5
+    svg = d.render_svg()
+    for c in ("#aaaaaa", "#bbbbbb", "#cccccc"):
+        assert c in svg
+
+
+def test_orbit_circle_both_directions_and_arrowheads():
+    d, p = _plot(x=(-2, 2), y=(-2, 2))
+    pts = p.orbit(lambda x, y: (-y, x), (1.0, 0.0), t_back=1.0, t_fwd=2.0, arrows=(0.25, 0.75))
+    assert len(pts) == 1 + 600 + 600
+    assert all(abs(math.hypot(x, y) - 1) < 1e-6 for x, y in pts)
+    assert pts[0][1] < 0 < pts[-1][1]  # earlier points lie at negative angle (time order)
+    heads = [s for s in _path_data(d) if s.strip().endswith("Z")]
+    assert len(heads) == 1 and heads[0].count("M") == 2
+
+
+def test_orbit_arrow_points_along_time():
+    d, p = _plot(x=(-2, 2), y=(-2, 2))
+    p.orbit(lambda x, y: (1.0, 0.0), (-1.0, 0.0), t_back=0, t_fwd=2.0, arrows=(0.5,))
+    head = [s for s in _path_data(d) if s.strip().endswith("Z")][0]
+    nums = [float(v) for v in re.findall(r"-?\d+\.?\d*", head)]
+    tip_x = nums[0]
+    assert all(nums[i] <= tip_x + 1e-6 for i in range(0, len(nums), 2))  # trailing vertices lie behind the tip
+
+
+def test_orbit_no_back_and_drops_diverging():
+    d, p = _plot(x=(-2, 2), y=(-2, 2))
+    pts = p.orbit(lambda x, y: (x * x * 50, 0.0), (1.0, 0.0), t_fwd=5, arrows=())
+    assert pts[0] == (1.0, 0.0) and len(pts) < 601

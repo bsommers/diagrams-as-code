@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
+- `Plot` extras: custom tick labels (`xtick_labels`, `ytick_labels`) and per-axis `xlabels`/`ylabels`, decade ticks and grid on log axes (`log_ticks`), open markers via `dot(fill=, stroke=)`, `legend()`, `stacked_bars()` and `orbit()` (RK4 both ways in time, with direction arrows).
+- Math markup: `\bar`, `\overline` and `\sqrt{...}` (drawn from the minus and radical outlines), and the functions `\arcsin \arccos \arctan \sinh \cosh \tanh \coth \cot \sec \csc \lg \hom \limsup \liminf`. `\sqrt[n]{x}` still raises `MathError`.
+
+### Fixed
+- Math: a superscript on a function name (`\cos^2\theta`, `\sin^{-1}x`) was set above the middle of the name, reading "co²s". As in TeX, only `\lim \max \min \sup \inf \limsup \liminf \argmin \argmax \det \gcd \Pr` take limits; other functions set scripts beside the name.
+
 - **`diagrams_as_code.plot.Plot`**: data-space plotting on a `Diagram` (axes, grid, linear and log mapping, function and parametric curves clipped to the window and broken at asymptotes, tangents, areas and bands, Riemann rectangles, slope and vector fields, RK4 trajectories, candlesticks, bar charts). Standard library only; 37 tests in `tests/test_plot.py`.
 - **Five textbook galleries, 50 figures** (10 each, `paper` theme, all computed by the scripts and lint-clean): `examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/` and `logic/`. `tests/test_textbook_examples.py` builds every script and checks its committed SVG.
 

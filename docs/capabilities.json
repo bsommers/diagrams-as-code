@@ -315,7 +315,7 @@
       "target_release": "v0.15.0",
       "python_api": "diagrams_as_code.plot.Plot",
       "classes": ["Plot"],
-      "details": "Data-space plotting on a Diagram with the standard library alone: axes with ticks, grid, linear and log mapping, function and parametric curves clipped to the window and broken at asymptotes, tangents, shaded areas and bands, Riemann rectangles, slope and vector fields, RK4 trajectories and ODE solutions, candlesticks and bar charts. Fifty textbook figures in examples/calculus_math, differential_equations, physics, finance and logic.",
+      "details": "Data-space plotting on a Diagram with the standard library alone: axes with ticks, grid, linear and log mapping, function and parametric curves clipped to the window and broken at asymptotes, tangents, shaded areas and bands, Riemann rectangles, slope and vector fields, RK4 trajectories and ODE solutions, candlesticks, stacked and plain bar charts, legends, orbits with direction arrows, custom tick labels and decade log ticks. Math markup gains bars, roots and more function names. Fifty textbook figures in examples/calculus_math, differential_equations, physics, finance and logic.",
       "verification": "uv run pytest tests/test_plot.py tests/test_textbook_examples.py && uv run diagrams-as-code lint examples"
     },
     {

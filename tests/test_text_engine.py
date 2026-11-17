@@ -220,3 +220,66 @@ def test_backslash_n_inside_math_is_a_command_not_a_line_break():
     # Outside math a typed backslash-n still breaks the line, as a real newline does.
     assert len(layout(r"one\ntwo", TextStyle(size=13)).lines) == 2
     assert len(layout(r"$\nu$ first\n$\neq$ second", TextStyle(size=13)).lines) == 2
+
+
+# function names, bars and radicals ------------------------------------------------
+
+
+def _extent(box):
+    """(x_min, x_max, y_min, y_max) of the glyph origins, y down."""
+    xs = [g.x for g in box.glyphs]
+    ys = [g.y for g in box.glyphs]
+    return min(xs), max(xs), min(ys), max(ys)
+
+
+def test_superscript_on_a_function_name_sits_beside_it():
+    plain = typeset(r"\cos", 10)
+    box = typeset(r"\cos^2", 10)
+    # The exponent follows the name (to its right), instead of floating over its middle.
+    exponent = box.glyphs[-1]
+    assert exponent.x >= plain.width - 1e-9
+    assert exponent.y < 0  # raised
+
+
+def test_inverse_function_exponent_is_beside_the_name():
+    box = typeset(r"\sin^{-1}", 10)
+    assert min(g.x for g in box.glyphs[3:]) >= typeset(r"\sin", 10).width - 1e-9
+
+
+def test_limit_functions_keep_their_limits_below():
+    box = typeset(r"\lim_{x}", 10)
+    sub = box.glyphs[-1]
+    assert sub.y > 0 and sub.x < typeset(r"\lim", 10).width  # under the name, not after it
+
+
+@pytest.mark.parametrize("name", ["arcsin", "arccos", "arctan", "sinh", "cosh", "tanh", "cot", "sec", "csc"])
+def test_more_function_names_are_upright(name):
+    assert [g.cp for g in typeset("\\" + name, 10).glyphs] == [ord(c) for c in name]
+
+
+@pytest.mark.parametrize("src", [r"\bar x", r"\bar{x}", r"\overline{xy}"])
+def test_overline_adds_a_bar_above_the_body(src):
+    body = typeset(src.replace(r"\overline", "").replace(r"\bar", "").replace("{", "").replace("}", ""), 10)
+    box = typeset(src, 10)
+    assert box.height > body.height
+    assert abs(box.width - body.width) < 1e-6
+    assert any(g.cp == 0x2212 for g in box.glyphs)
+
+
+def test_sqrt_has_a_radical_and_a_bar_over_the_body():
+    box = typeset(r"\sqrt{a^2+b^2}", 10)
+    cps = [g.cp for g in box.glyphs]
+    assert 0x221A in cps and 0x2212 in cps
+    body = typeset("a^2+b^2", 10)
+    assert box.width > body.width and box.height > body.height
+
+
+def test_sqrt_with_an_index_is_not_supported():
+    with pytest.raises(MathError):
+        typeset(r"\sqrt[3]{x}", 10)
+
+
+@pytest.mark.parametrize("bad", [r"\bar", r"\sqrt"])
+def test_bar_and_sqrt_need_an_argument(bad):
+    with pytest.raises(MathError):
+        typeset(bad, 10)
