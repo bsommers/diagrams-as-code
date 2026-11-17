@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.16.0] - 2026-11-17
+
+### Added
+- `diagrams_as_code.draft.Draft`: drafting and anatomy primitives in canvas pixels (dimensions, radius/diameter leaders, even-odd hatching with holes, centerlines, hidden lines, section arrows, GD&T frames, smooth organic outlines, leaders, periodic traces and `ecg_beat`).
+- 30 textbook figures: `examples/medical/` (heart, ECG, Wiggers, pharmacokinetics, dose-response, neuron, SIR, cell cycle, O2 dissociation, Michaelis-Menten), `examples/engineering/` (sectioned plate, GD&T shaft, beam shear/moment, truss, stress-strain, Mohr, gears, Otto cycle, feedback, Bode) and `examples/cad/` (third-angle projection, isometric, exploded assembly, fits, thread, sketch constraints, fillet/chamfer, features, section views, title block).
+- Tests: `tests/test_draft.py`, `tests/test_clinical_engineering_examples.py`.
+
 ## [v0.15.0] - 2026-11-16
 
 ### Added
