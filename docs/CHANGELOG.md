@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.15.0] - 2026-11-16
+
 ### Added
 - `Plot` extras: custom tick labels (`xtick_labels`, `ytick_labels`) and per-axis `xlabels`/`ylabels`, decade ticks and grid on log axes (`log_ticks`), open markers via `dot(fill=, stroke=)`, `legend()`, `stacked_bars()` and `orbit()` (RK4 both ways in time, with direction arrows).
 - Math markup: `\bar`, `\overline` and `\sqrt{...}` (drawn from the minus and radical outlines), and the functions `\arcsin \arccos \arctan \sinh \cosh \tanh \coth \cot \sec \csc \lg \hom \limsup \liminf`. `\sqrt[n]{x}` still raises `MathError`.
