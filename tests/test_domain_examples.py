@@ -1,4 +1,4 @@
-"""Test suite executing and verifying all 88 domain example diagram scripts across 8 domains."""
+"""Test suite executing and verifying all 143 domain example diagram scripts across 13 domains."""
 
 from __future__ import annotations
 
@@ -20,6 +20,11 @@ EXPECTED_DOMAINS = {
     "cybersecurity",
     "network_engineering",
     "iiot",
+    "database",
+    "enterprise_architecture",
+    "manufacturing",
+    "mind_map",
+    "computer_science",
 }
 
 #: The domain galleries. Other example sets (``examples/primitives``) have their own tests.
@@ -28,9 +33,20 @@ EXAMPLE_SCRIPTS = sorted(
 )
 
 
+def _load_diagram(script_path: Path):
+    """The diagram ``script_path`` builds, without rendering it."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(f"_domain_{script_path.stem}", script_path)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.diagram()
+
+
 def test_example_script_discovery() -> None:
-    """Verify that exactly 88 example scripts exist across 8 domains."""
-    assert len(EXAMPLE_SCRIPTS) == 88
+    """Verify that exactly 143 example scripts exist across 13 domains."""
+    assert len(EXAMPLE_SCRIPTS) == 143
     domain_counts: dict[str, int] = {}
     for p in EXAMPLE_SCRIPTS:
         domain = p.parent.name
@@ -102,7 +118,11 @@ def test_example_diagram_execution(script_path: Path) -> None:
     assert readme_file.exists(), f"README output missing: {readme_file}"
     readme_content = readme_file.read_text(encoding="utf-8")
     assert "## Bill of Materials" in readme_content
-    assert "## Connections" in readme_content
+    # Figures without edges (a chart, say) get no Connections section.
+    if _load_diagram(script_path).edges:
+        assert "## Connections" in readme_content
+    else:
+        assert "## Connections" not in readme_content
     assert f"./{stem}.svg" in readme_content
 
 

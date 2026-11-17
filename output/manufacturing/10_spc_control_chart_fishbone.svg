@@ -1,0 +1,388 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1108 819" width="1108" height="819">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_11">
+    <path d="M 672 165.5 L 888 165.5 L 888 230 L 672 230 Z" fill="#F5E6C8" />
+  </g>
+  <path d="M 170 580 L 888.4 580" fill="none" stroke="#000000" stroke-width="2" />
+  <path d="M 898 580 L 886 584.8 L 886 575.2 Z" fill="#000000" />
+  <g id="polyline_1">
+    <path d="M 130 129.03 L 908 129.03" fill="none" stroke="#A33A3A" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_2">
+    <text x="916" y="132.81" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">UCL = 25.0115 mm</text>
+  </g>
+  <g id="polyline_3">
+    <path d="M 130 330.98 L 908 330.98" fill="none" stroke="#A33A3A" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <text x="916" y="334.76" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">LCL = 24.9885 mm</text>
+  </g>
+  <g id="polyline_5">
+    <path d="M 130 230 L 908 230" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_6">
+    <text x="916" y="233.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">CL = 25.0000 mm</text>
+  </g>
+  <g id="polyline_7">
+    <path d="M 130 196.34 L 908 196.34" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_8">
+    <path d="M 130 263.66 L 908 263.66" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_9">
+    <path d="M 130 162.68 L 908 162.68" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_10">
+    <path d="M 130 297.32 L 908 297.32" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_12">
+    <text x="714.27" y="158.41" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">rule 2: 8 in a row above CL</text>
+  </g>
+  <g id="polyline_13">
+    <path d="M 150 247.5 L 178 203.75 L 206 221.25 L 234 265 L 262 212.5 L 290 230 L 318 256.25 L 346 186.25 L 374 238.75 L 402 212.5 L 430 282.5 L 458 221.25 L 486 203.75 L 514 247.5 L 542 230 L 570 195 L 598 256.25 L 626 116.25 L 654 247.5 L 682 212.5 L 710 195 L 738 203.75 L 766 186.25 L 794 212.5 L 822 177.5 L 850 195 L 878 203.75" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="point_14">
+    <path d="M 153 247.5 C 153 249.16 151.66 250.5 150 250.5 C 148.34 250.5 147 249.16 147 247.5 C 147 245.84 148.34 244.5 150 244.5 C 151.66 244.5 153 245.84 153 247.5 Z" fill="#000000" />
+  </g>
+  <g id="point_15">
+    <path d="M 181 203.75 C 181 205.41 179.66 206.75 178 206.75 C 176.34 206.75 175 205.41 175 203.75 C 175 202.09 176.34 200.75 178 200.75 C 179.66 200.75 181 202.09 181 203.75 Z" fill="#000000" />
+  </g>
+  <g id="point_16">
+    <path d="M 209 221.25 C 209 222.91 207.66 224.25 206 224.25 C 204.34 224.25 203 222.91 203 221.25 C 203 219.59 204.34 218.25 206 218.25 C 207.66 218.25 209 219.59 209 221.25 Z" fill="#000000" />
+  </g>
+  <g id="point_17">
+    <path d="M 237 265 C 237 266.66 235.66 268 234 268 C 232.34 268 231 266.66 231 265 C 231 263.34 232.34 262 234 262 C 235.66 262 237 263.34 237 265 Z" fill="#000000" />
+  </g>
+  <g id="point_18">
+    <path d="M 265 212.5 C 265 214.16 263.66 215.5 262 215.5 C 260.34 215.5 259 214.16 259 212.5 C 259 210.84 260.34 209.5 262 209.5 C 263.66 209.5 265 210.84 265 212.5 Z" fill="#000000" />
+  </g>
+  <g id="point_19">
+    <path d="M 293 230 C 293 231.66 291.66 233 290 233 C 288.34 233 287 231.66 287 230 C 287 228.34 288.34 227 290 227 C 291.66 227 293 228.34 293 230 Z" fill="#000000" />
+  </g>
+  <g id="point_20">
+    <path d="M 321 256.25 C 321 257.91 319.66 259.25 318 259.25 C 316.34 259.25 315 257.91 315 256.25 C 315 254.59 316.34 253.25 318 253.25 C 319.66 253.25 321 254.59 321 256.25 Z" fill="#000000" />
+  </g>
+  <g id="point_21">
+    <path d="M 349 186.25 C 349 187.91 347.66 189.25 346 189.25 C 344.34 189.25 343 187.91 343 186.25 C 343 184.59 344.34 183.25 346 183.25 C 347.66 183.25 349 184.59 349 186.25 Z" fill="#000000" />
+  </g>
+  <g id="point_22">
+    <path d="M 377 238.75 C 377 240.41 375.66 241.75 374 241.75 C 372.34 241.75 371 240.41 371 238.75 C 371 237.09 372.34 235.75 374 235.75 C 375.66 235.75 377 237.09 377 238.75 Z" fill="#000000" />
+  </g>
+  <g id="point_23">
+    <path d="M 405 212.5 C 405 214.16 403.66 215.5 402 215.5 C 400.34 215.5 399 214.16 399 212.5 C 399 210.84 400.34 209.5 402 209.5 C 403.66 209.5 405 210.84 405 212.5 Z" fill="#000000" />
+  </g>
+  <g id="point_24">
+    <path d="M 433 282.5 C 433 284.16 431.66 285.5 430 285.5 C 428.34 285.5 427 284.16 427 282.5 C 427 280.84 428.34 279.5 430 279.5 C 431.66 279.5 433 280.84 433 282.5 Z" fill="#000000" />
+  </g>
+  <g id="point_25">
+    <path d="M 461 221.25 C 461 222.91 459.66 224.25 458 224.25 C 456.34 224.25 455 222.91 455 221.25 C 455 219.59 456.34 218.25 458 218.25 C 459.66 218.25 461 219.59 461 221.25 Z" fill="#000000" />
+  </g>
+  <g id="point_26">
+    <path d="M 489 203.75 C 489 205.41 487.66 206.75 486 206.75 C 484.34 206.75 483 205.41 483 203.75 C 483 202.09 484.34 200.75 486 200.75 C 487.66 200.75 489 202.09 489 203.75 Z" fill="#000000" />
+  </g>
+  <g id="point_27">
+    <path d="M 517 247.5 C 517 249.16 515.66 250.5 514 250.5 C 512.34 250.5 511 249.16 511 247.5 C 511 245.84 512.34 244.5 514 244.5 C 515.66 244.5 517 245.84 517 247.5 Z" fill="#000000" />
+  </g>
+  <g id="point_28">
+    <path d="M 545 230 C 545 231.66 543.66 233 542 233 C 540.34 233 539 231.66 539 230 C 539 228.34 540.34 227 542 227 C 543.66 227 545 228.34 545 230 Z" fill="#000000" />
+  </g>
+  <g id="point_29">
+    <path d="M 573 195 C 573 196.66 571.66 198 570 198 C 568.34 198 567 196.66 567 195 C 567 193.34 568.34 192 570 192 C 571.66 192 573 193.34 573 195 Z" fill="#000000" />
+  </g>
+  <g id="point_30">
+    <path d="M 601 256.25 C 601 257.91 599.66 259.25 598 259.25 C 596.34 259.25 595 257.91 595 256.25 C 595 254.59 596.34 253.25 598 253.25 C 599.66 253.25 601 254.59 601 256.25 Z" fill="#000000" />
+  </g>
+  <g id="point_31">
+    <path d="M 629 116.25 C 629 117.91 627.66 119.25 626 119.25 C 624.34 119.25 623 117.91 623 116.25 C 623 114.59 624.34 113.25 626 113.25 C 627.66 113.25 629 114.59 629 116.25 Z" fill="#000000" />
+  </g>
+  <g id="point_32">
+    <path d="M 657 247.5 C 657 249.16 655.66 250.5 654 250.5 C 652.34 250.5 651 249.16 651 247.5 C 651 245.84 652.34 244.5 654 244.5 C 655.66 244.5 657 245.84 657 247.5 Z" fill="#000000" />
+  </g>
+  <g id="point_33">
+    <path d="M 685 212.5 C 685 214.16 683.66 215.5 682 215.5 C 680.34 215.5 679 214.16 679 212.5 C 679 210.84 680.34 209.5 682 209.5 C 683.66 209.5 685 210.84 685 212.5 Z" fill="#000000" />
+  </g>
+  <g id="point_34">
+    <path d="M 713 195 C 713 196.66 711.66 198 710 198 C 708.34 198 707 196.66 707 195 C 707 193.34 708.34 192 710 192 C 711.66 192 713 193.34 713 195 Z" fill="#000000" />
+  </g>
+  <g id="point_35">
+    <path d="M 741 203.75 C 741 205.41 739.66 206.75 738 206.75 C 736.34 206.75 735 205.41 735 203.75 C 735 202.09 736.34 200.75 738 200.75 C 739.66 200.75 741 202.09 741 203.75 Z" fill="#000000" />
+  </g>
+  <g id="point_36">
+    <path d="M 769 186.25 C 769 187.91 767.66 189.25 766 189.25 C 764.34 189.25 763 187.91 763 186.25 C 763 184.59 764.34 183.25 766 183.25 C 767.66 183.25 769 184.59 769 186.25 Z" fill="#000000" />
+  </g>
+  <g id="point_37">
+    <path d="M 797 212.5 C 797 214.16 795.66 215.5 794 215.5 C 792.34 215.5 791 214.16 791 212.5 C 791 210.84 792.34 209.5 794 209.5 C 795.66 209.5 797 210.84 797 212.5 Z" fill="#000000" />
+  </g>
+  <g id="point_38">
+    <path d="M 825 177.5 C 825 179.16 823.66 180.5 822 180.5 C 820.34 180.5 819 179.16 819 177.5 C 819 175.84 820.34 174.5 822 174.5 C 823.66 174.5 825 175.84 825 177.5 Z" fill="#000000" />
+  </g>
+  <g id="point_39">
+    <path d="M 853 195 C 853 196.66 851.66 198 850 198 C 848.34 198 847 196.66 847 195 C 847 193.34 848.34 192 850 192 C 851.66 192 853 193.34 853 195 Z" fill="#000000" />
+  </g>
+  <g id="point_40">
+    <path d="M 881 203.75 C 881 205.41 879.66 206.75 878 206.75 C 876.34 206.75 875 205.41 875 203.75 C 875 202.09 876.34 200.75 878 200.75 C 879.66 200.75 881 202.09 881 203.75 Z" fill="#000000" />
+  </g>
+  <g id="path_41">
+    <path d="M 618 116.25 C 618 120.67 621.58 124.25 626 124.25 C 630.42 124.25 634 120.67 634 116.25 C 634 111.83 630.42 108.25 626 108.25 C 621.58 108.25 618 111.83 618 116.25" fill="none" stroke="#A33A3A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_42">
+    <text x="453" y="120.03" fill="#A33A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">rule 1: subgroup 18 beyond UCL</text>
+  </g>
+  <g id="path_43">
+    <path d="M 130 90 L 130 370 L 908 370 M 130 361.25 L 125 361.25 M 130 317.5 L 125 317.5 M 130 273.75 L 125 273.75 M 130 230 L 125 230 M 130 186.25 L 125 186.25 M 130 142.5 L 125 142.5 M 130 98.75 L 125 98.75 M 150 370 L 150 375 M 206 370 L 206 375 M 262 370 L 262 375 M 318 370 L 318 375 M 374 370 L 374 375 M 430 370 L 430 375 M 486 370 L 486 375 M 542 370 L 542 375 M 598 370 L 598 375 M 654 370 L 654 375 M 710 370 L 710 375 M 766 370 L 766 375 M 822 370 L 822 375 M 878 370 L 878 375" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_44">
+    <text x="106.1" y="365.03" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">-15</text>
+  </g>
+  <g id="text_45">
+    <text x="106.1" y="321.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">-10</text>
+  </g>
+  <g id="text_46">
+    <text x="112.22" y="277.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">-5</text>
+  </g>
+  <g id="text_47">
+    <text x="115.88" y="233.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="text_48">
+    <text x="109.46" y="190.03" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">+5</text>
+  </g>
+  <g id="text_49">
+    <text x="103.34" y="146.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">+10</text>
+  </g>
+  <g id="text_50">
+    <text x="103.34" y="102.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">+15</text>
+  </g>
+  <g id="text_51">
+    <text x="146.94" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="text_52">
+    <text x="202.94" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">3</text>
+  </g>
+  <g id="text_53">
+    <text x="258.94" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">5</text>
+  </g>
+  <g id="text_54">
+    <text x="314.94" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">7</text>
+  </g>
+  <g id="text_55">
+    <text x="370.94" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">9</text>
+  </g>
+  <g id="text_56">
+    <text x="423.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">11</text>
+  </g>
+  <g id="text_57">
+    <text x="479.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">13</text>
+  </g>
+  <g id="text_58">
+    <text x="535.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">15</text>
+  </g>
+  <g id="text_59">
+    <text x="591.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">17</text>
+  </g>
+  <g id="text_60">
+    <text x="647.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">19</text>
+  </g>
+  <g id="text_61">
+    <text x="703.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">21</text>
+  </g>
+  <g id="text_62">
+    <text x="759.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">23</text>
+  </g>
+  <g id="text_63">
+    <text x="815.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">25</text>
+  </g>
+  <g id="text_64">
+    <text x="871.88" y="388.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">27</text>
+  </g>
+  <g id="text_65">
+    <text x="499.73" y="407.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="53.37" lengthAdjust="spacingAndGlyphs">subgroup </text>
+    <path d="M214 49C203 -11 167 -192 116 -192C77 -192 105 -104 49 -104C21 -104 9 -129 9 -150C9 -188 35 -225 99 -225C236 -225 287 -8 304 88L374 476H352L212 465V438C212 438 229 440 246 440C273 440 278 424 278 411C278 394 275 380 275 380ZM400 610C400 642 379 665 346 665C313 665 292 644 292 610C292 575 313 557 346 557C379 557 400 576 400 610Z" transform="translate(553.1 407.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_66">
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(69.62 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M214 49C203 -11 167 -192 116 -192C77 -192 105 -104 49 -104C21 -104 9 -129 9 -150C9 -188 35 -225 99 -225C236 -225 287 -8 304 88L374 476H352L212 465V438C212 438 229 440 246 440C273 440 278 424 278 411C278 394 275 380 275 380ZM400 610C400 642 379 665 346 665C313 665 292 644 292 610C292 575 313 557 346 557C379 557 400 576 400 610Z" transform="translate(79.94 76.11) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(86.71 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(98.02 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(103.96 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(109.9 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(112.84 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(118.78 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(124.72 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="130.66" y="73.59" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="42.67" lengthAdjust="spacingAndGlyphs"> mm, in </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(173.32 73.59) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="180.38" y="73.59" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="10" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_67">
+    <path d="M734 657H489V627C573 627 583 604 583 499V247C583 109 529 51 398 51C255 51 210 121 210 251V534C210 609 223 627 308 627V657H20V627C99 627 118 609 118 539V250C118 64 196 -12 373 -12C562 -12 640 79 640 261V502C640 605 648 627 734 627Z" transform="translate(611.88 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(620.91 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M568 195H536C497 79 481 42 347 42H301C242 42 225 51 225 95V529C225 607 242 627 323 627V657H42V627C122 627 133 607 133 530V123C133 45 122 30 42 30V0H538Z" transform="translate(628.95 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M70 -132C110 -114 194 -80 194 33C194 88 167 121 117 121C77 121 55 94 55 62C55 33 71 8 110 8C121 8 130 10 141 14C141 -67 95 -91 58 -107Z" transform="translate(635.97 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M568 195H536C497 79 481 42 347 42H301C242 42 225 51 225 95V529C225 607 242 627 323 627V657H42V627C122 627 133 607 133 530V123C133 45 122 30 42 30V0H538Z" transform="translate(640.91 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(647.93 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M568 195H536C497 79 481 42 347 42H301C242 42 225 51 225 95V529C225 607 242 627 323 627V657H42V627C122 627 133 607 133 530V123C133 45 122 30 42 30V0H538Z" transform="translate(655.97 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(666.32 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(678.29 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(685.71 77.07) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 306V373H394V576H326V373H62V306H326V92H394V306ZM658 -31V36H62V-31Z" transform="translate(693.01 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(704.32 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(712.85 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(717.49 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M308 62C314 18 324 -5 368 -5C419 -5 443 16 476 64L461 80C447 65 433 55 414 55C393 55 384 63 384 104V331C384 435 343 485 234 485C125 485 58 431 58 375C58 342 80 327 100 327C128 327 144 342 144 373C144 433 154 454 211 454C271 454 301 421 301 334V290C215 263 38 237 38 105C38 41 80 -7 157 -7C221 -7 257 21 304 62ZM301 92C267 64 231 48 198 48C155 48 126 79 126 129C126 207 210 234 301 257Z" transform="translate(725.29 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M498 473H323V444C359 444 380 439 380 417C380 401 374 389 373 384L287 158L266 97H260L241 157L156 380C150 394 146 406 146 419C146 435 159 444 198 444V473H-13V444C30 444 42 433 68 371L217 -6H265L423 378C443 430 459 444 498 444Z" transform="translate(729.32 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M128 184C81 148 46 106 46 70C46 42 68 15 102 -2V-6C48 -58 21 -92 21 -125C21 -180 60 -235 191 -235C317 -235 465 -189 465 -55C465 60 369 64 243 64C151 64 125 74 125 104C125 121 141 157 151 171C177 162 205 156 237 156C342 156 414 215 414 308C414 358 392 391 378 411V416L472 413V467L343 460C343 460 298 485 232 485C126 485 51 422 51 322C51 257 80 214 128 186ZM127 -10C141 -10 160 -11 240 -12C243 -12 246 -12 249 -12C316 -13 414 -14 414 -83C414 -126 367 -178 249 -178C147 -178 99 -149 99 -91C99 -70 106 -47 127 -10ZM225 449C289 449 325 395 325 314C325 219 288 191 238 191C173 191 139 240 139 326C139 410 173 449 225 449Z" transform="translate(733.36 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="737.91" y="73.51" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="6.67" lengthAdjust="spacingAndGlyphs">, </text>
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(744.58 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(753.11 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(761.08 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(773.05 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(778.99 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(781.93 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(787.87 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(793.81 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="799.75" y="73.51" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="6.67" lengthAdjust="spacingAndGlyphs">, </text>
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(806.42 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M308 62C314 18 324 -5 368 -5C419 -5 443 16 476 64L461 80C447 65 433 55 414 55C393 55 384 63 384 104V331C384 435 343 485 234 485C125 485 58 431 58 375C58 342 80 327 100 327C128 327 144 342 144 373C144 433 154 454 211 454C271 454 301 421 301 334V290C215 263 38 237 38 105C38 41 80 -7 157 -7C221 -7 257 21 304 62ZM301 92C267 64 231 48 198 48C155 48 126 79 126 129C126 207 210 234 301 257Z" transform="translate(814.22 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M498 473H323V444C359 444 380 439 380 417C380 401 374 389 373 384L287 158L266 97H260L241 157L156 380C150 394 146 406 146 419C146 435 159 444 198 444V473H-13V444C30 444 42 433 68 371L217 -6H265L423 378C443 430 459 444 498 444Z" transform="translate(818.25 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M128 184C81 148 46 106 46 70C46 42 68 15 102 -2V-6C48 -58 21 -92 21 -125C21 -180 60 -235 191 -235C317 -235 465 -189 465 -55C465 60 369 64 243 64C151 64 125 74 125 104C125 121 141 157 151 171C177 162 205 156 237 156C342 156 414 215 414 308C414 358 392 391 378 411V416L472 413V467L343 460C343 460 298 485 232 485C126 485 51 422 51 322C51 257 80 214 128 186ZM127 -10C141 -10 160 -11 240 -12C243 -12 246 -12 249 -12C316 -13 414 -14 414 -83C414 -126 367 -178 249 -178C147 -178 99 -149 99 -91C99 -70 106 -47 127 -10ZM225 449C289 449 325 395 325 314C325 219 288 191 238 191C173 191 139 240 139 326C139 410 173 449 225 449Z" transform="translate(822.29 76.03) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(830.17 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(842.15 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(848.09 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(856.03 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M185 357C214 384 258 421 310 421C356 421 390 399 390 314V116C390 46 384 29 313 29V0H550V29C478 29 473 47 473 116V359C506 387 547 421 588 421C635 421 674 399 674 308V116C674 55 671 29 603 29V0H829V29C760 29 757 53 757 116V320C757 441 706 485 628 485C575 485 524 456 469 402H465C445 450 411 485 354 485C286 485 240 448 186 401H182V482H158L33 453V424C33 424 45 426 60 426C88 426 102 417 102 381V101C102 41 95 29 32 29V0H260V29C198 29 185 41 185 97Z" transform="translate(863.08 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="873.31" y="73.51" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="6.67" lengthAdjust="spacingAndGlyphs">, </text>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(879.97 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(890.09 73.51) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(902.06 73.51) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_68">
+    <text x="130" y="444.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Cause and effect: subgroup 18 beyond UCL</text>
+  </g>
+  <g id="shape_69">
+    <rect x="898" y="552" width="150" height="56" rx="0" fill="#F1D3D3" stroke="#000000" stroke-width="1" />
+    <text x="973" y="576.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Bore diameter</text>
+    <text x="973" y="592.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">oversize</text>
+  </g>
+  <g id="polyline_71">
+    <path d="M 260 470 L 330 580" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_72">
+    <text x="235.99" y="462.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Machine</text>
+  </g>
+  <g id="polyline_73">
+    <path d="M 272.5 508.5 L 284.5 508.5" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_74">
+    <text x="157.83" y="512.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">spindle thermal growth</text>
+  </g>
+  <g id="polyline_75">
+    <path d="M 297 547 L 309 547" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_76">
+    <text x="215.96" y="550.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">boring-bar wear</text>
+  </g>
+  <g id="polyline_77">
+    <path d="M 470 470 L 540 580" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_78">
+    <text x="448.67" y="462.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Method</text>
+  </g>
+  <g id="polyline_79">
+    <path d="M 482.5 508.5 L 494.5 508.5" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_80">
+    <text x="369.64" y="512.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">tool offset not updated</text>
+  </g>
+  <g id="polyline_81">
+    <path d="M 507 547 L 519 547" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_82">
+    <text x="414.32" y="550.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">feed rate changed</text>
+  </g>
+  <g id="polyline_83">
+    <path d="M 680 470 L 750 580" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_84">
+    <text x="657.32" y="462.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Material</text>
+  </g>
+  <g id="polyline_85">
+    <path d="M 692.5 508.5 L 704.5 508.5" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_86">
+    <text x="605.36" y="512.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">new bar-stock lot</text>
+  </g>
+  <g id="polyline_87">
+    <path d="M 717 547 L 729 547" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_88">
+    <text x="623.11" y="550.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">hardness variation</text>
+  </g>
+  <g id="polyline_89">
+    <path d="M 260 690 L 330 580" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_90">
+    <text x="221.32" y="705.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Measurement</text>
+  </g>
+  <g id="polyline_91">
+    <path d="M 272.5 651.5 L 284.5 651.5" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_92">
+    <text x="200.63" y="655.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">air-gauge drift</text>
+  </g>
+  <g id="polyline_93">
+    <path d="M 297 613 L 309 613" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_94">
+    <text x="190.9" y="616.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">master not re-zeroed</text>
+  </g>
+  <g id="polyline_95">
+    <path d="M 470 690 L 540 580" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_96">
+    <text x="458" y="705.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Man</text>
+  </g>
+  <g id="polyline_97">
+    <path d="M 482.5 651.5 L 494.5 651.5" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_98">
+    <text x="414.29" y="655.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">new operator</text>
+  </g>
+  <g id="polyline_99">
+    <path d="M 507 613 L 519 613" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_100">
+    <text x="391.13" y="616.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">warm-up cycle skipped</text>
+  </g>
+  <g id="polyline_101">
+    <path d="M 680 690 L 750 580" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_102">
+    <text x="643.33" y="705.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Environment</text>
+  </g>
+  <g id="polyline_103">
+    <path d="M 692.5 651.5 L 704.5 651.5" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_104">
+    <text x="590.67" y="655.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">coolant temperature</text>
+  </g>
+  <g id="polyline_105">
+    <path d="M 717 613 L 729 613" fill="none" stroke="#000000" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="text_106">
+    <text x="615.78" y="616.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">shop ambient swing</text>
+  </g>
+  <g id="caption_107">
+    <text x="74.18" y="751.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="82.51" lengthAdjust="spacingAndGlyphs">FIGURE 10:</text>
+    <text x="156.69" y="751.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="886.75" lengthAdjust="spacingAndGlyphs"> WESTERN ELECTRIC RULE SIGNALS ON AN X-BAR CHART, AND THE CAUSE-AND-EFFECT DIAGRAM FOR THE FIRST ONE</text>
+  </g>
+</svg>

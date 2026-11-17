@@ -1,13 +1,13 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 88 production-grade architecture and workflow diagrams spanning 8 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `output/<domain>/`.
+This directory contains 143 production-grade architecture, workflow and technical diagrams spanning 13 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `output/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Diagrams:** 88
-- **Domains Covered:** 8 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`)
+- **Total Diagrams:** 143
+- **Domains Covered:** 13 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `database`, `enterprise_architecture`, `manufacturing`, `mind_map`, `computer_science`)
 - **Diagrams per Domain:** 11 (10 manually placed + 1 auto-layout)
 - **Themes Demonstrated:** 13 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`)
 - **Theme Variety per Domain:** at least 3 distinct varieties per domain
@@ -178,9 +178,109 @@ Edge-to-cloud UNS architectures, high-availability broker clusters, Sparkplug B 
 
 ---
 
-## 9. Technical Drawing Primitives (`examples/primitives/`)
+## 9. Databases (`examples/database/`)
 
-Nine focused figures, one per primitive family, all in the `paper` theme. They are separate from the 88 domain diagrams above.
+Schemas, replication, sharding, change data capture, lakehouse pipelines, storage-engine internals and backup strategy.
+
+| # | Script & Output | Title | Theme | Complexity | Key Components / Icons |
+|---|---|---|---|---|---|
+| 01 | [`01_entity_relationship_model.py`](database/01_entity_relationship_model.py) | Online Store Entity-Relationship Model | `iiot_light` | Simple | 5 tables with typed columns, PK/FK/UQ markers, cardinality at each end |
+| 02 | [`02_star_schema_warehouse.py`](database/02_star_schema_warehouse.py) | Retail Sales Star Schema Data Warehouse | `solarized_light` | Moderate | fact_sales with FKs and measures, 5 dimensions, surrogate keys, SCD2 customer dimension |
+| 03 | [`03_primary_replica_failover.py`](database/03_primary_replica_failover.py) | PostgreSQL Primary/Replica Replication with Automatic Failover | `nord` | Moderate | HAProxy/PgBouncer, primary, sync standby, async and cascading replicas, Patroni + etcd |
+| 04 | [`04_sharded_cluster.py`](database/04_sharded_cluster.py) | Range-Sharded Document Database Cluster | `blueprint` | Advanced | mongos routers, config server replica set, 3 range shards, balancer |
+| 05 | [`05_cdc_pipeline.py`](database/05_cdc_pipeline.py) | Change Data Capture Pipeline from WAL to Kafka | `dracula` | Advanced | WAL + replication slot, Debezium, Schema Registry, topics, DLQ, 4 sink connectors |
+| 06 | [`06_lakehouse_medallion.py`](database/06_lakehouse_medallion.py) | Lakehouse Medallion Architecture, Bronze to Gold | `emerald` | Enterprise | Streaming/CDC/batch ingest, bronze/silver/gold, BI/ML/reverse-ETL, catalog, DQ, orchestrator |
+| 07 | [`07_btree_index_pages.py`](database/07_btree_index_pages.py) | B+-Tree Index Page Structure | `paper` | Advanced | Root and leaf pages, sibling chain, 8 KiB slotted page layout, height formula, caption |
+| 08 | [`08_lsm_tree_compaction.py`](database/08_lsm_tree_compaction.py) | LSM-Tree Levelled Compaction | `paper` | Advanced | WAL and memtable, flush, L0–L3 on one key axis, compaction, write-amplification formula |
+| 09 | [`09_query_plan_tree.py`](database/09_query_plan_tree.py) | Physical Query Plan Tree for a Join and Top-N | `paper` | Moderate | Limit/Sort/Aggregate/Hash Join/scans tree, row estimates, SQL, cost math, caption |
+| 10 | [`10_backup_pitr_strategy.py`](database/10_backup_pitr_strategy.py) | Backup and Point-in-Time Recovery Strategy | `cyber_slate` | Enterprise | WAL archive, full/differential backups, KMS + object lock, cross-region copy, restore tests, PITR timeline with RPO/RTO |
+| 11 | [`11_auto_cache_aside_read_path.py`](database/11_auto_cache_aside_read_path.py) | Auto-Laid-Out Cache-Aside Read and Write Path | `pastel_light` | Simple (auto-layout) | Hit/miss decision, read replica, WAL stream, CDC cache invalidation |
+
+---
+
+## 10. Enterprise Architecture (`examples/enterprise_architecture/`)
+
+Structure, portfolio and layered views: C4, ArchiMate, capability and value-stream maps, portfolio rationalisation, transition roadmaps, integration, data governance and landing zones.
+
+| # | Script & Output | Title | Theme | Complexity | Key Components / Icons |
+|---|---|---|---|---|---|
+| 01 | [`01_c4_system_context.py`](enterprise_architecture/01_c4_system_context.py) | C4 System Context: Retail Internet Banking | `pastel_light` | Simple | Customers and staff, Internet Banking System, Core Banking Mainframe, external e-mail, credit bureau, open-banking directory |
+| 02 | [`02_business_capability_map.py`](enterprise_architecture/02_business_capability_map.py) | Insurance Business Capability Map with Maturity Heatmap | `iiot_light` | Moderate | L1 domains, L2 groups, L3 capabilities shaded by maturity, shared enablers, legend |
+| 03 | [`03_application_portfolio_time.py`](enterprise_architecture/03_application_portfolio_time.py) | Application Portfolio Rationalisation (TIME Model) | `solarized_light` | Moderate | Tolerate/Invest/Migrate/Eliminate quadrants, migration arrows, cost and owner metadata |
+| 04 | [`04_c4_container_view.py`](enterprise_architecture/04_c4_container_view.py) | C4 Container View: Internet Banking System | `nord` | Moderate | SPA, mobile app, API gateway, services with own databases, Kafka bus, notification worker |
+| 05 | [`05_archimate_layered_view.py`](enterprise_architecture/05_archimate_layered_view.py) | ArchiMate Layered View: Insurance Claims Handling | `paper` | Advanced | Business/application/technology bands, serving vs realisation relations, caption |
+| 06 | [`06_integration_architecture.py`](enterprise_architecture/06_integration_architecture.py) | Enterprise Integration Architecture: API, Event and ESB Patterns | `blueprint` | Advanced | API gateway + OAuth, iPaaS, event streaming, legacy ESB, managed file transfer, systems of record |
+| 07 | [`07_value_stream_capability_map.py`](enterprise_architecture/07_value_stream_capability_map.py) | Value Stream to Capability Cross-Map: Acquire a Home Loan | `monochrome` | Advanced | Chevron stages, L2 capabilities per stage, dashed capability gaps, legend |
+| 08 | [`08_transition_roadmap.py`](enterprise_architecture/08_transition_roadmap.py) | Core Systems Transition Roadmap: Baseline to Target | `paper` | Advanced | Baseline, two plateaus and target across 4 lanes, work packages with budgets, caption |
+| 09 | [`09_data_governance_mdm.py`](enterprise_architecture/09_data_governance_mdm.py) | Enterprise Data Governance and Master Data Management | `emerald` | Advanced | CDO, council, stewards, match & merge, golden records, DQ rules, catalogue |
+| 10 | [`10_cloud_landing_zone_operating_model.py`](enterprise_architecture/10_cloud_landing_zone_operating_model.py) | Multi-Business-Unit Cloud Landing Zone and Operating Model | `cyber_slate` | Enterprise | CCoE, account vending, FinOps, OUs, identity federation, Direct Connect |
+| 11 | [`11_auto_application_landscape.py`](enterprise_architecture/11_auto_application_landscape.py) | Auto-Laid-Out Retail Application Landscape | `dracula` | Simple (auto-layout) | Web shop and POS → API gateway → OMS and CRM → ERP and WMS → data platform |
+
+---
+
+## 11. Manufacturing & Semiconductor (`examples/manufacturing/`)
+
+Process, production and control: six semiconductor fab diagrams (front-end loop, lithography, fab automation, run-to-run control, yield, back-end assembly and test) and five general manufacturing ones (ISA-95, automotive plant, OEE, SPC, ISA-88).
+
+| # | Script & Output | Title | Theme | Complexity | Key Components / Icons |
+|---|---|---|---|---|---|
+| 01 | [`01_wafer_fab_process_loop.py`](manufacturing/01_wafer_fab_process_loop.py) | Front-End Wafer Fab Re-entrant Process Loop | `paper` | Advanced | Deposit, coat, expose, develop, etch, strip with wafer cross-sections; return loop through clean, metrology, implant + anneal, CMP |
+| 02 | [`02_lithography_cell.py`](manufacturing/02_lithography_cell.py) | Lithography Cell with Overlay & CD Feedback | `blueprint` | Moderate | Coater/developer track, scanner stages, reticle stocker, CD-SEM, overlay metrology, run-to-run controller, MES |
+| 03 | [`03_fab_automation_stack.py`](manufacturing/03_fab_automation_stack.py) | 300 mm Fab Automation: MES to AMHS to Tool | `nord` | Advanced | MES + dispatcher, MCS, EAP, FDC, FOUP stocker, OHT, load port (E84/E87), EFEM, SECS/GEM and EDA links |
+| 04 | [`04_apc_run_to_run_fdc.py`](manufacturing/04_apc_run_to_run_fdc.py) | Run-to-Run Control with Fault Detection | `paper` | Advanced | EWMA run-to-run equations, drifting tool model, metrology feedback, FDC T² hold |
+| 05 | [`05_yield_management.py`](manufacturing/05_yield_management.py) | Semiconductor Yield Management Data Flow | `cyber_slate` | Advanced | Inline metrology, inspection, SEM review + ADC, e-test, wafer sort, yield warehouse, commonality analytics, MES hold |
+| 06 | [`06_backend_assembly_test.py`](manufacturing/06_backend_assembly_test.py) | Semiconductor Back-End Assembly & Test Line | `solarized_light` | Moderate | Backgrind, dicing, die attach from bin map, wire bond, mold, ball attach, burn-in, final test, tape & reel, FA |
+| 07 | [`07_isa95_levels.py`](manufacturing/07_isa95_levels.py) | ISA-95 Functional Hierarchy, Levels 0 to 4 | `iiot_light` | Moderate | Five level bands with time scales; ERP/MES/SCADA/PLC/field devices; B2MML at level 3/4 |
+| 08 | [`08_automotive_assembly_line.py`](manufacturing/08_automotive_assembly_line.py) | Automotive Plant Flow: Press, Body, Paint, Assembly | `emerald` | Advanced | Press, body-in-white, body stores, paint, trim, chassis marriage, final line, EOL test, JIS seats |
+| 09 | [`09_oee_loss_waterfall.py`](manufacturing/09_oee_loss_waterfall.py) | OEE Loss Waterfall for One Shift | `paper` | Advanced | To-scale loss bars; A, P, Q and OEE = A×P×Q computed from the same inputs |
+| 10 | [`10_spc_control_chart_fishbone.py`](manufacturing/10_spc_control_chart_fishbone.py) | SPC X-bar Chart and Ishikawa Root-Cause Diagram | `paper` | Advanced | X-bar chart with computed limits and sigma zones, rule violations detected, 6M fishbone |
+| 11 | [`11_auto_isa88_batch_recipe.py`](manufacturing/11_auto_isa88_batch_recipe.py) | Auto-Laid-Out ISA-88 Batch Recipe Hierarchy | `dracula` | Moderate (auto-layout) | General → site → master → control recipe; procedure, unit procedure, operations, phases |
+
+---
+
+## 12. Mind Maps (`examples/mind_map/`)
+
+Planning, study, review and interview mind maps: a central topic, colour-coded curved branches and nodes that shrink with depth. No icons; they show `Style`, curved routing and computed radial positions.
+
+| # | Script & Output | Title | Theme | Complexity | Key Components / Icons |
+|---|---|---|---|---|---|
+| 01 | [`01_product_launch_plan.py`](mind_map/01_product_launch_plan.py) | Product Launch Plan Mind Map | `pastel_light` | Simple | Central pill, 4 colour-coded branches balanced left/right, curved branch lines, sub-topic pills |
+| 02 | [`02_startup_idea_brainstorm.py`](mind_map/02_startup_idea_brainstorm.py) | Startup Idea Brainstorm Radial Mind Map | `nord` | Moderate | Radial layout computed with cos/sin, 6 branches (problem, solution, customers, revenue, competition, risks) |
+| 03 | [`03_operating_systems_study_notes.py`](mind_map/03_operating_systems_study_notes.py) | Operating Systems Concepts Study Notes | `solarized_light` | Moderate | 6 chapter branches, 18 sub-topics, three node sizes by depth |
+| 04 | [`04_meeting_notes_action_items.py`](mind_map/04_meeting_notes_action_items.py) | Sprint 42 Planning Meeting Notes | `emerald` | Simple | Attendees, open questions, decisions, owner-tagged action items |
+| 05 | [`05_personal_goals_okrs.py`](mind_map/05_personal_goals_okrs.py) | Personal Goals and OKRs Mind Map | `iiot_light` | Simple | Objectives as branches, key results as leaves, fill shade from % progress, double border when complete |
+| 06 | [`06_project_risk_register.py`](mind_map/06_project_risk_register.py) | Data Platform Migration Risk Register | `cyber_slate` | Moderate | Radial, 6 risk categories, 14 risks, fill = severity, severity legend |
+| 07 | [`07_book_summary.py`](mind_map/07_book_summary.py) | Book Summary: Designing Data-Intensive Applications | `monochrome` | Moderate | Part, chapter and one-line takeaway levels in grey shades |
+| 08 | [`08_incident_retrospective_five_whys.py`](mind_map/08_incident_retrospective_five_whys.py) | Checkout Outage Incident Retrospective | `crimson` | Advanced | Timeline, contributing factors, actions; 5-whys chain ending in the root cause |
+| 09 | [`09_system_design_interview.py`](mind_map/09_system_design_interview.py) | System Design Interview: URL Shortener Breakdown | `dracula` | Enterprise | 8 numbered branches, 28 points, sizing notes (QPS, storage, Base62) |
+| 10 | [`10_consistency_concept_map.py`](mind_map/10_consistency_concept_map.py) | Distributed Consistency Concept Map | `paper` | Advanced | Paper-figure concept map, linking phrase on every curved arrow, cross-links, caption |
+| 11 | [`11_auto_cloud_certification_roadmap.py`](mind_map/11_auto_cloud_certification_roadmap.py) | Auto-Laid-Out Cloud Certification Roadmap | `blueprint` | Moderate (auto-layout) | `layout="auto"` LR topic tree, curved colour-coded branches |
+
+---
+
+## 13. Computer Science (`examples/computer_science/`)
+
+Core computer-science figures in the technical-figure style, with math markup, captions and panels; the algorithms (Dijkstra, subset construction, scheduling, merge sort, Raft commit index) are run in the scripts so the figures show real results.
+
+| # | Script & Output | Title | Theme | Complexity | Key Components / Icons |
+|---|---|---|---|---|---|
+| 01 | [`01_hash_table_chaining.py`](computer_science/01_hash_table_chaining.py) | Hash table with separate chaining | `solarized_light` | Simple | 7-bucket array, chains with NULL slashes, h(k)=k mod 7, traced search, load factor α, Θ(1+α) |
+| 02 | [`02_red_black_tree.py`](computer_science/02_red_black_tree.py) | Red-black tree with NIL leaves | `paper` | Moderate | Valid 10-key red-black tree (asserted), NIL leaves, black-height, h ≤ 2 log₂(n+1) |
+| 03 | [`03_merge_sort_recursion.py`](computer_science/03_merge_sort_recursion.py) | Merge sort recursion on eight keys | `paper` | Moderate | Split and merge rows computed by running merge sort, T(n)=2T(n/2)+cn=Θ(n log n) |
+| 04 | [`04_dijkstra_shortest_paths.py`](computer_science/04_dijkstra_shortest_paths.py) | Dijkstra shortest paths on a weighted digraph | `paper` | Advanced | 6 vertices, 9 weighted arcs, shortest-path tree, per-step distance table computed with heapq, O((V+E) log V) |
+| 05 | [`05_regex_nfa_to_dfa.py`](computer_science/05_regex_nfa_to_dfa.py) | Regular expression to NFA and DFA | `monochrome` | Advanced | NFA for (a\|b)*abb, DFA from a subset construction run in the script, transition table |
+| 06 | [`06_cpu_pipeline_hazards.py`](computer_science/06_cpu_pipeline_hazards.py) | Five-stage pipeline with hazards and forwarding | `paper` | Advanced | IF/ID/EX/MEM/WB datapath, hazard and forwarding units, 9-cycle pipeline chart with load-use stall |
+| 07 | [`07_virtual_memory_and_caches.py`](computer_science/07_virtual_memory_and_caches.py) | Virtual memory translation and cache hierarchy | `blueprint` | Enterprise | Address fields, TLB, two-level page walk, VIPT split, L1→L2→L3→DRAM latencies, AMAT formula |
+| 08 | [`08_tcp_connection_lifecycle.py`](computer_science/08_tcp_connection_lifecycle.py) | TCP connection lifecycle sequence chart | `iiot_light` | Moderate | Lifelines, seq/ack segments, handshake, request/response, 4-segment close, states, RTT and 2·MSL |
+| 09 | [`09_cpu_scheduling_gantt.py`](computer_science/09_cpu_scheduling_gantt.py) | CPU scheduling Gantt charts | `pastel_light` | Moderate | FCFS, SRTF and round robin (q=2) simulated in the script, waiting and turnaround averages |
+| 10 | [`10_raft_consensus.py`](computer_science/10_raft_consensus.py) | Raft leader election and log replication | `nord` | Enterprise | Follower/Candidate/Leader states, 5 replicated logs coloured by term, AppendEntries, computed commitIndex |
+| 11 | [`11_auto_compiler_pass_dag.py`](computer_science/11_auto_compiler_pass_dag.py) | Auto-Laid-Out Compiler Pass DAG | `dracula` | Moderate (auto-layout) | IR → SSA → dominators and alias analysis → inliner, SCCP, GVN, LICM → DCE → instruction selection |
+
+---
+
+## 14. Technical Drawing Primitives (`examples/primitives/`)
+
+Nine focused figures, one per primitive family, all in the `paper` theme. They are separate from the 143 domain diagrams above.
 
 | # | Script & Output | Shows |
 |---|---|---|
@@ -196,7 +296,7 @@ Nine focused figures, one per primitive family, all in the `paper` theme. They a
 
 ---
 
-## 10. Technical Figures (`examples/technical/`)
+## 15. Technical Figures (`examples/technical/`)
 
 Eleven complete paper-style figures in the `paper` theme, each with a caption. Every one lints clean and has a golden image in `tests/golden/technical/`. The guide is [`docs/technical-figures.md`](../docs/technical-figures.md).
 

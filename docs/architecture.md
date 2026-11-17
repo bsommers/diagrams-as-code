@@ -250,7 +250,12 @@ examples/
 ├── business_process/               # 11 Business workflow & BPMN diagrams (incl. 1 auto-layout)
 ├── cybersecurity/                  # 11 Cybersecurity & Zero-Trust diagrams (incl. 1 auto-layout)
 ├── network_engineering/            # 11 Campus & WAN network diagrams (incl. 1 auto-layout)
-└── iiot/                           # 11 Industrial IoT & automation diagrams (incl. 1 auto-layout)
+├── iiot/                           # 11 Industrial IoT & automation diagrams (incl. 1 auto-layout)
+├── database/                       # 11 Database design & internals diagrams (incl. 1 auto-layout)
+├── enterprise_architecture/        # 11 Enterprise architecture views (incl. 1 auto-layout)
+├── manufacturing/                  # 11 Manufacturing & semiconductor diagrams (incl. 1 auto-layout)
+├── mind_map/                       # 11 Mind maps (incl. 1 auto-layout)
+└── computer_science/               # 11 Computer-science technical figures (incl. 1 auto-layout)
 ```
 
 ---

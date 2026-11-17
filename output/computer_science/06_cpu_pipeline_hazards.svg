@@ -1,0 +1,297 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 730" width="1010" height="730">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1F5FAD" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F5FAD"/>
+    </marker>
+    <marker id="arrow-1F5FAD-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F5FAD"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 190 172 L 204.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 212 172 L 203 175.6 L 203 168.4 Z" fill="#000000" />
+  <path d="M 228 172 L 242.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 250 172 L 241 175.6 L 241 168.4 Z" fill="#000000" />
+  <path d="M 380 172 L 394.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 402 172 L 393 175.6 L 393 168.4 Z" fill="#000000" />
+  <path d="M 418 172 L 432.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 440 172 L 431 175.6 L 431 168.4 Z" fill="#000000" />
+  <path d="M 570 172 L 584.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 592 172 L 583 175.6 L 583 168.4 Z" fill="#000000" />
+  <path d="M 608 172 L 622.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 630 172 L 621 175.6 L 621 168.4 Z" fill="#000000" />
+  <path d="M 760 172 L 774.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 782 172 L 773 175.6 L 773 168.4 Z" fill="#000000" />
+  <path d="M 798 172 L 812.8 172" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 820 172 L 811 175.6 L 811 168.4 Z" fill="#000000" />
+  <path d="M 600 116 L 600 90 L 537.5 90 L 537.5 132.8" fill="none" stroke="#1F5FAD" stroke-width="1.4" />
+  <path d="M 537.5 140 L 533.9 131 L 541.1 131 Z" fill="#1F5FAD" />
+  <path d="M 790 116 L 790 60 L 485.5 60 L 485.5 132.8" fill="none" stroke="#1F5FAD" stroke-width="1.4" />
+  <path d="M 485.5 140 L 481.9 131 L 489.1 131 Z" fill="#1F5FAD" />
+  <path d="M 505 274 L 505 211.2" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 505 204 L 508.6 213 L 501.4 213 Z" fill="#000000" />
+  <path d="M 600 228 L 600 289 L 587.2 289" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 580 289 L 589 285.4 L 589 292.6 Z" fill="#000000" />
+  <path d="M 790 228 L 790 311.5 L 587.2 311.5" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 580 311.5 L 589 307.9 L 589 315.1 Z" fill="#000000" />
+  <path d="M 410 228 L 410 299 L 397.2 299" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 390 299 L 399 295.4 L 399 302.6 Z" fill="#000000" />
+  <path d="M 240 289 L 220 289 L 220 235.2" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 220 228 L 223.6 237 L 216.4 237 Z" fill="#000000" />
+  <path d="M 240 311.5 L 125 311.5 L 125 211.2" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="5,5" />
+  <path d="M 125 204 L 128.6 213 L 121.4 213 Z" fill="#000000" />
+  <path d="M 536 455 L 545 455 L 545 497 L 548.96 497" fill="none" stroke="#1F5FAD" stroke-width="1.3" />
+  <path d="M 554 497 L 547.7 499.52 L 547.7 494.48 Z" fill="#1F5FAD" />
+  <path d="M 612 497 L 621 497 L 621 539 L 624.96 539" fill="none" stroke="#1F5FAD" stroke-width="1.3" />
+  <path d="M 630 539 L 623.7 541.52 L 623.7 536.48 Z" fill="#1F5FAD" />
+  <path d="M 688 539 L 693 539 L 693 587 L 700.96 587" fill="none" stroke="#1F5FAD" stroke-width="1.3" />
+  <path d="M 706 587 L 699.7 589.52 L 699.7 584.48 Z" fill="#1F5FAD" />
+  <path d="M 688 497 L 701 497 L 701 575 L 701.5 575" fill="none" stroke="#1F5FAD" stroke-width="1.3" />
+  <path d="M 706 575 L 699.7 577.52 L 699.7 572.48 Z" fill="#1F5FAD" />
+  <g id="text_1">
+    <text x="60" y="35.57" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" textLength="17.11" lengthAdjust="spacingAndGlyphs">(a)</text>
+    <text x="77.11" y="35.57" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="407.02" lengthAdjust="spacingAndGlyphs"> Datapath with pipeline registers, hazard detection and forwarding</text>
+  </g>
+  <g id="shape_2">
+    <rect x="60" y="140" width="130" height="64" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="125" y="168.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">IF</text>
+    <text x="125" y="183.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">instruction fetch</text>
+  </g>
+  <g id="shape_3">
+    <rect x="250" y="140" width="130" height="64" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="315" y="168.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">ID</text>
+    <text x="315" y="183.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">decode, read regs</text>
+  </g>
+  <g id="shape_4">
+    <rect x="440" y="140" width="130" height="64" rx="0" fill="#C9D3E6" stroke="#000000" stroke-width="1" />
+    <text x="505" y="168.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">EX</text>
+    <text x="505" y="183.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ALU</text>
+  </g>
+  <g id="shape_5">
+    <rect x="630" y="140" width="130" height="64" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="695" y="168.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">MEM</text>
+    <text x="695" y="183.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">data memory</text>
+  </g>
+  <g id="shape_6">
+    <rect x="820" y="140" width="130" height="64" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="885" y="168.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">WB</text>
+    <text x="885" y="183.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">write back</text>
+  </g>
+  <g id="shape_7">
+    <rect x="212" y="116" width="16" height="112" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="text_8">
+    <text x="225" y="109.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">IF/ID</text>
+  </g>
+  <g id="shape_9">
+    <rect x="402" y="116" width="16" height="112" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="text_10">
+    <text x="415" y="109.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">ID/EX</text>
+  </g>
+  <g id="shape_11">
+    <rect x="592" y="116" width="16" height="112" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="text_12">
+    <text x="605" y="109.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">EX/MEM</text>
+  </g>
+  <g id="shape_13">
+    <rect x="782" y="116" width="16" height="112" rx="0" fill="#9FA6B8" stroke="#000000" stroke-width="1" />
+  </g>
+  <g id="text_14">
+    <text x="795" y="109.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">MEM/WB</text>
+  </g>
+  <g id="text_15">
+    <text x="545.5" y="82.91" fill="#1F5FAD" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">EX/MEM forward</text>
+  </g>
+  <g id="text_16">
+    <text x="660" y="52.91" fill="#1F5FAD" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">MEM/WB forward</text>
+  </g>
+  <g id="shape_17">
+    <rect x="430" y="274" width="150" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <rect x="433" y="277" width="144" height="44" rx="0" fill="none" stroke="#000000" stroke-width="1" />
+    <text x="505" y="295.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Forwarding unit</text>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(471.15 310.33) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M378 479H359L333 452H330C318 459 281 479 228 479C137 479 92 425 92 357C92 295 139 260 180 221C218 185 254 150 254 96C254 44 222 23 176 23C108 23 82 69 72 156H47L21 -11H43L67 16H70C84 10 122 -11 185 -11C298 -11 337 55 337 113C337 177 301 214 258 260C214 307 163 343 163 385C163 414 184 449 236 449C295 449 328 400 331 323H355Z" transform="translate(476.09 310.33) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(481.08 312.85) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M70 -132C110 -114 194 -80 194 33C194 88 167 121 117 121C77 121 55 94 55 62C55 33 71 8 110 8C121 8 130 10 141 14C141 -67 95 -91 58 -107Z" transform="translate(485.72 310.33) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(490.66 310.33) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M378 479H359L333 452H330C318 459 281 479 228 479C137 479 92 425 92 357C92 295 139 260 180 221C218 185 254 150 254 96C254 44 222 23 176 23C108 23 82 69 72 156H47L21 -11H43L67 16H70C84 10 122 -11 185 -11C298 -11 337 55 337 113C337 177 301 214 258 260C214 307 163 343 163 385C163 414 184 449 236 449C295 449 328 400 331 323H355Z" transform="translate(495.61 310.33) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(500.6 312.85) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="505.24" y="310.33" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" textLength="22" lengthAdjust="spacingAndGlyphs"> vs. </text>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(527.24 310.33) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M529 705H507L371 694V668C371 668 390 670 402 670C432 670 437 656 437 639C437 625 434 607 434 607L401 439H398C374 464 341 479 296 479C157 479 37 340 37 162C37 45 89 -12 163 -12C222 -12 279 24 329 85H337C335 73 332 54 332 42C332 11 353 -10 393 -10C462 -10 499 53 530 97L510 112C496 93 469 60 437 60C424 60 418 65 418 79C418 92 423 121 423 121ZM346 177C319 101 274 54 206 54C157 54 126 78 126 169C126 299 190 441 291 441C349 441 377 394 377 351C377 333 372 252 346 177Z" transform="translate(532.18 310.33) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="shape_18">
+    <rect x="240" y="274" width="150" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <rect x="243" y="277" width="144" height="44" rx="0" fill="none" stroke="#000000" stroke-width="1" />
+    <text x="315" y="295.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Hazard detection</text>
+    <text x="315" y="310.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">load-use check</text>
+  </g>
+  <g id="text_19">
+    <text x="499" y="234.91" text-anchor="end" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="499" dy="0">ForwardA/B</tspan> <tspan x="499" dy="13.75">select</tspan></text>
+  </g>
+  <g id="text_20">
+    <text x="225" y="259.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">hold IF/ID</text>
+  </g>
+  <g id="text_21">
+    <text x="129" y="241.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">hold PC</text>
+  </g>
+  <g id="text_22">
+    <text x="337.5" y="241.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="56.85" lengthAdjust="spacingAndGlyphs">MemRead, </text>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(394.35 241.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M529 705H507L371 694V668C371 668 390 670 402 670C432 670 437 656 437 639C437 625 434 607 434 607L401 439H398C374 464 341 479 296 479C157 479 37 340 37 162C37 45 89 -12 163 -12C222 -12 279 24 329 85H337C335 73 332 54 332 42C332 11 353 -10 393 -10C462 -10 499 53 530 97L510 112C496 93 469 60 437 60C424 60 418 65 418 79C418 92 423 121 423 121ZM346 177C319 101 274 54 206 54C157 54 126 78 126 169C126 299 190 441 291 441C349 441 377 394 377 351C377 333 372 252 346 177Z" transform="translate(398.88 241.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="text_23">
+    <text x="60" y="383.57" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" textLength="17.88" lengthAdjust="spacingAndGlyphs">(b)</text>
+    <text x="77.88" y="383.57" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="262.26" lengthAdjust="spacingAndGlyphs"> A load-use stall and four forwarding paths</text>
+  </g>
+  <g id="text_24">
+    <text x="275.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="text_25">
+    <text x="351.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">2</text>
+  </g>
+  <g id="text_26">
+    <text x="427.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">3</text>
+  </g>
+  <g id="text_27">
+    <text x="503.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">4</text>
+  </g>
+  <g id="text_28">
+    <text x="579.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">5</text>
+  </g>
+  <g id="text_29">
+    <text x="655.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">6</text>
+  </g>
+  <g id="text_30">
+    <text x="731.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">7</text>
+  </g>
+  <g id="text_31">
+    <text x="807.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">8</text>
+  </g>
+  <g id="text_32">
+    <text x="883.94" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">9</text>
+  </g>
+  <g id="text_33">
+    <text x="182.82" y="428.91" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">clock cycle</text>
+  </g>
+  <g id="text_34">
+    <text x="60" y="459.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">lw   x1, 0(x2)</text>
+  </g>
+  <g id="shape_35">
+    <rect x="250" y="440" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="279" y="459.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">IF</text>
+  </g>
+  <g id="shape_36">
+    <rect x="326" y="440" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="355" y="459.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ID</text>
+  </g>
+  <g id="shape_37">
+    <rect x="402" y="440" width="58" height="30" rx="0" fill="#C9D3E6" stroke="#000000" stroke-width="1" />
+    <text x="431" y="459.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">EX</text>
+  </g>
+  <g id="shape_38">
+    <rect x="478" y="440" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="507" y="459.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">MEM</text>
+  </g>
+  <g id="shape_39">
+    <rect x="554" y="440" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="583" y="459.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">WB</text>
+  </g>
+  <g id="text_40">
+    <text x="60" y="501.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">add  x3, x1, x4</text>
+  </g>
+  <g id="shape_41">
+    <rect x="326" y="482" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="355" y="501.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">IF</text>
+  </g>
+  <g id="shape_42">
+    <rect x="402" y="482" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="431" y="501.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ID</text>
+  </g>
+  <g id="shape_43">
+    <rect x="478" y="482" width="58" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="507" y="501.13" fill="#666666" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ID</text>
+  </g>
+  <g id="shape_44">
+    <rect x="554" y="482" width="58" height="30" rx="0" fill="#C9D3E6" stroke="#000000" stroke-width="1" />
+    <text x="583" y="501.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">EX</text>
+  </g>
+  <g id="shape_45">
+    <rect x="630" y="482" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="659" y="501.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">MEM</text>
+  </g>
+  <g id="shape_46">
+    <rect x="706" y="482" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="735" y="501.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">WB</text>
+  </g>
+  <g id="text_47">
+    <text x="60" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">sub  x5, x3, x6</text>
+  </g>
+  <g id="shape_48">
+    <rect x="402" y="524" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="431" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">IF</text>
+  </g>
+  <g id="shape_49">
+    <rect x="478" y="524" width="58" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="507" y="543.13" fill="#666666" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">IF</text>
+  </g>
+  <g id="shape_50">
+    <rect x="554" y="524" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="583" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ID</text>
+  </g>
+  <g id="shape_51">
+    <rect x="630" y="524" width="58" height="30" rx="0" fill="#C9D3E6" stroke="#000000" stroke-width="1" />
+    <text x="659" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">EX</text>
+  </g>
+  <g id="shape_52">
+    <rect x="706" y="524" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="735" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">MEM</text>
+  </g>
+  <g id="shape_53">
+    <rect x="782" y="524" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="811" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">WB</text>
+  </g>
+  <g id="text_54">
+    <text x="60" y="585.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">and  x7, x5, x3</text>
+  </g>
+  <g id="shape_55">
+    <rect x="554" y="566" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="583" y="585.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">IF</text>
+  </g>
+  <g id="shape_56">
+    <rect x="630" y="566" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="659" y="585.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ID</text>
+  </g>
+  <g id="shape_57">
+    <rect x="706" y="566" width="58" height="30" rx="0" fill="#C9D3E6" stroke="#000000" stroke-width="1" />
+    <text x="735" y="585.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">EX</text>
+  </g>
+  <g id="shape_58">
+    <rect x="782" y="566" width="58" height="30" rx="0" fill="#E4E4E8" stroke="#000000" stroke-width="1" />
+    <text x="811" y="585.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">MEM</text>
+  </g>
+  <g id="shape_59">
+    <rect x="858" y="566" width="58" height="30" rx="0" fill="#F2F2F2" stroke="#000000" stroke-width="1" />
+    <text x="887" y="585.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">WB</text>
+  </g>
+  <g id="text_68">
+    <text x="60" y="625.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="467.19" lengthAdjust="spacingAndGlyphs">Without forwarding, each dependent instruction waits in ID for its producer&#x27;s WB and the</text>
+    <text x="60" y="640.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="455.54" lengthAdjust="spacingAndGlyphs">last one retires in cycle 14. With forwarding only the load-use pair stalls, for one cycle:</text>
+    <text x="60" y="655.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="410.24" lengthAdjust="spacingAndGlyphs">the run ends in cycle 9 instead of 8. Dashed cells are stages held by the stall.</text>
+  </g>
+  <g id="caption_69">
+    <text x="98.67" y="701.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 6:</text>
+    <text x="172.84" y="701.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="738.49" lengthAdjust="spacingAndGlyphs"> FIVE-STAGE PIPELINE; DASHED LINES ARE CONTROL, BLUE LINES CARRY FORWARDED OPERANDS</text>
+  </g>
+</svg>

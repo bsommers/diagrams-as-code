@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1756 575" width="1756" height="575">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="group_5">
+    <rect x="148" y="54" width="234" height="356" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="164" y="78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Baseline 2025</text>
+  </g>
+  <g id="group_10">
+    <rect x="586" y="54" width="234" height="356" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="602" y="78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Plateau 1: 2026</text>
+  </g>
+  <g id="group_15">
+    <rect x="1024" y="54" width="234" height="356" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="1040" y="78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Plateau 2: 2027</text>
+  </g>
+  <g id="group_20">
+    <rect x="1462" y="54" width="234" height="356" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="1478" y="78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Target 2028</text>
+  </g>
+  <path d="M 382 232 L 414.8 232" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 422 232 L 413 235.6 L 413 228.4 Z" fill="#000000" />
+  <path d="M 546 232 L 578.8 232" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 586 232 L 577 235.6 L 577 228.4 Z" fill="#000000" />
+  <path d="M 820 232 L 852.8 232" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 860 232 L 851 235.6 L 851 228.4 Z" fill="#000000" />
+  <path d="M 984 232 L 1016.8 232" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 1024 232 L 1015 235.6 L 1015 228.4 Z" fill="#000000" />
+  <path d="M 1258 232 L 1290.8 232" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 1298 232 L 1289 235.6 L 1289 228.4 Z" fill="#000000" />
+  <path d="M 1422 232 L 1454.8 232" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 1462 232 L 1453 235.6 L 1453 228.4 Z" fill="#000000" />
+  <g id="text_1">
+    <text x="69.32" y="139.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Customer</text>
+  </g>
+  <g id="text_2">
+    <text x="60.63" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Policy core</text>
+  </g>
+  <g id="text_3">
+    <text x="101.82" y="291.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Data</text>
+  </g>
+  <g id="text_4">
+    <text x="62.84" y="367.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Integration</text>
+  </g>
+  <g id="shape_6">
+    <rect x="170" y="110" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="265" y="139.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Siebel CRM 8.1</text>
+  </g>
+  <g id="shape_7">
+    <rect x="170" y="186" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="265" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Mainframe policy admin</text>
+  </g>
+  <g id="shape_8">
+    <rect x="170" y="262" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="265" y="291.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Nightly ETL to EDW</text>
+  </g>
+  <g id="shape_9">
+    <rect x="170" y="338" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="265" y="367.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Point-to-point + ESB</text>
+  </g>
+  <g id="shape_11">
+    <rect x="608" y="110" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="703" y="139.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Salesforce CRM</text>
+  </g>
+  <g id="shape_12">
+    <rect x="608" y="186" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="703" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Mainframe policy admin</text>
+  </g>
+  <g id="shape_13">
+    <rect x="608" y="262" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="703" y="291.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">EDW + cloud data lake</text>
+  </g>
+  <g id="shape_14">
+    <rect x="608" y="338" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="703" y="367.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">API gateway + ESB</text>
+  </g>
+  <g id="shape_16">
+    <rect x="1046" y="110" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="1141" y="139.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Salesforce CRM</text>
+  </g>
+  <g id="shape_17">
+    <rect x="1046" y="186" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="1141" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Guidewire PolicyCenter</text>
+  </g>
+  <g id="shape_18">
+    <rect x="1046" y="262" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="1141" y="291.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Lakehouse (EDW retired)</text>
+  </g>
+  <g id="shape_19">
+    <rect x="1046" y="338" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="1141" y="367.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Event streaming</text>
+  </g>
+  <g id="shape_21">
+    <rect x="1484" y="110" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="1579" y="139.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Salesforce + service AI</text>
+  </g>
+  <g id="shape_22">
+    <rect x="1484" y="186" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="1579" y="215.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Guidewire Cloud</text>
+  </g>
+  <g id="shape_23">
+    <rect x="1484" y="262" width="190" height="50" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="1579" y="291.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Governed lakehouse + MDM</text>
+  </g>
+  <g id="shape_24">
+    <rect x="1484" y="338" width="190" height="50" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="1579" y="367.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Event-driven APIs</text>
+  </g>
+  <g id="shape_25">
+    <rect x="422" y="186" width="124" height="92" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <rect x="425" y="189" width="118" height="86" rx="0" fill="none" stroke="#000000" stroke-width="1" />
+    <text x="484" y="220.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">WP1</text>
+    <text x="484" y="236.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">CRM and API</text>
+    <text x="484" y="252.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">foundation</text>
+  </g>
+  <g id="text_26">
+    <text x="443.03" y="296.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">$4.2M, 9 months</text>
+  </g>
+  <g id="shape_27">
+    <rect x="860" y="186" width="124" height="92" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <rect x="863" y="189" width="118" height="86" rx="0" fill="none" stroke="#000000" stroke-width="1" />
+    <text x="922" y="220.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">WP2</text>
+    <text x="922" y="236.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Policy core</text>
+    <text x="922" y="252.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">replacement</text>
+  </g>
+  <g id="text_28">
+    <text x="874.92" y="296.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">$11.8M, 14 months</text>
+  </g>
+  <g id="shape_29">
+    <rect x="1298" y="186" width="124" height="92" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <rect x="1301" y="189" width="118" height="86" rx="0" fill="none" stroke="#000000" stroke-width="1" />
+    <text x="1360" y="220.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">WP3</text>
+    <text x="1360" y="236.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Decommission</text>
+    <text x="1360" y="252.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">and optimise</text>
+  </g>
+  <g id="text_30">
+    <text x="1319.03" y="296.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">$2.6M, 6 months</text>
+  </g>
+  <g id="shape_31">
+    <rect x="170" y="444" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="225" y="463.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Kept</text>
+  </g>
+  <g id="shape_32">
+    <rect x="300" y="444" width="110" height="30" rx="0" fill="#DADADA" stroke="#000000" stroke-width="1" />
+    <text x="355" y="463.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">New</text>
+  </g>
+  <g id="shape_33">
+    <rect x="430" y="444" width="110" height="30" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="485" y="463.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Retiring</text>
+  </g>
+  <g id="caption_34">
+    <text x="484.91" y="516.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 2:</text>
+    <text x="559.08" y="516.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="712.64" lengthAdjust="spacingAndGlyphs"> PLATEAUS ARE STABLE STATES; DOUBLE-BORDERED WORK PACKAGES MOVE BETWEEN THEM</text>
+  </g>
+</svg>

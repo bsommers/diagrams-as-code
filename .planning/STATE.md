@@ -3,9 +3,9 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: phase_complete
-stopped_at: "No active phase: id-collision fixes merged (PR #23, 76ebc37); v0.13.1 release next"
-last_updated: "2026-11-15T14:49:07.725Z"
-state_head: 0ffcd263fe24cab2d5fac38ed179b5bdda9f0255
+stopped_at: "v0.13.1 released (PR #24 merged b7772db, tag v0.13.1 pushed); feat/new-domain-galleries (5 domains, 55 diagrams) gate green locally, uncommitted"
+last_updated: "2026-11-16T01:38:31.251Z"
+state_head: f468819fdcb5dc50dc620879707218a878ebc29a
 last_activity: 2026-11-14
 current_phase: 17
 current_phase_name: Vector PDF Export
@@ -83,6 +83,6 @@ Known limits: fonts are not embedded (not PDF/A); a character outside Windows-12
 
 ## Session
 
-**Last session:** 2026-11-15T14:49:07.707Z
-**Stopped at:** No active phase: id-collision fixes merged (PR #23, 76ebc37); v0.13.1 release next
+**Last session:** 2026-11-16T01:38:31.238Z
+**Stopped at:** v0.13.1 released (PR #24 merged b7772db, tag v0.13.1 pushed); feat/new-domain-galleries (5 domains, 55 diagrams) gate green locally, uncommitted
 **Resume file:** .planning/CHECKPOINT.md

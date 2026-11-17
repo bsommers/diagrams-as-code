@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1310 819" width="1310" height="819">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#00E5A3"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#181B20"/>
+  <g id="group_1">
+    <rect x="60" y="80" width="220" height="285" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="76" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Production  us-east-1</text>
+  </g>
+  <g id="group_2">
+    <rect x="393.81" y="80" width="272.38" height="285" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="409.81" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Backup Repository  (object storage)</text>
+  </g>
+  <g id="group_3">
+    <rect x="800" y="80" width="240" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="816" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">DR Region  us-west-2</text>
+  </g>
+  <g id="group_4">
+    <rect x="390" y="400" width="370" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="406" y="424" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Protection</text>
+  </g>
+  <g id="group_5">
+    <rect x="800" y="260" width="450" height="255" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="816" y="284" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Recovery</text>
+  </g>
+  <g id="group_6">
+    <rect x="60" y="400" width="220" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
+    <text x="76" y="424" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Observability</text>
+  </g>
+  <path d="M 255 170 L 445 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 170 200 L 170 280" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 255 310 L 445 310" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 615 170 L 825 170" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 615 295 L 785 295 L 785 215 L 920 215 L 920 200" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 485 460 L 485 400 L 487.5 400 L 487.5 340" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+  <path d="M 665 460 L 665 400 L 572.5 400 L 572.5 340" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+  <path d="M 615 325 L 720 325 L 720 350 L 825 350" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 995 350 L 1055 350" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 910 430 L 910 380" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+  <path d="M 170 340 L 170 460" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="301.15" y="161" width="97.7" height="18" rx="9" fill="#2B313B" />
+  <text x="350" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">archive_command</text>
+</g>
+  <g class="badge">
+  <rect x="129.21" y="231" width="81.59" height="18" rx="9" fill="#2B313B" />
+  <text x="170" y="243.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">backup stream</text>
+</g>
+  <g class="badge">
+  <rect x="307.12" y="301" width="85.76" height="18" rx="9" fill="#2B313B" />
+  <text x="350" y="313.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">zstd + AES-256</text>
+</g>
+  <g class="badge">
+  <rect x="693.1" y="161" width="53.8" height="18" rx="9" fill="#2B313B" />
+  <text x="720" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">replicate</text>
+</g>
+  <g class="badge">
+  <rect x="758.1" y="246" width="53.8" height="18" rx="9" fill="#2B313B" />
+  <text x="785" y="258.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">replicate</text>
+</g>
+  <g class="badge">
+  <rect x="456.85" y="391" width="58.8" height="18" rx="9" fill="#2B313B" />
+  <text x="486.25" y="403.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">data keys</text>
+</g>
+  <g class="badge">
+  <rect x="594.37" y="391" width="48.77" height="18" rx="9" fill="#2B313B" />
+  <text x="618.75" y="403.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">WORM</text>
+</g>
+  <g class="badge">
+  <rect x="684.62" y="328.5" width="70.75" height="18" rx="9" fill="#2B313B" />
+  <text x="720" y="340.94" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">base + WAL</text>
+</g>
+  <g class="badge">
+  <rect x="998.66" y="341" width="52.68" height="18" rx="9" fill="#2B313B" />
+  <text x="1025" y="353.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">promote</text>
+</g>
+  <g class="badge">
+  <rect x="855.73" y="396" width="108.53" height="18" rx="9" fill="#2B313B" />
+  <text x="910" y="408.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">restore + checksums</text>
+</g>
+  <g class="badge">
+  <rect x="121.28" y="391" width="97.44" height="18" rx="9" fill="#2B313B" />
+  <text x="170" y="403.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">backup + WAL lag</text>
+</g>
+  <g id="primary" filter="url(#shadow)">
+    <rect x="85" y="140" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(158.6, 149.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#00E5A3" stroke-width="2"/>
+</g>
+    <text x="170" y="186.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Primary Database</text>
+  </g>
+  <g id="agent" filter="url(#shadow)">
+    <rect x="85" y="280" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(158.6, 289.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <circle cx="6" cy="7" r="1" fill="#00E5A3"/>
+  <circle cx="9" cy="7" r="1" fill="#00E5A3"/>
+  <circle cx="6" cy="17" r="1" fill="#00E5A3"/>
+  <circle cx="9" cy="17" r="1" fill="#00E5A3"/>
+</g>
+    <text x="170" y="326.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Backup Agent</text>
+  </g>
+  <g id="wal" filter="url(#shadow)">
+    <rect x="445" y="140" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-storage" transform="translate(518.6, 149.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
+</g>
+    <text x="530" y="186.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">WAL Archive</text>
+  </g>
+  <g id="base" filter="url(#shadow)">
+    <rect x="445" y="280" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-storage_array" transform="translate(518.6, 289.8) scale(0.95)">
+  <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="3" y1="9" x2="21" y2="9" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke="#00E5A3" stroke-width="2"/>
+  <circle cx="6" cy="6" r="1.2" fill="#00E5A3"/>
+  <circle cx="6" cy="12" r="1.2" fill="#00E5A3"/>
+  <circle cx="6" cy="18" r="1.2" fill="#00E5A3"/>
+  <line x1="10" y1="6" x2="18" y2="6" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="10" y1="12" x2="18" y2="12" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="10" y1="18" x2="18" y2="18" stroke="#00E5A3" stroke-width="2"/>
+</g>
+    <text x="530" y="326.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Base Backups</text>
+  </g>
+  <g id="copy" filter="url(#shadow)">
+    <rect x="825" y="140" width="190" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-storage" transform="translate(908.6, 149.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
+</g>
+    <text x="920" y="186.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Replicated Repository</text>
+  </g>
+  <g id="kms" filter="url(#shadow)">
+    <rect x="415" y="460" width="140" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-key" transform="translate(473.6, 469.8) scale(0.95)">
+  <circle cx="8" cy="14" r="5" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="12" y1="10" x2="21" y2="3" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="5" x2="19" y2="7" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19" y1="7" x2="21" y2="9" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="485" y="506.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">KMS Key</text>
+  </g>
+  <g id="lock" filter="url(#shadow)">
+    <rect x="595" y="460" width="140" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-lock" transform="translate(653.6, 469.8) scale(0.95)">
+  <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <circle cx="12" cy="16" r="1.5" fill="#00E5A3"/>
+</g>
+    <text x="665" y="506.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Object Lock</text>
+  </g>
+  <g id="restore" filter="url(#shadow)">
+    <rect x="825" y="320" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(898.6, 329.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <circle cx="6" cy="7" r="1" fill="#00E5A3"/>
+  <circle cx="9" cy="7" r="1" fill="#00E5A3"/>
+  <circle cx="6" cy="17" r="1" fill="#00E5A3"/>
+  <circle cx="9" cy="17" r="1" fill="#00E5A3"/>
+</g>
+    <text x="910" y="366.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Restore Host</text>
+  </g>
+  <g id="recovered" filter="url(#shadow)">
+    <rect x="1055" y="320" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(1128.6, 329.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#00E5A3" stroke-width="2"/>
+</g>
+    <text x="1140" y="366.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Recovered Database</text>
+  </g>
+  <g id="verify" filter="url(#shadow)">
+    <rect x="825" y="430" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-shield_check" transform="translate(898.6, 439.8) scale(0.95)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,9" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="910" y="476.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Weekly Restore Test</text>
+  </g>
+  <g id="monitor" filter="url(#shadow)">
+    <rect x="85" y="460" width="170" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
+    <g class="icon icon-dashboard" transform="translate(158.6, 469.8) scale(0.95)">
+  <rect x="3" y="3" width="18" height="15" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
+  <line x1="3" y1="8" x2="21" y2="8" stroke="#00E5A3" stroke-width="2"/>
+  <polyline points="6,15 10,11 13,13 17,9" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="9" y1="21" x2="15" y2="21" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="18" x2="12" y2="21" stroke="#00E5A3" stroke-width="2"/>
+</g>
+    <text x="170" y="506.87" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Archive Lag Alerts</text>
+  </g>
+  <g id="polyline_7">
+    <path d="M 120 660 L 1180 660" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <g id="shape_8" filter="url(#shadow)">
+    <rect x="114" y="654" width="12" height="12" rx="6" fill="#38BDF8" stroke="#38BDF8" stroke-width="2" />
+  </g>
+  <g id="text_9">
+    <text x="94.32" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="20.78" lengthAdjust="spacingAndGlyphs">Sun</text>
+    <text x="115.1" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="30.58" lengthAdjust="spacingAndGlyphs"> 01:00</text>
+    <text x="120" y="698.41" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">full backup</text>
+  </g>
+  <g id="shape_10" filter="url(#shadow)">
+    <rect x="334" y="654" width="12" height="12" rx="6" fill="#38BDF8" stroke="#38BDF8" stroke-width="2" />
+  </g>
+  <g id="text_11">
+    <text x="313.41" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="22.6" lengthAdjust="spacingAndGlyphs">Mon</text>
+    <text x="336.01" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="30.58" lengthAdjust="spacingAndGlyphs"> 01:00</text>
+    <text x="340" y="698.41" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">diff backup</text>
+  </g>
+  <g id="shape_12" filter="url(#shadow)">
+    <rect x="554" y="654" width="12" height="12" rx="6" fill="#38BDF8" stroke="#38BDF8" stroke-width="2" />
+  </g>
+  <g id="text_13">
+    <text x="534.93" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="19.56" lengthAdjust="spacingAndGlyphs">Tue</text>
+    <text x="554.49" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="30.58" lengthAdjust="spacingAndGlyphs"> 01:00</text>
+    <text x="560" y="698.41" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">diff backup</text>
+  </g>
+  <g id="shape_14" filter="url(#shadow)">
+    <rect x="774" y="654" width="12" height="12" rx="6" fill="#38BDF8" stroke="#38BDF8" stroke-width="2" />
+  </g>
+  <g id="text_15">
+    <text x="753.1" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="23.22" lengthAdjust="spacingAndGlyphs">Wed</text>
+    <text x="776.32" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="30.58" lengthAdjust="spacingAndGlyphs"> 01:00</text>
+    <text x="780" y="698.41" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">diff backup</text>
+  </g>
+  <g id="shape_16" filter="url(#shadow)">
+    <rect x="994" y="654" width="12" height="12" rx="6" fill="#38BDF8" stroke="#38BDF8" stroke-width="2" />
+  </g>
+  <g id="text_17">
+    <text x="974.63" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="20.16" lengthAdjust="spacingAndGlyphs">Thu</text>
+    <text x="994.79" y="684.66" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="30.58" lengthAdjust="spacingAndGlyphs"> 01:00</text>
+    <text x="1000" y="698.41" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">diff backup</text>
+  </g>
+  <g id="shape_18" filter="url(#shadow)">
+    <rect x="1117.75" y="654" width="12" height="12" rx="6" fill="#F87171" stroke="#F87171" stroke-width="2" />
+  </g>
+  <g id="text_19">
+    <text x="1098.98" y="684.66" xml:space="preserve" fill="#F87171" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="28.13" lengthAdjust="spacingAndGlyphs">14:32</text>
+    <text x="1127.11" y="684.66" xml:space="preserve" fill="#F87171" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="21.41" lengthAdjust="spacingAndGlyphs"> bad</text>
+    <text x="1123.75" y="698.41" fill="#F87171" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">migration</text>
+  </g>
+  <g id="polyline_20">
+    <path d="M 1008 646 L 1115.75 646" fill="none" stroke="#38BDF8" stroke-width="4" stroke-linejoin="round" />
+  </g>
+  <g id="text_21">
+    <text x="1061.88" y="621.16" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">replay WAL</text>
+    <text x="1033.74" y="634.91" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="12.23" lengthAdjust="spacingAndGlyphs">to </text>
+    <text x="1045.97" y="634.91" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" textLength="44.03" lengthAdjust="spacingAndGlyphs">14:31:59</text>
+  </g>
+  <g id="text_22">
+    <text x="120" y="595.63" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="215.56" lengthAdjust="spacingAndGlyphs">Recovering from Thursday&#x27;s incident:</text>
+    <text x="335.56" y="595.63" xml:space="preserve" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="554.88" lengthAdjust="spacingAndGlyphs"> restore Sunday&#x27;s full backup and Thursday&#x27;s differential, then replay archived WAL up to the target time.</text>
+  </g>
+  <g id="text_23">
+    <text x="120" y="735.63" xml:space="preserve" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="26" lengthAdjust="spacingAndGlyphs">RPO</text>
+    <text x="146" y="735.63" xml:space="preserve" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="3.33" lengthAdjust="spacingAndGlyphs"> </text>
+    <path d="M650 52V116L207 337L650 557V623L71 342V332ZM650 -106V-38H71V-106Z" transform="translate(149.34 735.63) scale(0.012 -0.012)" fill="#94A3B8"/>
+    <text x="157.98" y="735.63" xml:space="preserve" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="251.44" lengthAdjust="spacingAndGlyphs"> one WAL segment or 60 s (archive_timeout)    </text>
+    <text x="409.42" y="735.63" xml:space="preserve" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="25.33" lengthAdjust="spacingAndGlyphs">RTO</text>
+    <text x="434.75" y="735.63" xml:space="preserve" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="3.33" lengthAdjust="spacingAndGlyphs"> </text>
+    <path d="M628 486C613 413 579 345 508 345C434 345 324 476 226 476C125 476 64 369 59 267H93C109 340 147 408 219 408C292 408 402 277 500 277C601 277 656 399 662 486ZM628 244C613 172 579 103 508 103C434 103 324 234 226 234C125 234 64 128 59 25H93C109 98 147 167 219 167C292 167 402 36 500 36C601 36 656 157 662 244Z" transform="translate(438.09 735.63) scale(0.012 -0.012)" fill="#94A3B8"/>
+    <text x="446.73" y="735.63" xml:space="preserve" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="231.12" lengthAdjust="spacingAndGlyphs"> restore 2.4 TB + replay up to 1 day of WAL</text>
+  </g>
+</svg>
