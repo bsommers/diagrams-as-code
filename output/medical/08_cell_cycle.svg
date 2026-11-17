@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1243 713" width="1243" height="713">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1F2F57" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-1F2F57-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F2F57"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 771.68 361.95 L 733.93 442.89" fill="none" stroke="#1F2F57" stroke-width="1.8" />
+  <path d="M 731.42 448.27 L 732.07 436.66 L 734.39 441.91 L 739.9 440.31 Z" fill="#1F2F57" />
+  <path d="M 690.27 187.47 L 714.78 152.47" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-dasharray="5,5" />
+  <path d="M 717.81 148.15 L 715.45 158.21 L 714.23 153.26 L 709.15 153.81 Z" fill="#1F2F57" />
+  <g id="polygon_1">
+    <path d="M 590.47 160 L 599.37 160.23 L 608.24 160.93 L 617.07 162.09 L 625.82 163.71 L 634.47 165.79 L 643 168.32 L 651.39 171.29 L 659.62 174.7 L 667.65 178.53 L 675.47 182.78 L 683.06 187.43 L 690.4 192.47 L 697.46 197.89 L 704.22 203.67 L 710.68 209.79 L 716.81 216.25 L 722.59 223.02 L 728 230.08 L 733.05 237.41 L 737.7 245 L 741.94 252.82 L 745.77 260.85 L 749.18 269.08 L 752.15 277.47 L 754.68 286 L 756.76 294.66 L 758.38 303.41 L 759.54 312.23 L 760.24 321.1 L 760.47 330 L 760.24 338.9 L 759.54 347.77 L 758.38 356.59 L 756.76 365.34 L 754.68 374 L 752.15 382.53 L 749.18 390.92 L 745.77 399.15 L 741.94 407.18 L 737.7 415 L 733.05 422.59 L 728 429.92 L 722.59 436.98 L 716.81 443.75 L 710.68 450.21 L 704.22 456.33 L 697.46 462.11 L 690.4 467.53 L 683.06 472.57 L 675.47 477.22 L 667.65 481.47 L 659.62 485.3 L 651.39 488.71 L 643 491.68 L 634.47 494.21 L 617.65 431.42 L 622.92 429.86 L 628.1 428.03 L 633.18 425.92 L 638.14 423.56 L 642.97 420.93 L 647.66 418.06 L 652.19 414.95 L 656.55 411.6 L 660.73 408.03 L 664.72 404.25 L 668.5 400.26 L 672.07 396.08 L 675.42 391.72 L 678.53 387.19 L 681.4 382.5 L 684.03 377.67 L 686.39 372.71 L 688.5 367.63 L 690.33 362.45 L 691.89 357.18 L 693.18 351.83 L 694.18 346.43 L 694.9 340.98 L 695.33 335.5 L 695.47 330 L 695.33 324.5 L 694.9 319.02 L 694.18 313.57 L 693.18 308.17 L 691.89 302.82 L 690.33 297.55 L 688.5 292.37 L 686.39 287.29 L 684.03 282.33 L 681.4 277.5 L 678.53 272.81 L 675.42 268.28 L 672.07 263.92 L 668.5 259.74 L 664.72 255.75 L 660.73 251.97 L 656.55 248.4 L 652.19 245.05 L 647.66 241.94 L 642.97 239.07 L 638.14 236.44 L 633.18 234.08 L 628.1 231.97 L 622.92 230.14 L 617.65 228.58 L 612.3 227.29 L 606.9 226.29 L 601.45 225.58 L 595.97 225.14 L 590.47 225 Z" fill="#CFE0F3" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_2">
+    <text x="712.2" y="307.84" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">G1</text>
+    <text x="712.2" y="326.59" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">11 h</text>
+  </g>
+  <g id="polygon_3">
+    <path d="M 634.47 494.21 L 625.82 496.29 L 617.07 497.91 L 608.24 499.07 L 599.37 499.77 L 590.47 500 L 581.57 499.77 L 572.7 499.07 L 563.88 497.91 L 555.13 496.29 L 546.47 494.21 L 537.94 491.68 L 529.55 488.71 L 521.33 485.3 L 513.29 481.47 L 505.47 477.22 L 497.88 472.57 L 490.55 467.53 L 483.49 462.11 L 476.72 456.33 L 470.26 450.21 L 464.14 443.75 L 458.36 436.98 L 452.94 429.92 L 447.9 422.59 L 443.25 415 L 439 407.18 L 435.17 399.15 L 431.76 390.92 L 428.79 382.53 L 426.26 374 L 424.19 365.34 L 422.56 356.59 L 421.4 347.77 L 420.7 338.9 L 420.47 330 L 420.7 321.1 L 421.4 312.23 L 422.56 303.41 L 424.19 294.66 L 426.26 286 L 489.05 302.82 L 487.77 308.17 L 486.76 313.57 L 486.05 319.02 L 485.62 324.5 L 485.47 330 L 485.62 335.5 L 486.05 340.98 L 486.76 346.43 L 487.77 351.83 L 489.05 357.18 L 490.61 362.45 L 492.45 367.63 L 494.55 372.71 L 496.92 377.67 L 499.54 382.5 L 502.41 387.19 L 505.53 391.72 L 508.87 396.08 L 512.44 400.26 L 516.23 404.25 L 520.21 408.03 L 524.39 411.6 L 528.75 414.95 L 533.28 418.06 L 537.97 420.93 L 542.8 423.56 L 547.76 425.92 L 552.84 428.03 L 558.03 429.86 L 563.3 431.42 L 568.64 432.71 L 574.05 433.71 L 579.5 434.42 L 584.98 434.86 L 590.47 435 L 595.97 434.86 L 601.45 434.42 L 606.9 433.71 L 612.3 432.71 L 617.65 431.42 Z" fill="#F4D9A8" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <text x="482.82" y="423.01" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">S</text>
+    <text x="482.82" y="441.76" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">8 h</text>
+  </g>
+  <g id="polygon_5">
+    <path d="M 426.26 286 L 428.79 277.47 L 431.76 269.08 L 435.17 260.85 L 439 252.82 L 443.25 245 L 447.9 237.41 L 452.94 230.08 L 458.36 223.02 L 464.14 216.25 L 470.26 209.79 L 476.72 203.67 L 483.49 197.89 L 490.55 192.47 L 497.88 187.43 L 505.47 182.78 L 513.29 178.53 L 521.33 174.7 L 529.55 171.29 L 537.94 168.32 L 546.47 165.79 L 563.3 228.58 L 558.03 230.14 L 552.84 231.97 L 547.76 234.08 L 542.8 236.44 L 537.97 239.07 L 533.28 241.94 L 528.75 245.05 L 524.39 248.4 L 520.21 251.97 L 516.23 255.75 L 512.44 259.74 L 508.87 263.92 L 505.53 268.28 L 502.41 272.81 L 499.54 277.5 L 496.92 282.33 L 494.55 287.29 L 492.45 292.37 L 490.61 297.55 L 489.05 302.82 Z" fill="#D7EBCB" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_6">
+    <text x="482.82" y="228.56" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">G2</text>
+    <text x="482.82" y="247.31" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">4 h</text>
+  </g>
+  <g id="polygon_7">
+    <path d="M 546.47 165.79 L 555.13 163.71 L 563.88 162.09 L 572.7 160.93 L 581.57 160.23 L 590.47 160 L 590.47 225 L 584.98 225.14 L 579.5 225.58 L 574.05 226.29 L 568.64 227.29 L 563.3 228.58 Z" fill="#F0C4C4" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_8">
+    <text x="551.17" y="307.32" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Interphase</text>
+    <text x="551.17" y="324.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">G1 + S + G2</text>
+    <text x="551.17" y="342.32" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">23 h</text>
+  </g>
+  <g id="text_9">
+    <text x="571.02" y="384.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" textLength="11.66" lengthAdjust="spacingAndGlyphs">M</text>
+    <text x="582.68" y="384.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="27.24" lengthAdjust="spacingAndGlyphs">  1 h</text>
+  </g>
+  <g id="path_12">
+    <path d="M 753.95 301.17 L 797.28 293.53" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_14">
+    <text x="802.28" y="297.32" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">G1: growth, normal function</text>
+  </g>
+  <g id="path_15">
+    <path d="M 473.09 447.38 L 441.98 478.49" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <text x="347.11" y="482.28" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">S: DNA replication</text>
+  </g>
+  <g id="path_18">
+    <path d="M 454.49 234.79 L 418.45 209.55" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_20">
+    <text x="254.49" y="213.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">G2: growth, prepares for division</text>
+  </g>
+  <g id="path_21">
+    <path d="M 568.67 164.43 L 563.06 121.8" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_23">
+    <text x="563.06" y="118.71" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">M: mitosis and cytokinesis</text>
+  </g>
+  <g id="path_25">
+    <path d="M 636.54 501.93 L 740.47 560" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <text x="745.47" y="563.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">G1/S checkpoint (DNA intact? cell large enough?)</text>
+  </g>
+  <g id="path_28">
+    <path d="M 544.4 158.07 L 455.47 108" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_29">
+    <text x="254.84" y="111.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">G2/M checkpoint (DNA fully replicated?)</text>
+  </g>
+  <g id="text_32">
+    <path d="M684 309H444L438 278C514 278 522 264 507 192L486 83C442 53 398 33 337 33C215 33 163 110 163 258C164 488 297 627 450 627C553 627 610 573 606 440H639L685 669H657C641 647 631 633 616 633C590 633 565 670 459 670C259 670 62 523 62 234C62 106 121 -11 313 -11C419 -11 486 15 567 57L597 202C609 264 622 278 679 278Z" transform="translate(723.81 150.28) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(732.53 152.8) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="737.17" y="150.28" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="62.7" lengthAdjust="spacingAndGlyphs"> (quiescent)</text>
+  </g>
+  <g id="caption_33">
+    <text x="60" y="609.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 8:</text>
+    <text x="134.17" y="609.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1048.53" lengthAdjust="spacingAndGlyphs"> THE CELL CYCLE. INTERPHASE (G1, S, G2) TAKES 23 H OF A 24-H CYCLE AND MITOSIS (M) 1 H; ARC LENGTH IS PROPORTIONAL TO DURATION.</text>
+    <text x="262.55" y="628.16" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="717.6" lengthAdjust="spacingAndGlyphs">RED BARS MARK CHECKPOINTS WHERE THE CYCLE HALTS IF DNA IS DAMAGED OR INCOMPLETE</text>
+  </g>
+  <g id="path_13">
+    <path d="M 751.75 301.17 C 751.75 301.96 752.17 302.68 752.85 303.08 C 753.53 303.47 754.37 303.47 755.05 303.08 C 755.73 302.68 756.15 301.96 756.15 301.17 C 756.15 300.38 755.73 299.66 755.05 299.26 C 754.37 298.87 753.53 298.87 752.85 299.26 C 752.17 299.66 751.75 300.38 751.75 301.17" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_16">
+    <path d="M 470.89 447.38 C 470.89 448.17 471.31 448.89 471.99 449.29 C 472.67 449.68 473.51 449.68 474.19 449.29 C 474.87 448.89 475.29 448.17 475.29 447.38 C 475.29 446.59 474.87 445.87 474.19 445.47 C 473.51 445.08 472.67 445.08 471.99 445.47 C 471.31 445.87 470.89 446.59 470.89 447.38" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_19">
+    <path d="M 452.29 234.79 C 452.29 236.01 453.28 236.99 454.49 236.99 C 455.71 236.99 456.69 236.01 456.69 234.79 C 456.69 233.57 455.71 232.59 454.49 232.59 C 453.28 232.59 452.29 233.57 452.29 234.79" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_22">
+    <path d="M 566.47 164.43 C 566.47 165.22 566.89 165.94 567.57 166.34 C 568.25 166.73 569.09 166.73 569.77 166.34 C 570.45 165.94 570.87 165.22 570.87 164.43 C 570.87 163.64 570.45 162.92 569.77 162.52 C 569.09 162.13 568.25 162.13 567.57 162.52 C 566.89 162.92 566.47 163.64 566.47 164.43" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_24">
+    <path d="M 615.57 423.7 L 636.57 501.9" fill="none" stroke="#B03A3A" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_27">
+    <path d="M 565.37 236.3 L 544.37 158.1" fill="none" stroke="#B03A3A" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+</svg>

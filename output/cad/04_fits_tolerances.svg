@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1501 577" width="1501" height="577">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_1">
+    <path d="M 275.01 40 L 565.01 40 L 565.01 490 L 275.01 490 Z" fill="none" stroke="#C5CBD8" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 605.01 40 L 895.01 40 L 895.01 490 L 605.01 490 Z" fill="none" stroke="#C5CBD8" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_27">
+    <path d="M 935.01 40 L 1225.01 40 L 1225.01 490 L 935.01 490 Z" fill="none" stroke="#C5CBD8" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_2">
+    <text x="348.73" y="71.16" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Clearance fit  H7/g6</text>
+  </g>
+  <g id="path_3">
+    <path d="M 295.01 295 L 545.01 295" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(295.01 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="300.46" y="312.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="63.89" lengthAdjust="spacingAndGlyphs"> = basic size </text>
+    <path d="M722 597H651L592 529C533 570 467 597 390 597C204 597 51 443 51 258C51 168 88 82 147 21L58 -81H129L188 -14C247 -57 316 -81 390 -81C575 -81 729 71 729 258C729 347 693 430 632 493ZM192 72C145 121 119 188 119 259C119 408 239 529 390 529C446 529 515 507 547 477ZM589 444C635 393 661 328 661 259C661 108 539 -14 390 -14C333 -14 278 4 232 37Z" transform="translate(364.34 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(372.92 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(378.37 312.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="polygon_5">
+    <path d="M 337.01 190 L 397.01 190 L 397.01 295 L 337.01 295 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_6">
+    <path d="M 433.01 330 L 493.01 330 L 493.01 395 L 433.01 395 Z" fill="#DDEBDF" stroke="#2E6B3F" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="346.33" y="180.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">hole H7</text>
+  </g>
+  <g id="text_8">
+    <text x="441.66" y="320.13" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">shaft g6</text>
+  </g>
+  <g id="text_9">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(294.74 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(302.66 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(308.1 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(315.38 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="321.85" y="193.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_10">
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(308.1 289.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(315.38 289.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="321.85" y="289.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_11">
+    <path d="M658 225V293H62V225Z" transform="translate(499.01 333.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(506.93 333.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(514.21 333.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <text x="520.68" y="333.78" xml:space="preserve" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_12">
+    <path d="M658 225V293H62V225Z" transform="translate(499.01 398.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(506.93 398.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(512.38 398.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(519.65 398.78) scale(0.011 -0.011)" fill="#2E6B3F"/>
+    <text x="526.12" y="398.78" xml:space="preserve" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_13">
+    <text x="342.63" y="439.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Hole 25.000 to 25.021 mm</text>
+    <text x="342.63" y="454.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Shaft 24.980 to 24.993 mm</text>
+    <text x="342.63" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="95.4" lengthAdjust="spacingAndGlyphs">clearance 7 to 41 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(438.03 469.13) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="445.08" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="10" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_15">
+    <text x="680.4" y="71.16" fill="#9A6A12" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Transition fit  H7/k6</text>
+  </g>
+  <g id="path_16">
+    <path d="M 625.01 295 L 875.01 295" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(625.01 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="630.46" y="312.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="63.89" lengthAdjust="spacingAndGlyphs"> = basic size </text>
+    <path d="M722 597H651L592 529C533 570 467 597 390 597C204 597 51 443 51 258C51 168 88 82 147 21L58 -81H129L188 -14C247 -57 316 -81 390 -81C575 -81 729 71 729 258C729 347 693 430 632 493ZM192 72C145 121 119 188 119 259C119 408 239 529 390 529C446 529 515 507 547 477ZM589 444C635 393 661 328 661 259C661 108 539 -14 390 -14C333 -14 278 4 232 37Z" transform="translate(694.35 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(702.93 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(708.37 312.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="polygon_18">
+    <path d="M 667.01 190 L 727.01 190 L 727.01 295 L 667.01 295 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 763.01 220 L 823.01 220 L 823.01 285 L 763.01 285 Z" fill="#F3E8CF" stroke="#9A6A12" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_20">
+    <text x="676.33" y="180.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">hole H7</text>
+  </g>
+  <g id="text_21">
+    <text x="772" y="210.13" fill="#9A6A12" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">shaft k6</text>
+  </g>
+  <g id="text_22">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(624.74 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(632.66 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(638.1 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(645.38 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="651.85" y="193.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_23">
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(638.1 289.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(645.38 289.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="651.85" y="289.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_24">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(829.01 223.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(836.93 223.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(842.38 223.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(849.65 223.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <text x="856.12" y="223.78" xml:space="preserve" fill="#9A6A12" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_25">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(829.01 288.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(836.93 288.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(844.21 288.78) scale(0.011 -0.011)" fill="#9A6A12"/>
+    <text x="850.68" y="288.78" xml:space="preserve" fill="#9A6A12" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_26">
+    <text x="641.91" y="439.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Hole 25.000 to 25.021 mm</text>
+    <text x="641.91" y="454.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Shaft 25.002 to 25.015 mm</text>
+    <text x="641.91" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="16.68" lengthAdjust="spacingAndGlyphs">19 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(658.59 469.13) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="665.64" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="98.72" lengthAdjust="spacingAndGlyphs">m clearance to 15 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(764.36 469.13) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="771.42" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="76.7" lengthAdjust="spacingAndGlyphs">m interference</text>
+  </g>
+  <g id="text_28">
+    <text x="1002.89" y="71.16" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Interference fit  H7/p6</text>
+  </g>
+  <g id="path_29">
+    <path d="M 955.01 295 L 1205.01 295" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_30">
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(955.01 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="960.46" y="312.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="63.89" lengthAdjust="spacingAndGlyphs"> = basic size </text>
+    <path d="M722 597H651L592 529C533 570 467 597 390 597C204 597 51 443 51 258C51 168 88 82 147 21L58 -81H129L188 -14C247 -57 316 -81 390 -81C575 -81 729 71 729 258C729 347 693 430 632 493ZM192 72C145 121 119 188 119 259C119 408 239 529 390 529C446 529 515 507 547 477ZM589 444C635 393 661 328 661 259C661 108 539 -14 390 -14C333 -14 278 4 232 37Z" transform="translate(1024.35 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(1032.92 312.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(1038.37 312.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="polygon_31">
+    <path d="M 997.01 190 L 1057.01 190 L 1057.01 295 L 997.01 295 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 1093.01 120 L 1153.01 120 L 1153.01 185 L 1093.01 185 Z" fill="#F1D9D9" stroke="#9C2F2F" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_33">
+    <text x="1006.33" y="180.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">hole H7</text>
+  </g>
+  <g id="text_34">
+    <text x="1101.66" y="110.13" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">shaft p6</text>
+  </g>
+  <g id="text_35">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(954.74 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(962.66 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(968.1 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(975.38 193.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="981.85" y="193.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_36">
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(968.1 289.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(975.38 289.78) scale(0.011 -0.011)" fill="#000000"/>
+    <text x="981.85" y="289.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_37">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(1159.01 123.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(1166.93 123.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(1172.38 123.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(1179.65 123.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <text x="1186.12" y="123.78" xml:space="preserve" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_38">
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(1159.01 188.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(1166.93 188.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(1172.38 188.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(1179.65 188.78) scale(0.011 -0.011)" fill="#9C2F2F"/>
+    <text x="1186.12" y="188.78" xml:space="preserve" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="9.16" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="text_39">
+    <text x="1002.63" y="439.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Hole 25.000 to 25.021 mm</text>
+    <text x="1002.63" y="454.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Shaft 25.022 to 25.035 mm</text>
+    <text x="1002.63" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="106.73" lengthAdjust="spacingAndGlyphs">interference 1 to 35 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(1109.36 469.13) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="1116.42" y="469.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="10" lengthAdjust="spacingAndGlyphs">m</text>
+  </g>
+  <g id="caption_40">
+    <text x="60" y="532.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 4:</text>
+    <text x="134.17" y="532.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="188.37" lengthAdjust="spacingAndGlyphs"> ISO HOLE-BASIS FITS AT </text>
+    <path d="M722 597H651L592 529C533 570 467 597 390 597C204 597 51 443 51 258C51 168 88 82 147 21L58 -81H129L188 -14C247 -57 316 -81 390 -81C575 -81 729 71 729 258C729 347 693 430 632 493ZM192 72C145 121 119 188 119 259C119 408 239 529 390 529C446 529 515 507 547 477ZM589 444C635 393 661 328 661 259C661 108 539 -14 390 -14C333 -14 278 4 232 37Z" transform="translate(322.54 532.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(334.24 532.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(341.67 532.53) scale(0.015 -0.015)" fill="#000000"/>
+    <text x="349.09" y="532.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1090.93" lengthAdjust="spacingAndGlyphs"> MM; THE HOLE ZONE H7 STAYS FIXED WHILE THE SHAFT ZONE MOVES FROM CLEARANCE (G6) THROUGH TRANSITION (K6) TO INTERFERENCE (P6)</text>
+  </g>
+</svg>

@@ -316,6 +316,10 @@ Eleven complete paper-style figures in the `paper` theme, each with a caption. E
 
 ---
 
+## 17. Medical, Engineering and CAD Galleries (`examples/medical/`, `engineering/`, `cad/`)
+
+Thirty paper-style figures, ten per subject, drawn with `diagrams_as_code.draft.Draft` (dimensions, hatching, centerlines, section arrows, GD&T frames, organic outlines) and `Plot`. Values are computed by the scripts. Each lints clean; `tests/test_clinical_engineering_examples.py` checks every script and that the committed SVG matches it. The anatomy is schematic, not diagnostic.
+
 ## 16. Textbook Galleries (`examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/`, `logic/`)
 
 Fifty paper-style figures, ten per subject, in the `paper` theme with a caption each. The numbers in them are computed by the scripts (integration, root finding, mean-variance solving, Quine-McCluskey), not typed in. Plots are drawn with `diagrams_as_code.plot.Plot`. Each lints clean; `tests/test_textbook_examples.py` checks every script and that the committed SVG matches it.
@@ -406,6 +410,6 @@ uv run diagrams-as-code render examples --out output --format svg,png,bom
 To run automated verification tests across the entire gallery:
 
 ```bash
-uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_textbook_examples.py tests/test_golden_images.py
+uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_textbook_examples.py tests/test_clinical_engineering_examples.py tests/test_golden_images.py
 uv run diagrams-as-code lint examples
 ```
