@@ -43,6 +43,7 @@ LAYERS: dict[str, float] = {
     "layout": 4,
     "audit": 4,
     "diagram": 5,
+    "plot": 5.5,
     "output": 6,
     "cli": 7,
     "__main__": 8,
