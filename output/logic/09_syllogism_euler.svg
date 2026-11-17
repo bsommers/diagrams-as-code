@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 547" width="960" height="547">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 86 200 C 86 246.39 123.61 284 170 284 C 216.39 284 254 246.39 254 200 C 254 153.61 216.39 116 170 116 C 123.61 116 86 153.61 86 200 Z" fill="#F1F1F1" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_2">
+    <path d="M 114 214 C 114 244.93 139.07 270 170 270 C 200.93 270 226 244.93 226 214 C 226 183.07 200.93 158 170 158 C 139.07 158 114 183.07 114 214 Z" fill="#DCE6F2" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_3">
+    <path d="M 142 226 C 142 241.46 154.54 254 170 254 C 185.46 254 198 241.46 198 226 C 198 210.54 185.46 198 170 198 C 154.54 198 142 210.54 142 226 Z" fill="#BFD3EC" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(165.45 139.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_5">
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(163.05 175.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_6">
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(165.73 231.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_7">
+    <text x="116.7" y="48.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" textLength="52.92" lengthAdjust="spacingAndGlyphs">Barbara</text>
+    <text x="169.62" y="48.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="53.68" lengthAdjust="spacingAndGlyphs"> (AAA-1)</text>
+  </g>
+  <g id="text_8">
+    <text x="70" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="19.45" lengthAdjust="spacingAndGlyphs">All </text>
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(89.45 329.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="101.61" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(129.63 329.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="137.59" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="text_9">
+    <text x="70" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="19.45" lengthAdjust="spacingAndGlyphs">All </text>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(89.45 353.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="96.92" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(124.94 353.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="137.1" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="polyline_10">
+    <path d="M 60 365 L 280 365" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_11">
+    <text x="70" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="38.91" lengthAdjust="spacingAndGlyphs">So all </text>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(108.91 387.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="116.39" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(144.4 387.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="152.37" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="path_12">
+    <path d="M 366 200 C 366 228.72 389.28 252 418 252 C 446.72 252 470 228.72 470 200 C 470 171.28 446.72 148 418 148 C 389.28 148 366 171.28 366 200 Z" fill="#F1F1F1" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_13">
+    <path d="M 482 200 C 482 230.93 507.07 256 538 256 C 568.93 256 594 230.93 594 200 C 594 169.07 568.93 144 538 144 C 507.07 144 482 169.07 482 200 Z" fill="#DCE6F2" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_14">
+    <path d="M 512 212 C 512 226.36 523.64 238 538 238 C 552.36 238 564 226.36 564 212 C 564 197.64 552.36 186 538 186 C 523.64 186 512 197.64 512 212 Z" fill="#BFD3EC" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_15">
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(413.45 205.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_16">
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(531.05 167.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_17">
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(533.73 217.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_18">
+    <text x="425.15" y="48.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" textLength="56.02" lengthAdjust="spacingAndGlyphs">Celarent</text>
+    <text x="481.17" y="48.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="53.68" lengthAdjust="spacingAndGlyphs"> (EAE-1)</text>
+  </g>
+  <g id="text_19">
+    <text x="380" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="21.79" lengthAdjust="spacingAndGlyphs">No </text>
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(401.79 329.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="413.95" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="17.89" lengthAdjust="spacingAndGlyphs"> is </text>
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(431.84 329.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="439.81" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="text_20">
+    <text x="380" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="19.45" lengthAdjust="spacingAndGlyphs">All </text>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(399.45 353.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="406.92" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(434.94 353.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="447.1" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="polyline_21">
+    <path d="M 370 365 L 590 365" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_22">
+    <text x="380" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="40.48" lengthAdjust="spacingAndGlyphs">So no </text>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(420.48 387.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="427.95" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="17.89" lengthAdjust="spacingAndGlyphs"> is </text>
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(445.84 387.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="453.81" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="path_23">
+    <path d="M 698 200 C 698 247.5 736.5 286 784 286 C 831.5 286 870 247.5 870 200 C 870 152.5 831.5 114 784 114 C 736.5 114 698 152.5 698 200 Z" fill="#F1F1F1" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_24">
+    <path d="M 714 200 C 714 227.61 736.39 250 764 250 C 791.61 250 814 227.61 814 200 C 814 172.39 791.61 150 764 150 C 736.39 150 714 172.39 714 200 Z" fill="#DCE6F2" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_25">
+    <path d="M 788 200 C 788 226.51 809.49 248 836 248 C 862.51 248 884 226.51 884 200 C 884 173.49 862.51 152 836 152 C 809.49 152 788 173.49 788 200 Z" fill="#8FB0DC" fill-opacity="0.5" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(779.45 135.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_27">
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(729.05 205.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_28">
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(875.73 149.5) scale(0.016 -0.016)" fill="#000000"/>
+  </g>
+  <g id="text_29">
+    <path d="M644 22 409 258 644 495 597 541 360 306 125 541 77 494 312 258 77 21 124 -26 360 210 597 -26Z" transform="translate(790.92 209.63) scale(0.028 -0.028)" fill="#000000"/>
+  </g>
+  <g id="text_30">
+    <text x="753.05" y="48.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" textLength="31.12" lengthAdjust="spacingAndGlyphs">Darii</text>
+    <text x="784.17" y="48.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="42.78" lengthAdjust="spacingAndGlyphs"> (AII-1)</text>
+  </g>
+  <g id="text_31">
+    <text x="690" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="19.45" lengthAdjust="spacingAndGlyphs">All </text>
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(709.45 329.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="721.61" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(749.63 329.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="757.59" y="329.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="text_32">
+    <text x="690" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="40.46" lengthAdjust="spacingAndGlyphs">Some </text>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(730.46 353.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="737.94" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M786 0 792 30C721 30 702 46 717 119L802 536C818 610 837 627 908 627L914 657H725L420 151H416L308 657H108L102 627C181 627 193 610 177 535L98 146C77 43 60 30 -17 30L-23 0H208L214 30C138 30 126 43 147 146L230 550H234L355 0H377L713 551H717L628 119C613 46 599 30 525 30L519 0Z" transform="translate(765.95 353.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="778.12" y="353.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="polyline_33">
+    <path d="M 680 365 L 900 365" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_34">
+    <text x="690" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="59.14" lengthAdjust="spacingAndGlyphs">So some </text>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(749.14 387.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="756.61" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="28.01" lengthAdjust="spacingAndGlyphs"> are </text>
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(784.63 387.82) scale(0.014 -0.014)" fill="#000000"/>
+    <text x="792.59" y="387.82" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="3.89" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="text_35">
+    <text x="60" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="122.05" lengthAdjust="spacingAndGlyphs">Nested circles read as </text>
+    <text x="182.05" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="12.01" lengthAdjust="spacingAndGlyphs">all</text>
+    <text x="194.06" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="110.04" lengthAdjust="spacingAndGlyphs">, separate circles as </text>
+    <text x="304.1" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="13.35" lengthAdjust="spacingAndGlyphs">no</text>
+    <text x="317.45" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="160.09" lengthAdjust="spacingAndGlyphs">, and a cross in an overlap as </text>
+    <text x="477.54" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="29.34" lengthAdjust="spacingAndGlyphs">some</text>
+    <text x="506.88" y="461.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="3.33" lengthAdjust="spacingAndGlyphs">.</text>
+  </g>
+  <g id="caption_36">
+    <text x="68.28" y="507.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 9:</text>
+    <text x="142.45" y="507.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="749.27" lengthAdjust="spacingAndGlyphs"> THREE VALID SYLLOGISMS AS EULER DIAGRAMS, WITH THE CONCLUSION READ FROM THE PICTURE</text>
+  </g>
+</svg>

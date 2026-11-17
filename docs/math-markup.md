@@ -63,7 +63,13 @@ Uppercase: `\Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omeg
 
 ## Functions and big operators
 
-Named functions are set upright: `\min \max \sup \inf \lim \arg \argmin \argmax \log \ln \exp \sin \cos \tan \det \dim \ker \Pr \gcd \deg`.
+Named functions are set upright: `\min \max \sup \inf \lim \limsup \liminf \arg \argmin \argmax \log \ln \lg \exp \sin \cos \tan \cot \sec \csc \sinh \cosh \tanh \coth \arcsin \arccos \arctan \det \dim \ker \hom \Pr \gcd \deg`.
+
+As in TeX, `\min \max \sup \inf \lim \limsup \liminf \argmin \argmax \det \gcd \Pr` put a subscript underneath (`\lim_{x \to 0}`); the others set scripts beside the name (`\cos^2 \theta`, `\sin^{-1} x`).
+
+## Bars and roots
+
+`\bar x`, `\bar{x}` and `\overline{AB}` draw a bar over their argument. `\sqrt{x}` draws a radical with a bar over its argument: `\sqrt{b^2 - 4ac}`. The bar is the minus-sign outline repeated, so it is a little thinner than a typeset rule and the radical does not stretch past one line of text. `\sqrt[n]{x}` (an index) is not supported: write `x^{1/n}`.
 
 Big operators: `\sum \prod \coprod \int \oint \bigcap \bigcup \bigwedge \bigvee`. Their limits are set underneath and above:
 
@@ -97,9 +103,9 @@ These raise `MathError`:
 | Not supported | Write instead |
 |---|---|
 | `\frac{a}{b}` | `a / b`, or `a b^{-1}` |
-| `\sqrt{x}` | `x^{1/2}` |
+| `\sqrt[n]{x}` | `x^{1/n}` |
 | matrices, `\begin{...}` | one `d.text()` per row, or a table of shapes |
-| accents: `\hat \bar \vec \tilde \dot` | a prime or a subscript: `y'`, `y_{\mathrm{est}}` |
+| accents: `\hat \vec \tilde \dot` | a prime or a subscript: `y'`, `y_{\mathrm{est}}` |
 | `\mathcal`, `\mathfrak` | `\mathbf` or a Greek letter |
 | stretchy delimiters | plain `( )`, `[ ]`, `\langle \rangle` |
 

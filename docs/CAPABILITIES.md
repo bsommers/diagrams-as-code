@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-16 (v0.14.0)  
+**Last Updated:** 2026-11-16 (v0.15.0)  
 
 ---
 
@@ -262,6 +262,15 @@
 - **CLI:** `diagrams-as-code lint PATH... [--ignore KIND[,KIND]] [--quiet]`
 - **Features:** Eleven paper-style figures in `examples/technical/`, the first a reproduction of a reference figure with its slips corrected. `lint` lays each diagram out and reports every visual defect as `script: kind: detail`, naming the elements involved; exit code 1 if any are found. Golden-image regression: every technical figure is rendered at a fixed width with pinned fonts (`tests/fixtures/fonts`) and compared with `tests/golden/technical/*.png` within an anti-aliasing tolerance; `tools/golden_images.py --update` stores new pictures. Guides: `docs/technical-figures.md`, `docs/math-markup.md`.
 - **Verification:** `uv run pytest tests/test_technical_examples.py tests/test_golden_images.py tests/test_lint.py && uv run diagrams-as-code lint examples`
+
+### 2.17a Plot Kit & Textbook Galleries
+
+#### `CAP-DIAG-PLOT`: Plot Kit and Textbook Galleries
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.15.0`
+- **Python API:** `diagrams_as_code.plot.Plot`
+- **Features:** Data-space plotting on a `Diagram`, standard library only: axes with ticks, grid, linear and log mapping; function and parametric curves clipped to the window and broken at asymptotes; tangents, shaded areas and bands, Riemann rectangles; slope and vector fields; RK4 trajectories and ODE solutions; candlesticks, stacked and plain bar charts, legends, orbits with direction arrows, custom tick labels and decade log ticks. Math markup gains `\bar`, `\overline`, `\sqrt` and more function names. Fifty textbook figures in `examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/` and `logic/`.
+- **Verification:** `uv run pytest tests/test_plot.py tests/test_textbook_examples.py && uv run diagrams-as-code lint examples`
 
 ### 2.18 Vector PDF Export
 

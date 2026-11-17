@@ -1,0 +1,313 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 387" width="790" height="387">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="text_1">
+    <text x="109" y="45.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">AND</text>
+  </g>
+  <g id="text_2">
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(92.52 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M604 -30 322 549H312L32 -30H105L317 412L531 -30Z" transform="translate(105.16 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(117.18 66.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polygon_3">
+    <path d="M 40 90 L 86 90 L 86 120 L 40 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(58.91 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_4">
+    <path d="M 86 90 L 132 90 L 132 120 L 86 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(105.44 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_5">
+    <path d="M 132 90 L 178 90 L 178 120 L 132 120 Z" fill="#B9BDC9" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M715 657H496L490 627C538 627 549 619 549 604C549 591 539 574 528 561L341 329H336L309 412L251 558C245 573 241 587 241 600C241 614 259 627 315 627L321 657H63L57 627C107 627 131 616 182 491L268 276L238 131C220 42 205 30 116 30L111 0H405L410 30C327 30 309 43 328 131L359 281L557 528C623 609 649 622 709 627Z" transform="translate(151.36 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_6">
+    <path d="M 40 120 L 86 120 L 86 150 L 40 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="63" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_7">
+    <path d="M 86 120 L 132 120 L 132 150 L 86 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="109" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_8">
+    <path d="M 132 120 L 178 120 L 178 150 L 132 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="155" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_9">
+    <path d="M 40 150 L 86 150 L 86 180 L 40 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="63" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_10">
+    <path d="M 86 150 L 132 150 L 132 180 L 86 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="109" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_11">
+    <path d="M 132 150 L 178 150 L 178 180 L 132 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="155" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_12">
+    <path d="M 40 180 L 86 180 L 86 210 L 40 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="63" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_13">
+    <path d="M 86 180 L 132 180 L 132 210 L 86 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="109" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_14">
+    <path d="M 132 180 L 178 180 L 178 210 L 132 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="155" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_15">
+    <path d="M 40 210 L 86 210 L 86 240 L 40 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="63" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_16">
+    <path d="M 86 210 L 132 210 L 132 240 L 86 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="109" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_17">
+    <path d="M 132 210 L 178 210 L 178 240 L 132 240 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="155" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="text_18">
+    <text x="68.03" y="262.66" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="81.93" lengthAdjust="spacingAndGlyphs">1 of 4 rows are 1</text>
+  </g>
+  <g id="text_19">
+    <text x="293" y="45.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">OR</text>
+  </g>
+  <g id="text_20">
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(276.52 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M604 549H531L319 106L105 549H32L314 -30H324Z" transform="translate(289.16 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(301.18 66.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polygon_21">
+    <path d="M 224 90 L 270 90 L 270 120 L 224 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(242.91 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_22">
+    <path d="M 270 90 L 316 90 L 316 120 L 270 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(289.44 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_23">
+    <path d="M 316 90 L 362 90 L 362 120 L 316 120 Z" fill="#B9BDC9" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M715 657H496L490 627C538 627 549 619 549 604C549 591 539 574 528 561L341 329H336L309 412L251 558C245 573 241 587 241 600C241 614 259 627 315 627L321 657H63L57 627C107 627 131 616 182 491L268 276L238 131C220 42 205 30 116 30L111 0H405L410 30C327 30 309 43 328 131L359 281L557 528C623 609 649 622 709 627Z" transform="translate(335.36 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_24">
+    <path d="M 224 120 L 270 120 L 270 150 L 224 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="247" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_25">
+    <path d="M 270 120 L 316 120 L 316 150 L 270 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="293" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_26">
+    <path d="M 316 120 L 362 120 L 362 150 L 316 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="339" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_27">
+    <path d="M 224 150 L 270 150 L 270 180 L 224 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="247" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_28">
+    <path d="M 270 150 L 316 150 L 316 180 L 270 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="293" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_29">
+    <path d="M 316 150 L 362 150 L 362 180 L 316 180 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="339" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_30">
+    <path d="M 224 180 L 270 180 L 270 210 L 224 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="247" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_31">
+    <path d="M 270 180 L 316 180 L 316 210 L 270 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="293" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_32">
+    <path d="M 316 180 L 362 180 L 362 210 L 316 210 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="339" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_33">
+    <path d="M 224 210 L 270 210 L 270 240 L 224 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="247" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_34">
+    <path d="M 270 210 L 316 210 L 316 240 L 270 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="293" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_35">
+    <path d="M 316 210 L 362 210 L 362 240 L 316 240 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="339" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="text_36">
+    <text x="252.03" y="262.66" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="81.93" lengthAdjust="spacingAndGlyphs">3 of 4 rows are 1</text>
+  </g>
+  <g id="text_37">
+    <text x="477" y="45.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">XOR</text>
+  </g>
+  <g id="text_38">
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(458.94 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M811 258C811 468 641 638 431 638C221 638 51 468 51 258C51 48 221 -122 431 -122C641 -122 811 48 811 258ZM397 -52C252 -37 136 79 121 224H397ZM741 224C726 79 610 -37 465 -52V224ZM397 292H121C136 437 252 553 397 568ZM465 292V568C610 553 726 437 741 292Z" transform="translate(471.58 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(486.76 66.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polygon_39">
+    <path d="M 408 90 L 454 90 L 454 120 L 408 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(426.91 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_40">
+    <path d="M 454 90 L 500 90 L 500 120 L 454 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(473.44 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_41">
+    <path d="M 500 90 L 546 90 L 546 120 L 500 120 Z" fill="#B9BDC9" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M715 657H496L490 627C538 627 549 619 549 604C549 591 539 574 528 561L341 329H336L309 412L251 558C245 573 241 587 241 600C241 614 259 627 315 627L321 657H63L57 627C107 627 131 616 182 491L268 276L238 131C220 42 205 30 116 30L111 0H405L410 30C327 30 309 43 328 131L359 281L557 528C623 609 649 622 709 627Z" transform="translate(519.36 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_42">
+    <path d="M 408 120 L 454 120 L 454 150 L 408 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="431" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_43">
+    <path d="M 454 120 L 500 120 L 500 150 L 454 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="477" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_44">
+    <path d="M 500 120 L 546 120 L 546 150 L 500 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="523" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_45">
+    <path d="M 408 150 L 454 150 L 454 180 L 408 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="431" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_46">
+    <path d="M 454 150 L 500 150 L 500 180 L 454 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="477" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_47">
+    <path d="M 500 150 L 546 150 L 546 180 L 500 180 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="523" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_48">
+    <path d="M 408 180 L 454 180 L 454 210 L 408 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="431" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_49">
+    <path d="M 454 180 L 500 180 L 500 210 L 454 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="477" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_50">
+    <path d="M 500 180 L 546 180 L 546 210 L 500 210 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="523" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_51">
+    <path d="M 408 210 L 454 210 L 454 240 L 408 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="431" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_52">
+    <path d="M 454 210 L 500 210 L 500 240 L 454 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="477" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_53">
+    <path d="M 500 210 L 546 210 L 546 240 L 500 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="523" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="text_54">
+    <text x="436.03" y="262.66" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="81.93" lengthAdjust="spacingAndGlyphs">2 of 4 rows are 1</text>
+  </g>
+  <g id="text_55">
+    <text x="661" y="45.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">NAND</text>
+  </g>
+  <g id="text_56">
+    <path d="M638 83V416H62V348H566V83Z" transform="translate(634.48 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(644.56 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(649.56 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M604 -30 322 549H312L32 -30H105L317 412L531 -30Z" transform="translate(662.2 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(674.22 66.82) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(682.52 66.82) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polygon_57">
+    <path d="M 592 90 L 638 90 L 638 120 L 592 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(610.91 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_58">
+    <path d="M 638 90 L 684 90 L 684 120 L 638 120 Z" fill="#D9DCE3" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(657.44 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_59">
+    <path d="M 684 90 L 730 90 L 730 120 L 684 120 Z" fill="#B9BDC9" stroke="#000000" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M715 657H496L490 627C538 627 549 619 549 604C549 591 539 574 528 561L341 329H336L309 412L251 558C245 573 241 587 241 600C241 614 259 627 315 627L321 657H63L57 627C107 627 131 616 182 491L268 276L238 131C220 42 205 30 116 30L111 0H405L410 30C327 30 309 43 328 131L359 281L557 528C623 609 649 622 709 627Z" transform="translate(703.36 109.13) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="polygon_60">
+    <path d="M 592 120 L 638 120 L 638 150 L 592 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="615" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_61">
+    <path d="M 638 120 L 684 120 L 684 150 L 638 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="661" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_62">
+    <path d="M 684 120 L 730 120 L 730 150 L 684 150 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="707" y="139.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_63">
+    <path d="M 592 150 L 638 150 L 638 180 L 592 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="615" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_64">
+    <path d="M 638 150 L 684 150 L 684 180 L 638 180 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="661" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_65">
+    <path d="M 684 150 L 730 150 L 730 180 L 684 180 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="707" y="169.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_66">
+    <path d="M 592 180 L 638 180 L 638 210 L 592 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="615" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_67">
+    <path d="M 638 180 L 684 180 L 684 210 L 638 210 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="661" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="polygon_68">
+    <path d="M 684 180 L 730 180 L 730 210 L 684 210 Z" fill="#BFD3EC" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="707" y="199.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_69">
+    <path d="M 592 210 L 638 210 L 638 240 L 592 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="615" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_70">
+    <path d="M 638 210 L 684 210 L 684 240 L 638 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="661" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">1</text>
+  </g>
+  <g id="polygon_71">
+    <path d="M 684 210 L 730 210 L 730 240 L 684 240 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="round" />
+    <text x="707" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  </g>
+  <g id="text_72">
+    <text x="620.03" y="262.66" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="11" font-style="italic" textLength="81.93" lengthAdjust="spacingAndGlyphs">3 of 4 rows are 1</text>
+  </g>
+  <g id="text_73">
+    <text x="45.36" y="291.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="36.02" lengthAdjust="spacingAndGlyphs">Inputs </text>
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(81.38 291.63) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="89.56" y="291.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="26.69" lengthAdjust="spacingAndGlyphs"> and </text>
+    <path d="M413 349C508 371 588 420 588 528C588 600 540 657 371 657H118L112 627C186 627 205 616 188 536L103 125C86 42 69 30 -7 30L-13 0H275C432 0 556 73 556 207C556 291 491 333 413 344ZM233 322H292C376 322 453 296 453 204C453 56 328 36 237 36C212 36 199 37 176 39ZM241 362 293 616C314 618 323 619 343 619C455 619 489 575 489 521C489 422 437 362 299 362Z" transform="translate(116.25 291.63) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="123.36" y="291.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="310.81" lengthAdjust="spacingAndGlyphs"> run through all four combinations in binary order. NAND is</text>
+    <text x="40" y="306.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="399.53" lengthAdjust="spacingAndGlyphs">the output column of AND inverted; XOR is 1 exactly when the inputs differ.</text>
+  </g>
+  <g id="caption_74">
+    <text x="4.14" y="352.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="78.31" y="352.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="687.55" lengthAdjust="spacingAndGlyphs"> TRUTH TABLES OF AND, OR, XOR AND NAND, WITH THE ROWS WHOSE OUTPUT IS 1 SHADED</text>
+  </g>
+</svg>

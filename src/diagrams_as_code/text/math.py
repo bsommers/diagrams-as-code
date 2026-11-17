@@ -8,6 +8,8 @@ fractions, radicals or matrices.
 """
 from __future__ import annotations
 
+import math
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -80,7 +82,13 @@ SYMBOLS: dict[str, tuple[int, str]] = {
 
 #: Function names set upright, e.g. ``\\min``.
 FUNCTIONS = (
-    "min max sup inf lim arg argmin argmax log ln exp sin cos tan det dim ker Pr gcd deg".split()
+    "min max sup inf lim limsup liminf arg argmin argmax log ln lg exp sin cos tan cot sec csc "
+    "sinh cosh tanh coth arcsin arccos arctan det dim ker hom Pr gcd deg".split()
+)
+#: Functions that take their sub/superscripts above and below, as in TeX; the rest, such
+#: as ``\cos^2`` and ``\sin^{-1}``, set them beside the name.
+LIMIT_FUNCTIONS = frozenset(
+    "min max sup inf lim limsup liminf argmin argmax det gcd Pr".split()
 )
 
 _SPACES = {",": THIN, ":": MEDIUM, ";": THICK, "!": -THIN, " ": 0.333, "quad": 1.0, "qquad": 2.0}
@@ -269,11 +277,28 @@ class _Parser:
         if name in ("left", "right", "displaystyle", "textstyle"):
             return _Node("space", width=0.0)
         if name in FUNCTIONS:
-            return _Node("text", text=name, cls=OP)
+            return _Node("text", text=name, cls=OP, force=None if name in LIMIT_FUNCTIONS else False)
+        if name in ("bar", "overline"):
+            arg = self._atom()
+            if arg is None:
+                raise MathError(f"\\{name} needs an argument in ${self.src}$")
+            return _Node("overline", children=[arg])
+        if name == "sqrt":
+            self._skip_space()
+            if self.i < len(self.src) and self.src[self.i] == "[":
+                raise MathError(f"\\sqrt[n]{{x}} is not supported; write x^{{1/n}} in ${self.src}$")
+            arg = self._atom()
+            if arg is None:
+                raise MathError(f"\\sqrt needs an argument in ${self.src}$")
+            return _Node("sqrt", children=[arg])
         if name in SYMBOLS:
             cp, cls = SYMBOLS[name]
             return _Node("sym", cls=cls, cp=cp)
         raise MathError(f"unsupported command \\{name} in ${self.src}$")
+
+    def _skip_space(self) -> None:
+        while self.i < len(self.src) and self.src[self.i].isspace():
+            self.i += 1
 
     def _braced_text(self, name: str) -> str:
         if self.i >= len(self.src) or self.src[self.i] != "{":
@@ -387,7 +412,61 @@ def _layout(node: _Node, size: float, level: int) -> MathBox:
         return _space(node.width * size)
     if node.kind == "script":
         return _layout_script(node, size, level)
+    if node.kind == "overline":
+        body = _layout_seq(node.children or [], size, level)
+        return _overbar(body, size, gap=0.12 * size)
+    if node.kind == "sqrt":
+        return _radical(_layout_seq(node.children or [], size, level), size)
     raise MathError(f"cannot lay out {node.kind}")
+
+
+#: The minus sign: advance 720, ink from x=62 to 658 and y=225 to 293 (font units).
+_BAR_INK_X0, _BAR_INK_X1 = 62.0, 658.0
+_BAR_YMIN, _BAR_YMAX = (_mg.GLYPHS[0x2212][1], _mg.GLYPHS[0x2212][2])
+
+
+def _bar(width: float, y_centre: float, thickness: float) -> tuple[Glyph, ...]:
+    """Glyphs of a horizontal rule ``width`` px wide, its centre ``y_centre`` px above the baseline.
+
+    The outlines carry no rule, so it is the minus glyph, sized to the stroke
+    ``thickness`` and repeated, overlapping at the ends, to span the width.
+    """
+    size = thickness * EM / (_BAR_YMAX - _BAR_YMIN)
+    ink = (_BAR_INK_X1 - _BAR_INK_X0) / EM * size
+    lead = _BAR_INK_X0 / EM * size
+    n = max(1, math.ceil(width / ink - 1e-9))
+    step = (width - ink) / (n - 1) if n > 1 else 0.0
+    mid = (_BAR_YMIN + _BAR_YMAX) / 2.0 / EM * size
+    if n == 1:  # shorter than one tile: stretch is not possible, so centre it
+        return (Glyph(0x2212, (width - ink) / 2.0 - lead, -(y_centre - mid), size),)
+    return tuple(Glyph(0x2212, i * step - lead, -(y_centre - mid), size) for i in range(n))
+
+
+def _overbar(body: MathBox, size: float, gap: float) -> MathBox:
+    thickness = 0.045 * size
+    y = body.height + gap
+    bar = _bar(body.width, y, thickness)
+    return MathBox(body.width, y + thickness, body.depth, body.glyphs + bar)
+
+
+def _radical(body: MathBox, size: float) -> MathBox:
+    """A radical sign over ``body``, its bar joined to the sign's top."""
+    rad_cp = 0x221A
+    adv, ymin, ymax, _ = _mg.GLYPHS[rad_cp]
+    need = body.height + body.depth + 0.2 * size
+    rsize = max(size, need / ((ymax - ymin) / EM))
+    s = rsize / EM
+    sign = MathBox(adv * s, ymax * s, -ymin * s, (Glyph(rad_cp, 0.0, 0.0, rsize),))
+    # Put the body on the sign's baseline-relative position, then the bar at the sign's top.
+    thickness = 0.045 * size
+    top = ymax * s - thickness / 2.0
+    pad = 0.08 * size
+    inner = MathBox(body.width + 2 * pad, body.height, body.depth,
+                    tuple(Glyph(g.cp, g.x + pad, g.y, g.size) for g in body.glyphs))
+    bar = _bar(inner.width, top, thickness)
+    shift = sign.width - 0.02 * size
+    glyphs = sign.glyphs + tuple(Glyph(g.cp, g.x + shift, g.y, g.size) for g in inner.glyphs + bar)
+    return MathBox(shift + inner.width, ymax * s, max(-ymin * s, body.depth), glyphs)
 
 
 def _layout_script(node: _Node, size: float, level: int) -> MathBox:

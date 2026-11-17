@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1034 450" width="1034" height="450">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 227.35 340 L 227.35 60 M 320.9 340 L 320.9 60 M 414.45 340 L 414.45 60 M 508 340 L 508 60 M 601.54 340 L 601.54 60 M 695.09 340 L 695.09 60 M 788.64 340 L 788.64 60 M 227.35 340 L 807.35 340 M 227.35 284 L 807.35 284 M 227.35 228 L 807.35 228 M 227.35 172 L 807.35 172 M 227.35 116 L 807.35 116 M 227.35 60 L 807.35 60" fill="none" stroke="#D9DDE6" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <path d="M 227.35 340 L 819.35 340" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 227.35 340 L 227.35 48" fill="none" stroke="#000000" stroke-width="1.2" />
+  <g id="text_6">
+    <text x="317.84" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">5</text>
+  </g>
+  <g id="text_7">
+    <text x="408.33" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">10</text>
+  </g>
+  <g id="text_8">
+    <text x="501.87" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">15</text>
+  </g>
+  <g id="text_9">
+    <text x="595.42" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">20</text>
+  </g>
+  <g id="text_10">
+    <text x="688.97" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">25</text>
+  </g>
+  <g id="text_11">
+    <text x="782.52" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">30</text>
+  </g>
+  <g id="text_12">
+    <text x="195.88" y="287.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">4000</text>
+  </g>
+  <g id="text_13">
+    <text x="195.88" y="231.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">8000</text>
+  </g>
+  <g id="text_14">
+    <text x="189.76" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">12000</text>
+  </g>
+  <g id="text_15">
+    <text x="189.76" y="119.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">16000</text>
+  </g>
+  <g id="text_16">
+    <text x="189.76" y="63.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">20000</text>
+  </g>
+  <g id="text_17">
+    <text x="215.23" y="354.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="path_18">
+    <path d="M 227.35 337 L 227.35 343 M 320.9 337 L 320.9 343 M 414.45 337 L 414.45 343 M 508 337 L 508 343 M 601.54 337 L 601.54 343 M 695.09 337 L 695.09 343 M 788.64 337 L 788.64 343 M 224.35 340 L 230.35 340 M 224.35 284 L 230.35 284 M 224.35 228 L 230.35 228 M 224.35 172 L 230.35 172 M 224.35 116 L 230.35 116 M 224.35 60 L 230.35 60" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_19">
+    <text x="825.35" y="344.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Year</text>
+  </g>
+  <g id="text_20">
+    <text x="178.7" y="38.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Paid in the year</text>
+  </g>
+  <g id="polygon_21">
+    <path d="M 238.95 340 L 238.95 172.94 L 253.17 172.94 L 253.17 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_22">
+    <path d="M 238.95 172.94 L 238.95 138.55 L 253.17 138.55 L 253.17 172.94 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_23">
+    <path d="M 257.66 340 L 257.66 175.06 L 271.87 175.06 L 271.87 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_24">
+    <path d="M 257.66 175.06 L 257.66 138.55 L 271.87 138.55 L 271.87 175.06 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_25">
+    <path d="M 276.37 340 L 276.37 177.31 L 290.58 177.31 L 290.58 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_26">
+    <path d="M 276.37 177.31 L 276.37 138.55 L 290.58 138.55 L 290.58 177.31 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_27">
+    <path d="M 295.07 340 L 295.07 179.7 L 309.29 179.7 L 309.29 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_28">
+    <path d="M 295.07 179.7 L 295.07 138.55 L 309.29 138.55 L 309.29 179.7 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_29">
+    <path d="M 313.78 340 L 313.78 182.24 L 328 182.24 L 328 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_30">
+    <path d="M 313.78 182.24 L 313.78 138.55 L 328 138.55 L 328 182.24 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_31">
+    <path d="M 332.49 340 L 332.49 184.93 L 346.71 184.93 L 346.71 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 332.49 184.93 L 332.49 138.55 L 346.71 138.55 L 346.71 184.93 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 351.2 340 L 351.2 187.79 L 365.42 187.79 L 365.42 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_34">
+    <path d="M 351.2 187.79 L 351.2 138.55 L 365.42 138.55 L 365.42 187.79 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_35">
+    <path d="M 369.91 340 L 369.91 190.83 L 384.13 190.83 L 384.13 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_36">
+    <path d="M 369.91 190.83 L 369.91 138.55 L 384.13 138.55 L 384.13 190.83 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 388.62 340 L 388.62 194.05 L 402.84 194.05 L 402.84 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_38">
+    <path d="M 388.62 194.05 L 388.62 138.55 L 402.84 138.55 L 402.84 194.05 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 407.33 340 L 407.33 197.48 L 421.55 197.48 L 421.55 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_40">
+    <path d="M 407.33 197.48 L 407.33 138.55 L 421.55 138.55 L 421.55 197.48 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_41">
+    <path d="M 426.04 340 L 426.04 201.11 L 440.26 201.11 L 440.26 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_42">
+    <path d="M 426.04 201.11 L 426.04 138.55 L 440.26 138.55 L 440.26 201.11 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_43">
+    <path d="M 444.75 340 L 444.75 204.97 L 458.97 204.97 L 458.97 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_44">
+    <path d="M 444.75 204.97 L 444.75 138.55 L 458.97 138.55 L 458.97 204.97 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_45">
+    <path d="M 463.46 340 L 463.46 209.06 L 477.68 209.06 L 477.68 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_46">
+    <path d="M 463.46 209.06 L 463.46 138.55 L 477.68 138.55 L 477.68 209.06 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_47">
+    <path d="M 482.17 340 L 482.17 213.41 L 496.39 213.41 L 496.39 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_48">
+    <path d="M 482.17 213.41 L 482.17 138.55 L 496.39 138.55 L 496.39 213.41 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_49">
+    <path d="M 500.88 340 L 500.88 218.03 L 515.1 218.03 L 515.1 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_50">
+    <path d="M 500.88 218.03 L 500.88 138.55 L 515.1 138.55 L 515.1 218.03 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_51">
+    <path d="M 519.59 340 L 519.59 222.93 L 533.81 222.93 L 533.81 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_52">
+    <path d="M 519.59 222.93 L 519.59 138.55 L 533.81 138.55 L 533.81 222.93 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_53">
+    <path d="M 538.3 340 L 538.3 228.14 L 552.52 228.14 L 552.52 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_54">
+    <path d="M 538.3 228.14 L 538.3 138.55 L 552.52 138.55 L 552.52 228.14 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_55">
+    <path d="M 557.01 340 L 557.01 233.66 L 571.23 233.66 L 571.23 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_56">
+    <path d="M 557.01 233.66 L 557.01 138.55 L 571.23 138.55 L 571.23 233.66 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_57">
+    <path d="M 575.72 340 L 575.72 239.53 L 589.94 239.53 L 589.94 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_58">
+    <path d="M 575.72 239.53 L 575.72 138.55 L 589.94 138.55 L 589.94 239.53 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_59">
+    <path d="M 594.43 340 L 594.43 245.76 L 608.65 245.76 L 608.65 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_60">
+    <path d="M 594.43 245.76 L 594.43 138.55 L 608.65 138.55 L 608.65 245.76 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_61">
+    <path d="M 613.14 340 L 613.14 252.37 L 627.36 252.37 L 627.36 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_62">
+    <path d="M 613.14 252.37 L 613.14 138.55 L 627.36 138.55 L 627.36 252.37 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_63">
+    <path d="M 631.85 340 L 631.85 259.39 L 646.07 259.39 L 646.07 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_64">
+    <path d="M 631.85 259.39 L 631.85 138.55 L 646.07 138.55 L 646.07 259.39 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_65">
+    <path d="M 650.56 340 L 650.56 266.84 L 664.78 266.84 L 664.78 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_66">
+    <path d="M 650.56 266.84 L 650.56 138.55 L 664.78 138.55 L 664.78 266.84 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_67">
+    <path d="M 669.27 340 L 669.27 274.76 L 683.49 274.76 L 683.49 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_68">
+    <path d="M 669.27 274.76 L 669.27 138.55 L 683.49 138.55 L 683.49 274.76 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_69">
+    <path d="M 687.98 340 L 687.98 283.16 L 702.2 283.16 L 702.2 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_70">
+    <path d="M 687.98 283.16 L 687.98 138.55 L 702.2 138.55 L 702.2 283.16 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_71">
+    <path d="M 706.69 340 L 706.69 292.08 L 720.91 292.08 L 720.91 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_72">
+    <path d="M 706.69 292.08 L 706.69 138.55 L 720.91 138.55 L 720.91 292.08 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_73">
+    <path d="M 725.4 340 L 725.4 301.55 L 739.62 301.55 L 739.62 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_74">
+    <path d="M 725.4 301.55 L 725.4 138.55 L 739.62 138.55 L 739.62 301.55 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_75">
+    <path d="M 744.11 340 L 744.11 311.6 L 758.33 311.6 L 758.33 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_76">
+    <path d="M 744.11 311.6 L 744.11 138.55 L 758.33 138.55 L 758.33 311.6 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_77">
+    <path d="M 762.82 340 L 762.82 322.27 L 777.04 322.27 L 777.04 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_78">
+    <path d="M 762.82 322.27 L 762.82 138.55 L 777.04 138.55 L 777.04 322.27 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_79">
+    <path d="M 781.53 340 L 781.53 333.6 L 795.75 333.6 L 795.75 340 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_80">
+    <path d="M 781.53 333.6 L 781.53 138.55 L 795.75 138.55 L 795.75 333.6 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_82">
+    <text x="676.6" y="131.18" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">payments 14,389 a year</text>
+  </g>
+  <g id="polygon_83">
+    <path d="M 246.06 68 L 264.06 68 L 264.06 80 L 246.06 80 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_84">
+    <text x="272.06" y="78.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Interest</text>
+  </g>
+  <g id="polygon_85">
+    <path d="M 246.06 93.2 L 264.06 93.2 L 264.06 105.2 L 246.06 105.2 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_86">
+    <text x="272.06" y="103.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Principal</text>
+  </g>
+  <g id="caption_87">
+    <text x="60" y="402.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="134.17" y="402.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="839.45" lengthAdjust="spacingAndGlyphs"> AMORTIZATION OF A 200,000 LOAN AT 6% OVER 30 YEARS (MONTHLY PAYMENT 1,199.10, PAID ANNUALLY 14,389).</text>
+    <text x="187.57" y="421.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="658.48" lengthAdjust="spacingAndGlyphs">EARLY PAYMENTS ARE MOSTLY INTEREST; TOTAL INTEREST OVER THE TERM IS 231,676.</text>
+  </g>
+  <g id="path_81">
+    <path d="M 227.35 138.55 L 807.35 138.55" fill="none" stroke="#8A5A00" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+</svg>

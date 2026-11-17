@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 946 635" width="946" height="635">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1F2F57" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-1F2F57-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-9AA3B5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#9AA3B5"/>
+    </marker>
+    <marker id="arrow-9AA3B5-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#9AA3B5"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 190 250 L 875.05 250" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 880 250 L 871 253.6 L 874.15 250 L 871 246.4 Z" fill="#000000" />
+  <path d="M 350 250 L 350 196.15" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 350 188.89 L 355.28 202.09 L 350 197.47 L 344.72 202.09 Z" fill="#1F2F57" />
+  <path d="M 470 250 L 470 196.15" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 470 188.89 L 475.28 202.09 L 470 197.47 L 464.72 202.09 Z" fill="#1F2F57" />
+  <path d="M 590 250 L 590 196.15" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 590 188.89 L 595.28 202.09 L 590 197.47 L 584.72 202.09 Z" fill="#1F2F57" />
+  <path d="M 710 250 L 710 196.15" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 710 188.89 L 715.28 202.09 L 710 197.47 L 704.72 202.09 Z" fill="#1F2F57" />
+  <path d="M 830 250 L 830 147.26" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 830 140 L 835.28 153.2 L 830 148.58 L 824.72 153.2 Z" fill="#1F2F57" />
+  <path d="M 350 300 L 350 319.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 350 324 L 346.4 315 L 350 318.15 L 353.6 315 Z" fill="#9AA3B5" />
+  <path d="M 350 356 L 350 371.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 350 376 L 346.4 367 L 350 370.15 L 353.6 367 Z" fill="#9AA3B5" />
+  <path d="M 470 300 L 470 319.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 470 324 L 466.4 315 L 470 318.15 L 473.6 315 Z" fill="#9AA3B5" />
+  <path d="M 470 356 L 470 371.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 470 376 L 466.4 367 L 470 370.15 L 473.6 367 Z" fill="#9AA3B5" />
+  <path d="M 590 300 L 590 319.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 590 324 L 586.4 315 L 590 318.15 L 593.6 315 Z" fill="#9AA3B5" />
+  <path d="M 590 356 L 590 371.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 590 376 L 586.4 367 L 590 370.15 L 593.6 367 Z" fill="#9AA3B5" />
+  <path d="M 710 300 L 710 319.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 710 324 L 706.4 315 L 710 318.15 L 713.6 315 Z" fill="#9AA3B5" />
+  <path d="M 710 356 L 710 371.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 710 376 L 706.4 367 L 710 370.15 L 713.6 367 Z" fill="#9AA3B5" />
+  <path d="M 830 300 L 830 319.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 830 324 L 826.4 315 L 830 318.15 L 833.6 315 Z" fill="#9AA3B5" />
+  <path d="M 830 356 L 830 371.05" fill="none" stroke="#9AA3B5" stroke-width="0.8" stroke-dasharray="5,5" />
+  <path d="M 830 376 L 826.4 367 L 830 370.15 L 833.6 367 Z" fill="#9AA3B5" />
+  <g id="path_3">
+    <path d="M 230 246 L 230 254 M 350 246 L 350 254 M 470 246 L 470 254 M 590 246 L 590 254 M 710 246 L 710 254 M 830 246 L 830 254" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <text x="886" y="254.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="31.07" lengthAdjust="spacingAndGlyphs">Year </text>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(917.07 254.47) scale(0.013 -0.013)" fill="#000000"/>
+  </g>
+  <g id="text_5">
+    <text x="226.39" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">0</text>
+  </g>
+  <g id="text_6">
+    <text x="346.39" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">1</text>
+  </g>
+  <g id="text_7">
+    <text x="466.39" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">2</text>
+  </g>
+  <g id="text_8">
+    <text x="586.39" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">3</text>
+  </g>
+  <g id="text_9">
+    <text x="706.39" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">4</text>
+  </g>
+  <g id="text_10">
+    <text x="826.39" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">5</text>
+  </g>
+  <g id="text_11">
+    <text x="215.32" y="291.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="29.36" lengthAdjust="spacingAndGlyphs">today</text>
+  </g>
+  <g id="text_14">
+    <text x="338.32" y="178.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">100</text>
+  </g>
+  <g id="text_17">
+    <text x="458.32" y="178.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">100</text>
+  </g>
+  <g id="text_20">
+    <text x="578.32" y="178.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">100</text>
+  </g>
+  <g id="text_23">
+    <text x="698.32" y="178.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">100</text>
+  </g>
+  <g id="text_26">
+    <text x="812.48" y="130.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1,100</text>
+  </g>
+  <g id="text_27">
+    <text x="197.55" y="186.63" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="53.36" lengthAdjust="spacingAndGlyphs">cash flow </text>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(250.9 186.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(259.13 189.15) scale(0.0084 -0.0084)" fill="#000000"/>
+  </g>
+  <g id="polyline_28">
+    <path d="M 20 316 L 890 316" fill="none" stroke="#9AA3B5" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_29">
+    <text x="20" y="344.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="88.16" lengthAdjust="spacingAndGlyphs">discount factor </text>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(108.16 344.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(112.8 344.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(122.12 344.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(134.37 344.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(139.73 344.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(144.76 338.8) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(151.31 338.8) scale(0.0091 -0.0091)" fill="#000000"/>
+  </g>
+  <g id="polyline_30">
+    <path d="M 20 376 L 890 376" fill="none" stroke="#9AA3B5" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_31">
+    <text x="20" y="404.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="81.66" lengthAdjust="spacingAndGlyphs">present value </text>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(101.66 404.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(110.58 407.2) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(114.18 404.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(118.82 404.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(128.14 404.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(140.39 404.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(145.75 404.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(150.78 398.8) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(157.33 398.8) scale(0.0091 -0.0091)" fill="#000000"/>
+  </g>
+  <g id="polyline_32">
+    <path d="M 20 424 L 890 424" fill="none" stroke="#9AA3B5" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_33">
+    <text x="330.12" y="344.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">0.9434</text>
+  </g>
+  <g id="text_34">
+    <text x="333.73" y="404.47" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">94.34</text>
+  </g>
+  <g id="text_39">
+    <text x="450.12" y="344.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">0.8900</text>
+  </g>
+  <g id="text_40">
+    <text x="453.73" y="404.47" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">89.00</text>
+  </g>
+  <g id="text_45">
+    <text x="570.12" y="344.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">0.8396</text>
+  </g>
+  <g id="text_46">
+    <text x="573.73" y="404.47" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">83.96</text>
+  </g>
+  <g id="text_51">
+    <text x="690.12" y="344.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">0.7921</text>
+  </g>
+  <g id="text_52">
+    <text x="693.73" y="404.47" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">79.21</text>
+  </g>
+  <g id="text_57">
+    <text x="810.12" y="344.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">0.7473</text>
+  </g>
+  <g id="text_58">
+    <text x="810.12" y="404.47" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">821.98</text>
+  </g>
+  <g id="text_63">
+    <path d="M122 657 116 627C183 627 204 616 193 557L104 127C88 43 73 30 -3 30L-9 0H269L275 30C194 30 176 41 193 123L228 294C239 289 257 286 277 286C420 286 581 346 581 519C581 624 488 657 365 657ZM293 614C315 616 326 618 347 618C448 618 484 573 484 507C484 379 399 327 282 327C261 327 247 329 236 331Z" transform="translate(460.38 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M277 125H272L265 242L235 527C235 534 232 556 232 563C229 608 261 627 312 627L315 657H70L68 627C121 627 138 603 146 536L202 -5H235L602 520C663 611 683 627 737 627L739 657H523L521 627C566 627 581 621 581 601C581 585 568 562 550 535Z" transform="translate(468.92 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(482.69 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M861 70H821C781 -66 746 -150 621 -150H196V-145L545 315V334L237 725V729H566C700 729 766 699 789 532H828L817 782H69V758L449 282L62 -224V-248H800Z" transform="translate(497.65 476.03) scale(0.01875 -0.01875)" fill="#8A5A00"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(498.27 489.19) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(501.82 489.19) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(509.38 489.19) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(503.83 459.43) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(517.7 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(527.99 478.04) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(532.14 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(537.5 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(548.25 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(562.39 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(568.57 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M658 225V293H62V225Z" transform="translate(574.37 468.35) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(581.93 468.35) scale(0.0105 -0.0105)" fill="#8A5A00"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(590.25 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(605.22 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M70 -132C110 -114 194 -80 194 33C194 88 167 121 117 121C77 121 55 94 55 62C55 33 71 8 110 8C121 8 130 10 141 14C141 -67 95 -91 58 -107Z" transform="translate(612.64 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(618.82 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(626.24 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M448 150C448 230 412 278 295 349V352C388 403 424 436 424 509C424 588 348 647 249 647C139 647 59 590 59 499C59 431 81 390 183 319V316C90 254 46 222 46 142C46 40 130 -12 246 -12C365 -12 448 45 448 150ZM213 300C334 222 364 185 364 121C364 53 312 19 250 19C174 19 124 60 124 150C124 219 156 254 213 300ZM350 511C350 447 330 408 264 368C175 422 137 458 137 517C137 578 179 614 247 614C311 614 350 577 350 511Z" transform="translate(633.67 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(641.09 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(644.77 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+    <path d="M85 -13C306 -11 450 116 450 374C450 522 389 646 240 646C114 646 39 567 39 432C39 300 110 222 219 222C269 222 305 243 350 284L356 283C334 121 221 32 83 16ZM126 438C126 566 171 612 236 612C324 612 360 523 360 398C360 312 307 281 249 281C166 281 126 345 126 438Z" transform="translate(652.19 474.89) scale(0.015 -0.015)" fill="#8A5A00"/>
+  </g>
+  <g id="text_64">
+    <text x="20" y="204.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="78.04" lengthAdjust="spacingAndGlyphs">discount rate </text>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(98.04 204.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(107.01 204.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(119.98 204.47) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M586 666H541C469 593 441 577 395 577C306 577 289 637 211 637C118 637 45 550 45 437C45 353 85 307 153 307C248 307 319 397 319 508C319 531 316 549 312 564L314 566C344 553 358 550 382 550C423 550 451 559 485 582H490L133 -21H181ZM647 182C647 265 609 310 540 310C444 310 373 225 373 111C373 25 414 -20 482 -20C577 -20 647 70 647 182ZM613 189C613 94 560 13 497 13C460 13 442 41 442 104C442 205 489 283 551 283C591 283 613 250 613 189ZM285 516C285 421 232 340 169 340C132 340 114 368 114 431C114 532 161 610 223 610C263 610 285 577 285 516Z" transform="translate(126.42 204.47) scale(0.013 -0.013)" fill="#000000"/>
+  </g>
+  <g id="caption_65">
+    <text x="76.48" y="532" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 3:</text>
+    <text x="150.65" y="532" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="714.33" lengthAdjust="spacingAndGlyphs"> PRESENT VALUE OF A FIVE-YEAR 10% BOND WITH A FACE VALUE OF 1,000, DISCOUNTED AT 6%.</text>
+    <text x="79.02" y="550.75" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="783.44" lengthAdjust="spacingAndGlyphs">EACH FLOW IS MULTIPLIED BY ITS DISCOUNT FACTOR; THE PRESENT VALUES SUM TO THE PRICE TODAY.</text>
+  </g>
+</svg>

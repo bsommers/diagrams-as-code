@@ -3,7 +3,7 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: phase_complete
-stopped_at: "v0.13.1 released (PR #24 merged b7772db, tag v0.13.1 pushed); feat/new-domain-galleries (5 domains, 55 diagrams) gate green locally, uncommitted"
+stopped_at: "v0.14.0 released (PR #25, tag pushed); feat/plot-kit: Plot helper + 5 textbook galleries (50 figures) gate green locally, uncommitted"
 last_updated: "2026-11-16T01:38:31.251Z"
 state_head: f468819fdcb5dc50dc620879707218a878ebc29a
 last_activity: 2026-11-14
@@ -84,5 +84,5 @@ Known limits: fonts are not embedded (not PDF/A); a character outside Windows-12
 ## Session
 
 **Last session:** 2026-11-16T01:38:31.238Z
-**Stopped at:** v0.13.1 released (PR #24 merged b7772db, tag v0.13.1 pushed); feat/new-domain-galleries (5 domains, 55 diagrams) gate green locally, uncommitted
+**Stopped at:** v0.14.0 released (PR #25, tag pushed); feat/plot-kit: Plot helper + 5 textbook galleries (50 figures) gate green locally, uncommitted
 **Resume file:** .planning/CHECKPOINT.md
