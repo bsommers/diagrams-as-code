@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.14.0] - 2026-11-16
+
 ### Added
 - **Five new example domains, 55 diagrams** (11 each: 10 placed by hand, 1 auto-layout). The gallery is now 143 diagrams in 13 domains, and every new one has zero audit defects and passes `lint`.
   - `examples/database/`: ER model, star schema, primary/replica failover, sharded cluster, CDC from WAL to Kafka, lakehouse medallion, B+-tree pages, LSM compaction, query-plan tree, backup and PITR, cache-aside (auto).
