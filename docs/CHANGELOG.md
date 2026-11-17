@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- **Five new example domains, 55 diagrams** (11 each: 10 placed by hand, 1 auto-layout). The gallery is now 143 diagrams in 13 domains, and every new one has zero audit defects and passes `lint`.
+  - `examples/database/`: ER model, star schema, primary/replica failover, sharded cluster, CDC from WAL to Kafka, lakehouse medallion, B+-tree pages, LSM compaction, query-plan tree, backup and PITR, cache-aside (auto).
+  - `examples/enterprise_architecture/`: C4 context and container views, capability heatmap, TIME portfolio, ArchiMate layers, integration patterns, value-stream cross-map, transition roadmap, data governance and MDM, cloud landing zone, application landscape (auto).
+  - `examples/manufacturing/`: six semiconductor diagrams (re-entrant wafer-fab loop with cross-sections, lithography cell, fab automation MES→AMHS→tool, run-to-run control with FDC, yield management, back-end assembly and test) and ISA-95 levels, automotive plant flow, OEE loss waterfall, SPC X-bar chart with Ishikawa diagram, ISA-88 recipe hierarchy (auto).
+  - `examples/mind_map/`: radial and balanced mind maps with curved colour-coded branches (launch plan, brainstorm, study notes, meeting notes, OKRs, risk register, book summary, five-whys retro, system-design interview, concept map, certification roadmap (auto)).
+  - `examples/computer_science/`: technical figures for hash tables, red-black trees, merge sort, Dijkstra, regex NFA→DFA, CPU pipeline hazards, virtual memory and caches, TCP lifecycle, CPU scheduling, Raft, and a compiler pass DAG (auto). The algorithms run in the scripts, so the figures show computed results.
+
+### Changed
+- `tests/test_domain_examples.py` covers the 13 domains (143 scripts) and requires a "Connections" section in the BOM only for diagrams that have edges; a chart such as the OEE waterfall has none.
+
 ## [v0.13.1] - 2026-11-15
 
 ### Fixed

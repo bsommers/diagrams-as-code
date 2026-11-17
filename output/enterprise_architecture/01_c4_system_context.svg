@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 602" width="1130" height="602">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7287FD"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#7287FD"/>
+    </marker>
+    <marker id="arrow-1E66F5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1E66F5"/>
+    </marker>
+    <marker id="arrow-1E66F5-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1E66F5"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#EFF1F5"/>
+  <g id="group_2">
+    <rect x="40" y="185" width="600" height="377" rx="8" fill="#E6E9EF" stroke="#CCD0DA" stroke-width="1.5" />
+    <text x="56" y="209" fill="#7287FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Big Bank plc: Enterprise Boundary</text>
+  </g>
+  <path d="M 495 132 L 495 250" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 495 342 L 495 440" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 610 296 L 860 296" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 610 268.4 L 845 268.4 L 845 147 L 929 147 L 929 132" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 300 486 L 380 486" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <path d="M 610 486 L 860 486" fill="none" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrow-1E66F5)" />
+  <g class="badge">
+  <rect x="419.2" y="182" width="151.6" height="18" rx="9" fill="#FFFFFF" />
+  <text x="495" y="194.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">views accounts, pays [HTTPS]</text>
+</g>
+  <g class="badge">
+  <rect x="423.37" y="382" width="143.27" height="18" rx="9" fill="#FFFFFF" />
+  <text x="495" y="394.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">reads / posts [XML over MQ]</text>
+</g>
+  <g class="badge">
+  <rect x="669.76" y="287" width="130.49" height="18" rx="9" fill="#FFFFFF" />
+  <text x="735" y="299.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">sends statements [SMTP]</text>
+</g>
+  <g class="badge">
+  <rect x="790.05" y="198.7" width="109.91" height="18" rx="9" fill="#FFFFFF" />
+  <text x="845" y="211.14" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">verifies TPPs [mTLS]</text>
+</g>
+  <g class="badge">
+  <rect x="306.15" y="477" width="67.7" height="18" rx="9" fill="#FFFFFF" />
+  <text x="340" y="489.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">uses [3270]</text>
+</g>
+  <g class="badge">
+  <rect x="680.32" y="477" width="109.36" height="18" rx="9" fill="#FFFFFF" />
+  <text x="735" y="489.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">checks credit [REST]</text>
+</g>
+  <g id="customer" filter="url(#shadow)">
+    <rect x="380" y="40" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-user" transform="translate(483, 49.6) scale(1)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="495" y="87.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Personal Customer</text>
+    <text x="495" y="103.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[Person]</text>
+    <text x="495" y="119.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Holds current and savings accounts</text>
+  </g>
+  <g id="banking" filter="url(#shadow)">
+    <rect x="380" y="250" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-server" transform="translate(483, 259.6) scale(1)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <circle cx="6" cy="7" r="1" fill="#7287FD"/>
+  <circle cx="9" cy="7" r="1" fill="#7287FD"/>
+  <circle cx="6" cy="17" r="1" fill="#7287FD"/>
+  <circle cx="9" cy="17" r="1" fill="#7287FD"/>
+</g>
+    <text x="495" y="297.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Internet Banking System</text>
+    <text x="495" y="313.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[Software System]</text>
+    <text x="495" y="329.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">View balances, make payments</text>
+  </g>
+  <g id="mainframe" filter="url(#shadow)">
+    <rect x="380" y="440" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-database" transform="translate(483, 449.6) scale(1)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#7287FD" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#7287FD" stroke-width="2"/>
+</g>
+    <text x="495" y="487.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Core Banking Mainframe</text>
+    <text x="495" y="503.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[Software System]</text>
+    <text x="495" y="519.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Accounts, ledger, transactions</text>
+  </g>
+  <g id="staff" filter="url(#shadow)">
+    <rect x="70" y="440" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-user" transform="translate(173, 449.6) scale(1)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="185" y="487.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Customer Service Staff</text>
+    <text x="185" y="503.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[Person]</text>
+    <text x="185" y="519.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Answers customer queries</text>
+  </g>
+  <g id="idp" filter="url(#shadow)">
+    <rect x="860" y="40" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-key" transform="translate(963, 49.6) scale(1)">
+  <circle cx="8" cy="14" r="5" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <line x1="12" y1="10" x2="21" y2="3" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="5" x2="19" y2="7" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19" y1="7" x2="21" y2="9" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="975" y="87.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Open Banking Directory</text>
+    <text x="975" y="103.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[External System]</text>
+    <text x="975" y="119.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Third-party provider registry</text>
+  </g>
+  <g id="email" filter="url(#shadow)">
+    <rect x="860" y="250" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-message" transform="translate(963, 259.6) scale(1)">
+  <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <polyline points="4,6 12,13 20,6" fill="none" stroke="#7287FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="975" y="297.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">E-mail Service</text>
+    <text x="975" y="313.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[External System]</text>
+    <text x="975" y="329.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Transactional e-mail (SaaS)</text>
+  </g>
+  <g id="credit" filter="url(#shadow)">
+    <rect x="860" y="440" width="230" height="92" rx="6" fill="#FFFFFF" stroke="#7287FD" stroke-width="2" />
+    <g class="icon icon-analytics" transform="translate(963, 449.6) scale(1)">
+  <line x1="4" y1="20" x2="20" y2="20" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+  <line x1="4" y1="4" x2="4" y2="20" stroke="#7287FD" stroke-width="2" stroke-linecap="round"/>
+  <rect x="7" y="12" width="3" height="8" rx="0.5" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <rect x="12" y="8" width="3" height="12" rx="0.5" fill="none" stroke="#7287FD" stroke-width="2"/>
+  <rect x="17" y="4" width="3" height="16" rx="0.5" fill="none" stroke="#7287FD" stroke-width="2"/>
+</g>
+    <text x="975" y="487.87" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Credit Bureau</text>
+    <text x="975" y="503.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">[External System]</text>
+    <text x="975" y="519.07" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Credit scores and checks</text>
+  </g>
+</svg>

@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 522" width="1260" height="522">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 313.03 116 L 335.83 116" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 343.03 116 L 334.03 119.6 L 334.03 112.4 Z" fill="#000000" />
+  <path d="M 483.03 116 L 505.83 116" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 513.03 116 L 504.03 119.6 L 504.03 112.4 Z" fill="#000000" />
+  <path d="M 653.03 116 L 675.83 116" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 683.03 116 L 674.03 119.6 L 674.03 112.4 Z" fill="#000000" />
+  <path d="M 823.03 116 L 845.83 116" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 853.03 116 L 844.03 119.6 L 844.03 112.4 Z" fill="#000000" />
+  <path d="M 993.03 116 L 1015.83 116" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 1023.03 116 L 1014.03 119.6 L 1014.03 112.4 Z" fill="#000000" />
+  <path d="M 1163.03 116 L 1199.03 116 L 1199.03 322 L 1180.23 322" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 1173.03 322 L 1182.03 318.4 L 1182.03 325.6 Z" fill="#000000" />
+  <path d="M 1013.03 322 L 896.89 322" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 889.69 322 L 898.69 318.4 L 898.69 325.6 Z" fill="#000000" />
+  <path d="M 729.69 322 L 613.56 322" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 606.36 322 L 615.36 318.4 L 615.36 325.6 Z" fill="#000000" />
+  <path d="M 446.36 322 L 330.23 322" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 323.03 322 L 332.03 318.4 L 332.03 325.6 Z" fill="#000000" />
+  <path d="M 163.03 322 L 143.03 322 L 143.03 116 L 165.83 116" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="5,5" />
+  <path d="M 173.03 116 L 164.03 119.6 L 164.03 112.4 Z" fill="#000000" />
+  <g id="shape_1">
+    <rect x="173.03" y="90" width="140" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="243.03" y="112.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">1 Deposit film</text>
+    <text x="243.03" y="127.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">CVD, ALD or oxidation</text>
+  </g>
+  <g id="shape_2">
+    <rect x="343.03" y="90" width="140" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="413.03" y="112.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">2 Coat resist</text>
+    <text x="413.03" y="127.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">track: spin, soft bake</text>
+  </g>
+  <g id="shape_3">
+    <rect x="513.03" y="90" width="140" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="583.03" y="112.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">3 Expose</text>
+    <text x="583.03" y="127.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">scanner: DUV / EUV</text>
+  </g>
+  <g id="shape_4">
+    <rect x="683.03" y="90" width="140" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="753.03" y="112.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">4 Develop</text>
+    <text x="753.03" y="127.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">track: PEB, develop</text>
+  </g>
+  <g id="shape_5">
+    <rect x="853.03" y="90" width="140" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="923.03" y="112.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">5 Etch</text>
+    <text x="923.03" y="127.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">plasma RIE</text>
+  </g>
+  <g id="shape_6">
+    <rect x="1023.03" y="90" width="140" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="1093.03" y="112.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">6 Strip resist</text>
+    <text x="1053.51" y="127.33" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" textLength="9.33" lengthAdjust="spacingAndGlyphs">O</text>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(1063.21 129.85) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="1067.84" y="127.33" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" textLength="64.7" lengthAdjust="spacingAndGlyphs"> plasma ash</text>
+  </g>
+  <g id="polygon_7">
+    <path d="M 173.03 220 L 313.03 220 L 313.03 238 L 173.03 238 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_8">
+    <path d="M 173.03 208 L 313.03 208 L 313.03 220 L 173.03 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 343.03 220 L 483.03 220 L 483.03 238 L 343.03 238 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_10">
+    <path d="M 343.03 208 L 483.03 208 L 483.03 220 L 343.03 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_11">
+    <path d="M 343.03 194 L 483.03 194 L 483.03 208 L 343.03 208 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 513.03 220 L 653.03 220 L 653.03 238 L 513.03 238 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 513.03 208 L 653.03 208 L 653.03 220 L 513.03 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 513.03 194 L 653.03 194 L 653.03 208 L 513.03 208 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 566.23 194 L 599.83 194 L 599.83 208 L 566.23 208 Z" fill="#F6E2BF" stroke="#000000" stroke-width="0.8" stroke-dasharray="2,2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_16">
+    <path d="M 513.03 168 L 566.23 168 L 566.23 173 L 513.03 173 Z" fill="#333333" stroke="#333333" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 599.83 168 L 653.03 168 L 653.03 173 L 599.83 173 Z" fill="#333333" stroke="#333333" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_18">
+    <path d="M 574.63 158 L 574.63 191" fill="none" stroke="#7A4FA0" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_19">
+    <path d="M 583.03 158 L 583.03 191" fill="none" stroke="#7A4FA0" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_20">
+    <path d="M 591.43 158 L 591.43 191" fill="none" stroke="#7A4FA0" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 683.03 220 L 823.03 220 L 823.03 238 L 683.03 238 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_22">
+    <path d="M 683.03 208 L 823.03 208 L 823.03 220 L 683.03 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_23">
+    <path d="M 683.03 194 L 736.23 194 L 736.23 208 L 683.03 208 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_24">
+    <path d="M 769.83 194 L 823.03 194 L 823.03 208 L 769.83 208 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_25">
+    <path d="M 853.03 220 L 993.03 220 L 993.03 238 L 853.03 238 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_26">
+    <path d="M 853.03 208 L 906.23 208 L 906.23 220 L 853.03 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_27">
+    <path d="M 939.83 208 L 993.03 208 L 993.03 220 L 939.83 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_28">
+    <path d="M 853.03 194 L 906.23 194 L 906.23 208 L 853.03 208 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_29">
+    <path d="M 939.83 194 L 993.03 194 L 993.03 208 L 939.83 208 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_30">
+    <path d="M 1023.03 220 L 1163.03 220 L 1163.03 238 L 1023.03 238 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_31">
+    <path d="M 1023.03 208 L 1076.23 208 L 1076.23 220 L 1023.03 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 1109.83 208 L 1163.03 208 L 1163.03 220 L 1109.83 220 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="shape_33">
+    <rect x="1013.03" y="296" width="160" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="1093.03" y="318.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Wet clean</text>
+    <text x="1093.03" y="333.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">particle / metal removal</text>
+  </g>
+  <g id="shape_34">
+    <rect x="729.69" y="296" width="160" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="809.69" y="318.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Metrology &amp; inspection</text>
+    <text x="809.69" y="333.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">CD, overlay, defects</text>
+  </g>
+  <g id="shape_35">
+    <rect x="446.36" y="296" width="160" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="526.36" y="318.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Ion implant + anneal</text>
+    <text x="526.36" y="333.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">doping layers only</text>
+  </g>
+  <g id="shape_36">
+    <rect x="163.03" y="296" width="160" height="52" rx="0" fill="#ECECEF" stroke="#000000" stroke-width="1" />
+    <text x="243.03" y="318.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">CMP</text>
+    <text x="243.03" y="333.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">planarise before next film</text>
+  </g>
+  <g id="text_37">
+    <text x="60" y="222.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">next mask layer</text>
+  </g>
+  <g id="polygon_38">
+    <path d="M 173.03 382 L 195.03 382 L 195.03 394 L 173.03 394 Z" fill="#B8B8C0" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_39">
+    <text x="203.03" y="391.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">silicon substrate</text>
+  </g>
+  <g id="polygon_40">
+    <path d="M 373.03 382 L 395.03 382 L 395.03 394 L 373.03 394 Z" fill="#9DB8DA" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_41">
+    <text x="403.03" y="391.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="42.16" lengthAdjust="spacingAndGlyphs">film (SiO</text>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(445.52 394.09) scale(0.0077 -0.0077)" fill="#000000"/>
+    <text x="449.77" y="391.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="18.95" lengthAdjust="spacingAndGlyphs"> / Si</text>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(469.05 394.09) scale(0.0077 -0.0077)" fill="#000000"/>
+    <text x="473.3" y="391.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="7.94" lengthAdjust="spacingAndGlyphs">N</text>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(481.58 394.09) scale(0.0077 -0.0077)" fill="#000000"/>
+    <text x="485.83" y="391.78" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" textLength="3.66" lengthAdjust="spacingAndGlyphs">)</text>
+  </g>
+  <g id="polygon_42">
+    <path d="M 573.03 382 L 595.03 382 L 595.03 394 L 573.03 394 Z" fill="#E7B36A" stroke="#000000" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_43">
+    <text x="603.03" y="391.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">photoresist</text>
+  </g>
+  <g id="polygon_44">
+    <path d="M 773.03 382 L 795.03 382 L 795.03 394 L 773.03 394 Z" fill="#F6E2BF" stroke="#000000" stroke-width="0.8" stroke-dasharray="2,2" stroke-linejoin="round" />
+  </g>
+  <g id="text_45">
+    <text x="803.03" y="391.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">exposed resist</text>
+  </g>
+  <g id="polygon_46">
+    <path d="M 973.03 382 L 995.03 382 L 995.03 394 L 973.03 394 Z" fill="#333333" stroke="#333333" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_47">
+    <text x="1003.03" y="391.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">reticle chrome</text>
+  </g>
+  <g id="caption_48">
+    <text x="36.48" y="437.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="110.65" y="437.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1111.89" lengthAdjust="spacingAndGlyphs"> ONE PATTERNING LAYER OF A WAFER FAB. THE LOOP REPEATS FOR EVERY MASK LEVEL, SEVERAL DOZEN TIMES FOR AN ADVANCED LOGIC DEVICE</text>
+  </g>
+</svg>

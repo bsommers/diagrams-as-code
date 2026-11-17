@@ -57,15 +57,15 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 - **Technical Drawing Primitives**: free text, captions, brackets, polygons and SVG paths, dashed layer bands with side notes, shapes nested in shapes, double borders, line weights and arrowhead styles, lines attached anywhere on a side or at bare points, shared trunks, leaders, splines, and convex solids in oblique or isometric projection with hidden edges dashed. Nine focused figures in [`examples/primitives/`](examples/primitives/).
 - **Technical Figures, Lint & Golden Images**: eleven complete paper-style figures in [`examples/technical/`](examples/technical/) (a four-layer architecture reproduced from a reference figure, a control loop, a transformer block, a state machine, a protocol stack, a memory layout, a timing diagram, a training pipeline, tensor shapes, a geometric construction, a constraint region). `diagrams-as-code lint` reports visual defects by name, and golden-image tests catch any change to how a figure looks. See the [technical figures guide](docs/technical-figures.md) and the [math markup reference](docs/math-markup.md).
 - **Vector PDF Export**: `diag.render_pdf("figure.pdf")` or `--format pdf` writes a one-page vector PDF with the standard library alone — no Cairo, Ghostscript or LaTeX. It is drawn from the same SVG, so lines, arrowheads, text and formulas match; see [Export a PDF](docs/technical-figures.md#8-export-a-pdf).
-- **88 Production Reference Architectures**: 11 comprehensive reference diagrams across 8 architectural domains in [`examples/`](examples/), including auto-layout examples per domain.
+- **143 Production Reference Diagrams**: 11 comprehensive reference diagrams across 13 domains in [`examples/`](examples/), including auto-layout examples per domain.
 - **Auto-Layout Engine**: `Diagram(layout="auto")` places unpinned shapes and groups deterministically from the edge structure; pinned shapes can still coexist via `.at()` / `.right_of()`.
 - **CLI**: `diagrams-as-code render|layout export|themes|icons` for batch rendering, layout-file export, and catalog discovery without writing a script.
 
 ---
 
-## 8 Architectural Domains Gallery
+## 13 Domains Gallery
 
-Explore 88 fully implemented diagrams in [`examples/`](examples/README.md) and [`output/`](output/):
+Explore 143 fully implemented diagrams in [`examples/`](examples/README.md) and [`output/`](output/):
 
 | Domain | Focus & Architectures | Key Built-in Icons |
 |---|---|---|
@@ -77,6 +77,11 @@ Explore 88 fully implemented diagrams in [`examples/`](examples/README.md) and [
 | [**Cybersecurity**](examples/cybersecurity/) | DMZ perimeter defense, SOC SIEM pipelines, ZTNA, PKI CA hierarchy, optical airgap vaults. | `lock`, `key`, `shield_check`, `siem`, `malware_scan`, `vault` |
 | [**Network Engineering**](examples/network_engineering/) | Campus 3-tier LAN, dual eBGP WAN, MPLS VPN, EVPN-VXLAN, DWDM optical rings, Anycast DNS. | `switch`, `optical`, `wan`, `vpn`, `dns_mesh`, `auth_server` |
 | [**Industrial IoT (IIoT)**](examples/iiot/) | Plant-to-cloud, broker HA clusters, Sparkplug B UNS, OPC UA TSN, predictive maintenance, SCADA. | `sensor`, `gateway`, `broker`, `plc`, `scada`, `hmi`, `historian`, `robot` |
+| [**Databases**](examples/database/) | Database design and operations: ER and star schemas, replication and failover, sharding, CDC, lakehouse, B+-tree, LSM and query-plan figures, backup/PITR. | `database`, `storage`, `storage_array`, `queue`, `cluster`, `load_balancer` |
+| [**Enterprise Architecture**](examples/enterprise_architecture/) | C4 context and container views, ArchiMate layers, capability heatmaps, TIME portfolio, value streams, transition plateaus, integration, MDM, landing zones. | `user`, `api_gateway`, `workflow`, `shield_check`, `key`, `database`, `vpc` |
+| [**Manufacturing & Semiconductor**](examples/manufacturing/) | Wafer-fab process loop, lithography cell, MES/AMHS/SECS-GEM automation, run-to-run + FDC, yield, back-end test, ISA-95, OEE, SPC, ISA-88. | `chip`, `robot`, `vision`, `plc`, `workflow`, `server`, `analytics` |
+| [**Mind Maps**](examples/mind_map/) | Launch plans, brainstorms, study notes, OKRs, risk registers, five-whys retros, system-design breakdowns, concept maps. | — (styles and curved branches, no icons) |
+| [**Computer Science**](examples/computer_science/) | Hash tables, red-black trees, merge sort, Dijkstra, regex NFA→DFA, CPU pipeline hazards, virtual memory and caches, TCP, scheduling, Raft. | `chip`, `server`, `laptop`, `document`, `analytics` |
 
 ---
 

@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951 750" width="951" height="750">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#88C0D0"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#88C0D0"/>
+    </marker>
+    <marker id="arrow-81A1C1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#81A1C1"/>
+    </marker>
+    <marker id="arrow-81A1C1-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#81A1C1"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#2E3440"/>
+  <g id="band_1">
+    <rect x="26.33" y="2" width="900" height="311" rx="0" fill="none" stroke="#4C566A" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="42.33" y="26" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">(a) Leader election: the role of one server</text>
+  </g>
+  <g id="band_12">
+    <rect x="23.28" y="346.25" width="900" height="332.75" rx="0" fill="none" stroke="#4C566A" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="39.28" y="370.25" fill="#88C0D0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">(b) Log replication in term 3</text>
+  </g>
+  <path d="M 40 170 L 107.8 170" fill="none" stroke="#81A1C1" stroke-width="1.3" />
+  <path d="M 115 170 L 106 173.6 L 106 166.4 Z" fill="#81A1C1" />
+  <path d="M 265 170 L 417.8 170" fill="none" stroke="#81A1C1" stroke-width="1.3" />
+  <path d="M 425 170 L 416 173.6 L 416 166.4 Z" fill="#81A1C1" />
+  <path d="M 575 170 L 727.8 170" fill="none" stroke="#81A1C1" stroke-width="1.3" />
+  <path d="M 735 170 L 726 173.6 L 726 166.4 Z" fill="#81A1C1" />
+  <path d="M 470 143 C 470.83 137.83, 470 119.5, 475 112 C 480 104.5, 491.67 98, 500 98 C 508.33 98, 520 104.5, 525 112 C 530 119.5, 529.17 137.83, 529.25 138.35" fill="none" stroke="#81A1C1" stroke-width="1.3" />
+  <path d="M 530 143 L 525.32 134.51 L 532.46 133.63 Z" fill="#81A1C1" />
+  <path d="M 470 197 C 461.67 202.17, 448.33 222.83, 420 228 C 391.67 233.17, 333.33 233.17, 300 228 C 266.67 222.83, 233.33 202.17, 226.71 199.6" fill="none" stroke="#81A1C1" stroke-width="1.3" />
+  <path d="M 220 197 L 229.69 197.16 L 226.91 203.8 Z" fill="#81A1C1" />
+  <path d="M 810 197 C 801.67 208.83, 811.67 255.83, 760 268 C 708.33 280.17, 588.33 270, 500 270 C 411.67 270, 286.67 280.17, 230 268 C 173.33 255.83, 171.67 208.83, 165.05 202.13" fill="none" stroke="#81A1C1" stroke-width="1.3" />
+  <path d="M 160 197 L 168.43 201.79 L 162.8 206.28 Z" fill="#81A1C1" />
+  <path d="M 160 436 L 136 436 L 136 480 L 152.8 480" fill="none" stroke="#88C0D0" stroke-width="1.2" />
+  <path d="M 160 480 L 151 483.6 L 151 476.4 Z" fill="#88C0D0" />
+  <path d="M 160 436 L 136 436 L 136 524 L 152.8 524" fill="none" stroke="#88C0D0" stroke-width="1.2" />
+  <path d="M 160 524 L 151 527.6 L 151 520.4 Z" fill="#88C0D0" />
+  <path d="M 160 436 L 136 436 L 136 568 L 152.8 568" fill="none" stroke="#88C0D0" stroke-width="1.2" />
+  <path d="M 160 568 L 151 571.6 L 151 564.4 Z" fill="#88C0D0" />
+  <path d="M 160 436 L 136 436 L 136 612 L 152.8 612" fill="none" stroke="#88C0D0" stroke-width="1.2" />
+  <path d="M 160 612 L 151 615.6 L 151 608.4 Z" fill="#88C0D0" />
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="115" y="143" width="150" height="54" rx="27" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <text x="190" y="174.82" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Follower</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="425" y="143" width="150" height="54" rx="27" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <text x="500" y="174.82" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Candidate</text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <rect x="735" y="143" width="150" height="54" rx="27" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <rect x="739" y="147" width="142" height="46" rx="23" fill="none" stroke="#88C0D0" stroke-width="2" />
+    <text x="810" y="174.82" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Leader</text>
+  </g>
+  <g id="text_5">
+    <text x="345" y="143.63" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="middle">election timeout</text>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(267.63 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M357 122C317 72 262 57 216 57C149 57 112 88 112 189V202C228 211 404 262 404 390C404 467 339 479 296 479C139 479 28 319 28 164C28 84 58 -12 177 -12C243 -12 315 17 375 107ZM114 231C133 330 202 448 276 448C306 448 318 428 318 393C318 298 227 238 114 231Z" transform="translate(271.68 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(276.77 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(281.71 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M877 225V293H265C247 293 238 303 238 313C238 321 243 333 253 342C283 374 313 406 337 440L316 460C249 382 171 306 72 264V254C171 213 249 136 315 59L336 79C313 112 281 148 252 177C241 187 237 193 237 203C237 213 254 225 264 225Z" transform="translate(295.01 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(309.72 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M357 122C317 72 262 57 216 57C149 57 112 88 112 189V202C228 211 404 262 404 390C404 467 339 479 296 479C139 479 28 319 28 164C28 84 58 -12 177 -12C243 -12 315 17 375 107ZM114 231C133 330 202 448 276 448C306 448 318 428 318 393C318 298 227 238 114 231Z" transform="translate(313.77 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(318.86 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(323.81 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(336.43 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(347.74 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <text x="353.68" y="158.63" xml:space="preserve" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="68.7" lengthAdjust="spacingAndGlyphs">, vote for self</text>
+  </g>
+  <g id="text_6">
+    <text x="655" y="143.63" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="middle">votes from a majority</text>
+    <path d="M650 332V342L71 623V557L514 337L71 116V52ZM650 -106V-38H71V-106Z" transform="translate(615.57 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M169 -158V736H90V-190H319V-158Z" transform="translate(627.54 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(631.73 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M351 709H296L35 -89H91Z" transform="translate(638.51 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(643.14 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M30 -158V-190H259V736H180V-158Z" transform="translate(649.08 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(655.94 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(667.24 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(676.52 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(688.49 158.63) scale(0.012 -0.012)" fill="#ECEFF4"/>
+  </g>
+  <g id="text_7">
+    <text x="500" y="69.63" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="middle">split vote: timeout</text>
+    <text x="500" y="84.63" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">new election</text>
+  </g>
+  <g id="text_8">
+    <text x="345" y="247.63" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="middle">sees current leader or a higher term</text>
+  </g>
+  <g id="text_9">
+    <text x="419.62" y="287.63" xml:space="preserve" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" textLength="99.38" lengthAdjust="spacingAndGlyphs">sees a higher term</text>
+    <text x="519" y="287.63" xml:space="preserve" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="61.37" lengthAdjust="spacingAndGlyphs">: step down</text>
+  </g>
+  <g id="text_10">
+    <text x="60" y="160.63" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">start</text>
+  </g>
+  <g id="shape_13" filter="url(#shadow)">
+    <rect x="160" y="420" width="100" height="32" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <rect x="163" y="423" width="94" height="26" rx="3" fill="none" stroke="#88C0D0" stroke-width="2" />
+    <text x="184.32" y="440.13" xml:space="preserve" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="14.68" lengthAdjust="spacingAndGlyphs">S1</text>
+    <text x="198.99" y="440.13" xml:space="preserve" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" textLength="36.69" lengthAdjust="spacingAndGlyphs"> leader</text>
+  </g>
+  <g id="shape_14">
+    <rect x="290" y="420" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="316" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_15">
+    <rect x="342" y="420" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="368" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_16">
+    <rect x="394" y="420" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="420" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_17">
+    <rect x="446" y="420" width="52" height="32" rx="0" fill="#A3BE8C" stroke="#2E3440" stroke-width="2" />
+    <text x="472" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_18">
+    <rect x="498" y="420" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="524" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_19">
+    <rect x="550" y="420" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="576" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_20">
+    <rect x="602" y="420" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="628" y="440.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_21" filter="url(#shadow)">
+    <rect x="160" y="464" width="100" height="32" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <text x="210" y="484.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">S2</text>
+  </g>
+  <g id="shape_22">
+    <rect x="290" y="464" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="316" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_23">
+    <rect x="342" y="464" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="368" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_24">
+    <rect x="394" y="464" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="420" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_25">
+    <rect x="446" y="464" width="52" height="32" rx="0" fill="#A3BE8C" stroke="#2E3440" stroke-width="2" />
+    <text x="472" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_26">
+    <rect x="498" y="464" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="524" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_27">
+    <rect x="550" y="464" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="576" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_28">
+    <rect x="602" y="464" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="628" y="484.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_29" filter="url(#shadow)">
+    <rect x="160" y="508" width="100" height="32" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <text x="210" y="528.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">S3</text>
+  </g>
+  <g id="shape_30">
+    <rect x="290" y="508" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="316" y="528.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_31">
+    <rect x="342" y="508" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="368" y="528.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_32">
+    <rect x="394" y="508" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="420" y="528.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_33">
+    <rect x="446" y="508" width="52" height="32" rx="0" fill="#A3BE8C" stroke="#2E3440" stroke-width="2" />
+    <text x="472" y="528.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_34">
+    <rect x="498" y="508" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="524" y="528.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_35" filter="url(#shadow)">
+    <rect x="160" y="552" width="100" height="32" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <text x="210" y="572.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">S4</text>
+  </g>
+  <g id="shape_36">
+    <rect x="290" y="552" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="316" y="572.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_37">
+    <rect x="342" y="552" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="368" y="572.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_38">
+    <rect x="394" y="552" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="420" y="572.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_39">
+    <rect x="446" y="552" width="52" height="32" rx="0" fill="#A3BE8C" stroke="#2E3440" stroke-width="2" />
+    <text x="472" y="572.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_40">
+    <rect x="498" y="552" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="524" y="572.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_41">
+    <rect x="550" y="552" width="52" height="32" rx="0" fill="#EBCB8B" stroke="#2E3440" stroke-width="2" />
+    <text x="576" y="572.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_42" filter="url(#shadow)">
+    <rect x="160" y="596" width="100" height="32" rx="6" fill="#434C5E" stroke="#88C0D0" stroke-width="2" />
+    <text x="210" y="616.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">S5</text>
+  </g>
+  <g id="shape_43">
+    <rect x="290" y="596" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="316" y="616.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_44">
+    <rect x="342" y="596" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="368" y="616.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_45">
+    <rect x="394" y="596" width="52" height="32" rx="0" fill="#81A1C1" stroke="#2E3440" stroke-width="2" />
+    <text x="420" y="616.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_46">
+    <rect x="446" y="596" width="52" height="32" rx="0" fill="#A3BE8C" stroke="#2E3440" stroke-width="2" />
+    <text x="472" y="616.47" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="text_47">
+    <text x="312.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="text_48">
+    <text x="364.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">2</text>
+  </g>
+  <g id="text_49">
+    <text x="416.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">3</text>
+  </g>
+  <g id="text_50">
+    <text x="468.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">4</text>
+  </g>
+  <g id="text_51">
+    <text x="520.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">5</text>
+  </g>
+  <g id="text_52">
+    <text x="572.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">6</text>
+  </g>
+  <g id="text_53">
+    <text x="624.94" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">7</text>
+  </g>
+  <g id="text_54">
+    <text x="215.97" y="410.91" fill="#D8DEE9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">log index</text>
+  </g>
+  <g id="polyline_55">
+    <path d="M 602 416 L 602 640" fill="none" stroke="#88C0D0" stroke-width="1.6" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="text_56">
+    <path d="M358 123C327 85 288 57 219 57C161 57 109 77 109 184C109 300 170 446 280 446C312 446 329 434 329 419C329 403 310 375 310 349C310 327 324 314 348 314C385 314 404 346 404 386C404 451 353 479 290 479C146 479 26 335 26 169C26 68 71 -12 179 -12C269 -12 334 44 375 108Z" transform="translate(557.66 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M460 297C460 416 378 479 293 479C136 479 26 330 26 175C26 77 73 -10 189 -10C348 -10 460 129 460 297ZM369 307C369 133 299 25 200 25C134 25 117 93 117 166C117 345 199 445 285 445C345 445 369 381 369 307Z" transform="translate(562.63 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(568.46 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(578.42 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M219 476H197L57 465V438C57 438 74 440 91 440C118 440 123 424 123 411C123 394 120 380 120 380L69 142C56 83 52 61 52 44C52 9 75 -9 115 -9C181 -9 220 47 255 96L235 111C219 93 191 59 157 59C145 59 139 65 139 78C139 92 144 120 144 120ZM243 610C243 643 224 665 191 665C158 665 136 644 136 610C136 575 158 556 188 556C218 556 243 576 243 610Z" transform="translate(588.38 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(591.67 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M104 131C86 43 74 30 -7 30L-13 0H260L266 30C203 30 186 37 186 74C186 88 189 106 193 127L275 525C290 603 300 627 389 627L395 657H118L112 627C203 627 203 603 186 525Z" transform="translate(595.73 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(599.84 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M529 705H507L371 694V668C371 668 390 670 402 670C432 670 437 656 437 639C437 625 434 607 434 607L401 439H398C374 464 341 479 296 479C157 479 37 340 37 162C37 45 89 -12 163 -12C222 -12 279 24 329 85H337C335 73 332 54 332 42C332 11 353 -10 393 -10C462 -10 499 53 530 97L510 112C496 93 469 60 437 60C424 60 418 65 418 79C418 92 423 121 423 121ZM346 177C319 101 274 54 206 54C157 54 126 78 126 169C126 299 190 441 291 441C349 441 377 394 377 351C377 333 372 252 346 177Z" transform="translate(606.62 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M357 122C317 72 262 57 216 57C149 57 112 88 112 189V202C228 211 404 262 404 390C404 467 339 479 296 479C139 479 28 319 28 164C28 84 58 -12 177 -12C243 -12 315 17 375 107ZM114 231C133 330 202 448 276 448C306 448 318 428 318 393C318 298 227 238 114 231Z" transform="translate(613.29 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M315 298H312L300 349C286 403 267 447 243 475H228L89 459V429C89 429 104 432 120 432C186 433 203 406 230 322L258 231L186 126C147 70 129 69 125 69C108 69 84 82 62 82C38 82 23 60 23 40C23 15 38 -9 81 -9C141 -9 174 38 206 90L270 194H274L299 93C313 28 335 -10 381 -10C449 -10 491 58 520 102L499 118C472 82 453 62 427 62C396 62 376 99 348 191L327 259L388 356C405 384 419 398 442 398C455 398 478 388 494 388C521 388 540 411 540 435C540 463 528 479 490 479C431 479 391 430 364 382Z" transform="translate(618.38 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(628.42 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(640.4 655.63) scale(0.012 -0.012)" fill="#88C0D0"/>
+  </g>
+  <g id="text_57">
+    <text x="690" y="431.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="209.44" lengthAdjust="spacingAndGlyphs">Entry 6 is on S1, S2 and S4: a majority,</text>
+    <text x="690" y="446.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="207.41" lengthAdjust="spacingAndGlyphs">and from term 3, so it is committed and</text>
+    <text x="690" y="461.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="186.08" lengthAdjust="spacingAndGlyphs">entries 1-5 with it. Entry 7 is on two</text>
+    <text x="690" y="476.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="208.1" lengthAdjust="spacingAndGlyphs">servers only. S5 lags; the leader retries</text>
+    <text x="690" y="491.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="66.69" lengthAdjust="spacingAndGlyphs">with a lower </text>
+    <text x="756.69" y="491.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" textLength="52.04" lengthAdjust="spacingAndGlyphs">nextIndex</text>
+    <text x="808.73" y="491.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="70.71" lengthAdjust="spacingAndGlyphs"> until the logs</text>
+    <text x="690" y="506.63" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="12" font-style="italic" textLength="204.77" lengthAdjust="spacingAndGlyphs">match, then sends the missing entries.</text>
+  </g>
+  <g id="shape_58">
+    <rect x="690" y="590" width="64" height="24" rx="0" fill="#81A1C1" stroke="#88C0D0" stroke-width="2" />
+    <text x="722" y="605.78" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">term 1</text>
+  </g>
+  <g id="shape_59">
+    <rect x="764" y="590" width="64" height="24" rx="0" fill="#A3BE8C" stroke="#88C0D0" stroke-width="2" />
+    <text x="796" y="605.78" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">term 2</text>
+  </g>
+  <g id="shape_60">
+    <rect x="838" y="590" width="64" height="24" rx="0" fill="#EBCB8B" stroke="#88C0D0" stroke-width="2" />
+    <text x="870" y="605.78" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">term 3</text>
+  </g>
+  <g id="text_61">
+    <text x="124" y="528.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="end">AppendEntries</text>
+  </g>
+  <g id="caption_62">
+    <text x="127.27" y="721.53" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="82.51" lengthAdjust="spacingAndGlyphs">FIGURE 10:</text>
+    <text x="209.78" y="721.53" xml:space="preserve" fill="#ECEFF4" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="612.56" lengthAdjust="spacingAndGlyphs"> RAFT ROLES AND TRANSITIONS, AND A REPLICATED LOG WITH ITS COMMIT INDEX</text>
+  </g>
+</svg>

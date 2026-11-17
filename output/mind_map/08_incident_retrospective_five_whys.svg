@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1345 608" width="1345" height="608">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F43F5E"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#F43F5E"/>
+    </marker>
+    <marker id="arrow-FDBA74" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FDBA74"/>
+    </marker>
+    <marker id="arrow-FDBA74-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FDBA74"/>
+    </marker>
+    <marker id="arrow-FDE68A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FDE68A"/>
+    </marker>
+    <marker id="arrow-FDE68A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FDE68A"/>
+    </marker>
+    <marker id="arrow-A5B4FC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#A5B4FC"/>
+    </marker>
+    <marker id="arrow-A5B4FC-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#A5B4FC"/>
+    </marker>
+    <marker id="arrow-FCA5A5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FCA5A5"/>
+    </marker>
+    <marker id="arrow-FCA5A5-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FCA5A5"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#1A0F14"/>
+  <path d="M 545 300 C 502.5 300, 502.5 132, 460 132" fill="none" stroke="#FDBA74" stroke-width="3.5" />
+  <path d="M 320 132 C 285 132, 285 86, 250 86" fill="none" stroke="#FDBA74" stroke-width="1.8" />
+  <path d="M 320 132 C 285 132, 285 132, 250 132" fill="none" stroke="#FDBA74" stroke-width="1.8" />
+  <path d="M 320 132 C 285 132, 285 178, 250 178" fill="none" stroke="#FDBA74" stroke-width="1.8" />
+  <path d="M 545 300 C 502.5 300, 502.5 300, 460 300" fill="none" stroke="#FDE68A" stroke-width="3.5" />
+  <path d="M 320 300 C 285 300, 285 254, 250 254" fill="none" stroke="#FDE68A" stroke-width="1.8" />
+  <path d="M 320 300 C 285 300, 285 300, 250 300" fill="none" stroke="#FDE68A" stroke-width="1.8" />
+  <path d="M 320 300 C 285 300, 285 346, 250 346" fill="none" stroke="#FDE68A" stroke-width="1.8" />
+  <path d="M 545 300 C 502.5 300, 502.5 468, 460 468" fill="none" stroke="#A5B4FC" stroke-width="3.5" />
+  <path d="M 320 468 C 285 468, 285 422, 250 422" fill="none" stroke="#A5B4FC" stroke-width="1.8" />
+  <path d="M 320 468 C 285 468, 285 468, 250 468" fill="none" stroke="#A5B4FC" stroke-width="1.8" />
+  <path d="M 320 468 C 285 468, 285 514, 250 514" fill="none" stroke="#A5B4FC" stroke-width="1.8" />
+  <path d="M 735 300 C 777.5 300, 777.5 300, 820 300" fill="none" stroke="#FCA5A5" stroke-width="3.5" />
+  <path d="M 940 300 C 997.5 300, 967.5 70, 1025 70" fill="none" stroke="#FCA5A5" stroke-width="1.8" />
+  <path d="M 1170 89 L 1170 135.32" fill="none" stroke="#FCA5A5" stroke-width="1.6" />
+  <path d="M 1170 143 L 1166.16 133.4 L 1173.84 133.4 Z" fill="#FCA5A5" />
+  <path d="M 1170 181 L 1170 227.32" fill="none" stroke="#FCA5A5" stroke-width="1.6" />
+  <path d="M 1170 235 L 1166.16 225.4 L 1173.84 225.4 Z" fill="#FCA5A5" />
+  <path d="M 1170 273 L 1170 319.32" fill="none" stroke="#FCA5A5" stroke-width="1.6" />
+  <path d="M 1170 327 L 1166.16 317.4 L 1173.84 317.4 Z" fill="#FCA5A5" />
+  <path d="M 1170 365 L 1170 411.32" fill="none" stroke="#FCA5A5" stroke-width="1.6" />
+  <path d="M 1170 419 L 1166.16 409.4 L 1173.84 409.4 Z" fill="#FCA5A5" />
+  <path d="M 1170 457 L 1170 495.32" fill="none" stroke="#FCA5A5" stroke-width="1.6" />
+  <path d="M 1170 503 L 1166.16 493.4 L 1173.84 493.4 Z" fill="#FCA5A5" />
+  <g id="shape_1" filter="url(#shadow)">
+    <rect x="545" y="254" width="190" height="92" rx="34" fill="#FFF1F2" stroke="#F43F5E" stroke-width="3" />
+    <text x="640" y="286.3" fill="#4C0519" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" text-anchor="middle">INC-2047</text>
+    <text x="640" y="305.5" fill="#4C0519" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" text-anchor="middle">Checkout Outage</text>
+    <text x="640" y="324.7" fill="#4C0519" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" text-anchor="middle">42 min · SEV-1</text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="320" y="106" width="140" height="52" rx="26" fill="#FDBA74" stroke="#FDBA74" stroke-width="2" />
+    <text x="390" y="137.16" fill="#450A0A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Timeline</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="30" y="69" width="220" height="34" rx="17" fill="#450A0A" stroke="#FDBA74" stroke-width="1.5" />
+    <text x="140" y="90.47" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">14:02 config deploy</text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <rect x="30" y="115" width="220" height="34" rx="17" fill="#450A0A" stroke="#FDBA74" stroke-width="1.5" />
+    <text x="140" y="136.47" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">14:05 error-rate alert</text>
+  </g>
+  <g id="shape_5" filter="url(#shadow)">
+    <rect x="30" y="161" width="220" height="34" rx="17" fill="#450A0A" stroke="#FDBA74" stroke-width="1.5" />
+    <text x="140" y="182.47" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">14:44 rollback complete</text>
+  </g>
+  <g id="shape_6" filter="url(#shadow)">
+    <rect x="320" y="274" width="140" height="52" rx="26" fill="#FDE68A" stroke="#FDE68A" stroke-width="2" />
+    <text x="390" y="296.16" fill="#450A0A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Contributing</text>
+    <text x="390" y="314.16" fill="#450A0A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Factors</text>
+  </g>
+  <g id="shape_7" filter="url(#shadow)">
+    <rect x="30" y="237" width="220" height="34" rx="17" fill="#450A0A" stroke="#FDE68A" stroke-width="1.5" />
+    <text x="140" y="258.47" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">No canary for config</text>
+  </g>
+  <g id="shape_8" filter="url(#shadow)">
+    <rect x="30" y="283" width="220" height="34" rx="17" fill="#450A0A" stroke="#FDE68A" stroke-width="1.5" />
+    <text x="140" y="304.47" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Alert routed to email</text>
+  </g>
+  <g id="shape_9" filter="url(#shadow)">
+    <rect x="30" y="329" width="220" height="34" rx="17" fill="#450A0A" stroke="#FDE68A" stroke-width="1.5" />
+    <text x="140" y="350.47" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Runbook out of date</text>
+  </g>
+  <g id="shape_10" filter="url(#shadow)">
+    <rect x="320" y="442" width="140" height="52" rx="26" fill="#A5B4FC" stroke="#A5B4FC" stroke-width="2" />
+    <text x="390" y="473.16" fill="#450A0A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Action Items</text>
+  </g>
+  <g id="shape_11" filter="url(#shadow)">
+    <rect x="30" y="405" width="220" height="34" rx="17" fill="#450A0A" stroke="#A5B4FC" stroke-width="1.5" />
+    <text x="72.8" y="426.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="26.73" lengthAdjust="spacingAndGlyphs">SRE</text>
+    <text x="99.53" y="426.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="107.66" lengthAdjust="spacingAndGlyphs">: canary all configs</text>
+  </g>
+  <g id="shape_12" filter="url(#shadow)">
+    <rect x="30" y="451" width="220" height="34" rx="17" fill="#450A0A" stroke="#A5B4FC" stroke-width="1.5" />
+    <text x="73.9" y="472.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="52.73" lengthAdjust="spacingAndGlyphs">Platform</text>
+    <text x="126.63" y="472.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="79.48" lengthAdjust="spacingAndGlyphs">: pool-size lint</text>
+  </g>
+  <g id="shape_13" filter="url(#shadow)">
+    <rect x="30" y="497" width="220" height="34" rx="17" fill="#450A0A" stroke="#A5B4FC" stroke-width="1.5" />
+    <text x="62.14" y="518.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="44.07" lengthAdjust="spacingAndGlyphs">On-call</text>
+    <text x="106.2" y="518.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="111.66" lengthAdjust="spacingAndGlyphs">: page on 5xx &gt; 2%</text>
+  </g>
+  <g id="shape_14" filter="url(#shadow)">
+    <rect x="820" y="277" width="120" height="46" rx="23" fill="#FCA5A5" stroke="#FCA5A5" stroke-width="2" />
+    <text x="880" y="305.16" fill="#450A0A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">5 Whys</text>
+  </g>
+  <g id="shape_15" filter="url(#shadow)">
+    <rect x="1025" y="51" width="290" height="38" rx="19" fill="#450A0A" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="1063.42" y="74.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="38.28" lengthAdjust="spacingAndGlyphs">Why 1</text>
+    <text x="1101.71" y="74.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="174.87" lengthAdjust="spacingAndGlyphs"> · Checkout API returned 503s</text>
+  </g>
+  <g id="shape_16" filter="url(#shadow)">
+    <rect x="1025" y="143" width="290" height="38" rx="19" fill="#450A0A" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="1056.91" y="166.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="38.28" lengthAdjust="spacingAndGlyphs">Why 2</text>
+    <text x="1095.19" y="166.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="187.9" lengthAdjust="spacingAndGlyphs"> · DB connection pool exhausted</text>
+  </g>
+  <g id="shape_17" filter="url(#shadow)">
+    <rect x="1025" y="235" width="290" height="38" rx="19" fill="#450A0A" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="1073.9" y="258.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="38.28" lengthAdjust="spacingAndGlyphs">Why 3</text>
+    <text x="1112.18" y="258.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="153.92" lengthAdjust="spacingAndGlyphs"> · Pool size set to 5, not 50</text>
+  </g>
+  <g id="shape_18" filter="url(#shadow)">
+    <rect x="1025" y="327" width="290" height="38" rx="19" fill="#450A0A" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="1058.36" y="350.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="38.28" lengthAdjust="spacingAndGlyphs">Why 4</text>
+    <text x="1096.64" y="350.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="185" lengthAdjust="spacingAndGlyphs"> · Config value typed in seconds</text>
+  </g>
+  <g id="shape_19" filter="url(#shadow)">
+    <rect x="1025" y="419" width="290" height="38" rx="19" fill="#450A0A" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="1053.66" y="442.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="38.28" lengthAdjust="spacingAndGlyphs">Why 5</text>
+    <text x="1091.95" y="442.47" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="194.39" lengthAdjust="spacingAndGlyphs"> · Schema has no units or bounds</text>
+  </g>
+  <g id="shape_20" filter="url(#shadow)">
+    <rect x="1025" y="503" width="290" height="54" rx="19" fill="#7F1D1D" stroke="#FCA5A5" stroke-width="2.2" />
+    <rect x="1029" y="507" width="282" height="46" rx="15" fill="none" stroke="#FCA5A5" stroke-width="2.2" />
+    <text x="1089.08" y="526.67" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="74.4" lengthAdjust="spacingAndGlyphs">Root cause:</text>
+    <text x="1163.48" y="526.67" xml:space="preserve" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" textLength="87.43" lengthAdjust="spacingAndGlyphs"> config schema</text>
+    <text x="1170" y="542.27" fill="#FFF1F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">accepts unvalidated values</text>
+  </g>
+</svg>

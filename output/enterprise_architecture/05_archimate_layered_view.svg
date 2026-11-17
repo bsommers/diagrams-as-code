@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 609" width="1200" height="609">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="band_1">
+    <rect x="60" y="46" width="1080" height="130" rx="0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="76" y="70" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Business layer</text>
+    <text x="970" y="110.91" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">Who acts and what</text>
+    <text x="970" y="132.66" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">the customer is offered.</text>
+  </g>
+  <g id="band_7">
+    <rect x="60" y="216" width="1080" height="130" rx="0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="76" y="240" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Application layer</text>
+    <text x="970" y="280.91" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">Software that automates</text>
+    <text x="970" y="302.66" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">each process step.</text>
+  </g>
+  <g id="band_12">
+    <rect x="60" y="386" width="1080" height="130" rx="0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="76" y="410" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Technology layer</text>
+    <text x="970" y="450.91" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">Platforms the</text>
+    <text x="970" y="472.66" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-style="italic" text-anchor="start">applications run on.</text>
+  </g>
+  <path d="M 230 128 L 260 128" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 251 131.6 L 260 128 L 251 124.4" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 440 128 L 417.2 128" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 410 128 L 419 124.4 L 419 131.6 Z" fill="#000000" />
+  <path d="M 590 128 L 620 128" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 612.8 130.88 L 620 128 L 612.8 125.12" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 770 128 L 800 128" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 792.8 130.88 L 800 128 L 792.8 125.12" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 387.5 270 L 387.5 156" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 391.1 165 L 387.5 156 L 383.9 165" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 260 298 L 230 298" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 237.2 295.12 L 230 298 L 237.2 300.88" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 515 270 L 515 156" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 518.6 165 L 515 156 L 511.4 165" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 695 270 L 695 156" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 698.6 165 L 695 156 L 691.4 165" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 875 270 L 875 156" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 878.6 165 L 875 156 L 871.4 165" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 387.5 440 L 387.5 326" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 391.1 335 L 387.5 326 L 383.9 335" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 230 468 L 260 468" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 251 471.6 L 260 468 L 251 464.4" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 605 440 L 605 326" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 608.6 335 L 605 326 L 601.4 335" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 875 440 L 875 326" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 878.6 335 L 875 326 L 871.4 335" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-linecap="round" />
+  <g id="shape_2">
+    <rect x="80" y="100" width="150" height="56" rx="0" fill="#FFFFB5" stroke="#000000" stroke-width="1" />
+    <text x="155" y="124.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Business actor</text>
+    <text x="155" y="140.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Customer</text>
+  </g>
+  <g id="shape_3">
+    <rect x="260" y="100" width="150" height="56" rx="0" fill="#FFFFB5" stroke="#000000" stroke-width="1" />
+    <text x="335" y="124.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Business service</text>
+    <text x="335" y="140.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Claim Settlement</text>
+  </g>
+  <g id="shape_4">
+    <rect x="440" y="100" width="150" height="56" rx="0" fill="#FFFFB5" stroke="#000000" stroke-width="1" />
+    <text x="515" y="124.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Process step</text>
+    <text x="515" y="140.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Register</text>
+  </g>
+  <g id="shape_5">
+    <rect x="620" y="100" width="150" height="56" rx="0" fill="#FFFFB5" stroke="#000000" stroke-width="1" />
+    <text x="695" y="124.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Process step</text>
+    <text x="695" y="140.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Assess</text>
+  </g>
+  <g id="shape_6">
+    <rect x="800" y="100" width="150" height="56" rx="0" fill="#FFFFB5" stroke="#000000" stroke-width="1" />
+    <text x="875" y="124.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Process step</text>
+    <text x="875" y="140.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Pay</text>
+  </g>
+  <g id="shape_8">
+    <rect x="80" y="270" width="150" height="56" rx="0" fill="#B5FFFF" stroke="#000000" stroke-width="1" />
+    <text x="155" y="294.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Data object</text>
+    <text x="155" y="310.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Claim File</text>
+  </g>
+  <g id="shape_9">
+    <rect x="260" y="270" width="150" height="56" rx="0" fill="#B5FFFF" stroke="#000000" stroke-width="1" />
+    <text x="335" y="294.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">App component</text>
+    <text x="335" y="310.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Customer Portal</text>
+  </g>
+  <g id="shape_10">
+    <rect x="440" y="270" width="330" height="56" rx="0" fill="#B5FFFF" stroke="#000000" stroke-width="1" />
+    <text x="605" y="294.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">App component</text>
+    <text x="605" y="310.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Claims Admin System</text>
+  </g>
+  <g id="shape_11">
+    <rect x="800" y="270" width="150" height="56" rx="0" fill="#B5FFFF" stroke="#000000" stroke-width="1" />
+    <text x="875" y="294.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">App component</text>
+    <text x="875" y="310.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Payment Engine</text>
+  </g>
+  <g id="shape_13">
+    <rect x="80" y="440" width="150" height="56" rx="0" fill="#C9E7B7" stroke="#000000" stroke-width="1" />
+    <text x="155" y="464.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Network</text>
+    <text x="155" y="480.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Internet / CDN</text>
+  </g>
+  <g id="shape_14">
+    <rect x="260" y="440" width="150" height="56" rx="0" fill="#C9E7B7" stroke="#000000" stroke-width="1" />
+    <text x="335" y="464.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Node</text>
+    <text x="335" y="480.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Kubernetes Cluster</text>
+  </g>
+  <g id="shape_15">
+    <rect x="440" y="440" width="330" height="56" rx="0" fill="#C9E7B7" stroke="#000000" stroke-width="1" />
+    <text x="605" y="464.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">System software</text>
+    <text x="605" y="480.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Oracle 19c RAC</text>
+  </g>
+  <g id="shape_16">
+    <rect x="800" y="440" width="150" height="56" rx="0" fill="#C9E7B7" stroke="#000000" stroke-width="1" />
+    <text x="875" y="464.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" font-style="italic" text-anchor="middle">Node</text>
+    <text x="875" y="480.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">SWIFT Gateway</text>
+  </g>
+  <g id="caption_17">
+    <text x="238.25" y="558.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="312.42" y="558.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="649.33" lengthAdjust="spacingAndGlyphs"> ARCHIMATE LAYERED VIEW; OPEN HEADS SERVE, DASHED LINES REALISE OR ACCESS</text>
+  </g>
+</svg>

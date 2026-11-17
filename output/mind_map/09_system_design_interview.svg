@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1780 740" width="1780" height="740">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FF79C6"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FF79C6"/>
+    </marker>
+    <marker id="arrow-50FA7B" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#50FA7B"/>
+    </marker>
+    <marker id="arrow-50FA7B-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#50FA7B"/>
+    </marker>
+    <marker id="arrow-F1FA8C" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F1FA8C"/>
+    </marker>
+    <marker id="arrow-F1FA8C-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#F1FA8C"/>
+    </marker>
+    <marker id="arrow-FFB86C" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFB86C"/>
+    </marker>
+    <marker id="arrow-FFB86C-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FFB86C"/>
+    </marker>
+    <marker id="arrow-BD93F9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#BD93F9"/>
+    </marker>
+    <marker id="arrow-BD93F9-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#BD93F9"/>
+    </marker>
+    <marker id="arrow-8BE9FD" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8BE9FD"/>
+    </marker>
+    <marker id="arrow-8BE9FD-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#8BE9FD"/>
+    </marker>
+    <marker id="arrow-FF6E6E" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FF6E6E"/>
+    </marker>
+    <marker id="arrow-FF6E6E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FF6E6E"/>
+    </marker>
+    <marker id="arrow-E2E2DC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E2E2DC"/>
+    </marker>
+    <marker id="arrow-E2E2DC-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#E2E2DC"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#282A36"/>
+  <path d="M 785 370 C 728 370, 772 142, 715 142" fill="none" stroke="#50FA7B" stroke-width="3.5" />
+  <path d="M 555 142 C 500 142, 500 58, 445 58" fill="none" stroke="#50FA7B" stroke-width="1.8" />
+  <path d="M 555 142 C 500 142, 500 100, 445 100" fill="none" stroke="#50FA7B" stroke-width="1.8" />
+  <path d="M 555 142 C 500 142, 500 142, 445 142" fill="none" stroke="#50FA7B" stroke-width="1.8" />
+  <path d="M 555 142 C 500 142, 500 184, 445 184" fill="none" stroke="#50FA7B" stroke-width="1.8" />
+  <path d="M 245 184 C 225 184, 240 184, 220 184" fill="none" stroke="#50FA7B" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 555 142 C 500 142, 500 226, 445 226" fill="none" stroke="#50FA7B" stroke-width="1.8" />
+  <path d="M 785 370 C 750 370, 750 336, 715 336" fill="none" stroke="#F1FA8C" stroke-width="3.5" />
+  <path d="M 555 336 C 500 336, 500 294, 445 294" fill="none" stroke="#F1FA8C" stroke-width="1.8" />
+  <path d="M 245 294 C 225 294, 240 294, 220 294" fill="none" stroke="#F1FA8C" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 555 336 C 500 336, 500 336, 445 336" fill="none" stroke="#F1FA8C" stroke-width="1.8" />
+  <path d="M 555 336 C 500 336, 500 378, 445 378" fill="none" stroke="#F1FA8C" stroke-width="1.8" />
+  <path d="M 245 378 C 225 378, 240 378, 220 378" fill="none" stroke="#F1FA8C" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 785 370 C 750 370, 750 488, 715 488" fill="none" stroke="#FFB86C" stroke-width="3.5" />
+  <path d="M 555 488 C 500 488, 500 446, 445 446" fill="none" stroke="#FFB86C" stroke-width="1.8" />
+  <path d="M 555 488 C 500 488, 500 488, 445 488" fill="none" stroke="#FFB86C" stroke-width="1.8" />
+  <path d="M 555 488 C 500 488, 500 530, 445 530" fill="none" stroke="#FFB86C" stroke-width="1.8" />
+  <path d="M 785 370 C 717.5 370, 782.5 640, 715 640" fill="none" stroke="#FF79C6" stroke-width="3.5" />
+  <path d="M 555 640 C 500 640, 500 598, 445 598" fill="none" stroke="#FF79C6" stroke-width="1.8" />
+  <path d="M 555 640 C 500 640, 500 640, 445 640" fill="none" stroke="#FF79C6" stroke-width="1.8" />
+  <path d="M 555 640 C 500 640, 500 682, 445 682" fill="none" stroke="#FF79C6" stroke-width="1.8" />
+  <path d="M 245 682 C 225 682, 240 682, 220 682" fill="none" stroke="#FF79C6" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 995 370 C 1052 370, 1008 142, 1065 142" fill="none" stroke="#BD93F9" stroke-width="3.5" />
+  <path d="M 1225 142 C 1280 142, 1280 100, 1335 100" fill="none" stroke="#BD93F9" stroke-width="1.8" />
+  <path d="M 1535 100 C 1555 100, 1540 100, 1560 100" fill="none" stroke="#BD93F9" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 1225 142 C 1280 142, 1280 142, 1335 142" fill="none" stroke="#BD93F9" stroke-width="1.8" />
+  <path d="M 1535 142 C 1555 142, 1540 142, 1560 142" fill="none" stroke="#BD93F9" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 1225 142 C 1280 142, 1280 184, 1335 184" fill="none" stroke="#BD93F9" stroke-width="1.8" />
+  <path d="M 995 370 C 1030 370, 1030 294, 1065 294" fill="none" stroke="#8BE9FD" stroke-width="3.5" />
+  <path d="M 1225 294 C 1280 294, 1280 252, 1335 252" fill="none" stroke="#8BE9FD" stroke-width="1.8" />
+  <path d="M 1535 252 C 1555 252, 1540 252, 1560 252" fill="none" stroke="#8BE9FD" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 1225 294 C 1280 294, 1280 294, 1335 294" fill="none" stroke="#8BE9FD" stroke-width="1.8" />
+  <path d="M 1225 294 C 1280 294, 1280 336, 1335 336" fill="none" stroke="#8BE9FD" stroke-width="1.8" />
+  <path d="M 995 370 C 1030 370, 1030 446, 1065 446" fill="none" stroke="#FF6E6E" stroke-width="3.5" />
+  <path d="M 1225 446 C 1280 446, 1280 404, 1335 404" fill="none" stroke="#FF6E6E" stroke-width="1.8" />
+  <path d="M 1225 446 C 1280 446, 1280 446, 1335 446" fill="none" stroke="#FF6E6E" stroke-width="1.8" />
+  <path d="M 1225 446 C 1280 446, 1280 488, 1335 488" fill="none" stroke="#FF6E6E" stroke-width="1.8" />
+  <path d="M 995 370 C 1052 370, 1008 598, 1065 598" fill="none" stroke="#E2E2DC" stroke-width="3.5" />
+  <path d="M 1225 598 C 1280 598, 1280 556, 1335 556" fill="none" stroke="#E2E2DC" stroke-width="1.8" />
+  <path d="M 1535 556 C 1555 556, 1540 556, 1560 556" fill="none" stroke="#E2E2DC" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 1225 598 C 1280 598, 1280 598, 1335 598" fill="none" stroke="#E2E2DC" stroke-width="1.8" />
+  <path d="M 1225 598 C 1280 598, 1280 640, 1335 640" fill="none" stroke="#E2E2DC" stroke-width="1.8" />
+  <g id="shape_1" filter="url(#shadow)">
+    <rect x="785" y="324" width="210" height="92" rx="40" fill="#F8F8F2" stroke="#BD93F9" stroke-width="3.5" />
+    <text x="890" y="355.45" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Design a</text>
+    <text x="890" y="375.85" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">URL Shortener</text>
+    <text x="890" y="396.25" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="500" text-anchor="middle">45-minute interview</text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="555" y="119" width="160" height="46" rx="23" fill="#50FA7B" stroke="#50FA7B" stroke-width="2" />
+    <text x="635" y="147.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">1 · Requirements</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="245" y="42" width="200" height="32" rx="16" fill="#383A59" stroke="#50FA7B" stroke-width="1.5" />
+    <text x="345" y="62.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Shorten and redirect</text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <rect x="245" y="84" width="200" height="32" rx="16" fill="#383A59" stroke="#50FA7B" stroke-width="1.5" />
+    <text x="345" y="104.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Custom aliases</text>
+  </g>
+  <g id="shape_5" filter="url(#shadow)">
+    <rect x="245" y="126" width="200" height="32" rx="16" fill="#383A59" stroke="#50FA7B" stroke-width="1.5" />
+    <text x="345" y="146.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Link expiry</text>
+  </g>
+  <g id="shape_6" filter="url(#shadow)">
+    <rect x="245" y="168" width="200" height="32" rx="16" fill="#383A59" stroke="#50FA7B" stroke-width="1.5" />
+    <text x="345" y="188.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">100M new URLs / day</text>
+  </g>
+  <g id="shape_7">
+    <rect x="30" y="170" width="190" height="28" rx="14" fill="#282A36" stroke="#50FA7B" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="125" y="188.13" fill="#50FA7B" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">≈1.2k writes/s</text>
+  </g>
+  <g id="shape_8" filter="url(#shadow)">
+    <rect x="245" y="210" width="200" height="32" rx="16" fill="#383A59" stroke="#50FA7B" stroke-width="1.5" />
+    <text x="345" y="230.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Redirect p99 &lt; 50 ms</text>
+  </g>
+  <g id="shape_9" filter="url(#shadow)">
+    <rect x="555" y="313" width="160" height="46" rx="23" fill="#F1FA8C" stroke="#F1FA8C" stroke-width="2" />
+    <text x="635" y="341.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">2 · Estimates</text>
+  </g>
+  <g id="shape_10" filter="url(#shadow)">
+    <rect x="245" y="278" width="200" height="32" rx="16" fill="#383A59" stroke="#F1FA8C" stroke-width="1.5" />
+    <text x="345" y="298.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Read:write = 100:1</text>
+  </g>
+  <g id="shape_11">
+    <rect x="30" y="280" width="190" height="28" rx="14" fill="#282A36" stroke="#F1FA8C" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="125" y="298.13" fill="#F1FA8C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">≈115k reads/s</text>
+  </g>
+  <g id="shape_12" filter="url(#shadow)">
+    <rect x="245" y="320" width="200" height="32" rx="16" fill="#383A59" stroke="#F1FA8C" stroke-width="1.5" />
+    <text x="345" y="340.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">500 B per record</text>
+  </g>
+  <g id="shape_13" filter="url(#shadow)">
+    <rect x="245" y="362" width="200" height="32" rx="16" fill="#383A59" stroke="#F1FA8C" stroke-width="1.5" />
+    <text x="345" y="382.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Five-year retention</text>
+  </g>
+  <g id="shape_14">
+    <rect x="30" y="364" width="190" height="28" rx="14" fill="#282A36" stroke="#F1FA8C" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="125" y="382.13" fill="#F1FA8C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">≈90 TB stored</text>
+  </g>
+  <g id="shape_15" filter="url(#shadow)">
+    <rect x="555" y="465" width="160" height="46" rx="23" fill="#FFB86C" stroke="#FFB86C" stroke-width="2" />
+    <text x="635" y="493.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">3 · API</text>
+  </g>
+  <g id="shape_16" filter="url(#shadow)">
+    <rect x="245" y="430" width="200" height="32" rx="16" fill="#383A59" stroke="#FFB86C" stroke-width="1.5" />
+    <text x="345" y="450.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">POST /urls</text>
+  </g>
+  <g id="shape_17" filter="url(#shadow)">
+    <rect x="245" y="472" width="200" height="32" rx="16" fill="#383A59" stroke="#FFB86C" stroke-width="1.5" />
+    <text x="345" y="492.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">GET /{code} → 302</text>
+  </g>
+  <g id="shape_18" filter="url(#shadow)">
+    <rect x="245" y="514" width="200" height="32" rx="16" fill="#383A59" stroke="#FFB86C" stroke-width="1.5" />
+    <text x="345" y="534.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DELETE /urls/{code}</text>
+  </g>
+  <g id="shape_19" filter="url(#shadow)">
+    <rect x="555" y="617" width="160" height="46" rx="23" fill="#FF79C6" stroke="#FF79C6" stroke-width="2" />
+    <text x="635" y="645.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">4 · Data Model</text>
+  </g>
+  <g id="shape_20" filter="url(#shadow)">
+    <rect x="245" y="582" width="200" height="32" rx="16" fill="#383A59" stroke="#FF79C6" stroke-width="1.5" />
+    <text x="345" y="602.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">urls(code, long_url, ttl)</text>
+  </g>
+  <g id="shape_21" filter="url(#shadow)">
+    <rect x="245" y="624" width="200" height="32" rx="16" fill="#383A59" stroke="#FF79C6" stroke-width="1.5" />
+    <text x="345" y="644.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">users(id, plan)</text>
+  </g>
+  <g id="shape_22" filter="url(#shadow)">
+    <rect x="245" y="666" width="200" height="32" rx="16" fill="#383A59" stroke="#FF79C6" stroke-width="1.5" />
+    <text x="345" y="686.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Key-value store</text>
+  </g>
+  <g id="shape_23">
+    <rect x="30" y="668" width="190" height="28" rx="14" fill="#282A36" stroke="#FF79C6" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="125" y="686.13" fill="#FF79C6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">Scales horizontally</text>
+  </g>
+  <g id="shape_24" filter="url(#shadow)">
+    <rect x="1065" y="119" width="160" height="46" rx="23" fill="#BD93F9" stroke="#BD93F9" stroke-width="2" />
+    <text x="1145" y="147.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">5 · ID Generation</text>
+  </g>
+  <g id="shape_25" filter="url(#shadow)">
+    <rect x="1335" y="84" width="200" height="32" rx="16" fill="#383A59" stroke="#BD93F9" stroke-width="1.5" />
+    <text x="1435" y="104.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Base62 codes</text>
+  </g>
+  <g id="shape_26">
+    <rect x="1560" y="86" width="190" height="28" rx="14" fill="#282A36" stroke="#BD93F9" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="1655" y="104.13" fill="#BD93F9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">7 chars ≈ 3.5T codes</text>
+  </g>
+  <g id="shape_27" filter="url(#shadow)">
+    <rect x="1335" y="126" width="200" height="32" rx="16" fill="#383A59" stroke="#BD93F9" stroke-width="1.5" />
+    <text x="1435" y="146.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Counter ranges per node</text>
+  </g>
+  <g id="shape_28">
+    <rect x="1560" y="128" width="190" height="28" rx="14" fill="#282A36" stroke="#BD93F9" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="1655" y="146.13" fill="#BD93F9" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">No collisions</text>
+  </g>
+  <g id="shape_29" filter="url(#shadow)">
+    <rect x="1335" y="168" width="200" height="32" rx="16" fill="#383A59" stroke="#BD93F9" stroke-width="1.5" />
+    <text x="1435" y="188.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Hash + collision check</text>
+  </g>
+  <g id="shape_30" filter="url(#shadow)">
+    <rect x="1065" y="271" width="160" height="46" rx="23" fill="#8BE9FD" stroke="#8BE9FD" stroke-width="2" />
+    <text x="1145" y="299.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">6 · Caching</text>
+  </g>
+  <g id="shape_31" filter="url(#shadow)">
+    <rect x="1335" y="236" width="200" height="32" rx="16" fill="#383A59" stroke="#8BE9FD" stroke-width="1.5" />
+    <text x="1435" y="256.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Redis LRU for hot codes</text>
+  </g>
+  <g id="shape_32">
+    <rect x="1560" y="238" width="190" height="28" rx="14" fill="#282A36" stroke="#8BE9FD" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="1655" y="256.13" fill="#8BE9FD" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">20% of codes, 80% of reads</text>
+  </g>
+  <g id="shape_33" filter="url(#shadow)">
+    <rect x="1335" y="278" width="200" height="32" rx="16" fill="#383A59" stroke="#8BE9FD" stroke-width="1.5" />
+    <text x="1435" y="298.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">CDN edge redirects</text>
+  </g>
+  <g id="shape_34" filter="url(#shadow)">
+    <rect x="1335" y="320" width="200" height="32" rx="16" fill="#383A59" stroke="#8BE9FD" stroke-width="1.5" />
+    <text x="1435" y="340.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Write-through on create</text>
+  </g>
+  <g id="shape_35" filter="url(#shadow)">
+    <rect x="1065" y="423" width="160" height="46" rx="23" fill="#FF6E6E" stroke="#FF6E6E" stroke-width="2" />
+    <text x="1145" y="451.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">7 · Scaling</text>
+  </g>
+  <g id="shape_36" filter="url(#shadow)">
+    <rect x="1335" y="388" width="200" height="32" rx="16" fill="#383A59" stroke="#FF6E6E" stroke-width="1.5" />
+    <text x="1435" y="408.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Consistent-hash shards</text>
+  </g>
+  <g id="shape_37" filter="url(#shadow)">
+    <rect x="1335" y="430" width="200" height="32" rx="16" fill="#383A59" stroke="#FF6E6E" stroke-width="1.5" />
+    <text x="1435" y="450.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Read replicas</text>
+  </g>
+  <g id="shape_38" filter="url(#shadow)">
+    <rect x="1335" y="472" width="200" height="32" rx="16" fill="#383A59" stroke="#FF6E6E" stroke-width="1.5" />
+    <text x="1435" y="492.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Per-key rate limiting</text>
+  </g>
+  <g id="shape_39" filter="url(#shadow)">
+    <rect x="1065" y="575" width="160" height="46" rx="23" fill="#E2E2DC" stroke="#E2E2DC" stroke-width="2" />
+    <text x="1145" y="603.16" fill="#282A36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">8 · Trade-offs</text>
+  </g>
+  <g id="shape_40" filter="url(#shadow)">
+    <rect x="1335" y="540" width="200" height="32" rx="16" fill="#383A59" stroke="#E2E2DC" stroke-width="1.5" />
+    <text x="1435" y="560.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">301 vs 302 redirects</text>
+  </g>
+  <g id="shape_41">
+    <rect x="1560" y="542" width="190" height="28" rx="14" fill="#282A36" stroke="#E2E2DC" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="1655" y="560.13" fill="#E2E2DC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" font-style="italic" text-anchor="middle">302 keeps analytics</text>
+  </g>
+  <g id="shape_42" filter="url(#shadow)">
+    <rect x="1335" y="582" width="200" height="32" rx="16" fill="#383A59" stroke="#E2E2DC" stroke-width="1.5" />
+    <text x="1435" y="602.47" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Async click analytics</text>
+  </g>
+  <g id="shape_43" filter="url(#shadow)">
+    <rect x="1335" y="621" width="200" height="38" rx="16" fill="#383A59" stroke="#E2E2DC" stroke-width="1.5" />
+    <text x="1435" y="636.93" text-anchor="middle" fill="#F8F8F2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="1435" dy="0">Availability over</tspan> <tspan x="1435" dy="14.4">consistency</tspan></text>
+  </g>
+</svg>

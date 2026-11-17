@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1265 779" width="1265" height="779">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#00E5A3"/>
+    </marker>
+    <marker id="arrow-38BDF8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrow-38BDF8-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrow-A78BFA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#A78BFA"/>
+    </marker>
+    <marker id="arrow-A78BFA-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#A78BFA"/>
+    </marker>
+    <marker id="arrow-F472B6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F472B6"/>
+    </marker>
+    <marker id="arrow-F472B6-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#F472B6"/>
+    </marker>
+    <marker id="arrow-FBBF24" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FBBF24"/>
+    </marker>
+    <marker id="arrow-FBBF24-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FBBF24"/>
+    </marker>
+    <marker id="arrow-34D399" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#34D399"/>
+    </marker>
+    <marker id="arrow-34D399-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#34D399"/>
+    </marker>
+    <marker id="arrow-FB923C" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FB923C"/>
+    </marker>
+    <marker id="arrow-FB923C-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FB923C"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#181B20"/>
+  <path d="M 704 363 C 704 314.56, 787.5 314.56, 787.5 266.12" fill="none" stroke="#38BDF8" stroke-width="4" />
+  <path d="M 787.5 222.12 C 787.5 161.68, 784.23 161.68, 784.23 101.24" fill="none" stroke="#38BDF8" stroke-width="2" />
+  <path d="M 855.5 244.12 C 884.96 244.12, 884.96 166.65, 914.41 166.65" fill="none" stroke="#38BDF8" stroke-width="2" />
+  <path d="M 760 400 C 803.5 400, 803.5 400, 847 400" fill="none" stroke="#A78BFA" stroke-width="4" />
+  <path d="M 915 378 C 915 332.99, 1095.03 334.54, 1095.03 289.54" fill="none" stroke="#A78BFA" stroke-width="2" />
+  <path d="M 983 400 C 1019 400, 1019 400, 1055 400" fill="none" stroke="#A78BFA" stroke-width="2" />
+  <path d="M 915 422 C 915 470.73, 1095.03 470.73, 1095.03 519.46" fill="none" stroke="#A78BFA" stroke-width="2" />
+  <path d="M 704 437 C 704 485.44, 787.5 485.44, 787.5 533.88" fill="none" stroke="#F472B6" stroke-width="4" />
+  <path d="M 855.5 555.88 C 884.96 555.88, 884.96 633.35, 914.41 633.35" fill="none" stroke="#F472B6" stroke-width="2" />
+  <path d="M 787.5 577.88 C 787.5 638.32, 784.23 638.32, 784.23 698.76" fill="none" stroke="#F472B6" stroke-width="2" />
+  <path d="M 616 437 C 616 485.44, 532.5 485.44, 532.5 533.88" fill="none" stroke="#FBBF24" stroke-width="4" />
+  <path d="M 532.5 577.88 C 532.5 638.32, 535.77 638.32, 535.77 698.76" fill="none" stroke="#FBBF24" stroke-width="2" />
+  <path d="M 464.5 555.88 C 435.04 555.88, 435.04 633.35, 405.59 633.35" fill="none" stroke="#FBBF24" stroke-width="2" />
+  <path d="M 560 400 C 516.5 400, 516.5 400, 473 400" fill="none" stroke="#34D399" stroke-width="4" />
+  <path d="M 405 422 C 405 470.73, 224.97 470.73, 224.97 519.46" fill="none" stroke="#34D399" stroke-width="2" />
+  <path d="M 337 400 C 301 400, 301 400, 265 400" fill="none" stroke="#34D399" stroke-width="2" />
+  <path d="M 405 378 C 405 329.27, 224.97 329.27, 224.97 280.54" fill="none" stroke="#34D399" stroke-width="2" />
+  <path d="M 616 363 C 616 314.56, 532.5 314.56, 532.5 266.12" fill="none" stroke="#FB923C" stroke-width="4" />
+  <path d="M 464.5 244.12 C 435.04 244.12, 435.04 166.65, 405.59 166.65" fill="none" stroke="#FB923C" stroke-width="2" />
+  <path d="M 532.5 222.12 C 532.5 161.68, 535.77 161.68, 535.77 101.24" fill="none" stroke="#FB923C" stroke-width="2" />
+  <g id="shape_1" filter="url(#shadow)">
+    <rect x="560" y="363" width="200" height="74" rx="37" fill="#F8FAFC" stroke="#38BDF8" stroke-width="3" />
+    <text x="660" y="395.65" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Project Atlas</text>
+    <text x="660" y="416.05" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="500" text-anchor="middle">Risk Register</text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="719.5" y="222.12" width="136" height="44" rx="22" fill="#38BDF8" stroke="#38BDF8" stroke-width="2" />
+    <text x="787.5" y="249.28" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Schedule</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="699.23" y="61.24" width="170" height="40" rx="16" fill="#7F1D1D" stroke="#38BDF8" stroke-width="1.8" />
+    <text x="784.23" y="85.72" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Data freeze slips</text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <rect x="914.41" y="146.65" width="170" height="40" rx="16" fill="#78350F" stroke="#38BDF8" stroke-width="1.8" />
+    <text x="999.41" y="171.13" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Holiday code freeze</text>
+  </g>
+  <g id="shape_5" filter="url(#shadow)">
+    <rect x="847" y="378" width="136" height="44" rx="22" fill="#A78BFA" stroke="#A78BFA" stroke-width="2" />
+    <text x="915" y="405.16" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Technical</text>
+  </g>
+  <g id="shape_6" filter="url(#shadow)">
+    <rect x="1010.03" y="231.54" width="170" height="58" rx="16" fill="#7F1D1D" stroke="#A78BFA" stroke-width="1.8" />
+    <text x="1095.03" y="257.21" text-anchor="middle" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="1095.03" dy="0">Schema drift in</tspan> <tspan x="1095.03" dy="15.6">legacy tables</tspan></text>
+  </g>
+  <g id="shape_7" filter="url(#shadow)">
+    <rect x="1055" y="371" width="170" height="58" rx="16" fill="#78350F" stroke="#A78BFA" stroke-width="1.8" />
+    <text x="1140" y="396.67" text-anchor="middle" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="1140" dy="0">Throughput below</tspan> <tspan x="1140" dy="15.6">50k rows/s</tspan></text>
+  </g>
+  <g id="shape_8" filter="url(#shadow)">
+    <rect x="1010.03" y="519.46" width="170" height="40" rx="16" fill="#14532D" stroke="#A78BFA" stroke-width="1.8" />
+    <text x="1095.03" y="543.94" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Index rebuild time</text>
+  </g>
+  <g id="shape_9" filter="url(#shadow)">
+    <rect x="719.5" y="533.88" width="136" height="44" rx="22" fill="#F472B6" stroke="#F472B6" stroke-width="2" />
+    <text x="787.5" y="561.04" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Vendor</text>
+  </g>
+  <g id="shape_10" filter="url(#shadow)">
+    <rect x="914.41" y="604.35" width="170" height="58" rx="16" fill="#78350F" stroke="#F472B6" stroke-width="1.8" />
+    <text x="999.41" y="630.02" text-anchor="middle" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="999.41" dy="0">Licence renewal</tspan> <tspan x="999.41" dy="15.6">unsigned</tspan></text>
+  </g>
+  <g id="shape_11" filter="url(#shadow)">
+    <rect x="699.23" y="698.76" width="170" height="40" rx="16" fill="#14532D" stroke="#F472B6" stroke-width="1.8" />
+    <text x="784.23" y="723.23" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Support SLA 48h</text>
+  </g>
+  <g id="shape_12" filter="url(#shadow)">
+    <rect x="464.5" y="533.88" width="136" height="44" rx="22" fill="#FBBF24" stroke="#FBBF24" stroke-width="2" />
+    <text x="532.5" y="561.04" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Compliance</text>
+  </g>
+  <g id="shape_13" filter="url(#shadow)">
+    <rect x="450.77" y="698.76" width="170" height="40" rx="16" fill="#7F1D1D" stroke="#FBBF24" stroke-width="1.8" />
+    <text x="535.77" y="723.23" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">GDPR data residency</text>
+  </g>
+  <g id="shape_14" filter="url(#shadow)">
+    <rect x="235.59" y="613.35" width="170" height="40" rx="16" fill="#78350F" stroke="#FBBF24" stroke-width="1.8" />
+    <text x="320.59" y="637.82" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Audit trail gaps</text>
+  </g>
+  <g id="shape_15" filter="url(#shadow)">
+    <rect x="337" y="378" width="136" height="44" rx="22" fill="#34D399" stroke="#34D399" stroke-width="2" />
+    <text x="405" y="405.16" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">People</text>
+  </g>
+  <g id="shape_16" filter="url(#shadow)">
+    <rect x="139.97" y="519.46" width="170" height="40" rx="16" fill="#78350F" stroke="#34D399" stroke-width="1.8" />
+    <text x="224.97" y="543.94" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DBA on leave in Q2</text>
+  </g>
+  <g id="shape_17" filter="url(#shadow)">
+    <rect x="95" y="371" width="170" height="58" rx="16" fill="#7F1D1D" stroke="#34D399" stroke-width="1.8" />
+    <text x="180" y="396.67" text-anchor="middle" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="180" dy="0">Single owner of</tspan> <tspan x="180" dy="15.6">ETL jobs</tspan></text>
+  </g>
+  <g id="shape_18" filter="url(#shadow)">
+    <rect x="139.97" y="240.54" width="170" height="40" rx="16" fill="#14532D" stroke="#34D399" stroke-width="1.8" />
+    <text x="224.97" y="265.01" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Onboarding contractors</text>
+  </g>
+  <g id="shape_19" filter="url(#shadow)">
+    <rect x="464.5" y="222.12" width="136" height="44" rx="22" fill="#FB923C" stroke="#FB923C" stroke-width="2" />
+    <text x="532.5" y="249.28" fill="#0F172A" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Budget</text>
+  </g>
+  <g id="shape_20" filter="url(#shadow)">
+    <rect x="235.59" y="146.65" width="170" height="40" rx="16" fill="#78350F" stroke="#FB923C" stroke-width="1.8" />
+    <text x="320.59" y="171.13" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cloud egress costs</text>
+  </g>
+  <g id="shape_21" filter="url(#shadow)">
+    <rect x="450.77" y="61.24" width="170" height="40" rx="16" fill="#14532D" stroke="#FB923C" stroke-width="1.8" />
+    <text x="535.77" y="85.72" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Dual-running licences</text>
+  </g>
+  <g id="text_22">
+    <text x="40" y="53.57" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Severity</text>
+  </g>
+  <g id="shape_23" filter="url(#shadow)">
+    <rect x="40" y="70" width="90" height="26" rx="13" fill="#7F1D1D" stroke="#94A3B8" stroke-width="1" />
+    <text x="85" y="87.13" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">High</text>
+  </g>
+  <g id="shape_24" filter="url(#shadow)">
+    <rect x="40" y="104" width="90" height="26" rx="13" fill="#78350F" stroke="#94A3B8" stroke-width="1" />
+    <text x="85" y="121.13" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Medium</text>
+  </g>
+  <g id="shape_25" filter="url(#shadow)">
+    <rect x="40" y="138" width="90" height="26" rx="13" fill="#14532D" stroke="#94A3B8" stroke-width="1" />
+    <text x="85" y="155.13" fill="#F8FAFC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Low</text>
+  </g>
+</svg>

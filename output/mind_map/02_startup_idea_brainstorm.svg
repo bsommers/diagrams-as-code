@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 791" width="1240" height="791">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#88C0D0"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#88C0D0"/>
+    </marker>
+    <marker id="arrow-F28B82" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F28B82"/>
+    </marker>
+    <marker id="arrow-F28B82-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#F28B82"/>
+    </marker>
+    <marker id="arrow-FBBC04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FBBC04"/>
+    </marker>
+    <marker id="arrow-FBBC04-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FBBC04"/>
+    </marker>
+    <marker id="arrow-81C995" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#81C995"/>
+    </marker>
+    <marker id="arrow-81C995-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#81C995"/>
+    </marker>
+    <marker id="arrow-78D9EC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#78D9EC"/>
+    </marker>
+    <marker id="arrow-78D9EC-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#78D9EC"/>
+    </marker>
+    <marker id="arrow-AECBFA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#AECBFA"/>
+    </marker>
+    <marker id="arrow-AECBFA-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#AECBFA"/>
+    </marker>
+    <marker id="arrow-D7AEFB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D7AEFB"/>
+    </marker>
+    <marker id="arrow-D7AEFB-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#D7AEFB"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#2E3440"/>
+  <path d="M 684 363 C 684 316.72, 765 316.72, 765 270.45" fill="none" stroke="#F28B82" stroke-width="4" />
+  <path d="M 765 226.45 C 765 168.35, 759.06 168.35, 759.06 110.24" fill="none" stroke="#F28B82" stroke-width="2" />
+  <path d="M 830 248.45 C 857.63 248.45, 857.63 166.65, 885.27 166.65" fill="none" stroke="#F28B82" stroke-width="2" />
+  <path d="M 740 400 C 782.5 400, 782.5 400, 825 400" fill="none" stroke="#FBBC04" stroke-width="4" />
+  <path d="M 890 378 C 890 331.17, 1053.45 331.17, 1053.45 284.34" fill="none" stroke="#FBBC04" stroke-width="2" />
+  <path d="M 955 400 C 987.5 400, 987.5 400, 1020 400" fill="none" stroke="#FBBC04" stroke-width="2" />
+  <path d="M 890 422 C 890 473.33, 1053.45 473.33, 1053.45 524.66" fill="none" stroke="#FBBC04" stroke-width="2" />
+  <path d="M 684 437 C 684 483.28, 765 483.28, 765 529.55" fill="none" stroke="#81C995" stroke-width="4" />
+  <path d="M 830 551.55 C 857.63 551.55, 857.63 633.35, 885.27 633.35" fill="none" stroke="#81C995" stroke-width="2" />
+  <path d="M 765 573.55 C 765 636.15, 759.06 636.15, 759.06 698.76" fill="none" stroke="#81C995" stroke-width="2" />
+  <path d="M 596 437 C 596 483.28, 515 483.28, 515 529.55" fill="none" stroke="#78D9EC" stroke-width="4" />
+  <path d="M 515 573.55 C 515 636.15, 520.94 636.15, 520.94 698.76" fill="none" stroke="#78D9EC" stroke-width="2" />
+  <path d="M 450 551.55 C 422.37 551.55, 422.37 633.35, 394.73 633.35" fill="none" stroke="#78D9EC" stroke-width="2" />
+  <path d="M 540 400 C 497.5 400, 497.5 400, 455 400" fill="none" stroke="#AECBFA" stroke-width="4" />
+  <path d="M 390 422 C 390 473.33, 226.55 473.33, 226.55 524.66" fill="none" stroke="#AECBFA" stroke-width="2" />
+  <path d="M 325 400 C 292.5 400, 292.5 400, 260 400" fill="none" stroke="#AECBFA" stroke-width="2" />
+  <path d="M 390 378 C 390 326.67, 226.55 326.67, 226.55 275.34" fill="none" stroke="#AECBFA" stroke-width="2" />
+  <path d="M 596 363 C 596 316.72, 515 316.72, 515 270.45" fill="none" stroke="#D7AEFB" stroke-width="4" />
+  <path d="M 450 248.45 C 422.37 248.45, 422.37 166.65, 394.73 166.65" fill="none" stroke="#D7AEFB" stroke-width="2" />
+  <path d="M 515 226.45 C 515 163.85, 520.94 163.85, 520.94 101.24" fill="none" stroke="#D7AEFB" stroke-width="2" />
+  <g id="shape_1" filter="url(#shadow)">
+    <rect x="540" y="363" width="200" height="74" rx="37" fill="#ECEFF4" stroke="#88C0D0" stroke-width="3" />
+    <text x="640" y="395.65" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">InvoicePilot</text>
+    <text x="640" y="416.05" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="500" text-anchor="middle">Get paid on time</text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="700" y="226.45" width="130" height="44" rx="22" fill="#F28B82" stroke="#F28B82" stroke-width="2" />
+    <text x="765" y="253.61" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Problem</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="679.06" y="52.24" width="160" height="58" rx="16" fill="#3B4252" stroke="#F28B82" stroke-width="1.6" />
+    <text x="759.06" y="77.92" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="759.06" dy="0">Freelancers chase</tspan> <tspan x="759.06" dy="15.6">late invoices</tspan></text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <rect x="885.27" y="146.65" width="160" height="40" rx="16" fill="#3B4252" stroke="#F28B82" stroke-width="1.6" />
+    <text x="965.27" y="171.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cash-flow gaps</text>
+  </g>
+  <g id="shape_5" filter="url(#shadow)">
+    <rect x="825" y="378" width="130" height="44" rx="22" fill="#FBBC04" stroke="#FBBC04" stroke-width="2" />
+    <text x="890" y="405.16" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Solution</text>
+  </g>
+  <g id="shape_6" filter="url(#shadow)">
+    <rect x="973.45" y="226.34" width="160" height="58" rx="16" fill="#3B4252" stroke="#FBBC04" stroke-width="1.6" />
+    <text x="1053.45" y="252.01" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="1053.45" dy="0">Auto-reminder</tspan> <tspan x="1053.45" dy="15.6">workflows</tspan></text>
+  </g>
+  <g id="shape_7" filter="url(#shadow)">
+    <rect x="1020" y="371" width="160" height="58" rx="16" fill="#3B4252" stroke="#FBBC04" stroke-width="1.6" />
+    <text x="1100" y="396.67" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="1100" dy="0">Instant payout</tspan> <tspan x="1100" dy="15.6">advance</tspan></text>
+  </g>
+  <g id="shape_8" filter="url(#shadow)">
+    <rect x="973.45" y="524.66" width="160" height="40" rx="16" fill="#3B4252" stroke="#FBBC04" stroke-width="1.6" />
+    <text x="1053.45" y="549.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Bank sync</text>
+  </g>
+  <g id="shape_9" filter="url(#shadow)">
+    <rect x="700" y="529.55" width="130" height="44" rx="22" fill="#81C995" stroke="#81C995" stroke-width="2" />
+    <text x="765" y="556.71" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Customers</text>
+  </g>
+  <g id="shape_10" filter="url(#shadow)">
+    <rect x="885.27" y="613.35" width="160" height="40" rx="16" fill="#3B4252" stroke="#81C995" stroke-width="1.6" />
+    <text x="965.27" y="637.82" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Designers</text>
+  </g>
+  <g id="shape_11" filter="url(#shadow)">
+    <rect x="679.06" y="698.76" width="160" height="40" rx="16" fill="#3B4252" stroke="#81C995" stroke-width="1.6" />
+    <text x="759.06" y="723.23" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Developers</text>
+  </g>
+  <g id="shape_12" filter="url(#shadow)">
+    <rect x="450" y="529.55" width="130" height="44" rx="22" fill="#78D9EC" stroke="#78D9EC" stroke-width="2" />
+    <text x="515" y="556.71" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Revenue</text>
+  </g>
+  <g id="shape_13" filter="url(#shadow)">
+    <rect x="440.94" y="698.76" width="160" height="40" rx="16" fill="#3B4252" stroke="#78D9EC" stroke-width="1.6" />
+    <text x="520.94" y="723.23" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Freemium SaaS</text>
+  </g>
+  <g id="shape_14" filter="url(#shadow)">
+    <rect x="234.73" y="613.35" width="160" height="40" rx="16" fill="#3B4252" stroke="#78D9EC" stroke-width="1.6" />
+    <text x="314.73" y="637.82" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1% payout fee</text>
+  </g>
+  <g id="shape_15" filter="url(#shadow)">
+    <rect x="325" y="378" width="130" height="44" rx="22" fill="#AECBFA" stroke="#AECBFA" stroke-width="2" />
+    <text x="390" y="405.16" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Competition</text>
+  </g>
+  <g id="shape_16" filter="url(#shadow)">
+    <rect x="146.55" y="524.66" width="160" height="40" rx="16" fill="#3B4252" stroke="#AECBFA" stroke-width="1.6" />
+    <text x="226.55" y="549.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Spreadsheets</text>
+  </g>
+  <g id="shape_17" filter="url(#shadow)">
+    <rect x="100" y="371" width="160" height="58" rx="16" fill="#3B4252" stroke="#AECBFA" stroke-width="1.6" />
+    <text x="180" y="396.67" text-anchor="middle" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500"><tspan x="180" dy="0">Big accounting</tspan> <tspan x="180" dy="15.6">suites</tspan></text>
+  </g>
+  <g id="shape_18" filter="url(#shadow)">
+    <rect x="146.55" y="235.34" width="160" height="40" rx="16" fill="#3B4252" stroke="#AECBFA" stroke-width="1.6" />
+    <text x="226.55" y="259.81" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Factoring firms</text>
+  </g>
+  <g id="shape_19" filter="url(#shadow)">
+    <rect x="450" y="226.45" width="130" height="44" rx="22" fill="#D7AEFB" stroke="#D7AEFB" stroke-width="2" />
+    <text x="515" y="253.61" fill="#2E3440" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Risks</text>
+  </g>
+  <g id="shape_20" filter="url(#shadow)">
+    <rect x="234.73" y="146.65" width="160" height="40" rx="16" fill="#3B4252" stroke="#D7AEFB" stroke-width="1.6" />
+    <text x="314.73" y="171.13" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Credit default</text>
+  </g>
+  <g id="shape_21" filter="url(#shadow)">
+    <rect x="440.94" y="61.24" width="160" height="40" rx="16" fill="#3B4252" stroke="#D7AEFB" stroke-width="1.6" />
+    <text x="520.94" y="85.72" fill="#ECEFF4" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Bank APIs</text>
+  </g>
+</svg>

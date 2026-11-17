@@ -1,0 +1,319 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1271 967" width="1271" height="967">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#00D2FF"/>
+    </marker>
+    <marker id="arrow-FFC857" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFC857"/>
+    </marker>
+    <marker id="arrow-FFC857-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#FFC857"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#0B1E36"/>
+  <g id="band_5">
+    <rect x="50" y="153.12" width="560" height="294.62" rx="0" fill="none" stroke="#1D4573" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="66" y="177.12" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">On a TLB miss: two-level page walk</text>
+  </g>
+  <g id="shape_25" filter="url(#shadow)">
+    <rect x="800" y="220" width="240" height="170" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="920" y="237.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">TLB</text>
+    <text x="920" y="251.73" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">fully associative, 64 entries</text>
+  </g>
+  <path d="M 186 263 L 223 263 L 223 252 L 252.8 252" fill="none" stroke="#FFC857" stroke-width="1.3" />
+  <path d="M 260 252 L 251 255.6 L 251 248.4 Z" fill="#FFC857" />
+  <path d="M 320 134 L 320 232.8" fill="none" stroke="#FFC857" stroke-width="1.3" />
+  <path d="M 320 240 L 316.4 231 L 323.6 231 Z" fill="#FFC857" />
+  <path d="M 480 134 L 480 232.8" fill="none" stroke="#FFC857" stroke-width="1.3" />
+  <path d="M 480 240 L 476.4 231 L 483.6 231 Z" fill="#FFC857" />
+  <path d="M 380 324 L 400 324 L 400 252 L 412.8 252" fill="none" stroke="#FFC857" stroke-width="1.3" />
+  <path d="M 420 252 L 411 255.6 L 411 248.4 Z" fill="#FFC857" />
+  <path d="M 400 90 L 400 68 L 920 68 L 920 212.8" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 920 220 L 916.4 211 L 923.6 211 Z" fill="#00D2FF" />
+  <path d="M 540 372 L 792.8 372" fill="none" stroke="#FFC857" stroke-width="1.3" stroke-dasharray="5,5" />
+  <path d="M 800 372 L 791 375.6 L 791 368.4 Z" fill="#FFC857" />
+  <path d="M 880 390 L 880 452.8" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 880 460 L 876.4 451 L 883.6 451 Z" fill="#00D2FF" />
+  <path d="M 640 134 L 640 520 L 1150 520 L 1150 482 L 1127.2 482" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 1120 482 L 1129 478.4 L 1129 485.6 Z" fill="#00D2FF" />
+  <path d="M 880 570 L 905.94 608.05" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 910 614 L 901.96 608.59 L 907.9 604.54 Z" fill="#00D2FF" />
+  <path d="M 930 658 L 930 680.8" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 930 688 L 926.4 679 L 933.6 679 Z" fill="#00D2FF" />
+  <path d="M 990 688 L 990 665.2" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 990 658 L 993.6 667 L 986.4 667 Z" fill="#00D2FF" />
+  <path d="M 921 732 L 921 754.8" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 921 762 L 917.4 753 L 924.6 753 Z" fill="#00D2FF" />
+  <path d="M 999 762 L 999 739.2" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 999 732 L 1002.6 741 L 995.4 741 Z" fill="#00D2FF" />
+  <path d="M 912 806 L 912 828.8" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 912 836 L 908.4 827 L 915.6 827 Z" fill="#00D2FF" />
+  <path d="M 1008 836 L 1008 813.2" fill="none" stroke="#00D2FF" stroke-width="1.3" />
+  <path d="M 1008 806 L 1011.6 815 L 1004.4 815 Z" fill="#00D2FF" />
+  <g id="text_1">
+    <text x="240" y="52.35" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" textLength="93.93" lengthAdjust="spacingAndGlyphs">Virtual address</text>
+    <text x="333.93" y="52.35" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" textLength="50.57" lengthAdjust="spacingAndGlyphs"> (32 bits)</text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="240" y="90" width="160" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="320" y="108.93" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">directory</text>
+    <text x="320" y="123.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">bits 31-22</text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="400" y="90" width="160" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="480" y="108.93" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">table</text>
+    <text x="480" y="123.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">bits 21-12</text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <rect x="560" y="90" width="160" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="640" y="108.93" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">page offset</text>
+    <text x="640" y="123.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">bits 11-0</text>
+  </g>
+  <g id="shape_6" filter="url(#shadow)">
+    <rect x="70" y="240" width="116" height="46" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="128" y="259.93" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">CR3</text>
+    <text x="128" y="274.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">directory base</text>
+  </g>
+  <g id="shape_7" filter="url(#shadow)">
+    <rect x="260" y="240" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_8" filter="url(#shadow)">
+    <rect x="260" y="264" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_9" filter="url(#shadow)">
+    <rect x="260" y="288" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_10" filter="url(#shadow)">
+    <rect x="260" y="312" width="120" height="24" rx="0" fill="#FFC857" stroke="#4DA6FF" stroke-width="2" />
+    <text x="320" y="327.78" fill="#10243D" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">PTE</text>
+  </g>
+  <g id="shape_11" filter="url(#shadow)">
+    <rect x="260" y="336" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_12" filter="url(#shadow)">
+    <rect x="260" y="360" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_13" filter="url(#shadow)">
+    <rect x="260" y="384" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="320" y="399.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">...</text>
+  </g>
+  <g id="text_14">
+    <text x="285.15" y="424.66" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">page directory</text>
+  </g>
+  <g id="text_15">
+    <text x="326" y="217.78" fill="#FFC857" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">index</text>
+  </g>
+  <g id="shape_16" filter="url(#shadow)">
+    <rect x="420" y="240" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_17" filter="url(#shadow)">
+    <rect x="420" y="264" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_18" filter="url(#shadow)">
+    <rect x="420" y="288" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_19" filter="url(#shadow)">
+    <rect x="420" y="312" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_20" filter="url(#shadow)">
+    <rect x="420" y="336" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+  </g>
+  <g id="shape_21" filter="url(#shadow)">
+    <rect x="420" y="360" width="120" height="24" rx="0" fill="#FFC857" stroke="#4DA6FF" stroke-width="2" />
+    <text x="480" y="375.78" fill="#10243D" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">PTE</text>
+  </g>
+  <g id="shape_22" filter="url(#shadow)">
+    <rect x="420" y="384" width="120" height="24" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="480" y="399.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">...</text>
+  </g>
+  <g id="text_23">
+    <text x="454.31" y="424.66" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">page table</text>
+  </g>
+  <g id="text_24">
+    <text x="486" y="217.78" fill="#FFC857" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">index</text>
+  </g>
+  <g id="shape_26" filter="url(#shadow)">
+    <rect x="815" y="284" width="210" height="26" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="920" y="300.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">VPN 0x00C3A  →  PPN 0x1F2B0</text>
+  </g>
+  <g id="shape_27" filter="url(#shadow)">
+    <rect x="815" y="316" width="210" height="26" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="920" y="332.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">VPN 0x00401  →  PPN 0x07730</text>
+  </g>
+  <g id="shape_28" filter="url(#shadow)">
+    <rect x="815" y="348" width="210" height="26" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="920" y="364.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">...</text>
+  </g>
+  <g id="text_30">
+    <text x="732" y="60.91" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">VPN (20 bits)</text>
+  </g>
+  <g id="text_32">
+    <text x="659.92" y="364.91" fill="#FFC857" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">refill</text>
+  </g>
+  <g id="shape_33" filter="url(#shadow)">
+    <rect x="800" y="460" width="160" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="880" y="478.93" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">PPN</text>
+    <text x="880" y="493.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">20 bits</text>
+  </g>
+  <g id="shape_34" filter="url(#shadow)">
+    <rect x="960" y="460" width="160" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="1040" y="478.93" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">page offset</text>
+    <text x="1040" y="493.33" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">12 bits</text>
+  </g>
+  <g id="text_35">
+    <text x="1013.77" y="450.35" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="start">Physical address</text>
+  </g>
+  <g id="text_36">
+    <text x="886" y="428.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">hit</text>
+  </g>
+  <g id="text_37">
+    <text x="648" y="512.91" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">page offset, untranslated</text>
+  </g>
+  <g id="shape_38" filter="url(#shadow)">
+    <rect x="800" y="544" width="160" height="26" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="880" y="560.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">tag</text>
+  </g>
+  <g id="shape_39" filter="url(#shadow)">
+    <rect x="960" y="544" width="80" height="26" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="1000" y="560.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">set (6)</text>
+  </g>
+  <g id="shape_40" filter="url(#shadow)">
+    <rect x="1040" y="544" width="80" height="26" rx="0" fill="#16385E" stroke="#4DA6FF" stroke-width="2" />
+    <text x="1080" y="560.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" text-anchor="middle">byte (6)</text>
+  </g>
+  <g id="text_41">
+    <text x="1132" y="560.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">as the L1 sees it</text>
+  </g>
+  <g id="shape_42" filter="url(#shadow)">
+    <rect x="860" y="614" width="200" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="907.98" y="640.13" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="26.67" lengthAdjust="spacingAndGlyphs">L1-D</text>
+    <text x="934.65" y="640.13" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" textLength="77.37" lengthAdjust="spacingAndGlyphs"> 32 KiB, 8-way</text>
+  </g>
+  <g id="text_43">
+    <text x="1072" y="639.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">4 cycles</text>
+  </g>
+  <g id="shape_44" filter="url(#shadow)">
+    <rect x="830" y="688" width="260" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="913.32" y="714.13" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="14" lengthAdjust="spacingAndGlyphs">L2</text>
+    <text x="927.32" y="714.13" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" textLength="79.36" lengthAdjust="spacingAndGlyphs"> 1 MiB, 16-way</text>
+  </g>
+  <g id="text_45">
+    <text x="1102" y="713.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">~14 cycles</text>
+  </g>
+  <g id="shape_46" filter="url(#shadow)">
+    <rect x="800" y="762" width="320" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="910.98" y="788.13" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="14" lengthAdjust="spacingAndGlyphs">L3</text>
+    <text x="924.98" y="788.13" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" textLength="84.04" lengthAdjust="spacingAndGlyphs"> 32 MiB, shared</text>
+  </g>
+  <g id="text_47">
+    <text x="1132" y="787.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">~45 cycles</text>
+  </g>
+  <g id="shape_48" filter="url(#shadow)">
+    <rect x="770" y="836" width="380" height="44" rx="6" fill="#1E4A7A" stroke="#4DA6FF" stroke-width="2" />
+    <text x="960" y="862.13" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">DRAM</text>
+  </g>
+  <g id="text_49">
+    <text x="1162" y="861.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">~200 cycles</text>
+  </g>
+  <g id="text_50">
+    <text x="773.78" y="676.78" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic" text-anchor="start">miss ↓  ↑ fill</text>
+  </g>
+  <g id="text_51">
+    <text x="70" y="571.63" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">Average memory access time</text>
+    <path d="M714 0V30C660 30 640 53 611 119L374 662H333L121 160C73 46 59 30 3 30V0H213V30C166 30 146 36 146 64C146 82 151 97 157 113L202 219H458L497 129C510 99 514 81 514 67C514 32 475 30 445 30V0ZM443 259H217L330 539H333Z" transform="translate(70 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M850 0V30C778 30 762 46 762 119V536C762 610 778 627 849 627V657H659L449 154H445L234 657H30V627C109 627 123 610 123 535V146C123 43 109 30 28 30V0H263V30C187 30 172 43 172 146V549H176L412 0H436L669 550H673V119C673 46 661 30 584 30V0Z" transform="translate(78.62 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M714 0V30C660 30 640 53 611 119L374 662H333L121 160C73 46 59 30 3 30V0H213V30C166 30 146 36 146 64C146 82 151 97 157 113L202 219H458L497 129C510 99 514 81 514 67C514 32 475 30 445 30V0ZM443 259H217L330 539H333Z" transform="translate(89.36 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M587 477 579 657H26L15 477H46C67 586 81 612 191 612H255V131C255 40 241 30 157 30V0H447V30C361 30 348 40 348 131V612H411C522 612 534 586 556 477Z" transform="translate(97.97 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(108.54 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(120.51 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(124.93 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(132.24 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(143.54 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(153.86 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(158.5 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(162.78 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(167.2 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(174.5 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(185.81 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(196.13 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(200.77 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(205.05 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(209.47 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(216.77 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M403 0 435 138C472 228 587 407 649 407C672 407 679 390 679 367C679 346 670 308 663 282L612 88C611 83 607 65 607 49C607 19 622 -10 673 -10C744 -10 784 60 810 97L790 112C774 93 750 60 715 60C702 60 696 68 696 79C696 91 699 103 699 103L754 334C757 348 764 382 764 408C764 444 750 479 700 479C596 479 514 346 471 270H463L480 334C481 339 489 379 489 408C489 444 476 479 426 479C312 479 227 338 185 259H177L227 476H204L66 465V438C66 438 85 440 98 440C122 440 130 430 130 413C130 398 127 380 127 380L47 0H129L160 137C210 250 309 407 375 407C398 407 405 390 405 367C405 351 400 328 399 325C375 215 349 107 320 0Z" transform="translate(228.08 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(238.4 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(245.04 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M185 357C214 384 258 421 310 421C356 421 390 399 390 314V116C390 46 384 29 313 29V0H550V29C478 29 473 47 473 116V359C506 387 547 421 588 421C635 421 674 399 674 308V116C674 55 671 29 603 29V0H829V29C760 29 757 53 757 116V320C757 441 706 485 628 485C575 485 524 456 469 402H465C445 450 411 485 354 485C286 485 240 448 186 401H182V482H158L33 453V424C33 424 45 426 60 426C88 426 102 417 102 381V101C102 41 95 29 32 29V0H260V29C198 29 185 41 185 97Z" transform="translate(249.45 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M415 143C383 101 352 65 271 65C191 65 115 128 115 266H431C426 406 354 485 245 485C128 485 34 405 34 238C34 77 127 -10 247 -10C350 -10 398 53 434 129ZM114 303C122 396 162 445 230 445C301 445 334 377 337 303Z" transform="translate(256.61 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M185 357C214 384 258 421 310 421C356 421 390 399 390 314V116C390 46 384 29 313 29V0H550V29C478 29 473 47 473 116V359C506 387 547 421 588 421C635 421 674 399 674 308V116C674 55 671 29 603 29V0H829V29C760 29 757 53 757 116V320C757 441 706 485 628 485C575 485 524 456 469 402H465C445 450 411 485 354 485C286 485 240 448 186 401H182V482H158L33 453V424C33 424 45 426 60 426C88 426 102 417 102 381V101C102 41 95 29 32 29V0H260V29C198 29 185 41 185 97Z" transform="translate(260.51 589.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(268.15 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(272.43 586.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(70 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(81.97 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(90.58 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(101.89 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(107.83 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(110.77 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(116.71 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(122.65 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(126.93 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(132.87 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(141.48 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(152.78 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(158.72 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(161.66 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(167.6 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(171.89 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M417 549 433 630H159L97 369L109 354C123 354 128 354 154 352C292 345 370 304 370 179C370 75 307 37 236 37C172 37 139 86 99 86C74 86 59 66 59 43C59 6 97 -13 174 -13C333 -13 443 65 443 219C443 376 320 423 202 432L155 435L182 549Z" transform="translate(177.83 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(186.43 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(197.74 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(203.68 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(206.62 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M208 259C208 292 180 320 147 320C113 320 85 290 85 259C85 228 113 197 147 197C180 197 208 226 208 259Z" transform="translate(215.23 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(221.41 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(227.35 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(233.29 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(239.23 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(243.51 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M628 486C613 413 579 345 508 345C434 345 324 476 226 476C125 476 64 369 59 267H93C109 340 147 408 219 408C292 408 402 277 500 277C601 277 656 399 662 486ZM628 244C613 172 579 103 508 103C434 103 324 234 226 234C125 234 64 128 59 25H93C109 98 147 167 219 167C292 167 402 36 500 36C601 36 656 157 662 244Z" transform="translate(251.13 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(263.11 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(269.05 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(271.99 601.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <text x="277.93" y="601.63" xml:space="preserve" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="36.67" lengthAdjust="spacingAndGlyphs"> cycles</text>
+    <text x="70" y="631.63" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">Effective translation cost</text>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(70 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M587 477 579 657H26L15 477H46C67 586 81 612 191 612H255V131C255 40 241 30 157 30V0H447V30C361 30 348 40 348 131V612H411C522 612 534 586 556 477Z" transform="translate(74.42 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M568 195H536C497 79 481 42 347 42H301C242 42 225 51 225 95V529C225 607 242 627 323 627V657H42V627C122 627 133 607 133 530V123C133 45 122 30 42 30V0H538Z" transform="translate(79.48 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(84.4 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(92.73 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(104.04 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(108.32 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M658 225V293H62V225Z" transform="translate(116.93 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M528 112C513 93 489 60 453 60C440 60 434 68 434 79C434 91 438 103 438 103L494 334C497 348 503 382 503 408C503 444 488 479 437 479C319 479 227 334 185 259H177L278 706H255L117 695V668C117 668 137 670 150 670C173 670 182 660 182 644C182 629 179 610 179 610L47 0H129L165 158C197 227 313 407 387 407C410 407 417 390 417 367C417 347 410 319 410 319L351 88C349 83 346 65 346 49C346 19 361 -10 411 -10C483 -10 523 60 549 97Z" transform="translate(128.24 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M587 477 579 657H26L15 477H46C67 586 81 612 191 612H255V131C255 40 241 30 157 30V0H447V30C361 30 348 40 348 131V612H411C522 612 534 586 556 477Z" transform="translate(135.43 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M568 195H536C497 79 481 42 347 42H301C242 42 225 51 225 95V529C225 607 242 627 323 627V657H42V627C122 627 133 607 133 530V123C133 45 122 30 42 30V0H538Z" transform="translate(140.49 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(145.4 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(151.08 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M208 259C208 292 180 320 147 320C113 320 85 290 85 259C85 228 113 197 147 197C180 197 208 226 208 259Z" transform="translate(158.03 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(164.21 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(172.15 646.63) scale(0.012 -0.012)" fill="#FFFFFF"/>
+    <path d="M308 62C314 18 324 -5 368 -5C419 -5 443 16 476 64L461 80C447 65 433 55 414 55C393 55 384 63 384 104V331C384 435 343 485 234 485C125 485 58 431 58 375C58 342 80 327 100 327C128 327 144 342 144 373C144 433 154 454 211 454C271 454 301 421 301 334V290C215 263 38 237 38 105C38 41 80 -7 157 -7C221 -7 257 21 304 62ZM301 92C267 64 231 48 198 48C155 48 126 79 126 129C126 207 210 234 301 257Z" transform="translate(176.56 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M408 148C363 90 329 65 264 65C161 65 112 151 112 273C112 388 161 448 242 448C328 448 295 334 369 334C397 334 411 350 411 379C411 437 353 485 259 485C115 485 33 383 33 226C33 87 108 -10 233 -10C340 -10 389 53 427 134Z" transform="translate(180.6 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M408 148C363 90 329 65 264 65C161 65 112 151 112 273C112 388 161 448 242 448C328 448 295 334 369 334C397 334 411 350 411 379C411 437 353 485 259 485C115 485 33 383 33 226C33 87 108 -10 233 -10C340 -10 389 53 427 134Z" transform="translate(184.34 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M415 143C383 101 352 65 271 65C191 65 115 128 115 266H431C426 406 354 485 245 485C128 485 34 405 34 238C34 77 127 -10 247 -10C350 -10 398 53 434 129ZM114 303C122 396 162 445 230 445C301 445 334 377 337 303Z" transform="translate(188.09 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M39 164 42 -8H63L84 15H86C112 4 142 -11 200 -11C290 -11 368 25 368 119C368 193 319 230 228 278C144 321 111 346 111 385C111 430 146 451 192 451C253 451 290 422 312 327H339L336 480H316L299 459H298C273 471 243 485 193 485C107 485 40 441 40 359C40 285 81 250 172 204C265 158 284 139 284 92C284 45 248 26 198 26C124 26 86 61 65 164Z" transform="translate(191.99 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <path d="M39 164 42 -8H63L84 15H86C112 4 142 -11 200 -11C290 -11 368 25 368 119C368 193 319 230 228 278C144 321 111 346 111 385C111 430 146 451 192 451C253 451 290 422 312 327H339L336 480H316L299 459H298C273 471 243 485 193 485C107 485 40 441 40 359C40 285 81 250 172 204C265 158 284 139 284 92C284 45 248 26 198 26C124 26 86 61 65 164Z" transform="translate(195.31 649.15) scale(0.0084 -0.0084)" fill="#FFFFFF"/>
+    <text x="70" y="676.63" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">Set index + byte offset = 12 bits = page offset,</text>
+    <text x="70" y="691.63" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">so the L1 lookup overlaps the TLB lookup.</text>
+  </g>
+  <g id="caption_52">
+    <text x="163.02" y="922.53" xml:space="preserve" fill="#FFFFFF" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="237.19" y="922.53" xml:space="preserve" fill="#FFFFFF" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="870.18" lengthAdjust="spacingAndGlyphs"> TWO-LEVEL ADDRESS TRANSLATION WITH A TLB, AND THE CACHE LEVELS A PHYSICAL ADDRESS PASSES THROUGH</text>
+  </g>
+</svg>
