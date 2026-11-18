@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 905 763" width="905" height="763">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 174 88 L 174 484 M 208 88 L 208 484 M 242 88 L 242 484 M 276 88 L 276 484 M 344 88 L 344 484 M 378 88 L 378 484 M 412 88 L 412 484 M 446 88 L 446 484 M 514 88 L 514 484 M 548 88 L 548 484 M 582 88 L 582 484 M 616 88 L 616 484 M 684 88 L 684 484 M 718 88 L 718 484 M 752 88 L 752 484 M 786 88 L 786 484 M 140 484 L 820 484 M 140 462 L 820 462 M 140 418 L 820 418 M 140 396 L 820 396 M 140 374 L 820 374 M 140 352 L 820 352 M 140 308 L 820 308 M 140 286 L 820 286 M 140 264 L 820 264 M 140 242 L 820 242 M 140 198 L 820 198 M 140 176 L 820 176 M 140 154 L 820 154 M 140 132 L 820 132 M 140 88 L 820 88" fill="none" stroke="#F0D4D4" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_2">
+    <path d="M 140 88 L 140 484 M 310 88 L 310 484 M 480 88 L 480 484 M 650 88 L 650 484 M 820 88 L 820 484 M 140 440 L 820 440 M 140 330 L 820 330 M 140 220 L 820 220 M 140 110 L 820 110" fill="none" stroke="#DDA9A9" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_3">
+    <text x="132.35" y="499.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0.0</text>
+  </g>
+  <g id="text_4">
+    <text x="302.35" y="499.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0.2</text>
+  </g>
+  <g id="text_5">
+    <text x="472.35" y="499.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0.4</text>
+  </g>
+  <g id="text_6">
+    <text x="642.35" y="499.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0.6</text>
+  </g>
+  <g id="text_7">
+    <text x="812.35" y="499.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0.8</text>
+  </g>
+  <g id="text_8">
+    <text x="458" y="520.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Time (s)</text>
+  </g>
+  <g id="text_9">
+    <text x="113.05" y="443.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">-0.5</text>
+  </g>
+  <g id="text_10">
+    <text x="125.88" y="333.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="text_11">
+    <text x="116.71" y="223.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0.5</text>
+  </g>
+  <g id="text_12">
+    <text x="125.88" y="113.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="text_13">
+    <text x="90" y="78.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Voltage (mV)</text>
+  </g>
+  <g id="path_14">
+    <path d="M 140 330 L 141.7 330 L 143.4 330 L 145.1 330 L 146.8 330 L 148.5 330 L 150.2 330 L 151.9 330 L 153.6 330 L 155.3 330 L 157 330 L 158.7 330 L 160.4 330 L 162.1 330 L 163.8 330 L 165.5 330 L 167.2 330 L 168.9 330 L 170.6 330 L 172.3 330 L 174 330 L 175.7 330 L 177.4 330 L 179.1 329.99 L 180.8 329.99 L 182.5 329.99 L 184.2 329.98 L 185.9 329.97 L 187.6 329.96 L 189.3 329.94 L 191 329.92 L 192.7 329.89 L 194.4 329.84 L 196.1 329.78 L 197.8 329.71 L 199.5 329.61 L 201.2 329.48 L 202.9 329.31 L 204.6 329.1 L 206.3 328.84 L 208 328.52 L 209.7 328.13 L 211.4 327.65 L 213.1 327.09 L 214.8 326.43 L 216.5 325.66 L 218.2 324.78 L 219.9 323.78 L 221.6 322.66 L 223.3 321.43 L 225 320.09 L 226.7 318.66 L 228.4 317.15 L 230.1 315.58 L 231.8 313.99 L 233.5 312.39 L 235.2 310.83 L 236.9 309.34 L 238.6 307.95 L 240.3 306.7 L 242 305.63 L 243.7 304.76 L 245.4 304.12 L 247.1 303.73 L 248.8 303.6 L 250.5 303.73 L 252.2 304.12 L 253.9 304.76 L 255.6 305.63 L 257.3 306.7 L 259 307.95 L 260.7 309.34 L 262.4 310.83 L 264.1 312.39 L 265.8 313.99 L 267.5 315.58 L 269.2 317.15 L 270.9 318.66 L 272.6 320.09 L 274.3 321.43 L 276 322.66 L 277.7 323.78 L 279.4 324.78 L 281.1 325.66 L 282.8 326.43 L 284.5 327.09 L 286.2 327.65 L 287.9 328.13 L 289.6 328.52 L 291.3 328.84 L 293 329.1 L 294.7 329.31 L 296.4 329.48 L 298.1 329.61 L 299.8 329.71 L 301.5 329.78 L 303.2 329.84 L 304.9 329.89 L 306.6 329.92 L 308.3 329.94 L 310 329.96 L 311.7 329.98 L 313.4 330 L 315.1 330.06 L 316.8 330.19 L 318.5 330.5 L 320.2 331.15 L 321.9 332.38 L 323.6 334.48 L 325.3 337.59 L 327 341.6 L 328.7 345.89 L 330.4 349.27 L 332.1 350.13 L 333.8 346.73 L 335.5 337.64 L 337.2 321.94 L 338.9 299.44 L 340.6 270.68 L 342.3 237.11 L 344 201.22 L 345.7 166.59 L 347.4 137.55 L 349.1 118.38 L 350.8 112.33 L 352.5 120.69 L 354.2 142.42 L 355.9 174.41 L 357.6 212.28 L 359.3 251.44 L 361 287.93 L 362.7 318.96 L 364.4 342.94 L 366.1 359.41 L 367.8 368.73 L 369.5 371.9 L 371.2 370.27 L 372.9 365.41 L 374.6 358.87 L 376.3 351.96 L 378 345.64 L 379.7 340.44 L 381.4 336.54 L 383.1 333.84 L 384.8 332.12 L 386.5 331.09 L 388.2 330.52 L 389.9 330.23 L 391.6 330.09 L 393.3 330.02 L 395 329.98 L 396.7 329.97 L 398.4 329.95 L 400.1 329.94 L 401.8 329.93 L 403.5 329.91 L 405.2 329.89 L 406.9 329.87 L 408.6 329.84 L 410.3 329.8 L 412 329.76 L 413.7 329.71 L 415.4 329.66 L 417.1 329.59 L 418.8 329.51 L 420.5 329.42 L 422.2 329.32 L 423.9 329.19 L 425.6 329.05 L 427.3 328.89 L 429 328.7 L 430.7 328.49 L 432.4 328.24 L 434.1 327.96 L 435.8 327.65 L 437.5 327.29 L 439.2 326.9 L 440.9 326.45 L 442.6 325.95 L 444.3 325.4 L 446 324.79 L 447.7 324.11 L 449.4 323.37 L 451.1 322.55 L 452.8 321.66 L 454.5 320.7 L 456.2 319.65 L 457.9 318.53 L 459.6 317.32 L 461.3 316.02 L 463 314.64 L 464.7 313.18 L 466.4 311.63 L 468.1 310 L 469.8 308.3 L 471.5 306.52 L 473.2 304.68 L 474.9 302.77 L 476.6 300.81 L 478.3 298.81 L 480 296.77 L 481.7 294.71 L 483.4 292.64 L 485.1 290.56 L 486.8 288.5 L 488.5 286.47 L 490.2 284.48 L 491.9 282.54 L 493.6 280.67 L 495.3 278.89 L 497 277.21 L 498.7 275.64 L 500.4 274.19 L 502.1 272.89 L 503.8 271.73 L 505.5 270.73 L 507.2 269.9 L 508.9 269.25 L 510.6 268.78 L 512.3 268.49 L 514 268.4 L 515.7 268.49 L 517.4 268.78 L 519.1 269.25 L 520.8 269.9 L 522.5 270.73 L 524.2 271.73 L 525.9 272.89 L 527.6 274.19 L 529.3 275.64 L 531 277.21 L 532.7 278.89 L 534.4 280.67 L 536.1 282.54 L 537.8 284.48 L 539.5 286.47 L 541.2 288.5 L 542.9 290.56 L 544.6 292.64 L 546.3 294.71 L 548 296.77 L 549.7 298.81 L 551.4 300.81 L 553.1 302.77 L 554.8 304.68 L 556.5 306.52 L 558.2 308.3 L 559.9 310 L 561.6 311.63 L 563.3 313.18 L 565 314.64 L 566.7 316.02 L 568.4 317.32 L 570.1 318.53 L 571.8 319.65 L 573.5 320.7 L 575.2 321.66 L 576.9 322.55 L 578.6 323.37 L 580.3 324.11 L 582 324.79 L 583.7 325.4 L 585.4 325.95 L 587.1 326.45 L 588.8 326.9 L 590.5 327.29 L 592.2 327.65 L 593.9 327.96 L 595.6 328.24 L 597.3 328.49 L 599 328.7 L 600.7 328.89 L 602.4 329.05 L 604.1 329.19 L 605.8 329.32 L 607.5 329.42 L 609.2 329.51 L 610.9 329.59 L 612.6 329.66 L 614.3 329.71 L 616 329.76 L 617.7 329.8 L 619.4 329.84 L 621.1 329.87 L 622.8 329.89 L 624.5 329.91 L 626.2 329.93 L 627.9 329.94 L 629.6 329.95 L 631.3 329.96 L 633 329.97 L 634.7 329.97 L 636.4 329.98 L 638.1 329.98 L 639.8 329.99 L 641.5 329.99 L 643.2 329.99 L 644.9 329.99 L 646.6 329.99 L 648.3 330 L 650 330 L 651.7 330 L 653.4 330 L 655.1 330 L 656.8 330 L 658.5 330 L 660.2 330 L 661.9 330 L 663.6 330 L 665.3 330 L 667 330 L 668.7 330 L 670.4 330 L 672.1 330 L 673.8 330 L 675.5 330 L 677.2 330 L 678.9 330 L 680.6 330 L 682.3 330 L 684 330 L 685.7 330 L 687.4 330 L 689.1 330 L 690.8 330 L 692.5 330 L 694.2 330 L 695.9 330 L 697.6 330 L 699.3 330 L 701 330 L 702.7 330 L 704.4 330 L 706.1 330 L 707.8 330 L 709.5 330 L 711.2 330 L 712.9 330 L 714.6 330 L 716.3 330 L 718 330 L 719.7 330 L 721.4 330 L 723.1 330 L 724.8 330 L 726.5 330 L 728.2 330 L 729.9 330 L 731.6 330 L 733.3 330 L 735 330 L 736.7 330 L 738.4 330 L 740.1 330 L 741.8 330 L 743.5 330 L 745.2 330 L 746.9 330 L 748.6 330 L 750.3 330 L 752 330 L 753.7 330 L 755.4 330 L 757.1 330 L 758.8 330 L 760.5 330 L 762.2 330 L 763.9 330 L 765.6 330 L 767.3 330 L 769 330 L 770.7 330 L 772.4 330 L 774.1 330 L 775.8 330 L 777.5 330 L 779.2 330 L 780.9 330 L 782.6 330 L 784.3 330 L 786 330 L 787.7 330 L 789.4 330 L 791.1 330 L 792.8 330 L 794.5 330 L 796.2 330 L 797.9 330 L 799.6 330 L 801.3 330 L 803 330 L 804.7 330 L 806.4 330 L 808.1 330 L 809.8 330 L 811.5 330 L 813.2 330 L 814.9 330 L 816.6 330 L 818.3 330 L 820 330" fill="none" stroke="#111111" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_15">
+    <path d="M 248.8 303.6 L 208 210" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <text x="204.33" y="206.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">P</text>
+  </g>
+  <g id="path_18">
+    <path d="M 333.8 346.73 L 286.2 415" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_20">
+    <text x="281.92" y="418.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Q</text>
+  </g>
+  <g id="path_21">
+    <path d="M 350.8 112.33 L 412 98" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_23">
+    <text x="417" y="101.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">R</text>
+  </g>
+  <g id="path_24">
+    <path d="M 367.8 368.73 L 408.6 415" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <text x="404.93" y="418.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">S</text>
+  </g>
+  <g id="path_27">
+    <path d="M 514 268.4 L 561.6 180" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_29">
+    <text x="561.6" y="176.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">T</text>
+  </g>
+  <g id="text_30">
+    <text x="262.74" y="256.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">PR segment</text>
+  </g>
+  <g id="text_32">
+    <text x="382.35" y="312.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">ST segment</text>
+  </g>
+  <g id="path_34">
+    <path d="M 208 542 L 208 542 M 316.8 542 L 316.8 542" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_35">
+    <path d="M 208 542 L 316.8 542" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_36">
+    <path d="M 208 542 L 215 543.96 L 215 540.04 Z M 316.8 542 L 309.8 540.04 L 309.8 543.96 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_37">
+    <text x="218.99" y="537.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">PR interval 0.13 s</text>
+  </g>
+  <g id="path_38">
+    <path d="M 316.8 576 L 316.8 576 M 384.8 576 L 384.8 576" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_39">
+    <path d="M 303.8 576 L 397.8 576" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_40">
+    <path d="M 316.8 576 L 309.8 574.04 L 309.8 577.96 Z M 384.8 576 L 391.8 577.96 L 391.8 574.04 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_41">
+    <text x="300.97" y="571.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">QRS duration 0.08 s</text>
+  </g>
+  <g id="path_42">
+    <path d="M 316.8 610 L 316.8 610 M 582 610 L 582 610" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_43">
+    <path d="M 316.8 610 L 582 610" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_44">
+    <path d="M 316.8 610 L 323.8 611.96 L 323.8 608.04 Z M 582 610 L 575 608.04 L 575 611.96 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_45">
+    <text x="405.99" y="605.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">QT interval 0.31 s</text>
+  </g>
+  <g id="caption_46">
+    <text x="113.75" y="654.49" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 2:</text>
+    <text x="187.92" y="654.49" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="615.97" lengthAdjust="spacingAndGlyphs"> ONE CARDIAC CYCLE ON ECG PAPER (0.8 S, 75 BEATS/MIN). THE P WAVE IS ATRIAL</text>
+    <text x="72.92" y="673.24" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="771.8" lengthAdjust="spacingAndGlyphs">DEPOLARISATION, THE QRS COMPLEX VENTRICULAR DEPOLARISATION AND THE T WAVE VENTRICULAR</text>
+    <text x="203.78" y="691.99" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="510.09" lengthAdjust="spacingAndGlyphs">REPOLARISATION; INTERVALS ARE MEASURED FROM WAVE ONSETS</text>
+  </g>
+  <g id="path_33">
+    <path d="M 208 330 L 208 610 M 316.8 330 L 316.8 610 M 384.8 330 L 384.8 610 M 582 330 L 582 610" fill="none" stroke="#555555" stroke-width="0.7" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="path_16">
+    <path d="M 246.6 303.6 C 246.6 304.82 247.58 305.8 248.8 305.8 C 250.02 305.8 251 304.82 251 303.6 C 251 302.38 250.02 301.4 248.8 301.4 C 247.58 301.4 246.6 302.38 246.6 303.6" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_19">
+    <path d="M 331.6 346.73 C 331.6 347.52 332.02 348.24 332.7 348.64 C 333.38 349.03 334.22 349.03 334.9 348.64 C 335.58 348.24 336 347.52 336 346.73 C 336 345.94 335.58 345.22 334.9 344.82 C 334.22 344.43 333.38 344.43 332.7 344.82 C 332.02 345.22 331.6 345.94 331.6 346.73" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_22">
+    <path d="M 348.6 112.33 C 348.6 113.12 349.02 113.84 349.7 114.24 C 350.38 114.63 351.22 114.63 351.9 114.24 C 352.58 113.84 353 113.12 353 112.33 C 353 111.54 352.58 110.82 351.9 110.42 C 351.22 110.03 350.38 110.03 349.7 110.42 C 349.02 110.82 348.6 111.54 348.6 112.33" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_25">
+    <path d="M 365.6 368.73 C 365.6 369.52 366.02 370.24 366.7 370.64 C 367.38 371.03 368.22 371.03 368.9 370.64 C 369.58 370.24 370 369.52 370 368.73 C 370 367.94 369.58 367.22 368.9 366.82 C 368.22 366.43 367.38 366.43 366.7 366.82 C 366.02 367.22 365.6 367.94 365.6 368.73" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_28">
+    <path d="M 511.8 268.4 C 511.8 269.62 512.78 270.6 514 270.6 C 515.22 270.6 516.2 269.62 516.2 268.4 C 516.2 267.61 515.78 266.89 515.1 266.49 C 514.42 266.1 513.58 266.1 512.9 266.49 C 512.22 266.89 511.8 267.61 511.8 268.4" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_31">
+    <path d="M 293 262 L 293 328" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+</svg>

@@ -272,6 +272,15 @@
 - **Features:** Data-space plotting on a `Diagram`, standard library only: axes with ticks, grid, linear and log mapping; function and parametric curves clipped to the window and broken at asymptotes; tangents, shaded areas and bands, Riemann rectangles; slope and vector fields; RK4 trajectories and ODE solutions; candlesticks, stacked and plain bar charts, legends, orbits with direction arrows, custom tick labels and decade log ticks. Math markup gains `\bar`, `\overline`, `\sqrt` and more function names. Fifty textbook figures in `examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/` and `logic/`.
 - **Verification:** `uv run pytest tests/test_plot.py tests/test_textbook_examples.py && uv run diagrams-as-code lint examples`
 
+### 2.17b Drafting Kit & Medical, Engineering, CAD Galleries
+
+#### `CAP-DIAG-DRAFT`: Drafting Kit and Medical, Engineering, CAD Galleries
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.16.0`
+- **Python API:** `diagrams_as_code.draft.Draft`
+- **Features:** Drafting and anatomy primitives, standard library only: dimension lines, radius and diameter leaders, even-odd section hatching with holes, centerlines, hidden lines, section arrows, GD&T frames, smooth organic outlines, leaders and ECG-style traces. Thirty figures in `examples/medical/`, `engineering/` and `cad/`.
+- **Verification:** `uv run pytest tests/test_draft.py tests/test_clinical_engineering_examples.py && uv run diagrams-as-code lint examples`
+
 ### 2.18 Vector PDF Export
 
 #### `CAP-DIAG-PDF`: Vector PDF Export

@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1592 523" width="1592" height="523">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_10">
+    <path d="M 267.15 380 L 279.95 380 L 279.95 354.4 L 267.15 354.4 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 299.15 380 L 337.55 380 L 337.55 252 L 315.15 252 L 315.15 354.4 L 299.15 354.4 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 459.15 380 L 446.35 380 L 446.35 354.4 L 459.15 354.4 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_16">
+    <path d="M 427.15 380 L 388.75 380 L 388.75 252 L 411.15 252 L 411.15 354.4 L 427.15 354.4 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_49">
+    <path d="M 647.15 380 L 659.95 380 L 659.95 354.4 L 647.15 354.4 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_51">
+    <path d="M 679.15 380 L 717.55 380 L 717.55 252 L 695.15 252 L 695.15 354.4 L 679.15 354.4 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_54">
+    <path d="M 743.15 380 L 839.15 380 L 839.15 354.4 L 791.15 354.4 L 791.15 252 L 743.15 252" fill="#EEF2F8" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_75">
+    <path d="M 1027.15 380 L 1219.15 380 L 1219.15 354.4 L 1171.15 354.4 L 1171.15 252 L 1075.15 252 L 1075.15 354.4 L 1027.15 354.4 Z" fill="#EEF2F8" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_78">
+    <path d="M 1171.15 252 L 1123.15 252 L 1128.15 258.4 L 1125.38 264.8 L 1119.15 271.2 L 1119.15 277.6 L 1125.38 284 L 1128.15 290.4 L 1123.15 296.8 L 1118.16 303.2 L 1120.93 309.6 L 1127.16 316 L 1127.16 322.4 L 1120.93 328.8 L 1118.16 335.2 L 1123.15 341.6 L 1126.58 339.21 L 1130.01 337.86 L 1133.44 338.14 L 1136.87 339.93 L 1140.3 342.45 L 1143.73 344.6 L 1147.15 345.44 L 1150.58 344.6 L 1154.01 342.45 L 1157.44 339.93 L 1160.87 338.14 L 1164.3 337.86 L 1167.73 339.21 L 1171.15 341.6 Z" fill="#FFFFFF" />
+  </g>
+  <g id="path_11">
+    <path d="M 267.15 361.38 L 274.13 354.4 M 267.15 371.28 L 279.95 358.48 M 268.33 380 L 279.95 368.38 M 278.23 380 L 279.95 378.28" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_13">
+    <path d="M 315.15 253.98 L 317.13 252 M 315.15 263.88 L 327.03 252 M 315.15 273.78 L 336.93 252 M 315.15 283.68 L 337.55 261.28 M 315.15 293.58 L 337.55 271.18 M 315.15 303.48 L 337.55 281.08 M 315.15 313.38 L 337.55 290.98 M 315.15 323.28 L 337.55 300.88 M 315.15 333.18 L 337.55 310.78 M 299.15 359.08 L 303.83 354.4 M 315.15 343.08 L 337.55 320.68 M 299.15 368.97 L 313.72 354.4 M 315.15 352.97 L 337.55 330.57 M 299.15 378.87 L 337.55 340.47 M 307.92 380 L 337.55 350.37 M 317.82 380 L 337.55 360.27 M 327.72 380 L 337.55 370.17" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_15">
+    <path d="M 446.35 360.37 L 452.32 354.4 M 446.35 370.27 L 459.15 357.47 M 446.52 380 L 459.15 367.37 M 456.42 380 L 459.15 377.27" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_17">
+    <path d="M 388.75 259.58 L 396.33 252 M 388.75 269.48 L 406.23 252 M 388.75 279.37 L 411.15 256.97 M 388.75 289.27 L 411.15 266.87 M 388.75 299.17 L 411.15 276.77 M 388.75 309.07 L 411.15 286.67 M 388.75 318.97 L 411.15 296.57 M 388.75 328.87 L 411.15 306.47 M 388.75 338.77 L 411.15 316.37 M 388.75 348.67 L 411.15 326.27 M 388.75 358.57 L 411.15 336.17 M 388.75 368.47 L 411.15 346.07 M 388.75 378.37 L 412.72 354.4 M 397.02 380 L 422.62 354.4 M 406.92 380 L 427.15 359.77 M 416.82 380 L 427.15 369.67 M 426.72 380 L 427.15 379.57" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_50">
+    <path d="M 647.15 357.56 L 650.31 354.4 M 647.15 367.46 L 659.95 354.66 M 647.15 377.36 L 659.95 364.56 M 654.41 380 L 659.95 374.46" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_52">
+    <path d="M 695.15 260.06 L 703.21 252 M 695.15 269.96 L 713.11 252 M 695.15 279.86 L 717.55 257.46 M 695.15 289.76 L 717.55 267.36 M 695.15 299.66 L 717.55 277.26 M 695.15 309.56 L 717.55 287.16 M 695.15 319.46 L 717.55 297.06 M 695.15 329.36 L 717.55 306.96 M 679.15 355.26 L 680.01 354.4 M 695.15 339.26 L 717.55 316.86 M 679.15 365.16 L 689.91 354.4 M 695.15 349.16 L 717.55 326.76 M 679.15 375.06 L 717.55 336.66 M 684.1 380 L 717.55 346.55 M 694 380 L 717.55 356.45 M 703.9 380 L 717.55 366.35 M 713.8 380 L 717.55 376.25" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_79">
+    <path d="M 1148.75 252 L 1171.15 252 L 1171.15 341.6 L 1148.75 341.6 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_80">
+    <path d="M 1148.75 261.84 L 1158.59 252 M 1148.75 271.74 L 1168.49 252 M 1148.75 281.64 L 1171.15 259.24 M 1148.75 291.54 L 1171.15 269.14 M 1148.75 301.43 L 1171.15 279.03 M 1148.75 311.33 L 1171.15 288.93 M 1148.75 321.23 L 1171.15 298.83 M 1148.75 331.13 L 1171.15 308.73 M 1148.75 341.03 L 1171.15 318.63 M 1158.08 341.6 L 1171.15 328.53 M 1167.98 341.6 L 1171.15 338.43" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="text_1">
+    <text x="310.64" y="55.16" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Full section A-A</text>
+  </g>
+  <g id="text_2">
+    <text x="277.24" y="431.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">cutting plane removes the near half</text>
+  </g>
+  <g id="path_3">
+    <path d="M 363.15 392 L 363.15 378 M 363.15 375 L 363.15 372 M 363.15 369 L 363.15 355 M 363.15 352 L 363.15 349 M 363.15 346 L 363.15 332 M 363.15 329 L 363.15 326 M 363.15 323 L 363.15 309 M 363.15 306 L 363.15 303 M 363.15 300 L 363.15 286 M 363.15 283 L 363.15 280 M 363.15 277 L 363.15 263 M 363.15 260 L 363.15 257 M 363.15 254 L 363.15 240" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <text x="689.38" y="55.16" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Half section B-B</text>
+  </g>
+  <g id="text_5">
+    <text x="673.14" y="431.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">left half cut, right half outside</text>
+  </g>
+  <g id="path_6">
+    <path d="M 743.15 392 L 743.15 378 M 743.15 375 L 743.15 372 M 743.15 369 L 743.15 355 M 743.15 352 L 743.15 349 M 743.15 346 L 743.15 332 M 743.15 329 L 743.15 326 M 743.15 323 L 743.15 309 M 743.15 306 L 743.15 303 M 743.15 300 L 743.15 286 M 743.15 283 L 743.15 280 M 743.15 277 L 743.15 263 M 743.15 260 L 743.15 257 M 743.15 254 L 743.15 240" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="1060.62" y="55.16" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Broken-out section</text>
+  </g>
+  <g id="text_8">
+    <text x="1048.25" y="431.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">a local break exposes one wall</text>
+  </g>
+  <g id="path_9">
+    <path d="M 1123.15 392 L 1123.15 378 M 1123.15 375 L 1123.15 372 M 1123.15 369 L 1123.15 355 M 1123.15 352 L 1123.15 349 M 1123.15 346 L 1123.15 332 M 1123.15 329 L 1123.15 326 M 1123.15 323 L 1123.15 309 M 1123.15 306 L 1123.15 303 M 1123.15 300 L 1123.15 286 M 1123.15 283 L 1123.15 280 M 1123.15 277 L 1123.15 263 M 1123.15 260 L 1123.15 257 M 1123.15 254 L 1123.15 240" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_18">
+    <path d="M 289.55 392.8 L 289.55 378.8 M 289.55 375.8 L 289.55 372.8 M 289.55 369.8 L 289.55 355.8 M 289.55 352.8 L 289.55 349.8 M 289.55 346.8 L 289.55 341.6" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_19">
+    <path d="M 436.75 392.8 L 436.75 378.8 M 436.75 375.8 L 436.75 372.8 M 436.75 369.8 L 436.75 355.8 M 436.75 352.8 L 436.75 349.8 M 436.75 346.8 L 436.75 341.6" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_20">
+    <path d="M 318.15 140 C 318.15 164.85 338.3 185 363.15 185 C 388.01 185 408.15 164.85 408.15 140 C 408.15 115.15 388.01 95 363.15 95 C 338.3 95 318.15 115.15 318.15 140" fill="none" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_21">
+    <path d="M 340.65 140 C 340.65 152.43 350.73 162.5 363.15 162.5 C 375.58 162.5 385.65 152.43 385.65 140 C 385.65 127.57 375.58 117.5 363.15 117.5 C 350.73 117.5 340.65 127.57 340.65 140" fill="none" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="path_22">
+    <path d="M 351.15 140 C 351.15 146.63 356.53 152 363.15 152 C 369.78 152 375.15 146.63 375.15 140 C 375.15 133.37 369.78 128 363.15 128 C 356.53 128 351.15 133.37 351.15 140" fill="none" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="path_23">
+    <path d="M 393.15 140 C 393.15 142.49 395.17 144.5 397.65 144.5 C 400.14 144.5 402.15 142.49 402.15 140 C 402.15 137.51 400.14 135.5 397.65 135.5 C 395.17 135.5 393.15 137.51 393.15 140" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_24">
+    <path d="M 358.65 105.5 C 358.65 107.99 360.67 110 363.15 110 C 365.64 110 367.65 107.99 367.65 105.5 C 367.65 103.01 365.64 101 363.15 101 C 360.67 101 358.65 103.01 358.65 105.5" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_25">
+    <path d="M 324.15 140 C 324.15 142.49 326.17 144.5 328.65 144.5 C 331.14 144.5 333.15 142.49 333.15 140 C 333.15 137.51 331.14 135.5 328.65 135.5 C 326.17 135.5 324.15 137.51 324.15 140" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_26">
+    <path d="M 358.65 174.5 C 358.65 176.99 360.67 179 363.15 179 C 365.64 179 367.65 176.99 367.65 174.5 C 367.65 172.01 365.64 170 363.15 170 C 360.67 170 358.65 172.01 358.65 174.5" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_27">
+    <path d="M 319.15 140 L 333.15 140 M 336.15 140 L 339.15 140 M 342.15 140 L 356.15 140 M 359.15 140 L 362.15 140 M 365.15 140 L 379.15 140 M 382.15 140 L 385.15 140 M 388.15 140 L 402.15 140 M 405.15 140 L 407.15 140" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_28">
+    <path d="M 363.15 96 L 363.15 110 M 363.15 113 L 363.15 116 M 363.15 119 L 363.15 133 M 363.15 136 L 363.15 139 M 363.15 142 L 363.15 156 M 363.15 159 L 363.15 162 M 363.15 165 L 363.15 179 M 363.15 182 L 363.15 184" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_29">
+    <path d="M 304.15 140 L 422.15 140" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-dasharray="14,3,3,3" stroke-linejoin="round" />
+  </g>
+  <g id="path_30">
+    <path d="M 304.15 140 L 304.15 160" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_31">
+    <path d="M 304.15 160 L 306.67 151 L 301.63 151 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_32">
+    <text x="299.82" y="174.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">A</text>
+  </g>
+  <g id="path_33">
+    <path d="M 422.15 140 L 422.15 160" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_34">
+    <path d="M 422.15 160 L 424.67 151 L 419.63 151 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_35">
+    <text x="417.82" y="174.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">A</text>
+  </g>
+  <g id="path_36">
+    <path d="M 267.15 383 L 267.15 406 M 459.15 383 L 459.15 406" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_37">
+    <path d="M 267.15 402 L 459.15 402" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_38">
+    <path d="M 267.15 402 L 274.15 403.96 L 274.15 400.04 Z M 459.15 402 L 452.15 400.04 L 452.15 403.96 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_39">
+    <path d="M722 597H651L592 529C533 570 467 597 390 597C204 597 51 443 51 258C51 168 88 82 147 21L58 -81H129L188 -14C247 -57 316 -81 390 -81C575 -81 729 71 729 258C729 347 693 430 632 493ZM192 72C145 121 119 188 119 259C119 408 239 529 390 529C446 529 515 507 547 477ZM589 444C635 393 661 328 661 259C661 108 539 -14 390 -14C333 -14 278 4 232 37Z" transform="translate(353.42 413.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(362 413.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(367.44 413.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="path_40">
+    <path d="M 388.75 249 L 388.75 226 M 337.55 249 L 337.55 226" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_41">
+    <path d="M 401.75 230 L 324.55 230" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_42">
+    <path d="M 388.75 230 L 395.75 231.96 L 395.75 228.04 Z M 337.55 230 L 330.55 228.04 L 330.55 231.96 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_43">
+    <path d="M722 597H651L592 529C533 570 467 597 390 597C204 597 51 443 51 258C51 168 88 82 147 21L58 -81H129L188 -14C247 -57 316 -81 390 -81C575 -81 729 71 729 258C729 347 693 430 632 493ZM192 72C145 121 119 188 119 259C119 408 239 529 390 529C446 529 515 507 547 477ZM589 444C635 393 661 328 661 259C661 108 539 -14 390 -14C333 -14 278 4 232 37Z" transform="translate(353.42 225.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(362 225.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(367.44 225.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="path_44">
+    <path d="M 462.15 252 L 481.15 252 M 462.15 380 L 481.15 380" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_45">
+    <path d="M 477.15 252 L 477.15 380" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_46">
+    <path d="M 477.15 252 L 475.19 259 L 479.11 259 Z M 477.15 380 L 479.11 373 L 475.19 373 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_48">
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(489.15 319.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(494.6 319.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="path_53">
+    <path d="M 669.55 392.8 L 669.55 378.8 M 669.55 375.8 L 669.55 372.8 M 669.55 369.8 L 669.55 355.8 M 669.55 352.8 L 669.55 349.8 M 669.55 346.8 L 669.55 341.6" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_55">
+    <path d="M 698.15 140 C 698.15 164.85 718.3 185 743.15 185 C 768.01 185 788.15 164.85 788.15 140 C 788.15 115.15 768.01 95 743.15 95 C 718.3 95 698.15 115.15 698.15 140" fill="none" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_56">
+    <path d="M 720.65 140 C 720.65 152.43 730.73 162.5 743.15 162.5 C 755.58 162.5 765.65 152.43 765.65 140 C 765.65 127.57 755.58 117.5 743.15 117.5 C 730.73 117.5 720.65 127.57 720.65 140" fill="none" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="path_57">
+    <path d="M 731.15 140 C 731.15 146.63 736.53 152 743.15 152 C 749.78 152 755.15 146.63 755.15 140 C 755.15 133.37 749.78 128 743.15 128 C 736.53 128 731.15 133.37 731.15 140" fill="none" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="path_58">
+    <path d="M 773.15 140 C 773.15 142.49 775.17 144.5 777.65 144.5 C 780.14 144.5 782.15 142.49 782.15 140 C 782.15 137.51 780.14 135.5 777.65 135.5 C 775.17 135.5 773.15 137.51 773.15 140" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_59">
+    <path d="M 738.65 105.5 C 738.65 107.99 740.67 110 743.15 110 C 745.64 110 747.65 107.99 747.65 105.5 C 747.65 103.01 745.64 101 743.15 101 C 740.67 101 738.65 103.01 738.65 105.5" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_60">
+    <path d="M 704.15 140 C 704.15 142.49 706.17 144.5 708.65 144.5 C 711.14 144.5 713.15 142.49 713.15 140 C 713.15 137.51 711.14 135.5 708.65 135.5 C 706.17 135.5 704.15 137.51 704.15 140" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_61">
+    <path d="M 738.65 174.5 C 738.65 176.99 740.67 179 743.15 179 C 745.64 179 747.65 176.99 747.65 174.5 C 747.65 172.01 745.64 170 743.15 170 C 740.67 170 738.65 172.01 738.65 174.5" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_62">
+    <path d="M 699.15 140 L 713.15 140 M 716.15 140 L 719.15 140 M 722.15 140 L 736.15 140 M 739.15 140 L 742.15 140 M 745.15 140 L 759.15 140 M 762.15 140 L 765.15 140 M 768.15 140 L 782.15 140 M 785.15 140 L 787.15 140" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_63">
+    <path d="M 743.15 96 L 743.15 110 M 743.15 113 L 743.15 116 M 743.15 119 L 743.15 133 M 743.15 136 L 743.15 139 M 743.15 142 L 743.15 156 M 743.15 159 L 743.15 162 M 743.15 165 L 743.15 179 M 743.15 182 L 743.15 184" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_64">
+    <path d="M 684.15 140 L 802.15 140" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-dasharray="14,3,3,3" stroke-linejoin="round" />
+  </g>
+  <g id="path_65">
+    <path d="M 684.15 140 L 684.15 160" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_66">
+    <path d="M 684.15 160 L 686.67 151 L 681.63 151 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_67">
+    <text x="679.82" y="174.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">B</text>
+  </g>
+  <g id="path_68">
+    <path d="M 802.15 140 L 802.15 160" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_69">
+    <path d="M 802.15 160 L 804.67 151 L 799.63 151 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_70">
+    <text x="797.82" y="174.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">B</text>
+  </g>
+  <g id="path_71">
+    <path d="M 647.15 383 L 647.15 406 M 743.15 383 L 743.15 406" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_72">
+    <path d="M 647.15 402 L 743.15 402" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_73">
+    <path d="M 647.15 402 L 654.15 403.96 L 654.15 400.04 Z M 743.15 402 L 736.15 400.04 L 736.15 403.96 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_74">
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(686.3 413.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(693.12 413.78) scale(0.011 -0.011)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(698.56 413.78) scale(0.011 -0.011)" fill="#000000"/>
+  </g>
+  <g id="path_76">
+    <path d="M 1097.55 252 L 1097.55 380" fill="none" stroke="#1F2F57" stroke-width="1.1" stroke-dasharray="5,3" stroke-linejoin="round" />
+  </g>
+  <g id="path_77">
+    <path d="M 1148.75 341.6 L 1148.75 380" fill="none" stroke="#1F2F57" stroke-width="1.1" stroke-dasharray="5,3" stroke-linejoin="round" />
+  </g>
+  <g id="path_81">
+    <path d="M 1123.15 252 L 1128.15 258.4 L 1125.35 264.8 L 1119.15 271.2 L 1119.15 277.6 L 1125.35 284 L 1128.15 290.4 L 1123.15 296.8 L 1118.15 303.2 L 1120.95 309.6 L 1127.15 316 L 1127.15 322.4 L 1120.95 328.8 L 1118.15 335.2 L 1123.15 341.6" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="path_82">
+    <path d="M 1123.15 341.6 L 1126.55 339.2 L 1130.05 337.9 L 1133.45 338.1 L 1136.85 339.9 L 1140.25 342.5 L 1143.75 344.6 L 1147.15 345.4 L 1150.55 344.6 L 1154.05 342.5 L 1157.45 339.9 L 1160.85 338.1 L 1164.25 337.9 L 1167.75 339.2 L 1171.15 341.6" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="path_83">
+    <path d="M 1129.15 284 L 1271.15 258" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_85">
+    <text x="1276.15" y="261.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">break line</text>
+  </g>
+  <g id="path_86">
+    <path d="M 1123.15 284 L 1123.15 284" fill="none" />
+  </g>
+  <g id="caption_87">
+    <text x="60" y="477.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 9:</text>
+    <text x="134.17" y="477.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1396.83" lengthAdjust="spacingAndGlyphs"> SECTION VIEWS OF A FLANGED BUSHING: A FULL SECTION, A HALF SECTION THAT SHOWS INSIDE AND OUTSIDE AT ONCE, AND A BROKEN-OUT SECTION THAT OPENS ONE LOCAL WINDOW</text>
+  </g>
+  <g id="path_84">
+    <path d="M 1126.95 284 C 1126.95 284.79 1127.37 285.51 1128.05 285.91 C 1128.73 286.3 1129.57 286.3 1130.25 285.91 C 1130.93 285.51 1131.35 284.79 1131.35 284 C 1131.35 283.21 1130.93 282.49 1130.25 282.09 C 1129.57 281.7 1128.73 281.7 1128.05 282.09 C 1127.37 282.49 1126.95 283.21 1126.95 284" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+</svg>

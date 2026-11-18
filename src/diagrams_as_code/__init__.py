@@ -89,7 +89,7 @@ from diagrams_as_code.theme import (
 
 from diagrams_as_code.style import Style  # noqa: E402
 
-__version__ = "0.15.0"
+__version__ = "0.16.0"
 __all__ = [
     "AbsoluteConstraint",
     "AlignConstraint",

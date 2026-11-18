@@ -319,6 +319,17 @@
       "verification": "uv run pytest tests/test_plot.py tests/test_textbook_examples.py && uv run diagrams-as-code lint examples"
     },
     {
+      "id": "CAP-DIAG-DRAFT",
+      "name": "Drafting Kit and Medical, Engineering, CAD Galleries",
+      "category": "Technical Figures & Visual Regression",
+      "status": "OPERATIONAL",
+      "target_release": "v0.16.0",
+      "python_api": "diagrams_as_code.draft.Draft",
+      "classes": ["Draft"],
+      "details": "Drafting and anatomy primitives with the standard library alone: dimension lines, radius and diameter leaders, even-odd section hatching with holes, centerlines, hidden lines, section arrows, GD&T frames, smooth organic outlines, leaders and ECG-style traces. Thirty figures in examples/medical, engineering and cad.",
+      "verification": "uv run pytest tests/test_draft.py tests/test_clinical_engineering_examples.py && uv run diagrams-as-code lint examples"
+    },
+    {
       "id": "CAP-DIAG-PDF",
       "name": "Vector PDF Export",
       "category": "Vector PDF Export",
