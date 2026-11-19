@@ -51,7 +51,7 @@
                     ▼                                         ▼
 +---------------------------------------+ +-----------------------------------------+
 |            SVGRenderer                | |             BOMGenerator                |
-|  - Theme Palette Injection (13)       | |  - Component Inventory Assembly         |
+|  - Theme Palette Injection (14)       | |  - Component Inventory Assembly         |
 |  - Standalone Vector Icons (60)       | |  - Metadata Attribute Extraction        |
 |  - Dynamic SVG Defs & Shadow Filters  | |  - Protocol & Connection Mapping        |
 |  - Multi-line <tspan> Anti-Spill Wrap | |  - Markdown Table & JSON Serialization  |
@@ -61,11 +61,13 @@
                     │
                     ▼
 +---------------------------------------+
-|        resvg-py Rasterizer            |
-|  - Pure Wheel PNG Rasterization       |
-|  - Crisp 2x / 4x Vector Scaled Output |
+|  rasterize.py / pdf.py                |
+|  - PNG via resvg-py (or fallbacks)    |
+|  - Vector PDF, standard library only  |
 +---------------------------------------+
 ```
+
+`Plot` (data-space plotting) and `Draft` (drafting and anatomy primitives) sit beside the Declarative Object Model: they add ordinary paths, polygons and text to a `Diagram`, so their output flows through the same layout, audit and renderer stages. `diagrams-as-code mcp` wraps the CLI operations (render, lint, list) in a stdio MCP server.
 
 ---
 
@@ -154,6 +156,29 @@ The routing subsystem computes collision-free trajectories between node ports, s
 - **Minimap Navigator**: Real-time interactive minimap HUD in the bottom-right corner displaying an overview thumbnail with an interactive viewport bounding box synchronized to current pan/zoom coordinates.
 - **Heuristics & Toggle**: Activated via `Diagram(interactive=True)` or automatically enabled when canvas dimensions exceed 1600x1200 pixels.
 
+### 2.11 Primitives and Solids (`diagrams_as_code.primitives`, `solids`, `drawing`, `labels`, `arrange`)
+- **`primitives.py`**: free `Text`, `Caption`, `Bracket`, `Polygon`, `Polyline`, `Path`, `SolidShape` and `Band` elements, created through `Diagram` helpers such as `diag.text()`, `diag.polygon()` and `diag.band()`. They are drawing, not components, so they never appear in the BOM.
+- **`solids.py`**: convex `Solid` meshes (`Solid.box`, `.prism`, `.pyramid`, `.hull`), oblique and isometric `Projection`s, back-to-front face ordering and visible/hidden edge classification, with optional cutting planes.
+- **`drawing.py` / `labels.py` / `arrange.py`**: the backend-neutral `PathItem`/`TextItem` model and SVG path parsing shared by the SVG and PDF writers; shared label, badge and title geometry; and the `align()` / `distribute()` helpers.
+
+### 2.12 Data Plots (`diagrams_as_code.plot`)
+- **`Plot(diagram, x=(lo, hi), y=(lo, hi), origin=(px, py), size=(w, h))`** owns the mapping from data coordinates to canvas pixels (`px()`), linear or log axes, and draws with the diagram's own primitives.
+- Marks: `grid`, `axes`, `function`, `parametric`, `area`, `band`, `bars`, `bar_chart`, `stacked_bars`, `candles`, `slope_field`, `vector_field`, `trajectory`, `orbit`, `dot`, `label`, `legend`, `tangent`, `hline`/`vline`. `solve_ode` integrates systems with RK4.
+- Used by the textbook, medical and engineering galleries; see [technical-figures.md](technical-figures.md#9-plots-and-drafting-views).
+
+### 2.13 Drafting and Anatomy (`diagrams_as_code.draft`)
+- **`Draft(diagram)`** works in canvas pixels. Engineering: `dimension`, `radius_dim` (`diameter=True` for a diameter), `hatch` (even-odd, so holes work), `centerline`, `hidden_line`, `section_arrows`, `gdt_frame`. Anatomy: `smooth_closed`, `smooth_open` (Catmull-Rom outlines), `leader`, `wave` (periodic traces such as an ECG).
+
+### 2.14 Audit, PDF Export and Rasterization (`audit`, `pdf`, `rasterize`)
+- **`audit.py`**: `audit_diagram` / `audit_findings` check a solved diagram for visual defects (a line through a node, overlapping labels, text that does not fit). They back `diagrams-as-code lint`, `tools/audit_gallery.py` and the MCP `lint` tool.
+- **`pdf.py`**: `svg_to_pdf` draws the renderer's own SVG with PDF operators, so the two cannot drift. Only the SVG vocabulary the engine writes is understood; anything else raises `PDFExportError`.
+- **`rasterize.py`**: PNG backends tried in order (`resvg-py`, CairoSVG, Inkscape, ImageMagick) until one is available.
+
+### 2.15 MCP Server (`diagrams_as_code.mcp`)
+- A stdlib-only JSON-RPC 2.0 server over stdio (newline-delimited, MCP revision 2025-06-18), started with `diagrams-as-code mcp [--root DIR]`.
+- Tools: `list_examples`, `render`, `lint`, `list_themes`, `list_icons`, mapping onto `cli.discover`/`load_script`, `output.render_all`, `audit.audit_findings`, `theme.list_themes` and `ShapeLibrary`.
+- Rendering runs a diagram script, which is arbitrary Python, so every script and output path is confined to `--root` (default: the current directory). See [purpose.md](purpose.md#4-the-mcp-server-runs-scripts).
+
 ---
 
 ## 3. Execution Lifecycle
@@ -172,7 +197,7 @@ The routing subsystem computes collision-free trajectories between node ports, s
    - With `layout="auto"`, warns (`LayoutWarning`) about any pinned element overlapping an auto-placed sibling.
 5. **Path Routing**: `run_layout()` dispatches edge routing to `OrthogonalRouter` (for Manhattan routing and corner filleting) or `CurveRouter` (for cubic Bezier curves, obstacle collision deflection, and reverse-flow escape corridors). Port waypoints and badge rects are computed and cached on the diagram.
 6. **SVG Assembly**: SVGRenderer generates the XML document with markers, filters, groups, paths, icons, multi-line wrapped labels (`<tspan>`), and interactive HUD controllers (pan/zoom, search, minimap) when interactive mode is active.
-7. **Output Writing**: `render_svg()`/`render_png()`/`render_pdf()`/`generate_readme()`/`generate_bom_json()` write individually, or `output.render_all()` writes every requested format (`svg,png,bom` by default) in one call — the CLI always uses `render_all()`. PNG rasterization tries `rasterize.py`'s four backends in order (`resvg-py` → CairoSVG → Inkscape → ImageMagick) until one is available; `BOMGenerator` emits the living Markdown and JSON documentation.
+7. **Output Writing**: `render_svg()`/`render_png()`/`render_pdf()`/`generate_readme()`/`generate_bom_json()` write individually, or `output.render_all()` writes every requested format (`svg,bom` by default; `png` and `pdf` are opt-in) in one call — the CLI always uses `render_all()`. PNG rasterization tries `rasterize.py`'s four backends in order (`resvg-py` → CairoSVG → Inkscape → ImageMagick) until one is available; `BOMGenerator` emits the living Markdown and JSON documentation.
 
 ---
 
@@ -197,6 +222,7 @@ src/
 │   │   ├── graph.py                # Diagram scope -> LayoutGraph
 │   │   ├── layered.py              # LayeredLayout: deterministic Sugiyama-style placement
 │   │   ├── sidecar.py              # Editable layout file: keys, load/export, apply_entries
+│   │   ├── flow.py                 # Group flow layouts (row, column, GridLayout) behind a GroupFlowLayout protocol
 │   │   ├── lanes.py                # Moves edges routed along one corridor onto separate lanes
 │   │   ├── badges.py               # Places edge badges clear of nodes, titles, badges and lines
 │   │   └── pipeline.py             # run_layout(): the ordered steps Diagram.solve() runs
@@ -208,16 +234,20 @@ src/
 │   ├── labels.py                   # Label, badge and group-title geometry shared by layout, drawing and audit
 │   ├── drawing.py                  # Backend-neutral PathItem/TextItem, SVG path parsing, arrowheads
 │   ├── solids.py                   # Convex solids, oblique/isometric projection, hidden-edge classification
+│   ├── plot.py                     # Plot: data-space axes, curves, areas, fields and bars on a Diagram
+│   ├── draft.py                    # Draft: dimensions, hatching, centerlines, GD&T frames, anatomy outlines
 │   ├── primitives.py               # Text, Caption, Bracket, Polygon, Polyline, Path, SolidShape, Band
 │   ├── arrange.py                  # align() and distribute() helpers
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
 │   ├── pdf.py                      # Vector PDF writer: draws the renderer's SVG with PDF operators
 │   ├── theme.py                    # 14 built-in themes (nord, emerald, crimson, paper, …)
-│   ├── text/                       # Font metrics, rich text layout, math typesetting
+│   ├── text/                       # Font metrics (metrics.py), rich text (rich.py), math typesetting (math.py) and bundled glyph data
 │   ├── audit.py                    # Visual defect checks on a solved diagram; named findings for `lint`
 │   ├── bom.py                      # Bill of Materials (BOM) living markdown documentation
 │   ├── output.py                   # Writes a diagram's SVG, PNG, PDF and BOM to a directory
-│   ├── cli.py                      # `diagrams-as-code render|layout export|themes|icons`
+│   ├── cli.py                      # `diagrams-as-code render|lint|layout export|themes|icons|mcp`
+│   ├── mcp.py                      # Stdio MCP server: list_examples, render, lint, list_themes, list_icons (confined to --root)
+│   ├── __main__.py                 # `python -m diagrams_as_code`
 │   └── diagram.py                  # Diagram canvas context manager, render_svg, render_png, render_pdf
 │
 └── iiot_diagrams/                  # Backward Compatibility Facade
@@ -239,7 +269,7 @@ src/
 
 ## 5. Domain Hierarchy
 
-IIoT is treated as one of eight first-class architectural domains:
+IIoT is one of thirteen first-class architectural domains, alongside the technical-figure, textbook, medical, engineering and CAD galleries. Rendered SVG, PNG and BOM files live next to each script (there is no top-level `output/` directory):
 
 ```
 examples/
@@ -255,8 +285,15 @@ examples/
 ├── enterprise_architecture/        # 11 Enterprise architecture views (incl. 1 auto-layout)
 ├── manufacturing/                  # 11 Manufacturing & semiconductor diagrams (incl. 1 auto-layout)
 ├── mind_map/                       # 11 Mind maps (incl. 1 auto-layout)
-└── computer_science/               # 11 Computer-science technical figures (incl. 1 auto-layout)
+├── computer_science/               # 11 Computer-science technical figures (incl. 1 auto-layout)
+├── primitives/                     # 9 one-per-primitive figures (paper theme)
+├── technical/                      # 11 complete paper-style figures
+├── calculus_math/ differential_equations/ physics/ finance/ logic/   # 50 textbook figures (10 each, Plot-based)
+├── medical/ engineering/ cad/      # 30 Draft/Plot figures (10 each)
+└── 01_*.py ... 04_*.py             # 4 top-level reference scripts
 ```
+
+In total 247 example scripts: 143 domain diagrams, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
 
 ---
 
@@ -265,5 +302,6 @@ examples/
 1. **Deterministic Core:** Zero external runtime dependencies required for SVG generation.
 2. **Always Use `uv`:** All environment setup, script runs, and testing must use `uv run`.
 3. **Decoupled Lifecycle:** Elements exist independently of positioning constraints; positions can be declared late or updated dynamically.
-4. **Guaranteed Solve:** Rendering functions (`render_svg`, `render_png`, `generate_readme`) automatically resolve layout constraints and normalize bounds before emitting output.
-5. **Layered imports:** enforced by `tests/test_module_boundaries.py`.
+4. **Guaranteed Solve:** Rendering functions (`render_svg`, `render_png`, `render_pdf`, `generate_readme`) automatically resolve layout constraints and normalize bounds before emitting output.
+5. **Layered imports:** enforced by `tests/test_module_boundaries.py`. `plot` and `draft` sit above `diagram`, and `mcp` above `cli`.
+6. **Confined execution:** the MCP server only runs scripts under its `--root`.

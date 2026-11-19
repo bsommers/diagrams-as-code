@@ -77,3 +77,68 @@ def test_cli_exposes_mcp_subcommand(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", io.StringIO(json.dumps({"jsonrpc": "2.0", "id": 1, "method": "ping"}) + "\n"))
     assert cli.main(["mcp", "--root", str(REPO)]) == 0
     assert json.loads(capsys.readouterr().out)["id"] == 1
+
+
+def _tool(server, name, **args):
+    return call(server, name, **args)
+
+
+def test_symlinked_script_and_output_cannot_escape_root(tmp_path):
+    outside = tmp_path / "outside"
+    root = tmp_path / "root"
+    outside.mkdir()
+    root.mkdir()
+    (outside / "evil.py").write_text(
+        "from diagrams_as_code import Diagram\n"
+        "def diagram():\n    open(%r, 'w').write('ran')\n    return Diagram('x')\n" % str(outside / "ran.txt"))
+    (root / "evil.py").symlink_to(outside / "evil.py")
+    res = _tool(Server(root), "render", path=".")
+    assert res["isError"] and not (outside / "ran.txt").exists()
+
+    (root / "ok.py").write_text((REPO / SCRIPT).read_text())
+    (outside / "target.svg").write_text("keep")
+    (root / "candlestick.svg").symlink_to(outside / "target.svg")
+    (root / "ok.py").write_text(
+        "from diagrams_as_code import Diagram\nOUTPUT_STEM = 'candlestick'\n"
+        "def diagram():\n    return Diagram('x')\n")
+    (root / "evil.py").unlink()
+    res = _tool(Server(root), "render", path="ok.py")
+    assert res["isError"] and (outside / "target.svg").read_text() == "keep"
+
+
+def test_script_chosen_output_stem_must_be_plain(tmp_path):
+    (tmp_path / "s.py").write_text(
+        "from diagrams_as_code import Diagram\nOUTPUT_STEM = '../escaped'\n"
+        "def diagram():\n    return Diagram('x')\n")
+    res = _tool(Server(tmp_path), "render", path="s.py")
+    assert res["isError"] and not (tmp_path.parent / "escaped.svg").exists()
+
+
+def test_errors_do_not_leak_the_absolute_root(tmp_path):
+    (tmp_path / "s.py").write_text("def diagram():\n    raise RuntimeError(%r)\n" % (str(tmp_path) + "/x"))
+    res = _tool(Server(tmp_path), "render", path="s.py")
+    assert res["isError"] and str(tmp_path) not in res["content"][0]["text"]
+
+
+def test_malformed_messages_never_end_the_session():
+    lines = ["[" * 100000, json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": "x"}),
+             json.dumps({"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": []}}),
+             json.dumps({"jsonrpc": "2.0", "id": 3, "method": "tools/call",
+                         "params": {"name": "list_themes", "arguments": "x"}}),
+             json.dumps({"jsonrpc": "2.0", "id": 4, "method": "ping"}), ""]
+    out = io.StringIO()
+    assert serve(REPO, io.StringIO("\n".join(lines)), out) == 0
+    replies = [json.loads(l) for l in out.getvalue().splitlines()]
+    assert replies[-1]["id"] == 4 and replies[-1]["result"] == {}
+    assert all("error" in r for r in replies[:-1])
+
+
+def test_oversized_message_is_rejected_and_skipped(monkeypatch):
+    from diagrams_as_code import mcp
+    monkeypatch.setattr(mcp, "MAX_LINE", 64)
+    big = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "ping", "pad": "x" * 500})
+    ok = json.dumps({"jsonrpc": "2.0", "id": 2, "method": "ping"})
+    out = io.StringIO()
+    mcp.serve(REPO, io.StringIO(big + "\n" + ok + "\n"), out)
+    replies = [json.loads(l) for l in out.getvalue().splitlines()]
+    assert replies[0]["error"]["code"] == -32600 and replies[1]["id"] == 2

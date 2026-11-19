@@ -65,7 +65,7 @@
 +-----------------------------------------+ +------------------------------------------+
 |               SVG RENDERER              | |              BOM GENERATOR               |
 |                                         | |                                          |
-|  - Theme Palette Injection (13)         | |  - Component Inventory Assembly          |
+|  - Theme Palette Injection (14)         | |  - Component Inventory Assembly          |
 |  - 60 Built-in Vector Icons             | |  - Metadata Attributes Table             |
 |    (icon_glyphs.py, icons/)             | |    Extraction                            |
 |  - Shape Primitives (box, etc)          | |  - Protocol Edge Connection              |

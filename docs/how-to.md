@@ -345,6 +345,58 @@ When opened in any modern browser, the SVG provides:
 
 ---
 
+## Recipe 11: Plotting Data and Drafting Views
+
+`Plot` and `Draft` draw data-space plots and engineering or anatomy figures onto a diagram. Both are covered with more options in the [user guide](user-guide.md#data-plots-and-drafting-views) and the [technical figures guide](technical-figures.md#9-plots-and-drafting-views); finished examples are in [`examples/finance/`](../examples/finance/) and [`examples/engineering/`](../examples/engineering/).
+
+```python
+from diagrams_as_code import Diagram
+from diagrams_as_code.plot import Plot
+
+with Diagram("Area under a curve", theme="paper") as d:
+    p = Plot(d, x=(0, 4), y=(0, 3), origin=(80, 300), size=(400, 240))
+    p.grid()
+    p.axes(xlabel="$x$", ylabel="$y$")
+    p.area(lambda x: x**0.5, 1, 3, fill="#DCE6F2")
+    p.function(lambda x: x**0.5, stroke="#1F2F57")
+    p.dot(2, 2**0.5, label="$(2, \\sqrt{2})$")
+
+d.render_svg("area.svg")
+```
+
+```python
+from diagrams_as_code import Diagram
+from diagrams_as_code.draft import Draft
+
+with Diagram("Bracket", theme="paper") as d:
+    k = Draft(d)
+    box = [(100, 100), (300, 100), (300, 180), (100, 180)]
+    k.outline(box)
+    k.hatch(box, angle=45, gap=7)
+    k.dimension((100, 190), (300, 190), "$200$", offset=24)
+    k.centerline((200, 80), (200, 200))
+
+d.render_svg("bracket.svg")
+```
+
+Check either with `uv run diagrams-as-code lint your_script.py` (the script must define `diagram()` for the CLI to load it).
+
+---
+
+## Recipe 12: Driving Rendering from an MCP Client
+
+```bash
+uv run diagrams-as-code mcp --root .     # stdio server; confine it to this directory
+```
+
+```json
+{"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}
+```
+
+It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Rendering imports the script, which is arbitrary Python, so every path is confined to `--root` (default: the current directory); only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
+
+---
+
 ## Troubleshooting Matrix
 
 | Problem | Root Cause | Solution |

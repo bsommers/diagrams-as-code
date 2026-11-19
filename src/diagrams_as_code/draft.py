@@ -11,7 +11,7 @@ ordinary figure content (lint, SVG and PDF output see it). Pure standard library
         k.centerline((200, 80), (200, 200))
 
 Engineering: ``dimension`` (extension lines, arrows, centred text; ``side`` picks
-which way the offset runs), ``radius_dim`` / ``diameter_dim`` (leader to a circle),
+which way the offset runs), ``radius_dim`` (leader to a circle; ``diameter=True`` for a diameter),
 ``hatch`` (section lining clipped to any polygon, even-odd so holes work),
 ``centerline`` / ``hidden_line`` (chain and dashed linework), ``section_arrows``
 (cutting-plane line with lettered arrows) and ``gdt_frame`` (feature-control frame).

@@ -1,15 +1,15 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 143 production-grade architecture, workflow and technical diagrams spanning 13 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
+This directory contains 247 example scripts: 143 production-grade architecture, workflow and technical diagrams across 13 primary domains, plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Diagrams:** 143
+- **Total Example Scripts:** 247 (143 domain diagrams, 4 top-level, 9 primitives, 11 technical, 50 textbook, 30 medical/engineering/CAD)
 - **Domains Covered:** 13 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `database`, `enterprise_architecture`, `manufacturing`, `mind_map`, `computer_science`)
 - **Diagrams per Domain:** 11 (10 manually placed + 1 auto-layout)
-- **Themes Demonstrated:** 13 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`)
+- **Themes Available:** 14 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`, `paper`); the primitives, technical, textbook, medical, engineering and CAD figures use `paper`
 - **Theme Variety per Domain:** at least 3 distinct varieties per domain
 - **Built-in Domain Vector Icons:** 60 custom open-source SVG vector icons
 - **Zero External Dependencies:** 100% Python standard library core engine execution
@@ -316,11 +316,56 @@ Eleven complete paper-style figures in the `paper` theme, each with a caption. E
 
 ---
 
-## 17. Medical, Engineering and CAD Galleries (`examples/medical/`, `engineering/`, `cad/`)
+## 16. Medical, Engineering and CAD Galleries (`examples/medical/`, `engineering/`, `cad/`)
 
 Thirty paper-style figures, ten per subject, drawn with `diagrams_as_code.draft.Draft` (dimensions, hatching, centerlines, section arrows, GD&T frames, organic outlines) and `Plot`. Values are computed by the scripts. Each lints clean; `tests/test_clinical_engineering_examples.py` checks every script and that the committed SVG matches it. The anatomy is schematic, not diagnostic.
 
-## 16. Textbook Galleries (`examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/`, `logic/`)
+### Medical (`examples/medical/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_heart_chambers.py`](medical/01_heart_chambers.py) | Anterior view of the heart: four chambers, valves and the path of blood. |
+| 02 | [`02_ecg_waveform.py`](medical/02_ecg_waveform.py) | One cardiac cycle on ECG paper with the P, QRS and T waves and the standard intervals. |
+| 03 | [`03_cardiac_cycle_wiggers.py`](medical/03_cardiac_cycle_wiggers.py) | Wiggers diagram: ECG, aortic, ventricular and atrial pressure and ventricular volume. |
+| 04 | [`04_pharmacokinetics.py`](medical/04_pharmacokinetics.py) | One-compartment pharmacokinetics: IV bolus and first-order oral absorption. |
+| 05 | [`05_dose_response.py`](medical/05_dose_response.py) | Dose-response curves from the Hill equation: E = Emax C^n / (EC50^n + C^n). |
+| 06 | [`06_neuron_action_potential.py`](medical/06_neuron_action_potential.py) | A myelinated motor neuron with the action potential recorded at one point on its axon. |
+| 07 | [`07_sir_epidemic.py`](medical/07_sir_epidemic.py) | SIR epidemic model integrated with RK4 from its differential equations. |
+| 08 | [`08_cell_cycle.py`](medical/08_cell_cycle.py) | The eukaryotic cell cycle drawn as a ring, with checkpoints and the cyclin-CDK driver. |
+| 09 | [`09_oxygen_dissociation.py`](medical/09_oxygen_dissociation.py) | Oxygen-haemoglobin dissociation curves from the Hill equation. |
+| 10 | [`10_michaelis_menten.py`](medical/10_michaelis_menten.py) | Michaelis-Menten kinetics and its Lineweaver-Burk (double-reciprocal) transform. |
+
+### Engineering (`examples/engineering/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_plate_section_view.py`](engineering/01_plate_section_view.py) | A dimensioned plate with a through hole and its half-section A-A. |
+| 02 | [`02_shaft_gdt.py`](engineering/02_shaft_gdt.py) | A stepped shaft with two geometric tolerance (GD&T) feature-control frames. |
+| 03 | [`03_beam_shear_moment.py`](engineering/03_beam_shear_moment.py) | Simply supported beam with an off-centre point load: reactions, shear and moment. |
+| 04 | [`04_truss_method_of_joints.py`](engineering/04_truss_method_of_joints.py) | A pin-jointed truss solved by the method of joints. |
+| 05 | [`05_stress_strain_curve.py`](engineering/05_stress_strain_curve.py) | Engineering stress-strain curve of a ductile alloy with the 0.2 % offset yield. |
+| 06 | [`06_mohr_circle.py`](engineering/06_mohr_circle.py) | Mohr's circle for plane stress. |
+| 07 | [`07_spur_gear_pair.py`](engineering/07_spur_gear_pair.py) | A spur gear pair: pitch circles, tooth counts, speed ratio and centre distance. |
+| 08 | [`08_otto_cycle.py`](engineering/08_otto_cycle.py) | The air-standard Otto cycle on P-v and T-s diagrams. |
+| 09 | [`09_feedback_step_response.py`](engineering/09_feedback_step_response.py) | A unity-feedback control loop and its closed-loop step response. |
+| 10 | [`10_bode_second_order.py`](engineering/10_bode_second_order.py) | Bode magnitude and phase of a second-order low-pass system. |
+
+### CAD (`examples/cad/`)
+
+| # | Script | Figure |
+|---|--------|--------|
+| 01 | [`01_third_angle_projection.py`](cad/01_third_angle_projection.py) | Third-angle orthographic projection of an L-bracket. |
+| 02 | [`02_isometric_bracket.py`](cad/02_isometric_bracket.py) | Isometric view of an L-bracket with dimensions. |
+| 03 | [`03_exploded_assembly.py`](cad/03_exploded_assembly.py) | Exploded bolted joint with numbered balloons and a parts list. |
+| 04 | [`04_fits_tolerances.py`](cad/04_fits_tolerances.py) | ISO 286 hole-basis fits for a 25 mm size: clearance, transition, interference. |
+| 05 | [`05_thread_detail.py`](cad/05_thread_detail.py) | ISO metric thread M10 x 1.5 in axial section, drawn from the standard profile. |
+| 06 | [`06_sketch_constraints.py`](cad/06_sketch_constraints.py) | A 2D parametric sketch with geometric constraints and driving dimensions. |
+| 07 | [`07_fillet_chamfer.py`](cad/07_fillet_chamfer.py) | Fillet and chamfer callouts on a hatched section. |
+| 08 | [`08_extrude_revolve_sweep.py`](cad/08_extrude_revolve_sweep.py) | Three feature operations: extrude, revolve and sweep (profile to solid). |
+| 09 | [`09_section_views.py`](cad/09_section_views.py) | Full, half and broken-out section views of a flanged bushing. |
+| 10 | [`10_title_block_border.py`](cad/10_title_block_border.py) | ISO-style drawing sheet: border, zone grid, title block, revision table and a part. |
+
+## 17. Textbook Galleries (`examples/calculus_math/`, `differential_equations/`, `physics/`, `finance/`, `logic/`)
 
 Fifty paper-style figures, ten per subject, in the `paper` theme with a caption each. The numbers in them are computed by the scripts (integration, root finding, mean-variance solving, Quine-McCluskey), not typed in. Plots are drawn with `diagrams_as_code.plot.Plot`. Each lints clean; `tests/test_textbook_examples.py` checks every script and that the committed SVG matches it.
 
@@ -404,7 +449,7 @@ Fifty paper-style figures, ten per subject, in the `paper` theme with a caption 
 To regenerate all diagrams and documentation artifacts across all domains:
 
 ```bash
-uv run diagrams-as-code render examples --out output --format svg,png,bom
+uv run diagrams-as-code render examples --out examples --format svg,png,bom
 ```
 
 To run automated verification tests across the entire gallery:

@@ -35,6 +35,16 @@ Process: one plan per phase, no separate research / plan-check / Nyquist documen
 
 ## Phase Details
 
+## After the program (released outside the phase plan)
+
+- [x] **v0.13.1** — SVG id collisions fixed (PR #23, #24).
+- [x] **v0.14.0** — five domain galleries, 55 diagrams (PR #25).
+- [x] **v0.15.0** — `Plot` kit, five textbook galleries, math markup additions (PR #26).
+- [x] **v0.16.0** — `Draft` kit, medical, engineering and CAD galleries (PR #27).
+- [x] PR #28 — rendered output colocated with scripts in `examples/`; stdlib MCP server.
+- [ ] **v0.17.0** — MCP hardening, heart figure redraw, README hero and gallery, documentation refresh. Prepared on `release/v0.17.0`.
+- [ ] Next candidates: run MCP scripts in a resource-limited subprocess (timeout, no inherited stdin or fd 1), a Docker py3.10-3.13 matrix run for v0.14-v0.17, and a lint-clean pass over the 143 domain diagrams' visual quality (rasterize and review).
+
 ### Phase 12: Baseline & Bug Fixes
 
 **Requirements:** FIX-01 … FIX-14, AUDIT-01, AUDIT-02

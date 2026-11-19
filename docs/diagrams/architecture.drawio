@@ -62,7 +62,7 @@
         <mxCell id="layer_render" value="Output Generation Layer" style="swimlane;whiteSpace=wrap;html=1;fillColor=#2E3440;strokeColor=#4C566A;fontColor=#ECEFF4;fontStyle=1;startSize=26;" vertex="1" parent="1">
           <mxGeometry x="360" y="320" width="680" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="node_svg" value="SVG Vector Renderer&#xa;(renderer_svg.py, theme.py, metrics.py)&#xa;13 Themes, Multi-line &lt;tspan&gt;, 60 Icons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#A3BE8C;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
+        <mxCell id="node_svg" value="SVG Vector Renderer&#xa;(renderer_svg.py, theme.py, metrics.py)&#xa;14 Themes, Multi-line &lt;tspan&gt;, 60 Icons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#A3BE8C;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">
           <mxGeometry x="20" y="40" width="300" height="80" as="geometry" />
         </mxCell>
         <mxCell id="node_bom" value="Living Documentation BOM&#xa;(bom.py)&#xa;Markdown Tables &amp; JSON Specifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C566A;strokeColor=#A3BE8C;fontColor=#ECEFF4;strokeWidth=2;" vertex="1" parent="layer_render">

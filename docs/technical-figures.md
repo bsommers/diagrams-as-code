@@ -1,6 +1,6 @@
 # Technical figures
 
-How to draw a precise, paper-style figure: black on white, typeset formulas, layer bands, nested panels, solids, leader lines and a caption. Eleven worked examples are in [`examples/technical/`](../examples/technical/), rendered to [`examples/technical/`](../examples/technical/).
+How to draw a precise, paper-style figure: black on white, typeset formulas, layer bands, nested panels, solids, leader lines and a caption. Eleven worked examples are in [`examples/technical/`](../examples/technical/), with the rendered SVG, PNG and BOM beside each script.
 
 | Figure | Script | Shows |
 |---|---|---|
@@ -141,6 +141,15 @@ It is drawn from the same SVG `render_svg` writes, so what you checked in sectio
 - **Fonts.** Text is set in the standard PDF fonts (Helvetica for sans, Times for serif), which every viewer supplies, so no font is embedded. Formulas are outlines and look the same everywhere. If a publisher requires every font to be embedded, convert the file with their tool of choice or use the SVG.
 - **Characters.** Latin text, Greek letters, arrows and common math signs are covered. A character outside those (CJK, emoji) is drawn as `?`, and a warning names it. Inside `$...$` every supported symbol is an outline and always works.
 - **Shadows.** Themes other than `paper` draw drop shadows; in the PDF they are approximated with translucent rings rather than a true blur.
+
+## 9. Plots and drafting views
+
+Two helper classes draw onto a `Diagram` with its own paths, polygons and text, so their output is ordinary figure content and takes part in `lint`, SVG and PDF export:
+
+- `diagrams_as_code.plot.Plot` maps data coordinates to canvas pixels: axes, grid, functions, areas, bars, slope and vector fields, phase-plane orbits, candlesticks and legends. See the textbook galleries in [`examples/calculus_math/`](../examples/calculus_math/), [`examples/differential_equations/`](../examples/differential_equations/), [`examples/physics/`](../examples/physics/), [`examples/finance/`](../examples/finance/) (the [`logic`](../examples/logic/) gallery is built from shapes and edges instead).
+- `diagrams_as_code.draft.Draft` works in canvas pixels: dimensions, section hatching, centre and hidden lines, section arrows, GD&T frames, leaders and organic outlines. See [`examples/engineering/`](../examples/engineering/), [`examples/cad/`](../examples/cad/) and [`examples/medical/`](../examples/medical/).
+
+Short examples of both are in the [user guide](user-guide.md#data-plots-and-drafting-views).
 
 ## Limits to know about
 

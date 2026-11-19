@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "0.15.0",
+  "version": "0.17.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-11-15T00:00:00Z",
+  "last_updated": "2026-11-19T00:00:00Z",
   "summary": {
-    "total_capabilities": 21,
-    "operational": 21,
+    "total_capabilities": 25,
+    "operational": 25,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -23,7 +23,8 @@
       "Domain Reference Architectures",
       "Technical Drawing Primitives",
       "Technical Figures & Visual Regression",
-      "Vector PDF Export"
+      "Vector PDF Export",
+      "Model Context Protocol Server"
     ]
   },
   "quick_answers": {
@@ -339,6 +340,17 @@
       "classes": ["svg_to_pdf", "PDFExportError"],
       "details": "One-page vector PDF written with the standard library alone, at 0.75 pt per px, drawn from the SVG the renderer writes so the two match: paths, fills, dashes, arrowheads, opacity, text and math. Text uses the standard PDF fonts with nothing embedded; math is outlines; drop shadows are approximated with translucent rings. `diagrams-as-code render --format pdf` writes it from the command line.",
       "verification": "uv run pytest tests/test_pdf.py"
+    },
+    {
+      "id": "CAP-MCP-SERVER",
+      "name": "MCP Server",
+      "category": "Model Context Protocol Server",
+      "status": "OPERATIONAL",
+      "target_release": "v0.17.0",
+      "python_api": "diagrams_as_code.mcp.serve",
+      "classes": ["Server", "serve", "ToolError"],
+      "details": "A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18), started with `diagrams-as-code mcp [--root DIR]`. Tools: list_examples, render, lint, list_themes, list_icons. Script and output paths are confined to --root (symlinks re-resolved, script-chosen output names must be plain stems), messages are size-capped, malformed input never ends the session, and errors do not leak absolute paths. Rendering executes the diagram script, which is arbitrary Python: this is path confinement, not a sandbox, so point --root only at trusted content or run the server in a container.",
+      "verification": "uv run pytest tests/test_mcp.py"
     }
   ]
 }

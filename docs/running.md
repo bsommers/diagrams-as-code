@@ -62,13 +62,16 @@ uv run python examples/ai/01_simple_rag_pipeline.py
 uv run python examples/cybersecurity/09_iam_federation_saml_oidc.py
 ```
 
-The three top-level examples recreate the original IIoT reference diagrams:
+The four top-level `examples/0*.py` scripts are the original IIoT reference diagrams and the curves-and-fillets demo:
 
 ```bash
 uv run python examples/01_mockup_slide.py
 uv run python examples/02_high_availability.py
 uv run python examples/03_sparkplug_pipeline.py
+uv run python examples/04_curves_and_fillets.py
 ```
+
+Every example writes its SVG, PNG and BOM next to the script (for instance `examples/cloud/01_simple_vpc_web.svg`); there is no separate `output/` directory.
 
 ### 3.3 Batch Regenerate the Gallery
 
@@ -87,9 +90,9 @@ at locally).
 Installed as a console script (`uv run diagrams-as-code ...`), and also
 runnable as `uv run python -m diagrams_as_code ...`.
 
-**`render PATH... [--out DIR] [--format FORMATS] [--theme THEME] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
+**`render PATH... [--out DIR] [--format FORMATS] [--theme THEME] [--interactive | --no-interactive] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
 
-Renders one or more scripts, or every `diagram()`-defining script found by
+Renders one or more scripts into `--out` (default `examples/`), or every `diagram()`-defining script found by
 recursively scanning a directory. `--format` is a comma-separated subset of
 `svg,png,pdf,bom`; it defaults to `svg,bom` because those two are the
 byte-comparable, git-tracked artifacts — PNG bytes vary slightly by backend
@@ -98,6 +101,10 @@ vector PDF beside the SVG; it needs no extra software and is also opt-in. `--the
 `--layout`, `--direction`, and `--layout-file` override the script's own
 `Diagram(...)` settings for this render only. `--debug` prints full
 tracebacks for scripts that fail to load or render.
+
+**`lint PATH... [--ignore KIND[,KIND]] [--quiet] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
+
+Lays out each diagram and reports visual defects (a line through a node, overlapping labels, text that does not fit), one per line as `script: kind: detail`. Exits `1` if anything is found. Example: `uv run diagrams-as-code lint examples`.
 
 **`layout export SCRIPT [-o FILE] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
 
@@ -113,6 +120,10 @@ Lists every built-in theme name, one per line.
 
 Lists every built-in icon as `name<TAB>domain<TAB>description`; `--domain`
 filters to one domain.
+
+**`mcp [--root DIR]`**
+
+Serves render, lint and listing tools over stdio for MCP clients (see [§7](#7-driving-it-from-an-mcp-client)).
 
 **Exit codes:** `0` success; `1` one or more scripts failed to load, render,
 or write (each failure is reported, and the command continues with the
@@ -177,13 +188,13 @@ The `diagrams-as-code` CLI (§3.4) returns:
 
 `uv run pytest` follows the ordinary pytest convention: `0` all tests passed, `1` at least one test failed.
 
-## Driving it from an MCP client
+## 7. Driving it from an MCP client
 
 `diagrams-as-code mcp [--root DIR]` serves five tools over stdio (JSON-RPC, MCP 2025-06-18):
-`list_examples`, `render`, `lint`, `list_themes`, `list_icons`. They map one-to-one onto the CLI
+`list_examples` (optional `path`, `domain`), `render` (`path`, optional `out`, `formats`, `theme`), `lint` (`path`, optional `ignore`), `list_themes` and `list_icons` (optional `domain`). They map onto the CLI
 (`render`, `lint`, `themes`, `icons`) and the Python API (`render_all`, `audit_findings`).
-`render` writes beside the script unless `out` is given. Because rendering runs the script,
-all paths are confined to `--root` (default: the current directory).
+`render` writes beside the script unless `out` is given. Because rendering imports the script, which is arbitrary Python,
+all script and output paths are confined to `--root` (default: the current directory); run it only over scripts you trust.
 
 ```json
 {"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}

@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-16 (v0.15.0)  
+**Last Updated:** 2026-11-19 (v0.17.0)  
 
 ---
 
@@ -290,3 +290,13 @@
 - **CLI:** `diagrams-as-code render PATH... --format pdf`
 - **Features:** One-page vector PDF written with the standard library alone, at 0.75 pt per px. It is drawn from the SVG the renderer writes, so paths, fills, dashes, arrowheads, opacity, text and math match the SVG. Text uses the standard PDF fonts (nothing embedded); math is outlines. SVG the writer does not understand raises `PDFExportError`. Drop shadows are approximated with translucent rings.
 - **Verification:** `uv run pytest tests/test_pdf.py`
+
+### 2.19 Model Context Protocol Server
+
+#### `CAP-MCP-SERVER`: MCP Server
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.17.0`
+- **Python API:** `diagrams_as_code.mcp.serve(root)`, `Server`
+- **CLI:** `diagrams-as-code mcp [--root DIR]`
+- **Features:** A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18) exposing `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Script and output paths are confined to `--root` (symlinks are re-resolved, a script-chosen output name must be a plain stem, existing symlinked outputs are refused); messages over 1 MiB and results over 200k characters are cut off; a malformed message never ends the session; error text does not carry the absolute root path. Rendering runs the diagram script, which is arbitrary Python: this is path confinement, not a sandbox, so use a trusted `--root` or run the server in a container.
+- **Verification:** `uv run pytest tests/test_mcp.py`

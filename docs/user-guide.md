@@ -12,10 +12,12 @@ A task-oriented guide to writing diagrams as Python code and rendering them to S
 - [Edges and routing](#edges-and-routing)
 - [Text, markup and math](#text-markup-and-math)
 - [Technical drawing primitives](#technical-drawing-primitives)
+- [Data plots and drafting views](#data-plots-and-drafting-views)
 - [Themes](#themes)
 - [Icons](#icons)
 - [Outputs and the BOM](#outputs-and-the-bom)
 - [Command-line interface](#command-line-interface)
+- [MCP server](#mcp-server)
 - [Troubleshooting](#troubleshooting)
 
 ## Concepts
@@ -176,6 +178,46 @@ Annotations are not components, so none of these appear in the BOM.
 
 For putting these together into a whole figure, and for checking it with `lint` and golden images, see [Technical figures](technical-figures.md) and the eleven figures in [`examples/technical/`](../examples/technical/).
 
+## Data plots and drafting views
+
+Two helpers draw onto a `Diagram` with its own paths and text, so their output is ordinary figure content: it is linted, and exported to SVG and PDF, like anything else. Neither adds BOM entries.
+
+**`Plot`** maps data coordinates to pixels: axes, grids, functions, areas, bars, slope and vector fields, orbits and legends (`p.px(x, y)` converts a data point to canvas pixels, for placing text).
+
+```python
+from diagrams_as_code import Diagram
+from diagrams_as_code.plot import Plot
+
+with Diagram("Area under a curve", theme="paper") as d:
+    p = Plot(d, x=(0, 4), y=(0, 3), origin=(80, 300), size=(400, 240))
+    p.grid()
+    p.axes(xlabel="$x$", ylabel="$y$")
+    p.area(lambda x: x**0.5, 1, 3, fill="#DCE6F2")
+    p.function(lambda x: x**0.5, stroke="#1F2F57")
+    p.dot(2, 2**0.5, label="$(2, \\sqrt{2})$")
+
+d.render_svg("area.svg")
+```
+
+**`Draft`** works in canvas pixels: dimensions, section hatching, centre and hidden lines, section arrows, GD&T frames, leader lines and organic outlines.
+
+```python
+from diagrams_as_code import Diagram
+from diagrams_as_code.draft import Draft
+
+with Diagram("Bracket", theme="paper") as d:
+    k = Draft(d)
+    box = [(100, 100), (300, 100), (300, 180), (100, 180)]
+    k.outline(box)
+    k.hatch(box, angle=45, gap=7)
+    k.dimension((100, 190), (300, 190), "$200$", offset=24)
+    k.centerline((200, 80), (200, 200))
+
+d.render_svg("bracket.svg")
+```
+
+Worked galleries: [`examples/calculus_math/`](../examples/calculus_math/), [`differential_equations/`](../examples/differential_equations/), [`physics/`](../examples/physics/) and [`finance/`](../examples/finance/) use `Plot`; [`engineering/`](../examples/engineering/), [`cad/`](../examples/cad/) and [`medical/`](../examples/medical/) use `Draft` and `Plot`. See [Technical figures](technical-figures.md#9-plots-and-drafting-views).
+
 ## Themes
 
 Fourteen built-in themes:
@@ -223,6 +265,7 @@ diagrams-as-code lint PATH... [--ignore KIND[,KIND]] [--quiet] [--layout ...] [-
 diagrams-as-code layout export SCRIPT [-o FILE] [--layout ...] [--direction ...] [--layout-file ...] [--debug]
 diagrams-as-code themes
 diagrams-as-code icons [--domain DOMAIN]
+diagrams-as-code mcp [--root DIR]
 ```
 
 - `--format` defaults to `svg,bom`; PNG is opt-in because its bytes vary by backend, and PDF is opt-in (`--format svg,pdf`).
@@ -232,6 +275,20 @@ diagrams-as-code icons [--domain DOMAIN]
 - Exit codes: `0` success, `1` one or more scripts failed (the rest still run), `2` usage error.
 
 Full reference: [running.md](running.md#34-the-diagrams-as-code-command).
+
+## MCP server
+
+An MCP client (an editor or agent) can list, render and lint example scripts through `diagrams-as-code mcp`.
+
+```bash
+uv run diagrams-as-code mcp --root .     # stdio server; confine it to this directory
+```
+
+```json
+{"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}
+```
+
+It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Rendering imports the script, which is arbitrary Python, so every path is confined to `--root` (default: the current directory); only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
 
 ## Troubleshooting
 
