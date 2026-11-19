@@ -63,7 +63,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     render = sub.add_parser("render", help="render scripts or directories of scripts")
     render.add_argument("paths", nargs="+", type=Path, metavar="PATH")
-    render.add_argument("--out", type=Path, default=Path("output"))
+    render.add_argument("--out", type=Path, default=Path("examples"))
     render.add_argument(
         "--format",
         type=_formats,

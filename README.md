@@ -144,7 +144,7 @@ shape and group from the edge structure. Render it (and any script) from the
 command line:
 
 ```bash
-uv run diagrams-as-code render my_diagram.py --out output
+uv run diagrams-as-code render my_diagram.py --out examples
 ```
 
 ### 4. Run and Verify

@@ -73,7 +73,7 @@ uv run python examples/03_sparkplug_pipeline.py
 ### 3.3 Batch Regenerate the Gallery
 
 ```bash
-uv run diagrams-as-code render examples --out output --format svg,png,bom
+uv run diagrams-as-code render examples --out examples --format svg,png,bom
 ```
 
 This scans `examples/` for every script that defines `diagram()`, renders each
