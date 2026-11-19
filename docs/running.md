@@ -45,9 +45,9 @@ uv add git+https://github.com/bsommers/diagrams-as-code.git
 uv run python main.py
 ```
 This generates:
-- `output/main_architecture.svg`
-- `output/main_architecture.png`
-- `output/main_architecture_README.md`
+- `examples/main_architecture.svg`
+- `examples/main_architecture.png`
+- `examples/main_architecture_README.md`
 
 ### 3.2 Run Any Domain Architecture Example
 
@@ -77,7 +77,7 @@ uv run diagrams-as-code render examples --out output --format svg,png,bom
 ```
 
 This scans `examples/` for every script that defines `diagram()`, renders each
-into its domain subdirectory under `output/`, and writes all three formats
+into its domain subdirectory under `examples/`, and writes all three formats
 (the default `--format` is `svg,bom`; `png` is added explicitly here since
 PNG bytes are excluded from the batch's tracked comparison but useful to look
 at locally).
@@ -176,3 +176,15 @@ The `diagrams-as-code` CLI (§3.4) returns:
 | `2` | Command-line usage error: unknown flag or missing subcommand. |
 
 `uv run pytest` follows the ordinary pytest convention: `0` all tests passed, `1` at least one test failed.
+
+## Driving it from an MCP client
+
+`diagrams-as-code mcp [--root DIR]` serves five tools over stdio (JSON-RPC, MCP 2025-06-18):
+`list_examples`, `render`, `lint`, `list_themes`, `list_icons`. They map one-to-one onto the CLI
+(`render`, `lint`, `themes`, `icons`) and the Python API (`render_all`, `audit_findings`).
+`render` writes beside the script unless `out` is given. Because rendering runs the script,
+all paths are confined to `--root` (default: the current directory).
+
+```json
+{"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}
+```

@@ -43,9 +43,9 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/finance") -> Path:
+def build_diagram(output_dir: Path | str = "examples/finance") -> Path:
     return render_all(diagram(), output_dir, "04_yield_curve")["svg"]
 
 
 if __name__ == "__main__":
-    build_diagram(Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/finance"))
+    build_diagram(Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/finance"))

@@ -117,10 +117,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/physics") -> Path:
+def build_diagram(output_dir: Path | str = "examples/physics") -> Path:
     return render_all(diagram(), output_dir, "01_free_body_incline")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/physics")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/physics")
     build_diagram(dest)

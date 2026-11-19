@@ -42,7 +42,7 @@ Python 3.10 to 3.13 are exercised in CI. Docker is optional: `./docker-build-n-r
 | `examples/` | Runnable diagram scripts, grouped by domain (ai, business_process, cloud, computer, computer_science, cybersecurity, database, datacenter, enterprise_architecture, iiot, manufacturing, mind_map, network_engineering) |
 | `icons/` | Source SVG icons, `icons.yaml` and `icons.csv` catalogs |
 | `tools/` | `generate_icons.py`, `eval_bezier.py`, `audit_gallery.py` (visual defect ratchet), `golden_images.py` (golden pictures of the technical figures), `generate_text_data.py` |
-| `output/` | Committed reference renders; must not drift |
+| `examples/` | Committed reference renders; must not drift |
 | `tests/` | pytest suite, including module-boundary and repo-hygiene checks |
 | `docs/` | Living documentation; `docs/plans`, `docs/reviews` and `docs/superpowers` are historical working notes |
 | `legacy/` | Archived prototypes; do not build on them |
@@ -67,7 +67,7 @@ uv run python tools/generate_icons.py --check   # icons match their catalog
 uv run python tools/audit_gallery.py --check    # visual defect counts have not risen
 uv run diagrams-as-code lint examples           # the same checks, each finding named
 uv run python tools/golden_images.py --check   # technical figures match their golden images
-git diff --exit-code -- output/ icons/ README.md docs/   # must produce no diff
+git diff --exit-code -- examples/ icons/ README.md docs/   # must produce no diff
 ```
 
 Do not push WIP or intermediate commits; batch work and push only green changesets. Planning notes and agent files do not trigger CI (`paths-ignore` in `.github/workflows/`).
@@ -92,7 +92,7 @@ Rationale and invariants: [architecture.md](architecture.md#6-key-architectural-
 
 ## Generated artifacts
 
-`output/*.svg`, `output/*_README.md`, `icons/icons.csv` and `icons/README.md` are generated. Regenerate them with `uv run python main.py` and `tools/generate_icons.py`; never hand-edit. PNG output is opt-in and not byte-compared because backends differ.
+`examples/*.svg`, `examples/*_README.md`, `icons/icons.csv` and `icons/README.md` are generated. Regenerate them with `uv run python main.py` and `tools/generate_icons.py`; never hand-edit. PNG output is opt-in and not byte-compared because backends differ.
 
 ## Documentation sync
 

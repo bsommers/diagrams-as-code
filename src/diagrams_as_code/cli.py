@@ -1,4 +1,4 @@
-"""Command-line interface: ``diagrams-as-code render|lint|layout export|themes|icons``."""
+"""Command-line interface: ``diagrams-as-code render|lint|layout export|mcp|themes|icons``."""
 from __future__ import annotations
 
 import argparse
@@ -107,6 +107,10 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("script", type=Path)
     export.add_argument("-o", "--output", type=Path)
     _add_layout_flags(export)
+
+    mcp = sub.add_parser("mcp", help="serve render/lint/list tools over MCP (stdio)")
+    mcp.add_argument("--root", type=Path, default=Path("."),
+                     help="directory scripts and outputs are confined to (default: .)")
 
     sub.add_parser("themes", help="list built-in themes")
     icons = sub.add_parser("icons", help="list built-in icons")
@@ -325,6 +329,10 @@ def main(argv: Optional[list[str]] = None) -> int:
         return _lint(args)
     if args.command == "layout":
         return _layout_export(args)
+    if args.command == "mcp":
+        from diagrams_as_code.mcp import serve  # late: mcp imports this module
+
+        return serve(args.root)
     if args.command == "themes":
         print("\n".join(list_themes()))
         return 0

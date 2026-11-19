@@ -99,10 +99,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/computer_science") -> Path:
+def build_diagram(output_dir: Path | str = "examples/computer_science") -> Path:
     return render_all(diagram(), output_dir, "03_merge_sort_recursion")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/computer_science")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/computer_science")
     build_diagram(dest)

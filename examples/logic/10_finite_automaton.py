@@ -151,10 +151,10 @@ def _circle_box(cx: float, cy: float, r: float) -> list[Point]:
     return [(cx + r * math.cos(math.tau * k / 48), cy + r * math.sin(math.tau * k / 48)) for k in range(48)]
 
 
-def build_diagram(output_dir: Path | str = "output/logic") -> Path:
+def build_diagram(output_dir: Path | str = "examples/logic") -> Path:
     return render_all(diagram(), output_dir, "10_finite_automaton")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/logic")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/logic")
     build_diagram(dest)

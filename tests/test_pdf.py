@@ -20,8 +20,8 @@ from diagrams_as_code.pdf import ATTRIBUTES, ELEMENTS, PX_TO_PT
 from diagrams_as_code.text import text_width
 
 REPO = Path(__file__).resolve().parent.parent
-GALLERY = sorted((REPO / "output").rglob("*.svg"))
-TECHNICAL = sorted((REPO / "output" / "technical").glob("*.svg"))
+GALLERY = sorted((REPO / "examples").rglob("*.svg"))
+TECHNICAL = sorted((REPO / "examples" / "technical").glob("*.svg"))
 
 
 def _svg(body: str, width: float = 200, height: float = 100, defs: str = "") -> str:

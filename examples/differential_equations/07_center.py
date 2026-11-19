@@ -100,10 +100,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/differential_equations") -> Path:
+def build_diagram(output_dir: Path | str = "examples/differential_equations") -> Path:
     return render_all(diagram(), output_dir, NAME)["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/differential_equations")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/differential_equations")
     build_diagram(dest)

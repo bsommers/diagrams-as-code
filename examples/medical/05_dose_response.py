@@ -57,9 +57,9 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/medical") -> Path:
+def build_diagram(output_dir: Path | str = "examples/medical") -> Path:
     return render_all(diagram(), output_dir, "05_dose_response")["svg"]
 
 
 if __name__ == "__main__":
-    build_diagram(Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/medical"))
+    build_diagram(Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/medical"))

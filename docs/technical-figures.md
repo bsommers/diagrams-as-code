@@ -1,6 +1,6 @@
 # Technical figures
 
-How to draw a precise, paper-style figure: black on white, typeset formulas, layer bands, nested panels, solids, leader lines and a caption. Eleven worked examples are in [`examples/technical/`](../examples/technical/), rendered to [`output/technical/`](../output/technical/).
+How to draw a precise, paper-style figure: black on white, typeset formulas, layer bands, nested panels, solids, leader lines and a caption. Eleven worked examples are in [`examples/technical/`](../examples/technical/), rendered to [`examples/technical/`](../examples/technical/).
 
 | Figure | Script | Shows |
 |---|---|---|

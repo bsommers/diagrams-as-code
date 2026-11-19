@@ -68,10 +68,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/database") -> Path:
+def build_diagram(output_dir: Path | str = "examples/database") -> Path:
     return render_all(diagram(), output_dir, "05_cdc_pipeline")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/database")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/database")
     build_diagram(dest)
