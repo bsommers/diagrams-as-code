@@ -78,7 +78,7 @@ jobs:
           # commit's engine emits; both are byte-identical across Python
           # 3.10-3.13. Rendered PNGs are gitignored and so never appear here:
           # their bytes depend on which rasterizer backend is installed.
-          git diff --exit-code -- output/
+          git diff --exit-code -- examples/
 
   docker:
     name: Docker Container Build & Run
@@ -107,4 +107,4 @@ jobs:
 
       - name: Verify container output matches committed artifacts
         # The container runs as root, so mark the workspace safe for git.
-        run: git -c safe.directory='*' diff --exit-code -- output/
+        run: git -c safe.directory='*' diff --exit-code -- examples/

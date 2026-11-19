@@ -62,10 +62,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/engineering") -> Path:
+def build_diagram(output_dir: Path | str = "examples/engineering") -> Path:
     return render_all(diagram(), output_dir, "01_plate_section_view")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/engineering")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/engineering")
     build_diagram(dest)

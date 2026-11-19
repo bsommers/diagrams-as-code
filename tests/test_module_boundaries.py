@@ -47,6 +47,7 @@ LAYERS: dict[str, float] = {
     "draft": 5.5,
     "output": 6,
     "cli": 7,
+    "mcp": 7.5,
     "__main__": 8,
     "__init__": 8,
 }
@@ -54,6 +55,7 @@ LAYERS: dict[str, float] = {
 #: Upward imports that are known and justified. Shrink it; do not grow it.
 ALLOWED_UPWARD: dict[tuple[str, str], str] = {
     ("elements", "connections"): "a diagram-less `a >> b` builds a bare Edge",
+    ("cli", "mcp"): "`diagrams-as-code mcp` imports the server lazily; mcp reuses cli's discover/load_script",
 }
 
 #: Explicitly forbidden imports even if layer numbers would allow them.

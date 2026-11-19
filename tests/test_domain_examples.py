@@ -75,7 +75,7 @@ def test_example_diagram_execution(script_path: Path) -> None:
 
     domain = script_path.parent.name
     stem = script_path.stem
-    output_dir = REPO_ROOT / "output" / domain
+    output_dir = REPO_ROOT / "examples" / domain
 
     svg_file = output_dir / f"{stem}.svg"
     png_file = output_dir / f"{stem}.png"

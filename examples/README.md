@@ -1,6 +1,6 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 143 production-grade architecture, workflow and technical diagrams spanning 13 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `output/<domain>/`.
+This directory contains 143 production-grade architecture, workflow and technical diagrams spanning 13 primary domains, built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
 
 ---
 

@@ -40,7 +40,7 @@ This project uses [`uv`](https://docs.astral.sh/uv/) for everything.
 git clone https://github.com/bsommers/diagrams-as-code
 cd diagrams-as-code
 uv sync
-uv run python main.py        # renders the reference architecture into output/
+uv run python main.py        # renders the reference architecture into examples/
 ```
 
 Your own script:

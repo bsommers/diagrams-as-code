@@ -189,7 +189,7 @@
 - **Target Release:** `v0.1.0`
 - **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`, `examples/iiot`, `examples/database`, `examples/enterprise_architecture`, `examples/manufacturing`, `examples/mind_map`, `examples/computer_science`)
 - **Exports:** 143 self-contained executable diagram scripts and documentation artifacts
-- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 13 presets, automated SVG and Markdown BOM generation in `output/`, and gallery documentation in `examples/README.md`.
+- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 13 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`.
 - **Verification:** `uv run pytest tests/test_domain_examples.py`
 
 ---

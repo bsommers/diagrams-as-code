@@ -115,10 +115,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/cad") -> Path:
+def build_diagram(output_dir: Path | str = "examples/cad") -> Path:
     return render_all(diagram(), output_dir, "06_sketch_constraints")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/cad")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/cad")
     build_diagram(dest)

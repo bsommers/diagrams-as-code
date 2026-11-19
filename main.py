@@ -104,7 +104,7 @@ def diagram() -> Diagram:
     return diag
 
 
-def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
+def generate_main_architecture(output_dir: Path | str = "examples") -> Diagram:
     diag = diagram()
     for path in render_all(diag, output_dir, OUTPUT_STEM, readme_name="main_README.md").values():
         print(f"Generated: {path}")
@@ -112,7 +112,7 @@ def generate_main_architecture(output_dir: Path | str = "output") -> Diagram:
 
 
 def main() -> int:
-    out_dir = sys.argv[1] if len(sys.argv) > 1 else "output"
+    out_dir = sys.argv[1] if len(sys.argv) > 1 else "examples"
     generate_main_architecture(out_dir)
     return 0
 

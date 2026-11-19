@@ -44,6 +44,6 @@ def test_figure_builds_cleanly(script: Path, tmp_path: Path):
 
 @pytest.mark.parametrize("script", SCRIPTS, ids=lambda p: f"{p.parent.name}/{p.stem}")
 def test_committed_output_matches_the_script(script: Path):
-    committed = REPO / "output" / script.parent.name / f"{script.stem}.svg"
-    assert committed.exists(), f"run `uv run python {script.relative_to(REPO)} output/{script.parent.name}`"
+    committed = REPO / "examples" / script.parent.name / f"{script.stem}.svg"
+    assert committed.exists(), f"run `uv run python {script.relative_to(REPO)} examples/{script.parent.name}`"
     assert committed.read_text(encoding="utf-8") == _load(script).diagram().render_svg()

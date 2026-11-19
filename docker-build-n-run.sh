@@ -8,4 +8,4 @@ echo "Generating diagrams via Docker container..."
 mkdir -p output
 docker run --rm -v "$(pwd)/output:/app/output" iiot-diagrams:latest
 
-echo "Diagram generation complete. Artifacts written to ./output/"
+echo "Diagram generation complete. Artifacts written to ./examples/"

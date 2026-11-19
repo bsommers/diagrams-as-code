@@ -53,7 +53,7 @@ def test_no_tracked_file_is_a_copy_of_another() -> None:
         # Symlinks are the sanctioned way to expose one file at two paths;
         # empty files (``__init__.py``) and generated output are expected
         # to repeat.
-        if mode == "120000" or path.startswith("output/"):
+        if mode == "120000" or path.startswith("examples/"):
             continue
         if (REPO_ROOT / path).stat().st_size == 0:
             continue

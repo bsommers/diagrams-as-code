@@ -35,7 +35,7 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 
 ## Reference Architecture Preview
 
-![Reference Architecture](output/main_architecture.svg)
+![Reference Architecture](examples/main_architecture.svg)
 
 ---
 
@@ -67,7 +67,7 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 
 ## 13 Domains Gallery
 
-Explore 143 fully implemented diagrams in [`examples/`](examples/README.md) and [`output/`](output/):
+Explore 143 fully implemented diagrams in [`examples/`](examples/README.md) and [`examples/`](examples/):
 
 | Domain | Focus & Architectures | Key Built-in Icons |
 |---|---|---|
@@ -122,10 +122,10 @@ with Diagram("Zero Trust Microservices", theme="nord") as diag:
     api >> diag.edge("Verify Token") >> auth
 
 # Render vector SVG, high-DPI PNG, vector PDF, and Bill of Materials
-diag.render_svg("output/quickstart.svg")
-diag.render_png("output/quickstart.png")
-diag.render_pdf("output/quickstart.pdf")
-diag.generate_readme("output/quickstart.svg", "output/quickstart_README.md")
+diag.render_svg("examples/quickstart.svg")
+diag.render_png("examples/quickstart.png")
+diag.render_pdf("examples/quickstart.pdf")
+diag.generate_readme("examples/quickstart.svg", "examples/quickstart_README.md")
 ```
 
 ### 3. Or Let the Engine Lay It Out
@@ -144,7 +144,7 @@ shape and group from the edge structure. Render it (and any script) from the
 command line:
 
 ```bash
-uv run diagrams-as-code render my_diagram.py --out output
+uv run diagrams-as-code render my_diagram.py --out examples
 ```
 
 ### 4. Run and Verify

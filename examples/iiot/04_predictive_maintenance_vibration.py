@@ -39,10 +39,10 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/iiot") -> Path:
+def build_diagram(output_dir: Path | str = "examples/iiot") -> Path:
     return render_all(diagram(), output_dir, "04_predictive_maintenance_vibration")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/iiot")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/iiot")
     build_diagram(dest)

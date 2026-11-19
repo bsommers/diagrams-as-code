@@ -66,9 +66,9 @@ def diagram() -> Diagram:
     return diag
 
 
-def build_diagram(output_dir: Path | str = "output/calculus_math") -> Path:
+def build_diagram(output_dir: Path | str = "examples/calculus_math") -> Path:
     return render_all(diagram(), output_dir, NAME)["svg"]
 
 
 if __name__ == "__main__":
-    build_diagram(Path(sys.argv[1]) if len(sys.argv) > 1 else Path("output/calculus_math"))
+    build_diagram(Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/calculus_math"))
