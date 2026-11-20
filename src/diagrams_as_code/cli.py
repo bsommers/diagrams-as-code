@@ -63,7 +63,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     render = sub.add_parser("render", help="render scripts or directories of scripts")
     render.add_argument("paths", nargs="+", type=Path, metavar="PATH")
-    render.add_argument("--out", type=Path, default=Path("examples"))
+    render.add_argument(
+        "--out", type=Path, default=None,
+        help="output directory (default: beside each script)",
+    )
     render.add_argument(
         "--format",
         type=_formats,
@@ -219,7 +222,7 @@ def _missing_layout_file(args: argparse.Namespace) -> bool:
 
 
 def _render(args: argparse.Namespace) -> int:
-    if args.out.is_file():
+    if args.out is not None and args.out.is_file():
         print(f"error: --out: {args.out} is an existing file, not a directory", file=sys.stderr)
         return 2
     if _missing_layout_file(args):
@@ -238,7 +241,8 @@ def _render(args: argparse.Namespace) -> int:
     for script, subdir in scripts:
         try:
             diag, stem = load_script(script)
-            target = args.out / subdir / stem
+            out_dir = script.parent if args.out is None else args.out / subdir
+            target = out_dir / stem
             if target in written_by:
                 raise ValueError(
                     f"output {target}.* was already written by {written_by[target]}; "
@@ -246,7 +250,7 @@ def _render(args: argparse.Namespace) -> int:
                 )
             written_by[target] = script
             _configure(diag, args, theme=args.theme)
-            for written in render_all(diag, args.out / subdir, stem, args.format).values():
+            for written in render_all(diag, out_dir, stem, args.format).values():
                 print(f"wrote {written}")
         except Exception as exc:  # report and continue with the next script
             _report(script, exc, args.debug)

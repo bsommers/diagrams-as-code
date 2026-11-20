@@ -76,7 +76,7 @@ Every example writes its SVG, PNG and BOM next to the script (for instance `exam
 ### 3.3 Batch Regenerate the Gallery
 
 ```bash
-uv run diagrams-as-code render examples --out examples --format svg,png,bom
+uv run diagrams-as-code render examples --format svg,png,bom
 ```
 
 This scans `examples/` for every script that defines `diagram()`, renders each
@@ -92,7 +92,7 @@ runnable as `uv run python -m diagrams_as_code ...`.
 
 **`render PATH... [--out DIR] [--format FORMATS] [--theme THEME] [--interactive | --no-interactive] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
 
-Renders one or more scripts into `--out` (default `examples/`), or every `diagram()`-defining script found by
+Renders one or more scripts into `--out` (default: beside each script), or every `diagram()`-defining script found by
 recursively scanning a directory. `--format` is a comma-separated subset of
 `svg,png,pdf,bom`; it defaults to `svg,bom` because those two are the
 byte-comparable, git-tracked artifacts — PNG bytes vary slightly by backend
