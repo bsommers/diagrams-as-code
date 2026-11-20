@@ -18,7 +18,7 @@ Traditional architecture diagramming tools present substantial friction to moder
 - **Living Documentation & BOM Generation**: Diagrams automatically yield structured Bill of Materials (BOM) in both Markdown table format and machine-readable JSON schemas, documenting component inventories, hardware specifications, protocols, and metadata alongside the visual graphic.
 - **Fluent Pythonic Domain-Specific Language (DSL)**: Clean context-manager syntax (`with Diagram(...) as diag:`, `with diag.group(...) as g:`) with intuitive operator overloads (`shape_a >> diag.edge("Protocol") >> shape_b`).
 - **Deterministic Geometric Solving**: Decouples shape instantiation from placement. Elements can be anchored absolutely, positioned relatively (`right_of`, `below`, `above`, `left_of`), or flow-arranged within hierarchically auto-bounding groups.
-- **Production Visual Polish**: Built-in 13 dark, light, and accessibility themes with automatic contrast ratio calculation, 60 custom SVG vector icons, anti-spill multi-line text wrapping (`<tspan>`), and text-below-graphic layout options.
+- **Production Visual Polish**: Built-in 14 dark, light, and accessibility themes with automatic contrast ratio calculation, 60 custom SVG vector icons, anti-spill multi-line text wrapping (`<tspan>`), and text-below-graphic layout options.
 
 ---
 
@@ -33,5 +33,8 @@ All user-supplied strings (element identifiers, labels, metadata attributes, and
 ### 3. File System Boundaries & Hermetic Execution
 Local icon loading (`ShapeLibrary.load_icon_file` and `load_icons_from_directory`) restricts reads to specified SVG file paths and validates XML root elements before registration. All diagram generation runs hermetically within the designated repository or build container.
 
-### 4. Supply Chain Security
+### 4. The MCP Server Runs Scripts
+`diagrams-as-code mcp [--root DIR]` lets an MCP client list, render and lint example scripts. Rendering a script means importing it, which is arbitrary Python, so the server is exactly as trustworthy as the scripts under its root. Every script and output path is confined to `--root` (default: the current directory); point it at a directory you would be willing to `python` yourself. It is a stdlib-only stdio server and opens no network port.
+
+### 5. Supply Chain Security
 With zero external runtime dependencies (`dependencies = []` in `pyproject.toml`), the attack surface from third-party supply chain compromise is minimized. Virtual environments, development packages, and test suites are strictly pinned and isolated via [`uv`](https://docs.astral.sh/uv/).

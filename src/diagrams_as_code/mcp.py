@@ -25,6 +25,8 @@ from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import list_themes
 
 PROTOCOL_VERSION = "2025-06-18"
+MAX_LINE = 1 << 20  # bytes of one JSON-RPC message
+MAX_RESULT_CHARS = 200_000
 try:
     _VERSION = metadata.version("diagrams-as-code")
 except metadata.PackageNotFoundError:  # running from a bare checkout
@@ -39,7 +41,7 @@ class ToolError(Exception):
 def _inside(root: Path, raw: str, what: str) -> Path:
     path = (root / raw).resolve()
     if path != root and root not in path.parents:
-        raise ToolError(f"{what} {raw!r} is outside the server root {root}")
+        raise ToolError(f"{what} {raw!r} is outside the server root")
     return path
 
 
@@ -48,17 +50,35 @@ def _scripts(root: Path, raw: str) -> list[Path]:
     if not target.exists():
         raise ToolError(f"{raw!r} does not exist")
     errors: list = []
-    found = [s for s, _ in discover([target], errors)]
+    # A symlink inside root can point outside it: re-resolve every script found.
+    found = [s for s, _ in discover([target], errors)
+             if s.resolve() == root or root in s.resolve().parents]
     if not found:
         raise ToolError(f"no diagram scripts found in {raw!r}")
     return found
+
+
+def _check_outputs(root: Path, dest: Path, stem: str, formats: list) -> None:
+    """Refuse a script-chosen stem or an existing symlink that would write outside root."""
+    if not stem or "/" in stem or "\\" in stem or stem in (".", "..") or ".." in Path(stem).parts:
+        raise ToolError(f"output name {stem!r} is not a plain file stem")
+    for suffix in {"svg": ".svg", "png": ".png", "pdf": ".pdf", "bom": "_README.md"}.values():
+        target = dest / f"{stem}{suffix}"
+        if target.is_symlink() or not (target.resolve().parent == root
+                                       or root in target.resolve().parents):
+            raise ToolError(f"refusing to write {_rel(root, target)}: it leaves the server root")
 
 
 def _rel(root: Path, path: Path) -> str:
     try:
         return str(path.relative_to(root))
     except ValueError:
-        return str(path)
+        return path.name  # never leak an absolute path outside the root
+
+
+def _clean(root: Path, text: str) -> str:
+    """Drop the server root's absolute path from a message sent to the client."""
+    return text.replace(str(root), ".")
 
 
 def tool_list_examples(root: Path, args: dict) -> Any:
@@ -92,10 +112,11 @@ def tool_render(root: Path, args: dict) -> Any:
             if theme:
                 diag.configure(theme=theme)
             dest = out_dir or script.parent  # default: beside the script
+            _check_outputs(root, dest, stem, formats)
             for fmt, p in render_all(diag, dest, stem, formats).items():
                 written.append({"format": fmt, "file": _rel(root, p)})
         except Exception as exc:  # one bad script must not hide the others
-            failed.append({"script": _rel(root, script), "error": str(exc)})
+            failed.append({"script": _rel(root, script), "error": _clean(root, str(exc))})
     if failed and not written:
         raise ToolError("; ".join(f"{f['script']}: {f['error']}" for f in failed))
     return {"written": written, "failed": failed}
@@ -115,7 +136,7 @@ def tool_lint(root: Path, args: dict) -> Any:
                 found = [f for f in audit_findings(diag) if f.kind not in ignore]
             checked += 1
         except Exception as exc:
-            failed.append({"script": _rel(root, script), "error": str(exc)})
+            failed.append({"script": _rel(root, script), "error": _clean(root, str(exc))})
             continue
         findings += [{"script": _rel(root, script), "kind": f.kind, "detail": f.detail} for f in found]
         findings += [{"script": _rel(root, script), "kind": "layout_warning", "detail": str(w.message)}
@@ -171,6 +192,9 @@ class Server:
         params = msg.get("params") or {}
         if mid is None:  # notification (e.g. notifications/initialized)
             return None
+        if not isinstance(params, dict) or not isinstance(method, str):
+            return {"jsonrpc": "2.0", "id": mid,
+                    "error": {"code": -32600, "message": "invalid request"}}
         try:
             if method == "initialize":
                 result: Any = {"protocolVersion": PROTOCOL_VERSION,
@@ -192,9 +216,11 @@ class Server:
 
     def _call(self, params: dict) -> dict:
         name = params["name"]
-        if name not in TOOLS:
+        if not isinstance(name, str) or name not in TOOLS:
             raise KeyError(f"tool {name!r}")
         args = params.get("arguments") or {}
+        if not isinstance(args, dict):
+            raise KeyError("arguments (an object)")
         if "path" in TOOLS[name][1]["required"] and "path" not in args:
             raise KeyError("path")
         try:
@@ -204,29 +230,41 @@ class Server:
         except ToolError as exc:
             data, error = str(exc), True
         except Exception as exc:
-            data, error = f"{type(exc).__name__}: {exc}", True
+            data, error = _clean(self.root, f"{type(exc).__name__}: {exc}"), True
         text = data if isinstance(data, str) else json.dumps(data, indent=2)
+        if len(text) > MAX_RESULT_CHARS:
+            text = text[:MAX_RESULT_CHARS] + "\n... [truncated]"
         result: dict = {"content": [{"type": "text", "text": text}], "isError": error}
         if not error and isinstance(data, dict):
             result["structuredContent"] = data
         return result
 
 
+def _error(code: int, message: str) -> dict:
+    return {"jsonrpc": "2.0", "id": None, "error": {"code": code, "message": message}}
+
+
 def serve(root: Path, stdin: Optional[TextIO] = None, stdout: Optional[TextIO] = None) -> int:
     server = Server(root)
     stdin, stdout = stdin or sys.stdin, stdout or sys.stdout
-    for line in stdin:
-        if not line.strip():
+    while True:
+        line = stdin.readline(MAX_LINE + 1)
+        if not line:
+            return 0
+        if len(line) > MAX_LINE and not line.endswith("\n"):
+            while line and not line.endswith("\n"):  # discard the rest of the oversized message
+                line = stdin.readline(MAX_LINE)
+            reply: Optional[dict] = _error(-32600, "message too large")
+        elif not line.strip():
             continue
-        try:
-            msg = json.loads(line)
-            reply = server.handle(msg) if isinstance(msg, dict) else None
-            if reply is None and not isinstance(msg, dict):
-                reply = {"jsonrpc": "2.0", "id": None,
-                         "error": {"code": -32600, "message": "invalid request"}}
-        except json.JSONDecodeError:
-            reply = {"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "parse error"}}
+        else:
+            try:
+                msg = json.loads(line)
+                reply = server.handle(msg) if isinstance(msg, dict) else _error(-32600, "invalid request")
+            except (json.JSONDecodeError, RecursionError):
+                reply = _error(-32700, "parse error")
+            except Exception:  # one bad message must never end the session
+                reply = _error(-32603, "internal error")
         if reply is not None:
             stdout.write(json.dumps(reply) + "\n")
             stdout.flush()
-    return 0

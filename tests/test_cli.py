@@ -178,3 +178,10 @@ def test_cli_help_lists_interactive(capsys) -> None:
     help_text = capsys.readouterr().out
     assert "--interactive" in help_text
     assert "--no-interactive" in help_text
+
+
+def test_render_without_out_writes_beside_the_script(tmp_path: Path) -> None:
+    script = _script(tmp_path / "gallery" / "cloud" / "one.py", stem="one")
+    assert main(["render", str(tmp_path / "gallery")]) == 0
+    assert (script.parent / "one.svg").exists()
+    assert (script.parent / "one_README.md").exists()

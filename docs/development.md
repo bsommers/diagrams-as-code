@@ -37,12 +37,11 @@ Python 3.10 to 3.13 are exercised in CI. Docker is optional: `./docker-build-n-r
 
 | Path | Contents |
 |---|---|
-| `src/diagrams_as_code/` | The engine: geometry, elements, shapes, groups, constraints, router, theme, layout/, renderer_svg, rasterize, bom, output, cli |
+| `src/diagrams_as_code/` | The engine: geometry, elements, shapes, groups, constraints, router, theme, layout/, text/, renderer_svg, rasterize, pdf, audit, bom, plot, draft, output, cli, mcp |
 | `src/iiot_diagrams/` | Backward-compatibility facade that re-exports the engine |
-| `examples/` | Runnable diagram scripts, grouped by domain (ai, business_process, cloud, computer, computer_science, cybersecurity, database, datacenter, enterprise_architecture, iiot, manufacturing, mind_map, network_engineering) |
+| `examples/` | Runnable diagram scripts (247) with their rendered SVG, PNG and BOM beside each, which must not drift. Thirteen domain directories (ai, business_process, cloud, computer, computer_science, cybersecurity, database, datacenter, enterprise_architecture, iiot, manufacturing, mind_map, network_engineering), plus primitives, technical, the textbook galleries (calculus_math, differential_equations, physics, finance, logic) and medical, engineering and cad |
 | `icons/` | Source SVG icons, `icons.yaml` and `icons.csv` catalogs |
 | `tools/` | `generate_icons.py`, `eval_bezier.py`, `audit_gallery.py` (visual defect ratchet), `golden_images.py` (golden pictures of the technical figures), `generate_text_data.py` |
-| `examples/` | Committed reference renders; must not drift |
 | `tests/` | pytest suite, including module-boundary and repo-hygiene checks |
 | `docs/` | Living documentation; `docs/plans`, `docs/reviews` and `docs/superpowers` are historical working notes |
 | `legacy/` | Archived prototypes; do not build on them |
@@ -85,7 +84,7 @@ Run a subset with `uv run pytest tests/test_routing.py -v`. Prefer asserting geo
 
 - Layering: geometry at the bottom, then elements/shapes/groups, constraints, layout and routing, then rendering and output, then CLI. Imports may only point down.
 - Coordinates resolve at `solve()`; renderers must not mutate the model.
-- Edge routing detail lives in `router.py`; layout strategies live under `layout/` (`LayeredLayout`, `GridLayout`, flow layouts).
+- Edge routing detail lives in `router.py`; layout strategies live under `layout/` (`LayeredLayout`; `GridLayout` and the row/column flow layouts in `layout/flow.py`).
 - All text written into SVG must be XML-escaped.
 
 Rationale and invariants: [architecture.md](architecture.md#6-key-architectural-invariants).

@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.17.0] - 2026-11-19
+
+### Added
+- **MCP server**: `diagrams-as-code mcp [--root DIR]` is a stdlib-only stdio server (MCP revision 2025-06-18) with the tools `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Paths are confined to `--root`. Rendering runs the diagram script, which is arbitrary Python, so this is path confinement rather than a sandbox; use a trusted root or a container. New capability `CAP-MCP-SERVER`.
+- Tests: `tests/test_mcp.py` covers symlinked scripts and outputs, script-chosen output names, absolute-path leaks, malformed and oversized messages.
+
+### Changed
+- **Rendered output now lives next to each example script in `examples/`; the top-level `output/` directory is gone.** `main.py`, the CLI (`render --out` now defaults to beside each script), tests, CI, Docker scripts and docs use the new paths. Anything that read `output/<domain>/...` must read `examples/<domain>/...`.
+- `examples/medical/01_heart_chambers`: redrawn as a recognisable anterior heart with the great vessels attached to the chambers, plausible valves, blood-flow arrows that follow the vessels, and leaders that no longer cross them.
+- README: new hero image and gallery strip drawn from the examples; badges, counts and feature list match the code (14 themes, 60 icons, 247 example scripts, 1573 tests). Documentation refreshed throughout, including guides for `Plot`, `Draft` and the MCP server.
+
+### Fixed
+- MCP hardening found by review: a malformed or deeply nested JSON message ended the server; a symlink inside the root could run or overwrite a file outside it; a script-set `OUTPUT_STEM` such as `../x` could write outside the output directory; messages and results had no size cap; error text carried the absolute root path.
+- Known limits, not fixed here: a script that never returns hangs the server (no timeout), and a script can write to file descriptor 1 or read stdin. Running scripts in a resource-limited subprocess is the planned fix.
+
 ## [v0.16.0] - 2026-11-17
 
 ### Added

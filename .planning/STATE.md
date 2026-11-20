@@ -3,9 +3,9 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: phase_complete
-stopped_at: "v0.14.0 released (PR #25, tag pushed); feat/plot-kit: Plot helper + 5 textbook galleries (50 figures) gate green locally, uncommitted"
-last_updated: "2026-11-16T01:38:31.251Z"
-state_head: f468819fdcb5dc50dc620879707218a878ebc29a
+stopped_at: "v0.17.0 prepared on release/v0.17.0 (MCP hardening, heart redraw, docs and README refresh); gate pending, not pushed or tagged"
+last_updated: "2026-11-19T00:00:00.000Z"
+state_head: 5d27b28
 last_activity: 2026-11-14
 current_phase: 17
 current_phase_name: Vector PDF Export
@@ -25,7 +25,7 @@ progress:
 See `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and the approved plan
 `docs/plans/2026-11-12-technical-figures-and-quality.md`.
 
-**Current focus:** All six phases (12–17) are done. Phases 12–17 are merged to master (PRs #19–#22) and tagged v0.8.4 … v0.13.0. The SVG id-collision fixes are merged (PR #23) and unreleased; v0.13.1 is next.
+**Current focus:** The technical-figures program (phases 12-17) is done and merged. After it: v0.13.1 (SVG id fixes), v0.14.0 (five domain galleries), v0.15.0 (`Plot` kit, textbook galleries), v0.16.0 (`Draft` kit, medical/engineering/CAD galleries) are released. PR #28 (output colocated into `examples/`, MCP server) is merged. v0.17.0 is prepared on `release/v0.17.0`.
 
 ## Phase 12 result
 
@@ -83,6 +83,6 @@ Known limits: fonts are not embedded (not PDF/A); a character outside Windows-12
 
 ## Session
 
-**Last session:** 2026-11-16T01:38:31.238Z
-**Stopped at:** v0.14.0 released (PR #25, tag pushed); feat/plot-kit: Plot helper + 5 textbook galleries (50 figures) gate green locally, uncommitted
+**Last session:** 2026-11-19
+**Stopped at:** v0.17.0 prepared; waiting for the final local gate and the user's OK to push, PR and tag
 **Resume file:** .planning/CHECKPOINT.md

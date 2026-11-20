@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1121 TESTS • 88 ARCHITECTURES ]  ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1573 TESTS • 247 FIGURES ]       ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,11 +21,11 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-1121%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-1573%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
-[![Themes](https://img.shields.io/badge/themes-13%20palettes-orange)](src/diagrams_as_code/theme.py)
+[![Themes](https://img.shields.io/badge/themes-14%20palettes-orange)](src/diagrams_as_code/theme.py)
 [![Vector Icons](https://img.shields.io/badge/icons-60%20SVG-informational)](icons/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
@@ -33,9 +33,26 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 
 ---
 
-## Reference Architecture Preview
+## See What It Draws
 
-![Reference Architecture](examples/main_architecture.svg)
+<p align="center">
+  <img src="examples/mind_map/01_product_launch_plan.svg" alt="A colour-coded mind map with curved branches, drawn from a Python script" width="100%">
+</p>
+
+<p align="center"><sub>One script, one SVG. No Graphviz, no Cairo, no browser. Every picture below is a committed example you can regenerate with <code>uv run python main.py</code>.</sub></p>
+
+<table>
+  <tr>
+    <td width="50%"><img src="examples/cloud/05_microservices_service_mesh.svg" alt="Dark-theme microservices mesh with grouped layers and labelled edges"><br><sub><b>Architecture</b> · service mesh, <code>nord</code> theme</sub></td>
+    <td width="50%"><img src="examples/manufacturing/01_wafer_fab_process_loop.svg" alt="Semiconductor wafer-fab process loop with cross-sections under each step"><br><sub><b>Process</b> · wafer-fab loop with cross-sections, <code>paper</code> theme</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="examples/engineering/06_mohr_circle.svg" alt="Mohr's circle computed from stress inputs"><br><sub><b>Computed</b> · Mohr's circle, plotted by <code>Plot</code></sub></td>
+    <td width="50%"><img src="examples/cad/01_third_angle_projection.svg" alt="Third-angle orthographic projection of an L-bracket with dimensions"><br><sub><b>Drafting</b> · third-angle projection, drawn with <code>Draft</code></sub></td>
+  </tr>
+</table>
+
+The reference architecture that `main.py` renders is [`examples/main_architecture.svg`](examples/main_architecture.svg).
 
 ---
 
@@ -57,7 +74,8 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 - **Technical Drawing Primitives**: free text, captions, brackets, polygons and SVG paths, dashed layer bands with side notes, shapes nested in shapes, double borders, line weights and arrowhead styles, lines attached anywhere on a side or at bare points, shared trunks, leaders, splines, and convex solids in oblique or isometric projection with hidden edges dashed. Nine focused figures in [`examples/primitives/`](examples/primitives/).
 - **Technical Figures, Lint & Golden Images**: eleven complete paper-style figures in [`examples/technical/`](examples/technical/) (a four-layer architecture reproduced from a reference figure, a control loop, a transformer block, a state machine, a protocol stack, a memory layout, a timing diagram, a training pipeline, tensor shapes, a geometric construction, a constraint region). `diagrams-as-code lint` reports visual defects by name, and golden-image tests catch any change to how a figure looks. See the [technical figures guide](docs/technical-figures.md) and the [math markup reference](docs/math-markup.md).
 - **Vector PDF Export**: `diag.render_pdf("figure.pdf")` or `--format pdf` writes a one-page vector PDF with the standard library alone — no Cairo, Ghostscript or LaTeX. It is drawn from the same SVG, so lines, arrowheads, text and formulas match; see [Export a PDF](docs/technical-figures.md#8-export-a-pdf).
-- **143 Production Reference Diagrams**: 11 comprehensive reference diagrams across 13 domains in [`examples/`](examples/), including auto-layout examples per domain.
+- **247 Example Figures**: 143 reference diagrams across 13 domains (11 each, one auto-laid-out per domain), plus 50 textbook, 30 medical/engineering/CAD, 11 technical and 9 primitive figures, all in [`examples/`](examples/README.md) with the rendered SVG and BOM beside each script.
+- **MCP Server**: `diagrams-as-code mcp [--root DIR]` serves `list_examples`, `render`, `lint`, `list_themes` and `list_icons` to any MCP client over stdio, with the standard library alone. Rendering runs diagram scripts, so use a trusted root; see [Running](docs/running.md).
 - **Medical, Engineering & CAD Galleries**: 30 more figures (anatomy, ECG, pharmacokinetics, sectioned and dimensioned drawings, GD&T, beams, Mohr, Bode, exploded assemblies, fits) using the `diagrams_as_code.draft.Draft` drafting helper.
 - **Textbook Galleries**: 50 computed figures for calculus, differential equations, physics, finance and logic in [`examples/`](examples/README.md), drawn with the stdlib-only `diagrams_as_code.plot.Plot` helper.
 - **Auto-Layout Engine**: `Diagram(layout="auto")` places unpinned shapes and groups deterministically from the edge structure; pinned shapes can still coexist via `.at()` / `.right_of()`.
@@ -65,9 +83,9 @@ A pure-Python declarative vector diagramming framework. Generate publication-qua
 
 ---
 
-## 13 Domains Gallery
+## Gallery: 13 Domains, 143 Diagrams
 
-Explore 143 fully implemented diagrams in [`examples/`](examples/README.md) and [`examples/`](examples/):
+Every diagram is a script in [`examples/`](examples/README.md); its SVG and BOM sit next to it.
 
 | Domain | Focus & Architectures | Key Built-in Icons |
 |---|---|---|
@@ -84,6 +102,22 @@ Explore 143 fully implemented diagrams in [`examples/`](examples/README.md) and 
 | [**Manufacturing & Semiconductor**](examples/manufacturing/) | Wafer-fab process loop, lithography cell, MES/AMHS/SECS-GEM automation, run-to-run + FDC, yield, back-end test, ISA-95, OEE, SPC, ISA-88. | `chip`, `robot`, `vision`, `plc`, `workflow`, `server`, `analytics` |
 | [**Mind Maps**](examples/mind_map/) | Launch plans, brainstorms, study notes, OKRs, risk registers, five-whys retros, system-design breakdowns, concept maps. | — (styles and curved branches, no icons) |
 | [**Computer Science**](examples/computer_science/) | Hash tables, red-black trees, merge sort, Dijkstra, regex NFA→DFA, CPU pipeline hazards, virtual memory and caches, TCP, scheduling, Raft. | `chip`, `server`, `laptop`, `document`, `analytics` |
+
+### Figures for papers and textbooks
+
+These use the `paper` theme and the stdlib-only `Plot` and `Draft` helpers; values are computed by the scripts, and every figure is lint-clean.
+
+| Gallery | Contents | Helper |
+|---|---|---|
+| [**Calculus & Math**](examples/calculus_math/) | Derivative as a limit, Riemann and upper/lower sums, area between curves, Taylor series of sine, epsilon-delta, IVT and MVT, the unit circle. | `Plot` |
+| [**Differential Equations**](examples/differential_equations/) | Slope field, exponential and logistic growth, damped oscillator, saddle, spiral and center phase portraits, Lotka-Volterra, pendulum, Euler vs RK4. | `Plot` |
+| [**Physics**](examples/physics/) | Free-body incline, projectile motion, series RLC circuit, thin-lens rays, Snell refraction, standing waves and beats, Carnot cycle, dipole field, hydrogen levels. | `Plot`, shapes |
+| [**Finance**](examples/finance/) | Candlesticks, compound interest, present value, yield curve, option payoffs, efficient frontier, amortization, supply and demand, Black-Scholes, bond convexity. | `Plot` |
+| [**Logic**](examples/logic/) | Truth tables, gates, full adder, De Morgan Venn diagram, Karnaugh map, latch and flip-flop, BDD, proof tree, syllogism, finite automaton. | shapes |
+| [**Medical**](examples/medical/) | Heart chambers, ECG, Wiggers diagram, pharmacokinetics, dose-response, neuron action potential, SIR epidemic, cell cycle, oxygen dissociation, Michaelis-Menten. | `Draft`, `Plot` |
+| [**Engineering**](examples/engineering/) | Sectioned plate, GD&T shaft, beam shear and moment, truss, stress-strain, Mohr's circle, spur gears, Otto cycle, feedback step response, Bode plot. | `Draft`, `Plot` |
+| [**CAD**](examples/cad/) | Third-angle projection, isometric bracket, exploded assembly, fits and tolerances, thread detail, sketch constraints, fillet and chamfer, extrude/revolve/sweep, section views, title block. | `Draft` |
+| [**Technical**](examples/technical/) and [**Primitives**](examples/primitives/) | Paper-style architecture, control, protocol, memory and timing figures; one figure per drawing primitive. | shapes |
 
 ---
 
@@ -144,7 +178,7 @@ shape and group from the edge structure. Render it (and any script) from the
 command line:
 
 ```bash
-uv run diagrams-as-code render my_diagram.py --out examples
+uv run diagrams-as-code render my_diagram.py
 ```
 
 ### 4. Run and Verify
@@ -156,6 +190,15 @@ uv run python main.py
 # Run the full test suite
 uv run pytest
 ```
+
+### 5. Drive It From an MCP Client
+
+```bash
+# Serve the repository's examples to an MCP client over stdio
+uv run diagrams-as-code mcp --root .
+```
+
+The client can call `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Paths are confined to `--root`, but rendering runs the diagram script (arbitrary Python), so point `--root` only at content you trust, or run the server in a container.
 
 ---
 
