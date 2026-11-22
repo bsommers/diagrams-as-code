@@ -3,9 +3,9 @@ gsd_state_version: "1.0"
 milestone: v0.8.4
 milestone_name: → v0.13.0)
 status: phase_complete
-stopped_at: "v0.17.0 prepared on release/v0.17.0 (MCP hardening, heart redraw, docs and README refresh); gate pending, not pushed or tagged"
-last_updated: "2026-11-19T00:00:00.000Z"
-state_head: 5d27b28
+stopped_at: v0.17.0 released (7dd85c3, tag pushed); idle on release/v0.17.0 branch
+last_updated: "2026-11-21T20:03:53.192Z"
+state_head: 092a179ca5e0d846e1b13ee69a82bcef7bb14cf0
 last_activity: 2026-11-14
 current_phase: 17
 current_phase_name: Vector PDF Export
@@ -83,6 +83,6 @@ Known limits: fonts are not embedded (not PDF/A); a character outside Windows-12
 
 ## Session
 
-**Last session:** 2026-11-19
-**Stopped at:** v0.17.0 prepared; waiting for the final local gate and the user's OK to push, PR and tag
+**Last session:** 2026-11-21T20:03:53.182Z
+**Stopped at:** v0.17.0 released (7dd85c3, tag pushed); idle on release/v0.17.0 branch
 **Resume file:** .planning/CHECKPOINT.md
