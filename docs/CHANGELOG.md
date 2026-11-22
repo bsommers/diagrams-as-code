@@ -4,7 +4,11 @@ All notable changes, architectural milestones, and capability updates to the pur
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
-## [Unreleased]
+## [v0.17.1] - 2026-11-21
+
+### Fixed
+- `Draft.dimension`: the label now clears the dimension line by half its own extent along the line's normal (never less than the old 8 px), so labels on vertical dimensions no longer straddle the line. Affects the rendered `cad/` and `engineering/` figures that use it.
+- `Draft.gdt_frame`: the new `RUNOUT` cell (`"↗"`) draws the ISO circular-runout arrow as a vector path. `engineering/02_shaft_gdt` uses it instead of a right arrow.
 
 ## [v0.17.0] - 2026-11-19
 
