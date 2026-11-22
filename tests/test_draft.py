@@ -67,3 +67,14 @@ def test_every_primitive_draws_without_warnings():
             pts = k.wave((0, 100), 120, 20, ecg_beat, beats=2)
     assert len(pts) == 2 * 60 + 1
     assert len(d.render_svg()) > 1000
+
+
+def test_vertical_dimension_label_clears_the_line():
+    """A label on a vertical dimension sits beside the line, not across it."""
+    placed = []
+    with Diagram("v", theme="paper") as d:
+        k = Draft(d, size=13)
+        k._tag = lambda text, at, **kw: placed.append(at)  # type: ignore[method-assign]
+        k.dimension((0, 0), (0, 80), "$120$", offset=30)
+    (x, _y), = placed
+    assert abs(abs(x) - 30) > 9  # farther than the old fixed 8 px, so it clears the line

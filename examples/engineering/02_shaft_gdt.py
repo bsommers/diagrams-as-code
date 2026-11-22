@@ -60,7 +60,7 @@ def diagram() -> Diagram:
         fx, fy = mid2 - 20, cy - r1 - 140
         k.d.path(f"M {seat[0]:.1f} {seat[1]:.1f} L {fx + 60:.1f} {fy + 24:.1f}",
                  style=Style(fill="none", stroke="#1F2F57", stroke_width=0.9))
-        k.gdt_frame((fx, fy), ["$\\rightarrow$", "0.02", "A"], height=24, widths=[30, 52, 30])
+        k.gdt_frame((fx, fy), ["↗", "0.02", "A"], height=24, widths=[30, 52, 30])
         diag.text("circular runout", size=12).at(fx + 56, fy - 8, anchor="bottom_center")
 
         # Frame 2: perpendicularity of the 40/30 shoulder face relative to A.

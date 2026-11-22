@@ -94,6 +94,10 @@ def hatch_segments(polygon: Sequence[Pt], angle: float = 45.0, gap: float = 6.0)
     return out
 
 
+#: ``gdt_frame`` cell that draws the circular-runout arrow (no font glyph needed).
+RUNOUT = "↗"
+
+
 class Draft:
     """Drafting and anatomy helpers bound to a Diagram."""
 
@@ -219,7 +223,12 @@ class Draft:
             eb = (b2[0] + ux * (arrow + 6), b2[1] + uy * (arrow + 6))
             self._line(f"M {_fmt(ea)} L {_fmt(eb)}", width=0.9)
             self._line(self._arrow(a2, ea, arrow) + " " + self._arrow(b2, eb, arrow), width=0.9, fill=self.ink)
-        mid = ((a2[0] + b2[0]) / 2 + nx * 8, (a2[1] + b2[1]) / 2 + ny * 8)
+        # Clear the line by half the label's extent along the normal, so a label on a
+        # vertical dimension sits beside the line instead of straddling it.
+        size = text_size or self.size
+        width = 0.55 * size * len(text.replace("$", "").replace("\\", ""))
+        gap = max(8.0, abs(nx) * (width / 2 + 3) + abs(ny) * (size / 2 + 2))
+        mid = ((a2[0] + b2[0]) / 2 + nx * gap, (a2[1] + b2[1]) / 2 + ny * gap)
         self._tag(text, mid, size=text_size)
 
     def radius_dim(self, center: Pt, radius: float, angle: float, text: str = "",
@@ -258,9 +267,18 @@ class Draft:
             self.d.polygon(
                 [(x, at[1]), (x + w, at[1]), (x + w, at[1] + height), (x, at[1] + height)],
                 style=Style(fill="#FFFFFF", stroke=self.ink, stroke_width=1.1), z=1)
-            self._tag(text, (x + w / 2, at[1] + height / 2), size=self.size, z=2)
+            if text == RUNOUT:
+                self._runout_arrow((x + w / 2, at[1] + height / 2), height * 0.28)
+            else:
+                self._tag(text, (x + w / 2, at[1] + height / 2), size=self.size, z=2)
             x += w
         return (x, at[1] + height / 2)
+
+    def _runout_arrow(self, c: Pt, r: float) -> None:
+        """The ISO circular-runout symbol: one arrow rising to the right, drawn as a path."""
+        tail, tip = (c[0] - r, c[1] + r), (c[0] + r, c[1] - r)
+        self.d.path(f"M {_fmt(tail)} L {_fmt(tip)}", style=Style(fill="none", stroke=self.ink, stroke_width=1.1), z=2)
+        self.d.path(self._arrow(tip, tail, 7), style=Style(fill=self.ink, stroke=self.ink, stroke_width=0.5), z=2)
 
     # ------------------------------------------------------------ annotation
     def leader(self, tip: Pt, label_at: Pt, text: str, anchor: str = "left_center", dot: bool = True) -> None:

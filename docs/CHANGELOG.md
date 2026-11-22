@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Fixed
+- `Draft.dimension`: the label now clears the dimension line by half its own extent along the line's normal (never less than the old 8 px), so labels on vertical dimensions no longer straddle the line. Affects the rendered `cad/` and `engineering/` figures that use it.
+- `Draft.gdt_frame`: the new `RUNOUT` cell (`"↗"`) draws the ISO circular-runout arrow as a vector path. `engineering/02_shaft_gdt` uses it instead of a right arrow.
+
 ## [v0.17.0] - 2026-11-19
 
 ### Added
