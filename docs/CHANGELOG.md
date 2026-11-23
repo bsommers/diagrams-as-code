@@ -4,7 +4,7 @@ All notable changes, architectural milestones, and capability updates to the pur
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
-## [Unreleased]
+## [v0.18.0] - 2026-11-23
 
 ### Added
 - Math markup: `\frac{a}{b}` (and `\dfrac`, `\tfrac`) typesets a stacked fraction with a rule on the math axis; nested fractions shrink.
