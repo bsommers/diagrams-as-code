@@ -71,6 +71,8 @@ As in TeX, `\min \max \sup \inf \lim \limsup \liminf \argmin \argmax \det \gcd \
 
 `\bar x`, `\bar{x}` and `\overline{AB}` draw a bar over their argument. `\sqrt{x}` draws a radical with a bar over its argument: `\sqrt{b^2 - 4ac}`. The bar is the minus-sign outline repeated, so it is a little thinner than a typeset rule and the radical does not stretch past one line of text. `\sqrt[n]{x}` (an index) is not supported: write `x^{1/n}`.
 
+`\frac{a}{b}` (also `\dfrac`, `\tfrac`) stacks the numerator over the denominator about a rule on the math axis, both centred and set at 85% of the surrounding size; a fraction inside a fraction shrinks again. Like the bar, the rule is the minus-sign outline repeated. `\binom` and `\over` are not supported.
+
 Big operators: `\sum \prod \coprod \int \oint \bigcap \bigcup \bigwedge \bigvee`. Their limits are set underneath and above:
 
 ```text
@@ -102,7 +104,6 @@ These raise `MathError`:
 
 | Not supported | Write instead |
 |---|---|
-| `\frac{a}{b}` | `a / b`, or `a b^{-1}` |
 | `\sqrt[n]{x}` | `x^{1/n}` |
 | matrices, `\begin{...}` | one `d.text()` per row, or a table of shapes |
 | accents: `\hat \vec \tilde \dot` | a prime or a subscript: `y'`, `y_{\mathrm{est}}` |

@@ -161,7 +161,7 @@ def test_mathrm_is_upright_and_greek_resolves():
     assert typeset("α", 10).glyphs[0].cp == 0x1D6FC
 
 
-@pytest.mark.parametrize("bad", [r"\frac{a}{b}", "a_", "{a", "a}", r"\nosuchthing"])
+@pytest.mark.parametrize("bad", [r"\binom{a}{b}", "a_", "{a", "a}", r"\nosuchthing"])
 def test_unsupported_math_raises_a_clear_error(bad):
     with pytest.raises(MathError):
         typeset(bad, 10)
@@ -279,7 +279,24 @@ def test_sqrt_with_an_index_is_not_supported():
         typeset(r"\sqrt[3]{x}", 10)
 
 
-@pytest.mark.parametrize("bad", [r"\bar", r"\sqrt"])
+@pytest.mark.parametrize("bad", [r"\bar", r"\sqrt", r"\frac", r"\frac{a}"])
 def test_bar_and_sqrt_need_an_argument(bad):
     with pytest.raises(MathError):
         typeset(bad, 10)
+
+
+def test_frac_stacks_numerator_over_denominator_about_a_rule():
+    box = typeset(r"\frac{a+b}{c}", 10)
+    num, den = typeset("a+b", 10.0 * 0.85), typeset("c", 10.0 * 0.85)
+    assert box.width >= num.width
+    assert box.height > num.height and box.depth > den.depth
+    ys = {g.cp: g.y for g in box.glyphs}
+    assert ys[typeset("c", 10).glyphs[0].cp] > 0  # denominator hangs below the baseline
+    assert any(g.cp == 0x2212 and g.y < 0 for g in box.glyphs)  # the rule sits on the axis
+
+
+def test_nested_frac_shrinks_and_dfrac_matches_frac():
+    assert typeset(r"\dfrac{1}{2}", 10).glyphs == typeset(r"\frac{1}{2}", 10).glyphs
+    inner = typeset(r"\frac{1}{2}", 10)
+    nested = typeset(r"\frac{\frac{1}{2}}{3}", 10)
+    assert nested.height > inner.height
