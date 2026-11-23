@@ -3,8 +3,8 @@ r"""A small TeX-like math typesetter that produces positioned glyph outlines.
 Supported inside ``$...$``: letters (set in math italic), digits, sub/superscripts
 with ``_`` and ``^``, ``{}`` grouping, Greek letters, the operators and relations
 in ``SYMBOLS``, ``\mathrm{}`` / ``\text{}`` / ``\mathbf{}``, limits under big
-operators, and the spaces ``\\,`` ``\;`` ``\\quad``. This is not TeX: no
-fractions, radicals or matrices.
+operators, ``\frac{a}{b}`` fractions, ``\sqrt{}``, ``\bar{}`` and the spaces
+``\,`` ``\;`` ``\quad``. This is not TeX: no matrices or ``\sqrt[n]``.
 """
 from __future__ import annotations
 
@@ -283,6 +283,11 @@ class _Parser:
             if arg is None:
                 raise MathError(f"\\{name} needs an argument in ${self.src}$")
             return _Node("overline", children=[arg])
+        if name in ("frac", "dfrac", "tfrac"):
+            num, den = self._atom(), self._atom()
+            if num is None or den is None:
+                raise MathError(f"\\{name} needs two arguments in ${self.src}$")
+            return _Node("frac", children=[num, den])
         if name == "sqrt":
             self._skip_space()
             if self.i < len(self.src) and self.src[self.i] == "[":
@@ -415,6 +420,8 @@ def _layout(node: _Node, size: float, level: int) -> MathBox:
     if node.kind == "overline":
         body = _layout_seq(node.children or [], size, level)
         return _overbar(body, size, gap=0.12 * size)
+    if node.kind == "frac":
+        return _fraction(node, size, level)
     if node.kind == "sqrt":
         return _radical(_layout_seq(node.children or [], size, level), size)
     raise MathError(f"cannot lay out {node.kind}")
@@ -447,6 +454,24 @@ def _overbar(body: MathBox, size: float, gap: float) -> MathBox:
     y = body.height + gap
     bar = _bar(body.width, y, thickness)
     return MathBox(body.width, y + thickness, body.depth, body.glyphs + bar)
+
+
+def _fraction(node: _Node, size: float, level: int) -> MathBox:
+    """``num`` over ``den`` about a rule on the math axis; nested fractions shrink."""
+    assert node.children
+    f_size = size * 0.85
+    num = _layout(node.children[0], f_size, level)
+    den = _layout(node.children[1], f_size, level)
+    thickness = 0.045 * size
+    gap = 0.12 * size
+    pad = 0.08 * size
+    width = max(num.width, den.width) + 2 * pad
+    axis = AXIS * size
+    up = axis + thickness / 2.0 + gap + num.depth
+    down = thickness / 2.0 + gap + den.height - axis
+    parts = [num.shifted((width - num.width) / 2.0, -up), den.shifted((width - den.width) / 2.0, down)]
+    glyphs = _bar(width, axis, thickness) + tuple(g for p in parts for g in p.glyphs)
+    return MathBox(width, up + num.height, down + den.depth, glyphs)
 
 
 def _radical(body: MathBox, size: float) -> MathBox:
