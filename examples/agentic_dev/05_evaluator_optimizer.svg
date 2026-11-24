@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1223 320" width="1223" height="320">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#268BD2"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#268BD2"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FDF6E3"/>
+  <path d="M 190 160 L 298.09 160" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 428.09 160 L 536.17 160" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 666.17 160 L 774.26 160" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 924.26 160 L 978.3 160 L 978.3 110 L 1032.34 110" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 849.26 205 L 849.26 220 L 363.09 220 L 363.09 190" fill="none" stroke="#268BD2" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <path d="M 924.26 160 L 978.3 160 L 978.3 210 L 1032.34 210" fill="none" stroke="#268BD2" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="452.44" y="151" width="59.37" height="18" rx="9" fill="#FFFFFF" />
+  <text x="482.13" y="163.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">candidate</text>
+</g>
+  <g class="badge">
+  <rect x="678.17" y="151" width="84.09" height="18" rx="9" fill="#FFFFFF" />
+  <text x="720.21" y="163.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">score + critique</text>
+</g>
+  <g class="badge">
+  <rect x="962.52" y="126" width="31.56" height="18" rx="9" fill="#FFFFFF" />
+  <text x="978.3" y="138.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">yes</text>
+</g>
+  <g class="badge">
+  <rect x="569.54" y="211" width="73.27" height="18" rx="9" fill="#FFFFFF" />
+  <text x="606.17" y="223.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no: feedback</text>
+</g>
+  <g class="badge">
+  <rect x="944.18" y="176" width="68.25" height="18" rx="9" fill="#FFFFFF" />
+  <text x="978.3" y="188.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">max rounds</text>
+</g>
+  <g id="shape_1" filter="url(#shadow)">
+    <rect x="60" y="130" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
+    <g class="icon icon-user" transform="translate(113.6, 133.2) scale(0.95)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#268BD2" stroke-width="2"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="125" y="169.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="125" dy="0">Task +</tspan> <tspan x="125" dy="14.4">acceptance criteria</tspan></text>
+  </g>
+  <g id="shape_2" filter="url(#shadow)">
+    <rect x="298.09" y="130" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
+    <g class="icon icon-model" transform="translate(351.69, 133.2) scale(0.95)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#268BD2" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#268BD2" stroke-width="2" stroke-linejoin="round"/>
+</g>
+    <text x="363.09" y="169.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="363.09" dy="0">Generator LLM</tspan> <tspan x="363.09" dy="14.4">produce or revise</tspan></text>
+  </g>
+  <g id="shape_3" filter="url(#shadow)">
+    <rect x="536.17" y="130" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
+    <g class="icon icon-shield_check" transform="translate(589.77, 133.2) scale(0.95)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#268BD2" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,9" fill="none" stroke="#268BD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="601.17" y="169.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="601.17" dy="0">Evaluator LLM</tspan> <tspan x="601.17" dy="14.4">score vs criteria</tspan></text>
+  </g>
+  <g id="shape_4" filter="url(#shadow)">
+    <path d="M 849.26 115 L 924.26 160 L 849.26 205 L 774.26 160 Z" fill="#FFFFFF" stroke="#268BD2" stroke-width="2"/>
+    <text x="849.26" y="164.47" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Accepted?</text>
+  </g>
+  <g id="shape_5" filter="url(#shadow)">
+    <rect x="1032.34" y="80" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
+    <g class="icon icon-document" transform="translate(1085.94, 89.8) scale(0.95)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#268BD2" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#268BD2" stroke-width="2"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="1097.34" y="126.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Final Answer</text>
+  </g>
+  <g id="shape_6" filter="url(#shadow)">
+    <rect x="1032.34" y="180" width="130" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
+    <g class="icon icon-queue" transform="translate(1085.94, 183.2) scale(0.95)">
+  <line x1="2" y1="6" x2="18" y2="6" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="18" x2="18" y2="18" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="6" y1="6" x2="6" y2="18" stroke="#268BD2" stroke-width="2"/>
+  <line x1="11" y1="6" x2="11" y2="18" stroke="#268BD2" stroke-width="2"/>
+  <line x1="16" y1="6" x2="16" y2="18" stroke="#268BD2" stroke-width="2"/>
+  <path d="M 18 12 H 22 M 20 9 L 23 12 L 20 15" fill="none" stroke="#268BD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="1097.34" y="219.33" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="1097.34" dy="0">Iteration cap</tspan> <tspan x="1097.34" dy="14.4">return best so far</tspan></text>
+  </g>
+</svg>
