@@ -47,6 +47,7 @@ LAYERS: dict[str, float] = {
     "draft": 5.5,
     "output": 6,
     "cli": 7,
+    "sandbox": 7.2,
     "mcp": 7.5,
     "__main__": 8,
     "__init__": 8,
