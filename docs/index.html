@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagrams as Code</title>
+<meta name="description" content="Pure-Python diagrams as code: deterministic, lintable SVG, PNG and PDF from a script. 361 diagrams, 35 domains, zero dependencies.">
+<meta property="og:title" content="Diagrams as Code">
+<meta property="og:description" content="Deterministic, lintable diagrams from plain Python. SVG, PNG and PDF with zero dependencies.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<style>
+:root{--bg:#02040a;--line:rgba(255,255,255,.14);--line-hi:rgba(255,255,255,.34);--glow:#d9f3ff;--cyan:#5ce1ff;--text:#f2f7fb;--mute:#8aa0b2;--panel:rgba(6,12,22,.72)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;overflow-x:hidden}
+/* Tron grid: fixed white grid, a vanishing-point floor, a soft horizon glow */
+body::before{content:"";position:fixed;inset:0;z-index:-3;
+ background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(92,225,255,.16),transparent 70%),
+ linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px),
+ linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+ background-size:100% 100%,80px 80px,80px 80px,16px 16px,16px 16px}
+.floor{position:fixed;left:-50%;right:-50%;bottom:-8vh;height:62vh;z-index:-2;pointer-events:none;
+ background:linear-gradient(var(--line-hi) 1px,transparent 1px),linear-gradient(90deg,var(--line-hi) 1px,transparent 1px);
+ background-size:70px 70px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 100%;
+ -webkit-mask-image:linear-gradient(to top,#000 5%,transparent 85%);mask-image:linear-gradient(to top,#000 5%,transparent 85%);
+ animation:flow 3.2s linear infinite}
+@keyframes flow{to{background-position:0 70px}}
+.scan{position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(transparent 0 3px,rgba(255,255,255,.012) 3px 4px)}
+a{color:var(--glow)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);background:rgba(2,4,10,.7);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;align-items:center;height:52px}
+nav b{letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+nav a{color:var(--mute);text-decoration:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase}nav a:hover{color:#fff}
+nav .sp{flex:1}
+header.hero{padding:84px 0 56px;text-align:center}
+.eyebrow{display:inline-block;border:1px solid var(--line-hi);padding:3px 12px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);box-shadow:0 0 14px rgba(217,243,255,.25),inset 0 0 14px rgba(217,243,255,.08)}
+h1{font-size:clamp(40px,8vw,92px);line-height:1;margin:22px 0 14px;font-weight:800;letter-spacing:-.02em;text-transform:uppercase;
+ text-shadow:0 0 6px #fff,0 0 24px rgba(92,225,255,.65),0 0 60px rgba(92,225,255,.35)}
+h1 span{color:var(--cyan)}
+.lead{max-width:720px;margin:0 auto 28px;color:#c4d4e0;font-size:19px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 22px;border:1px solid #fff;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:600;
+ box-shadow:0 0 12px rgba(255,255,255,.35),inset 0 0 12px rgba(255,255,255,.08);transition:.15s;background:transparent;cursor:pointer;font-family:inherit}
+.btn:hover{background:#fff;color:#02040a;box-shadow:0 0 28px rgba(255,255,255,.8)}
+.btn.alt{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 12px rgba(92,225,255,.35),inset 0 0 12px rgba(92,225,255,.08)}
+.btn.alt:hover{background:var(--cyan);color:#02040a}
+.install{margin:34px auto 0;max-width:640px;display:flex;border:1px solid var(--line-hi);background:var(--panel);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+.install code{flex:1;padding:12px 16px;text-align:left;overflow-x:auto;white-space:nowrap}.install button{border:0;border-left:1px solid var(--line-hi);background:transparent;color:var(--glow);padding:0 16px;cursor:pointer;font:inherit}
+.install button:hover{background:rgba(255,255,255,.1)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:48px 0 0}
+.stat{border:1px solid var(--line-hi);background:var(--panel);padding:16px 10px;position:relative}
+.stat::before,.stat::after{content:"";position:absolute;width:10px;height:10px;border:1px solid #fff}
+.stat::before{top:-1px;left:-1px;border-right:0;border-bottom:0}.stat::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.stat b{display:block;font-size:34px;font-variant-numeric:tabular-nums;text-shadow:0 0 12px rgba(92,225,255,.7)}
+.stat span{color:var(--mute);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+section{padding:56px 0}
+h2{font-size:clamp(24px,4vw,36px);text-transform:uppercase;letter-spacing:.1em;margin:0 0 6px;text-shadow:0 0 14px rgba(255,255,255,.35)}
+h2::before{content:"// ";color:var(--cyan)}
+.sub{color:var(--mute);margin:0 0 28px;max-width:760px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+.pill{border:1px solid var(--line-hi);background:var(--panel);color:#cfe0ec;padding:6px 14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.pill[aria-pressed=true]{background:#fff;color:#02040a;box-shadow:0 0 16px rgba(255,255,255,.6)}
+#q{flex:1;min-width:180px;background:var(--panel);border:1px solid var(--line-hi);color:#fff;padding:8px 12px;font:inherit}
+#q:focus{outline:1px solid var(--cyan)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.tile{border:1px solid var(--line-hi);background:var(--panel);display:flex;flex-direction:column;transition:.18s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(92,225,255,.35);border-color:var(--cyan)}
+.tile button.img{border:0;padding:0;background:#fff;cursor:zoom-in;height:190px;display:flex;align-items:center;justify-content:center}
+.tile img{max-width:100%;max-height:100%;display:block}
+.tile .meta{padding:10px 12px;display:flex;flex-direction:column;gap:2px;font-size:14px}
+.tile .dom{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.tile a.src{font-size:12px;color:var(--mute)}
+.none{color:var(--mute);padding:24px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{border:1px solid var(--line-hi);background:var(--panel);padding:18px;text-decoration:none;color:inherit;display:block;transition:.18s}
+a.card:hover{box-shadow:0 0 22px rgba(255,255,255,.3);border-color:#fff;transform:translateY(-2px)}
+.card h3{margin:0 0 6px;font-size:15px;letter-spacing:.1em;text-transform:uppercase}.card p{margin:0;color:#b4c4d0;font-size:14px}
+pre{background:rgba(0,0,0,.55);border:1px solid var(--line-hi);padding:16px;overflow-x:auto;font:13px/1.55 ui-monospace,Menlo,Consolas,monospace;margin:0}
+.rec{margin-bottom:18px}.rec .bar{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line-hi);border-bottom:0;background:var(--panel);padding:6px 12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rec button{background:none;border:1px solid var(--line-hi);color:var(--glow);padding:2px 10px;cursor:pointer;font:inherit;font-size:11px}.rec button:hover{background:rgba(255,255,255,.12)}
+.kw{color:#8be9ff}.st{color:#b9f6ca}.cm{color:#6c8296}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}@media(max-width:820px){.two{grid-template-columns:1fr}}
+.credit{border:1px solid var(--line-hi);background:var(--panel);padding:26px;text-align:center;box-shadow:0 0 30px rgba(255,255,255,.08)}
+.credit p{margin:6px 0;color:#c4d4e0}
+footer{border-top:1px solid var(--line);padding:28px 0 90px;color:var(--mute);font-size:13px;text-align:center}
+#lb{position:fixed;inset:0;background:rgba(2,4,10,.94);z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;padding:18px;cursor:zoom-out}
+#lb.on{display:flex}#lb .frame{background:#fff;max-width:94vw;max-height:80vh;overflow:auto;border:1px solid #fff;box-shadow:0 0 40px rgba(255,255,255,.4)}
+#lb img{display:block;max-width:none;width:min(94vw,1500px)}#lb img.fit{width:auto;max-width:92vw;max-height:78vh}
+#lb p{color:#fff;margin:12px 0 0;letter-spacing:.08em}
+@media (prefers-reduced-motion:reduce){.floor{animation:none}html{scroll-behavior:auto}.tile,.btn,a.card{transition:none}}
+@media(max-width:600px){nav .links{display:none}header.hero{padding-top:56px}}
+</style>
+</head>
+<body>
+<div class="floor" aria-hidden="true"></div><div class="scan" aria-hidden="true"></div>
+<nav><div class="wrap"><b>Diagrams&nbsp;as&nbsp;Code</b><span class="sp"></span>
+<span class="links" style="display:flex;gap:18px"><a href="#gallery">Gallery</a><a href="#kits">Kits</a><a href="#start">Quickstart</a><a href="#docs">Docs</a><a href="#credits">Credits</a></span>
+<a href="https://github.com/bsommers/diagrams-as-code">GitHub ↗</a></div></nav>
+
+<header class="hero"><div class="wrap">
+ <span class="eyebrow" id="ver">v0.0.0</span>
+ <h1>Diagrams <span>as</span> Code</h1>
+ <p class="lead">Describe a diagram in plain Python. Get deterministic, lintable SVG, PNG and PDF. No Graphviz, no Cairo, no dependencies. Drive it from the CLI, the API, or an MCP server.</p>
+ <div class="cta"><a class="btn" href="#gallery">Explore the gallery</a><a class="btn alt" href="https://github.com/bsommers/diagrams-as-code">View on GitHub</a><a class="btn alt" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/user-guide.md">User guide</a></div>
+ <div class="install"><code id="inst">git clone https://github.com/bsommers/diagrams-as-code &amp;&amp; cd diagrams-as-code &amp;&amp; uv sync</code><button data-copy="inst" aria-label="Copy install command">Copy</button></div>
+ <div class="stats" id="stats"></div>
+</div></header>
+
+<main class="wrap">
+<section id="gallery">
+ <h2>Gallery</h2>
+ <p class="sub">A hand-picked slice of the example gallery. Every figure is generated from a script in <code>examples/</code>, rendered byte-for-byte the same on every run, and checked by a visual defect linter.</p>
+ <div class="tools" id="tools"><input id="q" type="search" placeholder="Search diagrams…" aria-label="Search diagrams"></div>
+ <div class="gallery" id="grid"></div><div class="none" id="none" hidden>No diagrams match.</div>
+</section>
+
+<section id="kits">
+ <h2>What is in the box</h2>
+ <p class="sub">A drawing engine, a few focused kits, and a gallery wide enough to be a reference.</p>
+ <div class="cards">
+  <div class="card"><h3>Layered engine</h3><p>Shapes, groups, orthogonal routing, auto-layout and constraints. Pure standard library, enforced by import-layer tests.</p></div>
+  <div class="card"><h3>Sequence diagrams</h3><p>Participants, lifelines, activations, notes and loop / alt / par frames, laid out with measured text.</p></div>
+  <div class="card"><h3>Gantt &amp; timelines</h3><p>Dependencies, computed critical path, milestones, a today line, and label stacking that never collides.</p></div>
+  <div class="card"><h3>Plots &amp; math</h3><p>A data-space plot kit and a TeX-like typesetter: fractions, roots, binomials, accents, chemical formulas.</p></div>
+  <div class="card"><h3>Draft kit</h3><p>Dimension lines, hatching, leaders and organic outlines for engineering and anatomy figures.</p></div>
+  <div class="card"><h3>Lint &amp; audit</h3><p>Finds lines through nodes, overlapping labels and clipped text, so a wrong diagram fails a test instead of reaching a reader.</p></div>
+  <div class="card"><h3>MCP server</h3><p>Render and lint from an AI client over stdio. Each script runs in a resource-limited child process.</p></div>
+  <div class="card"><h3>Themes &amp; formats</h3><p><span id="themes">14</span> themes. SVG, PNG, PDF and a bill of materials from the same script.</p></div>
+ </div>
+</section>
+
+<section id="start">
+ <h2>Quickstart</h2>
+ <p class="sub">Python 3.10+ and <a href="https://docs.astral.sh/uv/">uv</a>. Nothing else to install.</p>
+ <div class="two">
+  <div>
+   <div class="rec"><div class="bar"><span>A diagram in a dozen lines</span><button data-copy="c1">Copy</button></div>
+<pre id="c1"><span class="kw">from</span> diagrams_as_code <span class="kw">import</span> Diagram, Shape
+<span class="kw">from</span> diagrams_as_code.output <span class="kw">import</span> render_all
+
+<span class="kw">def</span> diagram():
+    <span class="kw">with</span> Diagram(<span class="st">"Request path"</span>, layout=<span class="st">"auto"</span>) <span class="kw">as</span> d:
+        web = d.add(Shape(<span class="st">"web"</span>, <span class="st">"Web"</span>))
+        api = d.add(Shape(<span class="st">"api"</span>, <span class="st">"API"</span>))
+        db = d.add(Shape(<span class="st">"db"</span>, <span class="st">"Database"</span>, icon=<span class="st">"database"</span>))
+        web &gt;&gt; d.edge(<span class="st">"HTTPS"</span>) &gt;&gt; api
+        api &gt;&gt; d.edge(<span class="st">"SQL"</span>) &gt;&gt; db
+    <span class="kw">return</span> d
+
+render_all(diagram(), <span class="st">"out"</span>, <span class="st">"request_path"</span>)</pre></div>
+  </div>
+  <div>
+   <div class="rec"><div class="bar"><span>Render, lint, serve</span><button data-copy="c2">Copy</button></div>
+<pre id="c2"><span class="cm"># render every example to SVG + BOM</span>
+uv run diagrams-as-code render examples --out build
+
+<span class="cm"># find visual defects (exits 1 if any)</span>
+uv run diagrams-as-code lint examples
+
+<span class="cm"># PNG and PDF too</span>
+uv run diagrams-as-code render examples/finance --format svg,png,pdf
+
+<span class="cm"># let an AI client drive it (stdio MCP)</span>
+uv run diagrams-as-code mcp --root .</pre></div>
+  </div>
+ </div>
+</section>
+
+<section id="docs">
+ <h2>Documentation</h2>
+ <div class="cards">
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/user-guide.md"><h3>User guide</h3><p>Shapes, layout, themes, plots and math in one place.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/how-to.md"><h3>How-to recipes</h3><p>Short, runnable answers to common tasks.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/architecture.md"><h3>Architecture</h3><p>Layers, rendering pipeline and invariants.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/CAPABILITIES.md"><h3>Capabilities</h3><p>The full capability manifest with verification commands.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/math-markup.md"><h3>Math markup</h3><p>Every supported command, and what is not.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/sequence-diagrams.md"><h3>Sequence diagrams</h3><p>The sequence kit API and limits.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/gantt-timelines.md"><h3>Gantt &amp; timelines</h3><p>Scheduling, critical path and timelines.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/CHANGELOG.md"><h3>Changelog</h3><p>What changed in every release.</p></a>
+ </div>
+</section>
+
+<section id="credits">
+ <h2>Credits</h2>
+ <div class="credit">
+  <p><b>Diagrams as Code</b> is created and maintained by <a href="https://github.com/bsommers">Bill Sommers</a>.</p>
+  <p>Built in collaboration with <a href="https://claude.com/claude-code">Claude Code</a> by Anthropic.</p>
+  <p>Released under the <a href="https://github.com/bsommers/diagrams-as-code/blob/master/LICENSE">Apache License 2.0</a>. Third-party notices are in <a href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/sources.md">sources</a>.</p>
+ </div>
+</section>
+</main>
+<footer><div class="wrap">Diagrams as Code <span id="ver2"></span> · <a href="https://github.com/bsommers/diagrams-as-code">source</a> · generated figures are byte-stable</div></footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Diagram preview"><div class="frame"><img id="lbimg" alt=""></div><p id="lbcap"></p></div>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var data=null,group="All",q="";
+function count(el,to){var t0=null,dur=900;if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=to;return}
+ function step(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+function stats(d){var s=[["diagrams",d.diagrams],["domains",d.domains],["themes",d.themes],["icons",d.icons],["formats",4]];
+ $('#stats').innerHTML=s.map(function(x){return '<div class="stat"><b data-n="'+x[1]+'">0</b><span>'+x[0]+'</span></div>'}).join('');
+ document.querySelectorAll('.stat b').forEach(function(b){count(b,+b.dataset.n)})}
+function pills(d){var all=["All"].concat(d.groups);var t=$('#tools');
+ t.insertAdjacentHTML('afterbegin',all.map(function(g){return '<button class="pill" aria-pressed="'+(g===group)+'" data-g="'+esc(g)+'">'+esc(g)+'</button>'}).join(''));
+ t.addEventListener('click',function(e){var b=e.target.closest('.pill');if(!b)return;group=b.dataset.g;
+  t.querySelectorAll('.pill').forEach(function(p){p.setAttribute('aria-pressed',p===b)});draw()})}
+function draw(){var items=data.gallery.filter(function(i){
+  return (group==="All"||i.group===group)&&(!q||(i.title+' '+i.domain).toLowerCase().indexOf(q)>=0)});
+ $('#grid').innerHTML=items.map(function(i,n){return '<div class="tile"><button class="img" data-i="'+n+'" aria-label="Preview '+esc(i.title)+'"><img loading="lazy" src="'+esc(i.image)+'" alt="'+esc(i.title)+'"></button>'+
+  '<div class="meta"><span class="dom">'+esc(i.domain.replace(/_/g,' '))+'</span><span>'+esc(i.title)+'</span><a class="src" href="'+esc(i.source)+'">view script ↗</a></div></div>'}).join('');
+ $('#none').hidden=items.length>0;window._items=items}
+function open_(i){var it=window._items[i];$('#lbimg').src=it.image;$('#lbimg').alt=it.title;$('#lbimg').className='fit';$('#lbcap').textContent=it.title+' · '+it.domain.replace(/_/g,' ');$('#lb').classList.add('on')}
+$('#grid').addEventListener('click',function(e){var b=e.target.closest('.img');if(b)open_(+b.dataset.i)});
+$('#lb').addEventListener('click',function(e){if(e.target.id==='lbimg'){e.target.classList.toggle('fit');e.stopPropagation();return}$('#lb').classList.remove('on')});
+addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').classList.remove('on')});
+$('#q').addEventListener('input',function(e){q=e.target.value.trim().toLowerCase();draw()});
+document.addEventListener('click',function(e){var b=e.target.closest('[data-copy]');if(!b)return;
+ var el=document.getElementById(b.dataset.copy);var txt=el.innerText||el.textContent;
+ (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1200)},function(){});});
+fetch('assets/site-data.json').then(function(r){return r.json()}).then(function(d){data=d;
+ $('#ver').textContent='v'+d.version+' · Apache-2.0';$('#ver2').textContent='v'+d.version;$('#themes').textContent=d.themes;
+ stats(d);pills(d);draw()}).catch(function(){$('#grid').innerHTML='<div class="none">Gallery data could not be loaded.</div>'});
+})();
+</script>
+</body>
+</html>

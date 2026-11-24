@@ -1,0 +1,313 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1063 648" width="1063" height="648">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7287FD"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#7287FD"/>
+    </marker>
+    <marker id="arrow-5A6478" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#5A6478"/>
+    </marker>
+    <marker id="arrow-5A6478-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#5A6478"/>
+    </marker>
+    <marker id="arrow-B03A2E" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B03A2E"/>
+    </marker>
+    <marker id="arrow-B03A2E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B03A2E"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#EFF1F5"/>
+  <g id="polygon_31">
+    <path d="M 40 80 L 978.17 80 L 978.17 108 L 40 108 Z" fill="#F6F7FA" />
+  </g>
+  <g id="polygon_47">
+    <path d="M 40 220 L 978.17 220 L 978.17 248 L 40 248 Z" fill="#F6F7FA" />
+  </g>
+  <g id="polygon_63">
+    <path d="M 40 360 L 978.17 360 L 978.17 388 L 40 388 Z" fill="#F6F7FA" />
+  </g>
+  <g id="polygon_18">
+    <path d="M 40 40 L 978.17 40 L 978.17 80 L 40 80 Z" fill="#EEF1F6" />
+  </g>
+  <g id="path_29">
+    <path d="M 218.17 60 L 218.17 80 M 313.17 60 L 313.17 80 M 408.17 60 L 408.17 80 M 503.17 60 L 503.17 80 M 598.17 60 L 598.17 80 M 693.17 60 L 693.17 80 M 788.17 60 L 788.17 80 M 883.17 60 L 883.17 80 M 978.17 60 L 978.17 80 M 625.31 40 L 625.31 80 M 218.17 60 L 978.17 60 M 218.17 40 L 218.17 500" fill="none" stroke="#DDE1E8" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_30">
+    <path d="M 218.17 80 L 218.17 500 M 313.17 80 L 313.17 500 M 408.17 80 L 408.17 500 M 503.17 80 L 503.17 500 M 598.17 80 L 598.17 500 M 693.17 80 L 693.17 500 M 788.17 80 L 788.17 500 M 883.17 80 L 883.17 500 M 978.17 80 L 978.17 500" fill="none" stroke="#DDE1E8" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_73">
+    <path d="M 598.17 40 L 598.17 502" fill="none" stroke="#D35400" stroke-width="1.4" stroke-dasharray="5,3" stroke-linejoin="round" />
+  </g>
+  <path d="M 343.88 130 L 343.88 176 Q 343.88 178, 345.88 178 L 348.12 178" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 353.88 178 L 346.68 180.88 L 346.68 175.12 Z" fill="#5A6478" />
+  <path d="M 395.17 186 L 395.17 204 Q 395.17 206, 397.17 206 L 405.98 206" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 411.74 206 L 404.54 208.88 L 404.54 203.12 Z" fill="#5A6478" />
+  <path d="M 421.74 216 L 421.74 218 Q 421.74 220, 419.74 220 L 413.74 220 Q 411.74 220, 411.74 222 L 411.74 288 Q 411.74 290, 413.74 290 L 415.98 290" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 421.74 290 L 414.54 292.88 L 414.54 287.12 Z" fill="#5A6478" />
+  <path d="M 421.74 216 L 421.74 218 Q 421.74 220, 419.74 220 L 413.74 220 Q 411.74 220, 411.74 222 L 411.74 316 Q 411.74 318, 413.74 318 L 415.98 318" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 421.74 318 L 414.54 320.88 L 414.54 315.12 Z" fill="#5A6478" />
+  <path d="M 615.31 298 L 615.31 344 Q 615.31 346, 617.31 346 L 687.41 346" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 693.17 346 L 685.97 348.88 L 685.97 343.12 Z" fill="#5A6478" />
+  <path d="M 615.31 298 L 615.31 400 Q 615.31 402, 617.31 402 L 619.55 402" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 625.31 402 L 618.11 404.88 L 618.11 399.12 Z" fill="#5A6478" />
+  <path d="M 520.31 326 L 520.31 428 Q 520.31 430, 522.31 430 L 768.84 430" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 774.6 430 L 767.4 432.88 L 767.4 427.12 Z" fill="#5A6478" />
+  <path d="M 710.31 410 L 710.31 484 Q 710.31 486, 712.31 486 L 962.41 486" fill="none" stroke="#5A6478" stroke-width="1.1" />
+  <path d="M 968.17 486 L 960.97 488.88 L 960.97 483.12 Z" fill="#5A6478" />
+  <path d="M 343.88 130 L 343.88 150 L 347.74 150" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 353.88 150 L 346.2 153.07 L 346.2 146.93 Z" fill="#B03A2E" />
+  <path d="M 421.74 158 L 421.74 189.86" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 421.74 196 L 418.67 188.32 L 424.81 188.32 Z" fill="#B03A2E" />
+  <path d="M 421.74 216 L 421.74 218 Q 421.74 220, 419.74 220 L 413.74 220 Q 411.74 220, 411.74 222 L 411.74 262 L 415.6 262" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 421.74 262 L 414.06 265.07 L 414.06 258.93 Z" fill="#B03A2E" />
+  <path d="M 680.17 270 L 680.17 344 Q 680.17 346, 682.17 346 L 687.02 346" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 693.17 346 L 685.49 349.07 L 685.49 342.93 Z" fill="#B03A2E" />
+  <path d="M 761.6 354 L 761.6 428 Q 761.6 430, 763.6 430 L 768.45 430" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 774.6 430 L 766.92 433.07 L 766.92 426.93 Z" fill="#B03A2E" />
+  <path d="M 900.31 438 L 900.31 458 L 904.17 458" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 910.31 458 L 902.63 461.07 L 902.63 454.93 Z" fill="#B03A2E" />
+  <path d="M 956.17 466 L 956.17 484 Q 956.17 486, 958.17 486 L 962.02 486" fill="none" stroke="#B03A2E" stroke-width="1.6" />
+  <path d="M 968.17 486 L 960.49 489.07 L 960.49 482.93 Z" fill="#B03A2E" />
+  <g id="text_1">
+    <text x="40" y="98.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">Discovery</text>
+  </g>
+  <g id="text_2">
+    <text x="54" y="126.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">User research</text>
+  </g>
+  <g id="text_3">
+    <text x="54" y="154.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Product spec</text>
+  </g>
+  <g id="text_4">
+    <text x="54" y="182.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Architecture review</text>
+  </g>
+  <g id="text_5">
+    <text x="40" y="210.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">Spec sign-off</text>
+  </g>
+  <g id="text_6">
+    <text x="40" y="238.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">Build</text>
+  </g>
+  <g id="text_7">
+    <text x="54" y="266.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Backend API</text>
+  </g>
+  <g id="text_8">
+    <text x="54" y="294.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Web client</text>
+  </g>
+  <g id="text_9">
+    <text x="54" y="322.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Data migration</text>
+  </g>
+  <g id="text_10">
+    <text x="54" y="350.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Integration tests</text>
+  </g>
+  <g id="text_11">
+    <text x="40" y="378.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">Launch</text>
+  </g>
+  <g id="text_12">
+    <text x="54" y="406.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Docs and training</text>
+  </g>
+  <g id="text_13">
+    <text x="54" y="434.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Private beta</text>
+  </g>
+  <g id="text_14">
+    <text x="54" y="462.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Beta fixes</text>
+  </g>
+  <g id="text_15">
+    <text x="40" y="490.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">General availability</text>
+  </g>
+  <g id="text_16">
+    <text x="40" y="64.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">Task</text>
+  </g>
+  <g id="text_17">
+    <text x="172.67" y="63.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">Done</text>
+  </g>
+  <g id="text_19">
+    <text x="262.89" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">2</text>
+  </g>
+  <g id="text_20">
+    <text x="357.89" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">9</text>
+  </g>
+  <g id="text_21">
+    <text x="450.11" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">16</text>
+  </g>
+  <g id="text_22">
+    <text x="545.11" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">23</text>
+  </g>
+  <g id="text_23">
+    <text x="640.11" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">30</text>
+  </g>
+  <g id="text_24">
+    <text x="737.89" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">6</text>
+  </g>
+  <g id="text_25">
+    <text x="830.11" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">13</text>
+  </g>
+  <g id="text_26">
+    <text x="925.11" y="73.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">20</text>
+  </g>
+  <g id="text_27">
+    <text x="224.17" y="53.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">Mar 2026</text>
+  </g>
+  <g id="text_28">
+    <text x="631.31" y="53.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">Apr 2026</text>
+  </g>
+  <g id="polygon_33">
+    <path d="M 218.17 114 L 353.88 114 L 353.88 130 L 218.17 130 Z" fill="#F4CCC6" />
+  </g>
+  <g id="text_36">
+    <text x="172.04" y="125.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">100%</text>
+  </g>
+  <g id="polygon_37">
+    <path d="M 353.88 142 L 421.74 142 L 421.74 158 L 353.88 158 Z" fill="#F4CCC6" />
+  </g>
+  <g id="text_40">
+    <text x="172.04" y="153.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">100%</text>
+  </g>
+  <g id="polygon_41">
+    <path d="M 353.88 170 L 408.17 170 L 408.17 186 L 353.88 186 Z" fill="#C9DAF0" />
+  </g>
+  <g id="text_44">
+    <text x="172.04" y="181.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">100%</text>
+  </g>
+  <g id="text_46">
+    <text x="436.74" y="209.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">Mar 17</text>
+  </g>
+  <g id="polygon_49">
+    <path d="M 421.74 254 L 693.17 254 L 693.17 270 L 421.74 270 Z" fill="#F4CCC6" />
+  </g>
+  <g id="text_52">
+    <text x="178.15" y="265.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">45%</text>
+  </g>
+  <g id="polygon_53">
+    <path d="M 421.74 282 L 625.31 282 L 625.31 298 L 421.74 298 Z" fill="#C9DAF0" />
+  </g>
+  <g id="text_56">
+    <text x="178.15" y="293.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">60%</text>
+  </g>
+  <g id="polygon_57">
+    <path d="M 421.74 310 L 530.31 310 L 530.31 326 L 421.74 326 Z" fill="#C9DAF0" />
+  </g>
+  <g id="text_60">
+    <text x="178.15" y="321.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">80%</text>
+  </g>
+  <g id="polygon_61">
+    <path d="M 693.17 338 L 774.6 338 L 774.6 354 L 693.17 354 Z" fill="#F4CCC6" />
+  </g>
+  <g id="polygon_65">
+    <path d="M 625.31 394 L 720.31 394 L 720.31 410 L 625.31 410 Z" fill="#C9DAF0" />
+  </g>
+  <g id="polygon_67">
+    <path d="M 774.6 422 L 910.31 422 L 910.31 438 L 774.6 438 Z" fill="#F4CCC6" />
+  </g>
+  <g id="polygon_69">
+    <path d="M 910.31 450 L 978.17 450 L 978.17 466 L 910.31 466 Z" fill="#F4CCC6" />
+  </g>
+  <g id="text_72">
+    <text x="993.17" y="489.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">Apr 27</text>
+  </g>
+  <g id="text_74">
+    <text x="585.94" y="513.69" fill="#D35400" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-style="italic" text-anchor="start">today</text>
+  </g>
+  <g id="text_99">
+    <text x="242.17" y="537.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Task</text>
+  </g>
+  <g id="text_101">
+    <text x="308.01" y="537.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Complete</text>
+  </g>
+  <g id="text_103">
+    <text x="397.08" y="537.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Critical path</text>
+  </g>
+  <g id="text_105">
+    <text x="497.16" y="537.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Milestone</text>
+  </g>
+  <g id="text_107">
+    <text x="586.24" y="537.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Today</text>
+  </g>
+  <g id="caption_108">
+    <text x="119.58" y="584.53" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="193.75" y="584.53" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="749.3" lengthAdjust="spacingAndGlyphs"> A 56-DAY LAUNCH PLAN. CRITICAL PATH (RED, ZERO SLACK): USER RESEARCH → PRODUCT SPEC →</text>
+    <text x="102.48" y="603.28" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="857.67" lengthAdjust="spacingAndGlyphs">SPEC SIGN-OFF → BACKEND API → INTEGRATION TESTS → PRIVATE BETA → BETA FIXES → GENERAL AVAILABILITY</text>
+  </g>
+  <g id="polygon_32">
+    <path d="M 218.17 90 L 421.74 90 L 421.74 100 L 416.74 96 L 223.17 96 L 218.17 100 Z" fill="#1F2F57" />
+  </g>
+  <g id="polygon_34">
+    <path d="M 218.17 114 L 353.88 114 L 353.88 130 L 218.17 130 Z" fill="#4A6FA5" fill-opacity="0.75" />
+  </g>
+  <g id="polygon_38">
+    <path d="M 353.88 142 L 421.74 142 L 421.74 158 L 353.88 158 Z" fill="#4A6FA5" fill-opacity="0.75" />
+  </g>
+  <g id="polygon_42">
+    <path d="M 353.88 170 L 408.17 170 L 408.17 186 L 353.88 186 Z" fill="#4A6FA5" fill-opacity="0.75" />
+  </g>
+  <g id="polygon_48">
+    <path d="M 421.74 230 L 774.6 230 L 774.6 240 L 769.6 236 L 426.74 236 L 421.74 240 Z" fill="#1F2F57" />
+  </g>
+  <g id="polygon_50">
+    <path d="M 421.74 254 L 543.88 254 L 543.88 270 L 421.74 270 Z" fill="#4A6FA5" fill-opacity="0.75" />
+  </g>
+  <g id="polygon_54">
+    <path d="M 421.74 282 L 543.88 282 L 543.88 298 L 421.74 298 Z" fill="#4A6FA5" fill-opacity="0.75" />
+  </g>
+  <g id="polygon_58">
+    <path d="M 421.74 310 L 508.6 310 L 508.6 326 L 421.74 326 Z" fill="#4A6FA5" fill-opacity="0.75" />
+  </g>
+  <g id="polygon_64">
+    <path d="M 625.31 370 L 978.17 370 L 978.17 380 L 973.17 376 L 630.31 376 L 625.31 380 Z" fill="#1F2F57" />
+  </g>
+  <g id="polygon_35">
+    <path d="M 218.17 114 L 353.88 114 L 353.88 130 L 218.17 130 Z" fill="none" stroke="#B03A2E" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 353.88 142 L 421.74 142 L 421.74 158 L 353.88 158 Z" fill="none" stroke="#B03A2E" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_43">
+    <path d="M 353.88 170 L 408.17 170 L 408.17 186 L 353.88 186 Z" fill="none" stroke="#4A6FA5" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_45">
+    <path d="M 421.74 196 L 431.74 206 L 421.74 216 L 411.74 206 Z" fill="#B03A2E" stroke="#B03A2E" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_51">
+    <path d="M 421.74 254 L 693.17 254 L 693.17 270 L 421.74 270 Z" fill="none" stroke="#B03A2E" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_55">
+    <path d="M 421.74 282 L 625.31 282 L 625.31 298 L 421.74 298 Z" fill="none" stroke="#4A6FA5" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_59">
+    <path d="M 421.74 310 L 530.31 310 L 530.31 326 L 421.74 326 Z" fill="none" stroke="#4A6FA5" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_62">
+    <path d="M 693.17 338 L 774.6 338 L 774.6 354 L 693.17 354 Z" fill="none" stroke="#B03A2E" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_66">
+    <path d="M 625.31 394 L 720.31 394 L 720.31 410 L 625.31 410 Z" fill="none" stroke="#4A6FA5" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_68">
+    <path d="M 774.6 422 L 910.31 422 L 910.31 438 L 774.6 438 Z" fill="none" stroke="#B03A2E" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_70">
+    <path d="M 910.31 450 L 978.17 450 L 978.17 466 L 910.31 466 Z" fill="none" stroke="#B03A2E" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_71">
+    <path d="M 978.17 476 L 988.17 486 L 978.17 496 L 968.17 486 Z" fill="#B03A2E" stroke="#B03A2E" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_98">
+    <path d="M 218.17 528 L 236.17 528 L 236.17 540 L 218.17 540 Z" fill="#C9DAF0" stroke="#4A6FA5" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_100">
+    <path d="M 284.01 528 L 302.01 528 L 302.01 540 L 284.01 540 Z" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_102">
+    <path d="M 373.08 528 L 391.08 528 L 391.08 540 L 373.08 540 Z" fill="#F4CCC6" stroke="#B03A2E" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_104">
+    <path d="M 482.16 528 L 488.16 534 L 482.16 540 L 476.16 534 Z" fill="#1F2F57" />
+  </g>
+  <g id="path_106">
+    <path d="M 571.24 526 L 571.24 542" fill="none" stroke="#D35400" stroke-width="1.4" stroke-dasharray="5,3" stroke-linejoin="round" />
+  </g>
+</svg>

@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1063 714" width="1063" height="714">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-9C2F2F" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#9C2F2F"/>
+    </marker>
+    <marker id="arrow-9C2F2F-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#9C2F2F"/>
+    </marker>
+    <marker id="arrow-1F2F57" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-1F2F57-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#111111"/>
+    </marker>
+    <marker id="arrow-111111-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#111111"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 102 186 C 110 173.5, 135.17 108.5, 150 111 C 164.83 113.5, 184.17 186, 188.78 196.14" fill="none" stroke="#9C2F2F" stroke-width="1.8" />
+  <path d="M 191 201 L 183.7 193.49 L 188.59 195.16 L 190.89 190.53 Z" fill="#9C2F2F" />
+  <path d="M 245 209 C 251 197, 273.67 140, 281 137 C 288.33 134, 287.67 182, 288.22 185.71" fill="none" stroke="#1F2F57" stroke-width="1.8" />
+  <path d="M 289 191 L 284.09 181.75 L 288.32 184.72 L 291.82 180.92 Z" fill="#1F2F57" />
+  <path d="M 365 215 L 408.4 215" fill="none" stroke="#111111" stroke-width="2" />
+  <path d="M 415 215 L 403 219.8 L 407.2 215 L 403 210.2 Z" fill="#111111" />
+  <path d="M 715 215 L 758.4 215" fill="none" stroke="#111111" stroke-width="2" />
+  <path d="M 765 215 L 753 219.8 L 757.2 215 L 753 210.2 Z" fill="#111111" />
+  <path d="M 60 600 L 397.05 600" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 402 600 L 393 603.6 L 396.15 600 L 393 596.4 Z" fill="#000000" />
+  <path d="M 60 600 L 60 422.95" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 60 418 L 63.6 427 L 60 423.85 L 56.4 427 Z" fill="#000000" />
+  <g id="text_1">
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(382.67 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M688 338C688 536 569 669 370 669C172 669 51 532 51 329C51 117 171 -12 370 -12C567 -12 688 129 688 338ZM583 335C583 134 513 30 371 30C227 30 156 147 156 335C156 518 238 627 367 627C497 627 583 515 583 335Z" transform="translate(398.21 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(413.57 51.5) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(428.89 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(447.73 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(461.13 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(477.27 63.08) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(485 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(497.36 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M876 264C778 305 700 382 634 459L613 439C636 405 667 369 697 341C707 331 711 324 711 315C711 305 695 293 685 293H71V225H684C702 225 710 215 710 205C710 196 705 185 696 176C665 144 636 111 612 78L633 58C700 136 778 212 876 254Z" transform="translate(510.52 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(535.04 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M688 338C688 536 569 669 370 669C172 669 51 532 51 329C51 117 171 -12 370 -12C567 -12 688 129 688 338ZM583 335C583 134 513 30 371 30C227 30 156 147 156 335C156 518 238 627 367 627C497 627 583 515 583 335Z" transform="translate(550.58 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(565.34 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(578.74 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(594.88 63.08) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(607.05 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(625.89 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(638.25 58.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(646.45 51.68) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="text_2">
+    <text x="197.06" y="222.57" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="22" text-anchor="start">C</text>
+  </g>
+  <g id="text_3">
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(84.11 221.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M688 338C688 536 569 669 370 669C172 669 51 532 51 329C51 117 171 -12 370 -12C567 -12 688 129 688 338ZM583 335C583 134 513 30 371 30C227 30 156 147 156 335C156 518 238 627 367 627C497 627 583 515 583 335Z" transform="translate(99.65 221.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(115.01 214.5) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="text_4">
+    <text x="275" y="221.88" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="20" text-anchor="start">Br</text>
+  </g>
+  <g id="polyline_5">
+    <path d="M 194 215 L 131 215" fill="none" stroke="#111111" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_6">
+    <path d="M 216 215 L 268 215" fill="none" stroke="#111111" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="182.5" y="163.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_8">
+    <path d="M 202.07 204.4 L 191.66 166.64" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_9">
+    <text x="149.5" y="263.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_10">
+    <path d="M 196.65 222.16 L 163.59 250.49" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_11">
+    <text x="215.5" y="263.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_12">
+    <path d="M 209.13 225.2 L 218.25 247.73" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_19">
+    <text x="124.66" y="120.16" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">1</text>
+  </g>
+  <g id="text_20">
+    <text x="297" y="142.16" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">2</text>
+  </g>
+  <g id="text_21">
+    <text x="552.06" y="222.57" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="22" text-anchor="start">C</text>
+  </g>
+  <g id="text_22">
+    <text x="453" y="221.88" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="20" text-anchor="start">HO</text>
+  </g>
+  <g id="text_23">
+    <text x="642" y="221.88" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="20" text-anchor="start">Br</text>
+  </g>
+  <g id="polyline_24">
+    <path d="M 549 215 L 486 215" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_25">
+    <path d="M 571 215 L 635 215" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <text x="553.5" y="163.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_27">
+    <path d="M 560 204 L 560 167" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_28">
+    <text x="520.5" y="263.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_29">
+    <path d="M 553.2 223.65 L 533.18 249.14" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_30">
+    <text x="586.5" y="263.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_31">
+    <path d="M 566.8 223.65 L 586.82 249.14" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_32">
+    <path d="M509 629C509 688 423 710 346 710C302 710 200 698 200 612C200 545 257 496 293 465L291 457C148 447 47 332 47 146C47 52 87 -14 189 -14C364 -14 453 117 453 280C453 498 250 539 250 618C250 642 264 657 314 657C385 657 424 618 461 577H472C496 587 509 602 509 629ZM381 257C381 113 288 70 207 70C132 70 98 118 98 180C98 322 214 384 344 387C367 349 381 308 381 257Z" transform="translate(459.8 190.16) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(468.04 184.01) scale(0.0105 -0.0105)" fill="#000000"/>
+  </g>
+  <g id="text_33">
+    <path d="M509 629C509 688 423 710 346 710C302 710 200 698 200 612C200 545 257 496 293 465L291 457C148 447 47 332 47 146C47 52 87 -14 189 -14C364 -14 453 117 453 280C453 498 250 539 250 618C250 642 264 657 314 657C385 657 424 618 461 577H472C496 587 509 602 509 629ZM381 257C381 113 288 70 207 70C132 70 98 118 98 180C98 322 214 384 344 387C367 349 381 308 381 257Z" transform="translate(643.8 190.16) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(652.04 184.01) scale(0.0105 -0.0105)" fill="#000000"/>
+  </g>
+  <g id="polyline_34">
+    <path d="M 432 115 L 418 115 L 418 293 L 432 293" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_35">
+    <path d="M 688 115 L 702 115 L 702 293 L 688 293" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_36">
+    <text x="517.73" y="99.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">transition state</text>
+  </g>
+  <g id="text_37">
+    <text x="872.06" y="222.57" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="22" text-anchor="start">C</text>
+  </g>
+  <g id="text_38">
+    <text x="795" y="221.88" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="20" text-anchor="start">HO</text>
+  </g>
+  <g id="text_39">
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(974.28 221.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(986.64 221.88) scale(0.02 -0.02)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(994.84 214.68) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="polyline_40">
+    <path d="M 869 215 L 828 215" fill="none" stroke="#111111" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="text_41">
+    <text x="889.5" y="163.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_42">
+    <path d="M 882.93 204.4 L 893.34 166.64" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_43">
+    <text x="856.5" y="263.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_44">
+    <path d="M 875.87 225.2 L 866.75 247.73" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_45">
+    <text x="922.5" y="263.19" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" text-anchor="start">H</text>
+  </g>
+  <g id="polyline_46">
+    <path d="M 888.35 222.16 L 921.41 250.49" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_47">
+    <text x="935.58" y="222.57" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="22" text-anchor="start">+</text>
+  </g>
+  <g id="text_52">
+    <text x="170.2" y="332.6" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13"><tspan x="170.2" dy="0">Reactants:</tspan> <tspan x="170.2" dy="16.25">backside attack</tspan></text>
+  </g>
+  <g id="text_53">
+    <text x="471.11" y="332.6" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13"><tspan x="471.11" dy="0">Concerted:</tspan> <tspan x="471.11" dy="16.25">bonds form and break together</tspan></text>
+  </g>
+  <g id="text_54">
+    <text x="817.85" y="332.6" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13"><tspan x="817.85" dy="0">Products:</tspan> <tspan x="817.85" dy="16.25">configuration inverted</tspan></text>
+  </g>
+  <g id="path_59">
+    <path d="M 60 597 L 60 603 M 57 600 L 63 600" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_60">
+    <text x="38.6" y="408.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">energy</text>
+  </g>
+  <g id="point_62">
+    <path d="M 228.5 430 C 228.5 431.93 226.93 433.5 225 433.5 C 223.07 433.5 221.5 431.93 221.5 430 C 221.5 428.07 223.07 426.5 225 426.5 C 226.93 426.5 228.5 428.07 228.5 430 Z" fill="#000000" />
+  </g>
+  <g id="text_63">
+    <text x="145.63" y="418.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">single barrier, no intermediate</text>
+  </g>
+  <g id="text_64">
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(66.6 542.83) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M688 338C688 536 569 669 370 669C172 669 51 532 51 329C51 117 171 -12 370 -12C567 -12 688 129 688 338ZM583 335C583 134 513 30 371 30C227 30 156 147 156 335C156 518 238 627 367 627C497 627 583 515 583 335Z" transform="translate(75.92 542.83) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(85.14 538.4) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(94.33 542.83) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(105.64 542.83) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(113.68 542.83) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(123.37 545.35) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(128 542.83) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(135.42 542.83) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_65">
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(310.02 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M688 338C688 536 569 669 370 669C172 669 51 532 51 329C51 117 171 -12 370 -12C567 -12 688 129 688 338ZM583 335C583 134 513 30 371 30C227 30 156 147 156 335C156 518 238 627 367 627C497 627 583 515 583 335Z" transform="translate(319.34 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(328.2 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(336.24 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(345.92 586.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(353.23 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(364.54 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(371.95 583.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(376.87 579.31) scale(0.0084 -0.0084)" fill="#000000"/>
+  </g>
+  <g id="text_66">
+    <text x="173.97" y="623.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">reaction coordinate</text>
+  </g>
+  <g id="text_67">
+    <text x="470" y="417.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">What the arrows show</text>
+    <text x="470" y="433.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">1  lone pair on O becomes the new O-C bond</text>
+    <text x="470" y="450.1" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="260.13" lengthAdjust="spacingAndGlyphs">2  the C-Br bond pair leaves with bromine as </text>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(730.13 450.1) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(738.16 450.1) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(743.49 445.42) scale(0.0091 -0.0091)" fill="#000000"/>
+  </g>
+  <g id="text_68">
+    <text x="470" y="487.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Kinetics and stereochemistry</text>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(470 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M308 62C314 18 324 -5 368 -5C419 -5 443 16 476 64L461 80C447 65 433 55 414 55C393 55 384 63 384 104V331C384 435 343 485 234 485C125 485 58 431 58 375C58 342 80 327 100 327C128 327 144 342 144 373C144 433 154 454 211 454C271 454 301 421 301 334V290C215 263 38 237 38 105C38 41 80 -7 157 -7C221 -7 257 21 304 62ZM301 92C267 64 231 48 198 48C155 48 126 79 126 129C126 207 210 234 301 257Z" transform="translate(474.94 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M293 90C268 62 255 49 223 49C184 49 175 73 175 144V426H288V468H175L176 610H150C114 525 84 478 37 449V426H92V116C92 26 121 -10 188 -10C252 -10 273 20 312 74Z" transform="translate(481.18 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M415 143C383 101 352 65 271 65C191 65 115 128 115 266H431C426 406 354 485 245 485C128 485 34 405 34 238C34 77 127 -10 247 -10C350 -10 398 53 434 129ZM114 303C122 396 162 445 230 445C301 445 334 377 337 303Z" transform="translate(485.27 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(494.92 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M256 705H234L96 694V668C96 668 115 670 127 670C152 670 162 661 162 638C162 625 159 608 159 608L41 0H123L158 184L216 235L285 68C300 32 318 -10 369 -10C446 -10 497 83 507 102L486 116C464 85 441 58 407 58C377 58 367 79 353 112L279 284L390 382C423 412 454 440 522 442L525 467H310L307 442C331 442 352 437 352 416C352 402 342 391 328 379L172 238H167Z" transform="translate(507.89 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M299 -196V-164H169V704H299V736H90V-196Z" transform="translate(516.98 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M608 149C552 88 485 52 393 52C252 52 154 138 154 338C154 516 235 626 379 626C482 626 553 571 575 440H609V669H579C567 649 561 633 545 633C520 633 483 669 378 669C186 669 50 546 50 328C50 133 158 -11 364 -11C495 -11 578 47 632 128Z" transform="translate(521.52 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(530.23 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(540.72 506.58) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M409 350C492 372 551 412 551 501C551 600 484 657 306 657H36V627C117 627 133 616 133 536V127C133 44 117 30 36 30V0H344C493 0 583 63 583 177C583 286 494 332 409 346ZM225 320H295C388 320 478 289 478 175C478 48 383 37 297 37C273 37 249 38 225 40ZM225 362V615C245 617 266 618 285 618C407 618 452 571 452 493C452 402 414 362 293 362Z" transform="translate(545.75 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M183 482H159L35 452V424C35 424 46 426 66 426C102 426 102 408 102 372V97C102 41 95 29 29 29V0H279V29C204 29 185 39 185 102V330C209 370 241 412 264 412C276 412 296 378 329 378C351 378 373 394 373 432C373 466 354 488 315 488C267 488 237 453 186 379H183Z" transform="translate(553.78 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M259 -196V736H50V704H180V-164H50V-196Z" transform="translate(558.72 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M299 -196V-164H169V704H299V736H90V-196Z" transform="translate(565.43 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M688 338C688 536 569 669 370 669C172 669 51 532 51 329C51 117 171 -12 370 -12C567 -12 688 129 688 338ZM583 335C583 134 513 30 371 30C227 30 156 147 156 335C156 518 238 627 367 627C497 627 583 515 583 335Z" transform="translate(569.96 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M239 525C239 603 242 627 337 627V657H50V627C142 627 147 603 147 525V131C147 42 140 30 50 30V0H337V30C247 30 239 43 239 131V318H567V131C567 44 559 30 470 30V0H756V30C665 30 658 44 658 131V525C658 604 661 627 756 627V657H470V627C562 627 567 603 567 525V357H239Z" transform="translate(579.56 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(590.05 499.05) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M259 -196V736H50V704H180V-164H50V-196Z" transform="translate(597.12 503.85) scale(0.013 -0.013)" fill="#000000"/>
+    <text x="601.66" y="503.85" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="125.01" lengthAdjust="spacingAndGlyphs">: second order overall</text>
+    <text x="470" y="520.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">attack is from the side opposite Br (about 180 degrees),</text>
+    <text x="470" y="536.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">so a chiral carbon would invert (Walden inversion)</text>
+  </g>
+  <g id="text_69">
+    <text x="470" y="587.6" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13"><tspan x="470" dy="0">Primary and methyl halides react fastest;</tspan> <tspan x="470" dy="16.25">bulky substrates hinder the backside approach.</tspan></text>
+  </g>
+  <g id="caption_70">
+    <text x="5.85" y="669.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 6:</text>
+    <text x="80.02" y="669.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="958.44" lengthAdjust="spacingAndGlyphs"> THE SN2 MECHANISM FOR HYDROXIDE AND BROMOMETHANE: CURVED ARROWS, A PLANAR TRANSITION STATE AND INVERSION</text>
+  </g>
+  <g id="path_61">
+    <path d="M 60 525.2 L 60.83 525.19 L 61.65 525.17 L 62.48 525.14 L 63.3 525.09 L 64.12 525.02 L 64.95 524.95 L 65.78 524.86 L 66.6 524.76 L 67.42 524.64 L 68.25 524.51 L 69.08 524.37 L 69.9 524.21 L 70.72 524.05 L 71.55 523.87 L 72.38 523.67 L 73.2 523.47 L 74.03 523.25 L 74.85 523.03 L 75.67 522.79 L 76.5 522.53 L 77.33 522.27 L 78.15 522 L 78.97 521.71 L 79.8 521.42 L 80.62 521.11 L 81.45 520.79 L 82.28 520.46 L 83.1 520.12 L 83.92 519.78 L 84.75 519.42 L 85.58 519.05 L 86.4 518.67 L 87.22 518.28 L 88.05 517.88 L 88.88 517.47 L 89.7 517.06 L 90.53 516.63 L 91.35 516.2 L 92.18 515.75 L 93 515.3 L 93.82 514.84 L 94.65 514.37 L 95.47 513.89 L 96.3 513.4 L 97.12 512.91 L 97.95 512.41 L 98.78 511.9 L 99.6 511.38 L 100.42 510.86 L 101.25 510.32 L 102.08 509.79 L 102.9 509.24 L 103.72 508.69 L 104.55 508.13 L 105.38 507.56 L 106.2 506.99 L 107.03 506.41 L 107.85 505.82 L 108.67 505.23 L 109.5 504.64 L 110.32 504.03 L 111.15 503.43 L 111.97 502.81 L 112.8 502.19 L 113.62 501.57 L 114.45 500.94 L 115.28 500.31 L 116.1 499.67 L 116.92 499.02 L 117.75 498.38 L 118.57 497.73 L 119.4 497.07 L 120.22 496.41 L 121.05 495.75 L 121.88 495.08 L 122.7 494.41 L 123.53 493.73 L 124.35 493.05 L 125.17 492.37 L 126 491.69 L 126.83 491 L 127.65 490.31 L 128.47 489.62 L 129.3 488.93 L 130.12 488.23 L 130.95 487.53 L 131.78 486.83 L 132.6 486.13 L 133.43 485.42 L 134.25 484.72 L 135.07 484.01 L 135.9 483.3 L 136.73 482.59 L 137.55 481.88 L 138.38 481.17 L 139.2 480.45 L 140.02 479.74 L 140.85 479.03 L 141.68 478.31 L 142.5 477.6 L 143.32 476.89 L 144.15 476.17 L 144.98 475.46 L 145.8 474.75 L 146.62 474.03 L 147.45 473.32 L 148.28 472.61 L 149.1 471.9 L 149.93 471.19 L 150.75 470.48 L 151.57 469.78 L 152.4 469.07 L 153.22 468.37 L 154.05 467.67 L 154.88 466.97 L 155.7 466.27 L 156.52 465.58 L 157.35 464.89 L 158.18 464.2 L 159 463.51 L 159.82 462.83 L 160.65 462.15 L 161.47 461.47 L 162.3 460.79 L 163.12 460.12 L 163.95 459.45 L 164.78 458.79 L 165.6 458.13 L 166.43 457.47 L 167.25 456.82 L 168.07 456.18 L 168.9 455.53 L 169.73 454.89 L 170.55 454.26 L 171.38 453.63 L 172.2 453.01 L 173.03 452.39 L 173.85 451.77 L 174.68 451.17 L 175.5 450.56 L 176.32 449.97 L 177.15 449.38 L 177.97 448.79 L 178.8 448.21 L 179.62 447.64 L 180.45 447.07 L 181.27 446.51 L 182.1 445.96 L 182.93 445.41 L 183.75 444.88 L 184.57 444.34 L 185.4 443.82 L 186.23 443.3 L 187.05 442.79 L 187.88 442.29 L 188.7 441.8 L 189.53 441.31 L 190.35 440.83 L 191.18 440.36 L 192 439.9 L 192.83 439.45 L 193.65 439 L 194.47 438.57 L 195.3 438.14 L 196.12 437.73 L 196.95 437.32 L 197.78 436.92 L 198.6 436.53 L 199.42 436.15 L 200.25 435.78 L 201.07 435.42 L 201.9 435.08 L 202.72 434.74 L 203.55 434.41 L 204.38 434.09 L 205.2 433.78 L 206.03 433.49 L 206.85 433.2 L 207.68 432.93 L 208.5 432.67 L 209.33 432.41 L 210.15 432.17 L 210.97 431.95 L 211.8 431.73 L 212.62 431.53 L 213.45 431.33 L 214.28 431.15 L 215.1 430.99 L 215.92 430.83 L 216.75 430.69 L 217.57 430.56 L 218.4 430.44 L 219.22 430.34 L 220.05 430.25 L 220.88 430.18 L 221.7 430.11 L 222.53 430.06 L 223.35 430.03 L 224.18 430.01 L 225 430 L 225.82 430.01 L 226.65 430.04 L 227.47 430.09 L 228.3 430.16 L 229.12 430.25 L 229.95 430.36 L 230.77 430.49 L 231.6 430.64 L 232.42 430.8 L 233.25 430.99 L 234.07 431.19 L 234.9 431.41 L 235.72 431.65 L 236.55 431.91 L 237.38 432.18 L 238.2 432.47 L 239.03 432.78 L 239.85 433.11 L 240.67 433.45 L 241.5 433.81 L 242.32 434.18 L 243.15 434.57 L 243.97 434.98 L 244.8 435.41 L 245.62 435.84 L 246.45 436.3 L 247.28 436.77 L 248.1 437.25 L 248.93 437.75 L 249.75 438.26 L 250.58 438.79 L 251.4 439.33 L 252.22 439.89 L 253.05 440.45 L 253.88 441.04 L 254.7 441.63 L 255.53 442.24 L 256.35 442.86 L 257.18 443.5 L 258 444.14 L 258.83 444.8 L 259.65 445.47 L 260.48 446.16 L 261.3 446.85 L 262.12 447.56 L 262.95 448.27 L 263.77 449 L 264.6 449.74 L 265.43 450.49 L 266.25 451.25 L 267.07 452.02 L 267.9 452.8 L 268.73 453.59 L 269.55 454.39 L 270.38 455.2 L 271.2 456.02 L 272.02 456.84 L 272.85 457.68 L 273.67 458.52 L 274.5 459.38 L 275.32 460.24 L 276.15 461.11 L 276.98 461.98 L 277.8 462.87 L 278.62 463.76 L 279.45 464.66 L 280.27 465.56 L 281.1 466.47 L 281.92 467.39 L 282.75 468.32 L 283.57 469.25 L 284.4 470.19 L 285.23 471.13 L 286.05 472.08 L 286.88 473.03 L 287.7 473.99 L 288.52 474.95 L 289.35 475.92 L 290.18 476.89 L 291 477.87 L 291.83 478.85 L 292.65 479.84 L 293.48 480.83 L 294.3 481.82 L 295.12 482.81 L 295.95 483.81 L 296.77 484.81 L 297.6 485.82 L 298.43 486.83 L 299.25 487.83 L 300.08 488.84 L 300.9 489.86 L 301.73 490.87 L 302.55 491.89 L 303.38 492.9 L 304.2 493.92 L 305.02 494.94 L 305.85 495.96 L 306.68 496.98 L 307.5 498 L 308.32 499.02 L 309.15 500.04 L 309.98 501.06 L 310.8 502.08 L 311.62 503.1 L 312.45 504.11 L 313.27 505.13 L 314.1 506.14 L 314.92 507.16 L 315.75 508.17 L 316.57 509.17 L 317.4 510.18 L 318.22 511.19 L 319.05 512.19 L 319.88 513.19 L 320.7 514.18 L 321.52 515.17 L 322.35 516.16 L 323.18 517.15 L 324 518.13 L 324.82 519.11 L 325.65 520.08 L 326.48 521.05 L 327.3 522.01 L 328.12 522.97 L 328.95 523.92 L 329.77 524.87 L 330.6 525.81 L 331.43 526.75 L 332.25 527.68 L 333.07 528.61 L 333.9 529.53 L 334.73 530.44 L 335.55 531.34 L 336.38 532.24 L 337.2 533.13 L 338.03 534.02 L 338.85 534.89 L 339.68 535.76 L 340.5 536.62 L 341.32 537.48 L 342.15 538.32 L 342.98 539.16 L 343.8 539.98 L 344.62 540.8 L 345.45 541.61 L 346.28 542.41 L 347.1 543.2 L 347.93 543.98 L 348.75 544.75 L 349.57 545.51 L 350.4 546.26 L 351.22 547 L 352.05 547.73 L 352.88 548.44 L 353.7 549.15 L 354.52 549.84 L 355.35 550.53 L 356.18 551.2 L 357 551.86 L 357.82 552.5 L 358.65 553.14 L 359.47 553.76 L 360.3 554.37 L 361.12 554.96 L 361.95 555.55 L 362.77 556.11 L 363.6 556.67 L 364.43 557.21 L 365.25 557.74 L 366.07 558.25 L 366.9 558.75 L 367.73 559.23 L 368.55 559.7 L 369.38 560.16 L 370.2 560.59 L 371.02 561.02 L 371.85 561.43 L 372.68 561.82 L 373.5 562.19 L 374.32 562.55 L 375.15 562.89 L 375.98 563.22 L 376.8 563.53 L 377.62 563.82 L 378.45 564.09 L 379.28 564.35 L 380.1 564.59 L 380.93 564.81 L 381.75 565.01 L 382.57 565.2 L 383.4 565.36 L 384.23 565.51 L 385.05 565.64 L 385.88 565.75 L 386.7 565.84 L 387.53 565.91 L 388.35 565.96 L 389.18 565.99 L 390 566" fill="none" stroke="#1F2F57" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 100.2 194 L 99.91 195.1 L 99.1 195.91 L 98 196.2 L 96.9 195.91 L 96.09 195.1 L 95.8 194 L 96.09 192.9 L 96.9 192.09 L 98 191.8 L 99.1 192.09 L 99.91 192.9 Z" fill="#111111" stroke="#111111" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 108.2 194 L 107.91 195.1 L 107.1 195.91 L 106 196.2 L 104.9 195.91 L 104.09 195.1 L 103.8 194 L 104.09 192.9 L 104.9 192.09 L 106 191.8 L 107.1 192.09 L 107.91 192.9 Z" fill="#111111" stroke="#111111" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+</svg>

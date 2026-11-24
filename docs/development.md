@@ -63,6 +63,7 @@ Run all of these before pushing or opening a PR:
 uv run pytest                                   # full suite must pass
 uv run python main.py                           # regenerate reference output
 uv run python tools/generate_icons.py --check   # icons match their catalog
+uv run python tools/build_site.py --check       # GitHub Pages data and gallery match the tree (omit --check to refresh)
 uv run python tools/audit_gallery.py --check    # visual defect counts have not risen
 uv run diagrams-as-code lint examples           # the same checks, each finding named
 uv run python tools/golden_images.py --check   # technical figures match their golden images
