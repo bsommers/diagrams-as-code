@@ -48,6 +48,7 @@ LAYERS: dict[str, float] = {
     "gantt": 5.5,
     "sequence": 5.5,
     "output": 6,
+    "agent_api": 6.5,
     "cli": 7,
     "sandbox": 7.2,
     "mcp": 7.5,

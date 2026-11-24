@@ -1,15 +1,26 @@
-"""Command-line interface: ``diagrams-as-code render|lint|layout export|mcp|themes|icons``."""
+"""Command-line interface.
+
+``diagrams-as-code render|lint|layout export|mcp|themes|icons|api|examples|source``.
+
+Exit codes: 0 success; 1 findings or failures (a script failed, lint found a defect,
+a named example does not exist); 2 usage error. With ``--json`` (``render``, ``lint``,
+``themes``, ``icons``, ``api``, ``examples``) stdout is exactly one JSON document and
+nothing else; diagnostics always go to stderr.
+"""
 from __future__ import annotations
 
 import argparse
 import ast
+import contextlib
 import importlib.util
+import json
 import sys
 import traceback
 import warnings
 from pathlib import Path
-from typing import Optional
+from typing import Optional, TextIO
 
+from diagrams_as_code import agent_api
 from diagrams_as_code.audit import DEFECTS, audit_findings
 from diagrams_as_code.diagram import Diagram
 from diagrams_as_code.layout.layered import DIRECTIONS
@@ -50,6 +61,18 @@ def _defects(value: str) -> tuple[str, ...]:
     return chosen
 
 
+def _add_json_flag(p: argparse.ArgumentParser) -> None:
+    p.add_argument("--json", action="store_true",
+                   help="print one JSON document on stdout and nothing else (diagnostics on stderr)")
+
+
+_STDOUT: Optional[TextIO] = None  # the real stdout, while a script may be printing to stderr instead
+
+
+def _emit(doc: object) -> None:
+    print(json.dumps(doc, indent=2), file=_STDOUT or sys.stdout)
+
+
 def _add_layout_flags(p: argparse.ArgumentParser) -> None:
     p.add_argument("--layout", choices=Diagram.LAYOUT_MODES)
     p.add_argument("--direction", choices=DIRECTIONS)
@@ -88,6 +111,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="disable interactive SVG output",
     )
     _add_layout_flags(render)
+    _add_json_flag(render)
 
     lint = sub.add_parser(
         "lint",
@@ -103,6 +127,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     lint.add_argument("--quiet", action="store_true", help="print findings only, no summary")
     _add_layout_flags(lint)
+    _add_json_flag(lint)
 
     layout = sub.add_parser("layout", help="layout file tools")
     layout_sub = layout.add_subparsers(dest="layout_command", required=True, parser_class=_Parser)
@@ -119,9 +144,36 @@ def build_parser() -> argparse.ArgumentParser:
     mcp.add_argument("--memory-mb", type=int, default=2048, metavar="MB",
                      help="memory limit for one script, POSIX (default: 2048)")
 
-    sub.add_parser("themes", help="list built-in themes")
+    _add_json_flag(sub.add_parser("themes", help="list built-in themes"))
     icons = sub.add_parser("icons", help="list built-in icons")
     icons.add_argument("--domain")
+    _add_json_flag(icons)
+
+    api = sub.add_parser(
+        "api", help="reference of the public Python API (names, signatures, summaries)",
+        description="List every name in diagrams_as_code.__all__ and the plot, draft, sequence "
+        "and gantt kits with kind, signature and a one-line summary. NAME narrows it "
+        "(a class, function, kit module or substring); a class also lists its methods. "
+        "Exits 1 if NAME matches nothing.")
+    api.add_argument("name", nargs="?", metavar="NAME")
+    _add_json_flag(api)
+
+    examples = sub.add_parser(
+        "examples", help="list the example gallery, or its domains",
+        description="List example scripts as DOMAIN/NAME with a title. Without --domain, "
+        "list domains with their counts instead.")
+    examples.add_argument("--domain", help="only this domain (e.g. finance, cad)")
+    examples.add_argument("--dir", type=Path, default=None,
+                          help="examples directory (default: ./examples, else the checkout's)")
+    _add_json_flag(examples)
+
+    source = sub.add_parser(
+        "source", help="print an example's script",
+        description="Print the script of an example, DOMAIN/NAME (the numeric prefix of NAME "
+        "is optional) or a NAME unique in the gallery. Exits 1 if there is no such example.")
+    source.add_argument("example", metavar="EXAMPLE")
+    source.add_argument("--dir", type=Path, default=None,
+                        help="examples directory (default: ./examples, else the checkout's)")
     return parser
 
 
@@ -216,6 +268,11 @@ def _report(path: Path, exc: Exception, debug: bool) -> None:
     print(f"error: {path}: {exc}", file=sys.stderr)
 
 
+def _failure(path: Path, exc: Exception, code: str = "script_error") -> dict:
+    """The ``--json`` record of a script that could not be loaded or run."""
+    return {"file": str(path), **agent_api.error_dict(code, str(exc), agent_api.script_line(exc, path))}
+
+
 def _missing_layout_file(args: argparse.Namespace) -> bool:
     """Report a ``--layout-file`` that was named but does not exist."""
     layout_file = getattr(args, "layout_file", None)
@@ -232,14 +289,20 @@ def _render(args: argparse.Namespace) -> int:
     if _missing_layout_file(args):
         return 2
     status = 0
+    written_json: list[dict] = []
+    failed_json: list[dict] = []
     errors: list[tuple[Path, Exception]] = []
     scripts = discover(args.paths, errors)
     for script, exc in errors:
         _report(script, exc, args.debug)
+        failed_json.append(_failure(script, exc))
         status = 1
     if not scripts and not errors:
         listed = ", ".join(str(p) for p in args.paths)
         print(f"error: no diagram scripts found in {listed}", file=sys.stderr)
+        if args.json:
+            _emit({"written": [], "failed": [{"file": listed, **agent_api.error_dict(
+                "no_scripts", f"no diagram scripts found in {listed}")}]})
         return 1
     written_by: dict[Path, Path] = {}
     for script, subdir in scripts:
@@ -254,11 +317,17 @@ def _render(args: argparse.Namespace) -> int:
                 )
             written_by[target] = script
             _configure(diag, args, theme=args.theme)
-            for written in render_all(diag, out_dir, stem, args.format).values():
-                print(f"wrote {written}")
+            for fmt, written in render_all(diag, out_dir, stem, args.format).items():
+                if args.json:
+                    written_json.append({"script": str(script), "format": fmt, "file": str(written)})
+                else:
+                    print(f"wrote {written}")
         except Exception as exc:  # report and continue with the next script
             _report(script, exc, args.debug)
+            failed_json.append(_failure(script, exc))
             status = 1
+    if args.json:
+        _emit({"written": written_json, "failed": failed_json})
     return status
 
 
@@ -269,11 +338,16 @@ def _lint(args: argparse.Namespace) -> int:
     errors: list[tuple[Path, Exception]] = []
     scripts = discover(args.paths, errors)
     failed = len(errors)
+    failed_json = [_failure(script, exc) for script, exc in errors]
+    findings_out: list[dict] = []
     for script, exc in errors:
         _report(script, exc, args.debug)
     if not scripts and not errors:
         listed = ", ".join(str(p) for p in args.paths)
         print(f"error: no diagram scripts found in {listed}", file=sys.stderr)
+        if args.json:
+            _emit({"checked": 0, "findings": [], "failed": [{"file": listed, **agent_api.error_dict(
+                "no_scripts", f"no diagram scripts found in {listed}")}]})
         return 1
     total = 0
     for script, _subdir in scripts:
@@ -285,14 +359,22 @@ def _lint(args: argparse.Namespace) -> int:
                 findings = [f for f in audit_findings(diag) if f.kind not in args.ignore]
         except Exception as exc:
             _report(script, exc, args.debug)
+            failed_json.append(_failure(script, exc))
             failed += 1
             continue
-        for finding in findings:
-            print(f"{script}: {finding}")
-        for warning in caught:
-            print(f"{script}: layout_warning: {warning.message}")
+        if args.json:
+            findings_out += [{"file": str(script), **f}
+                             for f in agent_api.findings_json(findings, [w.message for w in caught])]
+        else:
+            for finding in findings:
+                print(f"{script}: {finding}")
+            for warning in caught:
+                print(f"{script}: layout_warning: {warning.message}")
         total += len(findings) + len(caught)
-    if not args.quiet:
+    if args.json:
+        _emit({"checked": len(scripts) - (failed - len(errors)), "findings": findings_out,
+               "failed": failed_json})
+    elif not args.quiet:
         checked = len(scripts) - (failed - len(errors))
         print(f"{checked} diagram{'s' if checked != 1 else ''} checked, "
               f"{total} finding{'s' if total != 1 else ''}")
@@ -316,10 +398,71 @@ def _layout_export(args: argparse.Namespace) -> int:
         return 1
 
 
-def _icons(domain: Optional[str]) -> int:
-    for name, (icon_domain, description) in sorted(ShapeLibrary._ICON_CATALOG.items()):
-        if domain is None or icon_domain == domain:
-            print(f"{name}\t{icon_domain}\t{description}")
+def _icons(domain: Optional[str], as_json: bool = False) -> int:
+    rows = [(name, icon_domain, description)
+            for name, (icon_domain, description) in sorted(ShapeLibrary._ICON_CATALOG.items())
+            if domain is None or icon_domain == domain]
+    if as_json:
+        _emit({"icons": [{"name": n, "domain": d, "description": t} for n, d, t in rows]})
+    else:
+        for row in rows:
+            print("\t".join(row))
+    return 0
+
+
+def _api(args: argparse.Namespace) -> int:
+    ref = agent_api.api_reference(args.name)
+    if args.json:
+        _emit(ref)
+    elif ref["entries"]:
+        print(agent_api.format_api(ref))
+    if not ref["entries"]:
+        print(f"error: no public API name matches {args.name!r}", file=sys.stderr)
+        return 1
+    return 0
+
+
+def _examples_dir(args: argparse.Namespace) -> Optional[Path]:
+    found = args.dir if args.dir is not None else agent_api.find_examples_dir(Path("."))
+    if found is None or not found.is_dir():
+        print("error: no examples directory found; pass --dir", file=sys.stderr)
+        return None
+    return found
+
+
+def _examples(args: argparse.Namespace) -> int:
+    base = _examples_dir(args)
+    if base is None:
+        return 1
+    if args.domain:
+        items = agent_api.list_examples(base, args.domain)
+        if args.json:
+            _emit({"domain": args.domain, "count": len(items), "examples": items})
+        else:
+            for ex in items:
+                print(f"{ex['domain']}/{ex['name']}\t{ex['title']}")
+        if not items:
+            print(f"error: no examples in domain {args.domain!r}", file=sys.stderr)
+        return 0 if items else 1
+    doms = agent_api.domains(base)
+    if args.json:
+        _emit({"total": sum(d["count"] for d in doms), "domains": doms})
+    else:
+        for d in doms:
+            print(f"{d['domain']}\t{d['count']}")
+    return 0
+
+
+def _source(args: argparse.Namespace) -> int:
+    base = _examples_dir(args)
+    if base is None:
+        return 1
+    try:
+        found = agent_api.resolve_example(base, args.example, 10**9)
+    except (LookupError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    sys.stdout.write(found["source"])
     return 0
 
 
@@ -331,10 +474,16 @@ def main(argv: Optional[list[str]] = None) -> int:
         return 2
     except SystemExit as exc:  # --help
         return int(exc.code or 0)
-    if args.command == "render":
-        return _render(args)
-    if args.command == "lint":
-        return _lint(args)
+    if args.command in ("render", "lint"):
+        global _STDOUT
+        _STDOUT = sys.stdout
+        # A script may print while it loads: under --json that must not reach stdout.
+        quiet = contextlib.redirect_stdout(sys.stderr) if args.json else contextlib.nullcontext()
+        try:
+            with quiet:
+                return _render(args) if args.command == "render" else _lint(args)
+        finally:
+            _STDOUT = None
     if args.command == "layout":
         return _layout_export(args)
     if args.command == "mcp":
@@ -342,6 +491,15 @@ def main(argv: Optional[list[str]] = None) -> int:
 
         return serve(args.root, timeout=args.timeout, memory_mb=args.memory_mb)
     if args.command == "themes":
-        print("\n".join(list_themes()))
+        if args.json:
+            _emit({"themes": list(list_themes())})
+        else:
+            print("\n".join(list_themes()))
         return 0
-    return _icons(args.domain)
+    if args.command == "api":
+        return _api(args)
+    if args.command == "examples":
+        return _examples(args)
+    if args.command == "source":
+        return _source(args)
+    return _icons(args.domain, args.json)
