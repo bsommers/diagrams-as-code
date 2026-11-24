@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Work Tracker</title>
+<style>
+:root{--bg:#0e1116;--panel:#161b22;--line:#2a313c;--text:#e6edf3;--mute:#8b949e;--run:#58a6ff;--done:#3fb950;--queue:#6e7681;--warn:#d29922;--accent:#bc8cff}
+@media (prefers-color-scheme:light){:root{--bg:#f6f8fa;--panel:#fff;--line:#d0d7de;--text:#1f2328;--mute:#656d76;--run:#0969da;--done:#1a7f37;--queue:#8c959f;--warn:#9a6700;--accent:#8250df}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header.hero{padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+header.hero h1{margin:0;font-size:20px}header.hero p{margin:2px 0 0;color:var(--mute)}
+main{padding:16px 20px;display:grid;gap:16px;max-width:1400px;margin:auto}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.phead{display:flex;align-items:center;gap:14px;padding:10px 14px;cursor:default}
+.phead h2{margin:0;font-size:15px;flex:1}
+.stat{color:var(--mute);font-variant-numeric:tabular-nums}.stat b{color:var(--text)}
+button.tg{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:3px 10px;cursor:pointer}
+button.tg .chev{display:inline-block;transition:transform .2s}button.tg[aria-expanded=false] .chev{transform:rotate(-90deg)}
+.collapse{overflow:hidden;transition:max-height .25s ease;max-height:1400px}.collapse.closed{max-height:0}
+#gantt{position:relative;padding:0 14px 14px;overflow-x:auto}
+.g-row{display:grid;grid-template-columns:230px 1fr;align-items:center;height:26px}
+.g-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:8px;font-size:12px}
+.pill{font-size:10px;padding:1px 6px;border-radius:99px;border:1px solid var(--line);color:var(--mute);margin-left:6px}
+.g-track{position:relative;height:100%;border-left:1px solid var(--line)}
+.bar{position:absolute;top:5px;height:16px;border-radius:4px;font-size:10px;color:#fff;padding:0 6px;white-space:nowrap;overflow:hidden;line-height:16px}
+.bar.RUNNING{background:var(--run);animation:pulse 1.6s infinite}.bar.DONE{background:var(--done)}.bar.QUEUED{background:none;border:1px dashed var(--queue);color:var(--mute)}
+@keyframes pulse{50%{opacity:.65}}
+.grid{position:absolute;top:0;bottom:0;width:1px;background:var(--line);opacity:.5}
+.tick{position:absolute;top:0;font-size:10px;color:var(--mute);transform:translateX(3px);white-space:nowrap}
+.now{position:absolute;top:0;bottom:0;width:2px;background:var(--warn);box-shadow:0 0 8px var(--warn);z-index:3}
+.now span{position:absolute;top:-2px;left:4px;font-size:10px;background:var(--warn);color:#000;border-radius:4px;padding:0 4px}
+.ruler{display:grid;grid-template-columns:230px 1fr;height:32px}.ruler .rt{position:relative;border-left:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;padding:0 14px 14px}
+.card{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--bg)}
+.card h3{margin:0 0 4px;font-size:14px;display:flex;gap:6px;align-items:center}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--queue)}.dot.RUNNING{background:var(--run);animation:pulse 1.2s infinite}.dot.DONE{background:var(--done)}
+.meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:6px 0}.meter i{display:block;height:100%;background:var(--run)}.meter i.DONE{background:var(--done)}
+.kv{color:var(--mute);font-size:12px}code{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+a.f{color:var(--accent);cursor:pointer;text-decoration:none}a.f:hover{text-decoration:underline}
+details{margin-top:6px}summary{cursor:pointer;color:var(--mute);font-size:12px}
+.files{max-height:140px;overflow:auto;font-size:12px;margin:4px 0 0;padding:0;list-style:none}
+.thumbs{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.thumbs img{width:86px;height:58px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:800px){.two{grid-template-columns:1fr}.g-row,.ruler{grid-template-columns:130px 1fr}}
+ul.plain{list-style:none;margin:0;padding:0 14px 14px}ul.plain li{padding:5px 0;border-top:1px solid var(--line)}
+#tip{position:fixed;z-index:20;pointer-events:none;background:#000d;color:#fff;border-radius:6px;padding:6px 9px;font-size:12px;display:none;max-width:320px}
+#modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:30;padding:20px}
+#modal .box{background:var(--panel);border-radius:10px;max-width:92vw;max-height:92vh;overflow:auto;padding:12px}
+#modal img{max-width:88vw;max-height:80vh;background:#fff;display:block}#modal pre{white-space:pre-wrap;max-width:80ch;margin:0}
+</style></head><body>
+<header class="hero"><h1>Work Tracker · diagrams-as-code</h1><p>Parallel domain-gallery build. Live from git worktrees and agent task files. Refreshes every 3 s.</p></header>
+<main>
+<section class="panel" id="ganttPanel">
+ <div class="phead"><h2>Live Gantt</h2>
+  <span class="stat">elapsed <b id="elapsed">0:00</b></span>
+  <span class="stat"><b id="lanes">0</b> active · <b id="doneN">0</b> done</span>
+  <button class="tg" id="gtoggle" aria-expanded="true" aria-controls="gbody"><span class="chev">▾</span> <span id="gtext">Collapse</span></button></div>
+ <div class="collapse" id="gbody"><div id="gantt"></div></div>
+</section>
+<section class="panel"><div class="phead"><h2>Agents</h2><span class="stat" id="sum"></span></div><div class="cards" id="cards"></div></section>
+<div class="two">
+ <section class="panel"><div class="phead"><h2>Key files</h2></div><ul class="plain" id="keyfiles"></ul></section>
+ <section class="panel"><div class="phead"><h2>Pull requests</h2></div><ul class="plain" id="prs"></ul></section>
+</div>
+</main>
+<div id="tip"></div><div id="modal"><div class="box" id="mbox"></div></div>
+<script>
+const $=s=>document.querySelector(s);let S=null;
+const fmt=s=>{s=Math.max(0,Math.round(s));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return h?`${h}h ${m}m`:m?`${m}m ${String(x).padStart(2,'0')}s`:`${x}s`};
+const clock=t=>new Date(t*1000).toLocaleTimeString([], {hour12:false});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fileUrl=p=>'/file?path='+encodeURIComponent(p);
+// collapse persistence
+let closed=false;try{closed=localStorage.getItem('gantt-closed')==='1'}catch(e){}
+function applyClosed(){$('#gbody').classList.toggle('closed',closed);$('#gtoggle').setAttribute('aria-expanded',!closed);$('#gtext').textContent=closed?'Expand':'Collapse'}
+$('#gtoggle').onclick=()=>{closed=!closed;try{localStorage.setItem('gantt-closed',closed?'1':'0')}catch(e){};applyClosed()};applyClosed();
+// tooltip (delegated)
+const tip=$('#tip');
+document.addEventListener('mousemove',e=>{const t=e.target.closest('[data-tip]');if(!t){tip.style.display='none';return}
+ tip.innerHTML=t.dataset.tip;tip.style.display='block';const w=tip.offsetWidth,h=tip.offsetHeight;
+ tip.style.left=Math.min(innerWidth-w-8,e.clientX+12)+'px';tip.style.top=Math.min(innerHeight-h-8,e.clientY+14)+'px'});
+// modal
+function openModal(html){$('#mbox').innerHTML=html;$('#modal').style.display='flex'}
+$('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').style.display='none'};
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#modal').style.display='none'});
+document.addEventListener('click',async e=>{const a=e.target.closest('[data-open]');if(!a)return;e.preventDefault();
+ const p=a.dataset.open;if(/\.(svg|png)$/.test(p))openModal(`<img src="${fileUrl(p)}"><p class="kv"><code>${esc(p)}</code></p>`);
+ else{const r=await fetch(fileUrl(p));openModal(`<pre>${esc((await r.text()).slice(0,60000))}</pre>`)}});
+function ticks(span){const steps=[10,30,60,120,300,600,1200,1800,3600];let st=steps.find(s=>span/s<=10)||3600;return st}
+function render(){if(!S)return;const now=Date.now()/1000,t0=S.started_at,span=Math.max(60,now-t0);
+ const A=S.agents,run=A.filter(a=>a.status==='RUNNING').length,done=A.filter(a=>a.status==='DONE').length;
+ $('#elapsed').textContent=fmt(now-t0);$('#lanes').textContent=run;$('#doneN').textContent=done;
+ const pos=t=>((t-t0)/span*100).toFixed(2)+'%',st=ticks(span);let tk='',gr='';
+ for(let s=0;s<=span;s+=st){tk+=`<div class="tick" style="left:${(s/span*100)}%">+${fmt(s)}<br>${clock(t0+s)}</div>`;gr+=`<div class="grid" style="left:${s/span*100}%"></div>`}
+ const nowx=100;let rows='';
+ for(const a of A){const s=a.start||t0,e=a.status==='DONE'?(a.end||now):now,w=Math.max(0.6,(e-s)/span*100);
+  const tipH=`<b>${esc(a.name)}</b><br>${a.model} · ${a.status}<br>start ${clock(s)} · ${fmt(e-s)}<br>progress ${a.progress}%${a.branch?`<br>${esc(a.branch)}`:''}`;
+  const lab=a.status==='DONE'?`✓ ${fmt(e-s)}`:`${a.progress}% · ${fmt(e-s)}`;
+  rows+=`<div class="g-row"><div class="g-label">${esc(a.name)}<span class="pill">${a.model}</span></div><div class="g-track">${gr}<div class="bar ${a.status}" data-tip="${esc(tipH)}" style="left:${pos(s)};width:${w}%">${lab}</div></div></div>`}
+ $('#gantt').innerHTML=`<div class="ruler"><div></div><div class="rt">${tk}</div></div><div style="position:relative">${rows}<div style="position:absolute;left:230px;right:0;top:0;bottom:0;pointer-events:none"><div class="now" style="left:${nowx}%"><span>NOW</span></div></div></div>`;
+ $('#sum').textContent=`${run} running · ${done} done · ${A.length} total`;
+ $('#cards').innerHTML=A.map(a=>{const sv=a.svgs.slice(0,8).map(p=>`<img loading="lazy" src="${fileUrl(a.worktree+'/'+p)}" data-open="${esc(a.worktree+'/'+p)}" title="${esc(p)}">`).join('');
+  const fl=a.files.map(p=>`<li><a class="f" data-open="${esc(a.worktree+'/'+p)}">${esc(p)}</a></li>`).join('');
+  return `<div class="card"><h3><span class="dot ${a.status}"></span>${esc(a.name)}<span class="pill">${a.model}</span></h3>
+  <div class="meter"><i class="${a.status}" style="width:${a.progress}%"></i></div>
+  <div class="kv">${a.status} · ${a.progress}% · ${fmt((a.status==='DONE'?(a.end||now):now)-(a.start||now))}${a.commits?` · ${a.commits} commit${a.commits>1?'s':''}`:''}</div>
+  ${a.branch?`<div class="kv"><code>${esc(a.branch)}</code></div>`:''}
+  ${a.last_activity&&a.status==='RUNNING'?`<div class="kv">last activity ${fmt(now-a.last_activity)} ago</div>`:''}
+  ${sv?`<div class="thumbs">${sv}</div>`:''}
+  ${a.files.length?`<details><summary>${a.files.length} changed file${a.files.length>1?'s':''}</summary><ul class="files">${fl}</ul></details>`:''}</div>`}).join('');
+ $('#keyfiles').innerHTML=S.key_files.map(k=>`<li><a class="f" data-open="${esc(k.path)}">${esc(k.label)}</a><br><span class="kv"><code>${esc(k.path)}</code></span></li>`).join('');
+ $('#prs').innerHTML=S.prs.length?S.prs.map(p=>`<li><a class="f" href="${esc(p.url)}" target="_blank" rel="noopener">#${p.number}</a> ${esc(p.title)} <span class="pill">${p.state}</span><br><span class="kv"><code>${esc(p.headRefName)}</code></span></li>`).join(''):'<li class="kv">none yet</li>'}
+async function load(){try{S=await (await fetch('/api/state')).json();render()}catch(e){}}
+load();setInterval(load,3000);setInterval(render,1000);
+</script></body></html>

@@ -1,0 +1,171 @@
+{
+ "tasks_dir": "/private/tmp/claude-501/-Users-bill-src-diagrams-as-code/b645f2f7-92a1-4736-9826-1517e3238d60/tasks",
+ "repo": "/Users/bill/src/diagrams-as-code",
+ "base": "fee24cd",
+ "agents": [
+  {
+   "id": "ab0f7d8b49c0ee957",
+   "name": "Research: semiconductors + electronics",
+   "model": "sonnet",
+   "kind": "research",
+   "status": "done"
+  },
+  {
+   "id": "a40c2f2e912a1ae85",
+   "name": "Research: AI architecture",
+   "model": "sonnet",
+   "kind": "research",
+   "status": "done"
+  },
+  {
+   "id": "adc27f545b16cc11a",
+   "name": "Research: DevOps / data / project",
+   "model": "sonnet",
+   "kind": "research",
+   "status": "done"
+  },
+  {
+   "id": "ac59912fa6b576299",
+   "name": "Research: chemistry + biology",
+   "model": "sonnet",
+   "kind": "research",
+   "status": "done"
+  },
+  {
+   "id": "a5ab74ee3b68eb28d",
+   "name": "agentic_dev gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "agentic_dev",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "ab22e0920f4fd93ad",
+   "name": "semiconductor gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "semiconductor",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a2bb689f2d20fbf5e",
+   "name": "chemistry gallery + math",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "chemistry",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a836d1d44c43d5b0b",
+   "name": "Sequence-diagram primitive",
+   "model": "opus",
+   "kind": "primitive",
+   "checks": [
+    "src/diagrams_as_code/sequence*.py",
+    "tests/test_sequence*.py",
+    "docs/sequence*.md",
+    "examples/*/*sequence*.py"
+   ],
+   "status": "done"
+  },
+  {
+   "id": "a7395f0a77b6fd86d",
+   "name": "chemical_engineering gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "chemical_engineering",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a6686ac09b69e5368",
+   "name": "data_engineering gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "data_engineering",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a0a7b8df4b9857ed6",
+   "name": "ml_models gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "ml_models",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "af2375fef6e7cd1db",
+   "name": "devops gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "devops",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a19811cd75bcc00e9",
+   "name": "biology gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "biology",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "ab8101f91c71bb24d",
+   "name": "Gantt / timeline primitive",
+   "model": "opus",
+   "kind": "primitive",
+   "checks": [
+    "src/diagrams_as_code/gantt*.py",
+    "tests/test_gantt*.py",
+    "docs/gantt*.md",
+    "examples/project_management/*.py"
+   ],
+   "status": "done"
+  },
+  {
+   "id": "a635aeea99d8220cc",
+   "name": "project_management gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "project_management",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a4acfbeacea54b70e",
+   "name": "org gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "org",
+   "target": 10,
+   "status": "done"
+  },
+  {
+   "id": "a79f58cfd096c1a34",
+   "name": "electronics gallery",
+   "model": "sonnet",
+   "kind": "gallery",
+   "domain": "electronics",
+   "target": 10,
+   "status": "done"
+  }
+ ],
+ "key_files": [
+  {
+   "label": "Research doc: new domains",
+   "path": "/Users/bill/src/diagrams-as-code/.planning/research/NEW-DOMAINS.md"
+  },
+  {
+   "label": "Checkpoint",
+   "path": "/Users/bill/src/diagrams-as-code/.planning/CHECKPOINT.md"
+  }
+ ],
+ "prs": "bsommers/diagrams-as-code"
+}
