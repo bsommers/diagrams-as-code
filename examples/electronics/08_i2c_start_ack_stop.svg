@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 891 559" width="891" height="559">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_3">
+    <path d="M 480 246 L 512 246 L 512 314 L 480 314 Z" fill="#E4F1E7" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 768 246 L 800 246 L 800 314 L 768 314 Z" fill="#E4F1E7" />
+  </g>
+  <g id="path_1">
+    <path d="M 130 156 L 216 156 L 220 184 L 232 184 L 236 156 L 248 156 L 252 184 L 264 184 L 268 156 L 280 156 L 284 184 L 296 184 L 300 156 L 312 156 L 316 184 L 328 184 L 332 156 L 344 156 L 348 184 L 360 184 L 364 156 L 376 156 L 380 184 L 392 184 L 396 156 L 408 156 L 412 184 L 424 184 L 428 156 L 440 156 L 444 184 L 456 184 L 460 156 L 472 156 L 476 184 L 488 184 L 492 156 L 504 156 L 508 184 L 520 184 L 524 156 L 536 156 L 540 184 L 552 184 L 556 156 L 568 156 L 572 184 L 584 184 L 588 156 L 600 156 L 604 184 L 616 184 L 620 156 L 632 156 L 636 184 L 648 184 L 652 156 L 664 156 L 668 184 L 680 184 L 684 156 L 696 156 L 700 184 L 712 184 L 716 156 L 728 156 L 732 184 L 744 184 L 748 156 L 760 156 L 764 184 L 776 184 L 780 156 L 792 156 L 796 184 L 808 184 L 812 156 L 866 156" fill="none" stroke="#1F2F57" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_2">
+    <path d="M 130 266 L 200 266 L 204 294 L 224 294 L 228 266 L 256 266 L 260 294 L 320 294 L 324 266 L 352 266 L 356 294 L 512 294 L 516 266 L 544 266 L 548 294 L 576 294 L 580 266 L 608 266 L 612 294 L 672 294 L 676 266 L 704 266 L 708 294 L 736 294 L 740 266 L 768 266 L 772 294 L 816 294 L 820 266 L 866 266" fill="none" stroke="#1F2F57" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_4">
+    <path d="M 484 294 L 512 294" fill="none" stroke="#2F6B3A" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_6">
+    <path d="M 772 294 L 800 294" fill="none" stroke="#2F6B3A" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="233.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A6</text>
+  </g>
+  <g id="text_8">
+    <text x="236.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_9">
+    <text x="265.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A5</text>
+  </g>
+  <g id="text_10">
+    <text x="268.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_11">
+    <text x="297.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A4</text>
+  </g>
+  <g id="text_12">
+    <text x="300.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_13">
+    <text x="329.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A3</text>
+  </g>
+  <g id="text_14">
+    <text x="332.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_15">
+    <text x="361.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A2</text>
+  </g>
+  <g id="text_16">
+    <text x="364.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_17">
+    <text x="393.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A1</text>
+  </g>
+  <g id="text_18">
+    <text x="396.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_19">
+    <text x="425.27" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">A0</text>
+  </g>
+  <g id="text_20">
+    <text x="428.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_21">
+    <text x="458.81" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">W</text>
+  </g>
+  <g id="text_22">
+    <text x="460.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_23">
+    <text x="484.69" y="133.78" fill="#2F6B3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">ACK</text>
+  </g>
+  <g id="text_24">
+    <text x="492.66" y="324.13" fill="#2F6B3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_25">
+    <text x="520.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D7</text>
+  </g>
+  <g id="text_26">
+    <text x="524.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_27">
+    <text x="552.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D6</text>
+  </g>
+  <g id="text_28">
+    <text x="556.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_29">
+    <text x="584.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D5</text>
+  </g>
+  <g id="text_30">
+    <text x="588.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_31">
+    <text x="616.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D4</text>
+  </g>
+  <g id="text_32">
+    <text x="620.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_33">
+    <text x="648.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D3</text>
+  </g>
+  <g id="text_34">
+    <text x="652.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_35">
+    <text x="680.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D2</text>
+  </g>
+  <g id="text_36">
+    <text x="684.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_37">
+    <text x="712.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D1</text>
+  </g>
+  <g id="text_38">
+    <text x="716.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_39">
+    <text x="744.97" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D0</text>
+  </g>
+  <g id="text_40">
+    <text x="748.66" y="324.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_41">
+    <text x="772.69" y="133.78" fill="#2F6B3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">ACK</text>
+  </g>
+  <g id="text_42">
+    <text x="780.66" y="324.13" fill="#2F6B3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="path_43">
+    <path d="M 200 94 L 200 298" fill="none" stroke="#9C2F2F" stroke-width="1" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="text_44">
+    <text x="178.34" y="82.35" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">START</text>
+  </g>
+  <g id="path_45">
+    <path d="M 816 94 L 816 298" fill="none" stroke="#9C2F2F" stroke-width="1" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="text_46">
+    <text x="798.3" y="82.35" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">STOP</text>
+  </g>
+  <g id="text_47">
+    <text x="192" y="58.91" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">SDA falls while SCL is high</text>
+  </g>
+  <g id="text_48">
+    <text x="687.67" y="58.91" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">SDA rises while SCL is high</text>
+  </g>
+  <g id="path_49">
+    <path d="M 220 336 L 220 342 L 500 342 L 500 336" fill="none" stroke="#555555" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_50">
+    <text x="325.65" y="359.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">address byte</text>
+  </g>
+  <g id="path_51">
+    <path d="M 508 336 L 508 342 L 788 342 L 788 336" fill="none" stroke="#555555" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_52">
+    <text x="623.31" y="359.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">data byte</text>
+  </g>
+  <g id="text_53">
+    <text x="88" y="166.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">SCL</text>
+  </g>
+  <g id="text_54">
+    <text x="38.36" y="183.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">controller drives</text>
+  </g>
+  <g id="text_55">
+    <text x="86.44" y="276.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">SDA</text>
+  </g>
+  <g id="text_56">
+    <text x="24.27" y="293.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">open drain, shared</text>
+  </g>
+  <g id="text_57">
+    <text x="70" y="410.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="96.12" lengthAdjust="spacingAndGlyphs">Standard mode, </text>
+    <path d="M190 467 186 426H270L205 37C194 -29 168 -193 115 -193C77 -193 110 -104 50 -104C24 -104 10 -125 10 -153C10 -188 35 -225 99 -225C236 -225 282 -1 296 85L353 426H447L453 467H358L370 538C385 623 410 682 461 682C485 682 487 658 491 633C494 612 504 594 531 594C552 594 571 609 571 638C571 681 537 711 476 711C390 711 349 665 323 618C300 577 288 523 276 467Z" transform="translate(166.12 410.15) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(174.01 414.11) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(178.87 414.11) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M541 195H509C447 79 426 38 299 38H252C193 38 178 48 187 92L278 540C293 612 325 627 397 627L402 657H118L112 627C198 627 203 607 189 541L103 124C86 44 70 30 -7 30L-13 0H481Z" transform="translate(184.84 414.11) scale(0.0091 -0.0091)" fill="#000000"/>
+    <text x="190.53" y="410.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="141.65" lengthAdjust="spacingAndGlyphs"> = 100 kHz: one bit = 10 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(332.18 410.15) scale(0.013 -0.013)" fill="#000000"/>
+    <text x="339.83" y="410.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="239.19" lengthAdjust="spacingAndGlyphs">s, so the 9-clock address phase takes 90 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(579.01 410.15) scale(0.013 -0.013)" fill="#000000"/>
+    <text x="586.66" y="410.15" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="6.5" lengthAdjust="spacingAndGlyphs">s</text>
+    <text x="70" y="426.85" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="198.73" lengthAdjust="spacingAndGlyphs">and the whole 18-clock frame 180 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(268.73 426.85) scale(0.013 -0.013)" fill="#000000"/>
+    <text x="276.37" y="426.85" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="389.49" lengthAdjust="spacingAndGlyphs">s. Address 0x48 = 1001000b goes out as 0x90 with R/W = 0 (write).</text>
+    <text x="70" y="443.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">The peripheral ACKs by holding SDA low for the 9th clock; the controller then sends 0xA5 = 10100101b.</text>
+    <text x="70" y="458.29" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="54.91" lengthAdjust="spacingAndGlyphs">Pull-ups (</text>
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(124.91 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M275 -220 282 -193C202 -193 181 -166 181 -143C181 -129 183 -111 185 -101L209 15C229 3 268 -11 300 -11C456 -11 572 119 572 307C572 423 510 479 432 479C380 479 338 451 290 397H285L299 474H280L137 459V434C137 434 154 436 169 436C195 436 206 427 206 407C206 400 205 394 204 388L77 -220ZM272 311C300 370 340 423 404 423C434 423 484 402 484 307C484 131 415 32 308 32C266 32 238 49 221 64Z" transform="translate(133.36 461.02) scale(0.0091 -0.0091)" fill="#000000"/>
+    <text x="139.32" y="458.29" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="43" lengthAdjust="spacingAndGlyphs"> = 4.7 k</text>
+    <path d="M708 0 731 177H702C681 110 671 81 612 81H528V87C597 144 700 229 700 392C700 556 578 669 393 669C208 669 79 556 79 391C79 227 176 144 252 87V81H161C104 81 94 109 76 177H47L68 0H332V71C236 145 187 278 187 387C187 535 265 627 392 627C514 627 592 537 592 387C592 277 541 147 447 72V0Z" transform="translate(182.32 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <text x="192.42" y="458.29" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="390.2" lengthAdjust="spacingAndGlyphs"> to 3.3 V) with 100 pF of bus capacitance give a 30%-70% rise time </text>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(582.62 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(589.06 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M448 150C448 230 412 278 295 349V352C388 403 424 436 424 509C424 588 348 647 249 647C139 647 59 590 59 499C59 431 81 390 183 319V316C90 254 46 222 46 142C46 40 130 -12 246 -12C365 -12 448 45 448 150ZM213 300C334 222 364 185 364 121C364 53 312 19 250 19C174 19 124 60 124 150C124 219 156 254 213 300ZM350 511C350 447 330 408 264 368C175 422 137 458 137 517C137 578 179 614 247 614C311 614 350 577 350 511Z" transform="translate(592.24 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(598.68 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(605.11 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(613.71 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M275 -220 282 -193C202 -193 181 -166 181 -143C181 -129 183 -111 185 -101L209 15C229 3 268 -11 300 -11C456 -11 572 119 572 307C572 423 510 479 432 479C380 479 338 451 290 397H285L299 474H280L137 459V434C137 434 154 436 169 436C195 436 206 427 206 407C206 400 205 394 204 388L77 -220ZM272 311C300 370 340 423 404 423C434 423 484 402 484 307C484 131 415 32 308 32C266 32 238 49 221 64Z" transform="translate(622.16 461.02) scale(0.0091 -0.0091)" fill="#000000"/>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(628.13 458.29) scale(0.013 -0.013)" fill="#000000"/>
+    <path d="M198 402 257 705H235L97 694V668C97 668 116 670 127 670C147 670 163 663 163 641C163 629 160 610 159 606L46 25C95 0 146 -12 204 -12C382 -12 483 140 483 304C483 424 421 479 342 479C289 479 246 450 203 402ZM184 316C205 363 249 423 313 423C358 423 395 390 395 300C395 148 338 30 219 30C177 30 148 54 135 66Z" transform="translate(637.04 461.02) scale(0.0091 -0.0091)" fill="#000000"/>
+    <text x="642.28" y="458.29" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="196.92" lengthAdjust="spacingAndGlyphs"> = 398 ns, inside the 1000 ns limit.</text>
+  </g>
+  <g id="caption_58">
+    <text x="182.6" y="505.56" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 8:</text>
+    <text x="256.77" y="505.56" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="450.9" lengthAdjust="spacingAndGlyphs"> AN I2C WRITE: START, ADDRESS, ACK, DATA, ACK AND STOP</text>
+  </g>
+</svg>
