@@ -2956,7 +2956,6 @@ Full records, including description, theme and formats, are in `examples/index.j
 - examples/sequence/01_http_retry.py - HTTP request with retry [sequence, math]
 - examples/sequence/02_oauth_authorization_code.py - OAuth 2.0 authorization code flow with PKCE [sequence, math]
 - examples/sequence/03_mcp_tool_call.py - MCP tool call [sequence]
-- examples/technical/01_composition_enforcement.py - Composition enforcement architecture [math]
 - examples/technical/02_control_loop.py - Feedback control loop [math]
 - examples/technical/03_transformer_block.py - Transformer encoder block [math]
 - examples/technical/04_state_machine.py - Connection state machine [math]

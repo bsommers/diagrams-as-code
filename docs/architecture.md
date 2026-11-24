@@ -306,7 +306,7 @@ examples/
 └── 01_*.py ... 04_*.py             # 4 top-level reference scripts
 ```
 
-In total 363 example scripts in 35 directories: 144 domain diagrams, 100 in the ten newer domain galleries, 3 sequence diagrams, 12 project-management figures, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
+In total 362 example scripts in 35 directories: 144 domain diagrams, 100 in the ten newer domain galleries, 3 sequence diagrams, 12 project-management figures, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
 
 ---
 

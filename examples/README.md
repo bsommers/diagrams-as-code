@@ -1,12 +1,12 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 363 example scripts: 144 production-grade architecture, workflow and technical diagrams across 13 primary domains, 115 more in twelve newer galleries (ten domain galleries of 10, 3 sequence diagrams, 12 project-management figures), plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
+This directory contains 362 example scripts: 144 production-grade architecture, workflow and technical diagrams across 13 primary domains, 115 more in twelve newer galleries (ten domain galleries of 10, 3 sequence diagrams, 12 project-management figures), plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Example Scripts:** 363 (144 domain diagrams, 115 newer-gallery diagrams, 4 top-level, 9 primitives, 11 technical, 50 textbook, 30 medical/engineering/CAD)
+- **Total Example Scripts:** 362 (144 domain diagrams, 115 newer-gallery diagrams, 4 top-level, 9 primitives, 10 technical, 50 textbook, 30 medical/engineering/CAD)
 - **Example Directories:** 35 (13 primary domains, 12 newer galleries, `primitives`, `technical`, `medical`, `engineering`, `cad` and the five textbook galleries)
 - **Primary Domains Covered:** 13 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `database`, `enterprise_architecture`, `manufacturing`, `mind_map`, `computer_science`)
 - **Diagrams per Primary Domain:** 11 (10 manually placed + 1 auto-layout; `ai` has a twelfth, a hand-placed technical figure); the ten newer domain galleries have 10 each, `sequence` 3 and `project_management` 12
@@ -300,11 +300,10 @@ Nine focused figures, one per primitive family, all in the `paper` theme. They a
 
 ## 15. Technical Figures (`examples/technical/`)
 
-Eleven complete paper-style figures in the `paper` theme, each with a caption. Every one lints clean and has a golden image in `tests/golden/technical/`. The guide is [`docs/technical-figures.md`](../docs/technical-figures.md).
+Ten complete paper-style figures in the `paper` theme, each with a caption. Every one lints clean and has a golden image in `tests/golden/technical/`. The guide is [`docs/technical-figures.md`](../docs/technical-figures.md).
 
 | # | Script & Output | Shows |
 |---|---|---|
-| 01 | [`01_composition_enforcement.py`](technical/01_composition_enforcement.py) | Four layer bands, shaded panels, a cuboid, a clipped polyhedron, formulas, leaders, a heavy spine: a reproduction of a reference figure |
 | 02 | [`02_control_loop.py`](technical/02_control_loop.py) | Feedback control loop with summing junctions, transfer functions and a disturbance |
 | 03 | [`03_transformer_block.py`](technical/03_transformer_block.py) | Transformer encoder block with residual connections and tensor shapes |
 | 04 | [`04_state_machine.py`](technical/04_state_machine.py) | Connection lifecycle state machine with guards, a self-loop and a final state |

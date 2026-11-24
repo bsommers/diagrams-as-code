@@ -1,10 +1,9 @@
 # Technical figures
 
-How to draw a precise, paper-style figure: black on white, typeset formulas, layer bands, nested panels, solids, leader lines and a caption. Eleven worked examples are in [`examples/technical/`](../examples/technical/), with the rendered SVG, PNG and BOM beside each script.
+How to draw a precise, paper-style figure: black on white, typeset formulas, layer bands, nested panels, solids, leader lines and a caption. Ten worked examples are in [`examples/technical/`](../examples/technical/), with the rendered SVG, PNG and BOM beside each script.
 
 | Figure | Script | Shows |
 |---|---|---|
-| 1 | `01_composition_enforcement.py` | A four-layer architecture with panels, a cuboid, a clipped polyhedron and formulas. A reproduction of a reference figure. |
 | 2 | `02_control_loop.py` | A feedback control loop with summing junctions and transfer functions. |
 | 3 | `03_transformer_block.py` | A transformer encoder block with residual connections and tensor shapes. |
 | 4 | `04_state_machine.py` | A state machine with guards, a self-loop and a double-bordered final state. |

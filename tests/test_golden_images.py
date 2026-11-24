@@ -85,7 +85,7 @@ def test_a_size_change_is_reported():
 
 
 def test_every_technical_figure_has_a_golden_image_and_no_strays():
-    assert len(SCRIPTS) >= 11
+    assert len(SCRIPTS) >= 10
     wanted = {golden.golden_path(s) for s in SCRIPTS}
     assert wanted == set(golden.GOLDEN_DIR.glob("*/*.png"))
 

@@ -437,7 +437,7 @@ def test_cli_format_pdf(tmp_path: Path) -> None:
 # --------------------------------------------------------------------- gallery
 
 def test_gallery_exists() -> None:
-    assert len(GALLERY) >= 100 and len(TECHNICAL) == 11
+    assert len(GALLERY) >= 100 and len(TECHNICAL) == 10
 
 
 def test_the_writer_knows_every_element_and_attribute_the_renderer_writes() -> None:
