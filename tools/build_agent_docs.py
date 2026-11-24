@@ -162,7 +162,9 @@ def example_record(script: Path) -> dict[str, Any]:
                 and isinstance(node.value, ast.Constant) and isinstance(node.value.value, str)):
             out_stem = node.value.value
     base = script.with_name(out_stem)
-    formats = [fmt for fmt, suffix in (("svg", ".svg"), ("png", ".png"), ("pdf", ".pdf"), ("bom", "_README.md"))
+    # Only committed outputs count. PNG and PDF are gitignored, so whether they exist depends
+    # on the machine and would make this file differ between checkouts.
+    formats = [fmt for fmt, suffix in (("svg", ".svg"), ("bom", "_README.md"))
                if Path(f"{base}{suffix}").is_file()]
     return {
         "path": rel.as_posix(),
