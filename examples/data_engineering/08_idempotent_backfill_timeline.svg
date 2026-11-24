@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 946 666" width="946" height="666">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_39">
+    <path d="M 273 470 L 273 290 M 319 470 L 319 290 M 365 470 L 365 290 M 411 470 L 411 290 M 457 470 L 457 290 M 503 470 L 503 290 M 549 470 L 549 290 M 595 470 L 595 290 M 641 470 L 641 290 M 687 470 L 687 290 M 733 470 L 733 290 M 779 470 L 779 290 M 825 470 L 825 290 M 871 470 L 871 290 M 250 470 L 894 470 M 250 425 L 894 425 M 250 380 L 894 380 M 250 335 L 894 335 M 250 290 L 894 290" fill="none" stroke="#D9DDE6" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <path d="M 250 470 L 906 470" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 250 470 L 250 278" fill="none" stroke="#000000" stroke-width="1.2" />
+  <g id="text_1">
+    <text x="258.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 1</text>
+  </g>
+  <g id="text_2">
+    <text x="304.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 2</text>
+  </g>
+  <g id="text_3">
+    <text x="350.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 3</text>
+  </g>
+  <g id="text_4">
+    <text x="396.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 4</text>
+  </g>
+  <g id="text_5">
+    <text x="442.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 5</text>
+  </g>
+  <g id="text_6">
+    <text x="488.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 6</text>
+  </g>
+  <g id="text_7">
+    <text x="534.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 7</text>
+  </g>
+  <g id="text_8">
+    <text x="580.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 8</text>
+  </g>
+  <g id="text_9">
+    <text x="626.63" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 9</text>
+  </g>
+  <g id="text_10">
+    <text x="669.57" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 10</text>
+  </g>
+  <g id="text_11">
+    <text x="715.57" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 11</text>
+  </g>
+  <g id="text_12">
+    <text x="761.57" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 12</text>
+  </g>
+  <g id="text_13">
+    <text x="807.57" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 13</text>
+  </g>
+  <g id="text_14">
+    <text x="853.57" y="93.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Nov 14</text>
+  </g>
+  <g id="text_15">
+    <text x="40" y="126.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">1. Scheduled run</text>
+  </g>
+  <g id="shape_16">
+    <rect x="252" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="273" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_17">
+    <rect x="298" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="319" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_18">
+    <rect x="344" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="365" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_19">
+    <rect x="390" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="411" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_20">
+    <rect x="436" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="457" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_21">
+    <rect x="482" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="503" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_22">
+    <rect x="528" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="549" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_23">
+    <rect x="574" y="105" width="42" height="34" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="1" />
+    <text x="595" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ok</text>
+  </g>
+  <g id="shape_24">
+    <rect x="620" y="105" width="42" height="34" rx="0" fill="#F5C2C2" stroke="#C0392B" stroke-width="1" />
+    <text x="641" y="125.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">fail</text>
+  </g>
+  <g id="shape_25">
+    <rect x="666" y="105" width="42" height="34" rx="0" fill="#E5E5E5" stroke="#9A9A9A" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+  <g id="shape_26">
+    <rect x="712" y="105" width="42" height="34" rx="0" fill="#E5E5E5" stroke="#9A9A9A" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+  <g id="shape_27">
+    <rect x="758" y="105" width="42" height="34" rx="0" fill="#E5E5E5" stroke="#9A9A9A" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+  <g id="shape_28">
+    <rect x="804" y="105" width="42" height="34" rx="0" fill="#E5E5E5" stroke="#9A9A9A" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+  <g id="shape_29">
+    <rect x="850" y="105" width="42" height="34" rx="0" fill="#E5E5E5" stroke="#9A9A9A" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+  <g id="text_30">
+    <text x="40" y="168.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">2. Backfill 9 to 14</text>
+    <text x="40" y="183.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">INSERT OVERWRITE</text>
+  </g>
+  <g id="shape_31">
+    <rect x="620" y="155" width="42" height="34" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="1" />
+    <text x="641" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="shape_32">
+    <rect x="666" y="155" width="42" height="34" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="1" />
+    <text x="687" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="shape_33">
+    <rect x="712" y="155" width="42" height="34" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="1" />
+    <text x="733" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="shape_34">
+    <rect x="758" y="155" width="42" height="34" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="1" />
+    <text x="779" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="shape_35">
+    <rect x="804" y="155" width="42" height="34" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="1" />
+    <text x="825" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="shape_36">
+    <rect x="850" y="155" width="42" height="34" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="1" />
+    <text x="871" y="175.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="text_37">
+    <text x="40" y="218.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">3. Re-run day 12</text>
+    <text x="40" y="233.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">late events</text>
+  </g>
+  <g id="shape_38">
+    <rect x="758" y="205" width="42" height="34" rx="0" fill="#FDE9B5" stroke="#C98A00" stroke-width="1" />
+    <text x="779" y="225.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">redo</text>
+  </g>
+  <g id="text_44">
+    <text x="236.88" y="473.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="text_45">
+    <text x="230.76" y="428.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">40</text>
+  </g>
+  <g id="text_46">
+    <text x="230.76" y="383.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">80</text>
+  </g>
+  <g id="text_47">
+    <text x="224.65" y="338.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">120</text>
+  </g>
+  <g id="text_48">
+    <text x="224.65" y="293.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">160</text>
+  </g>
+  <g id="path_49">
+    <path d="M 273 467 L 273 473 M 319 467 L 319 473 M 365 467 L 365 473 M 411 467 L 411 473 M 457 467 L 457 473 M 503 467 L 503 473 M 549 467 L 549 473 M 595 467 L 595 473 M 641 467 L 641 473 M 687 467 L 687 473 M 733 467 L 733 473 M 779 467 L 779 473 M 825 467 L 825 473 M 871 467 L 871 473 M 247 470 L 253 470 M 247 425 L 253 425 M 247 380 L 253 380 M 247 335 L 253 335 M 247 290 L 253 290" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_50">
+    <path d="M 255.52 470 L 255.52 337.25 L 272.08 337.25 L 272.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_51">
+    <path d="M 301.52 470 L 301.52 333.88 L 318.08 333.88 L 318.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_52">
+    <path d="M 347.52 470 L 347.52 338.38 L 364.08 338.38 L 364.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_53">
+    <path d="M 393.52 470 L 393.52 329.38 L 410.08 329.38 L 410.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_54">
+    <path d="M 439.52 470 L 439.52 323.75 L 456.08 323.75 L 456.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_55">
+    <path d="M 485.52 470 L 485.52 359.75 L 502.08 359.75 L 502.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_56">
+    <path d="M 531.52 470 L 531.52 363.12 L 548.08 363.12 L 548.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_57">
+    <path d="M 577.52 470 L 577.52 332.75 L 594.08 332.75 L 594.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_58">
+    <path d="M 623.52 470 L 623.52 423.88 L 640.08 423.88 L 640.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_59">
+    <path d="M 669.52 470 L 669.52 470 L 686.08 470 L 686.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_60">
+    <path d="M 715.52 470 L 715.52 470 L 732.08 470 L 732.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_61">
+    <path d="M 761.52 470 L 761.52 470 L 778.08 470 L 778.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_62">
+    <path d="M 807.52 470 L 807.52 470 L 824.08 470 L 824.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_63">
+    <path d="M 853.52 470 L 853.52 470 L 870.08 470 L 870.08 470 Z" fill="#C9CDD6" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_64">
+    <path d="M 273.92 470 L 273.92 337.25 L 290.48 337.25 L 290.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_65">
+    <path d="M 319.92 470 L 319.92 333.88 L 336.48 333.88 L 336.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_66">
+    <path d="M 365.92 470 L 365.92 338.38 L 382.48 338.38 L 382.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_67">
+    <path d="M 411.92 470 L 411.92 329.38 L 428.48 329.38 L 428.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_68">
+    <path d="M 457.92 470 L 457.92 323.75 L 474.48 323.75 L 474.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_69">
+    <path d="M 503.92 470 L 503.92 359.75 L 520.48 359.75 L 520.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_70">
+    <path d="M 549.92 470 L 549.92 363.12 L 566.48 363.12 L 566.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_71">
+    <path d="M 595.92 470 L 595.92 332.75 L 612.48 332.75 L 612.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_72">
+    <path d="M 641.92 470 L 641.92 336.12 L 658.48 336.12 L 658.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_73">
+    <path d="M 687.92 470 L 687.92 330.5 L 704.48 330.5 L 704.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_74">
+    <path d="M 733.92 470 L 733.92 328.25 L 750.48 328.25 L 750.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_75">
+    <path d="M 779.92 470 L 779.92 322.62 L 796.48 322.62 L 796.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_76">
+    <path d="M 825.92 470 L 825.92 327.12 L 842.48 327.12 L 842.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_77">
+    <path d="M 871.92 470 L 871.92 335 L 888.48 335 L 888.48 470 Z" fill="#7FB38E" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_78">
+    <text x="40" y="384.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Rows per partition</text>
+  </g>
+  <g id="text_79">
+    <text x="40" y="406.91" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="40" dy="0">grey: after run 1</tspan> <tspan x="40" dy="13.75">green: after backfill</tspan></text>
+  </g>
+  <g id="text_80">
+    <text x="625" y="415.31" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">partial</text>
+  </g>
+  <g id="text_81">
+    <text x="40" y="547.53" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="40" dy="0">Why re-running is safe: each task writes only its own date partition, replacing it as one unit (an atomic</tspan> <tspan x="40" dy="16.8">partition swap or a transaction), and reads a fixed event_date range, never now(). The same input gives the</tspan> <tspan x="40" dy="16.8">same partition however many times the task runs. A plain INSERT would double the counts on every retry.</tspan></text>
+  </g>
+</svg>

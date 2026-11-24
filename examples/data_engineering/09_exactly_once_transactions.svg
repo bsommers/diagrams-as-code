@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 671" width="1160" height="671">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 190 285 L 272.8 285" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 280 285 L 271 288.6 L 271 281.4 Z" fill="#000000" />
+  <path d="M 422.5 235 L 422.5 100 L 612.8 100" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 620 100 L 611 103.6 L 611 96.4 Z" fill="#000000" />
+  <path d="M 422.5 335 L 422.5 470 L 612.8 470" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 620 470 L 611 473.6 L 611 466.4 Z" fill="#000000" />
+  <path d="M 470 285 L 612.8 285" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 620 285 L 611 288.6 L 611 281.4 Z" fill="#000000" />
+  <path d="M 810 285 L 902.8 285" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 910 285 L 901 288.6 L 901 281.4 Z" fill="#000000" />
+  <path d="M 715 250 L 715 147.2" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 715 140 L 718.6 149 L 711.4 149 Z" fill="#000000" />
+  <path d="M 715 320 L 715 422.8" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 715 430 L 711.4 421 L 718.6 421 Z" fill="#000000" />
+  <path d="M 810 100 L 902.8 100" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 910 100 L 901 103.6 L 901 96.4 Z" fill="#000000" />
+  <g class="badge">
+  <rect x="213.66" y="276" width="42.68" height="18" rx="9" fill="#FFFFFF" />
+  <text x="235" y="288.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">1  poll</text>
+</g>
+  <g class="badge">
+  <rect x="374.2" y="158.5" width="96.6" height="18" rx="9" fill="#FFFFFF" />
+  <text x="422.5" y="170.94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">2  produce (in txn)</text>
+</g>
+  <g class="badge">
+  <rect x="350.3" y="393.5" width="144.39" height="18" rx="9" fill="#FFFFFF" />
+  <text x="422.5" y="405.94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">3  sendOffsetsToTransaction</text>
+</g>
+  <g class="badge">
+  <rect x="489.21" y="276" width="111.59" height="18" rx="9" fill="#FFFFFF" />
+  <text x="545" y="288.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">4  commitTransaction</text>
+</g>
+  <g class="badge">
+  <rect x="820.03" y="276" width="79.93" height="18" rx="9" fill="#FFFFFF" />
+  <text x="860" y="288.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">5  log decision</text>
+</g>
+  <g class="badge">
+  <rect x="668.38" y="186" width="93.23" height="18" rx="9" fill="#FFFFFF" />
+  <text x="715" y="198.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">6  commit marker</text>
+</g>
+  <g class="badge">
+  <rect x="668.38" y="366" width="93.23" height="18" rx="9" fill="#FFFFFF" />
+  <text x="715" y="378.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">6  commit marker</text>
+</g>
+  <g class="badge">
+  <rect x="828.94" y="79.25" width="62.12" height="41.5" rx="9" fill="#FFFFFF" />
+  <text x="860" y="90.94" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600"><tspan x="860" dy="0">7  only</tspan> <tspan x="860" dy="12.5">committed</tspan> <tspan x="860" dy="12.5">records</tspan></text>
+</g>
+  <g id="shape_1">
+    <rect x="40" y="245" width="150" height="80" rx="0" fill="#DCEBFA" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-queue" transform="translate(103, 250.4) scale(1)">
+  <line x1="2" y1="6" x2="18" y2="6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="18" x2="18" y2="18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="6" y1="6" x2="6" y2="18" stroke="#000000" stroke-width="2"/>
+  <line x1="11" y1="6" x2="11" y2="18" stroke="#000000" stroke-width="2"/>
+  <line x1="16" y1="6" x2="16" y2="18" stroke="#000000" stroke-width="2"/>
+  <path d="M 18 12 H 22 M 20 9 L 23 12 L 20 15" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="115" y="287.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Input topic</text>
+    <text x="115" y="302.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">orders, P0</text>
+    <text x="115" y="316.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">offsets 100 to 109</text>
+  </g>
+  <g id="shape_2">
+    <rect x="280" y="235" width="190" height="100" rx="0" fill="#FBEFCB" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-workflow" transform="translate(363, 250.4) scale(1)">
+  <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#000000" stroke-width="2"/>
+  <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="#000000" stroke-width="2"/>
+  <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#000000" stroke-width="2"/>
+</g>
+    <text x="375" y="287.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Stream task</text>
+    <text x="375" y="302.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">transactional.id = app-1</text>
+    <text x="375" y="316.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">producer epoch 7</text>
+  </g>
+  <g id="shape_3">
+    <rect x="620" y="60" width="190" height="80" rx="0" fill="#D5EFD9" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-queue" transform="translate(703, 65.4) scale(1)">
+  <line x1="2" y1="6" x2="18" y2="6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="18" x2="18" y2="18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="6" y1="6" x2="6" y2="18" stroke="#000000" stroke-width="2"/>
+  <line x1="11" y1="6" x2="11" y2="18" stroke="#000000" stroke-width="2"/>
+  <line x1="16" y1="6" x2="16" y2="18" stroke="#000000" stroke-width="2"/>
+  <path d="M 18 12 H 22 M 20 9 L 23 12 L 20 15" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="715" y="102.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Output topic</text>
+    <text x="715" y="117.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">enriched-orders, P0</text>
+    <text x="715" y="131.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">records + commit marker</text>
+  </g>
+  <g id="shape_4">
+    <rect x="620" y="250" width="190" height="70" rx="0" fill="#EDE3F3" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-gateway" transform="translate(703, 257.6) scale(1)">
+  <line x1="6" y1="9" x2="6" y2="3" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="9" x2="18" y2="3" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <rect x="3" y="9" width="18" height="12" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <circle cx="7" cy="15" r="1.5" fill="#000000"/>
+  <circle cx="12" cy="15" r="1.5" fill="#000000"/>
+  <circle cx="17" cy="15" r="1.5" fill="#000000"/>
+</g>
+    <text x="715" y="294.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Transaction coordinator</text>
+    <text x="715" y="309.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">broker</text>
+  </g>
+  <g id="shape_5">
+    <path d="M 910 262 A 100 12 0 0 1 1110 262 L 1110 308 A 100 12 0 0 1 910 308 Z" fill="#EDE3F3" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1010" cy="262" rx="100" ry="12" fill="#EDE3F3" stroke="#000000" stroke-width="1"/>
+    <text x="1010" y="290.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">__transaction_state</text>
+    <text x="1010" y="305.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">PREPARE_COMMIT, COMPLETE</text>
+  </g>
+  <g id="shape_6">
+    <path d="M 620 442 A 95 12 0 0 1 810 442 L 810 498 A 95 12 0 0 1 620 498 Z" fill="#D5EFD9" stroke="#000000" stroke-width="1"/>
+<ellipse cx="715" cy="442" rx="95" ry="12" fill="#D5EFD9" stroke="#000000" stroke-width="1"/>
+    <text x="715" y="475.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">__consumer_offsets</text>
+    <text x="715" y="490.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">group g: input P0 = 110</text>
+  </g>
+  <g id="shape_7">
+    <rect x="910" y="65" width="210" height="70" rx="0" fill="#DCEBFA" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-server" transform="translate(1003, 72.6) scale(1)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <circle cx="6" cy="7" r="1" fill="#000000"/>
+  <circle cx="9" cy="7" r="1" fill="#000000"/>
+  <circle cx="6" cy="17" r="1" fill="#000000"/>
+  <circle cx="9" cy="17" r="1" fill="#000000"/>
+</g>
+    <text x="1015" y="109.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Downstream consumer</text>
+    <text x="1015" y="124.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">isolation.level = read_committed</text>
+  </g>
+  <g id="text_8">
+    <text x="40" y="572.53" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="40" dy="0">If the task crashes before step 4, the coordinator aborts the transaction: the output records stay invisible</tspan> <tspan x="40" dy="16.8">and the offset is not advanced, so the restarted task re-reads 100 to 109 and produces them once.</tspan> <tspan x="40" dy="16.8">Exactly-once here covers Kafka to Kafka; a side effect outside Kafka needs an idempotent or transactional sink.</tspan></text>
+  </g>
+</svg>
