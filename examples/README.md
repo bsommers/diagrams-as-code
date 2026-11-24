@@ -1,16 +1,17 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 247 example scripts: 143 production-grade architecture, workflow and technical diagrams across 13 primary domains, plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
+This directory contains 361 example scripts: 143 production-grade architecture, workflow and technical diagrams across 13 primary domains, 114 more in twelve newer galleries (ten domain galleries of 10, 3 sequence diagrams, 11 project-management figures), plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Example Scripts:** 247 (143 domain diagrams, 4 top-level, 9 primitives, 11 technical, 50 textbook, 30 medical/engineering/CAD)
-- **Domains Covered:** 13 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `database`, `enterprise_architecture`, `manufacturing`, `mind_map`, `computer_science`)
-- **Diagrams per Domain:** 11 (10 manually placed + 1 auto-layout)
-- **Themes Available:** 14 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`, `paper`); the primitives, technical, textbook, medical, engineering and CAD figures use `paper`
-- **Theme Variety per Domain:** at least 3 distinct varieties per domain
+- **Total Example Scripts:** 361 (143 domain diagrams, 114 newer-gallery diagrams, 4 top-level, 9 primitives, 11 technical, 50 textbook, 30 medical/engineering/CAD)
+- **Example Directories:** 35 (13 primary domains, 12 newer galleries, `primitives`, `technical`, `medical`, `engineering`, `cad` and the five textbook galleries)
+- **Primary Domains Covered:** 13 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `database`, `enterprise_architecture`, `manufacturing`, `mind_map`, `computer_science`)
+- **Diagrams per Primary Domain:** 11 (10 manually placed + 1 auto-layout); the ten newer domain galleries have 10 each, `sequence` 3 and `project_management` 11
+- **Themes Available:** 14 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`, `paper`); the primitives, technical, textbook, medical, engineering and CAD figures, and most of the newer galleries, use `paper`
+- **Theme Variety per Domain:** at least 3 distinct varieties per primary domain
 - **Built-in Domain Vector Icons:** 60 custom open-source SVG vector icons
 - **Zero External Dependencies:** 100% Python standard library core engine execution
 - **Auto-Layout Examples:** each domain's `11_auto_*.py` uses `Diagram(layout="auto")` — no `.at()` / `.right_of()` calls; the engine derives every position from the edge graph
@@ -444,6 +445,206 @@ Fifty paper-style figures, ten per subject, in the `paper` theme with a caption 
 | 09 | [`09_syllogism_euler.py`](logic/09_syllogism_euler.py) | Three valid syllogisms shown as Euler diagrams. |
 | 10 | [`10_finite_automaton.py`](logic/10_finite_automaton.py) | A deterministic finite automaton for binary numbers divisible by three. |
 
+---
+
+## 18. Agentic Development (`examples/agentic_dev/`)
+
+Anthropic's five agent workflow patterns and five further agent architectures, in nine different themes. The first five use `layout="auto"`. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_prompt_chaining_gate.py`](agentic_dev/01_prompt_chaining_gate.py) | Prompt chaining with a programmatic gate, after Anthropic's "Building effective agents". | `paper` |
+| 02 | [`02_routing_workflow.py`](agentic_dev/02_routing_workflow.py) | Routing workflow, after Anthropic's "Building effective agents". | `pastel_light` |
+| 03 | [`03_parallelization_sectioning_voting.py`](agentic_dev/03_parallelization_sectioning_voting.py) | Parallelization, in its two variants from Anthropic's "Building effective agents". | `nord` |
+| 04 | [`04_orchestrator_workers.py`](agentic_dev/04_orchestrator_workers.py) | Orchestrator-workers, after Anthropic's "Building effective agents". | `emerald` |
+| 05 | [`05_evaluator_optimizer.py`](agentic_dev/05_evaluator_optimizer.py) | Evaluator-optimizer loop, after Anthropic's "Building effective agents". | `solarized_light` |
+| 06 | [`06_supervisor_vs_swarm.py`](agentic_dev/06_supervisor_vs_swarm.py) | Multi-agent topologies: supervisor versus swarm (handoff). | `cyber_slate` |
+| 07 | [`07_planner_executor_replan.py`](agentic_dev/07_planner_executor_replan.py) | Planner-executor agent with a re-planning loop. | `blueprint` |
+| 08 | [`08_agentic_rag_grade_loop.py`](agentic_dev/08_agentic_rag_grade_loop.py) | Agentic RAG with query rewriting and a document-grading loop. | `dracula` |
+| 09 | [`09_spec_driven_development_loop.py`](agentic_dev/09_spec_driven_development_loop.py) | Spec-driven development loop with an AI coding agent. | `pastel_light` |
+| 10 | [`10_coding_agent_harness.py`](agentic_dev/10_coding_agent_harness.py) | Anatomy of a coding-agent harness. | `high_contrast` |
+
+## 19. Semiconductor (`examples/semiconductor/`)
+
+Process and device figures from RTL-to-GDSII to packaging. Cross-sections are schematic; the wafer-map yield is synthetic. All `paper` theme. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_rtl_to_gdsii_flow.py`](semiconductor/01_rtl_to_gdsii_flow.py) | Digital RTL-to-GDSII flow with the open-source tool at each step. | `paper` |
+| 02 | [`02_photolithography_steps.py`](semiconductor/02_photolithography_steps.py) | Photolithography and pattern transfer as six cross-section panels. | `paper` |
+| 03 | [`03_cmos_inverter_cross_section.py`](semiconductor/03_cmos_inverter_cross_section.py) | Planar CMOS inverter in cross-section: PMOS in an n-well beside an NMOS. | `paper` |
+| 04 | [`04_finfet_vs_gaa_nanosheet.py`](semiconductor/04_finfet_vs_gaa_nanosheet.py) | FinFET versus gate-all-around nanosheet transistors, cut across the gate. | `paper` |
+| 05 | [`05_beol_metal_stack.py`](semiconductor/05_beol_metal_stack.py) | Back-end-of-line (BEOL) interconnect stack from transistor to solder bump. | `paper` |
+| 06 | [`06_damascene_vs_subtractive.py`](semiconductor/06_damascene_vs_subtractive.py) | Subtractive aluminium patterning versus copper damascene, four cross-sections each. | `paper` |
+| 07 | [`07_wafer_map_yield.py`](semiconductor/07_wafer_map_yield.py) | A 300 mm wafer map: reticle shots, dies and a sort-test bin map. | `paper` |
+| 08 | [`08_cowos_s_package_stack.py`](semiconductor/08_cowos_s_package_stack.py) | CoWoS-S style 2.5D package: SoC and HBM on a silicon interposer on an organic substrate. | `paper` |
+| 09 | [`09_chiplet_soc_floorplan.py`](semiconductor/09_chiplet_soc_floorplan.py) | Chiplet SoC package floorplan with UCIe die-to-die links. | `paper` |
+| 10 | [`10_clock_tree_setup_hold.py`](semiconductor/10_clock_tree_setup_hold.py) | A clock tree with skew, and the setup and hold timing check it drives. | `paper` |
+
+## 20. Chemistry (`examples/chemistry/`)
+
+Computed chemistry figures (titration curves, phase diagram, kinetics, energy profiles) and apparatus drawings; uses `\ce{}` and `\rightleftharpoons` in labels. `paper` theme. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_reaction_energy_profile.py`](chemistry/01_reaction_energy_profile.py) | Reaction energy profiles: an exothermic and an endothermic step, each with a catalysed path. | `paper` |
+| 02 | [`02_strong_acid_base_titration.py`](chemistry/02_strong_acid_base_titration.py) | Titration of a strong acid with a strong base: 25.00 mL of 0.100 M HCl with 0.100 M NaOH. | `paper` |
+| 03 | [`03_weak_acid_buffer_titration.py`](chemistry/03_weak_acid_buffer_titration.py) | Titration of a weak acid: 25.00 mL of 0.100 M acetic acid with 0.100 M NaOH. | `paper` |
+| 04 | [`04_maxwell_boltzmann.py`](chemistry/04_maxwell_boltzmann.py) | Maxwell-Boltzmann distribution of molecular kinetic energies at two temperatures. | `paper` |
+| 05 | [`05_water_phase_diagram.py`](chemistry/05_water_phase_diagram.py) | Pressure-temperature phase diagram of water on a logarithmic pressure axis. | `paper` |
+| 06 | [`06_sn2_mechanism.py`](chemistry/06_sn2_mechanism.py) | The SN2 mechanism: hydroxide attacking bromomethane, drawn schematically. | `paper` |
+| 07 | [`07_distillation_apparatus.py`](chemistry/07_distillation_apparatus.py) | Simple distillation apparatus, drawn from lines, arcs and tube outlines. | `paper` |
+| 08 | [`08_titration_setup.py`](chemistry/08_titration_setup.py) | Titration setup: a 50 mL burette over a stirred Erlenmeyer flask, with dimension leaders. | `paper` |
+| 09 | [`09_molecular_orbitals_h2_o2.py`](chemistry/09_molecular_orbitals_h2_o2.py) | Molecular orbital diagrams for H2 and O2, filled from the electron count. | `paper` |
+| 10 | [`10_reaction_order_kinetics.py`](chemistry/10_reaction_order_kinetics.py) | Concentration against time for zero-, first- and second-order reactions of A. | `paper` |
+
+## 21. Data Engineering (`examples/data_engineering/`)
+
+Pipelines, orchestration, streaming and lineage. Nine in the `paper` theme, one in `pastel_light`; several use `layout="auto"`. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_dbt_model_lineage.py`](data_engineering/01_dbt_model_lineage.py) | dbt model lineage DAG across staging, intermediate and mart layers. | `paper` |
+| 02 | [`02_airflow_dag_task_states.py`](data_engineering/02_airflow_dag_task_states.py) | An Airflow DAG with task states and retries. | `paper` |
+| 03 | [`03_kafka_partitions_consumer_groups.py`](data_engineering/03_kafka_partitions_consumer_groups.py) | A Kafka topic with partitions and two consumer groups. | `paper` |
+| 04 | [`04_stream_windows.py`](data_engineering/04_stream_windows.py) | Tumbling, sliding and session windows over one event stream. | `paper` |
+| 05 | [`05_lambda_vs_kappa.py`](data_engineering/05_lambda_vs_kappa.py) | Lambda versus Kappa architecture. | `paper` |
+| 06 | [`06_column_level_lineage.py`](data_engineering/06_column_level_lineage.py) | Column-level lineage from raw tables to a revenue mart. | `paper` |
+| 07 | [`07_data_contract_schema_registry.py`](data_engineering/07_data_contract_schema_registry.py) | A data contract enforced through a schema registry. | `paper` |
+| 08 | [`08_idempotent_backfill_timeline.py`](data_engineering/08_idempotent_backfill_timeline.py) | An idempotent backfill on a daily-partitioned table. | `paper` |
+| 09 | [`09_exactly_once_transactions.py`](data_engineering/09_exactly_once_transactions.py) | Exactly-once read-process-write with Kafka transactions. | `paper` |
+| 10 | [`10_auto_ingestion_to_bi.py`](data_engineering/10_auto_ingestion_to_bi.py) | Auto-laid-out ingestion to BI path. | `pastel_light` |
+
+## 22. ML Models (`examples/ml_models/`)
+
+Model architectures and training and inference procedures, with tensor shapes. `paper` theme. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_decoder_block.py`](ml_models/01_decoder_block.py) | A pre-norm decoder-only transformer block with residual connections. | `paper` |
+| 02 | [`02_multi_head_attention.py`](ml_models/02_multi_head_attention.py) | Multi-head scaled dot-product attention, with tensor shapes on every arrow. | `paper` |
+| 03 | [`03_mixture_of_experts.py`](ml_models/03_mixture_of_experts.py) | A sparse mixture-of-experts layer with a top-$k$ router. | `paper` |
+| 04 | [`04_diffusion_unet.py`](ml_models/04_diffusion_unet.py) | Diffusion: a fixed forward noising chain and a learned reverse chain. | `paper` |
+| 05 | [`05_ppo_actor_critic.py`](ml_models/05_ppo_actor_critic.py) | The reinforcement-learning loop with a PPO actor-critic agent. | `paper` |
+| 06 | [`06_rlhf_dpo_pipeline.py`](ml_models/06_rlhf_dpo_pipeline.py) | Preference tuning two ways: RLHF with a reward model, and DPO without one. | `paper` |
+| 07 | [`07_cnn_feature_pyramid.py`](ml_models/07_cnn_feature_pyramid.py) | A convolutional backbone and its feature pyramid network. | `paper` |
+| 08 | [`08_vae_latent_kl.py`](ml_models/08_vae_latent_kl.py) | A variational autoencoder: encoder, sampled latent, decoder and the two loss terms. | `paper` |
+| 09 | [`09_lora_weight_update.py`](ml_models/09_lora_weight_update.py) | LoRA at the weight level: a frozen matrix plus a trainable low-rank update. | `paper` |
+| 10 | [`10_kv_cache_speculative.py`](ml_models/10_kv_cache_speculative.py) | The KV cache and a speculative-decoding timeline. | `paper` |
+
+## 23. DevOps (`examples/devops/`)
+
+Delivery, Kubernetes, observability and infrastructure-as-code, in five themes (mostly `paper`). 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_gitops_pull_vs_push.py`](devops/01_gitops_pull_vs_push.py) | GitOps pull versus push deployment. | `pastel_light` |
+| 02 | [`02_ci_pipeline_quality_gates.py`](devops/02_ci_pipeline_quality_gates.py) | CI pipeline with quality gates. | `paper` |
+| 03 | [`03_trunk_vs_gitflow_commit_graph.py`](devops/03_trunk_vs_gitflow_commit_graph.py) | Trunk-based development versus GitFlow, drawn as commit graphs. | `paper` |
+| 04 | [`04_canary_vs_blue_green.py`](devops/04_canary_vs_blue_green.py) | canary versus blue-green rollout. | `nord` |
+| 05 | [`05_kubernetes_control_plane_node.py`](devops/05_kubernetes_control_plane_node.py) | Kubernetes control plane and worker node anatomy. | `blueprint` |
+| 06 | [`06_ingress_namespace_service_topology.py`](devops/06_ingress_namespace_service_topology.py) | ingress, namespaces and Services in a Kubernetes cluster. | `pastel_light` |
+| 07 | [`07_observability_otel_stack.py`](devops/07_observability_otel_stack.py) | observability stack around an OpenTelemetry Collector. | `paper` |
+| 08 | [`08_slo_error_budget_burn.py`](devops/08_slo_error_budget_burn.py) | A 99.9% availability SLO over 30 days: error budget remaining and daily burn rate. | `paper` |
+| 09 | [`09_incident_timeline.py`](devops/09_incident_timeline.py) | An incident timeline on a time axis: detect, respond, mitigate, resolve. | `paper` |
+| 10 | [`10_terraform_plan_apply_state.py`](devops/10_terraform_plan_apply_state.py) | Terraform init, plan and apply with remote state. | `solarized_light` |
+
+## 24. Biology (`examples/biology/`)
+
+Molecular, cellular and ecological figures; the computed ones (Punnett ratios, population models, energy tallies) come from the scripts. `paper` theme. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_central_dogma.py`](biology/01_central_dogma.py) | The central dogma of molecular biology, worked through one three-codon gene. | `paper` |
+| 02 | [`02_translation_ribosome.py`](biology/02_translation_ribosome.py) | Translation at the ribosome: mRNA codons, charged tRNAs and the growing peptide. | `paper` |
+| 03 | [`03_glycolysis_tca.py`](biology/03_glycolysis_tca.py) | Glycolysis feeding the TCA (Krebs) cycle, with ATP, NADH and FADH2 tallied per glucose. | `paper` |
+| 04 | [`04_mapk_cascade.py`](biology/04_mapk_cascade.py) | The Ras-Raf-MEK-ERK (MAPK) signalling cascade with its inhibitors and feedback. | `paper` |
+| 05 | [`05_animal_vs_plant_cell.py`](biology/05_animal_vs_plant_cell.py) | Animal and plant cells side by side, drawn as schematic organic outlines. | `paper` |
+| 06 | [`06_phylogenetic_tree.py`](biology/06_phylogenetic_tree.py) | A time-scaled phylogeny of the primates, drawn from nested data with a scale bar. | `paper` |
+| 07 | [`07_food_web_pyramid.py`](biology/07_food_web_pyramid.py) | A grassland food web and its energy pyramid. | `paper` |
+| 08 | [`08_punnett_squares.py`](biology/08_punnett_squares.py) | Punnett squares: a monohybrid cross (Tt x Tt) and a dihybrid cross (RrYy x RrYy). | `paper` |
+| 09 | [`09_pcr_thermocycling.py`](biology/09_pcr_thermocycling.py) | The PCR cycle and the thermocycler temperature trace that drives it. | `paper` |
+| 10 | [`10_population_dynamics.py`](biology/10_population_dynamics.py) | Population dynamics: logistic growth and the Lotka-Volterra predator-prey model. | `paper` |
+
+## 25. Chemical Engineering (`examples/chemical_engineering/`)
+
+Process flow, unit operations, control and design charts. Equipment symbols are hand-drawn from primitives; numbers are computed in the scripts. `paper` theme. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_simple_process_flow.py`](chemical_engineering/01_simple_process_flow.py) | A simple process flow diagram: feed, preheater, reactor and flash separator. | `paper` |
+| 02 | [`02_distillation_column.py`](chemical_engineering/02_distillation_column.py) | A distillation column with overhead condenser, reflux drum and reboiler. | `paper` |
+| 03 | [`03_cstr_jacket_control.py`](chemical_engineering/03_cstr_jacket_control.py) | A jacketed CSTR with a temperature control loop on the coolant valve. | `paper` |
+| 04 | [`04_heat_exchanger_network.py`](chemical_engineering/04_heat_exchanger_network.py) | A shell-and-tube heat exchanger network with duties, temperatures and areas. | `paper` |
+| 05 | [`05_mass_balance_blocks.py`](chemical_engineering/05_mass_balance_blocks.py) | Mass-balance blocks with a stream table: n-butane isomerisation with recycle. | `paper` |
+| 06 | [`06_haber_bosch_loop.py`](chemical_engineering/06_haber_bosch_loop.py) | The Haber-Bosch ammonia synthesis loop with recycle and purge. | `paper` |
+| 07 | [`07_pid_level_control.py`](chemical_engineering/07_pid_level_control.py) | A level-control loop on a surge tank: instrumented schematic and block diagram. | `paper` |
+| 08 | [`08_pump_system_curve.py`](chemical_engineering/08_pump_system_curve.py) | A centrifugal pump curve against the system curve: the operating point. | `paper` |
+| 09 | [`09_mccabe_thiele.py`](chemical_engineering/09_mccabe_thiele.py) | McCabe-Thiele diagram for the benzene-toluene column of figure 2. | `paper` |
+| 10 | [`10_residence_time_distribution.py`](chemical_engineering/10_residence_time_distribution.py) | Residence time distributions for an ideal CSTR, three CSTRs in series and a PFR. | `paper` |
+
+## 26. Organisations (`examples/org/`)
+
+Org structure, team design and decision rights, in the `paper` theme. Data is illustrative. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_org_chart_dotted_line.py`](org/01_org_chart_dotted_line.py) | Org chart with solid-line and dotted-line reports. | `paper` |
+| 02 | [`02_matrix_organisation.py`](org/02_matrix_organisation.py) | Matrix organisation. | `paper` |
+| 03 | [`03_team_topologies.py`](org/03_team_topologies.py) | Team Topologies. | `paper` |
+| 04 | [`04_decision_rights_raci.py`](org/04_decision_rights_raci.py) | Decision rights (RACI by role). | `paper` |
+| 05 | [`05_squads_tribes_chapters_guilds.py`](org/05_squads_tribes_chapters_guilds.py) | Squads, tribes, chapters and guilds. | `paper` |
+| 06 | [`06_span_of_control.py`](org/06_span_of_control.py) | Span of control, flat versus tall. | `paper` |
+| 07 | [`07_stakeholder_power_interest.py`](org/07_stakeholder_power_interest.py) | Stakeholder power/interest grid. | `paper` |
+| 08 | [`08_oncall_escalation_rotation.py`](org/08_oncall_escalation_rotation.py) | On-call escalation ladder with weekly rotation. | `paper` |
+| 09 | [`09_hiring_funnel.py`](org/09_hiring_funnel.py) | Hiring funnel. | `paper` |
+| 10 | [`10_conways_law.py`](org/10_conways_law.py) | Conway's law. | `paper` |
+
+## 27. Electronics (`examples/electronics/`)
+
+Circuits and their computed waveforms, bus timing, PCB and power delivery. Ideal models are stated on each figure. `paper` theme. 10 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_rc_low_pass_bode.py`](electronics/01_rc_low_pass_bode.py) | An RC low-pass filter drawn beside its Bode plot. | `paper` |
+| 02 | [`02_opamp_amplifiers.py`](electronics/02_opamp_amplifiers.py) | Inverting and non-inverting op-amp amplifiers with their gain formulas. | `paper` |
+| 03 | [`03_mosfet_common_source.py`](electronics/03_mosfet_common_source.py) | An NMOS common-source amplifier with a divider bias network and a bypassed source resistor. | `paper` |
+| 04 | [`04_buck_converter.py`](electronics/04_buck_converter.py) | A buck converter schematic with its switch-node voltage and inductor current waveforms. | `paper` |
+| 05 | [`05_bridge_rectifier.py`](electronics/05_bridge_rectifier.py) | A full-wave bridge rectifier with a smoothing capacitor and its ripple waveform. | `paper` |
+| 06 | [`06_timer_555_astable.py`](electronics/06_timer_555_astable.py) | A 555 timer astable oscillator with its computed frequency, duty cycle and waveforms. | `paper` |
+| 07 | [`07_spi_mode0_timing.py`](electronics/07_spi_mode0_timing.py) | An SPI mode-0 transfer: chip select, clock, MOSI and MISO for one byte each way. | `paper` |
+| 08 | [`08_i2c_start_ack_stop.py`](electronics/08_i2c_start_ack_stop.py) | An I2C write transaction: START, address byte, ACK, data byte, ACK and STOP. | `paper` |
+| 09 | [`09_pcb_stackup.py`](electronics/09_pcb_stackup.py) | A 4-layer PCB stackup in cross-section, with three via types and a microstrip impedance. | `paper` |
+| 10 | [`10_pdn_impedance.py`](electronics/10_pdn_impedance.py) | A power delivery network: VRM, bulk and decoupling capacitors, and impedance versus frequency. | `paper` |
+
+## 28. Sequence Diagrams (`examples/sequence/`)
+
+UML sequence diagrams built with `diagrams_as_code.sequence.SequenceDiagram` (see [`docs/sequence-diagrams.md`](../docs/sequence-diagrams.md)). The layout is computed from the events. 3 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_http_retry.py`](sequence/01_http_retry.py) | An HTTP request with retries, as a UML sequence diagram. | `iiot_light` |
+| 02 | [`02_oauth_authorization_code.py`](sequence/02_oauth_authorization_code.py) | The OAuth 2.0 authorization-code flow with PKCE, as a UML sequence diagram. | `nord` |
+| 03 | [`03_mcp_tool_call.py`](sequence/03_mcp_tool_call.py) | A Model Context Protocol tool call, as a UML sequence diagram. | `iiot_light` |
+
+## 29. Project Management (`examples/project_management/`)
+
+Gantt charts and timelines from `diagrams_as_code.gantt` (01-03, see [`docs/gantt-timelines.md`](../docs/gantt-timelines.md)) and eight further delivery figures (04-11). 11 figures.
+
+| # | Script & Output | Figure | Theme |
+|---|---|---|---|
+| 01 | [`01_gantt_critical_path.py`](project_management/01_gantt_critical_path.py) | A product launch plan as a Gantt chart, critical path computed and highlighted. | `pastel_light` |
+| 02 | [`02_release_train_timeline.py`](project_management/02_release_train_timeline.py) | A year of release trains on one timeline. | `pastel_light` |
+| 03 | [`03_incident_timeline.py`](project_management/03_incident_timeline.py) | A post-incident timeline: a database failover that went wrong, minute by minute. | `nord` |
+| 04 | [`04_now_next_later_roadmap.py`](project_management/04_now_next_later_roadmap.py) | A now / next / later roadmap with confidence-weighted cards. | `pastel_light` |
+| 05 | [`05_kanban_wip_limits.py`](project_management/05_kanban_wip_limits.py) | A kanban board whose columns enforce work-in-progress (WIP) limits. | `pastel_light` |
+| 06 | [`06_cumulative_flow.py`](project_management/06_cumulative_flow.py) | A cumulative flow diagram (CFD) of a four-week delivery, drawn with the plot kit. | `paper` |
+| 07 | [`07_sprint_burndown.py`](project_management/07_sprint_burndown.py) | A sprint burndown chart: ideal line against actual remaining work, with a forecast. | `paper` |
+| 08 | [`08_risk_matrix.py`](project_management/08_risk_matrix.py) | A 5x5 risk matrix: likelihood against impact, with the project's risks plotted. | `pastel_light` |
+| 09 | [`09_raci_matrix.py`](project_management/09_raci_matrix.py) | A RACI matrix: who is Responsible, Accountable, Consulted and Informed per task. | `pastel_light` |
+| 10 | [`10_value_stream_map.py`](project_management/10_value_stream_map.py) | A value-stream map of a software change, from request to release. | `pastel_light` |
+| 11 | [`11_pert_network.py`](project_management/11_pert_network.py) | A PERT / CPM activity network, with the critical path from the Gantt scheduler. | `pastel_light` |
+
 ## Executing the Gallery
 
 To regenerate all diagrams and documentation artifacts across all domains:
@@ -455,6 +656,6 @@ uv run diagrams-as-code render examples --out examples --format svg,png,bom
 To run automated verification tests across the entire gallery:
 
 ```bash
-uv run pytest tests/test_domain_examples.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_textbook_examples.py tests/test_clinical_engineering_examples.py tests/test_golden_images.py
+uv run pytest tests/test_domain_examples.py tests/test_sequence.py tests/test_gantt.py tests/test_primitive_examples.py tests/test_technical_examples.py tests/test_textbook_examples.py tests/test_clinical_engineering_examples.py tests/test_golden_images.py
 uv run diagrams-as-code lint examples
 ```
