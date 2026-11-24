@@ -1,4 +1,4 @@
-"""The textbook galleries: calculus_math, differential_equations, physics, finance, logic."""
+"""The textbook galleries: calculus_math, differential_equations, physics, finance, logic, chemistry."""
 from __future__ import annotations
 
 import importlib.util
@@ -11,7 +11,7 @@ import pytest
 from diagrams_as_code.audit import audit_findings
 
 REPO = Path(__file__).resolve().parent.parent
-DOMAINS = ("calculus_math", "differential_equations", "physics", "finance", "logic")
+DOMAINS = ("calculus_math", "differential_equations", "physics", "finance", "logic", "chemistry")
 SCRIPTS = sorted(p for d in DOMAINS for p in (REPO / "examples" / d).glob("*.py"))
 
 
