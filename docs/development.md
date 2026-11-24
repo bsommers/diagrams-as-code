@@ -44,8 +44,7 @@ Python 3.10 to 3.13 are exercised in CI. Docker is optional: `./docker-build-n-r
 | `tools/` | `generate_icons.py`, `eval_bezier.py`, `audit_gallery.py` (visual defect ratchet), `golden_images.py` (golden pictures of the technical figures), `generate_text_data.py` |
 | `tests/` | pytest suite, including module-boundary and repo-hygiene checks |
 | `docs/` | Living documentation; `docs/plans`, `docs/reviews` and `docs/superpowers` are historical working notes |
-| `legacy/` | Archived prototypes; do not build on them |
-| `.planning/`, `.issues/` | Agent and planning notes; ignored by CI triggers |
+| `.planning/`, `.issues/` | Agent and planning notes, and `.planning/archive/legacy/` (archived prototypes; do not build on them); ignored by CI triggers |
 
 ## Daily workflow
 
