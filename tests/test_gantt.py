@@ -599,9 +599,10 @@ def _load(path: Path):
     return module
 
 
-def test_three_project_management_examples():
-    assert [p.stem for p in EXAMPLES] == [
-        "01_gantt_critical_path", "02_release_train_timeline", "03_incident_timeline"]
+def test_gantt_and_timeline_examples_come_first():
+    stems = [p.stem for p in EXAMPLES]
+    assert stems[:3] == ["01_gantt_critical_path", "02_release_train_timeline", "03_incident_timeline"]
+    assert stems == sorted(stems)
 
 
 @pytest.mark.parametrize("script", EXAMPLES, ids=lambda p: p.stem)
