@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 859 559" width="859" height="559">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 80 380 L 80 60 M 129.23 380 L 129.23 60 M 178.46 380 L 178.46 60 M 227.69 380 L 227.69 60 M 276.92 380 L 276.92 60 M 326.15 380 L 326.15 60 M 375.38 380 L 375.38 60 M 424.62 380 L 424.62 60 M 473.85 380 L 473.85 60 M 523.08 380 L 523.08 60 M 572.31 380 L 572.31 60 M 621.54 380 L 621.54 60 M 670.77 380 L 670.77 60 M 720 380 L 720 60 M 80 380 L 720 380 M 80 316 L 720 316 M 80 252 L 720 252 M 80 188 L 720 188 M 80 124 L 720 124 M 80 60 L 720 60" fill="none" stroke="#D9DDE6" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <path d="M 80 380 L 727.05 380" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 732 380 L 723 383.6 L 726.15 380 L 723 376.4 Z" fill="#000000" />
+  <path d="M 80 380 L 80 52.95" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 80 48 L 83.6 57 L 80 53.85 L 76.4 57 Z" fill="#000000" />
+  <g id="text_6">
+    <text x="126.17" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1</text>
+  </g>
+  <g id="text_7">
+    <text x="175.4" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">2</text>
+  </g>
+  <g id="text_8">
+    <text x="224.63" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">3</text>
+  </g>
+  <g id="text_9">
+    <text x="273.86" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">4</text>
+  </g>
+  <g id="text_10">
+    <text x="323.1" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">5</text>
+  </g>
+  <g id="text_11">
+    <text x="372.33" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">6</text>
+  </g>
+  <g id="text_12">
+    <text x="421.56" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">7</text>
+  </g>
+  <g id="text_13">
+    <text x="470.79" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">8</text>
+  </g>
+  <g id="text_14">
+    <text x="520.02" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">9</text>
+  </g>
+  <g id="text_15">
+    <text x="566.19" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">10</text>
+  </g>
+  <g id="text_16">
+    <text x="615.42" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">11</text>
+  </g>
+  <g id="text_17">
+    <text x="664.65" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">12</text>
+  </g>
+  <g id="text_18">
+    <text x="713.88" y="396.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">13</text>
+  </g>
+  <g id="text_19">
+    <text x="60.76" y="319.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">10</text>
+  </g>
+  <g id="text_20">
+    <text x="60.76" y="255.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">20</text>
+  </g>
+  <g id="text_21">
+    <text x="60.76" y="191.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">30</text>
+  </g>
+  <g id="text_22">
+    <text x="60.76" y="127.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">40</text>
+  </g>
+  <g id="text_23">
+    <text x="60.76" y="63.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">50</text>
+  </g>
+  <g id="text_24">
+    <text x="67.88" y="394.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="path_25">
+    <path d="M 80 377 L 80 383 M 129.23 377 L 129.23 383 M 178.46 377 L 178.46 383 M 227.69 377 L 227.69 383 M 276.92 377 L 276.92 383 M 326.15 377 L 326.15 383 M 375.38 377 L 375.38 383 M 424.62 377 L 424.62 383 M 473.85 377 L 473.85 383 M 523.08 377 L 523.08 383 M 572.31 377 L 572.31 383 M 621.54 377 L 621.54 383 M 670.77 377 L 670.77 383 M 720 377 L 720 383 M 77 380 L 83 380 M 77 316 L 83 316 M 77 252 L 83 252 M 77 188 L 83 188 M 77 124 L 83 124 M 77 60 L 83 60" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <text x="738" y="384.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Working day</text>
+  </g>
+  <g id="text_27">
+    <text x="25.91" y="38.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Remaining points</text>
+  </g>
+  <g id="text_29">
+    <text x="578.31" y="73.78" fill="#4B5563" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">sprint ends</text>
+  </g>
+  <g id="text_43">
+    <text x="697.7" y="350.63" fill="#B8860B" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">forecast: day 12.4</text>
+  </g>
+  <g id="text_45">
+    <text x="391.71" y="73.78" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">today</text>
+  </g>
+  <g id="text_47">
+    <text x="444.92" y="224.13" fill="#8A1C1C" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">8 pts behind</text>
+  </g>
+  <g id="text_48">
+    <text x="252.4" y="163.83" fill="#8A1C1C" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">+6 scope</text>
+  </g>
+  <g id="text_50">
+    <text x="530" y="113.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Ideal burndown</text>
+  </g>
+  <g id="text_52">
+    <text x="530" y="131.83" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Actual remaining</text>
+  </g>
+  <g id="text_54">
+    <text x="530" y="150.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Forecast at average velocity</text>
+  </g>
+  <g id="text_55">
+    <text x="80" y="436.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Sprint status, day 7 of 10</text>
+  </g>
+  <g id="text_56">
+    <text x="80" y="460.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Committed 40 pts, scope now 46 pts, done 26 pts, remaining 20 pts. Average velocity 3.71 pts per day.</text>
+  </g>
+  <g id="text_57">
+    <text x="80" y="484.13" fill="#8A1C1C" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">At that pace 9 pts spill past day 10; the work finishes on day 12.4, 2.4 days late.</text>
+  </g>
+  <g id="caption_58">
+    <text x="7.46" y="530.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="81.63" y="530.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="752.63" lengthAdjust="spacingAndGlyphs"> SPRINT BURNDOWN ON DAY 7: 8 POINTS BEHIND THE IDEAL LINE AFTER A 6-POINT SCOPE INCREASE</text>
+  </g>
+  <g id="path_28">
+    <path d="M 572.31 380 L 572.31 60" fill="none" stroke="#6B7280" stroke-width="1" stroke-dasharray="4,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_30">
+    <path d="M 80 124 L 572.31 380" fill="none" stroke="#2E8B57" stroke-width="2" stroke-dasharray="7,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_31">
+    <path d="M 80 124 L 129.23 143.2 L 178.46 168.8 L 227.69 181.6 L 276.92 213.6 L 276.92 175.2 L 326.15 194.4 L 375.38 220 L 424.62 252" fill="none" stroke="#1F4E9E" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="path_41">
+    <path d="M 424.62 252 L 689.7 380" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="2,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_44">
+    <path d="M 424.62 380 L 424.62 60" fill="none" stroke="#8A5A00" stroke-width="1" stroke-dasharray="3,3" stroke-linejoin="round" />
+  </g>
+  <g id="path_46">
+    <path d="M 436.92 303.2 L 436.92 252" fill="none" stroke="#8A1C1C" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 83.5 124 L 83.38 124.91 L 83.03 125.75 L 82.47 126.47 L 81.75 127.03 L 80.91 127.38 L 80 127.5 L 79.09 127.38 L 78.25 127.03 L 77.53 126.47 L 76.97 125.75 L 76.62 124.91 L 76.5 124 L 76.62 123.09 L 76.97 122.25 L 77.53 121.53 L 78.25 120.97 L 79.09 120.62 L 80 120.5 L 80.91 120.62 L 81.75 120.97 L 82.47 121.53 L 83.03 122.25 L 83.38 123.09 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 132.73 143.2 L 132.61 144.11 L 132.26 144.95 L 131.71 145.67 L 130.98 146.23 L 130.14 146.58 L 129.23 146.7 L 128.32 146.58 L 127.48 146.23 L 126.76 145.67 L 126.2 144.95 L 125.85 144.11 L 125.73 143.2 L 125.85 142.29 L 126.2 141.45 L 126.76 140.73 L 127.48 140.17 L 128.32 139.82 L 129.23 139.7 L 130.14 139.82 L 130.98 140.17 L 131.71 140.73 L 132.26 141.45 L 132.61 142.29 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_34">
+    <path d="M 181.96 168.8 L 181.84 169.71 L 181.49 170.55 L 180.94 171.27 L 180.21 171.83 L 179.37 172.18 L 178.46 172.3 L 177.56 172.18 L 176.71 171.83 L 175.99 171.27 L 175.43 170.55 L 175.08 169.71 L 174.96 168.8 L 175.08 167.89 L 175.43 167.05 L 175.99 166.33 L 176.71 165.77 L 177.56 165.42 L 178.46 165.3 L 179.37 165.42 L 180.21 165.77 L 180.94 166.33 L 181.49 167.05 L 181.84 167.89 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_35">
+    <path d="M 231.19 181.6 L 231.07 182.51 L 230.72 183.35 L 230.17 184.07 L 229.44 184.63 L 228.6 184.98 L 227.69 185.1 L 226.79 184.98 L 225.94 184.63 L 225.22 184.07 L 224.66 183.35 L 224.31 182.51 L 224.19 181.6 L 224.31 180.69 L 224.66 179.85 L 225.22 179.13 L 225.94 178.57 L 226.79 178.22 L 227.69 178.1 L 228.6 178.22 L 229.44 178.57 L 230.17 179.13 L 230.72 179.85 L 231.07 180.69 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_36">
+    <path d="M 280.42 213.6 L 280.3 214.51 L 279.95 215.35 L 279.4 216.07 L 278.67 216.63 L 277.83 216.98 L 276.92 217.1 L 276.02 216.98 L 275.17 216.63 L 274.45 216.07 L 273.89 215.35 L 273.54 214.51 L 273.42 213.6 L 273.54 212.69 L 273.89 211.85 L 274.45 211.13 L 275.17 210.57 L 276.02 210.22 L 276.92 210.1 L 277.83 210.22 L 278.67 210.57 L 279.4 211.13 L 279.95 211.85 L 280.3 212.69 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 280.42 175.2 L 280.3 176.11 L 279.95 176.95 L 279.4 177.67 L 278.67 178.23 L 277.83 178.58 L 276.92 178.7 L 276.02 178.58 L 275.17 178.23 L 274.45 177.67 L 273.89 176.95 L 273.54 176.11 L 273.42 175.2 L 273.54 174.29 L 273.89 173.45 L 274.45 172.73 L 275.17 172.17 L 276.02 171.82 L 276.92 171.7 L 277.83 171.82 L 278.67 172.17 L 279.4 172.73 L 279.95 173.45 L 280.3 174.29 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_38">
+    <path d="M 329.65 194.4 L 329.53 195.31 L 329.18 196.15 L 328.63 196.87 L 327.9 197.43 L 327.06 197.78 L 326.15 197.9 L 325.25 197.78 L 324.4 197.43 L 323.68 196.87 L 323.12 196.15 L 322.77 195.31 L 322.65 194.4 L 322.77 193.49 L 323.12 192.65 L 323.68 191.93 L 324.4 191.37 L 325.25 191.02 L 326.15 190.9 L 327.06 191.02 L 327.9 191.37 L 328.63 191.93 L 329.18 192.65 L 329.53 193.49 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 378.88 220 L 378.77 220.91 L 378.42 221.75 L 377.86 222.47 L 377.13 223.03 L 376.29 223.38 L 375.38 223.5 L 374.48 223.38 L 373.63 223.03 L 372.91 222.47 L 372.35 221.75 L 372 220.91 L 371.88 220 L 372 219.09 L 372.35 218.25 L 372.91 217.53 L 373.63 216.97 L 374.48 216.62 L 375.38 216.5 L 376.29 216.62 L 377.13 216.97 L 377.86 217.53 L 378.42 218.25 L 378.77 219.09 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_40">
+    <path d="M 428.12 252 L 428 252.91 L 427.65 253.75 L 427.09 254.47 L 426.37 255.03 L 425.52 255.38 L 424.62 255.5 L 423.71 255.38 L 422.87 255.03 L 422.14 254.47 L 421.58 253.75 L 421.23 252.91 L 421.12 252 L 421.23 251.09 L 421.58 250.25 L 422.14 249.53 L 422.87 248.97 L 423.71 248.62 L 424.62 248.5 L 425.52 248.62 L 426.37 248.97 L 427.09 249.53 L 427.65 250.25 L 428 251.09 Z" fill="#1F4E9E" stroke="#1F4E9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_42">
+    <path d="M 694.2 380 L 694.05 381.16 L 693.6 382.25 L 692.89 383.18 L 691.95 383.9 L 690.87 384.35 L 689.7 384.5 L 688.54 384.35 L 687.45 383.9 L 686.52 383.18 L 685.81 382.25 L 685.36 381.16 L 685.2 380 L 685.36 378.84 L 685.81 377.75 L 686.52 376.82 L 687.45 376.1 L 688.54 375.65 L 689.7 375.5 L 690.87 375.65 L 691.95 376.1 L 692.89 376.82 L 693.6 377.75 L 694.05 378.84 Z" fill="#FFFFFF" stroke="#B8860B" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="path_49">
+    <path d="M 500 109.35 L 522 109.35" fill="none" stroke="#2E8B57" stroke-width="1.8" stroke-dasharray="7,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_51">
+    <path d="M 500 128.05 L 522 128.05" fill="none" stroke="#1F4E9E" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_53">
+    <path d="M 500 146.75 L 522 146.75" fill="none" stroke="#B8860B" stroke-width="1.8" stroke-dasharray="2,4" stroke-linejoin="round" />
+  </g>
+</svg>

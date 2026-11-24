@@ -1,0 +1,441 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 997 517" width="997" height="517">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7287FD"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#7287FD"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#EFF1F5"/>
+  <g id="polygon_1">
+    <path d="M 180 318 L 260 318 L 260 380 L 180 380 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_3">
+    <path d="M 260 318 L 340 318 L 340 380 L 260 380 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 340 318 L 420 318 L 420 380 L 340 380 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 420 318 L 500 318 L 500 380 L 420 380 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 500 318 L 580 318 L 580 380 L 500 380 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_11">
+    <path d="M 180 256 L 260 256 L 260 318 L 180 318 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 260 256 L 340 256 L 340 318 L 260 318 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 340 256 L 420 256 L 420 318 L 340 318 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 420 256 L 500 256 L 500 318 L 420 318 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 500 256 L 580 256 L 580 318 L 500 318 Z" fill="#F7C99A" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 180 194 L 260 194 L 260 256 L 180 256 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_23">
+    <path d="M 260 194 L 340 194 L 340 256 L 260 256 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_25">
+    <path d="M 340 194 L 420 194 L 420 256 L 340 256 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_27">
+    <path d="M 420 194 L 500 194 L 500 256 L 420 256 Z" fill="#F7C99A" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_29">
+    <path d="M 500 194 L 580 194 L 580 256 L 500 256 Z" fill="#EE9C97" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_31">
+    <path d="M 180 132 L 260 132 L 260 194 L 180 194 Z" fill="#CDE8D2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 260 132 L 340 132 L 340 194 L 260 194 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_35">
+    <path d="M 340 132 L 420 132 L 420 194 L 340 194 Z" fill="#F7C99A" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 420 132 L 500 132 L 500 194 L 420 194 Z" fill="#EE9C97" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 500 132 L 580 132 L 580 194 L 500 194 Z" fill="#EE9C97" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_41">
+    <path d="M 180 70 L 260 70 L 260 132 L 180 132 Z" fill="#F6EDB2" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_43">
+    <path d="M 260 70 L 340 70 L 340 132 L 260 132 Z" fill="#F7C99A" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_45">
+    <path d="M 340 70 L 420 70 L 420 132 L 340 132 Z" fill="#EE9C97" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_47">
+    <path d="M 420 70 L 500 70 L 500 132 L 420 132 Z" fill="#EE9C97" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_49">
+    <path d="M 500 70 L 580 70 L 580 132 L 500 132 Z" fill="#EE9C97" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="text_2">
+    <text x="248.44" y="331.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">1</text>
+  </g>
+  <g id="text_4">
+    <text x="328.44" y="331.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">2</text>
+  </g>
+  <g id="text_6">
+    <text x="408.44" y="331.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">3</text>
+  </g>
+  <g id="text_8">
+    <text x="488.44" y="331.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">4</text>
+  </g>
+  <g id="text_10">
+    <text x="568.44" y="331.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">5</text>
+  </g>
+  <g id="text_12">
+    <text x="248.44" y="269.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">2</text>
+  </g>
+  <g id="text_14">
+    <text x="328.44" y="269.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">4</text>
+  </g>
+  <g id="text_16">
+    <text x="408.44" y="269.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">6</text>
+  </g>
+  <g id="text_18">
+    <text x="488.44" y="269.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">8</text>
+  </g>
+  <g id="text_20">
+    <text x="562.88" y="269.44" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">10</text>
+  </g>
+  <g id="text_22">
+    <text x="248.44" y="207.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">3</text>
+  </g>
+  <g id="text_24">
+    <text x="328.44" y="207.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">6</text>
+  </g>
+  <g id="text_26">
+    <text x="408.44" y="207.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">9</text>
+  </g>
+  <g id="text_28">
+    <text x="482.88" y="207.44" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">12</text>
+  </g>
+  <g id="text_30">
+    <text x="562.88" y="207.44" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">15</text>
+  </g>
+  <g id="text_32">
+    <text x="248.44" y="145.44" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">4</text>
+  </g>
+  <g id="text_34">
+    <text x="328.44" y="145.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">8</text>
+  </g>
+  <g id="text_36">
+    <text x="402.88" y="145.44" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">12</text>
+  </g>
+  <g id="text_38">
+    <text x="482.88" y="145.44" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">16</text>
+  </g>
+  <g id="text_40">
+    <text x="562.88" y="145.44" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">20</text>
+  </g>
+  <g id="text_42">
+    <text x="248.44" y="83.44" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">5</text>
+  </g>
+  <g id="text_44">
+    <text x="322.88" y="83.44" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">10</text>
+  </g>
+  <g id="text_46">
+    <text x="402.88" y="83.44" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">15</text>
+  </g>
+  <g id="text_48">
+    <text x="482.88" y="83.44" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">20</text>
+  </g>
+  <g id="text_50">
+    <text x="562.88" y="83.44" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">25</text>
+  </g>
+  <g id="text_51">
+    <text x="125.99" y="353.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Rare (1)</text>
+  </g>
+  <g id="text_52">
+    <text x="109.99" y="291.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Unlikely (2)</text>
+  </g>
+  <g id="text_53">
+    <text x="106.64" y="229.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Possible (3)</text>
+  </g>
+  <g id="text_54">
+    <text x="121.32" y="167.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Likely (4)</text>
+  </g>
+  <g id="text_55">
+    <text x="75.97" y="105.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Almost certain (5)</text>
+  </g>
+  <g id="text_56">
+    <text x="196" y="400.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Minor (1)</text>
+  </g>
+  <g id="text_57">
+    <text x="265.65" y="400.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Moderate (2)</text>
+  </g>
+  <g id="text_58">
+    <text x="350.66" y="400.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Serious (3)</text>
+  </g>
+  <g id="text_59">
+    <text x="436" y="400.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Major (4)</text>
+  </g>
+  <g id="text_60">
+    <text x="511.99" y="400.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Severe (5)</text>
+  </g>
+  <g id="text_61">
+    <text x="105" y="54.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="start">Likelihood</text>
+  </g>
+  <g id="text_62">
+    <text x="359.05" y="424.47" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="start">Impact</text>
+  </g>
+  <g id="text_85">
+    <text x="630" y="54.82" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Risk register</text>
+  </g>
+  <g id="text_88">
+    <text x="660" y="88.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Requirement ambiguity</text>
+  </g>
+  <g id="text_93">
+    <text x="660" y="114.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Scope creep</text>
+  </g>
+  <g id="text_98">
+    <text x="660" y="140.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Security audit finding</text>
+  </g>
+  <g id="text_103">
+    <text x="660" y="166.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Key engineer leaves</text>
+  </g>
+  <g id="text_108">
+    <text x="660" y="192.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Vendor API deprecation</text>
+  </g>
+  <g id="text_113">
+    <text x="660" y="218.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Data migration corrupts records</text>
+  </g>
+  <g id="text_118">
+    <text x="660" y="244.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Cloud cost overrun</text>
+  </g>
+  <g id="text_123">
+    <text x="660" y="270.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Test environment unstable</text>
+  </g>
+  <g id="text_128">
+    <text x="660" y="296.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Legal review delay</text>
+  </g>
+  <g id="text_133">
+    <text x="660" y="322.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Licence cost rise</text>
+  </g>
+  <g id="text_138">
+    <text x="660" y="348.13" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Office move disrupts team</text>
+  </g>
+  <g id="text_141">
+    <text x="630" y="379.78" fill="#4B5563" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Score bands: low 1-4, medium 5-9, high 10-14, critical 15-25.</text>
+  </g>
+  <g id="caption_142">
+    <text x="120.95" y="470.66" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 8:</text>
+    <text x="195.12" y="470.66" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="695.97" lengthAdjust="spacingAndGlyphs"> RISK MATRIX WITH 11 RISKS: 3 CRITICAL, 3 HIGH, 3 MEDIUM, 2 LOW. HIGHEST SCORE 20 OF 25</text>
+  </g>
+  <g id="polygon_89">
+    <path d="M 844.06 74 L 936.06 74 L 936.06 94 L 844.06 94 Z" fill="#EE9C97" />
+  </g>
+  <g id="polygon_94">
+    <path d="M 844.06 100 L 936.06 100 L 936.06 120 L 844.06 120 Z" fill="#EE9C97" />
+  </g>
+  <g id="polygon_99">
+    <path d="M 844.06 126 L 936.06 126 L 936.06 146 L 844.06 146 Z" fill="#EE9C97" />
+  </g>
+  <g id="polygon_104">
+    <path d="M 844.06 152 L 936.06 152 L 936.06 172 L 844.06 172 Z" fill="#F7C99A" />
+  </g>
+  <g id="polygon_109">
+    <path d="M 844.06 178 L 936.06 178 L 936.06 198 L 844.06 198 Z" fill="#F7C99A" />
+  </g>
+  <g id="polygon_114">
+    <path d="M 844.06 204 L 936.06 204 L 936.06 224 L 844.06 224 Z" fill="#F7C99A" />
+  </g>
+  <g id="polygon_119">
+    <path d="M 844.06 230 L 936.06 230 L 936.06 250 L 844.06 250 Z" fill="#F6EDB2" />
+  </g>
+  <g id="polygon_124">
+    <path d="M 844.06 256 L 936.06 256 L 936.06 276 L 844.06 276 Z" fill="#F6EDB2" />
+  </g>
+  <g id="polygon_129">
+    <path d="M 844.06 282 L 936.06 282 L 936.06 302 L 844.06 302 Z" fill="#F6EDB2" />
+  </g>
+  <g id="polygon_134">
+    <path d="M 844.06 308 L 936.06 308 L 936.06 328 L 844.06 328 Z" fill="#CDE8D2" />
+  </g>
+  <g id="polygon_139">
+    <path d="M 844.06 334 L 936.06 334 L 936.06 354 L 844.06 354 Z" fill="#CDE8D2" />
+  </g>
+  <g id="polygon_63">
+    <path d="M 471 107 L 470.63 109.85 L 469.53 112.5 L 467.78 114.78 L 465.5 116.53 L 462.85 117.63 L 460 118 L 457.15 117.63 L 454.5 116.53 L 452.22 114.78 L 450.47 112.5 L 449.37 109.85 L 449 107 L 449.37 104.15 L 450.47 101.5 L 452.22 99.22 L 454.5 97.47 L 457.15 96.37 L 460 96 L 462.85 96.37 L 465.5 97.47 L 467.78 99.22 L 469.53 101.5 L 470.63 104.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_65">
+    <path d="M 391 107 L 390.63 109.85 L 389.53 112.5 L 387.78 114.78 L 385.5 116.53 L 382.85 117.63 L 380 118 L 377.15 117.63 L 374.5 116.53 L 372.22 114.78 L 370.47 112.5 L 369.37 109.85 L 369 107 L 369.37 104.15 L 370.47 101.5 L 372.22 99.22 L 374.5 97.47 L 377.15 96.37 L 380 96 L 382.85 96.37 L 385.5 97.47 L 387.78 99.22 L 389.53 101.5 L 390.63 104.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_67">
+    <path d="M 551 231 L 550.63 233.85 L 549.53 236.5 L 547.78 238.78 L 545.5 240.53 L 542.85 241.63 L 540 242 L 537.15 241.63 L 534.5 240.53 L 532.22 238.78 L 530.47 236.5 L 529.37 233.85 L 529 231 L 529.37 228.15 L 530.47 225.5 L 532.22 223.22 L 534.5 221.47 L 537.15 220.37 L 540 220 L 542.85 220.37 L 545.5 221.47 L 547.78 223.22 L 549.53 225.5 L 550.63 228.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_69">
+    <path d="M 471 231 L 470.63 233.85 L 469.53 236.5 L 467.78 238.78 L 465.5 240.53 L 462.85 241.63 L 460 242 L 457.15 241.63 L 454.5 240.53 L 452.22 238.78 L 450.47 236.5 L 449.37 233.85 L 449 231 L 449.37 228.15 L 450.47 225.5 L 452.22 223.22 L 454.5 221.47 L 457.15 220.37 L 460 220 L 462.85 220.37 L 465.5 221.47 L 467.78 223.22 L 469.53 225.5 L 470.63 228.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_71">
+    <path d="M 391 169 L 390.63 171.85 L 389.53 174.5 L 387.78 176.78 L 385.5 178.53 L 382.85 179.63 L 380 180 L 377.15 179.63 L 374.5 178.53 L 372.22 176.78 L 370.47 174.5 L 369.37 171.85 L 369 169 L 369.37 166.15 L 370.47 163.5 L 372.22 161.22 L 374.5 159.47 L 377.15 158.37 L 380 158 L 382.85 158.37 L 385.5 159.47 L 387.78 161.22 L 389.53 163.5 L 390.63 166.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_73">
+    <path d="M 551 293 L 550.63 295.85 L 549.53 298.5 L 547.78 300.78 L 545.5 302.53 L 542.85 303.63 L 540 304 L 537.15 303.63 L 534.5 302.53 L 532.22 300.78 L 530.47 298.5 L 529.37 295.85 L 529 293 L 529.37 290.15 L 530.47 287.5 L 532.22 285.22 L 534.5 283.47 L 537.15 282.37 L 540 282 L 542.85 282.37 L 545.5 283.47 L 547.78 285.22 L 549.53 287.5 L 550.63 290.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_75">
+    <path d="M 298 169 L 297.63 171.85 L 296.53 174.5 L 294.78 176.78 L 292.5 178.53 L 289.85 179.63 L 287 180 L 284.15 179.63 L 281.5 178.53 L 279.22 176.78 L 277.47 174.5 L 276.37 171.85 L 276 169 L 276.37 166.15 L 277.47 163.5 L 279.22 161.22 L 281.5 159.47 L 284.15 158.37 L 287 158 L 289.85 158.37 L 292.5 159.47 L 294.78 161.22 L 296.53 163.5 L 297.63 166.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_77">
+    <path d="M 324 169 L 323.63 171.85 L 322.53 174.5 L 320.78 176.78 L 318.5 178.53 L 315.85 179.63 L 313 180 L 310.15 179.63 L 307.5 178.53 L 305.22 176.78 L 303.47 174.5 L 302.37 171.85 L 302 169 L 302.37 166.15 L 303.47 163.5 L 305.22 161.22 L 307.5 159.47 L 310.15 158.37 L 313 158 L 315.85 158.37 L 318.5 159.47 L 320.78 161.22 L 322.53 163.5 L 323.63 166.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_79">
+    <path d="M 391 293 L 390.63 295.85 L 389.53 298.5 L 387.78 300.78 L 385.5 302.53 L 382.85 303.63 L 380 304 L 377.15 303.63 L 374.5 302.53 L 372.22 300.78 L 370.47 298.5 L 369.37 295.85 L 369 293 L 369.37 290.15 L 370.47 287.5 L 372.22 285.22 L 374.5 283.47 L 377.15 282.37 L 380 282 L 382.85 282.37 L 385.5 283.47 L 387.78 285.22 L 389.53 287.5 L 390.63 290.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_81">
+    <path d="M 311 293 L 310.63 295.85 L 309.53 298.5 L 307.78 300.78 L 305.5 302.53 L 302.85 303.63 L 300 304 L 297.15 303.63 L 294.5 302.53 L 292.22 300.78 L 290.47 298.5 L 289.37 295.85 L 289 293 L 289.37 290.15 L 290.47 287.5 L 292.22 285.22 L 294.5 283.47 L 297.15 282.37 L 300 282 L 302.85 282.37 L 305.5 283.47 L 307.78 285.22 L 309.53 287.5 L 310.63 290.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_83">
+    <path d="M 311 355 L 310.63 357.85 L 309.53 360.5 L 307.78 362.78 L 305.5 364.53 L 302.85 365.63 L 300 366 L 297.15 365.63 L 294.5 364.53 L 292.22 362.78 L 290.47 360.5 L 289.37 357.85 L 289 355 L 289.37 352.15 L 290.47 349.5 L 292.22 347.22 L 294.5 345.47 L 297.15 344.37 L 300 344 L 302.85 344.37 L 305.5 345.47 L 307.78 347.22 L 309.53 349.5 L 310.63 352.15 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_86">
+    <path d="M 648 84 L 647.69 86.33 L 646.79 88.5 L 645.36 90.36 L 643.5 91.79 L 641.33 92.69 L 639 93 L 636.67 92.69 L 634.5 91.79 L 632.64 90.36 L 631.21 88.5 L 630.31 86.33 L 630 84 L 630.31 81.67 L 631.21 79.5 L 632.64 77.64 L 634.5 76.21 L 636.67 75.31 L 639 75 L 641.33 75.31 L 643.5 76.21 L 645.36 77.64 L 646.79 79.5 L 647.69 81.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_91">
+    <path d="M 648 110 L 647.69 112.33 L 646.79 114.5 L 645.36 116.36 L 643.5 117.79 L 641.33 118.69 L 639 119 L 636.67 118.69 L 634.5 117.79 L 632.64 116.36 L 631.21 114.5 L 630.31 112.33 L 630 110 L 630.31 107.67 L 631.21 105.5 L 632.64 103.64 L 634.5 102.21 L 636.67 101.31 L 639 101 L 641.33 101.31 L 643.5 102.21 L 645.36 103.64 L 646.79 105.5 L 647.69 107.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_96">
+    <path d="M 648 136 L 647.69 138.33 L 646.79 140.5 L 645.36 142.36 L 643.5 143.79 L 641.33 144.69 L 639 145 L 636.67 144.69 L 634.5 143.79 L 632.64 142.36 L 631.21 140.5 L 630.31 138.33 L 630 136 L 630.31 133.67 L 631.21 131.5 L 632.64 129.64 L 634.5 128.21 L 636.67 127.31 L 639 127 L 641.33 127.31 L 643.5 128.21 L 645.36 129.64 L 646.79 131.5 L 647.69 133.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_101">
+    <path d="M 648 162 L 647.69 164.33 L 646.79 166.5 L 645.36 168.36 L 643.5 169.79 L 641.33 170.69 L 639 171 L 636.67 170.69 L 634.5 169.79 L 632.64 168.36 L 631.21 166.5 L 630.31 164.33 L 630 162 L 630.31 159.67 L 631.21 157.5 L 632.64 155.64 L 634.5 154.21 L 636.67 153.31 L 639 153 L 641.33 153.31 L 643.5 154.21 L 645.36 155.64 L 646.79 157.5 L 647.69 159.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_106">
+    <path d="M 648 188 L 647.69 190.33 L 646.79 192.5 L 645.36 194.36 L 643.5 195.79 L 641.33 196.69 L 639 197 L 636.67 196.69 L 634.5 195.79 L 632.64 194.36 L 631.21 192.5 L 630.31 190.33 L 630 188 L 630.31 185.67 L 631.21 183.5 L 632.64 181.64 L 634.5 180.21 L 636.67 179.31 L 639 179 L 641.33 179.31 L 643.5 180.21 L 645.36 181.64 L 646.79 183.5 L 647.69 185.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_111">
+    <path d="M 648 214 L 647.69 216.33 L 646.79 218.5 L 645.36 220.36 L 643.5 221.79 L 641.33 222.69 L 639 223 L 636.67 222.69 L 634.5 221.79 L 632.64 220.36 L 631.21 218.5 L 630.31 216.33 L 630 214 L 630.31 211.67 L 631.21 209.5 L 632.64 207.64 L 634.5 206.21 L 636.67 205.31 L 639 205 L 641.33 205.31 L 643.5 206.21 L 645.36 207.64 L 646.79 209.5 L 647.69 211.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_116">
+    <path d="M 648 240 L 647.69 242.33 L 646.79 244.5 L 645.36 246.36 L 643.5 247.79 L 641.33 248.69 L 639 249 L 636.67 248.69 L 634.5 247.79 L 632.64 246.36 L 631.21 244.5 L 630.31 242.33 L 630 240 L 630.31 237.67 L 631.21 235.5 L 632.64 233.64 L 634.5 232.21 L 636.67 231.31 L 639 231 L 641.33 231.31 L 643.5 232.21 L 645.36 233.64 L 646.79 235.5 L 647.69 237.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_121">
+    <path d="M 648 266 L 647.69 268.33 L 646.79 270.5 L 645.36 272.36 L 643.5 273.79 L 641.33 274.69 L 639 275 L 636.67 274.69 L 634.5 273.79 L 632.64 272.36 L 631.21 270.5 L 630.31 268.33 L 630 266 L 630.31 263.67 L 631.21 261.5 L 632.64 259.64 L 634.5 258.21 L 636.67 257.31 L 639 257 L 641.33 257.31 L 643.5 258.21 L 645.36 259.64 L 646.79 261.5 L 647.69 263.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_126">
+    <path d="M 648 292 L 647.69 294.33 L 646.79 296.5 L 645.36 298.36 L 643.5 299.79 L 641.33 300.69 L 639 301 L 636.67 300.69 L 634.5 299.79 L 632.64 298.36 L 631.21 296.5 L 630.31 294.33 L 630 292 L 630.31 289.67 L 631.21 287.5 L 632.64 285.64 L 634.5 284.21 L 636.67 283.31 L 639 283 L 641.33 283.31 L 643.5 284.21 L 645.36 285.64 L 646.79 287.5 L 647.69 289.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_131">
+    <path d="M 648 318 L 647.69 320.33 L 646.79 322.5 L 645.36 324.36 L 643.5 325.79 L 641.33 326.69 L 639 327 L 636.67 326.69 L 634.5 325.79 L 632.64 324.36 L 631.21 322.5 L 630.31 320.33 L 630 318 L 630.31 315.67 L 631.21 313.5 L 632.64 311.64 L 634.5 310.21 L 636.67 309.31 L 639 309 L 641.33 309.31 L 643.5 310.21 L 645.36 311.64 L 646.79 313.5 L 647.69 315.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_136">
+    <path d="M 648 344 L 647.69 346.33 L 646.79 348.5 L 645.36 350.36 L 643.5 351.79 L 641.33 352.69 L 639 353 L 636.67 352.69 L 634.5 351.79 L 632.64 350.36 L 631.21 348.5 L 630.31 346.33 L 630 344 L 630.31 341.67 L 631.21 339.5 L 632.64 337.64 L 634.5 336.21 L 636.67 335.31 L 639 335 L 641.33 335.31 L 643.5 336.21 L 645.36 337.64 L 646.79 339.5 L 647.69 341.67 Z" fill="#FFFFFF" stroke="#1F2F57" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="text_64">
+    <text x="456.94" y="110.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">1</text>
+  </g>
+  <g id="text_66">
+    <text x="376.94" y="110.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">2</text>
+  </g>
+  <g id="text_68">
+    <text x="536.94" y="234.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">3</text>
+  </g>
+  <g id="text_70">
+    <text x="456.94" y="234.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">4</text>
+  </g>
+  <g id="text_72">
+    <text x="376.94" y="172.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">5</text>
+  </g>
+  <g id="text_74">
+    <text x="536.94" y="296.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">6</text>
+  </g>
+  <g id="text_76">
+    <text x="283.94" y="172.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">7</text>
+  </g>
+  <g id="text_78">
+    <text x="309.94" y="172.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">8</text>
+  </g>
+  <g id="text_80">
+    <text x="376.94" y="296.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">9</text>
+  </g>
+  <g id="text_82">
+    <text x="293.88" y="296.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">10</text>
+  </g>
+  <g id="text_84">
+    <text x="293.88" y="358.78" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">11</text>
+  </g>
+  <g id="text_87">
+    <text x="636.22" y="87.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">1</text>
+  </g>
+  <g id="text_90">
+    <text x="848.95" y="87.78" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">5x4 = 20  Critical</text>
+  </g>
+  <g id="text_92">
+    <text x="636.22" y="113.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">2</text>
+  </g>
+  <g id="text_95">
+    <text x="848.95" y="113.78" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">5x3 = 15  Critical</text>
+  </g>
+  <g id="text_97">
+    <text x="636.22" y="139.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">3</text>
+  </g>
+  <g id="text_100">
+    <text x="848.95" y="139.78" fill="#8A1C1C" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">3x5 = 15  Critical</text>
+  </g>
+  <g id="text_102">
+    <text x="636.22" y="165.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">4</text>
+  </g>
+  <g id="text_105">
+    <text x="854.44" y="165.78" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">3x4 = 12  High</text>
+  </g>
+  <g id="text_107">
+    <text x="636.22" y="191.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">5</text>
+  </g>
+  <g id="text_110">
+    <text x="854.44" y="191.78" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">4x3 = 12  High</text>
+  </g>
+  <g id="text_112">
+    <text x="636.22" y="217.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">6</text>
+  </g>
+  <g id="text_115">
+    <text x="854.44" y="217.78" fill="#9A4A00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">2x5 = 10  High</text>
+  </g>
+  <g id="text_117">
+    <text x="636.22" y="243.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">7</text>
+  </g>
+  <g id="text_120">
+    <text x="849.25" y="243.78" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">4x2 = 8  Medium</text>
+  </g>
+  <g id="text_122">
+    <text x="636.22" y="269.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">8</text>
+  </g>
+  <g id="text_125">
+    <text x="849.25" y="269.78" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">4x2 = 8  Medium</text>
+  </g>
+  <g id="text_127">
+    <text x="636.22" y="295.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">9</text>
+  </g>
+  <g id="text_130">
+    <text x="849.25" y="295.78" fill="#7A6200" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">2x3 = 6  Medium</text>
+  </g>
+  <g id="text_132">
+    <text x="633.44" y="321.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">10</text>
+  </g>
+  <g id="text_135">
+    <text x="858.72" y="321.78" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">2x2 = 4  Low</text>
+  </g>
+  <g id="text_137">
+    <text x="633.44" y="347.44" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="start">11</text>
+  </g>
+  <g id="text_140">
+    <text x="858.72" y="347.78" fill="#2E6B3F" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">1x2 = 2  Low</text>
+  </g>
+</svg>
