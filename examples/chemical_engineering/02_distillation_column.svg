@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1086 754" width="1086" height="754">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1A1A1A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrow-1A1A1A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1A1A1A"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 100 330 L 278.36 330" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 287 330 L 276.2 334.32 L 276.2 325.68 Z" fill="#1A1A1A" />
+  <path d="M 330 140 L 330 100 L 498 100" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 520 52 L 520 69.36" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 520 78 L 515.68 67.2 L 524.32 67.2 Z" fill="#1A1A1A" />
+  <path d="M 520 122 L 520 151.36" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 520 160 L 515.68 149.2 L 524.32 149.2 Z" fill="#1A1A1A" />
+  <path d="M 542 100 L 600 100 L 600 178.36" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 600 187 L 595.68 176.2 L 604.32 176.2 Z" fill="#1A1A1A" />
+  <path d="M 555 243 L 555 300 L 530.64 300" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 522 300 L 532.8 295.68 L 532.8 304.32 Z" fill="#1A1A1A" />
+  <path d="M 488 300 L 430 300" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 430 300 L 430 172 L 385.64 172" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 377 172 L 387.8 167.68 L 387.8 176.32 Z" fill="#1A1A1A" />
+  <path d="M 430 300 L 430 400 L 771.36 400" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 780 400 L 769.2 404.32 L 769.2 395.68 Z" fill="#1A1A1A" />
+  <path d="M 330 540 L 330 600" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 330 600 L 620 600 L 620 575.64" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 620 567 L 624.32 577.8 L 615.68 577.8 Z" fill="#1A1A1A" />
+  <path d="M 620 523 L 620 500 L 380.64 500" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 372 500 L 382.8 495.68 L 382.8 504.32 Z" fill="#1A1A1A" />
+  <path d="M 720 545 L 650.64 545" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 642 545 L 652.8 540.68 L 652.8 549.32 Z" fill="#1A1A1A" />
+  <path d="M 598 545 L 568.64 545" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 560 545 L 570.8 540.68 L 570.8 549.32 Z" fill="#1A1A1A" />
+  <path d="M 330 600 L 330 650 L 208.64 650" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 200 650 L 210.8 645.68 L 210.8 654.32 Z" fill="#1A1A1A" />
+  <g id="text_14">
+    <text x="164.97" y="211.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">C-101</text>
+    <text x="164.97" y="227.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Distillation column</text>
+    <text x="164.97" y="243.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">20 trays (schematic)</text>
+  </g>
+  <g id="text_17">
+    <text x="100" y="314.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Feed F, saturated liquid</text>
+  </g>
+  <g id="text_18">
+    <text x="100" y="356.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">100 kmol/h, 50% benzene</text>
+  </g>
+  <g id="text_27">
+    <text x="464.91" y="42.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">cooling water in, 30 °C</text>
+  </g>
+  <g id="text_28">
+    <text x="532" y="170.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">out, 40 °C</text>
+  </g>
+  <g id="text_29">
+    <text x="385.93" y="68.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">E-101</text>
+    <text x="385.93" y="84.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Overhead condenser</text>
+  </g>
+  <g id="text_30">
+    <text x="400" y="122.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">81 °C vapour</text>
+  </g>
+  <g id="text_34">
+    <text x="607.66" y="263.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">V-101</text>
+    <text x="607.66" y="279.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Reflux drum</text>
+  </g>
+  <g id="text_39">
+    <text x="471.32" y="335.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">P-101</text>
+    <text x="471.32" y="351.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Reflux pump</text>
+  </g>
+  <g id="point_46">
+    <path d="M 433.5 300 C 433.5 301.93 431.93 303.5 430 303.5 C 428.07 303.5 426.5 301.93 426.5 300 C 426.5 298.07 428.07 296.5 430 296.5 C 431.93 296.5 433.5 298.07 433.5 300 Z" fill="#000000" />
+  </g>
+  <g id="text_47">
+    <text x="442" y="236.91" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="442" dy="0">Reflux L =</tspan> <tspan x="442" dy="13.75">100 kmol/h</tspan></text>
+  </g>
+  <g id="text_48">
+    <text x="786" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Distillate D</text>
+  </g>
+  <g id="text_49">
+    <text x="786" y="421.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">50 kmol/h, 95% benzene</text>
+  </g>
+  <g id="text_60">
+    <text x="726" y="548.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">LP steam</text>
+  </g>
+  <g id="text_63">
+    <text x="495.12" y="548.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">condensate</text>
+  </g>
+  <g id="text_64">
+    <text x="645" y="458.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">E-102</text>
+    <text x="645" y="474.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Reboiler</text>
+  </g>
+  <g id="point_67">
+    <path d="M 333.5 600 C 333.5 601.93 331.93 603.5 330 603.5 C 328.07 603.5 326.5 601.93 326.5 600 C 326.5 598.07 328.07 596.5 330 596.5 C 331.93 596.5 333.5 598.07 333.5 600 Z" fill="#000000" />
+  </g>
+  <g id="text_68">
+    <text x="138.65" y="654.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Bottoms B</text>
+  </g>
+  <g id="text_69">
+    <text x="79.04" y="671.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">50 kmol/h, 5% benzene</text>
+  </g>
+  <g id="text_70">
+    <text x="342" y="628.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">109 °C</text>
+  </g>
+  <g id="text_71">
+    <text x="800" y="132.03" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="start">Design basis, benzene / toluene</text>
+    <text x="800" y="148.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">F = 100 kmol/h, z = 0.50, saturated liquid</text>
+    <text x="800" y="165.03" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">D = 50 kmol/h, xD = 0.95</text>
+    <text x="800" y="181.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">B = 50 kmol/h, xB = 0.05</text>
+    <text x="800" y="198.03" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">R = L/D = 2, L = 100, V = 150 kmol/h</text>
+    <text x="800" y="214.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Qc = 1.28 MW, Qr = 1.38 MW</text>
+    <text x="800" y="231.03" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">P = 1.013 bar (top), feed on tray 9 (figure 9)</text>
+  </g>
+  <g id="caption_72">
+    <text x="66.12" y="717.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 2:</text>
+    <text x="140.29" y="717.41" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="885.11" lengthAdjust="spacingAndGlyphs"> DISTILLATION COLUMN WITH OVERHEAD CONDENSER, REFLUX DRUM, REFLUX PUMP AND THERMOSYPHON REBOILER</text>
+  </g>
+  <g id="polygon_1">
+    <path d="M 375 167 L 374.62 163.48 L 373.47 160.01 L 371.57 156.67 L 368.97 153.5 L 365.7 150.56 L 361.82 147.91 L 357.39 145.58 L 352.5 143.62 L 347.22 142.06 L 341.65 140.92 L 335.87 140.23 L 330 140 L 324.13 140.23 L 318.35 140.92 L 312.78 142.06 L 307.5 143.62 L 302.61 145.58 L 298.18 147.91 L 294.3 150.56 L 291.03 153.5 L 288.43 156.67 L 286.53 160.01 L 285.38 163.48 L 285 167 L 285 513 L 285.38 516.52 L 286.53 519.99 L 288.43 523.33 L 291.03 526.5 L 294.3 529.44 L 298.18 532.09 L 302.61 534.42 L 307.5 536.38 L 312.78 537.94 L 318.35 539.08 L 324.13 539.77 L 330 540 L 335.87 539.77 L 341.65 539.08 L 347.22 537.94 L 352.5 536.38 L 357.39 534.42 L 361.82 532.09 L 365.7 529.44 L 368.97 526.5 L 371.57 523.33 L 373.47 519.99 L 374.62 516.52 L 375 513 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 542 100 L 541.58 104.29 L 540.33 108.42 L 538.29 112.22 L 535.56 115.56 L 532.22 118.29 L 528.42 120.33 L 524.29 121.58 L 520 122 L 515.71 121.58 L 511.58 120.33 L 507.78 118.29 L 504.44 115.56 L 501.71 112.22 L 499.67 108.42 L 498.42 104.29 L 498 100 L 498.42 95.71 L 499.67 91.58 L 501.71 87.78 L 504.44 84.44 L 507.78 81.71 L 511.58 79.67 L 515.71 78.42 L 520 78 L 524.29 78.42 L 528.42 79.67 L 532.22 81.71 L 535.56 84.44 L 538.29 87.78 L 540.33 91.58 L 541.58 95.71 L 542 100 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 642.6 187 L 645.52 187.24 L 648.4 187.95 L 651.17 189.13 L 653.8 190.75 L 656.24 192.79 L 658.44 195.2 L 660.37 197.95 L 662 201 L 663.29 204.28 L 664.24 207.75 L 664.81 211.35 L 665 215 L 664.81 218.65 L 664.24 222.25 L 663.29 225.72 L 662 229 L 660.37 232.05 L 658.44 234.8 L 656.24 237.21 L 653.8 239.25 L 651.17 240.87 L 648.4 242.05 L 645.52 242.76 L 642.6 243 L 557.4 243 L 554.48 242.76 L 551.6 242.05 L 548.83 240.87 L 546.2 239.25 L 543.76 237.21 L 541.56 234.8 L 539.63 232.05 L 538 229 L 536.71 225.72 L 535.76 222.25 L 535.19 218.65 L 535 215 L 535.19 211.35 L 535.76 207.75 L 536.71 204.28 L 538 201 L 539.63 197.95 L 541.56 195.2 L 543.76 192.79 L 546.2 190.75 L 548.83 189.13 L 551.6 187.95 L 554.48 187.24 L 557.4 187 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 522 300 L 521.67 303.32 L 520.71 306.51 L 519.13 309.44 L 517.02 312.02 L 514.44 314.13 L 511.51 315.71 L 508.32 316.67 L 505 317 L 501.68 316.67 L 498.49 315.71 L 495.56 314.13 L 492.98 312.02 L 490.87 309.44 L 489.29 306.51 L 488.33 303.32 L 488 300 L 488.33 296.68 L 489.29 293.49 L 490.87 290.56 L 492.98 287.98 L 495.56 285.87 L 498.49 284.29 L 501.68 283.33 L 505 283 L 508.32 283.33 L 511.51 284.29 L 514.44 285.87 L 517.02 287.98 L 519.13 290.56 L 520.71 293.49 L 521.67 296.68 L 522 300 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_54">
+    <path d="M 642 545 L 641.58 549.29 L 640.33 553.42 L 638.29 557.22 L 635.56 560.56 L 632.22 563.29 L 628.42 565.33 L 624.29 566.58 L 620 567 L 615.71 566.58 L 611.58 565.33 L 607.78 563.29 L 604.44 560.56 L 601.71 557.22 L 599.67 553.42 L 598.42 549.29 L 598 545 L 598.42 540.71 L 599.67 536.58 L 601.71 532.78 L 604.44 529.44 L 607.78 526.71 L 611.58 524.67 L 615.71 523.42 L 620 523 L 624.29 523.42 L 628.42 524.67 L 632.22 526.71 L 635.56 529.44 L 638.29 532.78 L 640.33 536.58 L 641.58 540.71 L 642 545 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_2">
+    <path d="M 287 190 L 359 190" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_3">
+    <path d="M 301 216 L 373 216" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_4">
+    <path d="M 287 242 L 359 242" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_5">
+    <path d="M 301 268 L 373 268" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_6">
+    <path d="M 287 294 L 359 294" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_7">
+    <path d="M 301 320 L 373 320" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_8">
+    <path d="M 287 346 L 359 346" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_9">
+    <path d="M 301 372 L 373 372" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_10">
+    <path d="M 287 398 L 359 398" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_11">
+    <path d="M 301 424 L 373 424" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_12">
+    <path d="M 287 450 L 359 450" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_13">
+    <path d="M 301 476 L 373 476" fill="none" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_22">
+    <path d="M 498 100 L 506.36 89 L 511.64 111 L 516.92 89 L 522.2 111 L 527.48 89 L 532.76 111 L 542 100" fill="none" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_38">
+    <path d="M 512.65 310.54 L 493.1 300 L 512.65 289.46 Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_55">
+    <path d="M 620 523 L 609 531.36 L 631 536.64 L 609 541.92 L 631 547.2 L 609 552.48 L 631 557.76 L 620 567" fill="none" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+</svg>
