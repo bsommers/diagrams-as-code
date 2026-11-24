@@ -13,6 +13,7 @@ A task-oriented guide to writing diagrams as Python code and rendering them to S
 - [Text, markup and math](#text-markup-and-math)
 - [Technical drawing primitives](#technical-drawing-primitives)
 - [Data plots and drafting views](#data-plots-and-drafting-views)
+- [Sequence diagrams and Gantt charts](#sequence-diagrams-and-gantt-charts)
 - [Themes](#themes)
 - [Icons](#icons)
 - [Outputs and the BOM](#outputs-and-the-bom)
@@ -128,7 +129,7 @@ d.add(Shape(
 d.connect(a, b, label=r"$g_k(I, C, D, T) \leq 0$")
 ```
 
-**Math** is a TeX-like subset: letters are set in math italic and digits upright; `_` and `^` take one character or a `{group}`; Greek letters (`\alpha` … `\Omega`); relations and operators (`\leq \geq \neq \approx \in \subseteq \to \leadsto \land \lor \cap \cup \times \cdot \forall \exists` and more); `\mathrm{}`, `\text{}`, `\mathbf{}`; named functions (`\min`, `\max`, `\log` …); big operators with limits underneath (`\sum_{i=1}^{n}`, `\bigcap_{k}`; add `\nolimits` to set them beside); and the spaces `\,` `\;` `\quad`. `\frac{a}{b}`, `\binom{n}{k}`, `\sqrt{x}`, `\sqrt[n]{x}`, `\bar{x}` and the accents `\hat \tilde \dot \ddot \vec \grave` are supported; matrices and `\acute \check \breve` are not and raise `MathError` rather than rendering wrongly. Every supported command is listed in the [math markup reference](math-markup.md).
+**Math** is a TeX-like subset: letters are set in math italic and digits upright; `_` and `^` take one character or a `{group}`; Greek letters (`\alpha` … `\Omega`); relations and operators (`\leq \geq \neq \approx \in \subseteq \to \leadsto \land \lor \cap \cup \times \cdot \forall \exists` and more); `\mathrm{}`, `\text{}`, `\mathbf{}`; named functions (`\min`, `\max`, `\log` …); big operators with limits underneath (`\sum_{i=1}^{n}`, `\bigcap_{k}`; add `\nolimits` to set them beside); and the spaces `\,` `\;` `\quad`. `\frac{a}{b}`, `\binom{n}{k}`, `\sqrt{x}`, `\sqrt[n]{x}`, `\bar{x}`, the accents `\hat \widehat \tilde \widetilde \dot \ddot \vec \grave`, the equilibrium signs `\rightleftharpoons` and `\rightleftarrows`, and `\ce{H2O}` for chemical formulas are supported; matrices and `\acute \check \breve` are not and raise `MathError` rather than rendering wrongly. Every supported command is listed in the [math markup reference](math-markup.md).
 
 Math is drawn as vector outlines, so it looks identical in every browser, in PNG and in print. Ordinary text stays real, selectable SVG text.
 
@@ -218,6 +219,24 @@ d.render_svg("bracket.svg")
 
 Worked galleries: [`examples/calculus_math/`](../examples/calculus_math/), [`differential_equations/`](../examples/differential_equations/), [`physics/`](../examples/physics/) and [`finance/`](../examples/finance/) use `Plot`; [`engineering/`](../examples/engineering/), [`cad/`](../examples/cad/) and [`medical/`](../examples/medical/) use `Draft` and `Plot`. See [Technical figures](technical-figures.md#9-plots-and-drafting-views).
 
+## Sequence diagrams and Gantt charts
+
+Two more kits draw onto an ordinary `Diagram`, so themes, `lint`, SVG, PNG and PDF all apply.
+
+**`SequenceDiagram`** (UML interactions: participants, messages, activations, notes, `loop`/`alt`/`opt`/`par` frames) is laid out from the events; there is nothing to place by hand. Guide: [sequence-diagrams.md](sequence-diagrams.md). Examples: [`examples/sequence/`](../examples/sequence/).
+
+```python
+from diagrams_as_code.sequence import SequenceDiagram
+
+seq = SequenceDiagram("Checkout", theme="iiot_light")
+web, api = seq.participant("Web"), seq.participant("API")
+seq.message(web, api, "POST /orders", activate=True)
+seq.reply(api, web, "201 Created")
+seq.build().render_svg("checkout.svg")
+```
+
+**`GanttChart`** schedules tasks from durations and dependencies and highlights the critical path; **`Timeline`** puts dated events on a ruler with non-overlapping labels. Guide: [gantt-timelines.md](gantt-timelines.md). Examples: [`examples/project_management/`](../examples/project_management/).
+
 ## Themes
 
 Fourteen built-in themes:
@@ -288,7 +307,7 @@ uv run diagrams-as-code mcp --root .     # stdio server; confine it to this dire
 {"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}
 ```
 
-It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Rendering imports the script, which is arbitrary Python, so every path is confined to `--root` (default: the current directory); only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
+It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Every path is confined to `--root` (default: the current directory), and each script runs in a resource-limited child process (`--timeout`, default 60 s; `--memory-mb`, default 2048). That is a resource limit, not file or network isolation, so only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
 
 ## Troubleshooting
 

@@ -37,9 +37,9 @@ Python 3.10 to 3.13 are exercised in CI. Docker is optional: `./docker-build-n-r
 
 | Path | Contents |
 |---|---|
-| `src/diagrams_as_code/` | The engine: geometry, elements, shapes, groups, constraints, router, theme, layout/, text/, renderer_svg, rasterize, pdf, audit, bom, plot, draft, output, cli, mcp |
+| `src/diagrams_as_code/` | The engine: geometry, elements, shapes, groups, constraints, router, theme, layout/, text/, renderer_svg, rasterize, pdf, audit, bom, plot, draft, sequence, gantt, output, cli, sandbox, mcp |
 | `src/iiot_diagrams/` | Backward-compatibility facade that re-exports the engine |
-| `examples/` | Runnable diagram scripts (247) with their rendered SVG, PNG and BOM beside each, which must not drift. Thirteen domain directories (ai, business_process, cloud, computer, computer_science, cybersecurity, database, datacenter, enterprise_architecture, iiot, manufacturing, mind_map, network_engineering), plus primitives, technical, the textbook galleries (calculus_math, differential_equations, physics, finance, logic) and medical, engineering and cad |
+| `examples/` | Runnable diagram scripts (361) with their rendered SVG, PNG and BOM beside each, which must not drift. Thirteen domain directories (ai, business_process, cloud, computer, computer_science, cybersecurity, database, datacenter, enterprise_architecture, iiot, manufacturing, mind_map, network_engineering), plus primitives, technical, the textbook galleries (calculus_math, differential_equations, physics, finance, logic) medical, engineering and cad, and the newer galleries (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics, sequence, project_management) |
 | `icons/` | Source SVG icons, `icons.yaml` and `icons.csv` catalogs |
 | `tools/` | `generate_icons.py`, `eval_bezier.py`, `audit_gallery.py` (visual defect ratchet), `golden_images.py` (golden pictures of the technical figures), `generate_text_data.py` |
 | `tests/` | pytest suite, including module-boundary and repo-hygiene checks |

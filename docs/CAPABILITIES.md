@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-19 (v0.18.0)  
+**Last Updated:** 2026-11-23 (v0.19.0, unreleased)  
 
 ---
 
@@ -21,6 +21,8 @@
 | **Can curved edges deflect around obstacles?** | **YES** | `Edge(routing=Routing.CURVE, clearance=15)` | Two-tier collision detection (AABB broadphase + De Casteljau subdivision), reverse-flow lateral port resolution and escape corridors, and C1-continuous spline deflection waypoints. |
 | **Can orthogonal corners be rounded with fillets?** | **YES** | `Edge(corner_radius=12)` / `Diagram(corner_radius=12)` | Smooth quadratic Bezier corner fillets with dynamic 50% segment budget clamping, 2.0px suppression threshold, obstacle apex clearance guard, and native SVG `Q` commands. |
 | **Can living BOM docs be generated?** | **YES** | `diag.generate_readme()` | Extracts component inventories, group affiliations, connection topology, and technical notes into Markdown tables and JSON catalogs. |
+| **Can it draw UML sequence diagrams?** | **YES** | `SequenceDiagram(title)` | Participants, messages, replies, self-calls, activations, notes and `loop`/`alt`/`opt`/`par`/`critical`/`break` frames, laid out from the events (`diagrams_as_code.sequence`). |
+| **Can it draw Gantt charts and timelines?** | **YES** | `GanttChart(diag)` / `Timeline(diag)` | Tasks with dependencies and lag, phases, milestones, progress and a computed critical path; dated events with non-overlapping labels (`diagrams_as_code.gantt`). |
 | **Is there auto-layout?** | **YES** | `Diagram(layout="auto")` | A deterministic layered engine places unpinned shapes and groups from the edge structure (`direction="LR"`/`"TB"`); pinned shapes coexist via `.at()`/`.right_of()`, and a `LayoutWarning` flags any pin that overlaps an auto-placed sibling. |
 | **Can diagrams be zoomed and panned interactively?** | **YES** | `Diagram(interactive=True)` | Pure-Python client-side interactive SVG generation with zero external runtime dependencies. Features click-drag panning, scroll wheel zooming, viewport reset HUD controls, and interactive collapsible groups with header toggles. |
 
@@ -188,9 +190,9 @@
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
 - **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`, `examples/iiot`, `examples/database`, `examples/enterprise_architecture`, `examples/manufacturing`, `examples/mind_map`, `examples/computer_science`)
-- **Exports:** 143 self-contained executable diagram scripts and documentation artifacts
-- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 13 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`.
-- **Verification:** `uv run pytest tests/test_domain_examples.py`
+- **Exports:** 143 self-contained executable diagram scripts and documentation artifacts for the 13 domains above, plus 114 in twelve newer galleries (`agentic_dev`, `semiconductor`, `chemistry`, `data_engineering`, `ml_models`, `devops`, `biology`, `chemical_engineering`, `org`, `electronics`, `sequence`, `project_management`): 361 example scripts in all, with the textbook, medical, engineering, CAD, technical and primitive figures and four top-level scripts
+- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 14 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`. The newer galleries have 10 figures each (`sequence` 3, `project_management` 11), mostly in the `paper` theme with computed values.
+- **Verification:** `uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py` (the committed SVG beside each newer-gallery script must equal what the script renders)
 
 ---
 
@@ -300,3 +302,30 @@
 - **CLI:** `diagrams-as-code mcp [--root DIR]`
 - **Features:** A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18) exposing `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Script and output paths are confined to `--root` (symlinks are re-resolved, a script-chosen output name must be a plain stem, existing symlinked outputs are refused); messages over 1 MiB and results over 200k characters are cut off; a malformed message never ends the session; error text does not carry the absolute root path. Each script runs in a resource-limited child process (`sandbox.py`): wall-clock timeout (`--timeout`, default 60 s, process group killed), CPU and memory caps on POSIX (`--memory-mb`, default 2048; address space is only enforced on Linux), stdin closed, stdout discarded, stderr capped, scrubbed environment. This limits resources and protects the protocol stream; it is not file or network isolation, so for untrusted scripts also run the server in a container.
 - **Verification:** `uv run pytest tests/test_mcp.py`
+
+### 2.20 Math Markup
+
+#### `CAP-DIAG-MATH`: TeX-like Math Markup in Labels and Captions
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.19.0`
+- **Python API:** Labels, captions and `Diagram.text()` containing `$...$`
+- **Features:** Beyond Greek letters, operators, scripts, big operators and named functions: `\frac`, `\binom{n}{k}`, `\sqrt[n]{x}` with an index, the accents `\hat \widehat \tilde \widetilde \dot \ddot \vec \grave`, the equilibrium signs `\rightleftharpoons` and `\rightleftarrows` (two stacked arrows, not harpoons), and `\ce{H2O}` for chemical formulas (upright, with computed subscripts and charges). `\acute`, `\check` and `\breve` are unsupported (no outlines) and raise `MathError`. Reference: `docs/math-markup.md`.
+- **Verification:** `uv run pytest tests/test_text_engine.py tests/test_textbook_examples.py`
+
+### 2.21 Sequence Diagrams
+
+#### `CAP-DIAG-SEQUENCE`: UML Sequence Diagram Kit
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.19.0`
+- **Python API:** `diagrams_as_code.sequence.SequenceDiagram`, `Participant`, `Frame`, `SequenceLayout`
+- **Features:** Participants (lifelines), synchronous, asynchronous and reply messages, self-calls, activation bars, notes and `loop`/`alt`/`opt`/`par`/`critical`/`break` frames, all placed by a computed layout, standard library only. Draws onto an ordinary `Diagram`, so themes, lint, SVG, PNG and PDF apply. Limits: horizontal messages only; no lost/found messages, create/destroy or `ref` frames. Three examples in `examples/sequence/`; guide: `docs/sequence-diagrams.md`.
+- **Verification:** `uv run pytest tests/test_sequence.py tests/test_domain_examples.py && uv run diagrams-as-code lint examples/sequence`
+
+### 2.22 Gantt Charts and Timelines
+
+#### `CAP-DIAG-GANTT`: Gantt Chart and Timeline Kit
+- **Status:** `OPERATIONAL`
+- **Target Release:** `v0.19.0`
+- **Python API:** `diagrams_as_code.gantt.GanttChart`, `Timeline`, `schedule`, `Task`
+- **Features:** `GanttChart` schedules tasks from durations and finish-to-start dependencies (with lag), groups them in phases, draws milestones, percent done and a status line, and computes and highlights the critical path, with orthogonal dependency arrows. `Timeline` places dated events on a ruler with labels stacked so none overlap. Calendar days only; about 0.5% of arrows on dense random charts can be unroutable (a warning is raised). Eleven examples in `examples/project_management/` (01-03 use the kit; 04-11 are further delivery figures); guide: `docs/gantt-timelines.md`.
+- **Verification:** `uv run pytest tests/test_gantt.py tests/test_domain_examples.py && uv run diagrams-as-code lint examples/project_management`

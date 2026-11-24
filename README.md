@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1578 TESTS • 247 FIGURES ]       ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1967 TESTS • 361 FIGURES ]       ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,7 +21,7 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-1578%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-1967%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
@@ -74,9 +74,12 @@ The reference architecture that `main.py` renders is [`examples/main_architectur
 - **Technical Drawing Primitives**: free text, captions, brackets, polygons and SVG paths, dashed layer bands with side notes, shapes nested in shapes, double borders, line weights and arrowhead styles, lines attached anywhere on a side or at bare points, shared trunks, leaders, splines, and convex solids in oblique or isometric projection with hidden edges dashed. Nine focused figures in [`examples/primitives/`](examples/primitives/).
 - **Technical Figures, Lint & Golden Images**: eleven complete paper-style figures in [`examples/technical/`](examples/technical/) (a four-layer architecture reproduced from a reference figure, a control loop, a transformer block, a state machine, a protocol stack, a memory layout, a timing diagram, a training pipeline, tensor shapes, a geometric construction, a constraint region). `diagrams-as-code lint` reports visual defects by name, and golden-image tests catch any change to how a figure looks. See the [technical figures guide](docs/technical-figures.md) and the [math markup reference](docs/math-markup.md).
 - **Vector PDF Export**: `diag.render_pdf("figure.pdf")` or `--format pdf` writes a one-page vector PDF with the standard library alone — no Cairo, Ghostscript or LaTeX. It is drawn from the same SVG, so lines, arrowheads, text and formulas match; see [Export a PDF](docs/technical-figures.md#8-export-a-pdf).
-- **247 Example Figures**: 143 reference diagrams across 13 domains (11 each, one auto-laid-out per domain), plus 50 textbook, 30 medical/engineering/CAD, 11 technical and 9 primitive figures, all in [`examples/`](examples/README.md) with the rendered SVG and BOM beside each script.
-- **MCP Server**: `diagrams-as-code mcp [--root DIR]` serves `list_examples`, `render`, `lint`, `list_themes` and `list_icons` to any MCP client over stdio, with the standard library alone. Rendering runs diagram scripts, so use a trusted root; see [Running](docs/running.md).
+- **361 Example Figures**: 143 reference diagrams across 13 domains (11 each, one auto-laid-out per domain), 100 more in ten newer domain galleries (agentic development, semiconductor, chemistry, data engineering, ML models, DevOps, biology, chemical engineering, organisations, electronics; 10 each), 3 sequence diagrams and 11 project-management figures (Gantt charts, timelines, kanban, burndown, risk matrix, PERT), plus 50 textbook, 30 medical/engineering/CAD, 11 technical, 9 primitive and 4 top-level figures, all in [`examples/`](examples/README.md) with the rendered SVG and BOM beside each script.
+- **Sequence Diagrams**: `SequenceDiagram` draws UML sequence diagrams (participants, sync/async/reply messages, self-calls, activation bars, notes, and `loop`/`alt`/`opt`/`par`/`critical`/`break` frames) with the standard library alone; the layout is computed, not hand-placed. See the [sequence diagram guide](docs/sequence-diagrams.md) and [`examples/sequence/`](examples/sequence/).
+- **Gantt Charts & Timelines**: `GanttChart` schedules tasks from durations and dependencies (lag, phases, milestones, percent done, a status line) and computes and highlights the critical path; `Timeline` stacks dated event labels so none overlap. Both draw on an ordinary `Diagram`, so themes, lint, SVG, PNG and PDF all apply. See the [Gantt and timeline guide](docs/gantt-timelines.md) and [`examples/project_management/`](examples/project_management/).
+- **MCP Server**: `diagrams-as-code mcp [--root DIR]` serves `list_examples`, `render`, `lint`, `list_themes` and `list_icons` to any MCP client over stdio, with the standard library alone. Each script runs in a resource-limited child process (wall-clock `--timeout`, CPU and `--memory-mb` caps, closed stdin, discarded stdout, scrubbed environment). That limits resources; it is not file or network isolation, so use a trusted root or a container. See [Running](docs/running.md).
 - **Medical, Engineering & CAD Galleries**: 30 more figures (anatomy, ECG, pharmacokinetics, sectioned and dimensioned drawings, GD&T, beams, Mohr, Bode, exploded assemblies, fits) using the `diagrams_as_code.draft.Draft` drafting helper.
+- **Math Markup**: TeX-like labels with `\frac`, `\binom`, `\sqrt[n]{x}`, accents (`\hat \widehat \tilde \widetilde \dot \ddot \vec \grave`), `\rightleftharpoons`/`\rightleftarrows` and the chemistry helper `\ce{H2O}`; see the [math markup reference](docs/math-markup.md).
 - **Textbook Galleries**: 50 computed figures for calculus, differential equations, physics, finance and logic in [`examples/`](examples/README.md), drawn with the stdlib-only `diagrams_as_code.plot.Plot` helper.
 - **Auto-Layout Engine**: `Diagram(layout="auto")` places unpinned shapes and groups deterministically from the edge structure; pinned shapes can still coexist via `.at()` / `.right_of()`.
 - **CLI**: `diagrams-as-code render|layout export|themes|icons` for batch rendering, layout-file export, and catalog discovery without writing a script.
@@ -102,6 +105,25 @@ Every diagram is a script in [`examples/`](examples/README.md); its SVG and BOM 
 | [**Manufacturing & Semiconductor**](examples/manufacturing/) | Wafer-fab process loop, lithography cell, MES/AMHS/SECS-GEM automation, run-to-run + FDC, yield, back-end test, ISA-95, OEE, SPC, ISA-88. | `chip`, `robot`, `vision`, `plc`, `workflow`, `server`, `analytics` |
 | [**Mind Maps**](examples/mind_map/) | Launch plans, brainstorms, study notes, OKRs, risk registers, five-whys retros, system-design breakdowns, concept maps. | — (styles and curved branches, no icons) |
 | [**Computer Science**](examples/computer_science/) | Hash tables, red-black trees, merge sort, Dijkstra, regex NFA→DFA, CPU pipeline hazards, virtual memory and caches, TCP, scheduling, Raft. | `chip`, `server`, `laptop`, `document`, `analytics` |
+
+### More domain galleries
+
+Ten figures per domain unless noted. Most use the `paper` theme and computed values; every figure is lint-clean and its committed SVG is checked against its script.
+
+| Domain | Focus & Architectures |
+|---|---|
+| [**Agentic Development**](examples/agentic_dev/) | The five Anthropic agent patterns (chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer), supervisor vs swarm, planner-executor, agentic RAG, spec-driven loop, coding-agent harness. |
+| [**Semiconductor**](examples/semiconductor/) | RTL-to-GDSII flow, lithography steps, CMOS/FinFET/GAA cross-sections, BEOL stack, damascene, wafer map, CoWoS package, chiplet floorplan, clock tree. |
+| [**Chemistry**](examples/chemistry/) | Reaction energy profiles, titration curves, Maxwell-Boltzmann, water phase diagram, SN2, distillation and titration apparatus, molecular orbitals, reaction orders (uses `\ce{}` and `\rightleftharpoons`). |
+| [**Data Engineering**](examples/data_engineering/) | dbt lineage, Airflow task states, Kafka partitions, stream windows, Lambda vs Kappa, column lineage, data contracts, backfill, exactly-once, ingestion to BI. |
+| [**ML Models**](examples/ml_models/) | Decoder block, multi-head attention, mixture of experts, diffusion, PPO, RLHF/DPO, CNN feature pyramid, VAE, LoRA, KV cache and speculative decoding. |
+| [**DevOps**](examples/devops/) | GitOps, CI quality gates, trunk vs GitFlow, canary vs blue-green, Kubernetes, ingress, OpenTelemetry, SLO burn, incident timeline, Terraform. |
+| [**Biology**](examples/biology/) | Central dogma, ribosome, glycolysis and TCA, MAPK cascade, cells, phylogeny, food web, Punnett squares, PCR, population dynamics. |
+| [**Chemical Engineering**](examples/chemical_engineering/) | Process flow, distillation column, CSTR control, exchanger network, mass balance, Haber-Bosch loop, PID level control, pump curve, McCabe-Thiele, residence time. |
+| [**Organisations**](examples/org/) | Org chart, matrix, Team Topologies, RACI, squads and tribes, span of control, stakeholder grid, on-call rotation, hiring funnel, Conway's law. |
+| [**Electronics**](examples/electronics/) | RC and Bode, op-amps, MOSFET amplifier, buck converter, bridge rectifier, 555 timer, SPI and I2C timing, PCB stackup, PDN impedance. |
+| [**Sequence Diagrams**](examples/sequence/) | 3 `SequenceDiagram` figures: HTTP retry, OAuth 2.0 with PKCE, an MCP tool call. |
+| [**Project Management**](examples/project_management/) | 11 figures: Gantt with critical path, release trains, incident timeline, roadmap, kanban WIP, cumulative flow, burndown, risk matrix, RACI, value stream map, PERT. |
 
 ### Figures for papers and textbooks
 
@@ -198,7 +220,7 @@ uv run pytest
 uv run diagrams-as-code mcp --root .
 ```
 
-The client can call `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Paths are confined to `--root`, but rendering runs the diagram script (arbitrary Python), so point `--root` only at content you trust, or run the server in a container.
+The client can call `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Paths are confined to `--root`, and each script runs in a resource-limited child process (`--timeout`, default 60 s; `--memory-mb`, default 2048). That is a resource limit, not file or network isolation, so point `--root` only at content you trust, or run the server in a container.
 
 ---
 
@@ -209,6 +231,7 @@ Comprehensive architectural, operational, and how-to guides are available in [`d
 - [**Purpose & Threat Model**](docs/purpose.md): Architectural motivation, pure Python philosophy, and security posture.
 - [**System Architecture**](docs/architecture.md): Technical specifications on solver, router, SVG renderer, and BOM engine.
 - [**User Guide**](docs/user-guide.md): Concepts, first diagram, positioning, routing, themes, icons, outputs, and CLI.
+- [**Sequence Diagrams**](docs/sequence-diagrams.md) and [**Gantt Charts & Timelines**](docs/gantt-timelines.md): The `SequenceDiagram`, `GanttChart` and `Timeline` kits.
 - [**Development Guidelines**](docs/development.md): Contributor workflow, local-first verification, testing, and doc sync (see also [CONTRIBUTING.md](CONTRIBUTING.md)).
 - [**Running & Installation Guide**](docs/running.md): Virtualenv setup with `uv`, CLI commands, Docker execution, and exit codes.
 - [**How-To Recipes & Troubleshooting**](docs/how-to.md): Practical recipes for themes, icons, text layouts, CI/CD integration, and troubleshooting.

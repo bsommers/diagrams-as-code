@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ DOCUMENTATION & ARCHITECTURE ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1578 TESTS • 247 EXAMPLES  ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1967 TESTS • 361 EXAMPLES  ]   ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -34,6 +34,7 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 | [**User Guide**](user-guide.md) | Task-oriented guide: concepts, first diagram, shapes, groups, positioning, routing, themes, icons, outputs, data plots, drafting, the CLI and the MCP server. |
 | [**Technical Figures**](technical-figures.md) | Building paper-style figures: the `paper` theme, layers, formulas, solids, `lint`, golden images and PDF export. |
 | [**Sequence Diagrams**](sequence-diagrams.md) | UML sequence diagrams with `SequenceDiagram`: participants, messages, activations, notes, `loop`/`alt` frames, and how the layout works. |
+| [**Gantt Charts & Timelines**](gantt-timelines.md) | `GanttChart` (durations, dependencies with lag, phases, milestones, progress, a computed critical path) and `Timeline` (dated events with non-overlapping labels), and how their layout works. |
 | [**Math Markup Reference**](math-markup.md) | Every supported TeX-like command in labels and captions. |
 | [**Development Guidelines**](development.md) | Contributor workflow: `uv` rules, repository layout, local-first verification gate, testing, generated artifacts, and doc sync. |
 | [**Running & Installation Guide**](running.md) | Prerequisites, virtual environment provisioning with `uv`, CLI commands, the MCP server, test execution, and Docker setup. |
