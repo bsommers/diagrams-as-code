@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 515" width="1240" height="515">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1E6FB5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1E6FB5"/>
+    </marker>
+    <marker id="arrow-1E6FB5-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1E6FB5"/>
+    </marker>
+    <marker id="arrow-2E7D4F" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2E7D4F"/>
+    </marker>
+    <marker id="arrow-2E7D4F-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#2E7D4F"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="group_3">
+    <rect x="324" y="67" width="402" height="285" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="340" y="91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Topic: orders (3 partitions, replication factor 3)</text>
+  </g>
+  <path d="M 160 220 L 192.8 220" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 200 220 L 191 223.6 L 191 216.4 Z" fill="#000000" />
+  <path d="M 320 220 L 331 220 L 331 137 L 334.8 137" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 342 137 L 333 140.6 L 333 133.4 Z" fill="#000000" />
+  <path d="M 320 220 L 331 220 L 331 227 L 334.8 227" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 342 227 L 333 230.6 L 333 223.4 Z" fill="#000000" />
+  <path d="M 320 220 L 331 220 L 331 317 L 334.8 317" fill="none" stroke="#000000" stroke-width="1.4" />
+  <path d="M 342 317 L 333 320.6 L 333 313.4 Z" fill="#000000" />
+  <path d="M 708 137 L 1082.8 137" fill="none" stroke="#1E6FB5" stroke-width="1.4" />
+  <path d="M 1090 137 L 1081 140.6 L 1081 133.4 Z" fill="#1E6FB5" />
+  <path d="M 668 227 L 1082.8 227" fill="none" stroke="#1E6FB5" stroke-width="1.4" />
+  <path d="M 1090 227 L 1081 230.6 L 1081 223.4 Z" fill="#1E6FB5" />
+  <path d="M 708 317 L 1082.8 317" fill="none" stroke="#1E6FB5" stroke-width="1.4" />
+  <path d="M 1090 317 L 1081 320.6 L 1081 313.4 Z" fill="#1E6FB5" />
+  <path d="M 708 137 L 873.39 65.85" fill="none" stroke="#2E7D4F" stroke-width="1.4" />
+  <path d="M 880 63 L 873.16 69.86 L 870.31 63.25 Z" fill="#2E7D4F" />
+  <path d="M 668 227 L 874.04 87.05" fill="none" stroke="#2E7D4F" stroke-width="1.4" />
+  <path d="M 880 83 L 874.58 91.03 L 870.53 85.08 Z" fill="#2E7D4F" />
+  <path d="M 708 317 L 873.3 382.35" fill="none" stroke="#2E7D4F" stroke-width="1.4" />
+  <path d="M 880 385 L 870.31 385.04 L 872.95 378.34 Z" fill="#2E7D4F" />
+  <g id="shape_1">
+    <rect x="40" y="193" width="120" height="54" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-server" transform="translate(89.74, 196.74) scale(0.855)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <circle cx="6" cy="7" r="1" fill="#000000"/>
+  <circle cx="9" cy="7" r="1" fill="#000000"/>
+  <circle cx="6" cy="17" r="1" fill="#000000"/>
+  <circle cx="9" cy="17" r="1" fill="#000000"/>
+</g>
+    <text x="100" y="228.7" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Producer</text>
+    <text x="100" y="240.7" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle">orders-service</text>
+  </g>
+  <g id="shape_2">
+    <rect x="200" y="193" width="120" height="54" rx="0" fill="#E9E9EC" stroke="#000000" stroke-width="1" />
+    <text x="260" y="217.18" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500"><tspan x="260" dy="0">partitioner</tspan> <tspan x="260" dy="13.2">hash(key) mod 3</tspan></text>
+  </g>
+  <g id="shape_4">
+    <rect x="342" y="120" width="40" height="34" rx="0" fill="#B9C6DC" stroke="#000000" stroke-width="1" />
+    <text x="362" y="141.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">P0</text>
+  </g>
+  <g id="shape_5">
+    <rect x="392" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="410" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">0</text>
+  </g>
+  <g id="shape_6">
+    <rect x="432" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="450" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_7">
+    <rect x="472" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="490" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_8">
+    <rect x="512" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="530" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_9">
+    <rect x="552" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="570" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">4</text>
+  </g>
+  <g id="shape_10">
+    <rect x="592" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="610" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">5</text>
+  </g>
+  <g id="shape_11">
+    <rect x="632" y="120" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="650" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">6</text>
+  </g>
+  <g id="shape_12">
+    <rect x="672" y="120" width="36" height="34" rx="0" fill="#FBE3A6" stroke="#000000" stroke-width="1" />
+    <text x="690" y="140.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">7</text>
+  </g>
+  <g id="shape_13">
+    <rect x="342" y="210" width="40" height="34" rx="0" fill="#B9C6DC" stroke="#000000" stroke-width="1" />
+    <text x="362" y="231.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">P1</text>
+  </g>
+  <g id="shape_14">
+    <rect x="392" y="210" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="410" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">0</text>
+  </g>
+  <g id="shape_15">
+    <rect x="432" y="210" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="450" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_16">
+    <rect x="472" y="210" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="490" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_17">
+    <rect x="512" y="210" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="530" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_18">
+    <rect x="552" y="210" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="570" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">4</text>
+  </g>
+  <g id="shape_19">
+    <rect x="592" y="210" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="610" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">5</text>
+  </g>
+  <g id="shape_20">
+    <rect x="632" y="210" width="36" height="34" rx="0" fill="#FBE3A6" stroke="#000000" stroke-width="1" />
+    <text x="650" y="230.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">6</text>
+  </g>
+  <g id="shape_21">
+    <rect x="342" y="300" width="40" height="34" rx="0" fill="#B9C6DC" stroke="#000000" stroke-width="1" />
+    <text x="362" y="321.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">P2</text>
+  </g>
+  <g id="shape_22">
+    <rect x="392" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="410" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">0</text>
+  </g>
+  <g id="shape_23">
+    <rect x="432" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="450" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">1</text>
+  </g>
+  <g id="shape_24">
+    <rect x="472" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="490" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">2</text>
+  </g>
+  <g id="shape_25">
+    <rect x="512" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="530" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">3</text>
+  </g>
+  <g id="shape_26">
+    <rect x="552" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="570" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">4</text>
+  </g>
+  <g id="shape_27">
+    <rect x="592" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="610" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">5</text>
+  </g>
+  <g id="shape_28">
+    <rect x="632" y="300" width="36" height="34" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="650" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">6</text>
+  </g>
+  <g id="shape_29">
+    <rect x="672" y="300" width="36" height="34" rx="0" fill="#FBE3A6" stroke="#000000" stroke-width="1" />
+    <text x="690" y="320.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">7</text>
+  </g>
+  <g id="text_30">
+    <text x="880" y="24.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Group analytics</text>
+    <text x="880" y="39.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">2 consumers</text>
+  </g>
+  <g id="text_31">
+    <text x="1090" y="24.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Group billing</text>
+    <text x="1090" y="39.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">3 consumers</text>
+  </g>
+  <g id="shape_32">
+    <rect x="880" y="48" width="130" height="50" rx="0" fill="#D5EFD9" stroke="#000000" stroke-width="1" />
+    <text x="945" y="69.93" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="945" dy="0">A1</tspan> <tspan x="945" dy="14.4">owns P0, P1</tspan></text>
+  </g>
+  <g id="shape_33">
+    <rect x="880" y="360" width="130" height="50" rx="0" fill="#D5EFD9" stroke="#000000" stroke-width="1" />
+    <text x="945" y="381.93" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="945" dy="0">A2</tspan> <tspan x="945" dy="14.4">owns P2</tspan></text>
+  </g>
+  <g id="shape_34">
+    <rect x="1090" y="112" width="110" height="50" rx="0" fill="#DCEBFA" stroke="#000000" stroke-width="1" />
+    <text x="1145" y="133.93" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="1145" dy="0">B0</tspan> <tspan x="1145" dy="14.4">owns P0</tspan></text>
+  </g>
+  <g id="shape_35">
+    <rect x="1090" y="202" width="110" height="50" rx="0" fill="#DCEBFA" stroke="#000000" stroke-width="1" />
+    <text x="1145" y="223.93" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="1145" dy="0">B1</tspan> <tspan x="1145" dy="14.4">owns P1</tspan></text>
+  </g>
+  <g id="shape_36">
+    <rect x="1090" y="292" width="110" height="50" rx="0" fill="#DCEBFA" stroke="#000000" stroke-width="1" />
+    <text x="1145" y="313.93" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="1145" dy="0">B2</tspan> <tspan x="1145" dy="14.4">owns P2</tspan></text>
+  </g>
+  <g id="text_37">
+    <text x="40" y="452.53" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="40" dy="0">Yellow cell = log end offset. Each group stores its own committed offset per partition</tspan> <tspan x="40" dy="16.8">in __consumer_offsets, so analytics and billing never affect each other.</tspan> <tspan x="40" dy="16.8">A consumer joining or leaving triggers a rebalance; the member count caps the parallelism at 3.</tspan></text>
+  </g>
+</svg>

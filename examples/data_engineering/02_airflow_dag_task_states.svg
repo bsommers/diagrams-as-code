@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1757 364" width="1757" height="364">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 220 149 L 260.57 149 L 260.57 107 L 301.14 107" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 220 149 L 260.57 149 L 260.57 191 L 301.14 191" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 461.14 107 L 509.21 107 L 509.21 191 L 557.28 191" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 461.14 191 L 557.28 191" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 717.28 191 L 813.41 191" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 717.28 191 L 765.34 191 L 765.34 107 L 813.41 107" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 973.41 107 L 1013.98 107 L 1013.98 149 L 1054.55 149" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 973.41 191 L 1013.98 191 L 1013.98 149 L 1054.55 149" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 1214.55 149 L 1295.69 149" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 1455.69 149 L 1536.83 149" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 461.14 107 L 542.28 107" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="773.49" y="182" width="31.56" height="18" rx="9" fill="#FFFFFF" />
+  <text x="789.28" y="194.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">yes</text>
+</g>
+  <g class="badge">
+  <rect x="751.78" y="140" width="27.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="765.34" y="152.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no</text>
+</g>
+  <g class="badge">
+  <rect x="474.57" y="85" width="57.14" height="18" rx="9" fill="#FFFFFF" />
+  <text x="503.14" y="97.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">on failure</text>
+</g>
+  <g id="shape_1">
+    <rect x="60" y="122" width="160" height="54" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="2" />
+    <text x="140" y="145.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="140" dy="0">wait_for_file</tspan> <tspan x="140" dy="15.6">S3KeySensor</tspan></text>
+  </g>
+  <g id="shape_2">
+    <rect x="301.14" y="80" width="160" height="54" rx="0" fill="#FDE9B5" stroke="#C98A00" stroke-width="2" />
+    <text x="381.14" y="103.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="381.14" dy="0">extract_orders</tspan> <tspan x="381.14" dy="15.6">retry 2 of 3</tspan></text>
+  </g>
+  <g id="shape_3">
+    <rect x="301.14" y="164" width="160" height="54" rx="0" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="2" />
+    <text x="381.14" y="195.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">extract_customers</text>
+  </g>
+  <g id="shape_4">
+    <path d="M 637.28 164 L 717.28 191 L 637.28 218 L 557.28 191 Z" fill="#BFE5C8" stroke="#2E7D4F" stroke-width="2"/>
+    <text x="637.28" y="194.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle">is_full_refresh?</text>
+  </g>
+  <g id="shape_5">
+    <rect x="813.41" y="80" width="160" height="54" rx="0" fill="#C9E7F5" stroke="#1E88C7" stroke-width="2" />
+    <text x="893.41" y="111.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">load_incremental</text>
+  </g>
+  <g id="shape_6">
+    <rect x="813.41" y="164" width="160" height="54" rx="0" fill="#EDE3F3" stroke="#8E6BAA" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="893.41" y="195.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">load_full_refresh</text>
+  </g>
+  <g id="shape_7">
+    <rect x="1054.55" y="122" width="160" height="54" rx="0" fill="#E5E5E5" stroke="#7A7A7A" stroke-width="2" />
+    <text x="1134.55" y="153.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">dbt_run</text>
+  </g>
+  <g id="shape_8">
+    <rect x="1295.69" y="122" width="160" height="54" rx="0" fill="#F3D9A8" stroke="#B8860B" stroke-width="2" stroke-dasharray="5,3" />
+    <text x="1375.69" y="153.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">quality_checks</text>
+  </g>
+  <g id="shape_9">
+    <rect x="1536.83" y="122" width="160" height="54" rx="0" fill="#F3D9A8" stroke="#B8860B" stroke-width="2" stroke-dasharray="5,3" />
+    <text x="1616.83" y="153.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">publish_marts</text>
+  </g>
+  <g id="shape_10">
+    <rect x="542.28" y="80" width="190" height="54" rx="0" fill="#F5C2C2" stroke="#C0392B" stroke-width="2" />
+    <text x="637.28" y="103.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="637.28" dy="0">slack_alert</tspan> <tspan x="637.28" dy="15.6">trigger_rule=one_failed</tspan></text>
+  </g>
+  <g id="caption_11">
+    <text x="495.28" y="260.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="766.26" lengthAdjust="spacingAndGlyphs">Task-instance colours for run 2026-11-22: success, running, up_for_retry, failed, upstream_failed, skipped, queued.</text>
+    <text x="422.35" y="279.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="912.13" lengthAdjust="spacingAndGlyphs">extract_orders is up_for_retry (retries=3, retry_delay=5 min); tasks below the running load stay queued or upstream_failed until it finishes.</text>
+  </g>
+</svg>
