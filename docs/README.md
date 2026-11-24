@@ -32,6 +32,7 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 | [Project site](https://bsommers.github.io/diagrams-as-code/) (`index.html`) | The gallery, kits and quickstart on GitHub Pages |
 | [**Purpose & Threat Model**](purpose.md) | Problem statement, architectural motivation, pure standard library philosophy, and security threat model. |
 | [**System Architecture**](architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal and curve routers, corner filleting, interactive SVG viewer, and living BOM pipeline. |
+| [**Guide for AI agents**](for-agents.md) | Interfaces, verified quickstart, API cheat sheet, lint loop and pitfalls; with [`llms.txt`](llms.txt), [`llms-full.txt`](llms-full.txt) and the generated [API reference](api-reference.md). |
 | [**User Guide**](user-guide.md) | Task-oriented guide: concepts, first diagram, shapes, groups, positioning, routing, themes, icons, outputs, data plots, drafting, the CLI and the MCP server. |
 | [**Technical Figures**](technical-figures.md) | Building paper-style figures: the `paper` theme, layers, formulas, solids, `lint`, golden images and PDF export. |
 | [**Sequence Diagrams**](sequence-diagrams.md) | UML sequence diagrams with `SequenceDiagram`: participants, messages, activations, notes, `loop`/`alt` frames, and how the layout works. |

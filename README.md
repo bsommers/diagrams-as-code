@@ -222,6 +222,16 @@ uv run diagrams-as-code mcp --root .
 
 The client can call `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Paths are confined to `--root`, and each script runs in a resource-limited child process (`--timeout`, default 60 s; `--memory-mb`, default 2048). That is a resource limit, not file or network isolation, so point `--root` only at content you trust, or run the server in a container.
 
+### 6. For AI Agents and Tools
+
+Writing diagrams from an agent or a program? Start with [`docs/for-agents.md`](docs/for-agents.md): which interface to use, a verified quickstart, the calls you need, the render-and-lint feedback loop and the pitfalls. Machine-readable entry points:
+
+- [`docs/llms.txt`](docs/llms.txt) and [`docs/llms-full.txt`](docs/llms-full.txt): the documentation in the [llms.txt](https://llmstxt.org) format (also at <https://bsommers.github.io/diagrams-as-code/llms.txt>).
+- [`docs/api-reference.md`](docs/api-reference.md): every public name with its signature and docstring.
+- [`examples/index.json`](examples/index.json): one record per example script, with domain, title, theme and the kits it uses.
+
+The package ships a `py.typed` marker, so type checkers see its annotations. `uv run python tools/build_agent_docs.py --check` keeps the generated files in step with the code.
+
 ---
 
 ## Documentation Hub
@@ -231,6 +241,7 @@ Comprehensive architectural, operational, and how-to guides are available in [`d
 - [**Purpose & Threat Model**](docs/purpose.md): Architectural motivation, pure Python philosophy, and security posture.
 - [**System Architecture**](docs/architecture.md): Technical specifications on solver, router, SVG renderer, and BOM engine.
 - [**Project site**](https://bsommers.github.io/diagrams-as-code/): the gallery, kits and quickstart on GitHub Pages (source: `docs/index.html`).
+- [**Guide for AI agents**](docs/for-agents.md): Interfaces, verified quickstart, API cheat sheet, lint loop and pitfalls, with [`llms.txt`](docs/llms.txt) and the [API reference](docs/api-reference.md).
 - [**User Guide**](docs/user-guide.md): Concepts, first diagram, positioning, routing, themes, icons, outputs, and CLI.
 - [**Sequence Diagrams**](docs/sequence-diagrams.md) and [**Gantt Charts & Timelines**](docs/gantt-timelines.md): The `SequenceDiagram`, `GanttChart` and `Timeline` kits.
 - [**Development Guidelines**](docs/development.md): Contributor workflow, local-first verification, testing, and doc sync (see also [CONTRIBUTING.md](CONTRIBUTING.md)).

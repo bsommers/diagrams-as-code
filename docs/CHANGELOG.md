@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- **Agent-readable documentation.** `docs/for-agents.md` is a guide for AI agents and programs: choosing between the Python API, the CLI and MCP (with the stdout and exit-code contract), a verified quickstart, a 15-call cheat sheet, the render and lint feedback loop, pitfalls (nonexistent method names, unknown themes that fall back silently, Unicode subscripts that print `?` in PDF, helper modules in `examples/`), determinism guarantees and MCP sandbox limits. Every Python and `diagrams-as-code` block in it is executed by `tests/test_for_agents_doc.py`.
+- `tools/build_agent_docs.py` (with `--check`) generates `docs/api-reference.md`, `docs/llms.txt` and `docs/llms-full.txt` (llmstxt.org format, served at the Pages root; the CLI and MCP sections are read from the live parser and `mcp.TOOLS`) and `examples/index.json` (one record per example script: path, domain, number, title, description, theme, formats, rendered SVG and the kits used). Tests in `tests/test_agent_docs.py`.
+- `py.typed` markers for `diagrams_as_code` and `iiot_diagrams` (PEP 561), checked in the built wheel.
+- Docs: a "For agents" section on the Pages landing page, README and AGENTS.md.
+
+### Changed
+- Docstrings for the 119 previously undocumented public classes, functions and methods in `src/diagrams_as_code` (excluding `cli.py`, `mcp.py`, `sandbox.py`): public coverage is now 100% (498 of 498), held at 95% or more by `tests/test_typing_docs.py`. No behaviour change.
+
 ## [v0.19.0] - 2026-11-23
 
 ### Added

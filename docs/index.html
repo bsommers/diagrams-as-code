@@ -95,7 +95,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 90px;color:var(--mute);fo
 <body>
 <div class="floor" aria-hidden="true"></div><div class="scan" aria-hidden="true"></div>
 <nav><div class="wrap"><b>Diagrams&nbsp;as&nbsp;Code</b><span class="sp"></span>
-<span class="links" style="display:flex;gap:18px"><a href="#gallery">Gallery</a><a href="#kits">Kits</a><a href="#start">Quickstart</a><a href="#docs">Docs</a><a href="#credits">Credits</a></span>
+<span class="links" style="display:flex;gap:18px"><a href="#gallery">Gallery</a><a href="#kits">Kits</a><a href="#start">Quickstart</a><a href="#agents">Agents</a><a href="#docs">Docs</a><a href="#credits">Credits</a></span>
 <a href="https://github.com/bsommers/diagrams-as-code">GitHub ↗</a></div></nav>
 
 <header class="hero"><div class="wrap">
@@ -165,6 +165,18 @@ uv run diagrams-as-code render examples/finance --format svg,png,pdf
 uv run diagrams-as-code mcp --root .</pre></div>
   </div>
  </div>
+</section>
+
+<section id="agents">
+ <h2>For agents</h2>
+ <p class="sub">Built to be driven by software. A guide whose every snippet is executed by the test suite, the whole documentation in one file, an API reference generated from the code, and a machine-readable index of the examples.</p>
+ <div class="cards">
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/for-agents.md"><h3>Guide for agents</h3><p>Pick an interface, run the verified quickstart, close the render and lint loop, avoid the known pitfalls.</p></a>
+  <a class="card" href="llms.txt"><h3>llms.txt</h3><p>The llmstxt.org index of the docs. <code>llms-full.txt</code> has everything in one fetch.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/docs/api-reference.md"><h3>API reference</h3><p>Signature and docstring of every public name, generated from the code.</p></a>
+  <a class="card" href="https://github.com/bsommers/diagrams-as-code/blob/master/examples/index.json"><h3>Examples index</h3><p>One JSON record per example script: domain, title, theme and the kits it uses.</p></a>
+ </div>
+ <p class="sub" style="margin-top:14px"><a href="llms.txt">llms.txt</a> &middot; <a href="llms-full.txt">llms-full.txt</a></p>
 </section>
 
 <section id="docs">

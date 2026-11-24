@@ -329,3 +329,13 @@
 - **Python API:** `diagrams_as_code.gantt.GanttChart`, `Timeline`, `schedule`, `Task`
 - **Features:** `GanttChart` schedules tasks from durations and finish-to-start dependencies (with lag), groups them in phases, draws milestones, percent done and a status line, and computes and highlights the critical path, with orthogonal dependency arrows. `Timeline` places dated events on a ruler with labels stacked so none overlap. Calendar days only; about 0.5% of arrows on dense random charts can be unroutable (a warning is raised). Eleven examples in `examples/project_management/` (01-03 use the kit; 04-11 are further delivery figures); guide: `docs/gantt-timelines.md`.
 - **Verification:** `uv run pytest tests/test_gantt.py tests/test_domain_examples.py && uv run diagrams-as-code lint examples/project_management`
+
+### 2.23 Agent-Readable Documentation and Typing
+
+#### `CAP-AGENT-DOCS`: Agent Guide, llms.txt, API Reference and Examples Index
+- **Status:** `OPERATIONAL`
+- **Target Release:** `unreleased`
+- **Python API:** `diagrams_as_code` ships a `py.typed` marker (PEP 561); every public class, function and method has a docstring
+- **CLI:** `uv run python tools/build_agent_docs.py [--check]`
+- **Features:** `docs/for-agents.md` (choose an interface, verified quickstart, 15-call cheat sheet, render and lint loop, pitfalls, determinism and MCP limits) in which every Python and `diagrams-as-code` snippet is executed by a test. `tools/build_agent_docs.py` generates `docs/api-reference.md` (signature, docstring and location of every name in `__all__` and of the plot, draft, sequence, gantt and math kits), `docs/llms.txt` and `docs/llms-full.txt` (served at the Pages root; the CLI and MCP sections are read from the live parser and tool table) and `examples/index.json` (one record per example script). Docstring coverage of the public API has a ratchet test.
+- **Verification:** `uv run pytest tests/test_agent_docs.py tests/test_for_agents_doc.py tests/test_typing_docs.py && uv run python tools/build_agent_docs.py --check`
