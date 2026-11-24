@@ -52,7 +52,7 @@
 +---------------------------------------+ +-----------------------------------------+
 |            SVGRenderer                | |             BOMGenerator                |
 |  - Theme Palette Injection (14)       | |  - Component Inventory Assembly         |
-|  - Standalone Vector Icons (60)       | |  - Metadata Attribute Extraction        |
+|  - Standalone Vector Icons (73)       | |  - Metadata Attribute Extraction        |
 |  - Dynamic SVG Defs & Shadow Filters  | |  - Protocol & Connection Mapping        |
 |  - Multi-line <tspan> Anti-Spill Wrap | |  - Markdown Table & JSON Serialization  |
 |  - Interactive Pan/Zoom & Minimap HUD | +-----------------------------------------+
@@ -87,7 +87,7 @@
 
 ### 2.3 Vector Shape & Icon Library (`diagrams_as_code.shapes`)
 - Pure SVG path emitters for boxes (with customizable corner radii), database cylinders (multi-tiered storage drums), server racks (individual blade unit partitions), decision diamonds, and clouds.
-- Built-in library of 60 handcrafted 24x24 open-source vector icons spanning 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`).
+- Built-in library of 73 handcrafted 24x24 open-source vector icons spanning 9 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `project_management`).
 - Extensible custom icon loading via SVG files or entire directories.
 
 ### 2.4 Hierarchical Grouping (`diagrams_as_code.groups`)
@@ -302,11 +302,11 @@ examples/
 ├── semiconductor/ chemistry/ biology/ chemical_engineering/ electronics/   # 10 figures each (Draft/Plot, paper theme)
 ├── org/                            # 10 organisation figures (paper theme)
 ├── sequence/                       # 3 SequenceDiagram figures
-├── project_management/             # 11 figures (3 GanttChart/Timeline, 8 delivery figures)
+├── project_management/             # 12 figures (3 GanttChart/Timeline, 8 delivery figures, 1 icon reference)
 └── 01_*.py ... 04_*.py             # 4 top-level reference scripts
 ```
 
-In total 361 example scripts in 35 directories: 143 domain diagrams, 100 in the ten newer domain galleries, 3 sequence diagrams, 11 project-management figures, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
+In total 362 example scripts in 35 directories: 143 domain diagrams, 100 in the ten newer domain galleries, 3 sequence diagrams, 12 project-management figures, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
 
 ---
 

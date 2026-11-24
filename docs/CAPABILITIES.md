@@ -118,7 +118,7 @@
 - **Target Release:** `v0.1.0`
 - **Python API:** `diagrams_as_code.theme`, `diagrams_as_code.shapes`
 - **Exports:** `Theme`, `ShapeLibrary`, `ShapeRenderer`, `get_theme`, `register_theme`
-- **Features:** 13 theme presets (8 dark, 4 light, 1 high-contrast) (list them with `list_themes()`), 60 built-in vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
+- **Features:** 13 theme presets (8 dark, 4 light, 1 high-contrast) (list them with `list_themes()`), 73 built-in vector icons across 9 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `project_management`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
 - **Verification:** `uv run pytest tests/test_theme.py`
 
 
@@ -190,8 +190,8 @@
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
 - **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`, `examples/iiot`, `examples/database`, `examples/enterprise_architecture`, `examples/manufacturing`, `examples/mind_map`, `examples/computer_science`)
-- **Exports:** 143 self-contained executable diagram scripts and documentation artifacts for the 13 domains above, plus 114 in twelve newer galleries (`agentic_dev`, `semiconductor`, `chemistry`, `data_engineering`, `ml_models`, `devops`, `biology`, `chemical_engineering`, `org`, `electronics`, `sequence`, `project_management`): 361 example scripts in all, with the textbook, medical, engineering, CAD, technical and primitive figures and four top-level scripts
-- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 14 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`. The newer galleries have 10 figures each (`sequence` 3, `project_management` 11), mostly in the `paper` theme with computed values.
+- **Exports:** 143 self-contained executable diagram scripts and documentation artifacts for the 13 domains above, plus 115 in twelve newer galleries (`agentic_dev`, `semiconductor`, `chemistry`, `data_engineering`, `ml_models`, `devops`, `biology`, `chemical_engineering`, `org`, `electronics`, `sequence`, `project_management`): 362 example scripts in all, with the textbook, medical, engineering, CAD, technical and primitive figures and four top-level scripts
+- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 14 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`. The newer galleries have 10 figures each (`sequence` 3, `project_management` 12), mostly in the `paper` theme with computed values.
 - **Verification:** `uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py` (the committed SVG beside each newer-gallery script must equal what the script renders)
 
 ---

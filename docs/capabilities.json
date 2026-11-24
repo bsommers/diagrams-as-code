@@ -178,7 +178,7 @@
       "target_release": "v0.1.0",
       "python_api": "diagrams_as_code.theme",
       "classes": ["Theme", "ShapeLibrary", "ShapeRenderer"],
-      "details": "13 theme presets (8 dark, 4 light, 1 high-contrast), 60 built-in vector icons across 8 domains, dynamic icon loading from SVG files/directories, and standalone SVG vector primitives.",
+      "details": "13 theme presets (8 dark, 4 light, 1 high-contrast), 73 built-in vector icons across 9 domains, dynamic icon loading from SVG files/directories, and standalone SVG vector primitives.",
       "verification": "uv run pytest tests/test_theme.py"
     },
     {
@@ -189,7 +189,7 @@
       "target_release": "v0.1.0",
       "python_api": "examples/",
       "classes": ["Diagram"],
-      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 114 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 361 example scripts in all.",
+      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 115 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 362 example scripts in all.",
       "verification": "uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py"
     },
     {

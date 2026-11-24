@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1148 620" width="1148" height="620">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7287FD"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#7287FD"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#EFF1F5"/>
+  <g id="polygon_1">
+    <path d="M 40 40 L 244 40 L 244 190 L 40 190 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_3">
+    <path d="M 256 40 L 460 40 L 460 190 L 256 190 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 472 40 L 676 40 L 676 190 L 472 190 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 688 40 L 892 40 L 892 190 L 688 190 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 904 40 L 1108 40 L 1108 190 L 904 190 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_11">
+    <path d="M 40 202 L 244 202 L 244 352 L 40 352 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 256 202 L 460 202 L 460 352 L 256 352 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 472 202 L 676 202 L 676 352 L 472 352 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 688 202 L 892 202 L 892 352 L 688 352 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 904 202 L 1108 202 L 1108 352 L 904 352 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 40 364 L 244 364 L 244 514 L 40 514 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_23">
+    <path d="M 256 364 L 460 364 L 460 514 L 256 514 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_25">
+    <path d="M 472 364 L 676 364 L 676 514 L 472 514 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="big_backlog" filter="url(#shadow)">
+    <g class="icon icon-backlog" transform="translate(114, 66) scale(2.333333)">
+  <line x1="3" y1="5" x2="21" y2="5" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="6" y1="10" x2="18" y2="10" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="9" y1="15" x2="15" y2="15" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="18" x2="12" y2="21" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="142" y="147.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">backlog</text>
+  </g>
+  <g id="small_backlog" filter="url(#shadow)">
+    <g class="icon icon-backlog" transform="translate(210, 52) scale(1)">
+  <line x1="3" y1="5" x2="21" y2="5" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="6" y1="10" x2="18" y2="10" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="9" y1="15" x2="15" y2="15" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="18" x2="12" y2="21" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+</g>
+  </g>
+  <g id="text_2">
+    <text x="51.17" y="175.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Prioritised backlog / queue of pending work</text>
+  </g>
+  <g id="big_baseline" filter="url(#shadow)">
+    <g class="icon icon-baseline" transform="translate(330, 66) scale(2.333333)">
+  <path d="M 8 3 H 16 V 13 L 12 10 L 8 13 Z" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="2" y1="18" x2="22" y2="18" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="21" x2="6" y2="21" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="10" y1="21" x2="14" y2="21" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="21" x2="22" y2="21" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="358" y="147.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">baseline</text>
+  </g>
+  <g id="small_baseline" filter="url(#shadow)">
+    <g class="icon icon-baseline" transform="translate(426, 52) scale(1)">
+  <path d="M 8 3 H 16 V 13 L 12 10 L 8 13 Z" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="2" y1="18" x2="22" y2="18" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="21" x2="6" y2="21" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="10" y1="21" x2="14" y2="21" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="21" x2="22" y2="21" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+</g>
+  </g>
+  <g id="text_4">
+    <text x="268.23" y="175.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Approved plan baseline / reference marker</text>
+  </g>
+  <g id="big_deliverable" filter="url(#shadow)">
+    <g class="icon icon-deliverable" transform="translate(546, 66) scale(2.333333)">
+  <path d="M 3 8 L 5 3 H 19 L 21 8" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="3" y="8" width="18" height="13" rx="1" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <path d="M 8.5 14.5 L 11 17 L 15.5 12" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="574" y="147.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">deliverable</text>
+  </g>
+  <g id="small_deliverable" filter="url(#shadow)">
+    <g class="icon icon-deliverable" transform="translate(642, 52) scale(1)">
+  <path d="M 3 8 L 5 3 H 19 L 21 8" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="3" y="8" width="18" height="13" rx="1" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M 8.5 14.5 L 11 17 L 15.5 12" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </g>
+  <g id="text_6">
+    <text x="486.61" y="175.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Delivered work product / accepted artifact</text>
+  </g>
+  <g id="big_dependency" filter="url(#shadow)">
+    <g class="icon icon-dependency" transform="translate(762, 66) scale(2.333333)">
+  <rect x="2" y="3" width="9" height="6" rx="1.5" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <rect x="13" y="15" width="9" height="6" rx="1.5" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <path d="M 6.5 9 V 18 H 13" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 10.5 15.5 L 13 18 L 10.5 20.5" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="790" y="147.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">dependency</text>
+  </g>
+  <g id="small_dependency" filter="url(#shadow)">
+    <g class="icon icon-dependency" transform="translate(858, 52) scale(1)">
+  <rect x="2" y="3" width="9" height="6" rx="1.5" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <rect x="13" y="15" width="9" height="6" rx="1.5" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M 6.5 9 V 18 H 13" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 10.5 15.5 L 13 18 L 10.5 20.5" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </g>
+  <g id="text_8">
+    <text x="712.65" y="175.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Task dependency / finish-to-start link</text>
+  </g>
+  <g id="big_epic" filter="url(#shadow)">
+    <g class="icon icon-epic" transform="translate(978, 66) scale(2.333333)">
+  <rect x="3" y="9" width="14" height="12" rx="2" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <path d="M 6.5 5.5 H 19 A 2 2 0 0 1 21 7.5 V 17" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 10 2 H 19" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="7" y1="15" x2="13" y2="15" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="1006" y="147.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">epic</text>
+  </g>
+  <g id="small_epic" filter="url(#shadow)">
+    <g class="icon icon-epic" transform="translate(1074, 52) scale(1)">
+  <rect x="3" y="9" width="14" height="12" rx="2" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M 6.5 5.5 H 19 A 2 2 0 0 1 21 7.5 V 17" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 10 2 H 19" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="7" y1="15" x2="13" y2="15" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+</g>
+  </g>
+  <g id="text_10">
+    <text x="937.09" y="175.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Epic / large layered body of work</text>
+  </g>
+  <g id="big_gate" filter="url(#shadow)">
+    <g class="icon icon-gate" transform="translate(114, 228) scale(2.333333)">
+  <path d="M 4 21 V 4 H 20 V 21" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="9.3" y1="4" x2="9.3" y2="19" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="14.7" y1="4" x2="14.7" y2="19" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="4" y1="11" x2="20" y2="11" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="142" y="309.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">gate</text>
+  </g>
+  <g id="small_gate" filter="url(#shadow)">
+    <g class="icon icon-gate" transform="translate(210, 214) scale(1)">
+  <path d="M 4 21 V 4 H 20 V 21" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="9.3" y1="4" x2="9.3" y2="19" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="14.7" y1="4" x2="14.7" y2="19" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="4" y1="11" x2="20" y2="11" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+</g>
+  </g>
+  <g id="text_12">
+    <text x="65.96" y="337.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Stage gate / go-no-go review barrier</text>
+  </g>
+  <g id="big_kanban_card" filter="url(#shadow)">
+    <g class="icon icon-kanban_card" transform="translate(330, 228) scale(2.333333)">
+  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <line x1="8" y1="8" x2="16" y2="8" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="12" x2="13" y2="12" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="9" cy="17" r="1.6" fill="#2F3B52"/>
+  <line x1="13" y1="17" x2="16" y2="17" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="358" y="309.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">kanban_card</text>
+  </g>
+  <g id="small_kanban_card" filter="url(#shadow)">
+    <g class="icon icon-kanban_card" transform="translate(426, 214) scale(1)">
+  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <line x1="8" y1="8" x2="16" y2="8" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="12" x2="13" y2="12" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="9" cy="17" r="1.6" fill="#6B7280"/>
+  <line x1="13" y1="17" x2="16" y2="17" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+</g>
+  </g>
+  <g id="text_14">
+    <text x="283.01" y="337.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Kanban card with title and assignee</text>
+  </g>
+  <g id="big_milestone" filter="url(#shadow)">
+    <g class="icon icon-milestone" transform="translate(546, 228) scale(2.333333)">
+  <line x1="5" y1="3" x2="5" y2="21" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 5 9 H 7.5 M 13 3.5 L 18.5 9 L 13 14.5 L 7.5 9 Z" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="574" y="309.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">milestone</text>
+  </g>
+  <g id="small_milestone" filter="url(#shadow)">
+    <g class="icon icon-milestone" transform="translate(642, 214) scale(1)">
+  <line x1="5" y1="3" x2="5" y2="21" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 5 9 H 7.5 M 13 3.5 L 18.5 9 L 13 14.5 L 7.5 9 Z" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </g>
+  <g id="text_16">
+    <text x="499.55" y="337.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Project milestone / key date marker</text>
+  </g>
+  <g id="big_resource" filter="url(#shadow)">
+    <g class="icon icon-resource" transform="translate(762, 228) scale(2.333333)">
+  <circle cx="8.5" cy="7.5" r="3.2" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <path d="M 2.5 20 C 2.5 15.5 5 13 8.5 13 C 12 13 14.5 15.5 14.5 20" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="17.5" y="8" width="4.5" height="12" rx="1" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <rect x="19" y="15" width="1.5" height="3" fill="#2F3B52"/>
+</g>
+    <text x="790" y="309.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">resource</text>
+  </g>
+  <g id="small_resource" filter="url(#shadow)">
+    <g class="icon icon-resource" transform="translate(858, 214) scale(1)">
+  <circle cx="8.5" cy="7.5" r="3.2" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M 2.5 20 C 2.5 15.5 5 13 8.5 13 C 12 13 14.5 15.5 14.5 20" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="17.5" y="8" width="4.5" height="12" rx="1" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <rect x="19" y="15" width="1.5" height="3" fill="#6B7280"/>
+</g>
+  </g>
+  <g id="text_18">
+    <text x="712.11" y="337.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Staff or capacity resource / allocation</text>
+  </g>
+  <g id="big_risk" filter="url(#shadow)">
+    <g class="icon icon-risk" transform="translate(978, 228) scale(2.333333)">
+  <path d="M 12 3 L 22 20 H 2 Z" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="9.5" x2="12" y2="13.5" stroke="#2F3B52" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="16.8" r="1.1" fill="#2F3B52"/>
+</g>
+    <text x="1006" y="309.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">risk</text>
+  </g>
+  <g id="small_risk" filter="url(#shadow)">
+    <g class="icon icon-risk" transform="translate(1074, 214) scale(1)">
+  <path d="M 12 3 L 22 20 H 2 Z" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="9.5" x2="12" y2="13.5" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="16.8" r="1.1" fill="#6B7280"/>
+</g>
+  </g>
+  <g id="text_20">
+    <text x="946.07" y="337.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Project risk / hazard warning</text>
+  </g>
+  <g id="big_sprint" filter="url(#shadow)">
+    <g class="icon icon-sprint" transform="translate(114, 390) scale(2.333333)">
+  <path d="M 12 4 A 8 8 0 1 1 4 12" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 1 13.5 L 4 10.5 L 7 13.5" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 10 9 L 14 12 L 10 15" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="142" y="471.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">sprint</text>
+  </g>
+  <g id="small_sprint" filter="url(#shadow)">
+    <g class="icon icon-sprint" transform="translate(210, 376) scale(1)">
+  <path d="M 12 4 A 8 8 0 1 1 4 12" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 1 13.5 L 4 10.5 L 7 13.5" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 10 9 L 14 12 L 10 15" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </g>
+  <g id="text_22">
+    <text x="70.99" y="499.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Time-boxed iteration / sprint cycle</text>
+  </g>
+  <g id="big_task" filter="url(#shadow)">
+    <g class="icon icon-task" transform="translate(330, 390) scale(2.333333)">
+  <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <path d="M 8 12 L 11 15 L 16 9" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="358" y="471.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">task</text>
+  </g>
+  <g id="small_task" filter="url(#shadow)">
+    <g class="icon icon-task" transform="translate(426, 376) scale(1)">
+  <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M 8 12 L 11 15 L 16 9" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </g>
+  <g id="text_24">
+    <text x="304.42" y="499.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Work item / checklist task</text>
+  </g>
+  <g id="big_timebox" filter="url(#shadow)">
+    <g class="icon icon-timebox" transform="translate(546, 390) scale(2.333333)">
+  <path d="M 4.5 4 H 2.5 V 20 H 4.5" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 19.5 4 H 21.5 V 20 H 19.5" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="5.5" fill="none" stroke="#2F3B52" stroke-width="2"/>
+  <path d="M 12 9 V 12 L 14.5 13.5" fill="none" stroke="#2F3B52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="574" y="471.33" fill="#4C4F69" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">timebox</text>
+  </g>
+  <g id="small_timebox" filter="url(#shadow)">
+    <g class="icon icon-timebox" transform="translate(642, 376) scale(1)">
+  <path d="M 4.5 4 H 2.5 V 20 H 4.5" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 19.5 4 H 21.5 V 20 H 19.5" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="5.5" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M 12 9 V 12 L 14.5 13.5" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </g>
+  <g id="text_26">
+    <text x="510.11" y="499.27" fill="#6B7280" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" text-anchor="start">Fixed time allocation / timebox</text>
+  </g>
+  <g id="caption_27">
+    <text x="320.64" y="556.53" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="82.51" lengthAdjust="spacingAndGlyphs">FIGURE 12:</text>
+    <text x="403.15" y="556.53" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="424.21" lengthAdjust="spacingAndGlyphs"> THE 13 ICONS OF THE PROJECT_MANAGEMENT DOMAIN,</text>
+    <text x="305.18" y="575.28" xml:space="preserve" fill="#4C4F69" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="537.65" lengthAdjust="spacingAndGlyphs">24X24 GRID, 2 PX STROKE, SHOWN AT 56 PX AND AT THEIR NATIVE 24 PX</text>
+  </g>
+</svg>
