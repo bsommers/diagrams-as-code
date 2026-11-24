@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 2036 TESTS • 362 FIGURES ]       ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 2093 TESTS • 362 FIGURES ]       ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,7 +21,7 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-2036%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-2093%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
