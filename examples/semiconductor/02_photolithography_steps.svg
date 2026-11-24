@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1423 657" width="1423" height="657">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-7A3FBF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7A3FBF"/>
+    </marker>
+    <marker id="arrow-7A3FBF-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#7A3FBF"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_3">
+    <path d="M 286.37 180 L 536.37 180 L 536.37 210 L 286.37 210 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_4">
+    <path d="M 286.37 160 L 536.37 160 L 536.37 180 L 286.37 180 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 586.37 180 L 836.37 180 L 836.37 210 L 586.37 210 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_8">
+    <path d="M 586.37 160 L 836.37 160 L 836.37 180 L 586.37 180 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 586.37 130 L 836.37 130 L 836.37 160 L 586.37 160 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 886.37 180 L 1136.37 180 L 1136.37 210 L 886.37 210 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 886.37 160 L 1136.37 160 L 1136.37 180 L 886.37 180 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 886.37 130 L 991.37 130 L 991.37 160 L 886.37 160 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 991.37 130 L 1031.37 130 L 1031.37 160 L 991.37 160 Z" fill="#F6D4A8" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 1031.37 130 L 1136.37 130 L 1136.37 160 L 1031.37 160 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_18">
+    <path d="M 886.37 82 L 1136.37 82 L 1136.37 92 L 886.37 92 Z" fill="#E7F0F7" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 886.37 92 L 991.37 92 L 991.37 97 L 886.37 97 Z" fill="#333333" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_20">
+    <path d="M 1031.37 92 L 1136.37 92 L 1136.37 97 L 1031.37 97 Z" fill="#333333" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_31">
+    <path d="M 286.37 430 L 536.37 430 L 536.37 460 L 286.37 460 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 286.37 410 L 536.37 410 L 536.37 430 L 286.37 430 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 286.37 380 L 391.37 380 L 391.37 410 L 286.37 410 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_34">
+    <path d="M 431.37 380 L 536.37 380 L 536.37 410 L 431.37 410 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 586.37 430 L 836.37 430 L 836.37 460 L 586.37 460 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_38">
+    <path d="M 586.37 410 L 691.37 410 L 691.37 430 L 586.37 430 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 731.37 410 L 836.37 410 L 836.37 430 L 731.37 430 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_40">
+    <path d="M 586.37 380 L 691.37 380 L 691.37 410 L 586.37 410 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_41">
+    <path d="M 731.37 380 L 836.37 380 L 836.37 410 L 731.37 410 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_44">
+    <path d="M 886.37 430 L 1136.37 430 L 1136.37 460 L 886.37 460 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_45">
+    <path d="M 886.37 410 L 991.37 410 L 991.37 430 L 886.37 430 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_46">
+    <path d="M 1031.37 410 L 1136.37 410 L 1136.37 430 L 1031.37 430 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_47">
+    <path d="M 306.37 540 L 328.37 540 L 328.37 554 L 306.37 554 Z" fill="#C9CED6" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_49">
+    <path d="M 446.37 540 L 468.37 540 L 468.37 554 L 446.37 554 Z" fill="#8FB8DE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_51">
+    <path d="M 586.37 540 L 608.37 540 L 608.37 554 L 586.37 554 Z" fill="#E9A15B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_53">
+    <path d="M 726.37 540 L 748.37 540 L 748.37 554 L 726.37 554 Z" fill="#F6D4A8" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_56">
+    <path d="M 866.37 540 L 888.37 540 L 888.37 554 L 866.37 554 Z" fill="#E7F0F7" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_58">
+    <path d="M 1006.37 540 L 1028.37 540 L 1028.37 554 L 1006.37 554 Z" fill="#333333" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="path_16">
+    <path d="M 991.37 135.95 L 997.32 130 M 991.37 143.03 L 1004.4 130 M 991.37 150.1 L 1011.47 130 M 991.37 157.17 L 1018.54 130 M 995.61 160 L 1025.61 130 M 1002.68 160 L 1031.37 131.31 M 1009.75 160 L 1031.37 138.38 M 1016.82 160 L 1031.37 145.45 M 1023.89 160 L 1031.37 152.52 M 1030.96 160 L 1031.37 159.59" fill="none" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_54">
+    <path d="M 726.37 542.38 L 728.75 540 M 726.37 549.45 L 735.82 540 M 728.89 554 L 742.89 540 M 735.96 554 L 748.37 541.59 M 743.03 554 L 748.37 548.66" fill="none" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <path d="M 999.37 56 L 999.37 120.06" fill="none" stroke="#7A3FBF" stroke-width="1.8" />
+  <path d="M 999.37 126 L 995.05 115.2 L 999.37 118.98 L 1003.69 115.2 Z" fill="#7A3FBF" />
+  <path d="M 1011.37 56 L 1011.37 120.06" fill="none" stroke="#7A3FBF" stroke-width="1.8" />
+  <path d="M 1011.37 126 L 1007.05 115.2 L 1011.37 118.98 L 1015.69 115.2 Z" fill="#7A3FBF" />
+  <path d="M 1023.37 56 L 1023.37 120.06" fill="none" stroke="#7A3FBF" stroke-width="1.8" />
+  <path d="M 1023.37 126 L 1019.05 115.2 L 1023.37 118.98 L 1027.69 115.2 Z" fill="#7A3FBF" />
+  <g id="text_1">
+    <text x="362.96" y="230.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">1  Film on silicon</text>
+  </g>
+  <g id="text_2">
+    <text x="328.5" y="250.17" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start">film deposited (oxide, poly or metal)</text>
+  </g>
+  <g id="text_5">
+    <text x="659.35" y="230.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">2  Spin-coat resist</text>
+  </g>
+  <g id="text_6">
+    <text x="649.79" y="250.17" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start">photoresist, then soft bake</text>
+  </g>
+  <g id="text_10">
+    <text x="982.46" y="230.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">3  Expose</text>
+  </g>
+  <g id="text_11">
+    <text x="901.65" y="250.17" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start">UV through the mask; exposed resist (hatched)</text>
+  </g>
+  <g id="text_27">
+    <text x="1045.37" y="65.78" fill="#7A3FBF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">UV</text>
+  </g>
+  <g id="text_28">
+    <text x="892.37" y="70.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">mask</text>
+  </g>
+  <g id="text_29">
+    <text x="380.29" y="480.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">4  Develop</text>
+  </g>
+  <g id="text_30">
+    <text x="320.03" y="500.17" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start">exposed resist dissolves (positive tone)</text>
+  </g>
+  <g id="text_35">
+    <text x="691.14" y="480.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">5  Etch</text>
+  </g>
+  <g id="text_36">
+    <text x="633.17" y="500.17" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start">film removed where resist is open</text>
+  </g>
+  <g id="text_42">
+    <text x="973.44" y="480.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">6  Strip resist</text>
+  </g>
+  <g id="text_43">
+    <text x="959.43" y="500.17" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start">patterned film remains</text>
+  </g>
+  <g id="text_48">
+    <text x="336.37" y="550.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">silicon</text>
+  </g>
+  <g id="text_50">
+    <text x="476.37" y="550.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">film</text>
+  </g>
+  <g id="text_52">
+    <text x="616.37" y="550.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">photoresist</text>
+  </g>
+  <g id="text_55">
+    <text x="756.37" y="550.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">exposed resist</text>
+  </g>
+  <g id="text_57">
+    <text x="896.37" y="550.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">mask glass</text>
+  </g>
+  <g id="text_59">
+    <text x="1036.37" y="550.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">chrome</text>
+  </g>
+  <g id="caption_60">
+    <text x="60" y="596.72" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 2:</text>
+    <text x="134.17" y="596.72" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1228.56" lengthAdjust="spacingAndGlyphs"> ONE LITHOGRAPHY AND ETCH PASS IN CROSS-SECTION. LAYER THICKNESSES ARE EXAGGERATED; THE OPENING IS SHOWN AT WAFER SCALE (A REAL MASK IS 4X).</text>
+  </g>
+</svg>

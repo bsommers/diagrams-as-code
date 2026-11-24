@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1794 523" width="1794" height="523">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_1">
+    <path d="M 478.29 320 L 818.29 320 L 818.29 380 L 478.29 380 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_11">
+    <path d="M 968.29 320 L 1308.29 320 L 1308.29 380 L 968.29 380 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_2">
+    <path d="M 478.29 290 L 818.29 290 L 818.29 320 L 478.29 320 Z" fill="#BBD6EE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_4">
+    <path d="M 498.29 140 L 798.29 140 L 798.29 290 L 498.29 290 Z" fill="#E2A95B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 968.29 290 L 1308.29 290 L 1308.29 320 L 968.29 320 Z" fill="#BBD6EE" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 1008.29 130 L 1268.29 130 L 1268.29 290 L 1008.29 290 Z" fill="#E2A95B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 533.29 172 L 563.29 172 L 563.29 290 L 533.29 290 Z" fill="#27408B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 623.29 172 L 653.29 172 L 653.29 290 L 623.29 290 Z" fill="#27408B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 713.29 172 L 743.29 172 L 743.29 290 L 713.29 290 Z" fill="#27408B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 1078.29 280 L 1198.29 280 L 1198.29 322 L 1078.29 322 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_16">
+    <path d="M 1045.29 149 L 1231.29 149 L 1231.29 171 L 1045.29 171 Z" fill="#27408B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_18">
+    <path d="M 1045.29 195 L 1231.29 195 L 1231.29 217 L 1045.29 217 Z" fill="#27408B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_20">
+    <path d="M 1045.29 241 L 1231.29 241 L 1231.29 263 L 1045.29 263 Z" fill="#27408B" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_6">
+    <path d="M 536.29 175 L 560.29 175 L 560.29 322 L 536.29 322 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_8">
+    <path d="M 626.29 175 L 650.29 175 L 650.29 322 L 626.29 322 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_10">
+    <path d="M 716.29 175 L 740.29 175 L 740.29 322 L 716.29 322 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 1048.29 152 L 1228.29 152 L 1228.29 168 L 1048.29 168 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 1048.29 198 L 1228.29 198 L 1228.29 214 L 1048.29 214 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 1048.29 244 L 1228.29 244 L 1228.29 260 L 1048.29 260 Z" fill="#BFC6D2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="path_3">
+    <path d="M 478.29 294.87 L 483.16 290 M 478.29 303.35 L 491.64 290 M 478.29 311.84 L 500.13 290 M 478.61 320 L 508.61 290 M 487.1 320 L 517.1 290 M 495.58 320 L 525.58 290 M 504.07 320 L 534.07 290 M 512.55 320 L 536.29 296.26 M 521.04 320 L 536.29 304.75 M 529.52 320 L 536.29 313.23 M 560.29 297.72 L 568.01 290 M 560.29 306.21 L 576.5 290 M 560.29 314.69 L 584.98 290 M 563.47 320 L 593.47 290 M 571.95 320 L 601.95 290 M 580.44 320 L 610.44 290 M 588.92 320 L 618.92 290 M 597.41 320 L 626.29 291.12 M 605.89 320 L 626.29 299.6 M 614.38 320 L 626.29 308.09 M 622.86 320 L 626.29 316.57 M 650.29 292.57 L 652.86 290 M 650.29 301.06 L 661.35 290 M 650.29 309.54 L 669.83 290 M 650.29 318.03 L 678.32 290 M 656.8 320 L 686.8 290 M 665.29 320 L 695.29 290 M 673.77 320 L 703.77 290 M 682.26 320 L 712.26 290 M 690.74 320 L 716.29 294.45 M 699.23 320 L 716.29 302.94 M 707.72 320 L 716.29 311.43 M 740.29 295.91 L 746.2 290 M 740.29 304.4 L 754.69 290 M 740.29 312.88 L 763.17 290 M 741.66 320 L 771.66 290 M 750.14 320 L 780.14 290 M 758.63 320 L 788.63 290 M 767.11 320 L 797.11 290 M 775.6 320 L 805.6 290 M 784.08 320 L 814.08 290 M 792.57 320 L 818.29 294.28 M 801.05 320 L 818.29 302.76 M 809.54 320 L 818.29 311.25" fill="none" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_13">
+    <path d="M 968.29 297.01 L 975.3 290 M 968.29 305.5 L 983.79 290 M 968.29 313.98 L 992.27 290 M 970.76 320 L 1000.76 290 M 979.24 320 L 1009.24 290 M 987.73 320 L 1017.73 290 M 996.22 320 L 1026.22 290 M 1004.7 320 L 1034.7 290 M 1013.19 320 L 1043.19 290 M 1021.67 320 L 1051.67 290 M 1030.16 320 L 1060.16 290 M 1038.64 320 L 1068.64 290 M 1047.13 320 L 1077.13 290 M 1055.61 320 L 1078.29 297.32 M 1064.1 320 L 1078.29 305.81 M 1072.58 320 L 1078.29 314.29 M 1198.29 296.12 L 1204.41 290 M 1198.29 304.6 L 1212.89 290 M 1198.29 313.09 L 1221.38 290 M 1199.86 320 L 1229.86 290 M 1208.35 320 L 1238.35 290 M 1216.83 320 L 1246.83 290 M 1225.32 320 L 1255.32 290 M 1233.8 320 L 1263.8 290 M 1242.29 320 L 1272.29 290 M 1250.77 320 L 1280.77 290 M 1259.26 320 L 1289.26 290 M 1267.74 320 L 1297.74 290 M 1276.23 320 L 1306.23 290 M 1284.71 320 L 1308.29 296.42 M 1293.2 320 L 1308.29 304.91 M 1301.69 320 L 1308.29 313.4" fill="none" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="text_22">
+    <text x="555.75" y="65.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">FinFET: gate on three sides</text>
+  </g>
+  <g id="text_23">
+    <text x="985.27" y="65.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" text-anchor="start">Gate-all-around nanosheet: gate on four sides</text>
+  </g>
+  <g id="path_24">
+    <path d="M 548.29 260 L 448.29 215" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <text x="395.35" y="211.77" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5"><tspan x="395.35" dy="0">silicon fin</tspan> <tspan x="395.35" dy="14.38">(channel)</tspan></text>
+  </g>
+  <g id="path_27">
+    <path d="M 506.29 160 L 448.29 160" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_29">
+    <text x="389.59" y="163.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">metal gate</text>
+  </g>
+  <g id="path_30">
+    <path d="M 741.29 220 L 848.29 215" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_32">
+    <text x="853.29" y="211.77" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5"><tspan x="853.29" dy="0">high-k</tspan> <tspan x="853.29" dy="14.38">dielectric</tspan></text>
+  </g>
+  <g id="path_33">
+    <path d="M 778.29 305 L 848.29 305" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_35">
+    <text x="853.29" y="308.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">STI oxide</text>
+  </g>
+  <g id="path_36">
+    <path d="M 778.29 360 L 848.29 360" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_38">
+    <text x="853.29" y="363.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">Si substrate</text>
+  </g>
+  <g id="path_39">
+    <path d="M 536.29 178 L 536.29 124 M 560.29 178 L 560.29 124" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_40">
+    <path d="M 523.29 120 L 573.29 120" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_41">
+    <path d="M 536.29 120 L 529.29 118.04 L 529.29 121.96 Z M 560.29 120 L 567.29 121.96 L 567.29 118.04 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_42">
+    <path d="M1010 657H806L800 627C844 627 855 619 855 599C855 570 832 531 811 498L598 163H593L589 265L565 535C560 610 579 627 653 627L658 657H403L398 627C455 627 465 619 473 533L480 454L278 161H272L267 257L241 539C239 557 239 573 239 584C239 586 239 588 239 590C241 616 261 627 318 627L323 657H73L68 627C125 627 143 602 149 537L198 -6H226L483 383H487L520 -6H549L901 558C935 609 959 626 1007 627Z" transform="translate(536.94 130.99) scale(0.0115 -0.0115)" fill="#000000"/>
+    <path d="M190 467 186 426H270L205 37C194 -29 168 -193 115 -193C77 -193 110 -104 50 -104C24 -104 10 -125 10 -153C10 -188 35 -225 99 -225C236 -225 282 -1 296 85L353 426H447L453 467H358L370 538C385 623 410 682 461 682C485 682 487 658 491 633C494 612 504 594 531 594C552 594 571 609 571 638C571 681 537 711 476 711C390 711 349 665 323 618C300 577 288 523 276 467Z" transform="translate(547.78 133.41) scale(0.00805 -0.00805)" fill="#000000"/>
+    <path d="M219 476H197L57 465V438C57 438 74 440 91 440C118 440 123 424 123 411C123 394 120 380 120 380L69 142C56 83 52 61 52 44C52 9 75 -9 115 -9C181 -9 220 47 255 96L235 111C219 93 191 59 157 59C145 59 139 65 139 78C139 92 144 120 144 120ZM243 610C243 643 224 665 191 665C158 665 136 644 136 610C136 575 158 556 188 556C218 556 243 576 243 610Z" transform="translate(552.43 133.41) scale(0.00805 -0.00805)" fill="#000000"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(554.63 133.41) scale(0.00805 -0.00805)" fill="#000000"/>
+  </g>
+  <g id="path_43">
+    <path d="M 1138.29 160 L 938.29 160" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_45">
+    <text x="866.15" y="156.77" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5"><tspan x="866.15" dy="0">Si nanosheet</tspan> <tspan x="866.15" dy="14.38">(channel)</tspan></text>
+  </g>
+  <g id="path_46">
+    <path d="M 1020.29 250 L 938.29 255" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_48">
+    <text x="879.59" y="258.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">metal gate</text>
+  </g>
+  <g id="path_49">
+    <path d="M 1230.29 215 L 1338.29 195" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_51">
+    <text x="1343.29" y="191.77" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5"><tspan x="1343.29" dy="0">high-k</tspan> <tspan x="1343.29" dy="14.38">dielectric</tspan></text>
+  </g>
+  <g id="path_52">
+    <path d="M 1268.29 305 L 1338.29 305" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_54">
+    <text x="1343.29" y="308.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">STI oxide</text>
+  </g>
+  <g id="path_55">
+    <path d="M 1268.29 360 L 1338.29 360" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_57">
+    <text x="1343.29" y="363.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">Si substrate</text>
+  </g>
+  <g id="path_58">
+    <path d="M 1048.29 201 L 1048.29 114 M 1228.29 201 L 1228.29 114" fill="none" stroke="#1F2F57" stroke-width="0.7" stroke-linejoin="round" />
+  </g>
+  <g id="path_59">
+    <path d="M 1048.29 110 L 1228.29 110" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_60">
+    <path d="M 1048.29 110 L 1055.29 111.96 L 1055.29 108.04 Z M 1228.29 110 L 1221.29 108.04 L 1221.29 111.96 Z" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_61">
+    <path d="M1010 657H806L800 627C844 627 855 619 855 599C855 570 832 531 811 498L598 163H593L589 265L565 535C560 610 579 627 653 627L658 657H403L398 627C455 627 465 619 473 533L480 454L278 161H272L267 257L241 539C239 557 239 573 239 584C239 586 239 588 239 590C241 616 261 627 318 627L323 657H73L68 627C125 627 143 602 149 537L198 -6H226L483 383H487L520 -6H549L901 558C935 609 959 626 1007 627Z" transform="translate(1124.02 121.96) scale(0.0115 -0.0115)" fill="#000000"/>
+    <path d="M378 479H359L333 452H330C318 459 281 479 228 479C137 479 92 425 92 357C92 295 139 260 180 221C218 185 254 150 254 96C254 44 222 23 176 23C108 23 82 69 72 156H47L21 -11H43L67 16H70C84 10 122 -11 185 -11C298 -11 337 55 337 113C337 177 301 214 258 260C214 307 163 343 163 385C163 414 184 449 236 449C295 449 328 400 331 323H355Z" transform="translate(1134.87 124.37) scale(0.00805 -0.00805)" fill="#000000"/>
+    <path d="M528 112C513 93 489 60 453 60C440 60 434 68 434 79C434 91 438 103 438 103L494 334C497 348 503 382 503 408C503 444 488 479 437 479C319 479 227 334 185 259H177L278 706H255L117 695V668C117 668 137 670 150 670C173 670 182 660 182 644C182 629 179 610 179 610L47 0H129L165 158C197 227 313 407 387 407C410 407 417 390 417 367C417 347 410 319 410 319L351 88C349 83 346 65 346 49C346 19 361 -10 411 -10C483 -10 523 60 549 97Z" transform="translate(1137.97 124.37) scale(0.00805 -0.00805)" fill="#000000"/>
+    <path d="M357 122C317 72 262 57 216 57C149 57 112 88 112 189V202C228 211 404 262 404 390C404 467 339 479 296 479C139 479 28 319 28 164C28 84 58 -12 177 -12C243 -12 315 17 375 107ZM114 231C133 330 202 448 276 448C306 448 318 428 318 393C318 298 227 238 114 231Z" transform="translate(1142.55 124.37) scale(0.00805 -0.00805)" fill="#000000"/>
+    <path d="M357 122C317 72 262 57 216 57C149 57 112 88 112 189V202C228 211 404 262 404 390C404 467 339 479 296 479C139 479 28 319 28 164C28 84 58 -12 177 -12C243 -12 315 17 375 107ZM114 231C133 330 202 448 276 448C306 448 318 428 318 393C318 298 227 238 114 231Z" transform="translate(1145.97 124.37) scale(0.00805 -0.00805)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(1149.38 124.37) scale(0.00805 -0.00805)" fill="#000000"/>
+  </g>
+  <g id="text_62">
+    <text x="537.39" y="421.14" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">current flows into the page (source to drain)</text>
+  </g>
+  <g id="text_63">
+    <text x="1027.39" y="421.14" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">current flows into the page (source to drain)</text>
+  </g>
+  <g id="caption_64">
+    <text x="60" y="466.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 4:</text>
+    <text x="134.17" y="466.91" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1599.43" lengthAdjust="spacingAndGlyphs"> SAME GATE-CUT VIEW OF A FINFET AND A GATE-ALL-AROUND NANOSHEET. SCHEMATIC, NOT TO SCALE; REAL DEVICES USE SEVERAL FINS OR SHEETS IN PARALLEL AND A LAYERED WORK-FUNCTION METAL STACK.</text>
+  </g>
+  <g id="path_25">
+    <path d="M 546.09 260 C 546.09 261.22 547.08 262.2 548.29 262.2 C 549.51 262.2 550.49 261.22 550.49 260 C 550.49 258.78 549.51 257.8 548.29 257.8 C 547.08 257.8 546.09 258.78 546.09 260" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_28">
+    <path d="M 504.09 160 C 504.09 161.22 505.08 162.2 506.29 162.2 C 507.51 162.2 508.49 161.22 508.49 160 C 508.49 158.78 507.51 157.8 506.29 157.8 C 505.08 157.8 504.09 158.78 504.09 160" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_31">
+    <path d="M 739.09 220 C 739.09 220.79 739.51 221.51 740.19 221.91 C 740.87 222.3 741.71 222.3 742.39 221.91 C 743.07 221.51 743.49 220.79 743.49 220 C 743.49 219.21 743.07 218.49 742.39 218.09 C 741.71 217.7 740.87 217.7 740.19 218.09 C 739.51 218.49 739.09 219.21 739.09 220" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_34">
+    <path d="M 776.09 305 C 776.09 305.79 776.51 306.51 777.19 306.91 C 777.87 307.3 778.71 307.3 779.39 306.91 C 780.07 306.51 780.49 305.79 780.49 305 C 780.49 304.21 780.07 303.49 779.39 303.09 C 778.71 302.7 777.87 302.7 777.19 303.09 C 776.51 303.49 776.09 304.21 776.09 305" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_37">
+    <path d="M 776.09 360 C 776.09 360.79 776.51 361.51 777.19 361.91 C 777.87 362.3 778.71 362.3 779.39 361.91 C 780.07 361.51 780.49 360.79 780.49 360 C 780.49 359.21 780.07 358.49 779.39 358.09 C 778.71 357.7 777.87 357.7 777.19 358.09 C 776.51 358.49 776.09 359.21 776.09 360" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_44">
+    <path d="M 1136.09 160 C 1136.09 160.79 1136.51 161.51 1137.19 161.91 C 1137.87 162.3 1138.71 162.3 1139.39 161.91 C 1140.07 161.51 1140.49 160.79 1140.49 160 C 1140.49 159.21 1140.07 158.49 1139.39 158.09 C 1138.71 157.7 1137.87 157.7 1137.19 158.09 C 1136.51 158.49 1136.09 159.21 1136.09 160" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_47">
+    <path d="M 1018.09 250 C 1018.09 250.79 1018.51 251.51 1019.19 251.91 C 1019.87 252.3 1020.71 252.3 1021.39 251.91 C 1022.07 251.51 1022.49 250.79 1022.49 250 C 1022.49 249.21 1022.07 248.49 1021.39 248.09 C 1020.71 247.7 1019.87 247.7 1019.19 248.09 C 1018.51 248.49 1018.09 249.21 1018.09 250" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_50">
+    <path d="M 1228.09 215 C 1228.09 215.79 1228.51 216.51 1229.19 216.91 C 1229.87 217.3 1230.71 217.3 1231.39 216.91 C 1232.07 216.51 1232.49 215.79 1232.49 215 C 1232.49 214.21 1232.07 213.49 1231.39 213.09 C 1230.71 212.7 1229.87 212.7 1229.19 213.09 C 1228.51 213.49 1228.09 214.21 1228.09 215" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_53">
+    <path d="M 1266.09 305 C 1266.09 305.79 1266.51 306.51 1267.19 306.91 C 1267.87 307.3 1268.71 307.3 1269.39 306.91 C 1270.07 306.51 1270.49 305.79 1270.49 305 C 1270.49 304.21 1270.07 303.49 1269.39 303.09 C 1268.71 302.7 1267.87 302.7 1267.19 303.09 C 1266.51 303.49 1266.09 304.21 1266.09 305" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_56">
+    <path d="M 1266.09 360 C 1266.09 360.79 1266.51 361.51 1267.19 361.91 C 1267.87 362.3 1268.71 362.3 1269.39 361.91 C 1270.07 361.51 1270.49 360.79 1270.49 360 C 1270.49 359.21 1270.07 358.49 1269.39 358.09 C 1268.71 357.7 1267.87 357.7 1267.19 358.09 C 1266.51 358.49 1266.09 359.21 1266.09 360" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+</svg>
