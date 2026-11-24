@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 706" width="930" height="706">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1A1A1A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrow-1A1A1A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1A1A1A"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 285 190 L 346.36 190" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 355 190 L 344.2 194.32 L 344.2 185.68 Z" fill="#1A1A1A" />
+  <path d="M 525 190 L 586.36 190" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 595 190 L 584.2 194.32 L 584.2 185.68 Z" fill="#1A1A1A" />
+  <path d="M 30 190 L 106.36 190" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 115 190 L 104.2 194.32 L 104.2 185.68 Z" fill="#1A1A1A" />
+  <path d="M 765 190 L 891.36 190" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 900 190 L 889.2 194.32 L 889.2 185.68 Z" fill="#1A1A1A" />
+  <path d="M 680 230 L 680 300 L 200 300 L 200 238.64" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 200 230 L 204.32 240.8 L 195.68 240.8 Z" fill="#1A1A1A" />
+  <g id="shape_1">
+    <rect x="115" y="150" width="170" height="80" rx="0" fill="#E6EDF5" stroke="#000000" stroke-width="1" />
+    <text x="162.79" y="194.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="33.96" lengthAdjust="spacingAndGlyphs">Mixer</text>
+    <text x="196.75" y="194.47" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" textLength="40.46" lengthAdjust="spacingAndGlyphs"> M-101</text>
+  </g>
+  <g id="shape_2">
+    <rect x="355" y="150" width="170" height="80" rx="0" fill="#E6EDF5" stroke="#000000" stroke-width="1" />
+    <text x="396.29" y="186.67" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="48.41" lengthAdjust="spacingAndGlyphs">Reactor</text>
+    <text x="444.69" y="186.67" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" textLength="39.02" lengthAdjust="spacingAndGlyphs"> R-101</text>
+    <text x="440" y="202.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">X = 25% per pass</text>
+  </g>
+  <g id="shape_3">
+    <rect x="595" y="150" width="170" height="80" rx="0" fill="#E6EDF5" stroke="#000000" stroke-width="1" />
+    <text x="630.5" y="186.67" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" textLength="60.69" lengthAdjust="spacingAndGlyphs">Separator</text>
+    <text x="691.19" y="186.67" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" textLength="38.3" lengthAdjust="spacingAndGlyphs"> V-101</text>
+    <text x="680" y="202.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">sharp split</text>
+  </g>
+  <g id="text_20">
+    <text x="30" y="214.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">n-butane feed</text>
+  </g>
+  <g id="text_21">
+    <text x="796.27" y="214.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">isobutane product</text>
+  </g>
+  <g id="text_22">
+    <text x="392.3" y="344.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">unreacted n-butane</text>
+  </g>
+  <g id="text_23">
+    <text x="127.22" y="134.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">in 100 + 300 = out 400 kmol/h</text>
+  </g>
+  <g id="text_24">
+    <text x="382.67" y="134.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">in 400 = out 400 kmol/h</text>
+  </g>
+  <g id="text_25">
+    <text x="607.22" y="134.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">in 400 = out 100 + 300 kmol/h</text>
+  </g>
+  <g id="text_26">
+    <text x="70" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">No.</text>
+  </g>
+  <g id="text_27">
+    <text x="120" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Stream</text>
+  </g>
+  <g id="text_28">
+    <text x="290" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">n-butane, kmol/h</text>
+  </g>
+  <g id="text_29">
+    <text x="410" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">isobutane, kmol/h</text>
+  </g>
+  <g id="text_30">
+    <text x="540" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">total, kmol/h</text>
+  </g>
+  <g id="text_31">
+    <text x="660" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">mass, kg/h</text>
+  </g>
+  <g id="text_32">
+    <text x="790" y="404.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">n-C4 mol %</text>
+  </g>
+  <g id="text_34">
+    <text x="70" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_35">
+    <text x="120" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Fresh feed</text>
+  </g>
+  <g id="text_36">
+    <text x="290" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_37">
+    <text x="410" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_38">
+    <text x="540" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_39">
+    <text x="660" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">5,812</text>
+  </g>
+  <g id="text_40">
+    <text x="790" y="434.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_41">
+    <text x="70" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">2</text>
+  </g>
+  <g id="text_42">
+    <text x="120" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Reactor feed</text>
+  </g>
+  <g id="text_43">
+    <text x="290" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">400</text>
+  </g>
+  <g id="text_44">
+    <text x="410" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_45">
+    <text x="540" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">400</text>
+  </g>
+  <g id="text_46">
+    <text x="660" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">23,248</text>
+  </g>
+  <g id="text_47">
+    <text x="790" y="458.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_48">
+    <text x="70" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">3</text>
+  </g>
+  <g id="text_49">
+    <text x="120" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Reactor effluent</text>
+  </g>
+  <g id="text_50">
+    <text x="290" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">300</text>
+  </g>
+  <g id="text_51">
+    <text x="410" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_52">
+    <text x="540" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">400</text>
+  </g>
+  <g id="text_53">
+    <text x="660" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">23,248</text>
+  </g>
+  <g id="text_54">
+    <text x="790" y="482.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">75</text>
+  </g>
+  <g id="text_55">
+    <text x="70" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">4</text>
+  </g>
+  <g id="text_56">
+    <text x="120" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Product</text>
+  </g>
+  <g id="text_57">
+    <text x="290" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_58">
+    <text x="410" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_59">
+    <text x="540" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_60">
+    <text x="660" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">5,812</text>
+  </g>
+  <g id="text_61">
+    <text x="790" y="506.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_62">
+    <text x="70" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">5</text>
+  </g>
+  <g id="text_63">
+    <text x="120" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Recycle</text>
+  </g>
+  <g id="text_64">
+    <text x="290" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">300</text>
+  </g>
+  <g id="text_65">
+    <text x="410" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_66">
+    <text x="540" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">300</text>
+  </g>
+  <g id="text_67">
+    <text x="660" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">17,436</text>
+  </g>
+  <g id="text_68">
+    <text x="790" y="530.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">100</text>
+  </g>
+  <g id="text_70">
+    <text x="70" y="575.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" text-anchor="start">Overall: in 100 kmol/h = out 100 kmol/h (5,812 kg/h). Recycle ratio R/F = 3; reactor feed = F/X = 400 kmol/h. M = 58.12 kg/kmol.</text>
+  </g>
+  <g id="caption_71">
+    <text x="24.1" y="621.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 5:</text>
+    <text x="98.28" y="621.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="807.62" lengthAdjust="spacingAndGlyphs"> BLOCK FLOW DIAGRAM OF AN ISOMERISATION LOOP WITH THE STREAM TABLE THAT CLOSES THE BALANCE</text>
+  </g>
+  <g id="polyline_33">
+    <path d="M 64 414 L 890 414" fill="none" stroke="#1A1A1A" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_69">
+    <path d="M 64 538 L 890 538" fill="none" stroke="#1A1A1A" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_10">
+    <path d="M 62 157 L 73 168 L 62 179 L 51 168 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 320 157 L 331 168 L 320 179 L 309 168 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 560 157 L 571 168 L 560 179 L 549 168 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_16">
+    <path d="M 840 157 L 851 168 L 840 179 L 829 168 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_18">
+    <path d="M 440 311 L 451 322 L 440 333 L 429 322 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_11">
+    <text x="59.22" y="171.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">1</text>
+  </g>
+  <g id="text_13">
+    <text x="317.22" y="171.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">2</text>
+  </g>
+  <g id="text_15">
+    <text x="557.22" y="171.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3</text>
+  </g>
+  <g id="text_17">
+    <text x="837.22" y="171.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">4</text>
+  </g>
+  <g id="text_19">
+    <text x="437.22" y="325.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5</text>
+  </g>
+</svg>

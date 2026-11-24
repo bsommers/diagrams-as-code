@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 983 746" width="983" height="746">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1A1A1A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrow-1A1A1A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrow-2F5F9E" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F5F9E"/>
+    </marker>
+    <marker id="arrow-2F5F9E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#2F5F9E"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 196.3 195 L 394.66 195" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 403.3 195 L 392.5 199.32 L 392.5 190.68 Z" fill="#1A1A1A" />
+  <path d="M 466.3 400 L 466.3 470 L 617.66 470" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 626.3 470 L 615.5 474.32 L 615.5 465.68 Z" fill="#1A1A1A" />
+  <path d="M 786.3 345 L 553.94 345" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 545.3 345 L 556.1 340.68 L 556.1 349.32 Z" fill="#1A1A1A" />
+  <path d="M 387.3 250 L 274.94 250" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 266.3 250 L 277.1 245.68 L 277.1 254.32 Z" fill="#1A1A1A" />
+  <path d="M 552.3 110 L 706.3 110 L 706.3 146.8" fill="none" stroke="#2F5F9E" stroke-width="1.2" stroke-dasharray="5,5" />
+  <path d="M 706.3 154 L 702.7 145 L 709.9 145 Z" fill="#2F5F9E" />
+  <path d="M 706.3 186 L 706.3 304.8" fill="none" stroke="#2F5F9E" stroke-width="1.2" stroke-dasharray="5,5" />
+  <path d="M 706.3 312 L 702.7 303 L 709.9 303 Z" fill="#2F5F9E" />
+  <g id="polygon_1">
+    <path d="M 545.3 235 L 545.3 361 L 544.62 367.4 L 542.61 373.68 L 539.28 379.75 L 534.71 385.5 L 528.97 390.83 L 522.16 395.65 L 514.39 399.87 L 505.8 403.44 L 496.53 406.27 L 486.74 408.33 L 476.61 409.58 L 466.3 410 L 455.99 409.58 L 445.85 408.33 L 436.07 406.27 L 426.8 403.44 L 418.21 399.87 L 410.44 395.65 L 403.62 390.83 L 397.88 385.5 L 393.31 379.75 L 389.99 373.68 L 387.97 367.4 L 387.3 361 L 387.3 235 Z" fill="#DCEBF7" stroke="#1A1A1A" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="282.27" y="403.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">R-201</text>
+    <text x="282.27" y="419.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Jacketed CSTR</text>
+  </g>
+  <g id="text_8">
+    <text x="338.44" y="296.91" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="338.44" dy="0">cooling</tspan> <tspan x="338.44" dy="13.75">jacket</tspan></text>
+  </g>
+  <g id="text_11">
+    <text x="196.3" y="179.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Feed A, 70 °C</text>
+  </g>
+  <g id="text_12">
+    <text x="196.3" y="220.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">6 m³/h, 2 kmol/m³</text>
+  </g>
+  <g id="text_15">
+    <text x="632.3" y="473.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Product A + B, 80 °C</text>
+  </g>
+  <g id="text_16">
+    <text x="632.3" y="491.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">conversion X = 0.67</text>
+  </g>
+  <g id="text_22">
+    <text x="673.68" y="370.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Cooling water in, 25 °C</text>
+  </g>
+  <g id="text_23">
+    <text x="720.3" y="302.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">TV-201</text>
+    <text x="720.3" y="318.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">fail open</text>
+  </g>
+  <g id="text_26">
+    <text x="266.3" y="272.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">CW out, 35 °C</text>
+  </g>
+  <g id="text_39">
+    <text x="728.3" y="173.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">SP = 80 °C</text>
+  </g>
+  <g id="text_40">
+    <text x="196.3" y="543.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Steady-state basis</text>
+    <text x="196.3" y="561.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="136.04" lengthAdjust="spacingAndGlyphs">V = 2 m³, q = 0.1 m³/min, </text>
+    <path d="M131 70C131 24 151 -8 196 -8C264 -8 305 25 341 73L327 89C310 76 290 62 252 62C218 62 211 92 211 122C211 170 216 218 270 388C311 387 338 386 354 386C424 386 456 428 465 459L463 473C432 470 399 468 364 468C323 468 275 472 227 472C142 472 73 442 30 354L52 339C86 380 106 391 173 391C188 392 202 391 220 390C223 390 225 390 228 390C172 249 131 138 131 70Z" transform="translate(332.34 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(341.24 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M277 125H272L265 242L235 527C235 534 232 556 232 563C229 608 261 627 312 627L315 657H70L68 627C121 627 138 603 146 536L202 -5H235L602 520C663 611 683 627 737 627L739 657H523L521 627C566 627 581 621 581 601C581 585 568 562 550 535Z" transform="translate(353.22 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M351 709H296L35 -89H91Z" transform="translate(360.9 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M496 472H448L409 434H405C387 456 353 479 299 479C168 479 41 346 41 164C41 65 79 -12 158 -12C167 -12 260 -11 331 85H338L267 -220H443L448 -192C389 -192 376 -175 376 -140C376 -123 379 -109 379 -109ZM381 344C381 309 369 229 348 173C322 103 279 54 209 54C149 54 130 90 130 167C130 311 197 441 292 441C342 441 381 406 381 344Z" transform="translate(365.53 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(375.06 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(387.04 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(392.98 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="398.92" y="561.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="88.37" lengthAdjust="spacingAndGlyphs"> min, k = 0.1 min</text>
+    <path d="M658 225V293H62V225Z" transform="translate(487.64 556.81) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(493.69 556.81) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="498.33" y="561.13" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="6.67" lengthAdjust="spacingAndGlyphs">, </text>
+    <path d="M591 0 597 29C548 30 530 41 508 89L379 358L554 538C625 611 648 625 712 627L717 657H488L483 627C528 627 537 620 537 605C537 592 519 569 496 542L362 394H359L323 488C303 539 284 575 284 595C284 619 307 627 344 627H355L361 657H94L88 627C156 627 166 612 199 542L296 330L82 108C21 45 2 31 -50 29L-55 0H165L171 29C121 29 111 38 111 55C111 70 142 104 158 121L315 291H318L336 239L380 142C396 105 402 81 402 64C402 36 379 29 338 29H328L322 0Z" transform="translate(505 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(515.97 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M256 705H234L96 694V668C96 668 115 670 127 670C152 670 162 661 162 638C162 625 159 608 159 608L41 0H123L158 184L216 235L285 68C300 32 318 -10 369 -10C446 -10 497 83 507 102L486 116C464 85 441 58 407 58C377 58 367 79 353 112L279 284L390 382C423 412 454 440 522 442L525 467H310L307 442C331 442 352 437 352 416C352 402 342 391 328 379L172 238H167Z" transform="translate(527.95 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M131 70C131 24 151 -8 196 -8C264 -8 305 25 341 73L327 89C310 76 290 62 252 62C218 62 211 92 211 122C211 170 216 218 270 388C311 387 338 386 354 386C424 386 456 428 465 459L463 473C432 470 399 468 364 468C323 468 275 472 227 472C142 472 73 442 30 354L52 339C86 380 106 391 173 391C188 392 202 391 220 390C223 390 225 390 228 390C172 249 131 138 131 70Z" transform="translate(534.34 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M351 709H296L35 -89H91Z" transform="translate(539.91 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(544.54 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(548.83 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 225V293H396V558H324V293H62V225H324V-40H396V225Z" transform="translate(557.43 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M256 705H234L96 694V668C96 668 115 670 127 670C152 670 162 661 162 638C162 625 159 608 159 608L41 0H123L158 184L216 235L285 68C300 32 318 -10 369 -10C446 -10 497 83 507 102L486 116C464 85 441 58 407 58C377 58 367 79 353 112L279 284L390 382C423 412 454 440 522 442L525 467H310L307 442C331 442 352 437 352 416C352 402 342 391 328 379L172 238H167Z" transform="translate(568.74 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M131 70C131 24 151 -8 196 -8C264 -8 305 25 341 73L327 89C310 76 290 62 252 62C218 62 211 92 211 122C211 170 216 218 270 388C311 387 338 386 354 386C424 386 456 428 465 459L463 473C432 470 399 468 364 468C323 468 275 472 227 472C142 472 73 442 30 354L52 339C86 380 106 391 173 391C188 392 202 391 220 390C223 390 225 390 228 390C172 249 131 138 131 70Z" transform="translate(575.14 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(580.71 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(588.32 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(600.3 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M183 50C183 84 161 114 122 114C85 114 62 85 62 51C62 17 81 -8 121 -8C161 -8 183 19 183 50Z" transform="translate(606.24 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(609.18 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M415 646C200 637 45 498 45 257C45 110 110 -12 259 -12C385 -12 457 67 457 203C457 334 386 413 277 413C225 413 188 391 147 351L140 352C165 498 277 596 417 617ZM370 195C370 68 330 23 263 23C176 23 135 112 135 236C135 323 189 355 247 355C330 355 370 285 370 195Z" transform="translate(615.12 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(621.06 561.13) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="196.3" y="579.07" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="302.81" lengthAdjust="spacingAndGlyphs">Reaction heat 133 kW, feed warm-up 67 kW, jacket duty </text>
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(499.1 579.07) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M214 49C203 -11 167 -192 116 -192C77 -192 105 -104 49 -104C21 -104 9 -129 9 -150C9 -188 35 -225 99 -225C236 -225 287 -8 304 88L374 476H352L212 465V438C212 438 229 440 246 440C273 440 278 424 278 411C278 394 275 380 275 380ZM400 610C400 642 379 665 346 665C313 665 292 644 292 610C292 575 313 557 346 557C379 557 400 576 400 610Z" transform="translate(507.95 582.11) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="512.05" y="579.07" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="177.09" lengthAdjust="spacingAndGlyphs"> = 67 kW, cooling water 1.59 kg/s</text>
+  </g>
+  <g id="text_41">
+    <path d="M685 409C685 545 610 669 432 669C219 669 60 492 60 252C61 82 145 1 301 -8L316 -51C348 -136 410 -173 564 -173H614L619 -145C476 -145 436 -60 396 0V3C555 39 685 176 685 409ZM583 415C583 187 485 31 324 31C206 31 163 115 163 243C162 484 283 626 417 626C533 626 583 539 583 415Z" transform="translate(196.3 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M214 49C203 -11 167 -192 116 -192C77 -192 105 -104 49 -104C21 -104 9 -129 9 -150C9 -188 35 -225 99 -225C236 -225 287 -8 304 88L374 476H352L212 465V438C212 438 229 440 246 440C273 440 278 424 278 411C278 394 275 380 275 380ZM400 610C400 642 379 665 346 665C313 665 292 644 292 610C292 575 313 557 346 557C379 557 400 576 400 610Z" transform="translate(206.62 616.65) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(215.29 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(229.26 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(234.26 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M629 0V28L355 662H317L28 28V0ZM495 80H108L310 539H314Z" transform="translate(244.34 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M275 525C293 603 296 627 388 627L393 657H118L112 627C199 627 203 605 186 525L104 131C86 42 72 30 -7 30L-13 0H261L267 30C185 30 176 43 195 131L233 318H556L517 131C499 44 493 30 415 30L410 0H674L680 30C595 30 590 45 608 131L689 525C706 604 710 627 799 627L805 657H537L531 627C620 627 616 603 599 525L564 357H240Z" transform="translate(253.67 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(264.69 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(269.29 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M607 494 634 657H118L112 627C193 627 204 613 190 544L101 116C86 42 62 30 -7 30L-13 0H275L280 30C218 30 186 37 186 72C186 81 187 93 190 106L233 320H341C427 320 443 309 427 224H460L506 457H474C457 377 436 358 351 358H240L294 618H444C574 618 578 589 577 494Z" transform="translate(276.62 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M642 0 648 30C588 30 574 53 561 119L482 661H440L94 160C19 46 0 30 -55 30L-62 0H147L154 30C110 30 96 36 96 57C96 76 107 94 121 113L191 219H449L459 129C460 117 461 103 461 87C461 37 430 30 381 30L375 0ZM445 259H215L409 548H412Z" transform="translate(285.2 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(291.88 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M591 0 597 29C548 30 530 41 508 89L379 358L554 538C625 611 648 625 712 627L717 657H488L483 627C528 627 537 620 537 605C537 592 519 569 496 542L362 394H359L323 488C303 539 284 575 284 595C284 619 307 627 344 627H355L361 657H94L88 627C156 627 166 612 199 542L296 330L82 108C21 45 2 31 -50 29L-55 0H165L171 29C121 29 111 38 111 55C111 70 142 104 158 121L315 291H318L336 239L380 142C396 105 402 81 402 64C402 36 379 29 338 29H328L322 0Z" transform="translate(299.62 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(311.65 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M496 472H448L409 434H405C387 456 353 479 299 479C168 479 41 346 41 164C41 65 79 -12 158 -12C167 -12 260 -11 331 85H338L267 -220H443L448 -192C389 -192 376 -175 376 -140C376 -123 379 -109 379 -109ZM381 344C381 309 369 229 348 173C322 103 279 54 209 54C149 54 130 90 130 167C130 311 197 441 292 441C342 441 381 406 381 344Z" transform="translate(324.84 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M122 104H130C143 54 175 -11 249 -11C387 -11 495 133 495 307C496 432 433 481 362 481C213 481 124 383 71 141C48 42 27 -80 -5 -213L8 -216C100 -216 103 -155 109 -45C111 -3 114 47 122 104ZM147 191C148 333 259 395 338 395C390 395 446 371 446 273C446 148 355 71 254 71C194 71 147 103 147 191Z" transform="translate(334.41 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M358 123C327 85 288 57 219 57C161 57 109 77 109 184C109 300 170 446 280 446C312 446 329 434 329 419C329 403 310 375 310 349C310 327 324 314 348 314C385 314 404 346 404 386C404 451 353 479 290 479C146 479 26 335 26 169C26 68 71 -12 179 -12C269 -12 334 44 375 108Z" transform="translate(342.07 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M275 -220 282 -193C202 -193 181 -166 181 -143C181 -129 183 -111 185 -101L209 15C229 3 268 -11 300 -11C456 -11 572 119 572 307C572 423 510 479 432 479C380 479 338 451 290 397H285L299 474H280L137 459V434C137 434 154 436 169 436C195 436 206 427 206 407C206 400 205 394 204 388L77 -220ZM272 311C300 370 340 423 404 423C434 423 484 402 484 307C484 131 415 32 308 32C266 32 238 49 221 64Z" transform="translate(348.29 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M45 270C45 47 150 -112 311 -196L327 -170C181 -71 127 66 127 270C127 474 181 611 327 710L311 736C150 652 45 493 45 270Z" transform="translate(357.04 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M628 484 658 657H121L80 484H112C156 593 167 618 278 618H335L236 131C217 40 203 30 119 30L113 0H398L404 30C319 30 307 40 326 131L425 618H482C593 618 597 593 597 484Z" transform="translate(362.04 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M658 225V293H62V225Z" transform="translate(373.69 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M628 484 658 657H121L80 484H112C156 593 167 618 278 618H335L236 131C217 40 203 30 119 30L113 0H398L404 30C319 30 307 40 326 131L425 618H482C593 618 597 593 597 484Z" transform="translate(386.88 613.1) scale(0.014 -0.014)" fill="#000000"/>
+    <path d="M26 468V426H102V119C102 41 91 29 18 29V0H287V29C204 29 185 41 185 119V426H307V468H185V562C185 646 196 676 233 676C283 676 288 600 338 600C361 600 379 614 379 643C379 688 332 713 267 713C197 713 161 686 134 640C108 594 102 549 102 468Z" transform="translate(395.84 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M415 143C383 101 352 65 271 65C191 65 115 128 115 266H431C426 406 354 485 245 485C128 485 34 405 34 238C34 77 127 -10 247 -10C350 -10 398 53 434 129ZM114 303C122 396 162 445 230 445C301 445 334 377 337 303Z" transform="translate(398.85 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M415 143C383 101 352 65 271 65C191 65 115 128 115 266H431C426 406 354 485 245 485C128 485 34 405 34 238C34 77 127 -10 247 -10C350 -10 398 53 434 129ZM114 303C122 396 162 445 230 445C301 445 334 377 337 303Z" transform="translate(403.4 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M514 18V45H493C456 45 443 55 443 107V706H416L290 671V643C290 643 307 645 316 645C355 645 360 636 360 592V461C329 478 296 485 263 485C137 485 33 384 33 219C33 91 91 -8 204 -8C270 -8 321 30 359 64H363V-5H386ZM360 101C325 77 298 64 251 64C166 64 120 120 120 258C120 384 177 445 261 445C323 445 352 406 360 365Z" transform="translate(407.94 616.04) scale(0.0098 -0.0098)" fill="#000000"/>
+    <path d="M312 270C312 493 207 652 46 736L30 710C176 611 230 474 230 270C230 66 176 -71 30 -170L46 -196C207 -112 312 47 312 270Z" transform="translate(413.78 613.1) scale(0.014 -0.014)" fill="#000000"/>
+  </g>
+  <g id="caption_42">
+    <text x="60" y="661.39" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 3:</text>
+    <text x="134.17" y="661.39" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="788.42" lengthAdjust="spacingAndGlyphs"> JACKETED CSTR WITH A FEEDBACK TEMPERATURE LOOP THAT THROTTLES THE COOLING-WATER VALVE</text>
+  </g>
+  <g id="polygon_2">
+    <path d="M 531.3 189 L 530.74 183.91 L 529.08 178.91 L 526.35 174.08 L 522.59 169.5 L 517.87 165.26 L 512.26 161.42 L 505.87 158.06 L 498.8 155.23 L 491.17 152.97 L 483.12 151.33 L 474.78 150.33 L 466.3 150 L 457.81 150.33 L 449.47 151.33 L 441.42 152.97 L 433.8 155.23 L 426.73 158.06 L 420.34 161.42 L 414.73 165.26 L 410.01 169.5 L 406.25 174.08 L 403.51 178.91 L 401.85 183.91 L 401.3 189 L 401.3 361 L 401.85 366.09 L 403.51 371.09 L 406.25 375.92 L 410.01 380.5 L 414.73 384.74 L 420.34 388.58 L 426.73 391.94 L 433.8 394.77 L 441.42 397.03 L 449.47 398.67 L 457.81 399.67 L 466.3 400 L 474.78 399.67 L 483.12 398.67 L 491.17 397.03 L 498.8 394.77 L 505.87 391.94 L 512.26 388.58 L 517.87 384.74 L 522.59 380.5 L 526.35 375.92 L 529.08 371.09 L 530.74 366.09 L 531.3 361 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 479.3 96 L 479.05 98.54 L 478.31 100.97 L 477.11 103.22 L 475.49 105.19 L 473.52 106.81 L 471.27 108.01 L 468.83 108.75 L 466.3 109 L 463.76 108.75 L 461.32 108.01 L 459.08 106.81 L 457.11 105.19 L 455.49 103.22 L 454.29 100.97 L 453.55 98.54 L 453.3 96 L 453.55 93.46 L 454.29 91.03 L 455.49 88.78 L 457.11 86.81 L 459.08 85.19 L 461.32 83.99 L 463.76 83.25 L 466.3 83 L 468.83 83.25 L 471.27 83.99 L 473.52 85.19 L 475.49 86.81 L 477.11 88.78 L 478.31 91.03 L 479.05 93.46 L 479.3 96 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_19">
+    <path d="M 706.3 345 L 706.3 328.5" fill="none" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_28">
+    <path d="M 552.3 110 L 551.99 113.12 L 551.08 116.12 L 549.6 118.89 L 547.61 121.31 L 545.19 123.3 L 542.42 124.78 L 539.42 125.69 L 536.3 126 L 533.18 125.69 L 530.17 124.78 L 527.41 123.3 L 524.98 121.31 L 522.99 118.89 L 521.52 116.12 L 520.61 113.12 L 520.3 110 L 520.61 106.88 L 521.52 103.88 L 522.99 101.11 L 524.98 98.69 L 527.41 96.7 L 530.17 95.22 L 533.18 94.31 L 536.3 94 L 539.42 94.31 L 542.42 95.22 L 545.19 96.7 L 547.61 98.69 L 549.6 101.11 L 551.08 103.88 L 551.99 106.88 L 552.3 110 Z" fill="#FFFFFF" stroke="#2F5F9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_31">
+    <path d="M 722.3 170 L 721.99 173.12 L 721.08 176.12 L 719.6 178.89 L 717.61 181.31 L 715.19 183.3 L 712.42 184.78 L 709.42 185.69 L 706.3 186 L 703.18 185.69 L 700.17 184.78 L 697.41 183.3 L 694.98 181.31 L 692.99 178.89 L 691.52 176.12 L 690.61 173.12 L 690.3 170 L 690.61 166.88 L 691.52 163.88 L 692.99 161.11 L 694.98 158.69 L 697.41 156.7 L 700.17 155.22 L 703.18 154.31 L 706.3 154 L 709.42 154.31 L 712.42 155.22 L 715.19 156.7 L 717.61 158.69 L 719.6 161.11 L 721.08 163.88 L 721.99 166.88 L 722.3 170 Z" fill="#FFFFFF" stroke="#2F5F9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_3">
+    <path d="M 466.3 108 L 466.3 330" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_4">
+    <path d="M 434.3 330 L 498.3 330" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_20">
+    <path d="M 696.4 328.5 L 696.73 326.22 L 697.72 324.1 L 699.3 322.28 L 701.35 320.88 L 703.74 320 L 706.3 319.7 L 708.86 320 L 711.25 320.88 L 713.3 322.28 L 714.87 324.1 L 715.86 326.22 L 716.2 328.5 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 695.3 338.18 L 717.3 351.82 L 717.3 338.18 L 695.3 351.82 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_27">
+    <path d="M 496.3 270 L 496.3 110 L 520.3 110" fill="none" stroke="#1A1A1A" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_32">
+    <path d="M 690.3 170 L 722.3 170" fill="none" stroke="#2F5F9E" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_6">
+    <text x="461.72" y="99.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">M</text>
+  </g>
+  <g id="text_29">
+    <text x="530.19" y="105.69" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">TT</text>
+  </g>
+  <g id="text_30">
+    <text x="527.96" y="121.19" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">201</text>
+  </g>
+  <g id="text_33">
+    <text x="698.24" y="165.69" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">TIC</text>
+  </g>
+  <g id="text_34">
+    <text x="697.96" y="181.19" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">201</text>
+  </g>
+</svg>

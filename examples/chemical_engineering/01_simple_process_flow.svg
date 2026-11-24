@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1014 726" width="1014" height="726">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1A1A1A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrow-1A1A1A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrow-2F5F9E" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F5F9E"/>
+    </marker>
+    <marker id="arrow-2F5F9E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#2F5F9E"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 20 330 L 63.36 330" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 72 330 L 61.2 334.32 L 61.2 325.68 Z" fill="#1A1A1A" />
+  <path d="M 150 380 L 232 380" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 267 380 L 358 380" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 402 380 L 481.36 380" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 490 380 L 479.2 384.32 L 479.2 375.68 Z" fill="#1A1A1A" />
+  <path d="M 380 270 L 380 349.36" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 380 358 L 375.68 347.2 L 384.32 347.2 Z" fill="#1A1A1A" />
+  <path d="M 380 402 L 380 461.36" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 380 470 L 375.68 459.2 L 384.32 459.2 Z" fill="#1A1A1A" />
+  <path d="M 620 200 L 620 146" fill="none" stroke="#2F5F9E" stroke-width="1.2" stroke-dasharray="5,5" />
+  <path d="M 636 130 L 690 130 L 690 166.8" fill="none" stroke="#2F5F9E" stroke-width="1.2" stroke-dasharray="5,5" />
+  <path d="M 690 174 L 686.4 165 L 693.6 165 Z" fill="#2F5F9E" />
+  <path d="M 790 270 L 790 220" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 790 440 L 790 480 L 871.36 480" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 880 480 L 869.2 484.32 L 869.2 475.68 Z" fill="#1A1A1A" />
+  <path d="M 835 340 L 881.36 340" fill="none" stroke="#1A1A1A" stroke-width="1.8" />
+  <path d="M 890 340 L 879.2 344.32 L 879.2 335.68 Z" fill="#1A1A1A" />
+  <g id="text_2">
+    <text x="83.32" y="431.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">T-101</text>
+    <text x="83.32" y="447.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Feed tank</text>
+  </g>
+  <g id="text_5">
+    <text x="22" y="356.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Feed</text>
+  </g>
+  <g id="text_10">
+    <text x="219.65" y="416.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">P-101</text>
+    <text x="219.65" y="432.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Feed pump</text>
+  </g>
+  <g id="text_21">
+    <text x="341.18" y="258.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">LP steam, 4 bar</text>
+  </g>
+  <g id="text_22">
+    <text x="351.56" y="488.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">condensate</text>
+  </g>
+  <g id="text_23">
+    <text x="285.95" y="311.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">E-101</text>
+    <text x="285.95" y="327.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Feed preheater</text>
+  </g>
+  <g id="text_28">
+    <text x="525.42" y="253.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">M</text>
+  </g>
+  <g id="text_29">
+    <text x="491.99" y="473.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">R-101</text>
+    <text x="491.99" y="489.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Stirred reactor</text>
+  </g>
+  <g id="polyline_30">
+    <path d="M 560 297 L 560 200 L 690 200" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_31">
+    <path d="M 690 200 L 790 200 L 790 300" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_35">
+    <text x="706" y="185.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">PV-101</text>
+  </g>
+  <g id="text_45">
+    <text x="654.63" y="411.93" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">V-101</text>
+    <text x="654.63" y="427.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Flash separator</text>
+  </g>
+  <g id="text_50">
+    <text x="886" y="484.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Liquid product</text>
+  </g>
+  <g id="text_53">
+    <text x="896" y="344.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Vapour product</text>
+  </g>
+  <g id="text_66">
+    <text x="172.88" y="406.66" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="172.88" dy="0">25 °C</tspan> <tspan x="172.88" dy="13.75">1.5 bar</tspan></text>
+  </g>
+  <g id="text_67">
+    <text x="428.12" y="406.66" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="428.12" dy="0">150 °C</tspan> <tspan x="428.12" dy="13.75">10 bar</tspan></text>
+  </g>
+  <g id="text_68">
+    <text x="707.53" y="228.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">150 °C, 2 bar</text>
+  </g>
+  <g id="text_69">
+    <text x="60" y="552.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Key</text>
+  </g>
+  <g id="text_72">
+    <text x="100" y="587.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">pump</text>
+  </g>
+  <g id="text_74">
+    <text x="218" y="587.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">valve</text>
+  </g>
+  <g id="text_77">
+    <text x="352" y="587.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">exchanger (tubes as zigzag)</text>
+  </g>
+  <g id="text_82">
+    <text x="600" y="587.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">control-room instrument, dashed = signal</text>
+  </g>
+  <g id="text_85">
+    <text x="916" y="587.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">stream number</text>
+  </g>
+  <g id="caption_86">
+    <text x="114.1" y="641.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="188.27" y="641.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="707.6" lengthAdjust="spacingAndGlyphs"> SIMPLE PROCESS FLOW DIAGRAM WITH FEED PREHEATER, REACTOR AND FLASH SEPARATOR</text>
+  </g>
+  <g id="polygon_1">
+    <path d="M 150 314 L 149.66 310.87 L 148.64 307.79 L 146.96 304.82 L 144.64 302 L 141.73 299.39 L 138.28 297.03 L 134.35 294.96 L 130 293.22 L 125.31 291.83 L 120.35 290.82 L 115.22 290.21 L 110 290 L 104.78 290.21 L 99.65 290.82 L 94.69 291.83 L 90 293.22 L 85.65 294.96 L 81.72 297.03 L 78.27 299.39 L 75.36 302 L 73.04 304.82 L 71.36 307.79 L 70.34 310.87 L 70 314 L 70 386 L 70.34 389.13 L 71.36 392.21 L 73.04 395.18 L 75.36 398 L 78.27 400.61 L 81.72 402.97 L 85.65 405.04 L 90 406.78 L 94.69 408.17 L 99.65 409.18 L 104.78 409.79 L 110 410 L 115.22 409.79 L 120.35 409.18 L 125.31 408.17 L 130 406.78 L 134.35 405.04 L 138.28 402.97 L 141.73 400.61 L 144.64 398 L 146.96 395.18 L 148.64 392.21 L 149.66 389.13 L 150 386 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_8">
+    <path d="M 267 380 L 266.67 383.32 L 265.71 386.51 L 264.13 389.44 L 262.02 392.02 L 259.44 394.13 L 256.51 395.71 L 253.32 396.67 L 250 397 L 246.68 396.67 L 243.49 395.71 L 240.56 394.13 L 237.98 392.02 L 235.87 389.44 L 234.29 386.51 L 233.33 383.32 L 233 380 L 233.33 376.68 L 234.29 373.49 L 235.87 370.56 L 237.98 367.98 L 240.56 365.87 L 243.49 364.29 L 246.68 363.33 L 250 363 L 253.32 363.33 L 256.51 364.29 L 259.44 365.87 L 262.02 367.98 L 264.13 370.56 L 265.71 373.49 L 266.67 376.68 L 267 380 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 402 380 L 401.58 384.29 L 400.33 388.42 L 398.29 392.22 L 395.56 395.56 L 392.22 398.29 L 388.42 400.33 L 384.29 401.58 L 380 402 L 375.71 401.58 L 371.58 400.33 L 367.78 398.29 L 364.44 395.56 L 361.71 392.22 L 359.67 388.42 L 358.42 384.29 L 358 380 L 358.42 375.71 L 359.67 371.58 L 361.71 367.78 L 364.44 364.44 L 367.78 361.71 L 371.58 359.67 L 375.71 358.42 L 380 358 L 384.29 358.42 L 388.42 359.67 L 392.22 361.71 L 395.56 364.44 L 398.29 367.78 L 400.33 371.58 L 401.58 375.71 L 402 380 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_24">
+    <path d="M 580 320 L 579.57 316.08 L 578.3 312.24 L 576.19 308.52 L 573.3 305 L 569.67 301.74 L 565.36 298.79 L 560.44 296.2 L 555 294.02 L 549.13 292.28 L 542.94 291.02 L 536.53 290.26 L 530 290 L 523.47 290.26 L 517.06 291.02 L 510.87 292.28 L 505 294.02 L 499.56 296.2 L 494.64 298.79 L 490.33 301.74 L 486.7 305 L 483.81 308.52 L 481.7 312.24 L 480.43 316.08 L 480 320 L 480 420 L 480.43 423.92 L 481.7 427.76 L 483.81 431.48 L 486.7 435 L 490.33 438.26 L 494.64 441.21 L 499.56 443.8 L 505 445.98 L 510.87 447.72 L 517.06 448.98 L 523.47 449.74 L 530 450 L 536.53 449.74 L 542.94 448.98 L 549.13 447.72 L 555 445.98 L 560.44 443.8 L 565.36 441.21 L 569.67 438.26 L 573.3 435 L 576.19 431.48 L 578.3 427.76 L 579.57 423.92 L 580 420 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_27">
+    <path d="M 542 250 L 541.77 252.34 L 541.09 254.59 L 539.98 256.67 L 538.49 258.49 L 536.67 259.98 L 534.59 261.09 L 532.34 261.77 L 530 262 L 527.66 261.77 L 525.41 261.09 L 523.33 259.98 L 521.51 258.49 L 520.02 256.67 L 518.91 254.59 L 518.23 252.34 L 518 250 L 518.23 247.66 L 518.91 245.41 L 520.02 243.33 L 521.51 241.51 L 523.33 240.02 L 525.41 238.91 L 527.66 238.23 L 530 238 L 532.34 238.23 L 534.59 238.91 L 536.67 240.02 L 538.49 241.51 L 539.98 243.33 L 541.09 245.41 L 541.77 247.66 L 542 250 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_32">
+    <path d="M 690 200 L 690 183.5" fill="none" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_36">
+    <path d="M 636 130 L 635.69 133.12 L 634.78 136.12 L 633.3 138.89 L 631.31 141.31 L 628.89 143.3 L 626.12 144.78 L 623.12 145.69 L 620 146 L 616.88 145.69 L 613.88 144.78 L 611.11 143.3 L 608.69 141.31 L 606.7 138.89 L 605.22 136.12 L 604.31 133.12 L 604 130 L 604.31 126.88 L 605.22 123.88 L 606.7 121.11 L 608.69 118.69 L 611.11 116.7 L 613.88 115.22 L 616.88 114.31 L 620 114 L 623.12 114.31 L 626.12 115.22 L 628.89 116.7 L 631.31 118.69 L 633.3 121.11 L 634.78 123.88 L 635.69 126.88 L 636 130 Z" fill="#FFFFFF" stroke="#2F5F9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_44">
+    <path d="M 835 327 L 834.62 323.48 L 833.47 320.01 L 831.57 316.67 L 828.97 313.5 L 825.7 310.56 L 821.82 307.91 L 817.39 305.58 L 812.5 303.62 L 807.22 302.06 L 801.65 300.92 L 795.87 300.23 L 790 300 L 784.13 300.23 L 778.35 300.92 L 772.78 302.06 L 767.5 303.62 L 762.61 305.58 L 758.18 307.91 L 754.3 310.56 L 751.03 313.5 L 748.43 316.67 L 746.53 320.01 L 745.38 323.48 L 745 327 L 745 413 L 745.38 416.52 L 746.53 419.99 L 748.43 423.33 L 751.03 426.5 L 754.3 429.44 L 758.18 432.09 L 762.61 434.42 L 767.5 436.38 L 772.78 437.94 L 778.35 439.08 L 784.13 439.77 L 790 440 L 795.87 439.77 L 801.65 439.08 L 807.22 437.94 L 812.5 436.38 L 817.39 434.42 L 821.82 432.09 L 825.7 429.44 L 828.97 426.5 L 831.57 423.33 L 833.47 419.99 L 834.62 416.52 L 835 413 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_70">
+    <path d="M 92 584 L 91.77 586.34 L 91.09 588.59 L 89.98 590.67 L 88.49 592.49 L 86.67 593.98 L 84.59 595.09 L 82.34 595.77 L 80 596 L 77.66 595.77 L 75.41 595.09 L 73.33 593.98 L 71.51 592.49 L 70.02 590.67 L 68.91 588.59 L 68.23 586.34 L 68 584 L 68.23 581.66 L 68.91 579.41 L 70.02 577.33 L 71.51 575.51 L 73.33 574.02 L 75.41 572.91 L 77.66 572.23 L 80 572 L 82.34 572.23 L 84.59 572.91 L 86.67 574.02 L 88.49 575.51 L 89.98 577.33 L 91.09 579.41 L 91.77 581.66 L 92 584 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_75">
+    <path d="M 345 584 L 344.71 586.93 L 343.86 589.74 L 342.47 592.33 L 340.61 594.61 L 338.33 596.47 L 335.74 597.86 L 332.93 598.71 L 330 599 L 327.07 598.71 L 324.26 597.86 L 321.67 596.47 L 319.39 594.61 L 317.53 592.33 L 316.14 589.74 L 315.29 586.93 L 315 584 L 315.29 581.07 L 316.14 578.26 L 317.53 575.67 L 319.39 573.39 L 321.67 571.53 L 324.26 570.14 L 327.07 569.29 L 330 569 L 332.93 569.29 L 335.74 570.14 L 338.33 571.53 L 340.61 573.39 L 342.47 575.67 L 343.86 578.26 L 344.71 581.07 L 345 584 Z" fill="#EEF2F6" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_78">
+    <path d="M 594 584 L 593.73 586.73 L 592.93 589.36 L 591.64 591.78 L 589.9 593.9 L 587.78 595.64 L 585.36 596.93 L 582.73 597.73 L 580 598 L 577.27 597.73 L 574.64 596.93 L 572.22 595.64 L 570.1 593.9 L 568.36 591.78 L 567.07 589.36 L 566.27 586.73 L 566 584 L 566.27 581.27 L 567.07 578.64 L 568.36 576.22 L 570.1 574.1 L 572.22 572.36 L 574.64 571.07 L 577.27 570.27 L 580 570 L 582.73 570.27 L 585.36 571.07 L 587.78 572.36 L 589.9 574.1 L 591.64 576.22 L 592.93 578.64 L 593.73 581.27 L 594 584 Z" fill="#FFFFFF" stroke="#2F5F9E" stroke-width="1.3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_25">
+    <path d="M 530 262 L 530 380" fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_26">
+    <path d="M 512 380 L 548 380" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 680.1 183.5 L 680.44 181.22 L 681.43 179.1 L 683 177.28 L 685.05 175.88 L 687.44 175 L 690 174.7 L 692.56 175 L 694.95 175.88 L 697 177.28 L 698.57 179.1 L 699.56 181.22 L 699.9 183.5 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_34">
+    <path d="M 679 193.18 L 701 206.82 L 701 193.18 L 679 206.82 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_73">
+    <path d="M 191 578.42 L 209 589.58 L 209 578.42 L 191 589.58 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 242.35 369.46 L 261.9 380 L 242.35 390.54 Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_14">
+    <path d="M 358 380 L 366.36 369 L 371.64 391 L 376.92 369 L 382.2 391 L 387.48 369 L 392.76 391 L 402 380" fill="none" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_37">
+    <path d="M 604 130 L 636 130" fill="none" stroke="#2F5F9E" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_54">
+    <path d="M 50 297 L 61 308 L 50 319 L 39 308 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_56">
+    <path d="M 190 352 L 201 363 L 190 374 L 179 363 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_58">
+    <path d="M 445 352 L 456 363 L 445 374 L 434 363 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_60">
+    <path d="M 775 172 L 786 183 L 775 194 L 764 183 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_62">
+    <path d="M 862 312 L 873 323 L 862 334 L 851 323 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_64">
+    <path d="M 840 452 L 851 463 L 840 474 L 829 463 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_71">
+    <path d="M 74.6 576.56 L 88.4 584 L 74.6 591.44 Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_76">
+    <path d="M 315 584 L 320.7 576.5 L 324.3 591.5 L 327.9 576.5 L 331.5 591.5 L 335.1 576.5 L 338.7 591.5 L 345 584" fill="none" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_79">
+    <path d="M 566 584 L 594 584" fill="none" stroke="#2F5F9E" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_83">
+    <path d="M 900 573 L 911 584 L 900 595 L 889 584 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_38">
+    <text x="611.67" y="125.69" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">PIC</text>
+  </g>
+  <g id="text_39">
+    <text x="611.66" y="141.19" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">101</text>
+  </g>
+  <g id="text_55">
+    <text x="47.22" y="311.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">1</text>
+  </g>
+  <g id="text_57">
+    <text x="187.22" y="366.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">2</text>
+  </g>
+  <g id="text_59">
+    <text x="442.22" y="366.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3</text>
+  </g>
+  <g id="text_61">
+    <text x="772.22" y="186.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">4</text>
+  </g>
+  <g id="text_63">
+    <text x="859.22" y="326.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5</text>
+  </g>
+  <g id="text_65">
+    <text x="837.22" y="466.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">6</text>
+  </g>
+  <g id="text_80">
+    <text x="571.67" y="579.69" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">PIC</text>
+  </g>
+  <g id="text_81">
+    <text x="577.22" y="595.19" fill="#1F3F6E" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">1</text>
+  </g>
+  <g id="text_84">
+    <text x="897.22" y="587.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">n</text>
+  </g>
+</svg>
