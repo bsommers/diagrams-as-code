@@ -1,0 +1,319 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 805 728" width="805" height="728">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 349.32 242 L 402.68 242" fill="none" stroke="#000000" stroke-width="0.9" />
+  <path d="M 407 242 L 401.6 244.16 L 401.6 239.84 Z" fill="#000000" />
+  <path d="M 345 242 L 350.4 239.84 L 350.4 244.16 Z" fill="#000000" />
+  <path d="M 176.32 154 L 705.68 154" fill="none" stroke="#000000" stroke-width="0.9" />
+  <path d="M 710 154 L 704.6 156.16 L 704.6 151.84 Z" fill="#000000" />
+  <path d="M 172 154 L 177.4 151.84 L 177.4 156.16 Z" fill="#000000" />
+  <g id="path_1">
+    <path d="M 120 106 L 172 106 L 177 134 L 710 134 L 715 106 L 776 106 L 781 106" fill="none" stroke="#1F2F57" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_2">
+    <path d="M 120 214 L 221 214 L 226 186 L 252 186 L 257 214 L 283 214 L 288 186 L 314 186 L 319 214 L 345 214 L 350 186 L 376 186 L 381 214 L 407 214 L 412 186 L 438 186 L 443 214 L 469 214 L 474 186 L 500 186 L 505 214 L 531 214 L 536 186 L 562 186 L 567 214 L 593 214 L 598 186 L 624 186 L 629 214 L 655 214 L 660 186 L 686 186 L 691 214 L 776 214 L 781 214" fill="none" stroke="#1F2F57" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_3">
+    <path d="M 120 290 L 172 290 M 710 290 L 776 290" fill="none" stroke="#8A8F9C" stroke-width="1.6" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_4">
+    <path d="M 190 290 L 195 276 L 247 276 L 252 290 L 247 304 L 195 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_5">
+    <text x="217.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_6">
+    <path d="M 252 290 L 257 276 L 309 276 L 314 290 L 309 304 L 257 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_7">
+    <text x="279.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_8">
+    <path d="M 314 290 L 319 276 L 371 276 L 376 290 L 371 304 L 319 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_9">
+    <text x="341.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_10">
+    <path d="M 376 290 L 381 276 L 433 276 L 438 290 L 433 304 L 381 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_11">
+    <text x="403.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_12">
+    <path d="M 438 290 L 443 276 L 495 276 L 500 290 L 495 304 L 443 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_13">
+    <text x="465.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_14">
+    <path d="M 500 290 L 505 276 L 557 276 L 562 290 L 557 304 L 505 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_15">
+    <text x="527.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_16">
+    <path d="M 562 290 L 567 276 L 619 276 L 624 290 L 619 304 L 567 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <text x="589.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_18">
+    <path d="M 624 290 L 629 276 L 681 276 L 686 290 L 681 304 L 629 304 Z" fill="#EEF2FA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_19">
+    <text x="651.11" y="294.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="path_20">
+    <path d="M 120 370 L 172 370 M 710 370 L 776 370" fill="none" stroke="#8A8F9C" stroke-width="1.6" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 190 370 L 195 356 L 247 356 L 252 370 L 247 384 L 195 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_22">
+    <text x="217.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_23">
+    <path d="M 252 370 L 257 356 L 309 356 L 314 370 L 309 384 L 257 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_24">
+    <text x="279.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_25">
+    <path d="M 314 370 L 319 356 L 371 356 L 376 370 L 371 384 L 319 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_26">
+    <text x="341.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_27">
+    <path d="M 376 370 L 381 356 L 433 356 L 438 370 L 433 384 L 381 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_28">
+    <text x="403.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_29">
+    <path d="M 438 370 L 443 356 L 495 356 L 500 370 L 495 384 L 443 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_30">
+    <text x="465.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_31">
+    <path d="M 500 370 L 505 356 L 557 356 L 562 370 L 557 384 L 505 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_32">
+    <text x="527.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">1</text>
+  </g>
+  <g id="polygon_33">
+    <path d="M 562 370 L 567 356 L 619 356 L 624 370 L 619 384 L 567 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_34">
+    <text x="589.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="polygon_35">
+    <path d="M 624 370 L 629 356 L 681 356 L 686 370 L 681 384 L 629 384 Z" fill="#EAF3EC" stroke="#2F6B3A" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_36">
+    <text x="651.11" y="374.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">0</text>
+  </g>
+  <g id="text_37">
+    <text x="86.55" y="116.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">CS</text>
+  </g>
+  <g id="text_38">
+    <text x="57.7" y="133.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">active low</text>
+  </g>
+  <g id="text_39">
+    <text x="67.89" y="196.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">SCLK</text>
+  </g>
+  <g id="text_40">
+    <text x="14.59" y="213.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">CPOL = 0: idle low</text>
+  </g>
+  <g id="text_41">
+    <text x="70.22" y="286.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">MOSI</text>
+  </g>
+  <g id="text_42">
+    <text x="11.23" y="303.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">controller out: 0xA5</text>
+  </g>
+  <g id="text_43">
+    <text x="70.22" y="366.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">MISO</text>
+  </g>
+  <g id="text_44">
+    <text x="6.94" y="383.78" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">peripheral out: 0x3C</text>
+  </g>
+  <g id="text_45">
+    <text x="213.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D7</text>
+  </g>
+  <g id="text_46">
+    <text x="275.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D6</text>
+  </g>
+  <g id="text_47">
+    <text x="337.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D5</text>
+  </g>
+  <g id="text_48">
+    <text x="399.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D4</text>
+  </g>
+  <g id="text_49">
+    <text x="461.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D3</text>
+  </g>
+  <g id="text_50">
+    <text x="523.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D2</text>
+  </g>
+  <g id="text_51">
+    <text x="585.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D1</text>
+  </g>
+  <g id="text_52">
+    <text x="647.33" y="84.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">D0</text>
+  </g>
+  <g id="text_53">
+    <text x="413.67" y="66.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">MSB first</text>
+  </g>
+  <g id="path_54">
+    <path d="M 221 180 L 221 273 M 221 307 L 221 353 M 221 387 L 221 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_55">
+    <path d="M 283 180 L 283 273 M 283 307 L 283 353 M 283 387 L 283 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_56">
+    <path d="M 345 180 L 345 273 M 345 307 L 345 353 M 345 387 L 345 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_57">
+    <path d="M 407 180 L 407 273 M 407 307 L 407 353 M 407 387 L 407 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_58">
+    <path d="M 469 180 L 469 273 M 469 307 L 469 353 M 469 387 L 469 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_59">
+    <path d="M 531 180 L 531 273 M 531 307 L 531 353 M 531 387 L 531 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_60">
+    <path d="M 593 180 L 593 273 M 593 307 L 593 353 M 593 387 L 593 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_61">
+    <path d="M 655 180 L 655 273 M 655 307 L 655 353 M 655 387 L 655 398" fill="none" stroke="#9C2F2F" stroke-width="0.9" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="text_62">
+    <text x="162.3" y="418.13" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">sample on rising edge</text>
+  </g>
+  <g id="text_63">
+    <text x="237.27" y="436.13" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">data changes on falling edge</text>
+  </g>
+  <g id="text_66">
+    <path d="M628 484 658 657H121L80 484H112C156 593 167 618 278 618H335L236 131C217 40 203 30 119 30L113 0H398L404 30C319 30 307 40 326 131L425 618H482C593 618 597 593 597 484Z" transform="translate(344.26 257.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(351.94 260.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(356.43 260.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M541 195H509C447 79 426 38 299 38H252C193 38 178 48 187 92L278 540C293 612 325 627 397 627L402 657H118L112 627C198 627 203 607 189 541L103 124C86 44 70 30 -7 30L-13 0H481Z" transform="translate(361.94 260.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M104 131C86 45 76 30 -7 30L-13 0H266L272 30C183 30 178 45 195 131L231 309H243L306 233C391 130 415 91 415 59C415 36 397 30 367 30H354L349 0H637L643 30C594 30 563 41 537 73L316 353L574 561C635 610 655 622 712 627L717 657H482L475 627H492C515 627 529 619 529 604C529 574 490 542 432 495L241 338H237L275 525C291 603 300 627 395 627L400 657H118L112 627C200 627 202 603 186 525Z" transform="translate(366.72 260.15) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(376.03 257.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(388 257.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(395.94 257.63) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M39 164 42 -8H63L84 15H86C112 4 142 -11 200 -11C290 -11 368 25 368 119C368 193 319 230 228 278C144 321 111 346 111 385C111 430 146 451 192 451C253 451 290 422 312 327H339L336 480H316L299 459H298C273 471 243 485 193 485C107 485 40 441 40 359C40 285 81 250 172 204C265 158 284 139 284 92C284 45 248 26 198 26C124 26 86 61 65 164Z" transform="translate(403 257.63) scale(0.012 -0.012)" fill="#000000"/>
+  </g>
+  <g id="text_69">
+    <text x="332.42" y="169.21" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="111.05" lengthAdjust="spacingAndGlyphs">CS low for 8 bits = 8 </text>
+    <path d="M528 464 523 473 435 470C419 415 403 335 391 281C385 256 299 70 208 70C158 70 140 120 140 170C140 196 146 217 146 217L237 464L232 473L142 470C127 412 99 256 78 149C31 17 7 -79 -24 -214L-10 -217C23 -217 61 -207 74 -152C92 -78 90 -12 106 69H111C119 41 136 -13 190 -13C239 -13 300 17 360 164H366C361 111 358 91 358 72C358 25 375 -8 424 -8C489 -8 525 43 550 89L534 106C516 87 501 66 469 66C439 66 424 88 424 153C424 175 430 211 430 217Z" transform="translate(443.46 169.21) scale(0.012 -0.012)" fill="#000000"/>
+    <text x="450.52" y="169.21" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="22.68" lengthAdjust="spacingAndGlyphs">s at </text>
+    <path d="M190 467 186 426H270L205 37C194 -29 168 -193 115 -193C77 -193 110 -104 50 -104C24 -104 10 -125 10 -153C10 -188 35 -225 99 -225C236 -225 282 -1 296 85L353 426H447L453 467H358L370 538C385 623 410 682 461 682C485 682 487 658 491 633C494 612 504 594 531 594C552 594 571 609 571 638C571 681 537 711 476 711C390 711 349 665 323 618C300 577 288 523 276 467Z" transform="translate(473.2 169.21) scale(0.012 -0.012)" fill="#000000"/>
+    <path d="M505 473 539 667H515C505 646 493 638 476 638C454 638 431 667 344 667C232 667 126 604 126 488C126 396 181 358 247 316C248 316 248 315 249 315C319 270 384 229 383 144C382 67 321 30 238 30C137 29 103 63 94 201H66L24 -15H54C58 5 73 18 87 18C110 18 140 -12 244 -12C368 -12 476 64 476 191C476 287 405 327 332 375C267 415 211 456 211 517C211 589 260 631 343 631C444 631 472 583 476 473Z" transform="translate(480.48 172.87) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M567 145C500 84 430 54 352 54C220 54 158 125 158 259C158 479 288 627 442 627C541 627 599 573 594 440H627L674 669H645C629 647 619 633 603 633C578 633 552 670 451 670C248 670 60 515 60 234C60 102 124 -11 305 -11C431 -11 517 46 585 126Z" transform="translate(484.97 172.87) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M541 195H509C447 79 426 38 299 38H252C193 38 178 48 187 92L278 540C293 612 325 627 397 627L402 657H118L112 627C198 627 203 607 189 541L103 124C86 44 70 30 -7 30L-13 0H481Z" transform="translate(490.48 172.87) scale(0.0084 -0.0084)" fill="#000000"/>
+    <path d="M104 131C86 45 76 30 -7 30L-13 0H266L272 30C183 30 178 45 195 131L231 309H243L306 233C391 130 415 91 415 59C415 36 397 30 367 30H354L349 0H637L643 30C594 30 563 41 537 73L316 353L574 561C635 610 655 622 712 627L717 657H482L475 627H492C515 627 529 619 529 604C529 574 490 542 432 495L241 338H237L275 525C291 603 300 627 395 627L400 657H118L112 627C200 627 202 603 186 525Z" transform="translate(495.26 172.87) scale(0.0084 -0.0084)" fill="#000000"/>
+    <text x="501.24" y="169.21" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="48.35" lengthAdjust="spacingAndGlyphs"> = 1 MHz</text>
+  </g>
+  <g id="text_70">
+    <text x="70" y="474.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">The four SPI modes</text>
+  </g>
+  <g id="path_71">
+    <path d="M 70 501 L 350 501" fill="none" stroke="#111111" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="text_72">
+    <text x="70" y="492.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">mode</text>
+  </g>
+  <g id="text_73">
+    <text x="126" y="492.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">CPOL</text>
+  </g>
+  <g id="text_74">
+    <text x="182" y="492.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">CPHA</text>
+  </g>
+  <g id="text_75">
+    <text x="240" y="492.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">clock idle</text>
+  </g>
+  <g id="text_76">
+    <text x="340" y="492.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">sample edge</text>
+  </g>
+  <g id="text_77">
+    <text x="70" y="522.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_78">
+    <text x="126" y="522.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_79">
+    <text x="182" y="522.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_80">
+    <text x="240" y="522.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">low</text>
+  </g>
+  <g id="text_81">
+    <text x="340" y="522.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">rising (shown)</text>
+  </g>
+  <g id="text_82">
+    <text x="70" y="544.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_83">
+    <text x="126" y="544.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_84">
+    <text x="182" y="544.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_85">
+    <text x="240" y="544.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">low</text>
+  </g>
+  <g id="text_86">
+    <text x="340" y="544.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">falling</text>
+  </g>
+  <g id="text_87">
+    <text x="70" y="566.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">2</text>
+  </g>
+  <g id="text_88">
+    <text x="126" y="566.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_89">
+    <text x="182" y="566.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">0</text>
+  </g>
+  <g id="text_90">
+    <text x="240" y="566.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">high</text>
+  </g>
+  <g id="text_91">
+    <text x="340" y="566.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">falling</text>
+  </g>
+  <g id="text_92">
+    <text x="70" y="588.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">3</text>
+  </g>
+  <g id="text_93">
+    <text x="126" y="588.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_94">
+    <text x="182" y="588.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">1</text>
+  </g>
+  <g id="text_95">
+    <text x="240" y="588.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">high</text>
+  </g>
+  <g id="text_96">
+    <text x="340" y="588.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">rising</text>
+  </g>
+  <g id="text_97">
+    <text x="70" y="622.6" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="13" font-style="italic" textLength="449.53" lengthAdjust="spacingAndGlyphs">Result: the controller sent 0xA5 = 10100101 and read back 0x3C = 00111100.</text>
+  </g>
+  <g id="caption_98">
+    <text x="19.32" y="668.78" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="93.49" y="668.78" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="675.12" lengthAdjust="spacingAndGlyphs"> SPI MODE 0 EXCHANGES ONE BYTE IN EACH DIRECTION WHILE CHIP SELECT IS HELD LOW</text>
+  </g>
+</svg>
