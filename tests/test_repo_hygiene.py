@@ -18,7 +18,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 #: Byte-identical files that predate this guard. Shrink it; do not grow it.
 KNOWN_IDENTICAL: set[frozenset[str]] = {
-    frozenset({"legacy/enhanced_iiot_themed_main.py", "legacy/old2_iiot_theme.py"}),
+    frozenset({".planning/archive/legacy/enhanced_iiot_themed_main.py",
+               ".planning/archive/legacy/old2_iiot_theme.py"}),
 }
 
 

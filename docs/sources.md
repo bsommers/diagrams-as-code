@@ -6,7 +6,7 @@ This document records the origin and license of everything `diagrams-as-code` sh
 
 ## 1. Domain Vector Icon Catalog (`icons/` and `src/diagrams_as_code/shapes.py`)
 
-The engine provides 60 handcrafted, resolution-independent vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, and `iiot`). All icons conform to a standard 24x24 pixel grid and are stroked at 2px in `currentColor` (`historian` and `vector_db` add a lighter interior accent stroke). The tree under `icons/` and its manifests are generated from `ShapeLibrary._ICON_CATALOG` by `tools/generate_icons.py`, so a file and the glyph the renderer draws are the same artwork.
+The engine provides 73 handcrafted, resolution-independent vector icons across 9 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, and `project_management`). All icons conform to a standard 24x24 pixel grid and are stroked at 2px in `currentColor` (`historian` and `vector_db` add a lighter interior accent stroke). The tree under `icons/` and its manifests are generated from `ShapeLibrary._ICON_CATALOG` by `tools/generate_icons.py`, so a file and the glyph the renderer draws are the same artwork.
 
 ### Authorship
 
