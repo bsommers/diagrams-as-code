@@ -143,3 +143,37 @@ def test_domain_theme_variety() -> None:
         themes = domain_themes.get(domain, set())
         assert len(themes) >= 3, f"Domain '{domain}' has only {len(themes)} themes ({themes}), expected at least 3-5 varieties."
 
+
+
+#: Galleries added after the 13 reference domains. Each is checked for one thing here:
+#: the committed SVG is exactly what its script renders today. (``chemistry`` is covered by
+#: ``test_textbook_examples.py``.)
+NEWER_GALLERIES = (
+    "agentic_dev", "semiconductor", "data_engineering", "ml_models", "devops", "biology",
+    "chemical_engineering", "org", "electronics", "sequence", "project_management",
+)
+NEWER_SCRIPTS = sorted(
+    p for d in NEWER_GALLERIES for p in (REPO_ROOT / "examples" / d).glob("*.py")
+)
+
+
+def test_newer_gallery_discovery() -> None:
+    """Each newer gallery has its scripts (ten each; sequence 3, project_management 11)."""
+    counts: dict[str, int] = {}
+    for p in NEWER_SCRIPTS:
+        counts[p.parent.name] = counts.get(p.parent.name, 0) + 1
+    expected = {d: 10 for d in NEWER_GALLERIES}
+    expected.update(sequence=3, project_management=11)
+    assert counts == expected
+
+
+@pytest.mark.parametrize(
+    "script_path",
+    NEWER_SCRIPTS,
+    ids=[f"{p.parent.name}/{p.stem}" for p in NEWER_SCRIPTS],
+)
+def test_newer_gallery_committed_svg_matches_script(script_path: Path) -> None:
+    """The committed SVG beside each script is exactly what the script renders."""
+    committed = script_path.with_suffix(".svg")
+    assert committed.exists(), f"run `uv run python {script_path.relative_to(REPO_ROOT)}`"
+    assert committed.read_text(encoding="utf-8") == _load_diagram(script_path).render_svg()
