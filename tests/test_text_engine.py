@@ -161,7 +161,7 @@ def test_mathrm_is_upright_and_greek_resolves():
     assert typeset("α", 10).glyphs[0].cp == 0x1D6FC
 
 
-@pytest.mark.parametrize("bad", [r"\binom{a}{b}", "a_", "{a", "a}", r"\nosuchthing"])
+@pytest.mark.parametrize("bad", [r"\acute{a}", r"\sqrt[3{x}", "a_", "{a", "a}", r"\nosuchthing"])
 def test_unsupported_math_raises_a_clear_error(bad):
     with pytest.raises(MathError):
         typeset(bad, 10)
@@ -274,9 +274,53 @@ def test_sqrt_has_a_radical_and_a_bar_over_the_body():
     assert box.width > body.width and box.height > body.height
 
 
-def test_sqrt_with_an_index_is_not_supported():
+def test_sqrt_index_sits_up_and_left_of_the_radical():
+    plain, boxed = typeset(r"\sqrt{x}", 10), typeset(r"\sqrt[3]{x}", 10)
+    assert boxed.width > plain.width and boxed.height >= plain.height
+    three = [g for g in boxed.glyphs if g.cp == ord("3")][0]
+    sign = [g for g in boxed.glyphs if g.cp == 0x221A][0]
+    assert three.size < 10 and three.x < sign.x + 10 * 0.5 and three.y < 0
+    assert typeset(r"\sqrt[n]{x+1}", 10).width > typeset(r"\sqrt{x+1}", 10).width
+
+
+def test_binom_stacks_two_entries_in_parentheses_without_a_rule():
+    box = typeset(r"\binom{n}{k}", 10)
+    cps = [g.cp for g in box.glyphs]
+    assert cps.count(0x28) == 1 and cps.count(0x29) == 1 and 0x2212 not in cps
+    n = [g for g in box.glyphs if g.cp == 0x1D45B][0]
+    k = [g for g in box.glyphs if g.cp == 0x1D458][0]
+    assert n.y < 0 < k.y
+    paren = [g for g in box.glyphs if g.cp == 0x28][0]
+    assert paren.size > 10  # grown to fit the stack
     with pytest.raises(MathError):
-        typeset(r"\sqrt[3]{x}", 10)
+        typeset(r"\binom{n}", 10)
+
+
+@pytest.mark.parametrize("cmd,cp,count", [("hat", 0x5E, 1), ("tilde", 0x7E, 1), ("dot", 0x2E, 1),
+                                          ("ddot", 0x2E, 2), ("vec", 0x2192, 1), ("grave", 0x60, 1)])
+def test_accents_sit_centred_above_the_argument(cmd, cp, count):
+    body = typeset("x", 10)
+    box = typeset(rf"\{cmd}{{x}}", 10)
+    marks = [g for g in box.glyphs if g.cp == cp]
+    assert len(marks) == count
+    from diagrams_as_code.text import _math_glyphs as mg
+    for g in marks:  # ink bottom clears the top of the letter
+        assert -g.y + mg.GLYPHS[cp][1] * g.size / mg.UNITS_PER_EM > body.height
+    assert box.height > body.height and box.depth == body.depth
+    assert box.width >= body.width
+
+
+def test_accent_wider_than_its_argument_centres_the_argument():
+    box = typeset(r"\vec{i}", 10)
+    letter = [g for g in box.glyphs if g.cp == 0x1D456][0]
+    assert letter.x > 0  # pushed right so the arrow overhangs both sides evenly
+    assert typeset(r"\hat x", 10).glyphs == typeset(r"\hat{x}", 10).glyphs
+
+
+@pytest.mark.parametrize("bad", [r"\hat", r"\vec", r"\binom", r"\sqrt[3]"])
+def test_new_commands_need_their_arguments(bad):
+    with pytest.raises(MathError):
+        typeset(bad, 10)
 
 
 @pytest.mark.parametrize("bad", [r"\bar", r"\sqrt", r"\frac", r"\frac{a}"])
@@ -300,3 +344,29 @@ def test_nested_frac_shrinks_and_dfrac_matches_frac():
     inner = typeset(r"\frac{1}{2}", 10)
     nested = typeset(r"\frac{\frac{1}{2}}{3}", 10)
     assert nested.height > inner.height
+
+
+def test_rightleftharpoons_stacks_a_right_arrow_over_a_left_arrow():
+    box = typeset(r"A \rightleftharpoons B", 10)
+    right = [g for g in box.glyphs if g.cp == 0x2192][0]
+    left = [g for g in box.glyphs if g.cp == 0x2190][0]
+    assert right.y < left.y and right.x == left.x
+    assert [g.cp for g in typeset(r"\rightleftarrows", 10).glyphs] == [0x2192, 0x2190]
+
+
+def test_ce_sets_species_upright_with_subscripts_and_charges():
+    box = typeset(r"\ce{H2O}", 10)
+    cps = [g.cp for g in box.glyphs]
+    assert cps == [ord("H"), ord("2"), ord("O")]
+    h, two = box.glyphs[0], box.glyphs[1]
+    assert two.size < h.size and two.y > h.y
+    ion = typeset(r"\ce{NH4+}", 10)
+    plus = [g for g in ion.glyphs if g.cp == ord("+")][0]
+    assert plus.size < 10 and plus.y < 0
+    so4 = typeset(r"\ce{SO4^2-}", 10)
+    two = [g for g in so4.glyphs if g.cp == ord("2")][0]
+    assert two.y < 0 and any(g.cp == 0x2212 for g in so4.glyphs)
+    reaction = typeset(r"\ce{2H2 + O2 <=> 2H2O}", 10)
+    cps = [g.cp for g in reaction.glyphs]
+    assert 0x2192 in cps and 0x2190 in cps and cps.count(ord("+")) == 1
+    assert typeset(r"\ce{Ca(OH)2}", 10).glyphs[-1].cp == ord("2")

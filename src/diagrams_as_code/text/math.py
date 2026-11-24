@@ -3,8 +3,9 @@ r"""A small TeX-like math typesetter that produces positioned glyph outlines.
 Supported inside ``$...$``: letters (set in math italic), digits, sub/superscripts
 with ``_`` and ``^``, ``{}`` grouping, Greek letters, the operators and relations
 in ``SYMBOLS``, ``\mathrm{}`` / ``\text{}`` / ``\mathbf{}``, limits under big
-operators, ``\frac{a}{b}`` fractions, ``\sqrt{}``, ``\bar{}`` and the spaces
-``\,`` ``\;`` ``\quad``. This is not TeX: no matrices or ``\sqrt[n]``.
+operators, ``\frac{a}{b}`` fractions, ``\binom{n}{k}``, ``\sqrt{}`` and ``\sqrt[n]{}``,
+``\bar{}``, ``\rightleftharpoons``, ``\ce{H2O}``, the accents ``\hat \tilde \dot \ddot \vec \grave`` and the spaces
+``\,`` ``\;`` ``\quad``. This is not TeX: no matrices or ``\acute``/``\check``/``\breve``.
 """
 from __future__ import annotations
 
@@ -90,6 +91,13 @@ FUNCTIONS = (
 LIMIT_FUNCTIONS = frozenset(
     "min max sup inf lim limsup liminf argmin argmax det gcd Pr".split()
 )
+
+#: accent command -> (codepoint, size as a fraction of the text, copies side by side)
+_ACCENTS: dict[str, tuple[int, float, int]] = {
+    "hat": (0x5E, 0.9, 1), "widehat": (0x5E, 1.3, 1), "tilde": (0x7E, 0.9, 1),
+    "widetilde": (0x7E, 1.3, 1), "dot": (0x2E, 1.0, 1), "ddot": (0x2E, 1.0, 2),
+    "vec": (0x2192, 0.55, 1), "grave": (0x60, 0.9, 1),
+}
 
 _SPACES = {",": THIN, ":": MEDIUM, ";": THICK, "!": -THIN, " ": 0.333, "quad": 1.0, "qquad": 2.0}
 
@@ -278,6 +286,11 @@ class _Parser:
             return _Node("space", width=0.0)
         if name in FUNCTIONS:
             return _Node("text", text=name, cls=OP, force=None if name in LIMIT_FUNCTIONS else False)
+        if name in ("rightleftharpoons", "rightleftarrows"):
+            return _Node("equil", cls=REL)
+        if name == "ce":
+            body = self._braced_text(name)
+            return _Node("group", children=_Parser(_ce_to_tex(body)).parse())
         if name in ("bar", "overline"):
             arg = self._atom()
             if arg is None:
@@ -288,14 +301,29 @@ class _Parser:
             if num is None or den is None:
                 raise MathError(f"\\{name} needs two arguments in ${self.src}$")
             return _Node("frac", children=[num, den])
+        if name == "binom":
+            top, bottom = self._atom(), self._atom()
+            if top is None or bottom is None:
+                raise MathError(f"\\binom needs two arguments in ${self.src}$")
+            return _Node("binom", children=[top, bottom])
+        if name in _ACCENTS:
+            arg = self._atom()
+            if arg is None:
+                raise MathError(f"\\{name} needs an argument in ${self.src}$")
+            return _Node("accent", text=name, children=[arg])
         if name == "sqrt":
             self._skip_space()
+            index: Optional[_Node] = None
             if self.i < len(self.src) and self.src[self.i] == "[":
-                raise MathError(f"\\sqrt[n]{{x}} is not supported; write x^{{1/n}} in ${self.src}$")
+                end = self.src.find("]", self.i)
+                if end < 0:
+                    raise MathError(f"unbalanced '[' in ${self.src}$")
+                index = _Node("group", children=_Parser(self.src[self.i + 1 : end]).parse())
+                self.i = end + 1
             arg = self._atom()
             if arg is None:
                 raise MathError(f"\\sqrt needs an argument in ${self.src}$")
-            return _Node("sqrt", children=[arg])
+            return _Node("sqrt", children=[arg], sub=index)
         if name in SYMBOLS:
             cp, cls = SYMBOLS[name]
             return _Node("sym", cls=cls, cp=cp)
@@ -423,7 +451,16 @@ def _layout(node: _Node, size: float, level: int) -> MathBox:
     if node.kind == "frac":
         return _fraction(node, size, level)
     if node.kind == "sqrt":
-        return _radical(_layout_seq(node.children or [], size, level), size)
+        radical = _radical(_layout_seq(node.children or [], size, level), size)
+        if node.sub is None:
+            return radical
+        return _with_index(radical, _layout(node.sub, size * 0.55, level + 1), size)
+    if node.kind == "binom":
+        return _binomial(node, size, level)
+    if node.kind == "accent":
+        return _accent(node, size, level)
+    if node.kind == "equil":
+        return _equilibrium(size)
     raise MathError(f"cannot lay out {node.kind}")
 
 
@@ -492,6 +529,130 @@ def _radical(body: MathBox, size: float) -> MathBox:
     shift = sign.width - 0.02 * size
     glyphs = sign.glyphs + tuple(Glyph(g.cp, g.x + shift, g.y, g.size) for g in inner.glyphs + bar)
     return MathBox(shift + inner.width, ymax * s, max(-ymin * s, body.depth), glyphs)
+
+
+def _with_index(radical: MathBox, index: MathBox, size: float) -> MathBox:
+    """Tuck ``index`` into the crook of ``radical``, raised to about 60% of its height."""
+    kern = max(0.0, index.width - 0.15 * size)  # the sign's lead-in takes the rest
+    rise = 0.55 * (radical.height + radical.depth) - radical.depth
+    lifted = index.shifted(0.0, -max(rise, index.depth))
+    body = radical.shifted(kern, 0.0)
+    glyphs = lifted.glyphs + body.glyphs
+    return MathBox(kern + radical.width, max(radical.height, lifted.height),
+                   radical.depth, glyphs)
+
+
+def _binomial(node: _Node, size: float, level: int) -> MathBox:
+    """``top`` over ``bottom`` with no rule, between parentheses sized to the stack."""
+    assert node.children
+    f_size = size * 0.85
+    top = _layout(node.children[0], f_size, level)
+    bottom = _layout(node.children[1], f_size, level)
+    gap, pad = 0.10 * size, 0.06 * size
+    width = max(top.width, bottom.width)
+    axis = AXIS * size
+    up = axis + gap / 2.0 + top.depth
+    down = gap / 2.0 + bottom.height - axis
+    parts = [top.shifted((width - top.width) / 2.0, -up),
+             bottom.shifted((width - bottom.width) / 2.0, down)]
+    stack = MathBox(width, up + top.height, down + bottom.depth,
+                    tuple(g for p in parts for g in p.glyphs))
+    _, ymin, ymax, _ = _mg.GLYPHS[0x28]
+    psize = max(size, (stack.height + stack.depth) / ((ymax - ymin) / EM))
+
+    def paren(cp: int) -> MathBox:
+        box = _glyph_box(cp, psize)
+        return box.shifted(0.0, (box.height - box.depth) / 2.0 - axis)
+
+    return _hcat([paren(0x28), _space(pad), stack, _space(pad), paren(0x29)])
+
+
+def _equilibrium(size: float) -> MathBox:
+    """An equilibrium sign: a right arrow stacked over a left arrow.
+
+    The outline set has no half-arrow harpoons (U+21CC), so the two full arrows
+    of the ``\\rightleftarrows`` style are used instead.
+    """
+    a_size = size * 0.9
+    right = _glyph_box(0x2192, a_size)
+    left = _glyph_box(0x2190, a_size)
+    off = 0.11 * size
+    parts = [right.shifted(0.0, -off), left.shifted(0.0, off)]
+    return MathBox(right.width, max(p.height + dy for p, dy in zip(parts, (off, -off))) ,
+                   max(p.depth + dy for p, dy in zip(parts, (-off, off))),
+                   tuple(g for p in parts for g in p.glyphs))
+
+
+def _ce_to_tex(body: str) -> str:
+    """Translate ``\\ce`` chemical-formula text into ordinary math source.
+
+    Letter runs are set upright; digits after a letter, ``)`` or ``]`` become
+    subscripts; ``+``/``-`` glued to a species and ending it become charges;
+    ``^`` takes a charge or exponent run (``SO4^2-``); ``->`` and ``<=>`` become
+    arrows. A spaced ``+`` stays a binary plus.
+    """
+    out: list[str] = []
+    i, n = 0, len(body)
+    while i < n:
+        ch = body[i]
+        if ch.isascii() and ch.isalpha():
+            j = i
+            while j < n and body[j].isascii() and body[j].isalpha():
+                j += 1
+            out.append("\\mathrm{" + body[i:j] + "}")
+            i = j
+        elif ch.isdigit():
+            j = i
+            while j < n and body[j].isdigit():
+                j += 1
+            prev = body[i - 1] if i else " "
+            run = body[i:j]
+            out.append("_{" + run + "}" if prev.isalpha() or prev in ")]" else run)
+            i = j
+        elif ch in "+-" and i and body[i - 1] not in " (" and (i + 1 == n or body[i + 1] in " )]"):
+            out.append("^{" + ch + "}")
+            i += 1
+        elif ch == "^":
+            j = i + 1
+            if j < n and body[j] == "{":
+                end = body.find("}", j)
+                j = n if end < 0 else end + 1
+                out.append("^" + body[i + 1 : j])
+            else:
+                while j < n and (body[j].isdigit() or body[j] in "+-"):
+                    j += 1
+                out.append("^{" + body[i + 1 : j] + "}")
+            i = j
+        elif body.startswith("<=>", i):
+            out.append("\\rightleftharpoons ")
+            i += 3
+        elif body.startswith("->", i):
+            out.append("\\rightarrow ")
+            i += 2
+        else:
+            out.append(ch)
+            i += 1
+    return "".join(out)
+
+
+def _accent(node: _Node, size: float, level: int) -> MathBox:
+    """A mark centred over its argument, its ink just clear of the argument's top."""
+    assert node.children
+    cp, scale, copies = _ACCENTS[node.text]
+    body = _layout_seq(node.children, size, level)
+    adv, ymin, ymax, _ = _mg.GLYPHS[cp]
+    a_size = size * scale
+    s = a_size / EM
+    spacing = 0.22 * size
+    mark_w = adv * s + (copies - 1) * spacing
+    width = max(body.width, mark_w)
+    gap = 0.05 * size
+    y_up = body.height + gap - ymin * s  # pen position above the baseline
+    x0 = (width - mark_w) / 2.0
+    marks = tuple(Glyph(cp, x0 + i * spacing, -y_up, a_size) for i in range(copies))
+    dx = (width - body.width) / 2.0
+    glyphs = tuple(Glyph(g.cp, g.x + dx, g.y, g.size) for g in body.glyphs) + marks
+    return MathBox(width, y_up + ymax * s, body.depth, glyphs)
 
 
 def _layout_script(node: _Node, size: float, level: int) -> MathBox:

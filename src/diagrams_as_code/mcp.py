@@ -6,21 +6,24 @@ same operations as the CLI and the Python API: ``list_examples``, ``render``,
 ``lint``, ``list_themes`` and ``list_icons``.
 
 Rendering runs a diagram script, which is arbitrary Python, so every script and
-output path is confined to ``--root`` (default: the current directory).
+output path is confined to ``--root`` (default: the current directory), and each
+script runs in a resource-limited child process (see :mod:`.sandbox`): a wall-clock
+timeout, CPU and memory caps, no stdin and no stdout.
 """
 from __future__ import annotations
 
 import contextlib
 import json
 import sys
-import warnings
 from importlib import metadata
 from pathlib import Path
 from typing import Any, Callable, Optional, TextIO
 
 from diagrams_as_code.audit import DEFECTS, audit_findings
-from diagrams_as_code.cli import discover, load_script
-from diagrams_as_code.output import FORMATS, render_all
+from diagrams_as_code.cli import discover
+from diagrams_as_code.output import FORMATS
+from diagrams_as_code.sandbox import Limits, SandboxError
+from diagrams_as_code.sandbox import run as run_sandboxed
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import list_themes
 
@@ -81,7 +84,7 @@ def _clean(root: Path, text: str) -> str:
     return text.replace(str(root), ".")
 
 
-def tool_list_examples(root: Path, args: dict) -> Any:
+def tool_list_examples(root: Path, args: dict, limits: Limits = Limits()) -> Any:
     base = _inside(root, args.get("path", "examples"), "path")
     if not base.is_dir():
         raise ToolError(f"{args.get('path', 'examples')!r} is not a directory")
@@ -96,7 +99,7 @@ def tool_list_examples(root: Path, args: dict) -> Any:
     return out
 
 
-def tool_render(root: Path, args: dict) -> Any:
+def tool_render(root: Path, args: dict, limits: Limits = Limits()) -> Any:
     formats = args.get("formats") or ["svg", "bom"]
     bad = sorted(set(formats) - set(FORMATS))
     if bad:
@@ -108,47 +111,47 @@ def tool_render(root: Path, args: dict) -> Any:
     written, failed = [], []
     for script in _scripts(root, args["path"]):
         try:
-            diag, stem = load_script(script)
-            if theme:
-                diag.configure(theme=theme)
+            result = run_sandboxed({"op": "render", "script": str(script),
+                                    "formats": formats, "theme": theme}, limits)
             dest = out_dir or script.parent  # default: beside the script
-            _check_outputs(root, dest, stem, formats)
-            for fmt, p in render_all(diag, dest, stem, formats).items():
-                written.append({"format": fmt, "file": _rel(root, p)})
-        except Exception as exc:  # one bad script must not hide the others
+            _check_outputs(root, dest, result["stem"], formats)
+            dest.mkdir(parents=True, exist_ok=True)
+            for fmt, (name, data) in result["files"].items():
+                (dest / name).write_bytes(data)
+                written.append({"format": fmt, "file": _rel(root, dest / name)})
+        except (SandboxError, ToolError, OSError, ValueError) as exc:  # one bad script must not hide the others
             failed.append({"script": _rel(root, script), "error": _clean(root, str(exc))})
     if failed and not written:
         raise ToolError("; ".join(f"{f['script']}: {f['error']}" for f in failed))
     return {"written": written, "failed": failed}
 
 
-def tool_lint(root: Path, args: dict) -> Any:
+def tool_lint(root: Path, args: dict, limits: Limits = Limits()) -> Any:
     ignore = set(args.get("ignore") or [])
     bad = sorted(ignore - set(DEFECTS))
     if bad:
         raise ToolError(f"unknown defect kind {', '.join(bad)}")
     findings, failed, checked = [], [], 0
     for script in _scripts(root, args["path"]):
+        rel = _rel(root, script)
         try:
-            with warnings.catch_warnings(record=True) as caught:
-                warnings.simplefilter("always")
-                diag, _ = load_script(script)
-                found = [f for f in audit_findings(diag) if f.kind not in ignore]
-            checked += 1
-        except Exception as exc:
-            failed.append({"script": _rel(root, script), "error": _clean(root, str(exc))})
+            result = run_sandboxed({"op": "lint", "script": str(script),
+                                    "ignore": sorted(ignore)}, limits)
+        except SandboxError as exc:
+            failed.append({"script": rel, "error": _clean(root, str(exc))})
             continue
-        findings += [{"script": _rel(root, script), "kind": f.kind, "detail": f.detail} for f in found]
-        findings += [{"script": _rel(root, script), "kind": "layout_warning", "detail": str(w.message)}
-                     for w in caught]
+        checked += 1
+        findings += [{"script": rel, **f} for f in result["findings"]]
+        findings += [{"script": rel, "kind": "layout_warning", "detail": w}
+                     for w in result["warnings"]]
     return {"checked": checked, "findings": findings, "failed": failed}
 
 
-def tool_list_themes(root: Path, args: dict) -> Any:
+def tool_list_themes(root: Path, args: dict, limits: Limits = Limits()) -> Any:
     return list(list_themes())
 
 
-def tool_list_icons(root: Path, args: dict) -> Any:
+def tool_list_icons(root: Path, args: dict, limits: Limits = Limits()) -> Any:
     domain = args.get("domain")
     return [{"name": n, "domain": d, "description": desc}
             for n, (d, desc) in sorted(ShapeLibrary._ICON_CATALOG.items())
@@ -161,7 +164,7 @@ def _schema(props: dict, required: tuple = ()) -> dict:
 
 
 _STR = {"type": "string"}
-TOOLS: dict[str, tuple[str, dict, Callable[[Path, dict], Any]]] = {
+TOOLS: dict[str, tuple[str, dict, Callable[[Path, dict, Limits], Any]]] = {
     "list_examples": ("List diagram scripts under a directory, with the SVG rendered beside each.",
                       _schema({"path": {**_STR, "description": "directory, default 'examples'"},
                                "domain": {**_STR, "description": "e.g. finance, physics, cad"}}),
@@ -183,8 +186,9 @@ TOOLS: dict[str, tuple[str, dict, Callable[[Path, dict], Any]]] = {
 
 
 class Server:
-    def __init__(self, root: Path) -> None:
+    def __init__(self, root: Path, limits: Limits = Limits()) -> None:
         self.root = root.resolve()
+        self.limits = limits
 
     def handle(self, msg: dict) -> Optional[dict]:
         """Reply to one JSON-RPC message; ``None`` for notifications."""
@@ -225,7 +229,7 @@ class Server:
             raise KeyError("path")
         try:
             with contextlib.redirect_stdout(sys.stderr):  # keep stdout protocol-only
-                data = TOOLS[name][2](self.root, args)
+                data = TOOLS[name][2](self.root, args, self.limits)
             error = False
         except ToolError as exc:
             data, error = str(exc), True
@@ -244,8 +248,9 @@ def _error(code: int, message: str) -> dict:
     return {"jsonrpc": "2.0", "id": None, "error": {"code": code, "message": message}}
 
 
-def serve(root: Path, stdin: Optional[TextIO] = None, stdout: Optional[TextIO] = None) -> int:
-    server = Server(root)
+def serve(root: Path, stdin: Optional[TextIO] = None, stdout: Optional[TextIO] = None,
+          timeout: float = Limits.timeout, memory_mb: int = Limits.memory_mb) -> int:
+    server = Server(root, Limits(timeout=timeout, cpu=max(1, int(timeout)), memory_mb=memory_mb))
     stdin, stdout = stdin or sys.stdin, stdout or sys.stdout
     while True:
         line = stdin.readline(MAX_LINE + 1)

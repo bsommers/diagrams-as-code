@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1049 687" width="1049" height="687">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polyline_1">
+    <path d="M 40 560 L 820 560" fill="none" stroke="#1F2F57" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_2">
+    <path d="M 130 468 L 270 468 L 270 560 L 130 560 Z" fill="#E6E6E6" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_4">
+    <text x="182.99" y="454.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">heater</text>
+  </g>
+  <g id="polyline_5">
+    <path d="M 60 270 L 60 560" fill="none" stroke="#555555" stroke-width="7" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_6">
+    <path d="M 60 270 L 60 560" fill="none" stroke="#C9C9C9" stroke-width="4.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 40 560 L 110 560 L 110 552 L 40 552 Z" fill="#C9C9C9" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_8">
+    <path d="M 60 283 L 184 283" fill="none" stroke="#555555" stroke-width="5" stroke-linejoin="round" />
+  </g>
+  <g id="path_10">
+    <path d="M 138.4 372 L 261.6 372 C 258.03 403.32 231.52 426.97 200 426.97 C 168.48 426.97 141.97 403.32 138.4 372 Z" fill="#F2E3B8" />
+  </g>
+  <g id="path_30">
+    <path d="M 608.52 524 L 701.48 524 C 696.01 545.2 676.89 560.02 655 560.02 C 633.11 560.02 613.99 545.2 608.52 524 Z" fill="#F2E3B8" />
+  </g>
+  <g id="path_42">
+    <path d="M 200 140 L 260 96" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_44">
+    <text x="265" y="100.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">thermometer: bulb level with the side arm</text>
+  </g>
+  <g id="path_45">
+    <path d="M 186 238 L 150 205" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_47">
+    <text x="93.69" y="209.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">still head</text>
+  </g>
+  <g id="path_48">
+    <path d="M 240 395 L 292 395" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_50">
+    <text x="297" y="391.35" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13"><tspan x="297" dy="0">round-bottom flask,</tspan> <tspan x="297" dy="16.25">liquid and boiling chips</tspan></text>
+  </g>
+  <g id="path_51">
+    <path d="M 200 500 L 305 505" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_53">
+    <text x="310" y="509.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">heater on a lab jack</text>
+  </g>
+  <g id="path_54">
+    <path d="M 440 309.6 L 400 168" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_56">
+    <text x="405" y="172.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Liebig condenser (water jacket)</text>
+  </g>
+  <g id="text_57">
+    <text x="299.32" y="177.63" text-anchor="start" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="299.32" dy="0">water out</tspan> <tspan x="299.32" dy="15">(top)</tspan></text>
+  </g>
+  <g id="text_58">
+    <text x="558.32" y="437.63" text-anchor="start" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="558.32" dy="0">cold water in</tspan> <tspan x="558.32" dy="15">(bottom)</tspan></text>
+  </g>
+  <g id="path_59">
+    <path d="M 701 520 L 745 470" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_61">
+    <text x="750" y="474.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">receiving flask: distillate</text>
+  </g>
+  <g id="text_62">
+    <text x="239.65" y="215.63" fill="#9C2F2F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">vapour</text>
+  </g>
+  <g id="text_63">
+    <text x="690" y="122.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">How it works</text>
+    <text x="690" y="138.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">The mixture is heated to its boiling point. The more</text>
+    <text x="690" y="155.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">volatile component evaporates first, passes through the</text>
+    <text x="690" y="171.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">side arm, condenses in the cooled tube and drips into</text>
+    <text x="690" y="187.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">the receiver. The thermometer reads the vapour</text>
+    <text x="690" y="203.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">temperature, which holds steady while one</text>
+    <text x="690" y="220.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">component distils.</text>
+  </g>
+  <g id="text_64">
+    <text x="690" y="272.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Good practice</text>
+    <text x="690" y="288.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Water in at the low end, so the jacket stays full.</text>
+    <text x="690" y="305.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Never heat a closed system: vent the receiver.</text>
+    <text x="690" y="321.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Simple distillation needs boiling points about</text>
+    <text x="690" y="337.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">25 K apart or more; otherwise use a</text>
+    <text x="690" y="353.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">fractionating column.</text>
+  </g>
+  <g id="caption_65">
+    <text x="31.33" y="602.55" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 7:</text>
+    <text x="105.51" y="602.55" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="911.84" lengthAdjust="spacingAndGlyphs"> SIMPLE DISTILLATION APPARATUS: BOILING FLASK, STILL HEAD WITH THERMOMETER, LIEBIG CONDENSER AND RECEIVER</text>
+  </g>
+  <g id="polygon_3">
+    <path d="M 120 432 L 280 432 L 280 468 L 120 468 Z" fill="#BDBDBD" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_17">
+    <path d="M 303.11 263.06 L 591.89 361.24" fill="none" stroke="#1F2F57" stroke-width="46" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_18">
+    <path d="M 305 263.7 L 590 360.6" fill="none" stroke="#CFE0F2" stroke-width="42" stroke-linejoin="round" />
+  </g>
+  <g id="path_11">
+    <path d="M 185 250 L 185 304.84 C 154.61 312.42 134.65 341.47 138.46 372.55 C 142.28 403.64 168.68 427 200 427 C 231.32 427 257.72 403.64 261.54 372.55 C 265.35 341.47 245.39 312.42 215 304.84 L 215 250" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 183 400 L 182.9 400.78 L 182.6 401.5 L 182.12 402.12 L 181.5 402.6 L 180.78 402.9 L 180 403 L 179.22 402.9 L 178.5 402.6 L 177.88 402.12 L 177.4 401.5 L 177.1 400.78 L 177 400 L 177.1 399.22 L 177.4 398.5 L 177.88 397.88 L 178.5 397.4 L 179.22 397.1 L 180 397 L 180.78 397.1 L 181.5 397.4 L 182.12 397.88 L 182.6 398.5 L 182.9 399.22 Z" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 208.5 410 L 208.38 410.91 L 208.03 411.75 L 207.47 412.47 L 206.75 413.03 L 205.91 413.38 L 205 413.5 L 204.09 413.38 L 203.25 413.03 L 202.53 412.47 L 201.97 411.75 L 201.62 410.91 L 201.5 410 L 201.62 409.09 L 201.97 408.25 L 202.53 407.53 L 203.25 406.97 L 204.09 406.62 L 205 406.5 L 205.91 406.62 L 206.75 406.97 L 207.47 407.53 L 208.03 408.25 L 208.38 409.09 Z" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 224.5 395 L 224.41 395.65 L 224.17 396.25 L 223.77 396.77 L 223.25 397.17 L 222.65 397.41 L 222 397.5 L 221.35 397.41 L 220.75 397.17 L 220.23 396.77 L 219.83 396.25 L 219.59 395.65 L 219.5 395 L 219.59 394.35 L 219.83 393.75 L 220.23 393.23 L 220.75 392.83 L 221.35 392.59 L 222 392.5 L 222.65 392.59 L 223.25 392.83 L 223.77 393.23 L 224.17 393.75 L 224.41 394.35 Z" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 194.5 385 L 194.41 385.65 L 194.17 386.25 L 193.77 386.77 L 193.25 387.17 L 192.65 387.41 L 192 387.5 L 191.35 387.41 L 190.75 387.17 L 190.23 386.77 L 189.83 386.25 L 189.59 385.65 L 189.5 385 L 189.59 384.35 L 189.83 383.75 L 190.23 383.23 L 190.75 382.83 L 191.35 382.59 L 192 382.5 L 192.65 382.59 L 193.25 382.83 L 193.77 383.23 L 194.17 383.75 L 194.41 384.35 Z" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_16">
+    <path d="M 218 380 L 217.9 380.78 L 217.6 381.5 L 217.12 382.12 L 216.5 382.6 L 215.78 382.9 L 215 383 L 214.22 382.9 L 213.5 382.6 L 212.88 382.12 L 212.4 381.5 L 212.1 380.78 L 212 380 L 212.1 379.22 L 212.4 378.5 L 212.88 377.88 L 213.5 377.4 L 214.22 377.1 L 215 377 L 215.78 377.1 L 216.5 377.4 L 217.12 377.88 L 217.6 378.5 L 217.9 379.22 Z" fill="none" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_19">
+    <path d="M 200 252 L 200 206" fill="none" stroke="#1F2F57" stroke-width="32" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_20">
+    <path d="M 200 228 L 655 382.7" fill="none" stroke="#1F2F57" stroke-width="16" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_21">
+    <path d="M 655 382.7 L 655 438" fill="none" stroke="#1F2F57" stroke-width="16" stroke-linejoin="round" />
+  </g>
+  <g id="path_31">
+    <path d="M 640 420 L 640 466.4 C 617.6 473.77 603.87 496.31 607.6 519.59 C 611.34 542.87 631.42 560 655 560 C 678.58 560 698.66 542.87 702.4 519.59 C 706.13 496.31 692.4 473.77 670 466.4 L 670 420" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_43">
+    <path d="M 197.8 140 C 197.8 141.22 198.78 142.2 200 142.2 C 201.22 142.2 202.2 141.22 202.2 140 C 202.2 138.78 201.22 137.8 200 137.8 C 198.78 137.8 197.8 138.78 197.8 140" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_46">
+    <path d="M 183.8 238 C 183.8 239.22 184.78 240.2 186 240.2 C 187.22 240.2 188.2 239.22 188.2 238 C 188.2 236.78 187.22 235.8 186 235.8 C 184.78 235.8 183.8 236.78 183.8 238" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_49">
+    <path d="M 237.8 395 C 237.8 396.22 238.78 397.2 240 397.2 C 241.22 397.2 242.2 396.22 242.2 395 C 242.2 393.78 241.22 392.8 240 392.8 C 238.78 392.8 237.8 393.78 237.8 395" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_52">
+    <path d="M 197.8 500 C 197.8 501.22 198.78 502.2 200 502.2 C 201.22 502.2 202.2 501.22 202.2 500 C 202.2 498.78 201.22 497.8 200 497.8 C 198.78 497.8 197.8 498.78 197.8 500" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_55">
+    <path d="M 437.8 309.6 C 437.8 310.39 438.22 311.11 438.9 311.51 C 439.58 311.9 440.42 311.9 441.1 311.51 C 441.78 311.11 442.2 310.39 442.2 309.6 C 442.2 308.81 441.78 308.09 441.1 307.69 C 440.42 307.3 439.58 307.3 438.9 307.69 C 438.22 308.09 437.8 308.81 437.8 309.6" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_60">
+    <path d="M 698.8 520 C 698.8 520.79 699.22 521.51 699.9 521.91 C 700.58 522.3 701.42 522.3 702.1 521.91 C 702.78 521.51 703.2 520.79 703.2 520 C 703.2 519.21 702.78 518.49 702.1 518.09 C 701.42 517.7 700.58 517.7 699.9 518.09 C 699.22 518.49 698.8 519.21 698.8 520" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_22">
+    <path d="M 200 252 L 200 206" fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_23">
+    <path d="M 200 228 L 655 382.7" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_24">
+    <path d="M 655 382.7 L 655 438" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 184 273 L 216 273 L 216 293 L 184 293 Z" fill="#D9D9D9" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_26">
+    <path d="M 200 128 L 200 232" fill="none" stroke="#1F2F57" stroke-width="7" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_27">
+    <path d="M 200 128 L 200 232" fill="none" stroke="#FFFFFF" stroke-width="4.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_25">
+    <path d="M 186 200 L 214 200 L 211 214 L 189 214 Z" fill="#8C8C8C" stroke="#555555" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_28">
+    <path d="M 200 232 L 200 178" fill="none" stroke="#9C2F2F" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_29">
+    <path d="M 205.5 233 L 205.31 234.42 L 204.76 235.75 L 203.89 236.89 L 202.75 237.76 L 201.42 238.31 L 200 238.5 L 198.58 238.31 L 197.25 237.76 L 196.11 236.89 L 195.24 235.75 L 194.69 234.42 L 194.5 233 L 194.69 231.58 L 195.24 230.25 L 196.11 229.11 L 197.25 228.24 L 198.58 227.69 L 200 227.5 L 201.42 227.69 L 202.75 228.24 L 203.89 229.11 L 204.76 230.25 L 205.31 231.58 Z" fill="#9C2F2F" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 657.6 456 L 657.51 456.67 L 657.25 457.3 L 656.84 457.84 L 656.3 458.25 L 655.67 458.51 L 655 458.6 L 654.33 458.51 L 653.7 458.25 L 653.16 457.84 L 652.75 457.3 L 652.49 456.67 L 652.4 456 L 652.49 455.33 L 652.75 454.7 L 653.16 454.16 L 653.7 453.75 L 654.33 453.49 L 655 453.4 L 655.67 453.49 L 656.3 453.75 L 656.84 454.16 L 657.25 454.7 L 657.51 455.33 Z" fill="#F2E3B8" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 657.6 478 L 657.51 478.67 L 657.25 479.3 L 656.84 479.84 L 656.3 480.25 L 655.67 480.51 L 655 480.6 L 654.33 480.51 L 653.7 480.25 L 653.16 479.84 L 652.75 479.3 L 652.49 478.67 L 652.4 478 L 652.49 477.33 L 652.75 476.7 L 653.16 476.16 L 653.7 475.75 L 654.33 475.49 L 655 475.4 L 655.67 475.49 L 656.3 475.75 L 656.84 476.16 L 657.25 476.7 L 657.51 477.33 Z" fill="#F2E3B8" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_34">
+    <path d="M 200 300 L 200 275" fill="none" stroke="#9C2F2F" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_35">
+    <path d="M 200 266 L 203.6 275 L 196.4 275 Z" fill="#9C2F2F" stroke="#9C2F2F" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_36">
+    <path d="M 230 238.2 L 263.48 249.58" fill="none" stroke="#9C2F2F" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 272 252.48 L 262.32 252.99 L 264.64 246.17 Z" fill="#9C2F2F" stroke="#9C2F2F" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_38">
+    <path d="M 592 420 L 592 391" fill="none" stroke="#2F5FA8" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 592 382 L 595.6 391 L 588.4 391 Z" fill="#2F5FA8" stroke="#2F5FA8" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_40">
+    <path d="M 324 246 L 324 217" fill="none" stroke="#2F5FA8" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_41">
+    <path d="M 324 208 L 327.6 217 L 320.4 217 Z" fill="#2F5FA8" stroke="#2F5FA8" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+</svg>

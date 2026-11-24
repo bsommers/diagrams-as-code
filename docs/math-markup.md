@@ -57,9 +57,15 @@ Uppercase: `\Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omeg
 | Relations | `\leq \le \geq \ge \neq \ne \equiv \approx \sim \simeq \cong \propto \ll \gg \prec \succ \preceq \succeq \triangleq \coloneqq` |
 | Sets | `\in \notin \ni \subset \supset \subseteq \supseteq \subsetneq \supsetneq \sqsubseteq \sqsupseteq` |
 | Logic and geometry | `\mid \parallel \perp \vdash \dashv \models` |
-| Arrows | `\to \rightarrow \leftarrow \gets \leftrightarrow \uparrow \downarrow \mapsto \Rightarrow \Leftarrow \Leftrightarrow \implies \iff \longrightarrow \longleftarrow \leadsto \rightsquigarrow` |
+| Arrows | `\to \rightarrow \leftarrow \gets \leftrightarrow \uparrow \downarrow \mapsto \Rightarrow \Leftarrow \Leftrightarrow \implies \iff \longrightarrow \longleftarrow \leadsto \rightsquigarrow \rightleftharpoons \rightleftarrows` |
 | Delimiters | `\langle \rangle \lceil \rceil \lfloor \rfloor \lbrace \rbrace` |
 | Punctuation | `\colon` |
+
+`\rightleftharpoons` and `\rightleftarrows` both draw an equilibrium sign as a right arrow stacked over a left arrow. The outline set has no half-arrow (harpoon) glyph, so this is the double-arrow style, not the harpoon one.
+
+## Chemical formulas
+
+`\ce{...}` sets a formula upright and fills in the subscripts: `\ce{H2O}`, `\ce{Ca(OH)2}`. Digits after a letter, `)` or `]` become subscripts; a `+` or `-` stuck to a species and ending it is a charge (`\ce{NH4+}`); `^` takes a charge or exponent run (`\ce{SO4^2-}`, `\ce{Fe^3+}`); `->` and `<=>` become `\rightarrow` and `\rightleftharpoons`. A spaced `+` stays a plus (`\ce{2H2 + O2 -> 2H2O}`). Leading digits are coefficients. This is a typesetting helper, not a chemistry parser: no isotopes, bond symbols or state-specific rules. Writing `\mathrm{H}_2\mathrm{O}` explicitly still works.
 
 ## Functions and big operators
 
@@ -69,9 +75,15 @@ As in TeX, `\min \max \sup \inf \lim \limsup \liminf \argmin \argmax \det \gcd \
 
 ## Bars and roots
 
-`\bar x`, `\bar{x}` and `\overline{AB}` draw a bar over their argument. `\sqrt{x}` draws a radical with a bar over its argument: `\sqrt{b^2 - 4ac}`. The bar is the minus-sign outline repeated, so it is a little thinner than a typeset rule and the radical does not stretch past one line of text. `\sqrt[n]{x}` (an index) is not supported: write `x^{1/n}`.
+`\bar x`, `\bar{x}` and `\overline{AB}` draw a bar over their argument. `\sqrt{x}` draws a radical with a bar over its argument: `\sqrt{b^2 - 4ac}`. The bar is the minus-sign outline repeated, so it is a little thinner than a typeset rule and the radical does not stretch past one line of text. `\sqrt[n]{x}` tucks a reduced-size index into the crook of the radical: `\sqrt[3]{x}`, `\sqrt[n]{x^2+1}`.
 
-`\frac{a}{b}` (also `\dfrac`, `\tfrac`) stacks the numerator over the denominator about a rule on the math axis, both centred and set at 85% of the surrounding size; a fraction inside a fraction shrinks again. Like the bar, the rule is the minus-sign outline repeated. `\binom` and `\over` are not supported.
+`\frac{a}{b}` (also `\dfrac`, `\tfrac`) stacks the numerator over the denominator about a rule on the math axis, both centred and set at 85% of the surrounding size; a fraction inside a fraction shrinks again. Like the bar, the rule is the minus-sign outline repeated. `\over` is not supported.
+
+`\binom{n}{k}` stacks two entries with no rule between parentheses that grow to the height of the stack: `\binom{n}{k} = \frac{n!}{k!(n-k)!}`.
+
+## Accents
+
+`\hat{x}`, `\tilde{y}`, `\dot{a}`, `\ddot{a}`, `\vec{v}` and `\grave{e}` centre a mark over their argument, just clear of its top; `\widehat` and `\widetilde` use a larger mark for wide arguments. The mark is a single glyph, so it does not stretch to the argument's width. `\acute`, `\check` and `\breve` are not available: the outline set has no such mark.
 
 Big operators: `\sum \prod \coprod \int \oint \bigcap \bigcup \bigwedge \bigvee`. Their limits are set underneath and above:
 
@@ -104,9 +116,8 @@ These raise `MathError`:
 
 | Not supported | Write instead |
 |---|---|
-| `\sqrt[n]{x}` | `x^{1/n}` |
 | matrices, `\begin{...}` | one `d.text()` per row, or a table of shapes |
-| accents: `\hat \vec \tilde \dot` | a prime or a subscript: `y'`, `y_{\mathrm{est}}` |
+| `\acute \check \breve` accents | `\hat`, `\tilde`, or a prime: `y'` |
 | `\mathcal`, `\mathfrak` | `\mathbf` or a Greek letter |
 | stretchy delimiters | plain `( )`, `[ ]`, `\langle \rangle` |
 

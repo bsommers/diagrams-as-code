@@ -52,7 +52,7 @@ When copying an existing figure, measure it once in its own pixels and scale: fi
 - `diag.text("...", size=14, align="center")` is text with no box. It takes `**bold**`, `*italic*`, line breaks and `$math$`.
 - Every label takes the same markup, so a box can hold a title and a formula: `"**Loss**\n$L = \\sum_i (y_i - p_i)^2$"`.
 - `font="serif"` with `italic=True` sets a remark apart. `padding=4` keeps lines that end at a text a little clear of the letters.
-- The supported math is listed in the [math markup reference](math-markup.md). Accents, `\sqrt[n]` and matrices are not supported; the reference gives the usual substitutes.
+- The supported math is listed in the [math markup reference](math-markup.md). Matrices and the `\acute`, `\check` and `\breve` accents are not supported; the reference gives the usual substitutes.
 
 ## 5. Lines
 

@@ -33,6 +33,7 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 | [**System Architecture**](architecture.md) | Technical specifications: geometry engine, topological constraint solver, orthogonal and curve routers, corner filleting, interactive SVG viewer, and living BOM pipeline. |
 | [**User Guide**](user-guide.md) | Task-oriented guide: concepts, first diagram, shapes, groups, positioning, routing, themes, icons, outputs, data plots, drafting, the CLI and the MCP server. |
 | [**Technical Figures**](technical-figures.md) | Building paper-style figures: the `paper` theme, layers, formulas, solids, `lint`, golden images and PDF export. |
+| [**Sequence Diagrams**](sequence-diagrams.md) | UML sequence diagrams with `SequenceDiagram`: participants, messages, activations, notes, `loop`/`alt` frames, and how the layout works. |
 | [**Math Markup Reference**](math-markup.md) | Every supported TeX-like command in labels and captions. |
 | [**Development Guidelines**](development.md) | Contributor workflow: `uv` rules, repository layout, local-first verification gate, testing, generated artifacts, and doc sync. |
 | [**Running & Installation Guide**](running.md) | Prerequisites, virtual environment provisioning with `uv`, CLI commands, the MCP server, test execution, and Docker setup. |
