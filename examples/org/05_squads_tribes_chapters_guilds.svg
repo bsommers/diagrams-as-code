@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1182 610" width="1182" height="610">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-6B3F95" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6B3F95"/>
+    </marker>
+    <marker id="arrow-6B3F95-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#6B3F95"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="group_1">
+    <rect x="249.55" y="90" width="496.45" height="293" rx="0" fill="#F7F8FA" stroke="#6B7280" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="265.55" y="114" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Payments tribe</text>
+  </g>
+  <g id="group_14">
+    <rect x="777.78" y="90" width="344.22" height="293" rx="0" fill="#F7F8FA" stroke="#6B7280" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="793.78" y="114" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Growth tribe</text>
+  </g>
+  <g id="group_2">
+    <rect x="267.55" y="142" width="140.9" height="223" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="283.55" y="166" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Checkout squad</text>
+  </g>
+  <g id="group_6">
+    <rect x="428" y="142" width="140" height="223" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="444" y="166" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Billing squad</text>
+  </g>
+  <g id="group_10">
+    <rect x="588" y="142" width="140" height="223" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="604" y="166" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Fraud squad</text>
+  </g>
+  <g id="group_15">
+    <rect x="795.78" y="142" width="156.44" height="223" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="811.78" y="166" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Onboarding squad</text>
+  </g>
+  <g id="group_19">
+    <rect x="964" y="142" width="140" height="223" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="980" y="166" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Referrals squad</text>
+  </g>
+  <path d="M 338 435 L 338 351" fill="none" stroke="#6B3F95" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 498 435 L 498 351" fill="none" stroke="#6B3F95" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 658 435 L 658 351" fill="none" stroke="#6B3F95" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 874 435 L 874 351" fill="none" stroke="#6B3F95" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 1034 435 L 1034 351" fill="none" stroke="#6B3F95" stroke-width="1" stroke-dasharray="5,5" />
+  <g id="shape_3">
+    <rect x="282" y="191" width="112" height="44" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="338" y="217.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3 backend</text>
+  </g>
+  <g id="shape_4">
+    <rect x="282" y="249" width="112" height="44" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="338" y="275.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2 frontend</text>
+  </g>
+  <g id="shape_5">
+    <rect x="282" y="307" width="112" height="44" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="338" y="333.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 QA</text>
+  </g>
+  <g id="shape_7">
+    <rect x="442" y="191" width="112" height="44" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="498" y="217.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2 backend</text>
+  </g>
+  <g id="shape_8">
+    <rect x="442" y="249" width="112" height="44" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="498" y="275.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 frontend</text>
+  </g>
+  <g id="shape_9">
+    <rect x="442" y="307" width="112" height="44" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="498" y="333.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 QA</text>
+  </g>
+  <g id="shape_11">
+    <rect x="602" y="191" width="112" height="44" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="658" y="217.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3 backend</text>
+  </g>
+  <g id="shape_12">
+    <rect x="602" y="249" width="112" height="44" rx="0" fill="#FFFFFF" stroke="#D5D9DE" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="658" y="275.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">none yet</text>
+  </g>
+  <g id="shape_13">
+    <rect x="602" y="307" width="112" height="44" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="658" y="333.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 QA</text>
+  </g>
+  <g id="shape_16">
+    <rect x="818" y="191" width="112" height="44" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="874" y="217.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 backend</text>
+  </g>
+  <g id="shape_17">
+    <rect x="818" y="249" width="112" height="44" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="874" y="275.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">3 frontend</text>
+  </g>
+  <g id="shape_18">
+    <rect x="818" y="307" width="112" height="44" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="874" y="333.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 QA</text>
+  </g>
+  <g id="shape_20">
+    <rect x="978" y="191" width="112" height="44" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="1034" y="217.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 backend</text>
+  </g>
+  <g id="shape_21">
+    <rect x="978" y="249" width="112" height="44" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="1034" y="275.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">2 frontend</text>
+  </g>
+  <g id="shape_22">
+    <rect x="978" y="307" width="112" height="44" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="1034" y="333.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">1 QA</text>
+  </g>
+  <g id="shape_23">
+    <rect x="60" y="191" width="150" height="44" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="135" y="217.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Backend chapter</text>
+  </g>
+  <g id="shape_24">
+    <rect x="60" y="249" width="150" height="44" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="135" y="275.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Frontend chapter</text>
+  </g>
+  <g id="shape_25">
+    <rect x="60" y="307" width="150" height="44" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="135" y="333.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">QA chapter</text>
+  </g>
+  <g id="shape_26">
+    <rect x="282" y="435" width="808" height="46" rx="0" fill="#EFE6F7" stroke="#6B3F95" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="686" y="462.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Test Automation guild: open to anyone, any squad, any tribe</text>
+  </g>
+  <g id="text_27">
+    <text x="60" y="526.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Squads own delivery, chapters own craft standards, guilds share knowledge by interest.</text>
+  </g>
+</svg>

@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1266 708" width="1266" height="708">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 510 130 L 510 155 L 150 155 L 150 180" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 130 L 510 155 L 330 155 L 330 180" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 130 L 510 180" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 130 L 510 155 L 690 155 L 690 180" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 130 L 510 155 L 870 155 L 870 180" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 150 200 L 150 225 L 78 225 L 78 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 150 200 L 150 225 L 114 225 L 114 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 150 200 L 150 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 150 200 L 150 225 L 186 225 L 186 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 150 200 L 150 225 L 222 225 L 222 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 200 L 330 225 L 258 225 L 258 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 200 L 330 225 L 294 225 L 294 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 200 L 330 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 200 L 330 225 L 366 225 L 366 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 200 L 330 225 L 402 225 L 402 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 200 L 510 225 L 438 225 L 438 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 200 L 510 225 L 474 225 L 474 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 200 L 510 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 200 L 510 225 L 546 225 L 546 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 200 L 510 225 L 582 225 L 582 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 200 L 690 225 L 618 225 L 618 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 200 L 690 225 L 654 225 L 654 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 200 L 690 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 200 L 690 225 L 726 225 L 726 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 200 L 690 225 L 762 225 L 762 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 870 200 L 870 225 L 798 225 L 798 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 870 200 L 870 225 L 834 225 L 834 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 870 200 L 870 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 870 200 L 870 225 L 906 225 L 906 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 870 200 L 870 225 L 942 225 L 942 250" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 390 L 510 411 L 366 411 L 366 432" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 510 390 L 510 411 L 654 411 L 654 432" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 366 452 L 366 473 L 294 473 L 294 494" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 366 452 L 366 473 L 438 473 L 438 494" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 654 452 L 654 473 L 582 473 L 582 494" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 654 452 L 654 473 L 726 473 L 726 494" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 294 514 L 294 535 L 258 535 L 258 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 294 514 L 294 535 L 330 535 L 330 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 438 514 L 438 535 L 402 535 L 402 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 438 514 L 438 535 L 474 535 L 474 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 582 514 L 582 535 L 546 535 L 546 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 582 514 L 582 535 L 618 535 L 618 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 726 514 L 726 535 L 690 535 L 690 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 726 514 L 726 535 L 762 535 L 762 556" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 258 576 L 258 597 L 240 597 L 240 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 258 576 L 258 597 L 276 597 L 276 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 576 L 330 597 L 312 597 L 312 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 330 576 L 330 597 L 348 597 L 348 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 402 576 L 402 597 L 384 597 L 384 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 402 576 L 402 597 L 420 597 L 420 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 474 576 L 474 597 L 456 597 L 456 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 474 576 L 474 597 L 492 597 L 492 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 546 576 L 546 597 L 528 597 L 528 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 546 576 L 546 597 L 564 597 L 564 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 618 576 L 618 597 L 600 597 L 600 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 618 576 L 618 597 L 636 597 L 636 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 576 L 690 597 L 672 597 L 672 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 690 576 L 690 597 L 708 597 L 708 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 762 576 L 762 597 L 744 597 L 744 618" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 762 576 L 762 597 L 780 597 L 780 618" fill="none" stroke="#000000" stroke-width="1" />
+  <g id="text_1">
+    <text x="60" y="84.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">Flat: span of 5, 3 levels</text>
+  </g>
+  <g id="flat_0">
+    <rect x="65" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_1">
+    <rect x="101" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_2">
+    <rect x="137" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_3">
+    <rect x="173" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_4">
+    <rect x="209" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_5">
+    <rect x="137" y="180" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="flat_6">
+    <rect x="245" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_7">
+    <rect x="281" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_8">
+    <rect x="317" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_9">
+    <rect x="353" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_10">
+    <rect x="389" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_11">
+    <rect x="317" y="180" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="flat_12">
+    <rect x="425" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_13">
+    <rect x="461" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_14">
+    <rect x="497" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_15">
+    <rect x="533" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_16">
+    <rect x="569" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_17">
+    <rect x="497" y="180" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="flat_18">
+    <rect x="605" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_19">
+    <rect x="641" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_20">
+    <rect x="677" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_21">
+    <rect x="713" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_22">
+    <rect x="749" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_23">
+    <rect x="677" y="180" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="flat_24">
+    <rect x="785" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_25">
+    <rect x="821" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_26">
+    <rect x="857" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_27">
+    <rect x="893" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_28">
+    <rect x="929" y="250" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="flat_29">
+    <rect x="857" y="180" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="flat_30">
+    <rect x="497" y="110" width="26" height="20" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="text_33">
+    <text x="60" y="344.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">Tall: span of 2, 5 levels</text>
+  </g>
+  <g id="tall_0">
+    <rect x="227" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_1">
+    <rect x="263" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_2">
+    <rect x="245" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_3">
+    <rect x="299" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_4">
+    <rect x="335" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_5">
+    <rect x="317" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_6">
+    <rect x="281" y="494" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_7">
+    <rect x="371" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_8">
+    <rect x="407" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_9">
+    <rect x="389" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_10">
+    <rect x="443" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_11">
+    <rect x="479" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_12">
+    <rect x="461" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_13">
+    <rect x="425" y="494" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_14">
+    <rect x="353" y="432" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_15">
+    <rect x="515" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_16">
+    <rect x="551" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_17">
+    <rect x="533" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_18">
+    <rect x="587" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_19">
+    <rect x="623" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_20">
+    <rect x="605" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_21">
+    <rect x="569" y="494" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_22">
+    <rect x="659" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_23">
+    <rect x="695" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_24">
+    <rect x="677" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_25">
+    <rect x="731" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_26">
+    <rect x="767" y="618" width="26" height="20" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+  </g>
+  <g id="tall_27">
+    <rect x="749" y="556" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_28">
+    <rect x="713" y="494" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_29">
+    <rect x="641" y="432" width="26" height="20" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="tall_30">
+    <rect x="497" y="370" width="26" height="20" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+  </g>
+  <g id="text_65">
+    <text x="1010" y="122.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Flat</text>
+    <text x="1010" y="138.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">31 people</text>
+    <text x="1010" y="155.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Every manager has 5 reports</text>
+    <text x="1010" y="171.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">A decision crosses 2 levels</text>
+    <text x="1010" y="187.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Managers: 6 (19%)</text>
+    <text x="1010" y="203.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Risk: thin coaching, wide load</text>
+  </g>
+  <g id="text_66">
+    <text x="1010" y="382.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Tall</text>
+    <text x="1010" y="398.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">31 people</text>
+    <text x="1010" y="415.1" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Every manager has 2 reports</text>
+    <text x="1010" y="431.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">A decision crosses 4 levels</text>
+    <text x="1010" y="447.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Managers: 15 (48%)</text>
+    <text x="1010" y="463.85" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Risk: slow, filtered communication</text>
+  </g>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 607" width="1360" height="607">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-8A6D00" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8A6D00"/>
+    </marker>
+    <marker id="arrow-8A6D00-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#8A6D00"/>
+    </marker>
+    <marker id="arrow-B0502E" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B0502E"/>
+    </marker>
+    <marker id="arrow-B0502E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B0502E"/>
+    </marker>
+    <marker id="arrow-2F4B86" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F4B86"/>
+    </marker>
+    <marker id="arrow-2F4B86-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#2F4B86"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 230 187 L 389.44 187" fill="none" stroke="#8A6D00" stroke-width="2.2" stroke-dasharray="2,2" />
+  <path d="M 400 187 L 386.8 192.28 L 386.8 181.72 Z" fill="#8A6D00" />
+  <path d="M 1004.4 187 L 1095.6 187" fill="none" stroke="#B0502E" stroke-width="3" />
+  <path d="M 1110 187 L 1092 194.2 L 1092 179.8 Z" fill="#B0502E" />
+  <path d="M 990 187 L 1008 179.8 L 1008 194.2 Z" fill="#B0502E" />
+  <path d="M 485 224 L 485 351.36" fill="none" stroke="#2F4B86" stroke-width="1.8" stroke-dasharray="5,5" />
+  <path d="M 485 360 L 480.68 349.2 L 489.32 349.2 Z" fill="#2F4B86" />
+  <path d="M 695 224 L 695 351.36" fill="none" stroke="#2F4B86" stroke-width="1.8" stroke-dasharray="5,5" />
+  <path d="M 695 360 L 690.68 349.2 L 699.32 349.2 Z" fill="#2F4B86" />
+  <path d="M 905 224 L 905 351.36" fill="none" stroke="#2F4B86" stroke-width="1.8" stroke-dasharray="5,5" />
+  <path d="M 905 360 L 900.68 349.2 L 909.32 349.2 Z" fill="#2F4B86" />
+  <g class="badge">
+  <rect x="284.77" y="178" width="60.47" height="18" rx="9" fill="#FFFFFF" />
+  <text x="315" y="190.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">facilitating</text>
+</g>
+  <g class="badge">
+  <rect x="1013.65" y="178" width="72.7" height="18" rx="9" fill="#FFFFFF" />
+  <text x="1050" y="190.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">collaboration</text>
+</g>
+  <g class="badge">
+  <rect x="653.94" y="283" width="82.13" height="18" rx="9" fill="#FFFFFF" />
+  <text x="695" y="295.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">X-as-a-Service</text>
+</g>
+  <g id="shape_1">
+    <rect x="60" y="150" width="170" height="74" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="145" y="183.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="145" dy="0">Security Enablement</tspan> <tspan x="145" dy="15.6">enabling team</tspan></text>
+  </g>
+  <g id="shape_2">
+    <rect x="400" y="150" width="170" height="74" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="485" y="183.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="485" dy="0">Checkout</tspan> <tspan x="485" dy="15.6">stream-aligned team</tspan></text>
+  </g>
+  <g id="shape_3">
+    <rect x="610" y="150" width="170" height="74" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="695" y="183.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="695" dy="0">Catalogue</tspan> <tspan x="695" dy="15.6">stream-aligned team</tspan></text>
+  </g>
+  <g id="shape_4">
+    <rect x="820" y="150" width="170" height="74" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="905" y="183.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="905" dy="0">Recommendations</tspan> <tspan x="905" dy="15.6">stream-aligned team</tspan></text>
+  </g>
+  <g id="shape_5">
+    <rect x="1110" y="150" width="190" height="74" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="1" />
+    <text x="1205" y="183.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="1205" dy="0">Fraud Scoring Engine</tspan> <tspan x="1205" dy="15.6">complicated-subsystem team</tspan></text>
+  </g>
+  <g id="shape_6">
+    <rect x="400" y="360" width="590" height="74" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="695" y="393.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="695" dy="0">Internal Developer Platform</tspan> <tspan x="695" dy="15.6">platform team: CI/CD, runtime, observability</tspan></text>
+  </g>
+  <g id="text_8">
+    <text x="430" y="482.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Collaboration: work together for a time-boxed discovery</text>
+  </g>
+  <g id="text_10">
+    <text x="430" y="502.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">X-as-a-Service: consume with minimal collaboration</text>
+  </g>
+  <g id="text_12">
+    <text x="430" y="523.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Facilitating: one team coaches another, then steps back</text>
+  </g>
+  <g id="path_7">
+    <path d="M 400 478.2 L 422 478.2" fill="none" stroke="#B0502E" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_9">
+    <path d="M 400 498.6 L 422 498.6" fill="none" stroke="#2F4B86" stroke-width="1.8" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_11">
+    <path d="M 400 519 L 422 519" fill="none" stroke="#8A6D00" stroke-width="1.8" stroke-dasharray="2,2" stroke-linejoin="round" />
+  </g>
+</svg>

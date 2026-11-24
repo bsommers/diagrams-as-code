@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 819 652" width="819" height="652">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_1">
+    <path d="M 110 320 L 110 100 L 440 100 L 440 320 Z" fill="#F8ECD3" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_3">
+    <path d="M 440 320 L 440 100 L 770 100 L 770 320 Z" fill="#F6D9CC" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 110 540 L 110 320 L 440 320 L 440 540 Z" fill="#EEF0F3" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 440 540 L 440 320 L 770 320 L 770 540 Z" fill="#DCEBDD" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <path d="M 110 540 L 782 540" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 110 540 L 110 88" fill="none" stroke="#000000" stroke-width="1.2" />
+  <g id="text_2">
+    <text x="119.9" y="117" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Keep satisfied</text>
+  </g>
+  <g id="text_4">
+    <text x="449.9" y="117" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Manage closely</text>
+  </g>
+  <g id="text_6">
+    <text x="119.9" y="337" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Monitor</text>
+  </g>
+  <g id="text_8">
+    <text x="449.9" y="337" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Keep informed</text>
+  </g>
+  <g id="path_13">
+    <path d="M 110 537 L 110 543 M 242 537 L 242 543 M 374 537 L 374 543 M 506 537 L 506 543 M 638 537 L 638 543 M 770 537 L 770 543 M 107 540 L 113 540 M 107 452 L 113 452 M 107 364 L 113 364 M 107 276 L 113 276 M 107 188 L 113 188 M 107 100 L 113 100" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_14">
+    <text x="416.66" y="567.57" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Interest</text>
+  </g>
+  <g id="text_15">
+    <text x="110" y="565.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">low</text>
+  </g>
+  <g id="text_16">
+    <text x="747.31" y="565.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">high</text>
+  </g>
+  <g id="text_17">
+    <text x="36.32" y="324.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Power</text>
+  </g>
+  <g id="text_18">
+    <text x="53.31" y="110.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">high</text>
+  </g>
+  <g id="text_19">
+    <text x="57.99" y="538.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">low</text>
+  </g>
+  <g id="shape_20">
+    <rect x="163.8" y="144.6" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#B8860B" stroke-width="1.6" />
+    <text x="228.8" y="166.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Regulator</text>
+  </g>
+  <g id="shape_21">
+    <rect x="282.6" y="215" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#B8860B" stroke-width="1.6" />
+    <text x="347.6" y="236.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Board</text>
+  </g>
+  <g id="shape_22">
+    <rect x="573" y="135.8" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#B0502E" stroke-width="1.6" />
+    <text x="638" y="157.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Executive sponsor</text>
+  </g>
+  <g id="shape_23">
+    <rect x="467.4" y="206.2" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#B0502E" stroke-width="1.6" />
+    <text x="532.4" y="227.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Largest customer</text>
+  </g>
+  <g id="shape_24">
+    <rect x="599.4" y="267.8" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#B0502E" stroke-width="1.6" />
+    <text x="664.4" y="289.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Product owner</text>
+  </g>
+  <g id="shape_25">
+    <rect x="163.8" y="443.8" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1.6" />
+    <text x="228.8" y="465.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Vendors</text>
+  </g>
+  <g id="shape_26">
+    <rect x="269.4" y="373.4" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1.6" />
+    <text x="334.4" y="394.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Press</text>
+  </g>
+  <g id="shape_27">
+    <rect x="546.6" y="355.8" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#3C8D53" stroke-width="1.6" />
+    <text x="611.6" y="377.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Engineering teams</text>
+  </g>
+  <g id="shape_28">
+    <rect x="480.6" y="452.6" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#3C8D53" stroke-width="1.6" />
+    <text x="545.6" y="474.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">End users</text>
+  </g>
+  <g id="shape_29">
+    <rect x="625.8" y="408.6" width="130" height="34" rx="0" fill="#FFFFFF" stroke="#3C8D53" stroke-width="1.6" />
+    <text x="690.8" y="430.07" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Support</text>
+  </g>
+</svg>

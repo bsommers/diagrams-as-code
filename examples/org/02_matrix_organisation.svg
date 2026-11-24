@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 635" width="930" height="635">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-B8860B" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B8860B"/>
+    </marker>
+    <marker id="arrow-B8860B-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B8860B"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 605 86 L 605 108 L 415 108 L 415 130" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 605 86 L 605 130" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 605 86 L 605 108 L 795 108 L 795 130" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 210 261 L 340 261" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 415 182 L 415 230" fill="none" stroke="#B8860B" stroke-width="1" stroke-dasharray="5,5" />
+  <g class="badge">
+  <rect x="229.49" y="252" width="91.03" height="18" rx="9" fill="#FFFFFF" />
+  <text x="275" y="264.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">craft, career, pay</text>
+</g>
+  <g class="badge">
+  <rect x="388.11" y="197" width="53.79" height="18" rx="9" fill="#FFFFFF" />
+  <text x="415" y="209.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">priorities</text>
+</g>
+  <g id="shape_1">
+    <rect x="515" y="40" width="180" height="46" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="605" y="67.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">General Manager</text>
+  </g>
+  <g id="shape_2">
+    <rect x="340" y="130" width="150" height="52" rx="0" fill="#F8E6C8" stroke="#B8860B" stroke-width="1" />
+    <text x="415" y="152.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="415" dy="0">Payments</tspan> <tspan x="415" dy="15.6">Product Lead</tspan></text>
+  </g>
+  <g id="shape_3">
+    <rect x="530" y="130" width="150" height="52" rx="0" fill="#F8E6C8" stroke="#B8860B" stroke-width="1" />
+    <text x="605" y="152.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="605" dy="0">Lending</tspan> <tspan x="605" dy="15.6">Product Lead</tspan></text>
+  </g>
+  <g id="shape_4">
+    <rect x="720" y="130" width="150" height="52" rx="0" fill="#F8E6C8" stroke="#B8860B" stroke-width="1" />
+    <text x="795" y="152.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="795" dy="0">Wealth</tspan> <tspan x="795" dy="15.6">Product Lead</tspan></text>
+  </g>
+  <g id="shape_5">
+    <rect x="60" y="230" width="150" height="62" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="135" y="257.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="135" dy="0">Head of</tspan> <tspan x="135" dy="15.6">Engineering</tspan></text>
+  </g>
+  <g id="shape_6">
+    <rect x="340" y="230" width="150" height="62" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="2.5" />
+    <text x="415" y="257.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="415" dy="0">Engineering</tspan> <tspan x="415" dy="15.6">14 people</tspan></text>
+  </g>
+  <g id="shape_7">
+    <rect x="530" y="230" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="605" y="257.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="605" dy="0">Engineering</tspan> <tspan x="605" dy="15.6">9 people</tspan></text>
+  </g>
+  <g id="shape_8">
+    <rect x="720" y="230" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="795" y="257.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="795" dy="0">Engineering</tspan> <tspan x="795" dy="15.6">6 people</tspan></text>
+  </g>
+  <g id="shape_9">
+    <rect x="60" y="314" width="150" height="62" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="135" y="341.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="135" dy="0">Head of</tspan> <tspan x="135" dy="15.6">Design</tspan></text>
+  </g>
+  <g id="shape_10">
+    <rect x="340" y="314" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="415" y="341.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="415" dy="0">Design</tspan> <tspan x="415" dy="15.6">4 people</tspan></text>
+  </g>
+  <g id="shape_11">
+    <rect x="530" y="314" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="605" y="341.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="605" dy="0">Design</tspan> <tspan x="605" dy="15.6">3 people</tspan></text>
+  </g>
+  <g id="shape_12">
+    <rect x="720" y="314" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="795" y="341.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="795" dy="0">Design</tspan> <tspan x="795" dy="15.6">2 people</tspan></text>
+  </g>
+  <g id="shape_13">
+    <rect x="60" y="398" width="150" height="62" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="135" y="425.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="135" dy="0">Head of</tspan> <tspan x="135" dy="15.6">Data Science</tspan></text>
+  </g>
+  <g id="shape_14">
+    <rect x="340" y="398" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="415" y="425.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="415" dy="0">Data</tspan> <tspan x="415" dy="15.6">3 people</tspan></text>
+  </g>
+  <g id="shape_15">
+    <rect x="530" y="398" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="605" y="425.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="605" dy="0">Data</tspan> <tspan x="605" dy="15.6">5 people</tspan></text>
+  </g>
+  <g id="shape_16">
+    <rect x="720" y="398" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="795" y="425.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="795" dy="0">Data</tspan> <tspan x="795" dy="15.6">4 people</tspan></text>
+  </g>
+  <g id="shape_17">
+    <rect x="60" y="482" width="150" height="62" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="135" y="509.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="135" dy="0">Head of</tspan> <tspan x="135" dy="15.6">Marketing</tspan></text>
+  </g>
+  <g id="shape_18">
+    <rect x="340" y="482" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="415" y="509.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="415" dy="0">Marketing</tspan> <tspan x="415" dy="15.6">2 people</tspan></text>
+  </g>
+  <g id="shape_19">
+    <rect x="530" y="482" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="605" y="509.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="605" dy="0">Marketing</tspan> <tspan x="605" dy="15.6">3 people</tspan></text>
+  </g>
+  <g id="shape_20">
+    <rect x="720" y="482" width="150" height="62" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="795" y="509.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="795" dy="0">Marketing</tspan> <tspan x="795" dy="15.6">3 people</tspan></text>
+  </g>
+  <g id="text_21">
+    <text x="60" y="591.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Highlighted cell: an engineer on Payments reports to the Head of Engineering (solid) and takes priorities from the Payments lead (dashed).</text>
+  </g>
+</svg>
