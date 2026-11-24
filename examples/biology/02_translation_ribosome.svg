@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1327 701" width="1327" height="701">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-B03A3A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B03A3A"/>
+    </marker>
+    <marker id="arrow-B03A3A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B03A3A"/>
+    </marker>
+    <marker id="arrow-1F2F57" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-1F2F57-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F2F57"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_8">
+    <path d="M 455.39 300 L 455.39 150 C 455.39 116.67 472.06 100 505.39 100 L 781.39 100 C 814.72 100 831.39 116.67 831.39 150 L 831.39 300 Z" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_9">
+    <path d="M 455.39 322 L 831.39 322 L 815.39 366 L 471.39 366 Z" fill="#C4D4EA" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <path d="M 675.39 184 L 731.3 207.45" fill="none" stroke="#B03A3A" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M 737.39 210 L 724.47 209.79 L 730.2 206.98 L 728.18 200.93 Z" fill="#B03A3A" />
+  <path d="M 913.39 472 L 976.13 472" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 983.39 472 L 970.19 477.28 L 974.81 472 L 970.19 466.72 Z" fill="#1F2F57" />
+  <g id="shape_1">
+    <rect x="466.39" y="410" width="114" height="30" rx="3" fill="#F4E9C8" stroke="#1F2F57" stroke-width="1.4" />
+    <text x="523.39" y="429.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">AUG</text>
+  </g>
+  <g id="shape_2">
+    <rect x="586.39" y="410" width="114" height="30" rx="3" fill="#F4E9C8" stroke="#1F2F57" stroke-width="1.4" />
+    <text x="643.39" y="429.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">GCU</text>
+  </g>
+  <g id="shape_3">
+    <rect x="706.39" y="410" width="114" height="30" rx="3" fill="#F4E9C8" stroke="#1F2F57" stroke-width="1.4" />
+    <text x="763.39" y="429.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">UGG</text>
+  </g>
+  <g id="shape_4">
+    <rect x="826.39" y="410" width="114" height="30" rx="3" fill="#F4E9C8" stroke="#1F2F57" stroke-width="1.4" />
+    <text x="883.39" y="429.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">GAA</text>
+  </g>
+  <g id="text_5">
+    <text x="440.93" y="429.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_6">
+    <text x="387.67" y="429.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">mRNA</text>
+  </g>
+  <g id="text_7">
+    <text x="955.39" y="429.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_10">
+    <text x="469.39" y="120.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Large subunit</text>
+  </g>
+  <g id="text_11">
+    <text x="368.72" y="348.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Small subunit</text>
+  </g>
+  <g id="path_12">
+    <path d="M 501.39 238 C 496.06 269.33 498.72 300.67 509.39 332 L 537.39 332 C 548.06 300.67 550.72 269.33 545.39 238 Z" fill="#E9F2E1" stroke="#2E6B3F" stroke-width="1.8" stroke-dasharray="5,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_13">
+    <text x="488.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">U</text>
+  </g>
+  <g id="polyline_14">
+    <path d="M 493.39 369 L 493.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_15">
+    <text x="518.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="polyline_16">
+    <path d="M 523.39 369 L 523.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <text x="548.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="polyline_18">
+    <path d="M 553.39 369 L 553.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_19">
+    <text x="465.39" y="288.19" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="start">E</text>
+  </g>
+  <g id="path_20">
+    <path d="M 621.39 238 C 616.06 269.33 618.72 300.67 629.39 332 L 657.39 332 C 668.06 300.67 670.72 269.33 665.39 238 Z" fill="#E9F2E1" stroke="#2E6B3F" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_21">
+    <text x="608.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="polyline_22">
+    <path d="M 613.39 369 L 613.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_23">
+    <text x="637.95" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="polyline_24">
+    <path d="M 643.39 369 L 643.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_25">
+    <text x="668.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="polyline_26">
+    <path d="M 673.39 369 L 673.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_27">
+    <text x="585.39" y="288.19" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="start">P</text>
+  </g>
+  <g id="path_28">
+    <path d="M 741.39 238 C 736.06 269.33 738.72 300.67 749.39 332 L 777.39 332 C 788.06 300.67 790.72 269.33 785.39 238 Z" fill="#E9F2E1" stroke="#2E6B3F" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_29">
+    <text x="728.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="polyline_30">
+    <path d="M 733.39 369 L 733.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_31">
+    <text x="758.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="polyline_32">
+    <path d="M 763.39 369 L 763.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_33">
+    <text x="788.34" y="348.82" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="polyline_34">
+    <path d="M 793.39 369 L 793.39 406" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_35">
+    <text x="704.89" y="288.19" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="text_36">
+    <text x="493.75" y="213.16" text-anchor="start" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="493.75" dy="0">empty tRNA</tspan> <tspan x="493.75" dy="13.75">leaves</tspan></text>
+  </g>
+  <g id="shape_37">
+    <rect x="616.39" y="207" width="54" height="26" rx="13" fill="#F0C4C4" stroke="#B03A3A" stroke-width="1.6" />
+    <text x="643.39" y="224.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ala</text>
+  </g>
+  <g id="shape_38">
+    <rect x="616.39" y="171" width="54" height="26" rx="13" fill="#F0C4C4" stroke="#B03A3A" stroke-width="1.6" />
+    <text x="643.39" y="188.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Met</text>
+  </g>
+  <g id="polyline_39">
+    <path d="M 643.39 197 L 643.39 207" fill="none" stroke="#1F2F57" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="shape_40">
+    <rect x="736.39" y="207" width="54" height="26" rx="13" fill="#F0C4C4" stroke="#B03A3A" stroke-width="1.6" />
+    <text x="763.39" y="224.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Trp</text>
+  </g>
+  <g id="text_43">
+    <text x="678.26" y="168.91" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">peptidyl transfer</text>
+  </g>
+  <g id="text_46">
+    <text x="779.42" y="476.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">ribosome moves 5&#x27; to 3&#x27;</text>
+  </g>
+  <g id="path_47">
+    <path d="M 861.39 268 C 856.06 289.33 858.72 320.67 869.39 362 L 897.39 362 C 908.06 320.67 910.72 289.33 905.39 268 Z" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-dasharray="4,3" stroke-linejoin="round" />
+  </g>
+  <g id="text_48">
+    <text x="858.21" y="243.16" text-anchor="start" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11"><tspan x="858.21" dy="0">next tRNA: Glu</tspan> <tspan x="858.21" dy="13.75">anticodon 3&#x27;-CUU-5&#x27;</tspan></text>
+  </g>
+  <g id="text_49">
+    <text x="343.39" y="521.63" xml:space="preserve" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="28.68" lengthAdjust="spacingAndGlyphs">Sites</text>
+    <text x="372.07" y="521.63" xml:space="preserve" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="417.75" lengthAdjust="spacingAndGlyphs">  A aminoacyl (incoming charged tRNA)  |  P peptidyl (holds the chain)  |  E exit</text>
+    <text x="343.39" y="536.63" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Anticodons are drawn 3&#x27; to 5&#x27; so they pair base for base under the codons.</text>
+    <text x="343.39" y="551.63" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Codons: AUG Met, GCU Ala, UGG Trp, GAA Glu.</text>
+  </g>
+  <g id="caption_50">
+    <text x="60" y="597.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 2:</text>
+    <text x="134.17" y="597.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1132.61" lengthAdjust="spacingAndGlyphs"> TRANSLATION. CHARGED TRNAS PAIR THEIR ANTICODONS WITH MRNA CODONS IN THE A SITE, THE RIBOSOME CATALYSES PEPTIDE-BOND FORMATION</text>
+    <text x="365.43" y="616.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="595.91" lengthAdjust="spacingAndGlyphs">AND THEN ADVANCES ONE CODON; THE EMPTY TRNA LEAVES FROM THE E SITE</text>
+  </g>
+</svg>

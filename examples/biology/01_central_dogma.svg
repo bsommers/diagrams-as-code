@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1506 677" width="1506" height="677">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-1F2F57" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-1F2F57-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F2F57"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 591.2 154 L 599.29 148.22" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 605.2 144 L 597.53 155.97 L 598.22 148.99 L 591.39 147.38 Z" fill="#1F2F57" />
+  <path d="M 731.2 160 L 731.2 251.42" fill="none" stroke="#1F2F57" stroke-width="2.6" />
+  <path d="M 731.2 260 L 724.96 244.4 L 731.2 249.86 L 737.44 244.4 Z" fill="#1F2F57" />
+  <path d="M 943.2 260 L 943.2 165.94" fill="none" stroke="#1F2F57" stroke-width="1.8" stroke-dasharray="5,5" />
+  <path d="M 943.2 160 L 947.52 170.8 L 943.2 167.02 L 938.88 170.8 Z" fill="#1F2F57" />
+  <path d="M 731.2 340 L 731.2 401.42" fill="none" stroke="#1F2F57" stroke-width="2.6" />
+  <path d="M 731.2 410 L 724.96 394.4 L 731.2 399.86 L 737.44 394.4 Z" fill="#1F2F57" />
+  <g id="text_1">
+    <text x="655.06" y="95.85" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="text_2">
+    <text x="690.01" y="95.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">T</text>
+  </g>
+  <g id="text_3">
+    <text x="722.59" y="95.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_4">
+    <text x="756.59" y="95.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_5">
+    <text x="791.06" y="95.85" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="text_6">
+    <text x="826.01" y="95.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">T</text>
+  </g>
+  <g id="text_7">
+    <text x="860.01" y="95.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">T</text>
+  </g>
+  <g id="text_8">
+    <text x="892.59" y="95.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_9">
+    <text x="926.59" y="95.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_10">
+    <text x="656.01" y="135.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">T</text>
+  </g>
+  <g id="text_11">
+    <text x="689.06" y="135.85" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="text_12">
+    <text x="723.06" y="135.85" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="text_13">
+    <text x="757.06" y="135.85" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="text_14">
+    <text x="790.59" y="135.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_15">
+    <text x="825.06" y="135.85" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="text_16">
+    <text x="859.06" y="135.85" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="text_17">
+    <text x="893.06" y="135.85" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="text_18">
+    <text x="927.06" y="135.85" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="polyline_19">
+    <path d="M 661.2 102 L 661.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_20">
+    <path d="M 695.2 102 L 695.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_21">
+    <path d="M 729.2 102 L 729.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_22">
+    <path d="M 763.2 102 L 763.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_23">
+    <path d="M 797.2 102 L 797.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_24">
+    <path d="M 831.2 102 L 831.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_25">
+    <path d="M 865.2 102 L 865.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_26">
+    <path d="M 899.2 102 L 899.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_27">
+    <path d="M 933.2 102 L 933.2 118" fill="none" stroke="#8A93A8" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_28">
+    <text x="627.49" y="94.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_29">
+    <text x="957.2" y="94.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_30">
+    <text x="627.49" y="134.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_31">
+    <text x="957.2" y="134.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_32">
+    <text x="441.2" y="98.22" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">DNA</text>
+    <text x="441.2" y="114.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">coding strand</text>
+    <text x="441.2" y="130.72" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">template strand</text>
+  </g>
+  <g id="path_33">
+    <path d="M 601.2 74 C 541.2 10 541.2 210 601.2 146" fill="none" stroke="#1F2F57" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_36">
+    <text x="515.85" y="199.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Replication</text>
+    <text x="515.85" y="214.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">DNA polymerase</text>
+  </g>
+  <g id="text_39">
+    <text x="743.2" y="198.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Transcription</text>
+    <text x="743.2" y="213.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">RNA polymerase</text>
+    <text x="743.2" y="228.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">reads the template 3&#x27; to 5&#x27;</text>
+  </g>
+  <g id="text_42">
+    <text x="955.2" y="205.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-style="italic" text-anchor="start">reverse transcription</text>
+    <text x="955.2" y="220.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">(retroviruses)</text>
+  </g>
+  <g id="text_43">
+    <text x="655.06" y="305.85" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="text_44">
+    <text x="689.06" y="305.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">U</text>
+  </g>
+  <g id="text_45">
+    <text x="722.59" y="305.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_46">
+    <text x="756.59" y="305.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_47">
+    <text x="791.06" y="305.85" fill="#8A5A00" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="text_48">
+    <text x="825.06" y="305.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">U</text>
+  </g>
+  <g id="text_49">
+    <text x="859.06" y="305.85" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">U</text>
+  </g>
+  <g id="text_50">
+    <text x="892.59" y="305.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_51">
+    <text x="926.59" y="305.85" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="text_52">
+    <text x="627.49" y="304.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_53">
+    <text x="957.2" y="304.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_54">
+    <text x="441.2" y="296.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">mRNA</text>
+    <text x="441.2" y="312.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">codons</text>
+  </g>
+  <g id="polyline_55">
+    <path d="M 646.2 322 L 646.2 328 L 744.2 328 L 744.2 322" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_56">
+    <path d="M 748.2 322 L 748.2 328 L 846.2 328 L 846.2 322" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_57">
+    <path d="M 850.2 322 L 850.2 328 L 948.2 328 L 948.2 322" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_60">
+    <text x="743.2" y="366.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Translation</text>
+    <text x="743.2" y="381.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">ribosome + tRNA</text>
+    <text x="743.2" y="396.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">(next figure)</text>
+  </g>
+  <g id="text_61">
+    <text x="441.2" y="446.35" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">Protein</text>
+    <text x="441.2" y="462.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">residues</text>
+  </g>
+  <g id="shape_62">
+    <rect x="656.2" y="433" width="78" height="34" rx="17" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.6" />
+    <text x="695.2" y="454.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Met</text>
+  </g>
+  <g id="shape_63">
+    <rect x="758.2" y="433" width="78" height="34" rx="17" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.6" />
+    <text x="797.2" y="454.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ala</text>
+  </g>
+  <g id="polyline_64">
+    <path d="M 734.2 450 L 758.2 450" fill="none" stroke="#1F2F57" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="shape_65">
+    <rect x="860.2" y="433" width="78" height="34" rx="17" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.6" />
+    <text x="899.2" y="454.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Trp</text>
+  </g>
+  <g id="polyline_66">
+    <path d="M 836.2 450 L 860.2 450" fill="none" stroke="#1F2F57" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_67">
+    <text x="592.53" y="454.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">N</text>
+  </g>
+  <g id="text_68">
+    <text x="993.2" y="454.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">C</text>
+  </g>
+  <g id="text_69">
+    <text x="441.2" y="531.63" text-anchor="start" fill="#444444" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12"><tspan x="441.2" dy="0">Information flows DNA to RNA to protein; the dashed arrow is a special transfer.</tspan> <tspan x="441.2" dy="15">Replication copies DNA with DNA polymerase; each daughter duplex keeps one old strand.</tspan></text>
+  </g>
+  <g id="caption_70">
+    <text x="60" y="592.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="134.17" y="592.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1310.93" lengthAdjust="spacingAndGlyphs"> THE CENTRAL DOGMA ON ONE THREE-CODON GENE. THE MRNA IS COMPLEMENTARY TO THE TEMPLATE STRAND, SO IT MATCHES THE CODING STRAND WITH U IN PLACE OF T;</text>
+    <text x="478.77" y="611.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="547.56" lengthAdjust="spacingAndGlyphs">EACH CODON SPECIFIES ONE AMINO ACID (AUG MET, GCU ALA, UGG TRP)</text>
+  </g>
+</svg>
