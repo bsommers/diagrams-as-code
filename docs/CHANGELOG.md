@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [v0.19.0] - 2026-11-23
+
 ### Added
 - Math markup: `\binom{n}{k}`, the accents `\hat \widehat \tilde \widetilde \dot \ddot \vec \grave`, and `\sqrt[n]{x}` with an index. `\acute`, `\check`, `\breve` stay unsupported (no outlines).
 - Math markup for chemistry: `\rightleftharpoons` and `\rightleftarrows` (an equilibrium sign drawn as two stacked arrows; the outline set has no harpoon glyph) and `\ce{H2O}` / `\ce{Ca(OH)2}`, which sets a formula upright with computed subscripts and charges. Reference: `docs/math-markup.md`.
