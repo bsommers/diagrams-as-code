@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- **MCP tools an agent can use with no file system**: `render_source` (script text in; SVG returned inline, bounded at 100,000 characters with a truncated flag, and/or written under `out` inside the root), `lint_source` (structured findings with element ids), `get_example` (an example's script and SVG), `list_domains`, `describe_api` (introspected reference of `diagrams_as_code.__all__` plus the plot, draft, sequence and gantt kits, with an optional name filter) and `capabilities` (summary of `docs/capabilities.json`). Source text runs as arbitrary Python in the existing sandbox. All tools now declare `outputSchema` where they return objects.
+- **Structured errors**: a failed tool call returns `{error: {code, message, line?}}` as text and `structuredContent`, with stable codes (`invalid_argument`, `path_outside_root`, `not_found`, `no_scripts`, `script_error`, `timeout`, `resource_limit`, `sandbox_failure`, `output_error`, `internal_error`) and, for a script that raised, the line of the script. Arguments are validated against the tool's schema (unknown keys, wrong types, enum values).
+- **CLI**: `--json` on `render`, `lint`, `themes` and `icons` (one JSON document on stdout, script prints and diagnostics on stderr); new `api [NAME]`, `examples [--domain D]` and `source EXAMPLE` commands. Lint findings carry the ids of the elements involved (`Finding.ids`). Exit codes documented: 0 ok, 1 findings or failures, 2 usage.
+- New module `diagrams_as_code.agent_api` (layer 6.5) holds the logic the CLI and the MCP server share. Tests: `tests/test_agent_interfaces.py`.
+
 ## [v0.19.0] - 2026-11-23
 
 ### Added

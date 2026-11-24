@@ -47,7 +47,7 @@ def _overlap() -> Diagram:
 
 def test_findings_name_the_elements_involved():
     findings = audit_findings(_overlap())
-    assert findings == [Finding("node_overlap", "'Left' overlaps 'Right'")]
+    assert findings == [Finding("node_overlap", "'Left' overlaps 'Right'", ("a", "b"))]
     assert str(findings[0]) == "node_overlap: 'Left' overlaps 'Right'"
 
 
