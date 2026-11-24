@@ -66,6 +66,7 @@ class Routing(Enum):
 
 @dataclass(frozen=True)
 class EdgeStyle:
+    """Resolved edge style: effective routing strategy, corner radius and obstacle clearance (both in px)."""
     routing: Routing
     corner_radius: float
     clearance: float
@@ -240,6 +241,7 @@ class Edge:
 
     @routing.setter
     def routing(self, val: Optional[Union[Routing, str]]) -> None:
+        """Set this edge's routing strategy (``Routing`` or its string value); None inherits the diagram default."""
         self._routing = _coerce_enum(val, Routing, "routing", allow_none=True)
 
     @property
@@ -253,6 +255,7 @@ class Edge:
 
     @waypoints.setter
     def waypoints(self, val: Optional[Union[Sequence[Point], list[Point]]]) -> None:
+        """Set manual waypoints (a point sequence, or None to clear) and drop any resolved path."""
         self.manual_waypoints = list(val) if val is not None else None
         self._resolved_path = None
 
@@ -288,6 +291,7 @@ class Edge:
 
     @corner_radius.setter
     def corner_radius(self, val: Optional[Union[int, float]]) -> None:
+        """Set the corner radius in px; must be a non-negative finite number, None inherits."""
         self._corner_radius = self._validate_corner_radius(val)
 
     @property
@@ -297,6 +301,7 @@ class Edge:
 
     @arc_radius.setter
     def arc_radius(self, val: Optional[Union[int, float]]) -> None:
+        """Set the corner radius in px (alias for ``corner_radius``)."""
         self._corner_radius = self._validate_corner_radius(val)
 
     @staticmethod
@@ -327,6 +332,7 @@ class Edge:
 
     @clearance.setter
     def clearance(self, val: Optional[Union[int, float]]) -> None:
+        """Set the obstacle clearance in px; must be a non-negative finite number, None inherits."""
         self._clearance = self._validate_clearance(val)
 
 

@@ -1,0 +1,45 @@
+# diagrams-as-code
+
+> Pure-Python diagrams as code: describe a diagram in a script, get deterministic SVG, PNG, PDF and a bill of materials with zero runtime dependencies. Drive it from the Python API, the `diagrams-as-code` CLI or an MCP server; a visual linter finds overlaps, clipped labels and lines through nodes.
+
+Version 0.19.0. Requires Python 3.10+; install with `uv sync`. 362 example scripts across 35 domains. The API is `d = Diagram(title)`, `d.shape(label)` or `d.add(Shape(id, label))`, and `a >> d.edge(label) >> b`; there is no `add_node` or `add_edge`.
+
+## Start here
+
+- [Using diagrams-as-code from an AI agent](https://bsommers.github.io/diagrams-as-code/for-agents.md): interfaces, verified quickstart, cheat sheet, lint loop, pitfalls
+- [llms-full.txt](https://bsommers.github.io/diagrams-as-code/llms-full.txt): this documentation in one file (guide, API, CLI, MCP tools, math markup, examples)
+
+## Docs
+
+- [for-agents.md](https://bsommers.github.io/diagrams-as-code/for-agents.md): Start here: choose an interface, quickstart, API cheat sheet, lint loop, pitfalls
+- [api-reference.md](https://bsommers.github.io/diagrams-as-code/api-reference.md): Signature and docstring of every public name, generated from the code
+- [user-guide.md](https://bsommers.github.io/diagrams-as-code/user-guide.md): Task-oriented guide to writing and rendering diagrams
+- [how-to.md](https://bsommers.github.io/diagrams-as-code/how-to.md): Recipes for layout, routing, themes and output
+- [math-markup.md](https://bsommers.github.io/diagrams-as-code/math-markup.md): The TeX-like math subset accepted between dollar signs in any label
+- [sequence-diagrams.md](https://bsommers.github.io/diagrams-as-code/sequence-diagrams.md): UML sequence diagrams: participants, messages, frames
+- [gantt-timelines.md](https://bsommers.github.io/diagrams-as-code/gantt-timelines.md): Gantt charts, critical path and timelines
+- [technical-figures.md](https://bsommers.github.io/diagrams-as-code/technical-figures.md): Paper-style technical figures: plots, drafting, solids
+- [architecture.md](https://bsommers.github.io/diagrams-as-code/architecture.md): Layers, modules and data flow of the engine
+- [CAPABILITIES.md](https://bsommers.github.io/diagrams-as-code/CAPABILITIES.md): What the library can and cannot do, with verification commands
+- [capabilities.json](https://bsommers.github.io/diagrams-as-code/capabilities.json): The same capabilities as machine-readable JSON
+- [running.md](https://bsommers.github.io/diagrams-as-code/running.md): Installing and running: uv, Docker, CLI, MCP
+- [CHANGELOG.md](https://bsommers.github.io/diagrams-as-code/CHANGELOG.md): Release history
+
+## Machine-readable
+
+- [examples/index.json](https://github.com/bsommers/diagrams-as-code/blob/master/examples/index.json): one record per example script (path, domain, title, description, theme, formats, kits used)
+- [docs/capabilities.json](https://bsommers.github.io/diagrams-as-code/capabilities.json): capabilities with their Python API and tests
+
+## Source
+
+- [src/diagrams_as_code/__init__.py](https://github.com/bsommers/diagrams-as-code/blob/master/src/diagrams_as_code/__init__.py): the public names (`__all__`)
+- [src/diagrams_as_code/diagram.py](https://github.com/bsommers/diagrams-as-code/blob/master/src/diagrams_as_code/diagram.py): `Diagram`
+- [src/diagrams_as_code/cli.py](https://github.com/bsommers/diagrams-as-code/blob/master/src/diagrams_as_code/cli.py): the command-line interface
+- [src/diagrams_as_code/mcp.py](https://github.com/bsommers/diagrams-as-code/blob/master/src/diagrams_as_code/mcp.py): the MCP server and its tool table
+- [AGENTS.md](https://github.com/bsommers/diagrams-as-code/blob/master/AGENTS.md): rules for contributing and for using the library as an agent
+
+## Optional
+
+- [README.md](https://github.com/bsommers/diagrams-as-code/blob/master/README.md): overview and gallery
+- [CONTRIBUTING.md](https://github.com/bsommers/diagrams-as-code/blob/master/CONTRIBUTING.md): how to contribute
+- [Landing page](https://bsommers.github.io/diagrams-as-code/): the gallery as a website

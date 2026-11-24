@@ -60,6 +60,7 @@ BADGE_MARGIN = 12.0
 
 def resolve_edge_style(edge: Edge, diagram: Any) -> EdgeStyle:
     # 1. Routing
+    """Resolve an edge's effective style: the edge's own setting, else the diagram's, else orthogonal / 0 px corner / 15 px clearance."""
     if edge._routing is not None:
         eff_routing = edge._routing
     elif getattr(diagram, "routing", None) is not None:

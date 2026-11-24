@@ -95,16 +95,20 @@ class Box:
 
     @property
     def width(self) -> float:
+        """Width in px (right minus left)."""
         return self.right - self.left
 
     @property
     def height(self) -> float:
+        """Height in px (bottom minus top)."""
         return self.bottom - self.top
 
     def moved(self, dx: float, dy: float) -> Box:
+        """Return a copy shifted by (dx, dy) px."""
         return Box(self.left + dx, self.top + dy, self.right + dx, self.bottom + dy)
 
     def overlaps(self, other: Box) -> bool:
+        """True if the interiors of the two boxes intersect (touching edges do not count)."""
         return (self.left < other.right and other.left < self.right
                 and self.top < other.bottom and other.top < self.bottom)
 
@@ -414,9 +418,11 @@ class SequenceDiagram:
         return Frame(self, kind, [str(g) for g in guards])
 
     def loop(self, guard: str = "") -> Frame:
+        """Open a ``loop`` frame with an optional guard text; use as a context manager."""
         return self.frame("loop", guard)
 
     def opt(self, guard: str = "") -> Frame:
+        """Open an ``opt`` frame with an optional guard text; use as a context manager."""
         return self.frame("opt", guard)
 
     def alt(self, *guards: str) -> Frame:
@@ -424,12 +430,15 @@ class SequenceDiagram:
         return self.frame("alt", *guards)
 
     def par(self, *guards: str) -> Frame:
+        """Open a ``par`` frame; ``branch()`` inside starts the next parallel lane."""
         return self.frame("par", *guards)
 
     def critical(self, guard: str = "") -> Frame:
+        """Open a ``critical`` frame with an optional guard text; use as a context manager."""
         return self.frame("critical", guard)
 
     def break_(self, guard: str = "") -> Frame:
+        """Open a ``break`` frame with an optional guard text (trailing underscore: ``break`` is a keyword)."""
         return self.frame("break", guard)
 
     def _push_frame(self, frame: Frame) -> None:

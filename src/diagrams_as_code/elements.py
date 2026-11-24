@@ -86,6 +86,7 @@ class Constraint(MutableMapping):
         return key in self._present_fields()
 
     def get(self, key: str, default: Any = None) -> Any:
+        """Return the field ``key`` if it is set on this constraint, else ``default``."""
         if key not in self._present_fields():
             return default
         return getattr(self, key)
@@ -108,15 +109,18 @@ class Constraint(MutableMapping):
         return False
 
     def copy(self) -> Constraint:
+        """Return a shallow copy of this constraint."""
         import copy
 
         return copy.copy(self)
 
     def to_dict(self) -> dict[str, Any]:
+        """Return the set fields as a plain dict."""
         return {k: self[k] for k in self}
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Constraint:
+        """Rebuild the matching Constraint subclass from a dict produced by ``to_dict`` (keyed by ``type``)."""
         ctype = data.get("type")
         source = data.get("_layout_source") or data.get("_source")
         auto = bool(data.get("_auto_layout", False))
@@ -496,6 +500,7 @@ class Shape(Element):
         self.children: list[Shape] = []
 
     def translate(self, dx: float, dy: float) -> None:
+        """Move this shape and all its children by (dx, dy) px."""
         super().translate(dx, dy)
         for child in self.children:
             child.translate(dx, dy)
@@ -691,6 +696,7 @@ class Junction(Shape):
         self.bounds = Rect(to_px(x), to_px(y), 0.0, 0.0)
 
     def draw(self, style: Style, theme: Any) -> list[DrawItem]:
+        """Draw the junction dot (nothing if ``dot`` is false), filled with its style fill or the theme edge colour."""
         if not self.dot:
             return []
         color = (self.style.fill if self.style and self.style.fill else None) or theme.edge_color

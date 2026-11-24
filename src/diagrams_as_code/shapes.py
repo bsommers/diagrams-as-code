@@ -517,38 +517,49 @@ class ShapeLibrary:
 
     # Convenience helper methods
     def render_sensor(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'sensor' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("sensor", x, y, size, color, stroke_width)
 
     def render_gateway(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'gateway' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("gateway", x, y, size, color, stroke_width)
 
     def render_edge(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'edge' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("edge", x, y, size, color, stroke_width)
 
     def render_broker(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'broker' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("broker", x, y, size, color, stroke_width)
 
     def render_database_icon(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'database' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("database", x, y, size, color, stroke_width)
 
     def render_influx_icon(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'influx' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("influx", x, y, size, color, stroke_width)
 
     render_influx = render_database_icon
 
     def render_queue(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'queue' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("queue", x, y, size, color, stroke_width)
 
     def render_kafka(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'kafka' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("kafka", x, y, size, color, stroke_width)
 
     def render_cloud_icon(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'cloud' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("cloud", x, y, size, color, stroke_width)
 
     def render_dashboard(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'dashboard' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("dashboard", x, y, size, color, stroke_width)
 
     def render_grafana(self, x: float, y: float, size: float = 24.0, color: str = "#FFC000", stroke_width: float = 2.0) -> str:
+        """Render the 'grafana' icon at (x, y) as an SVG string; ``size`` and ``stroke_width`` in px."""
         return self.render_icon("grafana", x, y, size, color, stroke_width)
 
 

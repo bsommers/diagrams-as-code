@@ -444,6 +444,7 @@ class Diagram:
 
     @corner_radius.setter
     def corner_radius(self, val: Optional[Union[int, float]]) -> None:
+        """Set the default edge corner radius in px (non-negative finite number, or None)."""
         self._corner_radius = Edge._validate_corner_radius(val)
 
     @property
@@ -453,6 +454,7 @@ class Diagram:
 
     @arc_radius.setter
     def arc_radius(self, val: Optional[Union[int, float]]) -> None:
+        """Set the default edge corner radius in px (alias for ``corner_radius``)."""
         self._corner_radius = Edge._validate_corner_radius(val)
 
     @property
@@ -462,6 +464,7 @@ class Diagram:
 
     @clearance.setter
     def clearance(self, val: Optional[Union[int, float]]) -> None:
+        """Set the default edge obstacle clearance in px (non-negative finite number, or None)."""
         self._clearance = Edge._validate_clearance(val) if val is not None else None
 
     @property
@@ -471,6 +474,7 @@ class Diagram:
 
     @routing.setter
     def routing(self, val: Optional[Union[Routing, str]]) -> None:
+        """Set the default edge routing strategy (``Routing`` or its string value, or None)."""
         self._routing = _coerce_enum(val, Routing, "routing", allow_none=True)
 
     def configure(

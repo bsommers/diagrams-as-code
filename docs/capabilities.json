@@ -5,8 +5,8 @@
   "repository": "ai/diagrams-as-code",
   "last_updated": "2026-11-23T00:00:00Z",
   "summary": {
-    "total_capabilities": 28,
-    "operational": 28,
+    "total_capabilities": 29,
+    "operational": 29,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -27,7 +27,8 @@
       "Model Context Protocol Server",
       "Math Markup",
       "Sequence Diagrams",
-      "Gantt Charts & Timelines"
+      "Gantt Charts & Timelines",
+      "Agent Documentation & Typing"
     ]
   },
   "quick_answers": {
@@ -398,6 +399,17 @@
       "classes": ["GanttChart", "Timeline", "Task", "schedule"],
       "details": "GanttChart schedules tasks from durations and finish-to-start dependencies with lag, groups them in phases, draws milestones, percent done and a status line, and computes and highlights the critical path with orthogonal dependency arrows. Timeline places dated events on a ruler with labels stacked so none overlap. Calendar days only; about 0.5% of arrows on dense random charts can be unroutable (a warning is raised). Eleven examples in examples/project_management; guide: docs/gantt-timelines.md.",
       "verification": "uv run pytest tests/test_gantt.py tests/test_domain_examples.py && uv run diagrams-as-code lint examples/project_management"
+    },
+    {
+      "id": "CAP-AGENT-DOCS",
+      "name": "Agent Guide, llms.txt, API Reference and Examples Index",
+      "category": "Agent Documentation & Typing",
+      "status": "OPERATIONAL",
+      "target_release": "unreleased",
+      "python_api": "diagrams_as_code (py.typed, documented public API)",
+      "classes": [],
+      "details": "docs/for-agents.md is a guide for AI agents and programs in which every Python and diagrams-as-code snippet is executed by a test. tools/build_agent_docs.py generates docs/api-reference.md (signature, docstring and location of every public name and of the plot, draft, sequence, gantt and math kits), docs/llms.txt and docs/llms-full.txt (llmstxt.org format, served at the Pages root; the CLI and MCP sections are read from the live parser and tool table) and examples/index.json (one record per example script). The package ships a py.typed marker and every public class, function and method has a docstring, held by a ratchet test.",
+      "verification": "uv run pytest tests/test_agent_docs.py tests/test_for_agents_doc.py tests/test_typing_docs.py && uv run python tools/build_agent_docs.py --check"
     }
   ]
 }

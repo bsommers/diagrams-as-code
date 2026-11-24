@@ -49,6 +49,7 @@ class Primitive(Shape):
         return theme.serif_family if role == "serif" else theme.font_family
 
     def draw(self, style: Style, theme: Any) -> list[DrawItem]:
+        """Return the draw items for this primitive under ``style`` and ``theme``; subclasses must implement it."""
         raise NotImplementedError
 
 
@@ -93,6 +94,7 @@ class Text(Primitive):
 
     @property
     def block(self) -> TextBlock:
+        """The laid-out text block (label markup applied, wrapped at ``max_width``)."""
         style = TextStyle(
             size=self.size, bold=self.bold, italic=self.italic,
             line_height=self.line_height, small_caps=self.small_caps,
@@ -100,10 +102,12 @@ class Text(Primitive):
         return layout(self.label or "", style, self.max_width)
 
     def prepare(self) -> None:
+        """Size the element to its text block plus ``padding`` on each side."""
         block = self.block
         self._resize(block.width + 2.0 * self.padding, block.height + 2.0 * self.padding)
 
     def draw(self, style: Style, theme: Any) -> list[DrawItem]:
+        """Draw the label aligned left, centre or right inside the padded bounds; nothing if empty."""
         if not self.label:
             return []
         b, pad = self.bounds, self.padding
@@ -137,6 +141,7 @@ class Caption(Text):
 
     @property
     def floating(self) -> bool:  # type: ignore[override]
+        """True when the caption has no constraints and so is placed by the diagram."""
         return not self.constraints
 
 
@@ -179,10 +184,12 @@ class Bracket(Primitive):
         return layout(self.label, TextStyle(size=self.font_size)) if self.label else None
 
     def set_length(self, length: float) -> None:
+        """Set the length in px that the bracket spans and recompute its size."""
         self.length = float(length)
         self.prepare()
 
     def prepare(self) -> None:
+        """Size the element to the bracket depth and length plus its label."""
         block = self._label_block
         extra_w = block.width + self.LABEL_GAP if block else 0.0
         extra_h = block.height + self.LABEL_GAP if block else 0.0
@@ -219,6 +226,7 @@ class Bracket(Primitive):
         )
 
     def draw(self, style: Style, theme: Any) -> list[DrawItem]:
+        """Draw the bracket and its label on the configured side."""
         b = self.bounds
         block = self._label_block
 
@@ -280,6 +288,7 @@ class Path(Primitive):
         self.bounds = Rect(box.x, box.y, box.width, box.height)
 
     def draw(self, style: Style, theme: Any) -> list[DrawItem]:
+        """Draw the path commands translated to the element's bounds, with fill only for filled kinds."""
         b = self.bounds
         fill = style.fill if self.FILLED and style.fill not in (None, "none", "transparent") else None
         items: list[DrawItem] = [
@@ -381,10 +390,12 @@ class SolidShape(Primitive):
         return Rect(min(xs), min(ys), max(xs) - min(xs), max(ys) - min(ys))
 
     def prepare(self) -> None:
+        """Size the element to the projected solid's extent."""
         box = self._extent()
         self._resize(box.width, box.height)
 
     def draw(self, style: Style, theme: Any) -> list[DrawItem]:
+        """Draw the projected faces, edges and any section, offset to the element's bounds."""
         faces, edges, plane, section = self._geometry()
         box = self._extent()
         dx, dy = self.bounds.x - box.x, self.bounds.y - box.y
@@ -476,10 +487,12 @@ class Band(Group):
         return self.note_width + self.padding if self.notes else 0.0
 
     def note_blocks(self) -> list[TextBlock]:
+        """Laid-out italic note text blocks, wrapped at ``note_width``."""
         style = TextStyle(size=self.NOTE_SIZE, italic=True)
         return [layout(n, style, self.note_width) for n in self.notes]
 
     def calculate_bounds(self) -> Rect:
+        """Bounds of an auto-sized band: its children plus the note column, honouring minimum width and height."""
         if not self.is_auto_sized or not self.children:
             return self.bounds
         b = super().calculate_bounds()

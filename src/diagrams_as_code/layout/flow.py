@@ -27,6 +27,7 @@ class VerticalFlowLayout:
         self.mode = "vertical_flow"
 
     def apply(self, group: Group) -> None:
+        """Replace the group's auto-layout constraints so each child sits below the previous one."""
         children = group.children
         if not children:
             return
@@ -59,6 +60,7 @@ class HorizontalFlowLayout:
         self.mode = "horizontal_flow"
 
     def apply(self, group: Group) -> None:
+        """Replace the group's auto-layout constraints so each child sits right of the previous one."""
         children = group.children
         if not children:
             return
@@ -93,6 +95,7 @@ class GridLayout:
         self.mode = "grid"
 
     def apply(self, group: Group) -> None:
+        """Replace the group's auto-layout constraints so children fill a grid of ``columns`` columns, row by row."""
         children = group.children
         if not children:
             return

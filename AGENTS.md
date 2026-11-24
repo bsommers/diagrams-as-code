@@ -27,3 +27,11 @@ In this repository, **ALWAYS** use [`uv`](https://docs.astral.sh/uv/) for all Py
 > 5. **No Speculative or Intermediate Remote Commits:** Never push intermediate, broken, or WIP commits to remote branches. Batch commits and push only fully verified, green changesets.
 > 6. **Avoid Redundant CI Runs:** Planning files (`.planning/**`), documentation notes, and agent checkpoints must not trigger unnecessary remote builds.
 
+## Using this library as an agent
+
+If you are *using* diagrams-as-code (not changing it), read [`docs/for-agents.md`](docs/for-agents.md) first: which interface to pick (Python API, CLI, MCP), a verified quickstart, the 15 calls you need, the render and lint feedback loop, and the pitfalls. The API is `d = Diagram(title)`, `d.shape(label)` or `d.add(Shape(id, label))`, and `a >> d.edge(label) >> b`; there is no `add_node` or `add_edge`.
+
+- [`docs/llms.txt`](docs/llms.txt) (index) and [`docs/llms-full.txt`](docs/llms-full.txt) (everything in one file) are served at <https://bsommers.github.io/diagrams-as-code/llms.txt>.
+- [`docs/api-reference.md`](docs/api-reference.md): every public name with signature and docstring.
+- [`examples/index.json`](examples/index.json): one record per example script (domain, title, theme, kits used).
+- Those four files are generated: `uv run python tools/build_agent_docs.py` rewrites them and `--check` verifies them. Do not edit them by hand; edit a docstring or `docs/for-agents.md` instead. Every code block in `docs/for-agents.md` is executed by `tests/test_for_agents_doc.py`.

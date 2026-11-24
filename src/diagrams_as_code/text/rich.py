@@ -31,11 +31,13 @@ class TextStyle:
     small_caps: bool = False
 
     def scaled(self, size: float) -> TextStyle:
+        """Return a copy of this style with font size ``size`` px."""
         return replace(self, size=float(size))
 
 
 @dataclass(frozen=True)
 class TextRun:
+    """A run of plain text with its measured width and size (px) and bold / italic flags."""
     text: str
     width: float
     size: float
@@ -45,10 +47,12 @@ class TextRun:
 
 @dataclass(frozen=True)
 class MathRun:
+    """A run holding a typeset math box."""
     box: _math.MathBox
 
     @property
     def width(self) -> float:
+        """Width in px of the math box."""
         return self.box.width
 
 
@@ -57,6 +61,7 @@ Run = Union[TextRun, MathRun]
 
 @dataclass(frozen=True)
 class Line:
+    """One laid-out line: its runs, width, ascent, depth and line advance (px)."""
     runs: tuple[Run, ...]
     width: float
     ascent: float  # tallest ink above the baseline

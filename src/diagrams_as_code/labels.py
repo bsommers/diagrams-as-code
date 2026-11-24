@@ -72,6 +72,7 @@ PLATE_KINDS = frozenset({"server_rack", "database"})
 
 
 def shape_kind(shape: Any) -> str:
+    """A shape's kind, lower-cased with '-' replaced by '_'; 'box' when unset."""
     return (getattr(shape, "kind", "box") or "box").lower().replace("-", "_")
 
 
@@ -114,6 +115,7 @@ def _fit(
 
 
 def inside_icon_size(shape: Any) -> float:
+    """Icon size in px for an inside label: 0 without an icon, else ``metadata['icon_size']`` or 16 to 24 scaled to height."""
     if not getattr(shape, "icon", None):
         return 0.0
     h = shape.bounds.height
