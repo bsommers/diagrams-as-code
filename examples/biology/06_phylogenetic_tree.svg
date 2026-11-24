@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 703" width="1260" height="703">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polyline_1">
+    <path d="M 836.77 88 L 836.77 480" fill="none" stroke="#E1E5EE" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_4">
+    <path d="M 696.77 88 L 696.77 480" fill="none" stroke="#E1E5EE" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_7">
+    <path d="M 556.77 88 L 556.77 480" fill="none" stroke="#E1E5EE" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_10">
+    <path d="M 416.77 88 L 416.77 480" fill="none" stroke="#E1E5EE" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_13">
+    <path d="M 276.77 88 L 276.77 480" fill="none" stroke="#E1E5EE" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_2">
+    <path d="M 836.77 480 L 836.77 486" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_3">
+    <text x="833.71" y="499.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="polyline_5">
+    <path d="M 696.77 480 L 696.77 486" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_6">
+    <text x="690.65" y="499.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">10</text>
+  </g>
+  <g id="polyline_8">
+    <path d="M 556.77 480 L 556.77 486" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_9">
+    <text x="550.65" y="499.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">20</text>
+  </g>
+  <g id="polyline_11">
+    <path d="M 416.77 480 L 416.77 486" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_12">
+    <text x="410.65" y="499.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">30</text>
+  </g>
+  <g id="polyline_14">
+    <path d="M 276.77 480 L 276.77 486" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_15">
+    <text x="270.65" y="499.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">40</text>
+  </g>
+  <g id="polyline_16">
+    <path d="M 234.77 480 L 836.77 480" fill="none" stroke="#1F2F57" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_17">
+    <text x="533.75" y="519.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Mya (million years ago)</text>
+  </g>
+  <g id="polyline_18">
+    <path d="M 206.77 155.64 L 234.77 155.64" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_19">
+    <path d="M 234.77 110 L 836.77 110" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_20">
+    <path d="M 430.77 156 L 836.77 156" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_21">
+    <path d="M 556.77 202 L 836.77 202" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_22">
+    <path d="M 616.97 248 L 836.77 248" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_23">
+    <path d="M 710.77 294 L 836.77 294" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_25">
+    <path d="M 810.17 386 L 836.77 386" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_26">
+    <path d="M 810.17 432 L 836.77 432" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_27">
+    <path d="M 810.17 386 L 810.17 432" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_28">
+    <path d="M 745.77 409 L 810.17 409" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_29">
+    <path d="M 745.77 340 L 745.77 409" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_32">
+    <path d="M 710.77 294 L 710.77 374.5" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_35">
+    <path d="M 616.97 248 L 616.97 334.25" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_38">
+    <path d="M 556.77 202 L 556.77 291.12" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_41">
+    <path d="M 430.77 156 L 430.77 246.56" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_44">
+    <path d="M 234.77 110 L 234.77 201.28" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="point_46">
+    <path d="M 813.37 409 C 813.37 410.77 811.94 412.2 810.17 412.2 C 808.4 412.2 806.97 410.77 806.97 409 C 806.97 407.23 808.4 405.8 810.17 405.8 C 811.94 405.8 813.37 407.23 813.37 409 Z" fill="#000000" />
+  </g>
+  <g id="text_47">
+    <text x="795.5" y="402.13" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">G</text>
+  </g>
+  <g id="point_48">
+    <path d="M 748.97 374.5 C 748.97 376.27 747.54 377.7 745.77 377.7 C 744 377.7 742.57 376.27 742.57 374.5 C 742.57 372.73 744 371.3 745.77 371.3 C 747.54 371.3 748.97 372.73 748.97 374.5 Z" fill="#000000" />
+  </g>
+  <g id="text_49">
+    <text x="732.11" y="367.63" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">F</text>
+  </g>
+  <g id="point_50">
+    <path d="M 713.97 334.25 C 713.97 336.02 712.54 337.45 710.77 337.45 C 709 337.45 707.57 336.02 707.57 334.25 C 707.57 332.48 709 331.05 710.77 331.05 C 712.54 331.05 713.97 332.48 713.97 334.25 Z" fill="#000000" />
+  </g>
+  <g id="text_51">
+    <text x="696.77" y="327.38" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">E</text>
+  </g>
+  <g id="point_52">
+    <path d="M 620.17 291.12 C 620.17 292.89 618.74 294.32 616.97 294.32 C 615.2 294.32 613.77 292.89 613.77 291.12 C 613.77 289.36 615.2 287.93 616.97 287.93 C 618.74 287.93 620.17 289.36 620.17 291.12 Z" fill="#000000" />
+  </g>
+  <g id="text_53">
+    <text x="602.64" y="284.25" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">D</text>
+  </g>
+  <g id="point_54">
+    <path d="M 559.97 246.56 C 559.97 248.33 558.54 249.76 556.77 249.76 C 555 249.76 553.57 248.33 553.57 246.56 C 553.57 244.8 555 243.36 556.77 243.36 C 558.54 243.36 559.97 244.8 559.97 246.56 Z" fill="#000000" />
+  </g>
+  <g id="text_55">
+    <text x="542.44" y="239.69" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">C</text>
+  </g>
+  <g id="point_56">
+    <path d="M 433.97 201.28 C 433.97 203.05 432.54 204.48 430.77 204.48 C 429 204.48 427.57 203.05 427.57 201.28 C 427.57 199.51 429 198.08 430.77 198.08 C 432.54 198.08 433.97 199.51 433.97 201.28 Z" fill="#000000" />
+  </g>
+  <g id="text_57">
+    <text x="416.44" y="194.41" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">B</text>
+  </g>
+  <g id="point_58">
+    <path d="M 237.97 155.64 C 237.97 157.41 236.54 158.84 234.77 158.84 C 233 158.84 231.57 157.41 231.57 155.64 C 231.57 153.87 233 152.44 234.77 152.44 C 236.54 152.44 237.97 153.87 237.97 155.64 Z" fill="#000000" />
+  </g>
+  <g id="text_59">
+    <text x="220.44" y="148.77" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">A</text>
+  </g>
+  <g id="point_60">
+    <path d="M 839.77 110 C 839.77 111.66 838.43 113 836.77 113 C 835.11 113 833.77 111.66 833.77 110 C 833.77 108.34 835.11 107 836.77 107 C 838.43 107 839.77 108.34 839.77 110 Z" fill="#000000" />
+  </g>
+  <g id="text_61">
+    <text x="848.77" y="114.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="97.53" lengthAdjust="spacingAndGlyphs">Callithrix jacchus</text>
+    <text x="946.3" y="114.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="73.67" lengthAdjust="spacingAndGlyphs">  (marmoset)</text>
+  </g>
+  <g id="point_62">
+    <path d="M 839.77 156 C 839.77 157.66 838.43 159 836.77 159 C 835.11 159 833.77 157.66 833.77 156 C 833.77 154.34 835.11 153 836.77 153 C 838.43 153 839.77 154.34 839.77 156 Z" fill="#000000" />
+  </g>
+  <g id="text_63">
+    <text x="848.77" y="160.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="91.76" lengthAdjust="spacingAndGlyphs">Macaca mulatta</text>
+    <text x="940.53" y="160.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="111.99" lengthAdjust="spacingAndGlyphs">  (rhesus macaque)</text>
+  </g>
+  <g id="point_64">
+    <path d="M 839.77 202 C 839.77 203.66 838.43 205 836.77 205 C 835.11 205 833.77 203.66 833.77 202 C 833.77 200.34 835.11 199 836.77 199 C 838.43 199 839.77 200.34 839.77 202 Z" fill="#000000" />
+  </g>
+  <g id="text_65">
+    <text x="848.77" y="206.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="75.87" lengthAdjust="spacingAndGlyphs">Hylobates lar</text>
+    <text x="924.64" y="206.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="72.98" lengthAdjust="spacingAndGlyphs">  (lar gibbon)</text>
+  </g>
+  <g id="point_66">
+    <path d="M 839.77 248 C 839.77 249.66 838.43 251 836.77 251 C 835.11 251 833.77 249.66 833.77 248 C 833.77 246.34 835.11 245 836.77 245 C 838.43 245 839.77 246.34 839.77 248 Z" fill="#000000" />
+  </g>
+  <g id="text_67">
+    <text x="848.77" y="252.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="101.18" lengthAdjust="spacingAndGlyphs">Pongo pygmaeus</text>
+    <text x="949.95" y="252.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="74.43" lengthAdjust="spacingAndGlyphs">  (orangutan)</text>
+  </g>
+  <g id="point_68">
+    <path d="M 839.77 294 C 839.77 295.66 838.43 297 836.77 297 C 835.11 297 833.77 295.66 833.77 294 C 833.77 292.34 835.11 291 836.77 291 C 838.43 291 839.77 292.34 839.77 294 Z" fill="#000000" />
+  </g>
+  <g id="text_69">
+    <text x="848.77" y="298.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="75.86" lengthAdjust="spacingAndGlyphs">Gorilla gorilla</text>
+    <text x="924.63" y="298.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="50.57" lengthAdjust="spacingAndGlyphs">  (gorilla)</text>
+  </g>
+  <g id="point_70">
+    <path d="M 839.77 340 C 839.77 341.66 838.43 343 836.77 343 C 835.11 343 833.77 341.66 833.77 340 C 833.77 338.34 835.11 337 836.77 337 C 838.43 337 839.77 338.34 839.77 340 Z" fill="#000000" />
+  </g>
+  <g id="text_71">
+    <text x="848.77" y="344.47" xml:space="preserve" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="83.1" lengthAdjust="spacingAndGlyphs">Homo sapiens</text>
+    <text x="931.87" y="344.47" xml:space="preserve" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="55.63" lengthAdjust="spacingAndGlyphs">  (human)</text>
+  </g>
+  <g id="point_72">
+    <path d="M 839.77 386 C 839.77 387.66 838.43 389 836.77 389 C 835.11 389 833.77 387.66 833.77 386 C 833.77 384.34 835.11 383 836.77 383 C 838.43 383 839.77 384.34 839.77 386 Z" fill="#000000" />
+  </g>
+  <g id="text_73">
+    <text x="848.77" y="390.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="90.33" lengthAdjust="spacingAndGlyphs">Pan troglodytes</text>
+    <text x="939.11" y="390.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="85.98" lengthAdjust="spacingAndGlyphs">  (chimpanzee)</text>
+  </g>
+  <g id="point_74">
+    <path d="M 839.77 432 C 839.77 433.66 838.43 435 836.77 435 C 835.11 435 833.77 433.66 833.77 432 C 833.77 430.34 835.11 429 836.77 429 C 838.43 429 839.77 430.34 839.77 432 Z" fill="#000000" />
+  </g>
+  <g id="text_75">
+    <text x="848.77" y="436.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-style="italic" textLength="78.05" lengthAdjust="spacingAndGlyphs">Pan paniscus</text>
+    <text x="926.82" y="436.47" xml:space="preserve" fill="#1F2F57" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" textLength="59.26" lengthAdjust="spacingAndGlyphs">  (bonobo)</text>
+  </g>
+  <g id="polyline_76">
+    <path d="M 234.77 550 L 374.77 550" fill="none" stroke="#1F2F57" stroke-width="2.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_77">
+    <path d="M 234.77 545 L 234.77 555" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_78">
+    <path d="M 374.77 545 L 374.77 555" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_79">
+    <text x="386.77" y="554.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">10 million years</text>
+  </g>
+  <g id="text_80">
+    <text x="234.77" y="361.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="39.35" lengthAdjust="spacingAndGlyphs">Clades</text>
+    <text x="274.12" y="361.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="142.73" lengthAdjust="spacingAndGlyphs"> (approx. divergence, Mya)</text>
+  </g>
+  <g id="text_81">
+    <text x="240.77" y="381.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="8.67" lengthAdjust="spacingAndGlyphs">A</text>
+    <text x="249.44" y="381.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="111.75" lengthAdjust="spacingAndGlyphs">   Anthropoidea   ~43</text>
+  </g>
+  <g id="text_82">
+    <text x="240.77" y="398.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="8.67" lengthAdjust="spacingAndGlyphs">B</text>
+    <text x="249.44" y="398.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="92.38" lengthAdjust="spacingAndGlyphs">   Catarrhini   ~29</text>
+  </g>
+  <g id="text_83">
+    <text x="240.77" y="415.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="8.67" lengthAdjust="spacingAndGlyphs">C</text>
+    <text x="249.44" y="415.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="141.74" lengthAdjust="spacingAndGlyphs">   Hominoidea (apes)   ~20</text>
+  </g>
+  <g id="text_84">
+    <text x="240.77" y="432.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="8.67" lengthAdjust="spacingAndGlyphs">D</text>
+    <text x="249.44" y="432.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="175.76" lengthAdjust="spacingAndGlyphs">   Hominidae (great apes)   ~15.7</text>
+  </g>
+  <g id="text_85">
+    <text x="455.77" y="381.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="8" lengthAdjust="spacingAndGlyphs">E</text>
+    <text x="463.78" y="381.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="91.05" lengthAdjust="spacingAndGlyphs">   Homininae   ~9</text>
+  </g>
+  <g id="text_86">
+    <text x="455.77" y="398.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="7.33" lengthAdjust="spacingAndGlyphs">F</text>
+    <text x="463.1" y="398.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="90.38" lengthAdjust="spacingAndGlyphs">   Hominini   ~6.5</text>
+  </g>
+  <g id="text_87">
+    <text x="455.77" y="415.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="9.33" lengthAdjust="spacingAndGlyphs">G</text>
+    <text x="465.11" y="415.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="65.04" lengthAdjust="spacingAndGlyphs">   Pan   ~1.9</text>
+  </g>
+  <g id="caption_88">
+    <text x="60" y="600.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 6:</text>
+    <text x="134.17" y="600.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1065.12" lengthAdjust="spacingAndGlyphs"> TIME-SCALED PHYLOGENY OF EIGHT PRIMATES BUILT FROM NESTED (NAME, BRANCH LENGTH) DATA. NODE X-POSITION IS DIVERGENCE TIME;</text>
+    <text x="221.24" y="618.78" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="816.81" lengthAdjust="spacingAndGlyphs">THE LINEAGE TO HUMANS IS RED, AND THE CHIMPANZEE AND BONOBO ARE OUR CLOSEST LIVING RELATIVES</text>
+  </g>
+  <g id="polyline_24">
+    <path d="M 745.77 340 L 836.77 340" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_30">
+    <path d="M 745.77 374.5 L 745.77 340" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_31">
+    <path d="M 710.77 374.5 L 745.77 374.5" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_33">
+    <path d="M 710.77 334.25 L 710.77 374.5" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_34">
+    <path d="M 616.97 334.25 L 710.77 334.25" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_36">
+    <path d="M 616.97 291.12 L 616.97 334.25" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_37">
+    <path d="M 556.77 291.12 L 616.97 291.12" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_39">
+    <path d="M 556.77 246.56 L 556.77 291.12" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_40">
+    <path d="M 430.77 246.56 L 556.77 246.56" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_42">
+    <path d="M 430.77 201.28 L 430.77 246.56" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_43">
+    <path d="M 234.77 201.28 L 430.77 201.28" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_45">
+    <path d="M 234.77 155.64 L 234.77 201.28" fill="none" stroke="#B03A3A" stroke-width="3" stroke-linejoin="round" />
+  </g>
+</svg>

@@ -1,0 +1,356 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 981 767" width="981" height="767">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-2E6B3F" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2E6B3F"/>
+    </marker>
+    <marker id="arrow-2E6B3F-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#2E6B3F"/>
+    </marker>
+    <marker id="arrow-1F2F57" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1F2F57"/>
+    </marker>
+    <marker id="arrow-1F2F57-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#1F2F57"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_46">
+    <path d="M 110 640 L 110 370 M 182.57 640 L 182.57 370 M 255.13 640 L 255.13 370 M 327.7 640 L 327.7 370 M 400.27 640 L 400.27 370 M 472.83 640 L 472.83 370 M 545.4 640 L 545.4 370 M 617.96 640 L 617.96 370 M 690.53 640 L 690.53 370 M 763.1 640 L 763.1 370 M 835.66 640 L 835.66 370 M 908.23 640 L 908.23 370 M 110 640 L 930 640 M 110 590.91 L 930 590.91 M 110 541.82 L 930 541.82 M 110 492.73 L 930 492.73 M 110 443.64 L 930 443.64 M 110 394.55 L 930 394.55" fill="none" stroke="#D9DDE6" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <path d="M 716 234 L 890.78 234" fill="none" stroke="#2E6B3F" stroke-width="3.4" />
+  <path d="M 902 234 L 881.6 242.16 L 888.74 234 L 881.6 225.84 Z" fill="#2E6B3F" />
+  <path d="M 904 202 L 729.22 202" fill="none" stroke="#2E6B3F" stroke-width="3.4" />
+  <path d="M 718 202 L 738.4 193.84 L 731.26 202 L 738.4 210.16 Z" fill="#2E6B3F" />
+  <path d="M 320 120 L 392.74 120" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 400 120 L 386.8 125.28 L 391.42 120 L 386.8 114.72 Z" fill="#1F2F57" />
+  <path d="M 620 120 L 692.74 120" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 700 120 L 686.8 125.28 L 691.42 120 L 686.8 114.72 Z" fill="#1F2F57" />
+  <path d="M 810 92 L 810 62 L 210 62 L 210 84.74" fill="none" stroke="#1F2F57" stroke-width="2.2" />
+  <path d="M 210 92 L 204.72 78.8 L 210 83.42 L 215.28 78.8 Z" fill="#1F2F57" />
+  <path d="M 110 640 L 942 640" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 110 640 L 110 358" fill="none" stroke="#000000" stroke-width="1.2" />
+  <g id="shape_1">
+    <rect x="100" y="92" width="220" height="56" rx="8" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.6" />
+    <text x="210" y="116.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">1  Denaturation</text>
+    <text x="210" y="132.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">95 °C, 15-30 s</text>
+  </g>
+  <g id="polyline_2">
+    <path d="M 110 205 L 310 205" fill="none" stroke="#444444" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_3">
+    <path d="M 110 219 L 310 219" fill="none" stroke="#444444" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_4">
+    <path d="M 120 205 L 120 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_5">
+    <path d="M 138 205 L 138 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_6">
+    <path d="M 156 205 L 156 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_7">
+    <path d="M 174 205 L 174 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_8">
+    <path d="M 192 205 L 192 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_9">
+    <path d="M 210 205 L 210 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_10">
+    <path d="M 228 205 L 228 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_11">
+    <path d="M 246 205 L 246 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_12">
+    <path d="M 264 205 L 264 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_13">
+    <path d="M 282 205 L 282 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_14">
+    <path d="M 300 205 L 300 219" fill="none" stroke="#8A93A8" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_15">
+    <text x="96.53" y="208.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_16">
+    <text x="316" y="208.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_17">
+    <text x="96.53" y="222.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_18">
+    <text x="316" y="222.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_19">
+    <text x="134.79" y="280.66" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">heat separates the two strands</text>
+  </g>
+  <g id="shape_20">
+    <rect x="400" y="92" width="220" height="56" rx="8" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.6" />
+    <text x="510" y="116.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">2  Annealing</text>
+    <text x="510" y="132.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">55-65 °C, 15-30 s</text>
+  </g>
+  <g id="polyline_21">
+    <path d="M 410 195 L 610 195" fill="none" stroke="#444444" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_22">
+    <path d="M 410 241 L 610 241" fill="none" stroke="#444444" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_23">
+    <text x="396.53" y="198.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_24">
+    <text x="616" y="198.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_25">
+    <text x="396.53" y="244.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_26">
+    <text x="616" y="244.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="polyline_27">
+    <path d="M 416 234 L 464 234" fill="none" stroke="#B03A3A" stroke-width="4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_28">
+    <path d="M 604 202 L 556 202" fill="none" stroke="#B03A3A" stroke-width="4" stroke-linejoin="round" />
+  </g>
+  <g id="text_29">
+    <text x="425.94" y="280.66" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">primers (red) bind their target sites</text>
+  </g>
+  <g id="shape_30">
+    <rect x="700" y="92" width="220" height="56" rx="8" fill="#DCE6F2" stroke="#1F2F57" stroke-width="1.6" />
+    <text x="810" y="116.67" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">3  Extension</text>
+    <text x="810" y="132.27" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">72 °C, about 1 min per kb</text>
+  </g>
+  <g id="polyline_31">
+    <path d="M 710 195 L 910 195" fill="none" stroke="#444444" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_32">
+    <path d="M 710 241 L 910 241" fill="none" stroke="#444444" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="text_33">
+    <text x="696.53" y="198.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_34">
+    <text x="916" y="198.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_35">
+    <text x="696.53" y="244.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">3&#x27;</text>
+  </g>
+  <g id="text_36">
+    <text x="916" y="244.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" text-anchor="start">5&#x27;</text>
+  </g>
+  <g id="text_43">
+    <text x="701.82" y="280.66" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Taq polymerase extends each primer 5&#x27; to 3&#x27;</text>
+  </g>
+  <g id="text_44">
+    <text x="457.64" y="52.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">repeat 25-35 cycles</text>
+  </g>
+  <g id="text_45">
+    <text x="110" y="311.63" xml:space="preserve" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="201.45" lengthAdjust="spacingAndGlyphs">Each cycle ideally doubles the target: </text>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(311.45 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <text x="318.23" y="311.63" xml:space="preserve" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="65.36" lengthAdjust="spacingAndGlyphs"> cycles give </text>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(383.59 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M521 112C506 93 481 60 447 60C433 60 428 68 428 79C428 91 430 103 430 103L487 334C490 348 496 382 496 408C496 444 481 479 430 479C312 479 227 334 185 259H177L227 476H205L66 465V438C66 438 86 440 99 440C122 440 131 430 131 413C131 398 128 380 128 380L47 0H129L165 158C197 227 307 407 380 407C403 407 410 390 410 367C410 347 403 319 403 319L344 88C343 83 339 65 339 49C339 19 354 -10 404 -10C476 -10 516 60 542 97Z" transform="translate(389.89 307.31) scale(0.0084 -0.0084)" fill="#333333"/>
+    <text x="395.11" y="311.63" xml:space="preserve" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="45.35" lengthAdjust="spacingAndGlyphs"> copies (</text>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(440.46 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(446.76 307.31) scale(0.0084 -0.0084)" fill="#333333"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(450.92 307.31) scale(0.0084 -0.0084)" fill="#333333"/>
+    <path d="M658 327V395H62V327ZM658 123V190H62V123Z" transform="translate(458.89 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(470.87 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M70 -132C110 -114 194 -80 194 33C194 88 167 121 117 121C77 121 55 94 55 62C55 33 71 8 110 8C121 8 130 10 141 14C141 -67 95 -91 58 -107Z" transform="translate(476.81 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(481.75 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(487.69 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M86 498C120 551 157 579 217 579C279 579 319 545 319 486C319 405 248 350 180 350H161V312H181C277 312 362 253 362 164C362 66 301 37 238 37C214 37 200 41 157 63C122 81 114 86 98 86C72 86 59 63 59 42C59 16 81 -13 171 -13C317 -13 444 57 444 194C444 283 377 336 297 361V364C360 404 405 441 405 510C405 586 346 644 244 644C162 644 100 598 63 511Z" transform="translate(493.63 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M70 -132C110 -114 194 -80 194 33C194 88 167 121 117 121C77 121 55 94 55 62C55 33 71 8 110 8C121 8 130 10 141 14C141 -67 95 -91 58 -107Z" transform="translate(499.57 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M464 599V630H82L42 477L73 474C100 539 108 549 164 549H387L151 -8H230Z" transform="translate(504.51 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(510.45 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(516.39 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M70 -132C110 -114 194 -80 194 33C194 88 167 121 117 121C77 121 55 94 55 62C55 33 71 8 110 8C121 8 130 10 141 14C141 -67 95 -91 58 -107Z" transform="translate(522.33 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M448 150C448 230 412 278 295 349V352C388 403 424 436 424 509C424 588 348 647 249 647C139 647 59 590 59 499C59 431 81 390 183 319V316C90 254 46 222 46 142C46 40 130 -12 246 -12C365 -12 448 45 448 150ZM213 300C334 222 364 185 364 121C364 53 312 19 250 19C174 19 124 60 124 150C124 219 156 254 213 300ZM350 511C350 447 330 408 264 368C175 422 137 458 137 517C137 578 179 614 247 614C311 614 350 577 350 511Z" transform="translate(527.27 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(533.21 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <path d="M481 158V227H379V645H318L13 221V158H290V0H379V158ZM290 227H68V231L286 536H290Z" transform="translate(539.15 311.63) scale(0.012 -0.012)" fill="#333333"/>
+    <text x="545.09" y="311.63" xml:space="preserve" fill="#333333" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="4" lengthAdjust="spacingAndGlyphs">)</text>
+  </g>
+  <g id="text_51">
+    <text x="90.76" y="594.69" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">20</text>
+  </g>
+  <g id="text_52">
+    <text x="90.76" y="545.6" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">40</text>
+  </g>
+  <g id="text_53">
+    <text x="90.76" y="496.51" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">60</text>
+  </g>
+  <g id="text_54">
+    <text x="90.76" y="447.42" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">80</text>
+  </g>
+  <g id="text_55">
+    <text x="84.65" y="398.33" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">100</text>
+  </g>
+  <g id="text_56">
+    <text x="97.88" y="654.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="path_57">
+    <path d="M 110 637 L 110 643 M 182.57 637 L 182.57 643 M 255.13 637 L 255.13 643 M 327.7 637 L 327.7 643 M 400.27 637 L 400.27 643 M 472.83 637 L 472.83 643 M 545.4 637 L 545.4 643 M 617.96 637 L 617.96 643 M 690.53 637 L 690.53 643 M 763.1 637 L 763.1 643 M 835.66 637 L 835.66 643 M 908.23 637 L 908.23 643 M 107 640 L 113 640 M 107 590.91 L 113 590.91 M 107 541.82 L 113 541.82 M 107 492.73 L 113 492.73 M 107 443.64 L 113 443.64 M 107 394.55 L 113 394.55" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_58">
+    <text x="38.91" y="348.07" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="122.16" lengthAdjust="spacingAndGlyphs">Block temperature (</text>
+    <path d="M387 258C387 364 309 428 217 428C121 428 49 363 49 258C49 154 118 90 217 90C316 90 387 154 387 258ZM321 258C321 186 276 147 217 147C159 147 115 187 115 258C115 330 161 371 217 371C276 371 321 331 321 258Z" transform="translate(161.49 343.03) scale(0.0098 -0.0098)" fill="#000000"/>
+    <text x="166.32" y="348.07" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" textLength="14.77" lengthAdjust="spacingAndGlyphs">C)</text>
+  </g>
+  <g id="text_59">
+    <text x="179.51" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">2</text>
+  </g>
+  <g id="text_60">
+    <text x="252.07" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">4</text>
+  </g>
+  <g id="text_61">
+    <text x="324.64" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">6</text>
+  </g>
+  <g id="text_62">
+    <text x="397.21" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">8</text>
+  </g>
+  <g id="text_63">
+    <text x="466.71" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">10</text>
+  </g>
+  <g id="text_64">
+    <text x="539.28" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">12</text>
+  </g>
+  <g id="text_65">
+    <text x="560" y="656.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">min</text>
+  </g>
+  <g id="text_71">
+    <text x="119.32" y="397.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">initial denaturation 3 min</text>
+  </g>
+  <g id="text_91">
+    <text x="514.95" y="397.73" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">cycles 4 to n (time axis broken)</text>
+  </g>
+  <g id="polyline_92">
+    <path d="M 582.75 632 L 590.75 648" fill="none" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_93">
+    <path d="M 590.75 632 L 598.75 648" fill="none" stroke="#1F2F57" stroke-width="1.4" stroke-linejoin="round" />
+  </g>
+  <g id="text_98">
+    <text x="673.05" y="454.18" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">final extension 5 min</text>
+  </g>
+  <g id="text_99">
+    <text x="871.03" y="619.09" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">hold 4 °C</text>
+  </g>
+  <g id="text_100">
+    <text x="333.2" y="397.73" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">denature</text>
+  </g>
+  <g id="text_101">
+    <text x="367.42" y="516.3" fill="#2F5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">anneal</text>
+  </g>
+  <g id="text_102">
+    <text x="401.89" y="454.18" fill="#2E6B3F" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">extend</text>
+  </g>
+  <g id="caption_103">
+    <text x="30.39" y="702.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 9:</text>
+    <text x="104.56" y="702.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="845.96" lengthAdjust="spacingAndGlyphs"> PCR. REPEATED HEAT-ANNEAL-EXTEND CYCLES IN A THERMOCYCLER DOUBLE THE TARGET REGION EACH TIME;</text>
+    <text x="33.23" y="721.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="914.45" lengthAdjust="spacingAndGlyphs">THE TEMPERATURE TRACE SHOWS THE INITIAL DENATURATION, THREE CYCLES, THEN FINAL EXTENSION AND A 4 °C HOLD</text>
+  </g>
+  <g id="path_66">
+    <path d="M 110 406.82 L 930 406.82" fill="none" stroke="#C9CFDC" stroke-width="1" stroke-dasharray="2,5" stroke-linejoin="round" />
+  </g>
+  <g id="path_67">
+    <path d="M 110 497.64 L 930 497.64" fill="none" stroke="#C9CFDC" stroke-width="1" stroke-dasharray="2,5" stroke-linejoin="round" />
+  </g>
+  <g id="path_68">
+    <path d="M 110 463.27 L 930 463.27" fill="none" stroke="#C9CFDC" stroke-width="1" stroke-dasharray="2,5" stroke-linejoin="round" />
+  </g>
+  <g id="path_69">
+    <path d="M 110 578.64 L 131.77 406.82" fill="none" stroke="#1F2F57" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_70">
+    <path d="M 131.77 406.82 L 240.62 406.82" fill="none" stroke="#B03A3A" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_72">
+    <path d="M 240.62 406.82 L 258.76 406.82" fill="none" stroke="#B03A3A" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_73">
+    <path d="M 258.76 406.82 L 269.65 497.64" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_74">
+    <path d="M 269.65 497.64 L 287.79 497.64" fill="none" stroke="#2F5FA8" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_75">
+    <path d="M 287.79 497.64 L 295.04 463.27" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_76">
+    <path d="M 295.04 463.27 L 331.33 463.27" fill="none" stroke="#2E6B3F" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_77">
+    <path d="M 331.33 463.27 L 345.84 406.82" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_78">
+    <path d="M 345.84 406.82 L 363.98 406.82" fill="none" stroke="#B03A3A" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_79">
+    <path d="M 363.98 406.82 L 374.87 497.64" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_80">
+    <path d="M 374.87 497.64 L 393.01 497.64" fill="none" stroke="#2F5FA8" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_81">
+    <path d="M 393.01 497.64 L 400.27 463.27" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_82">
+    <path d="M 400.27 463.27 L 436.55 463.27" fill="none" stroke="#2E6B3F" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_83">
+    <path d="M 436.55 463.27 L 451.06 406.82" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_84">
+    <path d="M 451.06 406.82 L 469.2 406.82" fill="none" stroke="#B03A3A" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_85">
+    <path d="M 469.2 406.82 L 480.09 497.64" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_86">
+    <path d="M 480.09 497.64 L 498.23 497.64" fill="none" stroke="#2F5FA8" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_87">
+    <path d="M 498.23 497.64 L 505.49 463.27" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_88">
+    <path d="M 505.49 463.27 L 541.77 463.27" fill="none" stroke="#2E6B3F" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_89">
+    <path d="M 541.77 463.27 L 556.28 406.82" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_90">
+    <path d="M 556.28 406.82 L 625.22 406.82" fill="none" stroke="#1F2F57" stroke-width="1.6" stroke-dasharray="3,4" stroke-linejoin="round" />
+  </g>
+  <g id="path_94">
+    <path d="M 625.22 406.82 L 639.73 463.27" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_95">
+    <path d="M 639.73 463.27 L 813.89 463.27" fill="none" stroke="#2E6B3F" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_96">
+    <path d="M 813.89 463.27 L 850.18 630.18" fill="none" stroke="#1F2F57" stroke-width="2" stroke-linejoin="round" />
+  </g>
+  <g id="path_97">
+    <path d="M 850.18 630.18 L 922.74 630.18" fill="none" stroke="#2F5FA8" stroke-width="3.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_41">
+    <path d="M 716 234 L 764 234" fill="none" stroke="#B03A3A" stroke-width="4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_42">
+    <path d="M 904 202 L 856 202" fill="none" stroke="#B03A3A" stroke-width="4" stroke-linejoin="round" />
+  </g>
+</svg>

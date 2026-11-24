@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1126 659" width="1126" height="659">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="text_1">
+    <text x="162.59" y="92.53" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" textLength="130.01" lengthAdjust="spacingAndGlyphs">Monohybrid cross</text>
+    <text x="292.6" y="92.53" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" textLength="8.33" lengthAdjust="spacingAndGlyphs">  </text>
+    <path d="M628 484 658 657H121L80 484H112C156 593 167 618 278 618H335L236 131C217 40 203 30 119 30L113 0H398L404 30C319 30 307 40 326 131L425 618H482C593 618 597 593 597 484Z" transform="translate(300.94 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(310.09 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M644 22 409 258 644 495 597 541 360 306 125 541 77 494 312 258 77 21 124 -26 360 210 597 -26Z" transform="translate(318.49 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M628 484 658 657H121L80 484H112C156 593 167 618 278 618H335L236 131C217 40 203 30 119 30L113 0H398L404 30C319 30 307 40 326 131L425 618H482C593 618 597 593 597 484Z" transform="translate(332.63 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M317 467H216L244 593H214C164 506 139 482 75 449L71 428H128L60 101C58 91 53 61 53 44C53 13 72 -9 114 -9C193 -9 235 65 264 104L244 119C209 74 188 59 159 59C145 59 142 69 142 80C142 97 149 130 149 130L208 428H309Z" transform="translate(341.78 92.53) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_2">
+    <text x="162.59" y="111.63" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">T tall is dominant to t short</text>
+  </g>
+  <g id="shape_3">
+    <rect x="162.59" y="135" width="90" height="58" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+  </g>
+  <g id="shape_4">
+    <rect x="252.59" y="135" width="90" height="58" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="297.59" y="168.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">T</text>
+  </g>
+  <g id="shape_5">
+    <rect x="342.59" y="135" width="90" height="58" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="387.59" y="168.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">t</text>
+  </g>
+  <g id="shape_6">
+    <rect x="162.59" y="193" width="90" height="58" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="207.59" y="226.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">T</text>
+  </g>
+  <g id="shape_7">
+    <rect x="252.59" y="193" width="90" height="58" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="297.59" y="227.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">TT</text>
+  </g>
+  <g id="shape_8">
+    <rect x="342.59" y="193" width="90" height="58" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="387.59" y="227.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">Tt</text>
+  </g>
+  <g id="shape_9">
+    <rect x="162.59" y="251" width="90" height="58" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="207.59" y="284.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">t</text>
+  </g>
+  <g id="shape_10">
+    <rect x="252.59" y="251" width="90" height="58" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="297.59" y="285.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">Tt</text>
+  </g>
+  <g id="shape_11">
+    <rect x="342.59" y="251" width="90" height="58" rx="0" fill="#F4D9A8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="387.59" y="285.5" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">tt</text>
+  </g>
+  <g id="text_12">
+    <text x="162.59" y="329.66" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Gametes of one parent across the top, of the other down the side.</text>
+  </g>
+  <g id="text_13">
+    <text x="162.59" y="364.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="62.02" lengthAdjust="spacingAndGlyphs">Genotypes</text>
+    <text x="224.61" y="364.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="192.74" lengthAdjust="spacingAndGlyphs"> 1 TT : 2 Tt : 1 tt   (counted: 1 : 2 : 1)</text>
+  </g>
+  <g id="text_14">
+    <text x="162.59" y="386.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="68.02" lengthAdjust="spacingAndGlyphs">Phenotypes</text>
+    <text x="230.61" y="386.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="166.08" lengthAdjust="spacingAndGlyphs"> 3 tall : 1 short   (counted: 3 : 1)</text>
+  </g>
+  <g id="shape_15">
+    <rect x="162.59" y="409" width="16" height="16" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1" />
+  </g>
+  <g id="text_16">
+    <text x="186.59" y="421.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">tall (TT, Tt)</text>
+  </g>
+  <g id="shape_17">
+    <rect x="162.59" y="433" width="16" height="16" rx="0" fill="#F4D9A8" stroke="#8A93A8" stroke-width="1" />
+  </g>
+  <g id="text_18">
+    <text x="186.59" y="445.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">short (tt)</text>
+  </g>
+  <g id="text_19">
+    <text x="542.59" y="92.53" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" textLength="105.03" lengthAdjust="spacingAndGlyphs">Dihybrid cross</text>
+    <text x="647.62" y="92.53" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" textLength="8.33" lengthAdjust="spacingAndGlyphs">  </text>
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(655.96 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(665.26 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M715 657H496L490 627C538 627 549 619 549 604C549 591 539 574 528 561L341 329H336L309 412L251 558C245 573 241 587 241 600C241 614 259 627 315 627L321 657H63L57 627C107 627 131 616 182 491L268 276L238 131C220 42 205 30 116 30L111 0H405L410 30C327 30 309 43 328 131L359 281L557 528C623 609 649 622 709 627Z" transform="translate(671.44 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M251 325C239 405 232 437 210 475H195L53 464V435C53 435 74 437 88 437C149 437 154 388 161 343L220 -9C192 -52 112 -165 93 -165C71 -165 60 -112 22 -112C-1 -112 -17 -125 -17 -155C-17 -192 18 -220 60 -220C136 -220 197 -112 289 15C341 87 398 173 452 268C484 322 496 367 496 406C496 449 470 482 433 482C404 482 389 464 389 443C389 405 438 377 438 351C438 327 429 303 405 264L290 79H284L275 179Z" transform="translate(680.54 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M644 22 409 258 644 495 597 541 360 306 125 541 77 494 312 258 77 21 124 -26 360 210 597 -26Z" transform="translate(691.52 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M579 519C579 616 497 657 357 657H122L116 627C196 627 202 608 191 553L103 124C86 40 71 30 -3 30L-9 0H267L272 30C186 30 175 41 192 124L229 302H250C286 302 299 296 314 268C345 207 366 165 441 0H593L599 30C553 30 529 41 507 81C425 236 405 287 369 312V317C456 332 579 378 579 519ZM292 615C315 617 325 618 351 618C450 618 480 569 480 515C480 387 387 342 267 338L236 339Z" transform="translate(705.66 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M161 259 212 476H190L51 465V438C51 438 71 440 82 440C110 440 115 429 115 410C115 392 110 366 106 348L32 0H117L147 140C163 180 253 395 301 395C304 395 314 358 346 358C372 358 399 377 399 421C399 460 375 479 343 479C263 479 203 326 171 259Z" transform="translate(714.96 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M715 657H496L490 627C538 627 549 619 549 604C549 591 539 574 528 561L341 329H336L309 412L251 558C245 573 241 587 241 600C241 614 259 627 315 627L321 657H63L57 627C107 627 131 616 182 491L268 276L238 131C220 42 205 30 116 30L111 0H405L410 30C327 30 309 43 328 131L359 281L557 528C623 609 649 622 709 627Z" transform="translate(721.14 92.53) scale(0.015 -0.015)" fill="#000000"/>
+    <path d="M251 325C239 405 232 437 210 475H195L53 464V435C53 435 74 437 88 437C149 437 154 388 161 343L220 -9C192 -52 112 -165 93 -165C71 -165 60 -112 22 -112C-1 -112 -17 -125 -17 -155C-17 -192 18 -220 60 -220C136 -220 197 -112 289 15C341 87 398 173 452 268C484 322 496 367 496 406C496 449 470 482 433 482C404 482 389 464 389 443C389 405 438 377 438 351C438 327 429 303 405 264L290 79H284L275 179Z" transform="translate(730.24 92.53) scale(0.015 -0.015)" fill="#000000"/>
+  </g>
+  <g id="text_20">
+    <text x="542.59" y="111.63" fill="#555555" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">R round &gt; r wrinkled; Y yellow &gt; y green; independent assortment</text>
+  </g>
+  <g id="shape_21">
+    <rect x="542.59" y="135" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+  </g>
+  <g id="shape_22">
+    <rect x="626.59" y="135" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="668.59" y="163.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">RY</text>
+  </g>
+  <g id="shape_23">
+    <rect x="710.59" y="135" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="752.59" y="163.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Ry</text>
+  </g>
+  <g id="shape_24">
+    <rect x="794.59" y="135" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="836.59" y="163.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">rY</text>
+  </g>
+  <g id="shape_25">
+    <rect x="878.59" y="135" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="920.59" y="163.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">ry</text>
+  </g>
+  <g id="shape_26">
+    <rect x="542.59" y="183" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="584.59" y="211.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">RY</text>
+  </g>
+  <g id="shape_27">
+    <rect x="626.59" y="183" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="668.59" y="211.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RRYY</text>
+  </g>
+  <g id="shape_28">
+    <rect x="710.59" y="183" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="752.59" y="211.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RRYy</text>
+  </g>
+  <g id="shape_29">
+    <rect x="794.59" y="183" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="836.59" y="211.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RrYY</text>
+  </g>
+  <g id="shape_30">
+    <rect x="878.59" y="183" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="920.59" y="211.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RrYy</text>
+  </g>
+  <g id="shape_31">
+    <rect x="542.59" y="231" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="584.59" y="259.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Ry</text>
+  </g>
+  <g id="shape_32">
+    <rect x="626.59" y="231" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="668.59" y="259.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RRYy</text>
+  </g>
+  <g id="shape_33">
+    <rect x="710.59" y="231" width="84" height="48" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="752.59" y="259.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RRyy</text>
+  </g>
+  <g id="shape_34">
+    <rect x="794.59" y="231" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="836.59" y="259.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RrYy</text>
+  </g>
+  <g id="shape_35">
+    <rect x="878.59" y="231" width="84" height="48" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="920.59" y="259.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Rryy</text>
+  </g>
+  <g id="shape_36">
+    <rect x="542.59" y="279" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="584.59" y="307.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">rY</text>
+  </g>
+  <g id="shape_37">
+    <rect x="626.59" y="279" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="668.59" y="307.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RrYY</text>
+  </g>
+  <g id="shape_38">
+    <rect x="710.59" y="279" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="752.59" y="307.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RrYy</text>
+  </g>
+  <g id="shape_39">
+    <rect x="794.59" y="279" width="84" height="48" rx="0" fill="#F4D9A8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="836.59" y="307.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">rrYY</text>
+  </g>
+  <g id="shape_40">
+    <rect x="878.59" y="279" width="84" height="48" rx="0" fill="#F4D9A8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="920.59" y="307.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">rrYy</text>
+  </g>
+  <g id="shape_41">
+    <rect x="542.59" y="327" width="84" height="48" rx="0" fill="#1F2F57" stroke="#FFFFFF" stroke-width="1.4" />
+    <text x="584.59" y="355.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">ry</text>
+  </g>
+  <g id="shape_42">
+    <rect x="626.59" y="327" width="84" height="48" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="668.59" y="355.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">RrYy</text>
+  </g>
+  <g id="shape_43">
+    <rect x="710.59" y="327" width="84" height="48" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="752.59" y="355.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Rryy</text>
+  </g>
+  <g id="shape_44">
+    <rect x="794.59" y="327" width="84" height="48" rx="0" fill="#F4D9A8" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="836.59" y="355.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">rrYy</text>
+  </g>
+  <g id="shape_45">
+    <rect x="878.59" y="327" width="84" height="48" rx="0" fill="#D8C6E6" stroke="#8A93A8" stroke-width="1.2" />
+    <text x="920.59" y="355.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">rryy</text>
+  </g>
+  <g id="text_46">
+    <text x="542.59" y="408.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" textLength="68.02" lengthAdjust="spacingAndGlyphs">Phenotypes</text>
+    <text x="610.61" y="408.63" xml:space="preserve" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" textLength="184.1" lengthAdjust="spacingAndGlyphs"> 9 : 3 : 3 : 1   (counted: 9 : 3 : 3 : 1)</text>
+  </g>
+  <g id="shape_47">
+    <rect x="542.59" y="427" width="16" height="16" rx="0" fill="#FBF1B8" stroke="#8A93A8" stroke-width="1" />
+  </g>
+  <g id="text_48">
+    <text x="566.59" y="439.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">round yellow  (9/16)</text>
+  </g>
+  <g id="shape_49">
+    <rect x="542.59" y="451" width="16" height="16" rx="0" fill="#CFE6C4" stroke="#8A93A8" stroke-width="1" />
+  </g>
+  <g id="text_50">
+    <text x="566.59" y="463.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">round green  (3/16)</text>
+  </g>
+  <g id="shape_51">
+    <rect x="542.59" y="475" width="16" height="16" rx="0" fill="#F4D9A8" stroke="#8A93A8" stroke-width="1" />
+  </g>
+  <g id="text_52">
+    <text x="566.59" y="487.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">wrinkled yellow  (3/16)</text>
+  </g>
+  <g id="shape_53">
+    <rect x="542.59" y="499" width="16" height="16" rx="0" fill="#D8C6E6" stroke="#8A93A8" stroke-width="1" />
+  </g>
+  <g id="text_54">
+    <text x="566.59" y="511.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">wrinkled green  (1/16)</text>
+  </g>
+  <g id="caption_55">
+    <text x="60" y="557.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 8:</text>
+    <text x="134.17" y="557.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="931.01" lengthAdjust="spacingAndGlyphs"> PUNNETT SQUARES. A HETEROZYGOUS MONOHYBRID CROSS GIVES A 3:1 PHENOTYPE RATIO AND A 1:2:1 GENOTYPE RATIO;</text>
+    <text x="125.42" y="576.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="874.34" lengthAdjust="spacingAndGlyphs">A DIHYBRID CROSS OF DOUBLE HETEROZYGOTES GIVES 9:3:3:1 BECAUSE THE TWO GENES ASSORT INDEPENDENTLY</text>
+  </g>
+</svg>
