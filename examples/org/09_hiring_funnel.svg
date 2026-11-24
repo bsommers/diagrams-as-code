@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1289 541" width="1289" height="541">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 300 400 L 300 100 M 424 400 L 424 100 M 548 400 L 548 100 M 672 400 L 672 100 M 796 400 L 796 100 M 920 400 L 920 100 M 300 400 L 920 400 M 300 350 L 920 350 M 300 300 L 920 300 M 300 250 L 920 250 M 300 200 L 920 200 M 300 150 L 920 150 M 300 100 L 920 100" fill="none" stroke="#D9DDE6" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <path d="M 300 400 L 932 400" fill="none" stroke="#000000" stroke-width="1.2" />
+  <path d="M 300 400 L 300 88" fill="none" stroke="#000000" stroke-width="1.2" />
+  <g id="text_6">
+    <text x="414.82" y="416.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">300</text>
+  </g>
+  <g id="text_7">
+    <text x="538.82" y="416.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">600</text>
+  </g>
+  <g id="text_8">
+    <text x="662.82" y="416.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">900</text>
+  </g>
+  <g id="text_9">
+    <text x="783.76" y="416.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1200</text>
+  </g>
+  <g id="text_10">
+    <text x="907.76" y="416.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">1500</text>
+  </g>
+  <g id="text_11">
+    <text x="287.88" y="414.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">0</text>
+  </g>
+  <g id="path_12">
+    <path d="M 300 397 L 300 403 M 424 397 L 424 403 M 548 397 L 548 403 M 672 397 L 672 403 M 796 397 L 796 403 M 920 397 L 920 403 M 297 400 L 303 400 M 297 350 L 303 350 M 297 300 L 303 300 M 297 250 L 303 250 M 297 200 L 303 200 M 297 150 L 303 150 M 297 100 L 303 100" fill="none" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_13">
+    <text x="938" y="404.82" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start">Candidates</text>
+  </g>
+  <g id="text_14">
+    <text x="960" y="86.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Stage-to-stage conversion</text>
+  </g>
+  <g id="polygon_15">
+    <path d="M 300 141 L 300 109 L 796 109 L 796 141 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_16">
+    <text x="215.9" y="129.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Applications</text>
+  </g>
+  <g id="text_17">
+    <text x="804" y="129.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">1,200</text>
+  </g>
+  <g id="polygon_18">
+    <path d="M 300 191 L 300 159 L 432.27 159 L 432.27 191 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_19">
+    <text x="190.63" y="179.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Recruiter screen</text>
+  </g>
+  <g id="text_20">
+    <text x="440.27" y="179.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">320</text>
+  </g>
+  <g id="text_21">
+    <text x="960" y="179.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">27% of applications</text>
+  </g>
+  <g id="polygon_22">
+    <path d="M 300 241 L 300 209 L 357.87 209 L 357.87 241 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_23">
+    <text x="142.22" y="229.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Hiring manager interview</text>
+  </g>
+  <g id="text_24">
+    <text x="365.87" y="229.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">140</text>
+  </g>
+  <g id="text_25">
+    <text x="960" y="229.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">44% of recruiter screen</text>
+  </g>
+  <g id="polygon_26">
+    <path d="M 300 291 L 300 259 L 324.8 259 L 324.8 291 Z" fill="#8FB3DE" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_27">
+    <text x="220.24" y="279.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Onsite loop</text>
+  </g>
+  <g id="text_28">
+    <text x="332.8" y="279.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">60</text>
+  </g>
+  <g id="text_29">
+    <text x="960" y="279.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">43% of hiring manager interview</text>
+  </g>
+  <g id="polygon_30">
+    <path d="M 300 341 L 300 309 L 307.44 309 L 307.44 341 Z" fill="#A9D3B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_31">
+    <text x="257.11" y="329.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Offer</text>
+  </g>
+  <g id="text_32">
+    <text x="315.44" y="329.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">18</text>
+  </g>
+  <g id="text_33">
+    <text x="960" y="329.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">30% of onsite loop</text>
+  </g>
+  <g id="polygon_34">
+    <path d="M 300 391 L 300 359 L 305.79 359 L 305.79 391 Z" fill="#E3A9A0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="text_35">
+    <text x="231.8" y="379.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start">Accepted</text>
+  </g>
+  <g id="text_36">
+    <text x="313.79" y="379.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="start">14</text>
+  </g>
+  <g id="text_37">
+    <text x="960" y="379.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">78% of offer</text>
+  </g>
+  <g id="caption_38">
+    <text x="8.8" y="462.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="61.66" lengthAdjust="spacingAndGlyphs">FIGURE:</text>
+    <text x="70.46" y="462.28" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="1194.38" lengthAdjust="spacingAndGlyphs"> HIRING FUNNEL FOR ONE QUARTER OF ENGINEERING HIRING. 14 OF 1,200 APPLICANTS JOINED (1.2% OVERALL); THE RECRUITER SCREEN IS THE LARGEST CUT.</text>
+  </g>
+</svg>

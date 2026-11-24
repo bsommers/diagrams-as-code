@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 627" width="870" height="627">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="shape_1">
+    <rect x="368" y="68" width="82" height="50" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="409" y="89.67" text-anchor="middle" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="409" dy="0">Product</tspan> <tspan x="409" dy="15.6">Owner</tspan></text>
+  </g>
+  <g id="shape_2">
+    <rect x="458" y="68" width="82" height="50" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="499" y="89.67" text-anchor="middle" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="499" dy="0">Eng</tspan> <tspan x="499" dy="15.6">Manager</tspan></text>
+  </g>
+  <g id="shape_3">
+    <rect x="548" y="68" width="82" height="50" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="589" y="89.67" text-anchor="middle" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="589" dy="0">Tech</tspan> <tspan x="589" dy="15.6">Lead</tspan></text>
+  </g>
+  <g id="shape_4">
+    <rect x="638" y="68" width="82" height="50" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="679" y="97.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Architect</text>
+  </g>
+  <g id="shape_5">
+    <rect x="728" y="68" width="82" height="50" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="769" y="97.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Security</text>
+  </g>
+  <g id="shape_6">
+    <rect x="60" y="130" width="300" height="48" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="210" y="158.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Prioritise the quarterly roadmap</text>
+  </g>
+  <g id="shape_7">
+    <rect x="368" y="130" width="82" height="48" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="409" y="158.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A</text>
+  </g>
+  <g id="shape_8">
+    <rect x="458" y="130" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="499" y="158.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_9">
+    <rect x="548" y="130" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="589" y="158.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_10">
+    <rect x="638" y="130" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="679" y="158.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_11">
+    <rect x="728" y="130" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="769" y="158.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_12">
+    <rect x="60" y="186" width="300" height="48" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="210" y="214.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Approve a new third-party dependency</text>
+  </g>
+  <g id="shape_13">
+    <rect x="368" y="186" width="82" height="48" rx="0" fill="#FFFFFF" stroke="#D5D9DE" stroke-width="1" />
+  </g>
+  <g id="shape_14">
+    <rect x="458" y="186" width="82" height="48" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="499" y="214.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A</text>
+  </g>
+  <g id="shape_15">
+    <rect x="548" y="186" width="82" height="48" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="589" y="214.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">R</text>
+  </g>
+  <g id="shape_16">
+    <rect x="638" y="186" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="679" y="214.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_17">
+    <rect x="728" y="186" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="769" y="214.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_18">
+    <rect x="60" y="242" width="300" height="48" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="210" y="270.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Choose the service architecture</text>
+  </g>
+  <g id="shape_19">
+    <rect x="368" y="242" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="409" y="270.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_20">
+    <rect x="458" y="242" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="499" y="270.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_21">
+    <rect x="548" y="242" width="82" height="48" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="589" y="270.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">R</text>
+  </g>
+  <g id="shape_22">
+    <rect x="638" y="242" width="82" height="48" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="679" y="270.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A</text>
+  </g>
+  <g id="shape_23">
+    <rect x="728" y="242" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="769" y="270.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_24">
+    <rect x="60" y="298" width="300" height="48" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="210" y="326.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Hire into the team</text>
+  </g>
+  <g id="shape_25">
+    <rect x="368" y="298" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="409" y="326.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_26">
+    <rect x="458" y="298" width="82" height="48" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="499" y="326.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A</text>
+  </g>
+  <g id="shape_27">
+    <rect x="548" y="298" width="82" height="48" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="589" y="326.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">R</text>
+  </g>
+  <g id="shape_28">
+    <rect x="638" y="298" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="679" y="326.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_29">
+    <rect x="728" y="298" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="769" y="326.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_30">
+    <rect x="60" y="354" width="300" height="48" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="210" y="382.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Release to production</text>
+  </g>
+  <g id="shape_31">
+    <rect x="368" y="354" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="409" y="382.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_32">
+    <rect x="458" y="354" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="499" y="382.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_33">
+    <rect x="548" y="354" width="82" height="48" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="589" y="382.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A</text>
+  </g>
+  <g id="shape_34">
+    <rect x="638" y="354" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="679" y="382.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_35">
+    <rect x="728" y="354" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="769" y="382.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_36">
+    <rect x="60" y="410" width="300" height="48" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="210" y="438.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Accept a security exception</text>
+  </g>
+  <g id="shape_37">
+    <rect x="368" y="410" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="409" y="438.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_38">
+    <rect x="458" y="410" width="82" height="48" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="499" y="438.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I</text>
+  </g>
+  <g id="shape_39">
+    <rect x="548" y="410" width="82" height="48" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="589" y="438.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C</text>
+  </g>
+  <g id="shape_40">
+    <rect x="638" y="410" width="82" height="48" rx="0" fill="#FFFFFF" stroke="#D5D9DE" stroke-width="1" />
+  </g>
+  <g id="shape_41">
+    <rect x="728" y="410" width="82" height="48" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="769" y="438.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A</text>
+  </g>
+  <g id="shape_42">
+    <rect x="60" y="490" width="150" height="36" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="135" y="512.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">R  Responsible</text>
+  </g>
+  <g id="shape_43">
+    <rect x="224" y="490" width="150" height="36" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="2.5" />
+    <text x="299" y="512.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">A  Accountable</text>
+  </g>
+  <g id="shape_44">
+    <rect x="388" y="490" width="150" height="36" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="463" y="512.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">C  Consulted</text>
+  </g>
+  <g id="shape_45">
+    <rect x="552" y="490" width="150" height="36" rx="0" fill="#EEF0F3" stroke="#6B7280" stroke-width="1" />
+    <text x="627" y="512.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">I  Informed</text>
+  </g>
+  <g id="text_46">
+    <text x="60" y="555.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Rule: exactly one A per decision; the A may also do the work (shown as A).</text>
+  </g>
+</svg>

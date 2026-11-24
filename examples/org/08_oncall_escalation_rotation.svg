@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 988 633" width="988" height="633">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 185 174 L 185 240" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 185 304 L 185 370" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 185 434 L 185 500" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="147.26" y="198" width="75.47" height="18" rx="9" fill="#FFFFFF" />
+  <text x="185" y="210.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no ack, 5 min</text>
+</g>
+  <g class="badge">
+  <rect x="144.48" y="328" width="81.03" height="18" rx="9" fill="#FFFFFF" />
+  <text x="185" y="340.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no ack, 10 min</text>
+</g>
+  <g class="badge">
+  <rect x="144.48" y="458" width="81.03" height="18" rx="9" fill="#FFFFFF" />
+  <text x="185" y="470.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no ack, 15 min</text>
+</g>
+  <g id="shape_1">
+    <rect x="60" y="110" width="250" height="64" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="185" y="138.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="185" dy="0">L1 Primary on-call</tspan> <tspan x="185" dy="15.6">acknowledge within 5 min</tspan></text>
+  </g>
+  <g id="shape_2">
+    <rect x="400" y="110" width="120" height="64" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="460" y="146.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Primary</text>
+  </g>
+  <g id="shape_3">
+    <rect x="530" y="110" width="92" height="64" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="576" y="146.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ana</text>
+  </g>
+  <g id="shape_4">
+    <rect x="632" y="110" width="92" height="64" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="678" y="146.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ben</text>
+  </g>
+  <g id="shape_5">
+    <rect x="734" y="110" width="92" height="64" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="780" y="146.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Chi</text>
+  </g>
+  <g id="shape_6">
+    <rect x="836" y="110" width="92" height="64" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="882" y="146.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Dev</text>
+  </g>
+  <g id="shape_7">
+    <rect x="60" y="240" width="250" height="64" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="185" y="268.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="185" dy="0">L2 Secondary on-call</tspan> <tspan x="185" dy="15.6">joins if no ack in 5 min</tspan></text>
+  </g>
+  <g id="shape_8">
+    <rect x="400" y="240" width="120" height="64" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="460" y="276.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Secondary</text>
+  </g>
+  <g id="shape_9">
+    <rect x="530" y="240" width="92" height="64" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="576" y="276.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ben</text>
+  </g>
+  <g id="shape_10">
+    <rect x="632" y="240" width="92" height="64" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="678" y="276.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Chi</text>
+  </g>
+  <g id="shape_11">
+    <rect x="734" y="240" width="92" height="64" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="780" y="276.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Dev</text>
+  </g>
+  <g id="shape_12">
+    <rect x="836" y="240" width="92" height="64" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="882" y="276.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Ana</text>
+  </g>
+  <g id="shape_13">
+    <rect x="60" y="370" width="250" height="64" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="185" y="398.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="185" dy="0">L3 Engineering manager</tspan> <tspan x="185" dy="15.6">paged if no ack in 10 min</tspan></text>
+  </g>
+  <g id="shape_14">
+    <rect x="400" y="370" width="120" height="64" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="460" y="406.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Manager</text>
+  </g>
+  <g id="shape_15">
+    <rect x="530" y="370" width="92" height="64" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="576" y="406.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Mia</text>
+  </g>
+  <g id="shape_16">
+    <rect x="632" y="370" width="92" height="64" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="678" y="406.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Noor</text>
+  </g>
+  <g id="shape_17">
+    <rect x="734" y="370" width="92" height="64" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="780" y="406.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Mia</text>
+  </g>
+  <g id="shape_18">
+    <rect x="836" y="370" width="92" height="64" rx="0" fill="#FBF0C8" stroke="#B8860B" stroke-width="1" />
+    <text x="882" y="406.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Noor</text>
+  </g>
+  <g id="shape_19">
+    <rect x="60" y="500" width="250" height="64" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="1" />
+    <text x="185" y="528.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="185" dy="0">L4 Director of engineering</tspan> <tspan x="185" dy="15.6">paged if no ack in 15 min</tspan></text>
+  </g>
+  <g id="shape_20">
+    <rect x="400" y="500" width="120" height="64" rx="0" fill="#F4F6F9" stroke="#6B7280" stroke-width="1" />
+    <text x="460" y="528.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="460" dy="0">Director of</tspan> <tspan x="460" dy="15.6">engineering</tspan></text>
+  </g>
+  <g id="shape_21">
+    <rect x="530" y="500" width="92" height="64" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="1" />
+    <text x="576" y="536.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Oscar</text>
+  </g>
+  <g id="shape_22">
+    <rect x="632" y="500" width="92" height="64" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="1" />
+    <text x="678" y="536.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Oscar</text>
+  </g>
+  <g id="shape_23">
+    <rect x="734" y="500" width="92" height="64" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="1" />
+    <text x="780" y="536.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Oscar</text>
+  </g>
+  <g id="shape_24">
+    <rect x="836" y="500" width="92" height="64" rx="0" fill="#F6D9CC" stroke="#B0502E" stroke-width="1" />
+    <text x="882" y="536.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Oscar</text>
+  </g>
+  <g id="shape_25">
+    <rect x="530" y="58" width="92" height="36" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="576" y="80.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Week 1</text>
+  </g>
+  <g id="shape_26">
+    <rect x="632" y="58" width="92" height="36" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="678" y="80.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Week 2</text>
+  </g>
+  <g id="shape_27">
+    <rect x="734" y="58" width="92" height="36" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="780" y="80.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Week 3</text>
+  </g>
+  <g id="shape_28">
+    <rect x="836" y="58" width="92" height="36" rx="0" fill="#2F4B86" stroke="#2F4B86" stroke-width="1" />
+    <text x="882" y="80.47" fill="#FFFFFF" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Week 4</text>
+  </g>
+  <g id="text_29">
+    <text x="60" y="40.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">Ladder</text>
+  </g>
+  <g id="text_30">
+    <text x="400" y="40.53" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">Four-week rotation</text>
+  </g>
+  <g id="text_31">
+    <text x="60" y="603.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Handover Monday 10:00. The secondary this week is the primary next week.</text>
+  </g>
+</svg>

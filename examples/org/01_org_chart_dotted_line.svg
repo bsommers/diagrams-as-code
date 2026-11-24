@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1118 510" width="1118" height="510">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-B8860B" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B8860B"/>
+    </marker>
+    <marker id="arrow-B8860B-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B8860B"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 144 360 L 144 420" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 396 360 L 396 390 L 312 390 L 312 420" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 396 360 L 396 390 L 480 390 L 480 420" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 270 250 L 270 280 L 144 280 L 144 310" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 270 250 L 270 280 L 396 280 L 396 310" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 816 360 L 816 420" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 732 250 L 732 280 L 648 280 L 648 310" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 732 250 L 732 280 L 816 280 L 816 310" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 984 360 L 984 420" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 984 250 L 984 310" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 627 140 L 627 170 L 270 170 L 270 200" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 627 140 L 627 170 L 732 170 L 732 200" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 627 140 L 627 170 L 984 170 L 984 200" fill="none" stroke="#000000" stroke-width="1" />
+  <path d="M 470 335 L 574 335" fill="none" stroke="#B8860B" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 554 445 L 742 445" fill="none" stroke="#B8860B" stroke-width="1" stroke-dasharray="5,5" />
+  <g class="badge">
+  <rect x="476.49" y="326" width="91.02" height="18" rx="9" fill="#FFFFFF" />
+  <text x="522" y="338.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">delivery priorities</text>
+</g>
+  <g class="badge">
+  <rect x="606.93" y="436" width="82.14" height="18" rx="9" fill="#FFFFFF" />
+  <text x="648" y="448.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">craft standards</text>
+</g>
+  <g id="shape_1">
+    <rect x="70" y="420" width="148" height="50" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="144" y="449.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Security Engineer</text>
+  </g>
+  <g id="shape_2">
+    <rect x="70" y="310" width="148" height="50" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="144" y="339.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Head of Security</text>
+  </g>
+  <g id="shape_3">
+    <rect x="238" y="420" width="148" height="50" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="312" y="449.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Backend Lead</text>
+  </g>
+  <g id="shape_4">
+    <rect x="406" y="420" width="148" height="50" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="480" y="449.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Frontend Lead</text>
+  </g>
+  <g id="shape_5">
+    <rect x="322" y="310" width="148" height="50" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="396" y="339.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">VP Engineering</text>
+  </g>
+  <g id="shape_6">
+    <rect x="196" y="200" width="148" height="50" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="270" y="229.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">CTO</text>
+  </g>
+  <g id="shape_7">
+    <rect x="574" y="310" width="148" height="50" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="648" y="331.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="648" dy="0">Group Product</tspan> <tspan x="648" dy="15.6">Manager</tspan></text>
+  </g>
+  <g id="shape_8">
+    <rect x="742" y="420" width="148" height="50" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="816" y="449.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">UX Researcher</text>
+  </g>
+  <g id="shape_9">
+    <rect x="742" y="310" width="148" height="50" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="816" y="339.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Head of Design</text>
+  </g>
+  <g id="shape_10">
+    <rect x="658" y="200" width="148" height="50" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="732" y="229.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Chief Product Officer</text>
+  </g>
+  <g id="shape_11">
+    <rect x="910" y="420" width="148" height="50" rx="0" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" />
+    <text x="984" y="449.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">FP&amp;A Analyst</text>
+  </g>
+  <g id="shape_12">
+    <rect x="910" y="310" width="148" height="50" rx="0" fill="#E4F1E8" stroke="#3C8D53" stroke-width="1" />
+    <text x="984" y="339.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Finance Controller</text>
+  </g>
+  <g id="shape_13">
+    <rect x="910" y="200" width="148" height="50" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="984" y="229.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">CFO</text>
+  </g>
+  <g id="shape_14">
+    <rect x="553" y="90" width="148" height="50" rx="0" fill="#D9E3F5" stroke="#2F4B86" stroke-width="1" />
+    <text x="627" y="119.47" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">CEO</text>
+  </g>
+  <g id="text_15">
+    <text x="60" y="51.63" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Solid line: formal reporting.  Dashed line: dotted-line (functional) relationship.</text>
+  </g>
+</svg>
