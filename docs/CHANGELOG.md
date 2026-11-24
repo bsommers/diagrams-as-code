@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- `examples/ai/12_composition_enforcement_architecture.py`: the endpoint-native composition enforcement figure (four dashed layer bands, formulas, cuboid, clipped polyhedron, policy decision function) as a hand-placed `paper` figure in the AI gallery (363 example scripts in all). No engine change.
+
 ## [v0.20.0] - 2026-11-24
 
 ### Added

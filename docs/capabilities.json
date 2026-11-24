@@ -190,7 +190,7 @@
       "target_release": "v0.1.0",
       "python_api": "examples/",
       "classes": ["Diagram"],
-      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 115 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 362 example scripts in all.",
+      "details": "144 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 115 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 363 example scripts in all.",
       "verification": "uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py"
     },
     {
