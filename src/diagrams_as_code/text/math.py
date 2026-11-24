@@ -129,6 +129,7 @@ class MathBox:
     glyphs: tuple[Glyph, ...]
 
     def shifted(self, dx: float, dy: float) -> MathBox:
+        """Return a copy with glyphs moved by (dx, dy) px; the baseline shift adjusts height and depth."""
         return MathBox(
             self.width, self.height - dy, self.depth + dy,
             tuple(Glyph(g.cp, g.x + dx, g.y + dy, g.size) for g in self.glyphs),
@@ -355,6 +356,7 @@ class _Parser:
 # --- layout ------------------------------------------------------------------
 
 def glyph_available(cp: int) -> bool:
+    """True if the bundled math font has an outline for code point ``cp``."""
     return cp in _mg.GLYPHS
 
 
@@ -707,4 +709,5 @@ def glyph_path(cp: int) -> str:
 
 
 def glyph_advance(cp: int, size: float) -> float:
+    """Horizontal advance in px of code point ``cp`` at font ``size`` px; raises KeyError if the glyph is missing."""
     return _mg.GLYPHS[cp][0] * size / EM

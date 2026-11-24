@@ -77,6 +77,7 @@ class Style:
 
 
 def theme_node_style(theme: Theme) -> Style:
+    """The default node ``Style`` taken from ``theme``."""
     return Style(
         fill=theme.node_fill,
         stroke=theme.node_stroke,
@@ -88,6 +89,7 @@ def theme_node_style(theme: Theme) -> Style:
 
 
 def theme_group_style(theme: Theme) -> Style:
+    """The default group ``Style`` taken from ``theme``."""
     return Style(
         fill=theme.group_bg,
         stroke=theme.group_stroke,

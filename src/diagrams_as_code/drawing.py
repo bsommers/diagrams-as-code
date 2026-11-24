@@ -34,9 +34,11 @@ class PathItem:
     linecap: str = ""
 
     def bbox(self) -> Rect:
+        """Bounding box of the path's commands, in canvas px."""
         return commands_bbox(self.commands)
 
     def to_svg(self, indent: str = "") -> str:
+        """Return this path as an SVG ``<path>`` element string; ``indent`` prefixes the line."""
         attrs = [f'd="{svg_d(self.commands)}"', f'fill="{self.fill or "none"}"']
         if self.fill and self.fill_opacity is not None and self.fill_opacity < 1.0:
             attrs.append(f'fill-opacity="{self.fill_opacity}"')
@@ -68,11 +70,13 @@ class TextItem:
     precise: bool = False
 
     def bbox(self) -> Rect:
+        """Bounding box of the text block, given its anchor (start/middle/end) and valign (top/middle/bottom)."""
         left = self.x - {"start": 0.0, "middle": 0.5, "end": 1.0}[self.anchor] * self.block.width
         top = self.y - {"top": 0.0, "middle": 0.5, "bottom": 1.0}[self.valign] * self.block.height
         return Rect(left, top, self.block.width, self.block.height)
 
     def to_svg(self, indent: str = "") -> str:
+        """Return the text block as SVG text/outline elements positioned at (x, y)."""
         return self.block.to_svg(
             self.x, self.y, anchor=self.anchor, valign=self.valign, fill=self.fill,
             font_family=self.font_family, precise=self.precise, indent=indent,
@@ -83,10 +87,12 @@ DrawItem = Union[PathItem, TextItem]
 
 
 def items_svg(items: Sequence[DrawItem], indent: str = "") -> list[str]:
+    """Render each draw item to an SVG string, in order."""
     return [item.to_svg(indent) for item in items]
 
 
 def items_bbox(items: Sequence[DrawItem]) -> Optional[Rect]:
+    """Union of the items' bounding boxes, or None if ``items`` is empty."""
     boxes = [item.bbox() for item in items]
     if not boxes:
         return None
@@ -100,12 +106,14 @@ def items_bbox(items: Sequence[DrawItem]) -> Optional[Rect]:
 
 
 def svg_d(commands: Sequence[Command]) -> str:
+    """Join path commands into an SVG ``d`` attribute string."""
     return " ".join(
         c[0] if len(c) == 1 else f"{c[0]} " + " ".join(repr(float(v)) for v in c[1:]) for c in commands
     )
 
 
 def polyline(points: Sequence[Union[Point, tuple[float, float]]], closed: bool = False) -> tuple[Command, ...]:
+    """Path commands for a polyline through ``points`` (M then L); ``closed`` appends Z. Empty input gives ()."""
     pts = [_xy(p) for p in points]
     if not pts:
         return ()
@@ -117,10 +125,12 @@ def polyline(points: Sequence[Union[Point, tuple[float, float]]], closed: bool =
 
 
 def rect(x: float, y: float, w: float, h: float) -> tuple[Command, ...]:
+    """Closed path commands for the rectangle with top-left (x, y), width w and height h."""
     return polyline([(x, y), (x + w, y), (x + w, y + h), (x, y + h)], closed=True)
 
 
 def ellipse(cx: float, cy: float, rx: float, ry: Optional[float] = None) -> tuple[Command, ...]:
+    """Closed Bezier path commands for an ellipse at (cx, cy) with radii rx and ry (ry defaults to rx)."""
     ry = rx if ry is None else ry
     kx, ky = rx * KAPPA, ry * KAPPA
     return (
@@ -134,6 +144,7 @@ def ellipse(cx: float, cy: float, rx: float, ry: Optional[float] = None) -> tupl
 
 
 def translate(commands: Sequence[Command], dx: float, dy: float) -> tuple[Command, ...]:
+    """Shift every coordinate of ``commands`` by (dx, dy)."""
     return transform(commands, 1.0, 1.0, dx, dy)
 
 
@@ -147,6 +158,7 @@ def transform(commands: Sequence[Command], sx: float, sy: float, dx: float, dy: 
 
 
 def commands_bbox(commands: Sequence[Command]) -> Rect:
+    """Bounding box of path commands, including Bezier extents, as a ``Rect``."""
     xs: list[float] = []
     ys: list[float] = []
     cur = start = (0.0, 0.0)

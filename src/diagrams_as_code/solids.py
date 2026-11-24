@@ -49,6 +49,7 @@ class Projection:
     view: Vec3
 
     def point(self, p: Vec3) -> Point:
+        """Project a 3D point to 2D using the projection's x and y axes."""
         return Point(_dot(self.x_axis, p), _dot(self.y_axis, p))
 
     def depth(self, p: Vec3) -> float:
@@ -77,6 +78,7 @@ def isometric() -> Projection:
 
 @dataclass(frozen=True)
 class ProjectedFace:
+    """A projected face: 2D points, whether it faces the viewer, its depth and its index in ``Solid.faces``."""
     points: tuple[Point, ...]
     front: bool  # faces the viewer
     depth: float
@@ -85,6 +87,7 @@ class ProjectedFace:
 
 @dataclass(frozen=True)
 class ProjectedEdge:
+    """A projected edge between 2D points a and b, with whether it is visible."""
     a: Point
     b: Point
     visible: bool
@@ -172,6 +175,7 @@ class Solid:
 
     @property
     def centroid(self) -> Vec3:
+        """Mean of the solid's vertices."""
         n = float(len(self.vertices))
         return (
             sum(v[0] for v in self.vertices) / n,
@@ -201,6 +205,7 @@ class Solid:
         return out
 
     def translated(self, dx: float, dy: float, dz: float) -> Solid:
+        """Return a copy shifted by (dx, dy, dz)."""
         return Solid(tuple((x + dx, y + dy, z + dz) for x, y, z in self.vertices), self.faces)
 
     def section(self, point: Vec3, normal: Vec3) -> list[Vec3]:

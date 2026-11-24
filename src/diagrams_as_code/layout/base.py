@@ -45,4 +45,6 @@ class LayoutGraph:
 class LayoutEngine(Protocol):
     """Places every node of a graph; returns top-left corners from (0, 0)."""
 
-    def arrange(self, graph: LayoutGraph) -> dict[str, Point]: ...
+    def arrange(self, graph: LayoutGraph) -> dict[str, Point]:
+        """Return the top-left ``Point`` of every node id in ``graph``."""
+        ...

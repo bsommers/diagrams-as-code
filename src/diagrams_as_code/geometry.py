@@ -7,6 +7,7 @@ from typing import Optional, Union
 
 @dataclass(frozen=True)
 class Point:
+    """An (x, y) position in canvas px; supports + and - with other points."""
     x: float
     y: float
 
@@ -36,14 +37,17 @@ class Point:
         return Point(self.x / float(scalar), self.y / float(scalar))
 
     def distance_to(self, other: Point) -> float:
+        """Euclidean distance to ``other`` in px."""
         return math.hypot(self.x - other.x, self.y - other.y)
 
 @dataclass(frozen=True)
 class Size:
+    """A width and height in px."""
     width: float
     height: float
 
 class Anchor(Enum):
+    """Named anchor positions on a rectangle (corners, edge midpoints and centre)."""
     TOP_LEFT = "top_left"
     TOP_CENTER = "top_center"
     TOP_RIGHT = "top_right"
@@ -56,6 +60,7 @@ class Anchor(Enum):
 
 @dataclass
 class Rect:
+    """An axis-aligned rectangle in px: top-left (x, y), width and height (y grows downward)."""
     x: float
     y: float
     width: float
@@ -63,41 +68,51 @@ class Rect:
 
     @property
     def left(self) -> float:
+        """Left edge x."""
         return self.x
 
     @property
     def right(self) -> float:
+        """Right edge x (x + width)."""
         return self.x + self.width
 
     @property
     def top(self) -> float:
+        """Top edge y."""
         return self.y
 
     @property
     def bottom(self) -> float:
+        """Bottom edge y (y + height)."""
         return self.y + self.height
 
     @property
     def center(self) -> Point:
+        """Centre point of the rectangle."""
         return Point(self.x + self.width / 2.0, self.y + self.height / 2.0)
 
     @property
     def top_left(self) -> Point:
+        """Top-left corner point."""
         return Point(self.left, self.top)
 
     @property
     def top_right(self) -> Point:
+        """Top-right corner point."""
         return Point(self.right, self.top)
 
     @property
     def bottom_left(self) -> Point:
+        """Bottom-left corner point."""
         return Point(self.left, self.bottom)
 
     @property
     def bottom_right(self) -> Point:
+        """Bottom-right corner point."""
         return Point(self.right, self.bottom)
 
     def get_anchor(self, anchor: Anchor) -> Point:
+        """Return the point on this rectangle named by ``anchor``."""
         if anchor == Anchor.TOP_LEFT:
             return self.top_left
         elif anchor == Anchor.TOP_CENTER:
@@ -119,6 +134,7 @@ class Rect:
         raise ValueError(f"Unknown anchor: {anchor}")
 
     def union(self, other: Rect) -> Rect:
+        """Smallest rectangle containing both this one and ``other``."""
         min_x = min(self.left, other.left)
         min_y = min(self.top, other.top)
         max_x = max(self.right, other.right)
@@ -138,6 +154,7 @@ class Rect:
         self,
         padding: Union[float, int, tuple[float, ...], list[float]],
     ) -> Rect:
+        """Grow the rectangle outward by ``padding`` px: one number, (vertical, horizontal) or four sides."""
         if isinstance(padding, (int, float)):
             top = right = bottom = left = float(padding)
         elif isinstance(padding, (tuple, list)):
@@ -158,6 +175,7 @@ class Rect:
         )
 
 class UnitBasis:
+    """Resolves relative coordinates against a reference canvas size."""
     def __init__(
         self,
         reference_size: Size | None = None,
@@ -171,6 +189,7 @@ class UnitBasis:
 
     @property
     def canvas_size(self) -> Size:
+        """The reference canvas ``Size``."""
         return self.reference_size
 
     def _parse_val(self, val: Union[float, int, str], base: float) -> float:
@@ -182,6 +201,7 @@ class UnitBasis:
         return val_float
 
     def to_absolute(self, u: Union[float, int, str], v: Union[float, int, str]) -> Point:
+        """Resolve (u, v) to a px ``Point``; '%' strings and floats in [0, 1] scale by the canvas, other numbers are px."""
         x = self._parse_val(u, self.reference_size.width)
         y = self._parse_val(v, self.reference_size.height)
         return Point(x, y)
@@ -189,6 +209,7 @@ class UnitBasis:
 
 @dataclass(frozen=True)
 class CubicBezier:
+    """A cubic Bezier curve: end points p0 and p3, control points c1 and c2."""
     p0: Point
     c1: Point
     c2: Point
@@ -352,6 +373,7 @@ class CubicBezier:
 
 @dataclass(frozen=True)
 class QuadraticBezier:
+    """A quadratic Bezier curve: end points p0 and p2, control point p1."""
     p0: Point
     p1: Point
     p2: Point
@@ -410,12 +432,14 @@ class QuadraticBezier:
 
 
 class PathKind(Enum):
+    """How a ``RoutedPath``'s points are read: a polyline or a chain of cubic Beziers."""
     POLYLINE = "polyline"
     BEZIER_CHAIN = "bezier_chain"
 
 
 @dataclass(frozen=True, eq=False)
 class RoutedPath:
+    """A routed edge path: points, their kind, and a corner radius (px) for rounding polyline corners."""
     kind: PathKind
     points: tuple[Point, ...]
     corner_radius: float = 0.0
@@ -444,6 +468,7 @@ class RoutedPath:
         return hash((self.kind, self.points, self.corner_radius))
 
     def segments(self) -> list[Union[tuple[Point, Point], CubicBezier]]:
+        """Segments of the path: point pairs for a polyline, ``CubicBezier`` curves for a chain (empty if malformed)."""
         if self.kind == PathKind.POLYLINE:
             return [(self.points[i], self.points[i + 1]) for i in range(len(self.points) - 1)]
         elif self.kind == PathKind.BEZIER_CHAIN:
@@ -463,6 +488,7 @@ class RoutedPath:
         return []
 
     def bbox(self) -> Rect:
+        """Bounding box of the path; a zero rectangle if it has no points."""
         if not self.points:
             return Rect(0.0, 0.0, 0.0, 0.0)
         if self.kind == PathKind.BEZIER_CHAIN:
@@ -481,6 +507,7 @@ class RoutedPath:
         return Rect(min_x, min_y, max_x - min_x, max_y - min_y)
 
     def translate(self, dx: float, dy: float) -> RoutedPath:
+        """Return a copy shifted by (dx, dy) px."""
         shifted_points = tuple(Point(p.x + dx, p.y + dy) for p in self.points)
         return RoutedPath(
             kind=self.kind,
@@ -489,6 +516,7 @@ class RoutedPath:
         )
 
     def label_anchor(self) -> tuple[float, float]:
+        """(x, y) where an edge label should sit; (0, 0) for an empty path."""
         if not self.points:
             return (0.0, 0.0)
         if len(self.points) == 1:
@@ -530,6 +558,7 @@ class RoutedPath:
         return (lx, ly)
 
     def svg_d(self) -> str:
+        """The path as an SVG ``d`` string, with rounded corners when ``corner_radius`` > 0; empty if no points."""
         if not self.points:
             return ""
         if self.kind == PathKind.BEZIER_CHAIN:

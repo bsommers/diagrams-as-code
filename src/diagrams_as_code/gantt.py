@@ -88,6 +88,7 @@ def to_seconds(when: When) -> int:
 
 
 def from_seconds(s: int) -> _dt.datetime:
+    """Convert seconds since the proleptic Gregorian ordinal epoch back to a ``datetime``."""
     return _dt.datetime.fromordinal(s // DAY) + _dt.timedelta(seconds=s % DAY)
 
 
@@ -245,6 +246,7 @@ class Scheduled:
 
     @property
     def duration(self) -> int:
+        """Length of the task in whole days (finish minus start)."""
         return (self.finish - self.start).days
 
 
@@ -658,6 +660,7 @@ class GanttChart:
         return schedule(self.tasks, self.start)
 
     def critical_path(self) -> list[str]:
+        """Task ids on the critical path, from the computed schedule."""
         return self.schedule().critical_path
 
     # ------------------------------------------------------------------ drawing

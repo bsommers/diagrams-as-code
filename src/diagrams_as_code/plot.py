@@ -118,6 +118,7 @@ class Plot:
         )
 
     def inside(self, p: Pt) -> bool:
+        """True if data point ``p`` lies in the plot window (with a 1e-9 tolerance)."""
         return self.x[0] - 1e-9 <= p[0] <= self.x[1] + 1e-9 and self.y[0] - 1e-9 <= p[1] <= self.y[1] + 1e-9
 
     def _clip_segment(self, a: Pt, b: Pt) -> Optional[tuple[Pt, Pt]]:
@@ -335,12 +336,15 @@ class Plot:
         self._draw_runs(self._runs(list(pts)), Style(fill="none", stroke=stroke, stroke_width=width, dash=dash), z=1)
 
     def line(self, a: Pt, b: Pt, stroke: str = INK, width: float = 1.2, dash: str = "") -> None:
+        """Draw a straight line between two data points; ``width`` in px, ``dash`` an SVG dasharray."""
         self.polyline([a, b], stroke, width, dash)
 
     def hline(self, y: float, stroke: str = "#8A5A00", dash: str = "5,4", width: float = 1.0) -> None:
+        """Draw a horizontal line at data y across the full x range."""
         self.line((self.x[0], y), (self.x[1], y), stroke, width, dash)
 
     def vline(self, x: float, stroke: str = "#8A5A00", dash: str = "5,4", width: float = 1.0) -> None:
+        """Draw a vertical line at data x across the full y range."""
         self.line((x, self.y[0]), (x, self.y[1]), stroke, width, dash)
 
     def tangent(self, f: Callable[[float], float], x0: float, half: float = 1.0, h: float = 1e-5, **kw) -> float:
