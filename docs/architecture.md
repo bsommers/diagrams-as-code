@@ -67,7 +67,7 @@
 +---------------------------------------+
 ```
 
-`Plot` (data-space plotting) and `Draft` (drafting and anatomy primitives) sit beside the Declarative Object Model: they add ordinary paths, polygons and text to a `Diagram`, so their output flows through the same layout, audit and renderer stages. `diagrams-as-code mcp` wraps the CLI operations (render, lint, list) in a stdio MCP server.
+`Plot` (data-space plotting), `Draft` (drafting and anatomy primitives) and `SequenceDiagram` (UML sequence diagrams) sit beside the Declarative Object Model: they add ordinary paths, polygons and text to a `Diagram`, so their output flows through the same layout, audit and renderer stages. `diagrams-as-code mcp` wraps the CLI operations (render, lint, list) in a stdio MCP server.
 
 ---
 
@@ -169,6 +169,9 @@ The routing subsystem computes collision-free trajectories between node ports, s
 ### 2.13 Drafting and Anatomy (`diagrams_as_code.draft`)
 - **`Draft(diagram)`** works in canvas pixels. Engineering: `dimension`, `radius_dim` (`diameter=True` for a diameter), `hatch` (even-odd, so holes work), `centerline`, `hidden_line`, `section_arrows`, `gdt_frame`. Anatomy: `smooth_closed`, `smooth_open` (Catmull-Rom outlines), `leader`, `wave` (periodic traces such as an ECG).
 
+### 2.13a Sequence Diagrams (`diagrams_as_code.sequence`)
+- **`SequenceDiagram(title, theme=...)`** records participants and events (messages, replies, self-calls, activations, notes, `loop`/`alt`/`opt`/`par`/`critical`/`break` frames) and lays them out deterministically: one column per participant, one row per event, column gaps grown until every measured label fits. `build()` returns a `Diagram`; `draw(diag, origin)` adds to an existing one; `layout()` returns the geometry. See [sequence-diagrams.md](sequence-diagrams.md).
+
 ### 2.14 Audit, PDF Export and Rasterization (`audit`, `pdf`, `rasterize`)
 - **`audit.py`**: `audit_diagram` / `audit_findings` check a solved diagram for visual defects (a line through a node, overlapping labels, text that does not fit). They back `diagrams-as-code lint`, `tools/audit_gallery.py` and the MCP `lint` tool.
 - **`pdf.py`**: `svg_to_pdf` draws the renderer's own SVG with PDF operators, so the two cannot drift. Only the SVG vocabulary the engine writes is understood; anything else raises `PDFExportError`.
@@ -236,6 +239,7 @@ src/
 │   ├── solids.py                   # Convex solids, oblique/isometric projection, hidden-edge classification
 │   ├── plot.py                     # Plot: data-space axes, curves, areas, fields and bars on a Diagram
 │   ├── draft.py                    # Draft: dimensions, hatching, centerlines, GD&T frames, anatomy outlines
+│   ├── sequence.py                 # SequenceDiagram: UML lifelines, messages, activations, notes, frames
 │   ├── primitives.py               # Text, Caption, Bracket, Polygon, Polyline, Path, SolidShape, Band
 │   ├── arrange.py                  # align() and distribute() helpers
 │   ├── rasterize.py                # PNG rasterization backends, tried in order until one works
@@ -290,10 +294,11 @@ examples/
 ├── technical/                      # 11 complete paper-style figures
 ├── calculus_math/ differential_equations/ physics/ finance/ logic/   # 50 textbook figures (10 each, Plot-based)
 ├── medical/ engineering/ cad/      # 30 Draft/Plot figures (10 each)
+├── sequence/                       # 3 SequenceDiagram figures
 └── 01_*.py ... 04_*.py             # 4 top-level reference scripts
 ```
 
-In total 247 example scripts: 143 domain diagrams, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
+In total 250 example scripts: 143 domain diagrams, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures, 30 medical, engineering and CAD figures and 3 sequence diagrams.
 
 ---
 
@@ -303,5 +308,5 @@ In total 247 example scripts: 143 domain diagrams, 4 top-level scripts, 9 primit
 2. **Always Use `uv`:** All environment setup, script runs, and testing must use `uv run`.
 3. **Decoupled Lifecycle:** Elements exist independently of positioning constraints; positions can be declared late or updated dynamically.
 4. **Guaranteed Solve:** Rendering functions (`render_svg`, `render_png`, `render_pdf`, `generate_readme`) automatically resolve layout constraints and normalize bounds before emitting output.
-5. **Layered imports:** enforced by `tests/test_module_boundaries.py`. `plot` and `draft` sit above `diagram`, and `mcp` above `cli`.
+5. **Layered imports:** enforced by `tests/test_module_boundaries.py`. `plot`, `draft` and `sequence` sit above `diagram`, and `mcp` above `cli`.
 6. **Confined execution:** the MCP server only runs scripts under its `--root`.

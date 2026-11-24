@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 793 739" width="793" height="739">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0066CC"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#0066CC"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polyline_1">
+    <path d="M 88 108 L 88 131" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_2">
+    <path d="M 88 156.75 L 88 513.75" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_3">
+    <path d="M 88 539.5 L 88 576.5" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_4">
+    <path d="M 88 596.25 L 88 652.25" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_5">
+    <path d="M 292.98 108 L 292.98 134" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_6">
+    <path d="M 292.98 153.75 L 292.98 652.25" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_7">
+    <path d="M 427.05 108 L 427.05 652.25" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_8">
+    <path d="M 562.1 108 L 562.1 292.75" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_9">
+    <path d="M 562.1 313.75 L 562.1 325.75" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_10">
+    <path d="M 562.1 346.75 L 562.1 652.25" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_11">
+    <path d="M 694.1 108 L 694.1 652.25" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="5,4" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_12">
+    <path d="M 76 134 L 711.1 134 L 711.1 502.75 L 76 502.75 L 76 134" fill="none" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_14">
+    <path d="M 76 516.75 L 309.98 516.75 L 309.98 632.25 L 76 632.25 L 76 516.75" fill="none" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_16">
+    <path d="M 76 575.5 L 309.98 575.5" fill="none" stroke="#0066CC" stroke-width="1" stroke-dasharray="6,4" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 96 463.75 L 261.98 463.75 L 270.98 472.75 L 270.98 492.75 L 96 492.75 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_18">
+    <path d="M 261.98 463.75 L 261.98 472.75 L 270.98 472.75" fill="none" stroke="#0066CC" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 287.98 182.75 L 297.98 182.75 L 297.98 622.25 L 287.98 622.25 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_20">
+    <path d="M 422.05 215.75 L 432.05 215.75 L 432.05 449.75 L 422.05 449.75 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 689.1 314.75 L 699.1 314.75 L 699.1 347.75 L 689.1 347.75 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 76 134 L 117.21 134 L 117.21 147.75 L 111.21 153.75 L 76 153.75 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 76 516.75 L 106.84 516.75 L 106.84 530.5 L 100.84 536.5 L 76 536.5 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+  <path d="M 88 182.75 L 281.5 182.75" fill="none" stroke="#0066CC" stroke-width="1.4" />
+  <path d="M 287.98 182.75 L 279.88 185.99 L 279.88 179.51 Z" fill="#0066CC" />
+  <path d="M 297.98 215.75 L 415.57 215.75" fill="none" stroke="#0066CC" stroke-width="1.4" />
+  <path d="M 422.05 215.75 L 413.95 218.99 L 413.95 212.51 Z" fill="#0066CC" />
+  <path d="M 432.05 248.75 L 555.62 248.75" fill="none" stroke="#0066CC" stroke-width="1.4" />
+  <path d="M 562.1 248.75 L 554 251.99 L 554 245.51 Z" fill="#0066CC" />
+  <path d="M 562.1 281.75 L 432.05 281.75" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 440.15 278.51 L 432.05 281.75 L 440.15 284.99" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 432.05 314.75 L 682.62 314.75" fill="none" stroke="#0066CC" stroke-width="1.4" />
+  <path d="M 689.1 314.75 L 681 317.99 L 681 311.51 Z" fill="#0066CC" />
+  <path d="M 689.1 347.75 L 432.05 347.75" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 440.15 344.51 L 432.05 347.75 L 440.15 350.99" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 432.05 361.75 L 462.05 361.75 L 462.05 383.75 L 438.53 383.75" fill="none" stroke="#0066CC" stroke-width="1.4" />
+  <path d="M 432.05 383.75 L 440.15 380.51 L 440.15 386.99 Z" fill="#0066CC" />
+  <path d="M 432.05 416.75 L 562.1 416.75" fill="none" stroke="#0066CC" stroke-width="1.4" />
+  <path d="M 554 419.99 L 562.1 416.75 L 554 413.51" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 422.05 449.75 L 297.98 449.75" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 306.08 446.51 L 297.98 449.75 L 306.08 452.99" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 287.98 565.5 L 88 565.5" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 96.1 562.26 L 88 565.5 L 96.1 568.74" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round" />
+  <path d="M 287.98 622.25 L 88 622.25" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-dasharray="5,5" />
+  <path d="M 96.1 619.01 L 88 622.25 L 96.1 625.49" fill="none" stroke="#0066CC" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round" />
+  <g id="shape_22" filter="url(#shadow)">
+    <rect x="40" y="64" width="96" height="44" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <text x="88" y="90.47" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Client</text>
+  </g>
+  <g id="shape_23" filter="url(#shadow)">
+    <rect x="234.91" y="64" width="116.14" height="44" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <text x="292.98" y="90.47" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Load balancer</text>
+  </g>
+  <g id="shape_24" filter="url(#shadow)">
+    <rect x="379.05" y="64" width="96" height="44" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <text x="427.05" y="90.47" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">API server</text>
+  </g>
+  <g id="shape_25" filter="url(#shadow)">
+    <rect x="514.1" y="64" width="96" height="44" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
+    <text x="562.1" y="90.47" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cache</text>
+  </g>
+  <g id="shape_26" filter="url(#shadow)">
+    <path d="M 638.1 51.33 L 638.1 96.67 A 56 11.33 0 0 0 750.1 96.67 L 750.1 51.33 A 56 11.33 0 0 1 638.1 51.33 Z" fill="#FFFFFF" stroke="#0066CC" stroke-width="2"/>
+<path d="M 638.1 66.44 A 56 11.33 0 0 0 750.1 66.44" fill="none" stroke="#0066CC" stroke-width="2"/>
+<path d="M 638.1 81.56 A 56 11.33 0 0 0 750.1 81.56" fill="none" stroke="#0066CC" stroke-width="2"/>
+<ellipse cx="694.1" cy="51.33" rx="56" ry="11.33" fill="#FFFFFF" stroke="#0066CC" stroke-width="2"/>
+    <rect class="label-plate" x="660.28" y="71.7" width="67.65" height="21.6" rx="3" fill="#FFFFFF" />
+    <text x="694.1" y="86.97" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Database</text>
+  </g>
+  <g id="text_49">
+    <text x="187.99" y="175.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">GET /orders/42</text>
+  </g>
+  <g id="text_50">
+    <text x="360.02" y="208.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">forward</text>
+  </g>
+  <g id="text_51">
+    <text x="497.08" y="241.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">get order:42</text>
+  </g>
+  <g id="text_52">
+    <text x="497.07" y="274.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">miss</text>
+  </g>
+  <g id="text_53">
+    <text x="560.58" y="307.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">SELECT * FROM orders WHERE id = 42</text>
+  </g>
+  <g id="text_54">
+    <text x="560.58" y="340.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">row</text>
+  </g>
+  <g id="text_55">
+    <text x="468.05" y="376.88" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">serialize</text>
+  </g>
+  <g id="text_56">
+    <text x="497.08" y="409.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">set order:42, ttl 60 s</text>
+  </g>
+  <g id="text_57">
+    <text x="360.02" y="442.38" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">200 OK</text>
+  </g>
+  <g id="text_58">
+    <text x="103" y="482.38" xml:space="preserve" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="94.72" lengthAdjust="spacingAndGlyphs">on timeout: sleep </text>
+    <path d="M464 160H435C412 100 399 79 346 79H207L137 76V81L269 206C375 313 432 382 432 471C432 576 353 644 240 644C143 644 75 588 44 491L68 481C105 556 149 579 214 579C291 579 339 531 339 456C339 351 289 288 190 186L38 34V0H432Z" transform="translate(197.72 482.38) scale(0.012 -0.012)" fill="#111111"/>
+    <path d="M256 705H234L96 694V668C96 668 115 670 127 670C152 670 162 661 162 638C162 625 159 608 159 608L41 0H123L158 184L216 235L285 68C300 32 318 -10 369 -10C446 -10 497 83 507 102L486 116C464 85 441 58 407 58C377 58 367 79 353 112L279 284L390 382C423 412 454 440 522 442L525 467H310L307 442C331 442 352 437 352 416C352 402 342 391 328 379L172 238H167Z" transform="translate(204.02 478.06) scale(0.0084 -0.0084)" fill="#111111"/>
+    <path d="M208 259C208 292 180 320 147 320C113 320 85 290 85 259C85 228 113 197 147 197C180 197 208 226 208 259Z" transform="translate(211.65 482.38) scale(0.012 -0.012)" fill="#111111"/>
+    <path d="M426 0V28C334 28 297 46 297 95V639H268L74 584V551C105 561 156 567 176 567C201 567 209 553 209 518V95C209 45 174 28 80 28V0Z" transform="translate(217.83 482.38) scale(0.012 -0.012)" fill="#111111"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(223.77 482.38) scale(0.012 -0.012)" fill="#111111"/>
+    <path d="M468 317C468 523 378 642 249 642C104 642 27 510 27 320C27 143 86 -11 247 -11C404 -11 468 146 468 317ZM371 311C371 119 326 25 247 25C167 25 123 121 123 315C123 513 167 608 246 608C328 608 371 514 371 311Z" transform="translate(229.71 482.38) scale(0.012 -0.012)" fill="#111111"/>
+    <text x="235.65" y="482.38" xml:space="preserve" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="19.33" lengthAdjust="spacingAndGlyphs"> ms</text>
+  </g>
+  <g id="text_59">
+    <text x="82" y="147.66" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">loop</text>
+  </g>
+  <g id="text_60">
+    <text x="125.21" y="147.66" xml:space="preserve" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="42.8" lengthAdjust="spacingAndGlyphs">[attempt </text>
+    <path d="M256 705H234L96 694V668C96 668 115 670 127 670C152 670 162 661 162 638C162 625 159 608 159 608L41 0H123L158 184L216 235L285 68C300 32 318 -10 369 -10C446 -10 497 83 507 102L486 116C464 85 441 58 407 58C377 58 367 79 353 112L279 284L390 382C423 412 454 440 522 442L525 467H310L307 442C331 442 352 437 352 416C352 402 342 391 328 379L172 238H167Z" transform="translate(168.01 147.66) scale(0.011 -0.011)" fill="#111111"/>
+    <text x="173.87" y="147.66" xml:space="preserve" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" textLength="119.53" lengthAdjust="spacingAndGlyphs"> = 0 .. 2, while timed out]</text>
+  </g>
+  <g id="text_61">
+    <text x="187.99" y="558.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">200 OK, JSON body</text>
+  </g>
+  <g id="text_62">
+    <text x="187.99" y="614.88" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">504 Gateway Timeout</text>
+  </g>
+  <g id="text_63">
+    <text x="82" y="530.41" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="start">alt</text>
+  </g>
+  <g id="text_64">
+    <text x="114.84" y="530.41" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">[response arrived]</text>
+  </g>
+  <g id="text_65">
+    <text x="84" y="590.16" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">[all attempts timed out]</text>
+  </g>
+  <g id="caption_66">
+    <text x="21.65" y="694.78" xml:space="preserve" fill="#111111" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="95.83" y="694.78" xml:space="preserve" fill="#111111" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="672.62" lengthAdjust="spacingAndGlyphs"> A CACHE-ASIDE READ BEHIND A LOAD BALANCER, RETRIED WITH EXPONENTIAL BACKOFF</text>
+  </g>
+</svg>
