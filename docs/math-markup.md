@@ -57,9 +57,15 @@ Uppercase: `\Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omeg
 | Relations | `\leq \le \geq \ge \neq \ne \equiv \approx \sim \simeq \cong \propto \ll \gg \prec \succ \preceq \succeq \triangleq \coloneqq` |
 | Sets | `\in \notin \ni \subset \supset \subseteq \supseteq \subsetneq \supsetneq \sqsubseteq \sqsupseteq` |
 | Logic and geometry | `\mid \parallel \perp \vdash \dashv \models` |
-| Arrows | `\to \rightarrow \leftarrow \gets \leftrightarrow \uparrow \downarrow \mapsto \Rightarrow \Leftarrow \Leftrightarrow \implies \iff \longrightarrow \longleftarrow \leadsto \rightsquigarrow` |
+| Arrows | `\to \rightarrow \leftarrow \gets \leftrightarrow \uparrow \downarrow \mapsto \Rightarrow \Leftarrow \Leftrightarrow \implies \iff \longrightarrow \longleftarrow \leadsto \rightsquigarrow \rightleftharpoons \rightleftarrows` |
 | Delimiters | `\langle \rangle \lceil \rceil \lfloor \rfloor \lbrace \rbrace` |
 | Punctuation | `\colon` |
+
+`\rightleftharpoons` and `\rightleftarrows` both draw an equilibrium sign as a right arrow stacked over a left arrow. The outline set has no half-arrow (harpoon) glyph, so this is the double-arrow style, not the harpoon one.
+
+## Chemical formulas
+
+`\ce{...}` sets a formula upright and fills in the subscripts: `\ce{H2O}`, `\ce{Ca(OH)2}`. Digits after a letter, `)` or `]` become subscripts; a `+` or `-` stuck to a species and ending it is a charge (`\ce{NH4+}`); `^` takes a charge or exponent run (`\ce{SO4^2-}`, `\ce{Fe^3+}`); `->` and `<=>` become `\rightarrow` and `\rightleftharpoons`. A spaced `+` stays a plus (`\ce{2H2 + O2 -> 2H2O}`). Leading digits are coefficients. This is a typesetting helper, not a chemistry parser: no isotopes, bond symbols or state-specific rules. Writing `\mathrm{H}_2\mathrm{O}` explicitly still works.
 
 ## Functions and big operators
 

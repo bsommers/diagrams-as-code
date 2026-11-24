@@ -344,3 +344,29 @@ def test_nested_frac_shrinks_and_dfrac_matches_frac():
     inner = typeset(r"\frac{1}{2}", 10)
     nested = typeset(r"\frac{\frac{1}{2}}{3}", 10)
     assert nested.height > inner.height
+
+
+def test_rightleftharpoons_stacks_a_right_arrow_over_a_left_arrow():
+    box = typeset(r"A \rightleftharpoons B", 10)
+    right = [g for g in box.glyphs if g.cp == 0x2192][0]
+    left = [g for g in box.glyphs if g.cp == 0x2190][0]
+    assert right.y < left.y and right.x == left.x
+    assert [g.cp for g in typeset(r"\rightleftarrows", 10).glyphs] == [0x2192, 0x2190]
+
+
+def test_ce_sets_species_upright_with_subscripts_and_charges():
+    box = typeset(r"\ce{H2O}", 10)
+    cps = [g.cp for g in box.glyphs]
+    assert cps == [ord("H"), ord("2"), ord("O")]
+    h, two = box.glyphs[0], box.glyphs[1]
+    assert two.size < h.size and two.y > h.y
+    ion = typeset(r"\ce{NH4+}", 10)
+    plus = [g for g in ion.glyphs if g.cp == ord("+")][0]
+    assert plus.size < 10 and plus.y < 0
+    so4 = typeset(r"\ce{SO4^2-}", 10)
+    two = [g for g in so4.glyphs if g.cp == ord("2")][0]
+    assert two.y < 0 and any(g.cp == 0x2212 for g in so4.glyphs)
+    reaction = typeset(r"\ce{2H2 + O2 <=> 2H2O}", 10)
+    cps = [g.cp for g in reaction.glyphs]
+    assert 0x2192 in cps and 0x2190 in cps and cps.count(ord("+")) == 1
+    assert typeset(r"\ce{Ca(OH)2}", 10).glyphs[-1].cp == ord("2")

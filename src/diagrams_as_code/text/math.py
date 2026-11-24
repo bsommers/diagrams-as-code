@@ -4,7 +4,7 @@ Supported inside ``$...$``: letters (set in math italic), digits, sub/superscrip
 with ``_`` and ``^``, ``{}`` grouping, Greek letters, the operators and relations
 in ``SYMBOLS``, ``\mathrm{}`` / ``\text{}`` / ``\mathbf{}``, limits under big
 operators, ``\frac{a}{b}`` fractions, ``\binom{n}{k}``, ``\sqrt{}`` and ``\sqrt[n]{}``,
-``\bar{}``, the accents ``\hat \tilde \dot \ddot \vec \grave`` and the spaces
+``\bar{}``, ``\rightleftharpoons``, ``\ce{H2O}``, the accents ``\hat \tilde \dot \ddot \vec \grave`` and the spaces
 ``\,`` ``\;`` ``\quad``. This is not TeX: no matrices or ``\acute``/``\check``/``\breve``.
 """
 from __future__ import annotations
@@ -286,6 +286,11 @@ class _Parser:
             return _Node("space", width=0.0)
         if name in FUNCTIONS:
             return _Node("text", text=name, cls=OP, force=None if name in LIMIT_FUNCTIONS else False)
+        if name in ("rightleftharpoons", "rightleftarrows"):
+            return _Node("equil", cls=REL)
+        if name == "ce":
+            body = self._braced_text(name)
+            return _Node("group", children=_Parser(_ce_to_tex(body)).parse())
         if name in ("bar", "overline"):
             arg = self._atom()
             if arg is None:
@@ -454,6 +459,8 @@ def _layout(node: _Node, size: float, level: int) -> MathBox:
         return _binomial(node, size, level)
     if node.kind == "accent":
         return _accent(node, size, level)
+    if node.kind == "equil":
+        return _equilibrium(size)
     raise MathError(f"cannot lay out {node.kind}")
 
 
@@ -558,6 +565,74 @@ def _binomial(node: _Node, size: float, level: int) -> MathBox:
         return box.shifted(0.0, (box.height - box.depth) / 2.0 - axis)
 
     return _hcat([paren(0x28), _space(pad), stack, _space(pad), paren(0x29)])
+
+
+def _equilibrium(size: float) -> MathBox:
+    """An equilibrium sign: a right arrow stacked over a left arrow.
+
+    The outline set has no half-arrow harpoons (U+21CC), so the two full arrows
+    of the ``\\rightleftarrows`` style are used instead.
+    """
+    a_size = size * 0.9
+    right = _glyph_box(0x2192, a_size)
+    left = _glyph_box(0x2190, a_size)
+    off = 0.11 * size
+    parts = [right.shifted(0.0, -off), left.shifted(0.0, off)]
+    return MathBox(right.width, max(p.height + dy for p, dy in zip(parts, (off, -off))) ,
+                   max(p.depth + dy for p, dy in zip(parts, (-off, off))),
+                   tuple(g for p in parts for g in p.glyphs))
+
+
+def _ce_to_tex(body: str) -> str:
+    """Translate ``\\ce`` chemical-formula text into ordinary math source.
+
+    Letter runs are set upright; digits after a letter, ``)`` or ``]`` become
+    subscripts; ``+``/``-`` glued to a species and ending it become charges;
+    ``^`` takes a charge or exponent run (``SO4^2-``); ``->`` and ``<=>`` become
+    arrows. A spaced ``+`` stays a binary plus.
+    """
+    out: list[str] = []
+    i, n = 0, len(body)
+    while i < n:
+        ch = body[i]
+        if ch.isascii() and ch.isalpha():
+            j = i
+            while j < n and body[j].isascii() and body[j].isalpha():
+                j += 1
+            out.append("\\mathrm{" + body[i:j] + "}")
+            i = j
+        elif ch.isdigit():
+            j = i
+            while j < n and body[j].isdigit():
+                j += 1
+            prev = body[i - 1] if i else " "
+            run = body[i:j]
+            out.append("_{" + run + "}" if prev.isalpha() or prev in ")]" else run)
+            i = j
+        elif ch in "+-" and i and body[i - 1] not in " (" and (i + 1 == n or body[i + 1] in " )]"):
+            out.append("^{" + ch + "}")
+            i += 1
+        elif ch == "^":
+            j = i + 1
+            if j < n and body[j] == "{":
+                end = body.find("}", j)
+                j = n if end < 0 else end + 1
+                out.append("^" + body[i + 1 : j])
+            else:
+                while j < n and (body[j].isdigit() or body[j] in "+-"):
+                    j += 1
+                out.append("^{" + body[i + 1 : j] + "}")
+            i = j
+        elif body.startswith("<=>", i):
+            out.append("\\rightleftharpoons ")
+            i += 3
+        elif body.startswith("->", i):
+            out.append("\\rightarrow ")
+            i += 2
+        else:
+            out.append(ch)
+            i += 1
+    return "".join(out)
 
 
 def _accent(node: _Node, size: float, level: int) -> MathBox:
