@@ -393,7 +393,7 @@ uv run diagrams-as-code mcp --root .     # stdio server; confine it to this dire
 {"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}
 ```
 
-It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Every path is confined to `--root` (default: the current directory), and each script runs in a resource-limited child process (`--timeout`, default 60 s; `--memory-mb`, default 2048). That is a resource limit, not file or network isolation, so only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
+It offers eleven tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names, plus `render_source`, `lint_source`, `get_example`, `list_domains`, `describe_api` and `capabilities`, which need no file system. Failures come back as `{error: {code, message}}`. `render` writes beside the script unless `out` is given. Every path is confined to `--root` (default: the current directory), and each script runs in a resource-limited child process (`--timeout`, default 60 s; `--memory-mb`, default 2048). That is a resource limit, not file or network isolation, so only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
 
 ---
 

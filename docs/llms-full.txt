@@ -2026,6 +2026,7 @@ render scripts or directories of scripts.
 - `--direction DIRECTION`: one of LR, TB
 - `--layout-file LAYOUT_FILE`
 - `--debug`: show tracebacks
+- `--json`: print one JSON document on stdout and nothing else (diagnostics on stderr)
 
 #### `diagrams-as-code lint`
 
@@ -2038,6 +2039,7 @@ Lay out each diagram and report what a reader would see as a defect: a line thro
 - `--direction DIRECTION`: one of LR, TB
 - `--layout-file LAYOUT_FILE`
 - `--debug`: show tracebacks
+- `--json`: print one JSON document on stdout and nothing else (diagnostics on stderr)
 
 #### `diagrams-as-code layout`
 
@@ -2066,11 +2068,36 @@ serve render/lint/list tools over MCP (stdio).
 
 list built-in themes.
 
+- `--json`: print one JSON document on stdout and nothing else (diagnostics on stderr)
+
 #### `diagrams-as-code icons`
 
 list built-in icons.
 
 - `--domain DOMAIN`
+- `--json`: print one JSON document on stdout and nothing else (diagnostics on stderr)
+
+#### `diagrams-as-code api`
+
+List every name in diagrams_as_code.__all__ and the plot, draft, sequence and gantt kits with kind, signature and a one-line summary. NAME narrows it (a class, function, kit module or substring); a class also lists its methods. Exits 1 if NAME matches nothing.
+
+- `NAME`
+- `--json`: print one JSON document on stdout and nothing else (diagnostics on stderr)
+
+#### `diagrams-as-code examples`
+
+List example scripts as DOMAIN/NAME with a title. Without --domain, list domains with their counts instead.
+
+- `--domain DOMAIN`: only this domain (e.g. finance, cad)
+- `--dir DIR`: examples directory (default: ./examples, else the checkout's)
+- `--json`: print one JSON document on stdout and nothing else (diagnostics on stderr)
+
+#### `diagrams-as-code source`
+
+Print the script of an example, DOMAIN/NAME (the numeric prefix of NAME is optional) or a NAME unique in the gallery. Exits 1 if there is no such example.
+
+- `EXAMPLE`
+- `--dir DIR`: examples directory (default: ./examples, else the checkout's)
 
 ---
 
@@ -2104,7 +2131,7 @@ Input schema:
 
 ### `render`
 
-Render a diagram script, or every script in a directory. Output goes beside the script unless 'out' is given.
+Render a diagram script file (or every script in a directory) under the server root. Output goes beside the script unless 'out' is given. To render script text you have no file for, use render_source.
 
 Input schema:
 
@@ -2113,10 +2140,12 @@ Input schema:
   "type": "object",
   "properties": {
     "path": {
-      "type": "string"
+      "type": "string",
+      "description": "script or directory, relative to the root"
     },
     "out": {
-      "type": "string"
+      "type": "string",
+      "description": "output directory under the root"
     },
     "formats": {
       "type": "array",
@@ -2127,7 +2156,9 @@ Input schema:
           "pdf",
           "bom"
         ]
-      }
+      },
+      "uniqueItems": true,
+      "description": "svg, png, pdf (binary: need out) and bom (a Markdown bill of materials)"
     },
     "theme": {
       "enum": [
@@ -2145,7 +2176,8 @@ Input schema:
         "pastel_light",
         "solarized_light",
         "synthwave"
-      ]
+      ],
+      "description": "overrides the script's own theme"
     }
   },
   "required": [
@@ -2157,7 +2189,7 @@ Input schema:
 
 ### `lint`
 
-Report visual defects (overlaps, clipped text, lines through nodes) in diagram scripts.
+Report visual defects (overlaps, clipped text, lines through nodes) in diagram script files. For script text, use lint_source.
 
 Input schema:
 
@@ -2166,7 +2198,8 @@ Input schema:
   "type": "object",
   "properties": {
     "path": {
-      "type": "string"
+      "type": "string",
+      "description": "script or directory, relative to the root"
     },
     "ignore": {
       "type": "array",
@@ -2188,12 +2221,206 @@ Input schema:
           "content_clipped",
           "canvas_mostly_empty"
         ]
-      }
+      },
+      "description": "defect kinds not to report"
     }
   },
   "required": [
     "path"
   ],
+  "additionalProperties": false
+}
+```
+
+### `render_source`
+
+Render diagram script TEXT (a program defining diagram() -> Diagram) without any file. Returns the SVG inline (default when 'out' is omitted; cut at 100000 characters, see svg_truncated) and/or writes files under 'out' inside the server root. The source runs as arbitrary Python in the sandbox (timeout, CPU/memory caps, no stdin/stdout); it is not file or network isolation. Output is byte-identical to render of the same script.
+
+Input schema:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Python text defining diagram() -> Diagram (see describe_api, get_example); at most 200000 characters. It RUNS as arbitrary Python in the resource-limited sandbox"
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "svg",
+          "png",
+          "pdf",
+          "bom"
+        ]
+      },
+      "uniqueItems": true,
+      "description": "svg, png, pdf (binary: need out) and bom (a Markdown bill of materials)"
+    },
+    "theme": {
+      "enum": [
+        "blueprint",
+        "crimson",
+        "cyber_slate",
+        "dracula",
+        "emerald",
+        "high_contrast",
+        "iiot_dark_gold",
+        "iiot_light",
+        "monochrome",
+        "nord",
+        "paper",
+        "pastel_light",
+        "solarized_light",
+        "synthwave"
+      ],
+      "description": "overrides the script's own theme"
+    },
+    "inline": {
+      "type": "boolean",
+      "description": "return the SVG (and bom) text; default true when 'out' is omitted, false otherwise"
+    },
+    "out": {
+      "type": "string",
+      "description": "directory under the root to write files into"
+    },
+    "name": {
+      "type": "string",
+      "description": "output file stem; default the script's OUTPUT_STEM or 'script'"
+    }
+  },
+  "required": [
+    "source"
+  ],
+  "additionalProperties": false
+}
+```
+
+### `lint_source`
+
+Lay out diagram script TEXT and report visual defects as structured findings (kind, detail, element ids). Same sandbox and caveats as render_source. An empty findings list means no defect was detected.
+
+Input schema:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Python text defining diagram() -> Diagram (see describe_api, get_example); at most 200000 characters. It RUNS as arbitrary Python in the resource-limited sandbox"
+    },
+    "ignore": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "edge_through_node",
+          "edge_through_own_endpoint",
+          "tangent_arrival",
+          "edge_on_edge",
+          "edge_through_badge",
+          "badge_over_node",
+          "badge_over_badge",
+          "badge_over_title",
+          "edge_through_title",
+          "title_overflow",
+          "label_overflow",
+          "node_overlap",
+          "group_overlap",
+          "content_clipped",
+          "canvas_mostly_empty"
+        ]
+      },
+      "description": "defect kinds not to report"
+    }
+  },
+  "required": [
+    "source"
+  ],
+  "additionalProperties": false
+}
+```
+
+### `get_example`
+
+Return one gallery example's script text and its committed SVG: a working template to adapt for render_source. Find names with list_domains.
+
+Input schema:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "gallery domain, e.g. finance, cad, iiot ('root' for the top-level scripts)"
+    },
+    "name": {
+      "type": "string",
+      "description": "script stem, e.g. 01_candlestick_chart; the numeric prefix may be omitted"
+    }
+  },
+  "required": [
+    "domain",
+    "name"
+  ],
+  "additionalProperties": false
+}
+```
+
+### `list_domains`
+
+List the example gallery's domains with the number and titles of the examples in each.
+
+Input schema:
+
+```json
+{
+  "type": "object",
+  "properties": {},
+  "required": [],
+  "additionalProperties": false
+}
+```
+
+### `describe_api`
+
+Structured reference of the public Python API a diagram script can use: every name in diagrams_as_code.__all__ plus the kit modules plot, draft, sequence and gantt, each with kind, signature and a one-line summary, built by introspection. Pass 'name' (a class or function, a kit module such as 'gantt', or a substring) to narrow it; one or a few matching classes also list their methods.
+
+Input schema:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "exact name, kit module or substring, case-insensitive"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}
+```
+
+### `capabilities`
+
+Summary of docs/capabilities.json, the project's verified capability manifest: ids, titles, categories, status and the command that verifies each.
+
+Input schema:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "description": "only this category"
+    }
+  },
+  "required": [],
   "additionalProperties": false
 }
 ```
@@ -2714,6 +2941,7 @@ Full records, including description, theme and formats, are in `examples/index.j
 - examples/project_management/09_raci_matrix.py - RACI matrix
 - examples/project_management/10_value_stream_map.py - Value stream map
 - examples/project_management/11_pert_network.py - PERT network with critical path [gantt]
+- examples/project_management/12_icon_set_reference.py - Project management icon set
 - examples/semiconductor/01_rtl_to_gdsii_flow.py - RTL-to-GDSII Flow (open-source tool names)
 - examples/semiconductor/02_photolithography_steps.py - Photolithography and pattern transfer (schematic cross-sections, not to scale) [draft]
 - examples/semiconductor/03_cmos_inverter_cross_section.py - Planar CMOS inverter, cross-section (schematic, not to scale) [draft, math]
