@@ -3,7 +3,7 @@
 **Status:** LIVING OPERATIONAL MANIFEST  
 **Specification:** Standard 43 / Tenet 45  
 **Machine-Readable Twin:** [`docs/capabilities.json`](capabilities.json) (Root symlink: `capabilities.json`)  
-**Last Updated:** 2026-11-23 (v0.19.0)  
+**Last Updated:** 2026-11-24 (v0.20.0)  
 
 ---
 
@@ -334,7 +334,7 @@
 
 #### `CAP-AGENT-DOCS`: Agent Guide, llms.txt, API Reference and Examples Index
 - **Status:** `OPERATIONAL`
-- **Target Release:** `unreleased`
+- **Target Release:** `v0.20.0`
 - **Python API:** `diagrams_as_code` ships a `py.typed` marker (PEP 561); every public class, function and method has a docstring
 - **CLI:** `uv run python tools/build_agent_docs.py [--check]`
 - **Features:** `docs/for-agents.md` (choose an interface, verified quickstart, 15-call cheat sheet, render and lint loop, pitfalls, determinism and MCP limits) in which every Python and `diagrams-as-code` snippet is executed by a test. `tools/build_agent_docs.py` generates `docs/api-reference.md` (signature, docstring and location of every name in `__all__` and of the plot, draft, sequence, gantt and math kits), `docs/llms.txt` and `docs/llms-full.txt` (served at the Pages root; the CLI and MCP sections are read from the live parser and tool table) and `examples/index.json` (one record per example script). Docstring coverage of the public API has a ratchet test.

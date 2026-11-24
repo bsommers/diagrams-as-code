@@ -2,7 +2,7 @@
 
 > Pure-Python diagrams as code: describe a diagram in a script, get deterministic SVG, PNG, PDF and a bill of materials with zero runtime dependencies. Drive it from the Python API, the `diagrams-as-code` CLI or an MCP server; a visual linter finds overlaps, clipped labels and lines through nodes.
 
-Version 0.19.0. Requires Python 3.10+; install with `uv sync`. 362 example scripts across 35 domains. The API is `d = Diagram(title)`, `d.shape(label)` or `d.add(Shape(id, label))`, and `a >> d.edge(label) >> b`; there is no `add_node` or `add_edge`.
+Version 0.20.0. Requires Python 3.10+; install with `uv sync`. 362 example scripts across 35 domains. The API is `d = Diagram(title)`, `d.shape(label)` or `d.add(Shape(id, label))`, and `a >> d.edge(label) >> b`; there is no `add_node` or `add_edge`.
 
 ## Start here
 
