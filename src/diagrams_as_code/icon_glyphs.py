@@ -590,6 +590,118 @@ def _fiber_optic(color: str, stroke_width: float) -> str:
     )
 
 
+def _milestone(color: str, stroke_width: float) -> str:
+    return (
+        f'  <line x1="5" y1="3" x2="5" y2="21" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <path d="M 5 9 H 7.5 M 13 3.5 L 18.5 9 L 13 14.5 L 7.5 9 Z" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
+def _task(color: str, stroke_width: float) -> str:
+    return (
+        f'  <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <path d="M 8 12 L 11 15 L 16 9" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
+def _sprint(color: str, stroke_width: float) -> str:
+    return (
+        f'  <path d="M 12 4 A 8 8 0 1 1 4 12" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <path d="M 1 13.5 L 4 10.5 L 7 13.5" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <path d="M 10 9 L 14 12 L 10 15" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
+def _epic(color: str, stroke_width: float) -> str:
+    return (
+        f'  <rect x="3" y="9" width="14" height="12" rx="2" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <path d="M 6.5 5.5 H 19 A 2 2 0 0 1 21 7.5 V 17" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <path d="M 10 2 H 19" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <line x1="7" y1="15" x2="13" y2="15" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>'
+    )
+
+
+def _backlog(color: str, stroke_width: float) -> str:
+    return (
+        f'  <line x1="3" y1="5" x2="21" y2="5" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="6" y1="10" x2="18" y2="10" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="9" y1="15" x2="15" y2="15" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="12" y1="18" x2="12" y2="21" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>'
+    )
+
+
+def _kanban_card(color: str, stroke_width: float) -> str:
+    return (
+        f'  <rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <line x1="8" y1="8" x2="16" y2="8" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="8" y1="12" x2="13" y2="12" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <circle cx="9" cy="17" r="1.6" fill="{color}"/>\n'
+        f'  <line x1="13" y1="17" x2="16" y2="17" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>'
+    )
+
+
+def _risk(color: str, stroke_width: float) -> str:
+    return (
+        f'  <path d="M 12 3 L 22 20 H 2 Z" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <line x1="12" y1="9.5" x2="12" y2="13.5" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <circle cx="12" cy="16.8" r="1.1" fill="{color}"/>'
+    )
+
+
+def _dependency(color: str, stroke_width: float) -> str:
+    return (
+        f'  <rect x="2" y="3" width="9" height="6" rx="1.5" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <rect x="13" y="15" width="9" height="6" rx="1.5" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <path d="M 6.5 9 V 18 H 13" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <path d="M 10.5 15.5 L 13 18 L 10.5 20.5" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
+def _deliverable(color: str, stroke_width: float) -> str:
+    return (
+        f'  <path d="M 3 8 L 5 3 H 19 L 21 8" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <rect x="3" y="8" width="18" height="13" rx="1" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <path d="M 8.5 14.5 L 11 17 L 15.5 12" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
+def _gate(color: str, stroke_width: float) -> str:
+    return (
+        f'  <path d="M 4 21 V 4 H 20 V 21" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <line x1="9.3" y1="4" x2="9.3" y2="19" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="14.7" y1="4" x2="14.7" y2="19" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="4" y1="11" x2="20" y2="11" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>'
+    )
+
+
+def _baseline(color: str, stroke_width: float) -> str:
+    return (
+        f'  <path d="M 8 3 H 16 V 13 L 12 10 L 8 13 Z" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <line x1="2" y1="18" x2="22" y2="18" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="2" y1="21" x2="6" y2="21" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="10" y1="21" x2="14" y2="21" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>\n'
+        f'  <line x1="18" y1="21" x2="22" y2="21" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round"/>'
+    )
+
+
+def _resource(color: str, stroke_width: float) -> str:
+    return (
+        f'  <circle cx="8.5" cy="7.5" r="3.2" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <path d="M 2.5 20 C 2.5 15.5 5 13 8.5 13 C 12 13 14.5 15.5 14.5 20" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <rect x="17.5" y="8" width="4.5" height="12" rx="1" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <rect x="19" y="15" width="1.5" height="3" fill="{color}"/>'
+    )
+
+
+def _timebox(color: str, stroke_width: float) -> str:
+    return (
+        f'  <path d="M 4.5 4 H 2.5 V 20 H 4.5" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <path d="M 19.5 4 H 21.5 V 20 H 19.5" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>\n'
+        f'  <circle cx="12" cy="12" r="5.5" fill="none" stroke="{color}" stroke-width="{stroke_width}"/>\n'
+        f'  <path d="M 12 9 V 12 L 14.5 13.5" fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
 GLYPHS: dict[str, GlyphFn] = {
     "sensor": _sensor,
     "gateway": _gateway,
@@ -651,4 +763,17 @@ GLYPHS: dict[str, GlyphFn] = {
     "load_balancer": _load_balancer,
     "patch_panel": _patch_panel,
     "fiber_optic": _fiber_optic,
+    "milestone": _milestone,
+    "task": _task,
+    "sprint": _sprint,
+    "epic": _epic,
+    "backlog": _backlog,
+    "kanban_card": _kanban_card,
+    "risk": _risk,
+    "dependency": _dependency,
+    "deliverable": _deliverable,
+    "gate": _gate,
+    "baseline": _baseline,
+    "resource": _resource,
+    "timebox": _timebox,
 }

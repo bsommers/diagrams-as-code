@@ -163,7 +163,7 @@ def test_newer_gallery_discovery() -> None:
     for p in NEWER_SCRIPTS:
         counts[p.parent.name] = counts.get(p.parent.name, 0) + 1
     expected = {d: 10 for d in NEWER_GALLERIES}
-    expected.update(sequence=3, project_management=11)
+    expected.update(sequence=3, project_management=12)
     assert counts == expected
 
 
