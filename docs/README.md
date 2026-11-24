@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ DOCUMENTATION & ARCHITECTURE ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1977 TESTS • 361 EXAMPLES  ]   ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 2036 TESTS • 362 EXAMPLES  ]   ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -87,7 +87,7 @@ Welcome to the comprehensive documentation suite for `diagrams-as-code`. This hu
 ┌─────────────────────────────────────┐ ┌────────────────────────────────┐
 │             SVGRenderer             │ │          BOMGenerator          │
 │  - 14 Themes (Light/Dark/A11y)      │ │  - Markdown Tables             │
-│  - 60 Built-in Vector Icons         │ │  - Machine-Readable JSON       │
+│  - 73 Built-in Vector Icons         │ │  - Machine-Readable JSON       │
 │  - Multi-line <tspan> Wrap          │ └────────────────────────────────┘
 │  - Interactive Pan/Zoom & Minimap   │
 │  - Client-Side Search Highlighting  │

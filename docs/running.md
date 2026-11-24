@@ -90,7 +90,7 @@ at locally).
 Installed as a console script (`uv run diagrams-as-code ...`), and also
 runnable as `uv run python -m diagrams_as_code ...`.
 
-**`render PATH... [--out DIR] [--format FORMATS] [--theme THEME] [--interactive | --no-interactive] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
+**`render PATH... [--json] [--out DIR] [--format FORMATS] [--theme THEME] [--interactive | --no-interactive] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
 
 Renders one or more scripts into `--out` (default: beside each script), or every `diagram()`-defining script found by
 recursively scanning a directory. `--format` is a comma-separated subset of
@@ -102,9 +102,9 @@ vector PDF beside the SVG; it needs no extra software and is also opt-in. `--the
 `Diagram(...)` settings for this render only. `--debug` prints full
 tracebacks for scripts that fail to load or render.
 
-**`lint PATH... [--ignore KIND[,KIND]] [--quiet] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
+**`lint PATH... [--json] [--ignore KIND[,KIND]] [--quiet] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
 
-Lays out each diagram and reports visual defects (a line through a node, overlapping labels, text that does not fit), one per line as `script: kind: detail`. Exits `1` if anything is found. Example: `uv run diagrams-as-code lint examples`.
+Lays out each diagram and reports visual defects (a line through a node, overlapping labels, text that does not fit), one per line as `script: kind: detail`. Exits `1` if anything is found. With `--json`: `{"checked": N, "findings": [{"file", "kind", "detail", "ids"}], "failed": [{"file", "code", "message", "line"?}]}`, where `ids` are the ids of the elements involved. Example: `uv run diagrams-as-code lint examples`.
 
 **`layout export SCRIPT [-o FILE] [--layout MODE] [--direction DIR] [--layout-file FILE] [--debug]`**
 
@@ -112,22 +112,34 @@ Runs a script's `diagram()`, solves it, and writes every element's resolved
 position to a JSON layout file (default: `SCRIPT.layout.json`). See
 `docs/how-to.md` for the layout-file editing workflow.
 
-**`themes`**
+**`themes [--json]`**
 
-Lists every built-in theme name, one per line.
+Lists every built-in theme name, one per line (`{"themes": [...]}` with `--json`).
 
-**`icons [--domain DOMAIN]`**
+**`icons [--domain DOMAIN] [--json]`**
 
 Lists every built-in icon as `name<TAB>domain<TAB>description`; `--domain`
-filters to one domain.
+filters to one domain (`{"icons": [{"name", "domain", "description"}]}` with `--json`).
+
+**`api [NAME] [--json]`**
+
+The public Python API as a reference: every name in `diagrams_as_code.__all__` plus the `plot`, `draft`, `sequence` and `gantt` kits, each with kind, signature and a one-line summary. `NAME` is a class, function, kit module (`gantt`) or substring; a class also lists its methods. Exits `1` if nothing matches. The JSON is the same document the MCP `describe_api` tool returns.
+
+**`examples [--domain DOMAIN] [--dir DIR] [--json]`**
+
+Without `--domain`, lists the gallery's domains and counts; with it, lists `DOMAIN/NAME<TAB>title`. Reads `./examples`, else the checkout's.
+
+**`source EXAMPLE [--dir DIR]`**
+
+Prints an example's script (`DOMAIN/NAME`, e.g. `finance/candlestick_chart`; the numeric prefix is optional). Exit `1` if there is no such example.
+
+**`--json` contract:** `render`, `lint`, `themes`, `icons`, `api` and `examples` print exactly one JSON document on stdout and nothing else; the human text is unchanged without the flag. Errors and anything a script prints go to stderr. `render --json` prints `{"written": [{"script", "format", "file"}], "failed": [...]}`.
 
 **`mcp [--root DIR] [--timeout SECONDS] [--memory-mb MB]`**
 
 Serves render, lint and listing tools over stdio for MCP clients (see [§7](#7-driving-it-from-an-mcp-client)). `--timeout` (default 60) and `--memory-mb` (default 2048) limit each script run.
 
-**Exit codes:** `0` success; `1` one or more scripts failed to load, render,
-or write (each failure is reported, and the command continues with the
-rest); `2` a command-line usage error (unknown flag, missing subcommand).
+**Exit codes:** `0` success; `1` findings or failures (a script failed to load, render or write, `lint` found a defect, a named example or API name does not exist; each failure is reported and the command continues with the rest); `2` a command-line usage error (unknown flag, missing subcommand).
 
 ---
 
@@ -190,11 +202,31 @@ The `diagrams-as-code` CLI (§3.4) returns:
 
 ## 7. Driving it from an MCP client
 
-`diagrams-as-code mcp [--root DIR]` serves five tools over stdio (JSON-RPC, MCP 2025-06-18):
-`list_examples` (optional `path`, `domain`), `render` (`path`, optional `out`, `formats`, `theme`), `lint` (`path`, optional `ignore`), `list_themes` and `list_icons` (optional `domain`). They map onto the CLI
-(`render`, `lint`, `themes`, `icons`) and the Python API (`render_all`, `audit_findings`).
-`render` writes beside the script unless `out` is given. Because rendering imports the script, which is arbitrary Python,
-all script and output paths are confined to `--root` (default: the current directory). Each script runs in a resource-limited child process (`diagrams_as_code.sandbox`): a wall-clock `--timeout` kills the whole process group, CPU and memory caps apply on POSIX (`--memory-mb`; address space is only enforced on Linux), stdin is closed, stdout is discarded, stderr is capped and the environment is scrubbed. That limits resources and protects the protocol stream; it is not file or network isolation, so run it only over scripts you trust, or in a container.
+`diagrams-as-code mcp [--root DIR]` serves these tools over stdio (JSON-RPC, MCP 2025-06-18). Each declares an `inputSchema` (descriptions, enums) and, for object results, an `outputSchema`; `tools/list` returns them.
+
+| Tool | Arguments | Returns |
+|---|---|---|
+| `render_source` | `source`; optional `formats` (`svg`,`png`,`pdf`,`bom`), `theme`, `inline`, `out`, `name` | `{stem, written[], svg?, svg_truncated?, svg_chars?, bom?}`. SVG is inline by default when `out` is omitted (cut at 100,000 characters); `png`/`pdf` need `out`. |
+| `lint_source` | `source`; optional `ignore` | `{checked, count, findings:[{kind, detail, ids}]}` |
+| `get_example` | `domain`, `name` | `{domain, name, title, script, source, svg?}` |
+| `list_domains` | none | `{total, domains:[{domain, count, titles}]}` |
+| `describe_api` | optional `name` | `{total, returned, truncated, entries:[{name, module, kind, signature, summary, members?}]}` |
+| `capabilities` | optional `category` | `{version, total, capabilities:[{id, title, category, status, verification}]}` |
+| `render` | `path`; optional `out`, `formats`, `theme` | `{written[], failed[]}` (files under the root) |
+| `lint` | `path`; optional `ignore` | `{checked, findings[], failed[]}` (files under the root) |
+| `list_examples`, `list_themes`, `list_icons` | optional `path`/`domain` | lists |
+
+An agent with no file-write tool starts with `describe_api` and `get_example`, then calls `render_source` with script text it wrote. `source` is arbitrary Python: it runs in the sandbox below, not in the server process. Minimal exchange (one JSON message per line):
+
+```json
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}
+{"jsonrpc":"2.0","method":"notifications/initialized"}
+{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"render_source","arguments":{"source":"from diagrams_as_code import Diagram\ndef diagram():\n    d = Diagram('Hello')\n    d.shape('A', id='a')\n    return d\n"}}}
+```
+
+The reply's `structuredContent.svg` holds the SVG. **Errors** come back with `isError: true` and `{"error": {"code", "message", "line"?}}` as both text and `structuredContent`. `line` is the line of the submitted script that raised. Codes: `invalid_argument` (bad or missing argument, unknown key, value outside an enum), `path_outside_root`, `not_found`, `no_scripts`, `script_error` (the script raised, exited, or defined no `diagram()`), `timeout`, `resource_limit` (killed for CPU or memory), `sandbox_failure`, `output_error` (unsafe or unwritable output) and `internal_error`. A missing required argument is a JSON-RPC `-32602` error instead.
+
+The path-based tools map onto the CLI (`render`, `lint`, `themes`, `icons`) and the Python API (`render_all`, `audit_findings`); `render` writes beside the script unless `out` is given. Because rendering imports the script, which is arbitrary Python, all script and output paths are confined to `--root` (default: the current directory). Each script runs in a resource-limited child process (`diagrams_as_code.sandbox`): a wall-clock `--timeout` kills the whole process group, CPU and memory caps apply on POSIX (`--memory-mb`; address space is only enforced on Linux), stdin is closed, stdout is discarded, stderr is capped and the environment is scrubbed. That limits resources and protects the protocol stream; it is not file or network isolation, so run it only over scripts you trust, or in a container.
 
 ```json
 {"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}

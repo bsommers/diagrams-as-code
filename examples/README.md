@@ -1,18 +1,18 @@
 # Diagrams-as-Code: Domain Examples Gallery
 
-This directory contains 361 example scripts: 143 production-grade architecture, workflow and technical diagrams across 13 primary domains, 114 more in twelve newer galleries (ten domain galleries of 10, 3 sequence diagrams, 11 project-management figures), plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
+This directory contains 362 example scripts: 143 production-grade architecture, workflow and technical diagrams across 13 primary domains, 115 more in twelve newer galleries (ten domain galleries of 10, 3 sequence diagrams, 12 project-management figures), plus 4 top-level reference scripts, 9 primitive figures, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures, all built entirely using the pure standard-library `diagrams_as_code` engine. Each example generates an SVG vector graphic, PNG rasterized image, and Bill of Materials (BOM) markdown document in `examples/<domain>/`.
 
 ---
 
 ## Suite Summary & Metrics
 
-- **Total Example Scripts:** 361 (143 domain diagrams, 114 newer-gallery diagrams, 4 top-level, 9 primitives, 11 technical, 50 textbook, 30 medical/engineering/CAD)
+- **Total Example Scripts:** 362 (143 domain diagrams, 115 newer-gallery diagrams, 4 top-level, 9 primitives, 11 technical, 50 textbook, 30 medical/engineering/CAD)
 - **Example Directories:** 35 (13 primary domains, 12 newer galleries, `primitives`, `technical`, `medical`, `engineering`, `cad` and the five textbook galleries)
 - **Primary Domains Covered:** 13 (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `database`, `enterprise_architecture`, `manufacturing`, `mind_map`, `computer_science`)
-- **Diagrams per Primary Domain:** 11 (10 manually placed + 1 auto-layout); the ten newer domain galleries have 10 each, `sequence` 3 and `project_management` 11
+- **Diagrams per Primary Domain:** 11 (10 manually placed + 1 auto-layout); the ten newer domain galleries have 10 each, `sequence` 3 and `project_management` 12
 - **Themes Available:** 14 (`iiot_dark_gold`, `iiot_light`, `blueprint`, `cyber_slate`, `nord`, `emerald`, `crimson`, `monochrome`, `solarized_light`, `pastel_light`, `dracula`, `synthwave`, `high_contrast`, `paper`); the primitives, technical, textbook, medical, engineering and CAD figures, and most of the newer galleries, use `paper`
 - **Theme Variety per Domain:** at least 3 distinct varieties per primary domain
-- **Built-in Domain Vector Icons:** 60 custom open-source SVG vector icons
+- **Built-in Domain Vector Icons:** 73 custom open-source SVG vector icons
 - **Zero External Dependencies:** 100% Python standard library core engine execution
 - **Auto-Layout Examples:** each domain's `11_auto_*.py` uses `Diagram(layout="auto")` — no `.at()` / `.right_of()` calls; the engine derives every position from the edge graph
 
@@ -629,7 +629,7 @@ UML sequence diagrams built with `diagrams_as_code.sequence.SequenceDiagram` (se
 
 ## 29. Project Management (`examples/project_management/`)
 
-Gantt charts and timelines from `diagrams_as_code.gantt` (01-03, see [`docs/gantt-timelines.md`](../docs/gantt-timelines.md)) and eight further delivery figures (04-11). 11 figures.
+Gantt charts and timelines from `diagrams_as_code.gantt` (01-03, see [`docs/gantt-timelines.md`](../docs/gantt-timelines.md)) eight further delivery figures (04-11) and the project-management icon set reference (12). 12 figures.
 
 | # | Script & Output | Figure | Theme |
 |---|---|---|---|
@@ -644,6 +644,7 @@ Gantt charts and timelines from `diagrams_as_code.gantt` (01-03, see [`docs/gant
 | 09 | [`09_raci_matrix.py`](project_management/09_raci_matrix.py) | A RACI matrix: who is Responsible, Accountable, Consulted and Informed per task. | `pastel_light` |
 | 10 | [`10_value_stream_map.py`](project_management/10_value_stream_map.py) | A value-stream map of a software change, from request to release. | `pastel_light` |
 | 11 | [`11_pert_network.py`](project_management/11_pert_network.py) | A PERT / CPM activity network, with the critical path from the Gantt scheduler. | `pastel_light` |
+| 12 | [`12_icon_set_reference.py`](project_management/12_icon_set_reference.py) | Reference sheet of the 13 `project_management` icons, each at 56 px and at its native 24 px. | `pastel_light` |
 
 ## Executing the Gallery
 

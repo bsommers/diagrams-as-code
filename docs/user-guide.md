@@ -253,7 +253,7 @@ Select with `Diagram(..., theme="nord")`, override single colours with `theme_ov
 
 ## Icons
 
-Sixty built-in 24×24 vector icons across eight domains: `ai`, `business_process`, `cloud`, `computer`, `cybersecurity`, `datacenter`, `iiot`, `network_engineering`.
+Seventy-three built-in 24×24 vector icons across nine domains: `ai`, `business_process`, `cloud`, `computer`, `cybersecurity`, `datacenter`, `iiot`, `network_engineering`, `project_management`.
 
 ```bash
 uv run diagrams-as-code icons                    # all icons: name, domain, description

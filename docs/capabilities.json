@@ -179,7 +179,7 @@
       "target_release": "v0.1.0",
       "python_api": "diagrams_as_code.theme",
       "classes": ["Theme", "ShapeLibrary", "ShapeRenderer"],
-      "details": "13 theme presets (8 dark, 4 light, 1 high-contrast), 60 built-in vector icons across 8 domains, dynamic icon loading from SVG files/directories, and standalone SVG vector primitives.",
+      "details": "13 theme presets (8 dark, 4 light, 1 high-contrast), 73 built-in vector icons across 9 domains, dynamic icon loading from SVG files/directories, and standalone SVG vector primitives.",
       "verification": "uv run pytest tests/test_theme.py"
     },
     {
@@ -190,7 +190,7 @@
       "target_release": "v0.1.0",
       "python_api": "examples/",
       "classes": ["Diagram"],
-      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 114 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 361 example scripts in all.",
+      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 115 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 362 example scripts in all.",
       "verification": "uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py"
     },
     {
@@ -212,8 +212,8 @@
       "target_release": "v0.4.0",
       "python_api": "diagrams_as_code.cli",
       "classes": [],
-      "details": "Entrypoint diagrams-as-code (also python -m diagrams_as_code) with subcommands render, layout export, themes, and icons; batch-renders scripts or directories to SVG/PNG/BOM, exports layout files, and lists built-in themes and icons. Exit codes: 0 success, 1 a script failed, 2 usage error.",
-      "verification": "uv run pytest tests/test_cli.py"
+      "details": "Entrypoint diagrams-as-code (also python -m diagrams_as_code) with subcommands render, lint, layout export, mcp, themes, icons, api, examples and source; batch-renders scripts or directories to SVG/PNG/BOM, exports layout files, and lists built-in themes and icons. Machine interface: `--json` on `render`, `lint`, `themes` and `icons` prints exactly one JSON document on stdout (diagnostics and any script `print` go to stderr); `api [NAME]` lists the public Python API with signatures and summaries (the same data as the MCP `describe_api`), `examples [--domain D]` lists the gallery, `source EXAMPLE` prints an example script. Lint JSON carries file, kind, detail and the ids of the elements involved. Exit codes: 0 success, 1 findings or failures, 2 usage error.",
+      "verification": "uv run pytest tests/test_cli.py tests/test_agent_interfaces.py"
     },
     {
       "id": "CAP-DIAG-SVG",
@@ -365,8 +365,8 @@
       "target_release": "v0.17.0",
       "python_api": "diagrams_as_code.mcp.serve",
       "classes": ["Server", "serve", "ToolError"],
-      "details": "A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18), started with `diagrams-as-code mcp [--root DIR]`. Tools: list_examples, render, lint, list_themes, list_icons. Script and output paths are confined to --root (symlinks re-resolved, script-chosen output names must be plain stems), messages are size-capped, malformed input never ends the session, and errors do not leak absolute paths. Each script runs in a resource-limited child process (sandbox.py): wall-clock timeout (--timeout, default 60 s, process group killed), CPU and memory caps on POSIX (--memory-mb, default 2048; address space is only enforced on Linux), stdin closed, stdout discarded, stderr capped, scrubbed environment. This limits resources and protects the protocol stream; it is not file or network isolation, so for untrusted scripts also run the server in a container.",
-      "verification": "uv run pytest tests/test_mcp.py"
+      "details": "A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18), started with `diagrams-as-code mcp [--root DIR]`. Tools: list_examples, render, lint, render_source, lint_source, get_example, list_domains, describe_api, capabilities, list_themes, list_icons. Beyond file-based `render` and `lint`, `render_source` and `lint_source` take script text, so a client with no file-write tool can create a diagram (the SVG comes back inline, bounded at 100,000 characters with a `truncated` flag, and/or is written under `out` inside the root); `get_example`, `list_domains`, `describe_api` and `capabilities` let an agent discover what exists. Source text runs as arbitrary Python in the same sandbox. Every tool declares an `inputSchema` (descriptions, enums) and, for object results, an `outputSchema`; failures are structured as `{error: {code, message, line?}}` with a stable code (`invalid_argument`, `path_outside_root`, `not_found`, `no_scripts`, `script_error`, `timeout`, `resource_limit`, `sandbox_failure`, `output_error`, `internal_error`). Script and output paths are confined to --root (symlinks re-resolved, script-chosen output names must be plain stems), messages are size-capped, malformed input never ends the session, and errors do not leak absolute paths. Each script runs in a resource-limited child process (sandbox.py): wall-clock timeout (--timeout, default 60 s, process group killed), CPU and memory caps on POSIX (--memory-mb, default 2048; address space is only enforced on Linux), stdin closed, stdout discarded, stderr capped, scrubbed environment. This limits resources and protects the protocol stream; it is not file or network isolation, so for untrusted scripts also run the server in a container.",
+      "verification": "uv run pytest tests/test_mcp.py tests/test_agent_interfaces.py"
     },
     {
       "id": "CAP-DIAG-MATH",

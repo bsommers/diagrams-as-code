@@ -89,7 +89,7 @@ def test_symlinked_script_and_output_cannot_escape_root(tmp_path):
     outside.mkdir()
     root.mkdir()
     (outside / "evil.py").write_text(
-        "from diagrams_as_code import Diagram\n"
+        "from diagrams_as_code import Diagram, Shape\n"
         "def diagram():\n    open(%r, 'w').write('ran')\n    return Diagram('x')\n" % str(outside / "ran.txt"))
     (root / "evil.py").symlink_to(outside / "evil.py")
     res = _tool(Server(root), "render", path=".")
@@ -148,8 +148,8 @@ def test_oversized_message_is_rejected_and_skipped(monkeypatch):
 
 def _script(tmp_path, body):
     (tmp_path / "s.py").write_text(
-        "from diagrams_as_code import Diagram\n" + body +
-        "\ndef diagram():\n    d = Diagram('t')\n    d.add_node('a', 'A')\n    return d\n")
+        "from diagrams_as_code import Diagram, Shape\n" + body +
+        "\ndef diagram():\n    d = Diagram('t')\n    d.add(Shape('a', 'A'))\n    return d\n")
 
 
 def test_script_that_never_returns_is_killed_at_the_timeout(tmp_path):

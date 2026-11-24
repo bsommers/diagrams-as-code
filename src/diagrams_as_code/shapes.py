@@ -72,7 +72,19 @@ class ShapeLibrary:
         "vector_db": ("ai", "High-dimensional vector embedding database"),
         "vision": ("ai", "Computer vision perception & object detector"),
         "vpc": ("cloud", "Isolated Virtual Private Cloud network boundary"),
-        "workflow": ("ai", "Automated pipeline DAG / training workflow"),
+        "workflow": ("ai", "Automated pipeline DAG / training workflow"),        "milestone": ("project_management", "Project milestone / key date marker"),
+        "task": ("project_management", "Work item / checklist task"),
+        "sprint": ("project_management", "Time-boxed iteration / sprint cycle"),
+        "epic": ("project_management", "Epic / large layered body of work"),
+        "backlog": ("project_management", "Prioritised backlog / queue of pending work"),
+        "kanban_card": ("project_management", "Kanban card with title and assignee"),
+        "risk": ("project_management", "Project risk / hazard warning"),
+        "dependency": ("project_management", "Task dependency / finish-to-start link"),
+        "deliverable": ("project_management", "Delivered work product / accepted artifact"),
+        "gate": ("project_management", "Stage gate / go-no-go review barrier"),
+        "baseline": ("project_management", "Approved plan baseline / reference marker"),
+        "resource": ("project_management", "Staff or capacity resource / allocation"),
+        "timebox": ("project_management", "Fixed time allocation / timebox"),
     }
 
     #: Canonical icon names, derived from the catalog so the engine, the

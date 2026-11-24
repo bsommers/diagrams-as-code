@@ -9,7 +9,7 @@
 ║                 ██████╗  ██████╗ ██████╗ ███████╗                                        ║
 ║                ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝     [ PURE PYTHON STANDARD LIBRARY ]   ║
 ║                ██║      ██║   ██║██║  ██║█████╗       [ ZERO C-DEPS • ZERO GRAPHVIZ  ]   ║
-║                ██║      ██║   ██║██║  ██║██╔══╝       [ 1977 TESTS • 361 FIGURES ]       ║
+║                ██║      ██║   ██║██║  ██║██╔══╝       [ 2036 TESTS • 362 FIGURES ]       ║
 ║                ╚██████╗ ╚██████╔╝██████╔╝███████╗     [ CUBIC BEZIER • CORNER FILLETS]   ║
 ║                 ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝     [ INTERACTIVE SVG • BOM ENGINE ]   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,12 +21,12 @@
 
 # Diagrams-as-Code
 
-[![Tests Passing](https://img.shields.io/badge/tests-1977%20passed-success)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-2036%20passed-success)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](pyproject.toml)
 [![Zero C-Dependencies](https://img.shields.io/badge/core%20deps-zero%20C--libraries-brightgreen)](src/diagrams_as_code/)
 [![Package Manager](https://img.shields.io/badge/package%20manager-uv-purple)](https://docs.astral.sh/uv/)
 [![Themes](https://img.shields.io/badge/themes-14%20palettes-orange)](src/diagrams_as_code/theme.py)
-[![Vector Icons](https://img.shields.io/badge/icons-60%20SVG-informational)](icons/)
+[![Vector Icons](https://img.shields.io/badge/icons-73%20SVG-informational)](icons/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 A pure-Python declarative vector diagramming framework. Generate publication-quality architecture diagrams, high-resolution rasterized images, and living Bill of Materials (BOM) documentation from code — with **zero Graphviz**, **zero Cairo**, and **zero external C-library runtime dependencies**.
@@ -68,13 +68,13 @@ The reference architecture that `main.py` renders is [`examples/main_architectur
   - **Light Themes:** `iiot_light`, `monochrome`, `solarized_light`, `pastel_light`, `paper` (black on white, hairlines, square corners, no shadows — for figures in papers).
   - **Accessibility Themes:** `high_contrast` (WCAG AAA compliant).
 - **Zero-Clipping Text Engine**: Multi-line word-wrapping via SVG `<tspan>` elements, dynamic font scaling, and support for `label_position="bottom"` (text below graphic tiles).
-- **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 60 handcrafted 24x24 open-source vector icons across 8 domains, with support for `kind="icon"` (borderless icon graphics).
+- **Standalone Vector Icons & Pure Icon Nodes**: Built-in library of 73 handcrafted 24x24 open-source vector icons across 9 domains, with support for `kind="icon"` (borderless icon graphics).
 - **Living Documentation & Automated BOM**: Instant emission of Markdown component tables and machine-readable JSON schemas tracking hardware, protocols, and infrastructure specs.
 - **Topological Constraint Solving**: Decouples shape instantiation from placement. Elements can be positioned with relative constraints (`right_of`, `below`, `above`, `left_of`) and negative coordinate auto-framing.
 - **Technical Drawing Primitives**: free text, captions, brackets, polygons and SVG paths, dashed layer bands with side notes, shapes nested in shapes, double borders, line weights and arrowhead styles, lines attached anywhere on a side or at bare points, shared trunks, leaders, splines, and convex solids in oblique or isometric projection with hidden edges dashed. Nine focused figures in [`examples/primitives/`](examples/primitives/).
 - **Technical Figures, Lint & Golden Images**: eleven complete paper-style figures in [`examples/technical/`](examples/technical/) (a four-layer architecture reproduced from a reference figure, a control loop, a transformer block, a state machine, a protocol stack, a memory layout, a timing diagram, a training pipeline, tensor shapes, a geometric construction, a constraint region). `diagrams-as-code lint` reports visual defects by name, and golden-image tests catch any change to how a figure looks. See the [technical figures guide](docs/technical-figures.md) and the [math markup reference](docs/math-markup.md).
 - **Vector PDF Export**: `diag.render_pdf("figure.pdf")` or `--format pdf` writes a one-page vector PDF with the standard library alone — no Cairo, Ghostscript or LaTeX. It is drawn from the same SVG, so lines, arrowheads, text and formulas match; see [Export a PDF](docs/technical-figures.md#8-export-a-pdf).
-- **361 Example Figures**: 143 reference diagrams across 13 domains (11 each, one auto-laid-out per domain), 100 more in ten newer domain galleries (agentic development, semiconductor, chemistry, data engineering, ML models, DevOps, biology, chemical engineering, organisations, electronics; 10 each), 3 sequence diagrams and 11 project-management figures (Gantt charts, timelines, kanban, burndown, risk matrix, PERT), plus 50 textbook, 30 medical/engineering/CAD, 11 technical, 9 primitive and 4 top-level figures, all in [`examples/`](examples/README.md) with the rendered SVG and BOM beside each script.
+- **362 Example Figures**: 143 reference diagrams across 13 domains (11 each, one auto-laid-out per domain), 100 more in ten newer domain galleries (agentic development, semiconductor, chemistry, data engineering, ML models, DevOps, biology, chemical engineering, organisations, electronics; 10 each), 3 sequence diagrams and 12 project-management figures (Gantt charts, timelines, kanban, burndown, risk matrix, PERT), plus 50 textbook, 30 medical/engineering/CAD, 11 technical, 9 primitive and 4 top-level figures, all in [`examples/`](examples/README.md) with the rendered SVG and BOM beside each script.
 - **Sequence Diagrams**: `SequenceDiagram` draws UML sequence diagrams (participants, sync/async/reply messages, self-calls, activation bars, notes, and `loop`/`alt`/`opt`/`par`/`critical`/`break` frames) with the standard library alone; the layout is computed, not hand-placed. See the [sequence diagram guide](docs/sequence-diagrams.md) and [`examples/sequence/`](examples/sequence/).
 - **Gantt Charts & Timelines**: `GanttChart` schedules tasks from durations and dependencies (lag, phases, milestones, percent done, a status line) and computes and highlights the critical path; `Timeline` stacks dated event labels so none overlap. Both draw on an ordinary `Diagram`, so themes, lint, SVG, PNG and PDF all apply. See the [Gantt and timeline guide](docs/gantt-timelines.md) and [`examples/project_management/`](examples/project_management/).
 - **MCP Server**: `diagrams-as-code mcp [--root DIR]` serves `list_examples`, `render`, `lint`, `list_themes` and `list_icons` to any MCP client over stdio, with the standard library alone. Each script runs in a resource-limited child process (wall-clock `--timeout`, CPU and `--memory-mb` caps, closed stdin, discarded stdout, scrubbed environment). That limits resources; it is not file or network isolation, so use a trusted root or a container. See [Running](docs/running.md).
@@ -123,7 +123,7 @@ Ten figures per domain unless noted. Most use the `paper` theme and computed val
 | [**Organisations**](examples/org/) | Org chart, matrix, Team Topologies, RACI, squads and tribes, span of control, stakeholder grid, on-call rotation, hiring funnel, Conway's law. |
 | [**Electronics**](examples/electronics/) | RC and Bode, op-amps, MOSFET amplifier, buck converter, bridge rectifier, 555 timer, SPI and I2C timing, PCB stackup, PDN impedance. |
 | [**Sequence Diagrams**](examples/sequence/) | 3 `SequenceDiagram` figures: HTTP retry, OAuth 2.0 with PKCE, an MCP tool call. |
-| [**Project Management**](examples/project_management/) | 11 figures: Gantt with critical path, release trains, incident timeline, roadmap, kanban WIP, cumulative flow, burndown, risk matrix, RACI, value stream map, PERT. |
+| [**Project Management**](examples/project_management/) | 12 figures: Gantt with critical path, release trains, incident timeline, roadmap, kanban WIP, cumulative flow, burndown, risk matrix, RACI, value stream map, PERT, icon set reference. |
 
 ### Figures for papers and textbooks
 

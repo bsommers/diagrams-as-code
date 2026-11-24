@@ -118,7 +118,7 @@
 - **Target Release:** `v0.1.0`
 - **Python API:** `diagrams_as_code.theme`, `diagrams_as_code.shapes`
 - **Exports:** `Theme`, `ShapeLibrary`, `ShapeRenderer`, `get_theme`, `register_theme`
-- **Features:** 13 theme presets (8 dark, 4 light, 1 high-contrast) (list them with `list_themes()`), 60 built-in vector icons across 8 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
+- **Features:** 13 theme presets (8 dark, 4 light, 1 high-contrast) (list them with `list_themes()`), 73 built-in vector icons across 9 domains (`cloud`, `ai`, `computer`, `datacenter`, `business_process`, `cybersecurity`, `network_engineering`, `iiot`, `project_management`), dynamic icon registration and loading from SVG files or directory trees, and standalone SVG vector primitives (`box`, `cylinder`, `database`, `server_rack`, `cloud`, `diamond`, `badge`).
 - **Verification:** `uv run pytest tests/test_theme.py`
 
 
@@ -178,8 +178,8 @@
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.4.0`
 - **Entrypoint:** `diagrams-as-code` (also `python -m diagrams_as_code`)
-- **Subcommands:** `render`, `layout export`, `themes`, `icons`
-- **Features:** Batch-renders scripts or whole directories to SVG/PNG/BOM without a Python entry point, exports layout files, and lists built-in themes and icons for discovery; exit codes `0` success, `1` a script failed, `2` usage error.
+- **Subcommands:** `render`, `lint`, `layout export`, `mcp`, `themes`, `icons`, `api`, `examples`, `source`
+- **Features:** Batch-renders scripts or whole directories to SVG/PNG/BOM without a Python entry point, exports layout files, and lists built-in themes and icons for discovery; exit codes `0` success, `1` findings or failures, `2` usage error. Machine interface: `--json` on `render`, `lint`, `themes` and `icons` prints exactly one JSON document on stdout (diagnostics and any script `print` go to stderr); `api [NAME]` lists the public Python API with signatures and summaries (the same data as the MCP `describe_api`), `examples [--domain D]` lists the gallery, `source EXAMPLE` prints an example script. Lint JSON carries file, kind, detail and the ids of the elements involved.
 - **Verification:** `uv run pytest tests/test_cli.py`
 
 ---
@@ -190,8 +190,8 @@
 - **Status:** `OPERATIONAL`
 - **Target Release:** `v0.1.0`
 - **Python API:** `examples/` (`examples/cloud`, `examples/ai`, `examples/computer`, `examples/datacenter`, `examples/business_process`, `examples/cybersecurity`, `examples/network_engineering`, `examples/iiot`, `examples/database`, `examples/enterprise_architecture`, `examples/manufacturing`, `examples/mind_map`, `examples/computer_science`)
-- **Exports:** 143 self-contained executable diagram scripts and documentation artifacts for the 13 domains above, plus 114 in twelve newer galleries (`agentic_dev`, `semiconductor`, `chemistry`, `data_engineering`, `ml_models`, `devops`, `biology`, `chemical_engineering`, `org`, `electronics`, `sequence`, `project_management`): 361 example scripts in all, with the textbook, medical, engineering, CAD, technical and primitive figures and four top-level scripts
-- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 14 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`. The newer galleries have 10 figures each (`sequence` 3, `project_management` 11), mostly in the `paper` theme with computed values.
+- **Exports:** 143 self-contained executable diagram scripts and documentation artifacts for the 13 domains above, plus 115 in twelve newer galleries (`agentic_dev`, `semiconductor`, `chemistry`, `data_engineering`, `ml_models`, `devops`, `biology`, `chemical_engineering`, `org`, `electronics`, `sequence`, `project_management`): 362 example scripts in all, with the textbook, medical, engineering, CAD, technical and primitive figures and four top-level scripts
+- **Features:** 11 diagrams per domain across 13 domains (10 manually placed + 1 auto-layout) demonstrating varying architectural complexity (Simple, Moderate, Advanced, Enterprise), multi-theme deployment across the 14 presets, automated SVG and Markdown BOM generation in `examples/`, and gallery documentation in `examples/README.md`. The newer galleries have 10 figures each (`sequence` 3, `project_management` 12), mostly in the `paper` theme with computed values.
 - **Verification:** `uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py` (the committed SVG beside each newer-gallery script must equal what the script renders)
 
 ---
@@ -300,8 +300,8 @@
 - **Target Release:** `v0.17.0`
 - **Python API:** `diagrams_as_code.mcp.serve(root)`, `Server`
 - **CLI:** `diagrams-as-code mcp [--root DIR]`
-- **Features:** A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18) exposing `list_examples`, `render`, `lint`, `list_themes` and `list_icons`. Script and output paths are confined to `--root` (symlinks are re-resolved, a script-chosen output name must be a plain stem, existing symlinked outputs are refused); messages over 1 MiB and results over 200k characters are cut off; a malformed message never ends the session; error text does not carry the absolute root path. Each script runs in a resource-limited child process (`sandbox.py`): wall-clock timeout (`--timeout`, default 60 s, process group killed), CPU and memory caps on POSIX (`--memory-mb`, default 2048; address space is only enforced on Linux), stdin closed, stdout discarded, stderr capped, scrubbed environment. This limits resources and protects the protocol stream; it is not file or network isolation, so for untrusted scripts also run the server in a container.
-- **Verification:** `uv run pytest tests/test_mcp.py`
+- **Features:** A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18) exposing `list_examples`, `render`, `lint`, `render_source`, `lint_source`, `get_example`, `list_domains`, `describe_api`, `capabilities`, `list_themes` and `list_icons`. Beyond file-based `render` and `lint`, `render_source` and `lint_source` take script text, so a client with no file-write tool can create a diagram (the SVG comes back inline, bounded at 100,000 characters with a `truncated` flag, and/or is written under `out` inside the root); `get_example`, `list_domains`, `describe_api` and `capabilities` let an agent discover what exists. Source text runs as arbitrary Python in the same sandbox. Every tool declares an `inputSchema` (descriptions, enums) and, for object results, an `outputSchema`; failures are structured as `{error: {code, message, line?}}` with a stable code (`invalid_argument`, `path_outside_root`, `not_found`, `no_scripts`, `script_error`, `timeout`, `resource_limit`, `sandbox_failure`, `output_error`, `internal_error`). Script and output paths are confined to `--root` (symlinks are re-resolved, a script-chosen output name must be a plain stem, existing symlinked outputs are refused); messages over 1 MiB and results over 200k characters are cut off; a malformed message never ends the session; error text does not carry the absolute root path. Each script runs in a resource-limited child process (`sandbox.py`): wall-clock timeout (`--timeout`, default 60 s, process group killed), CPU and memory caps on POSIX (`--memory-mb`, default 2048; address space is only enforced on Linux), stdin closed, stdout discarded, stderr capped, scrubbed environment. This limits resources and protects the protocol stream; it is not file or network isolation, so for untrusted scripts also run the server in a container.
+- **Verification:** `uv run pytest tests/test_mcp.py tests/test_agent_interfaces.py`
 
 ### 2.20 Math Markup
 

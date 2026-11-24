@@ -24,13 +24,25 @@ import tempfile
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
+
+from diagrams_as_code.agent_api import scrub
 
 MAX_STDERR = 4096  # bytes of a child's stderr kept for the error message
 
 
 class SandboxError(Exception):
-    """The script could not be run to completion within its limits."""
+    """The script could not be run to completion within its limits.
+
+    ``code`` is a stable name (see ``agent_api.ERROR_CODES``): ``script_error``,
+    ``timeout``, ``resource_limit`` or ``sandbox_failure``. ``line`` is the line in
+    the user's script that raised, when known.
+    """
+
+    def __init__(self, message: str, code: str = "script_error", line: Optional[int] = None) -> None:
+        super().__init__(message)
+        self.code = code
+        self.line = line
 
 
 @dataclass(frozen=True)
@@ -71,10 +83,18 @@ def _env() -> dict[str, str]:
 def run(job: dict[str, Any], limits: Limits = Limits()) -> dict[str, Any]:
     """Run ``job`` in a child and return its JSON result.
 
-    ``job["op"]`` is ``"render"`` or ``"lint"``; see :func:`_work`. Raises
+    ``job["op"]`` is ``"render"`` or ``"lint"``; see :func:`_work`. Name the script
+    by ``job["script"]`` (a path) or give its text as ``job["source"]``, which is
+    written to a file in the sandbox's scratch directory. Raises
     :class:`SandboxError` on timeout, a signal or limit kill, or no result.
     """
     with tempfile.TemporaryDirectory(prefix="dac-sandbox-") as tmp:
+        job = dict(job)
+        if "source" in job:  # via a file: argv is too small for a large script
+            script = Path(tmp) / "script.py"
+            script.write_text(job.pop("source"), encoding="utf-8")
+            job["script"] = str(script)
+        hide = {tmp: "<sandbox>", os.path.realpath(tmp): "<sandbox>"}
         job = {**job, "result": str(Path(tmp) / "result.json"), "outdir": str(Path(tmp) / "out")}
         Path(job["outdir"]).mkdir()
         proc = subprocess.Popen(
@@ -88,19 +108,23 @@ def run(job: dict[str, Any], limits: Limits = Limits()) -> dict[str, Any]:
         except subprocess.TimeoutExpired:
             _kill(proc)
             proc.communicate()
-            raise SandboxError(f"script exceeded the {limits.timeout:g}s time limit") from None
+            raise SandboxError(f"script exceeded the {limits.timeout:g}s time limit",
+                               "timeout") from None
         finally:
             _kill(proc)  # reap any grandchildren the script left behind
         result_path = Path(job["result"])
         if not result_path.is_file():
             tail = err[-MAX_STDERR:].decode("utf-8", "replace").strip().splitlines()
             hint = tail[-1] if tail else "no output"
-            if proc.returncode and proc.returncode < 0:
+            killed = bool(proc.returncode and proc.returncode < 0)
+            if killed:
                 hint = f"killed by signal {-proc.returncode} (CPU or memory limit?); {hint}"
-            raise SandboxError(f"script did not complete: {hint}")
+            raise SandboxError(f"script did not complete: {scrub(hint, hide)}",
+                               "resource_limit" if killed else "sandbox_failure")
         result = json.loads(result_path.read_text(encoding="utf-8"))
         if "error" in result:
-            raise SandboxError(result["error"])
+            raise SandboxError(scrub(result["error"], hide), result.get("code", "script_error"),
+                               result.get("line"))
         # Collect output files (name -> bytes) before the temp dir disappears.
         result["files"] = {
             fmt: (Path(name).name, Path(name).read_bytes())
@@ -122,6 +146,7 @@ def _kill(proc: subprocess.Popen) -> None:
 # --- child side ------------------------------------------------------------
 
 def _work(job: dict[str, Any]) -> dict[str, Any]:
+    from diagrams_as_code.agent_api import findings_json
     from diagrams_as_code.audit import audit_findings
     from diagrams_as_code.cli import load_script
 
@@ -130,13 +155,13 @@ def _work(job: dict[str, Any]) -> dict[str, Any]:
         ignore = set(job.get("ignore") or [])
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always")
-            findings = [{"kind": f.kind, "detail": f.detail}
-                        for f in audit_findings(diag) if f.kind not in ignore]
+            findings = findings_json(f for f in audit_findings(diag) if f.kind not in ignore)
         return {"findings": findings, "warnings": [str(w.message) for w in caught]}
     from diagrams_as_code.output import render_all
 
     if job.get("theme"):
         diag.configure(theme=job["theme"])
+    stem = job.get("stem") or stem
     if not stem or "/" in stem or "\\" in stem or stem in (".", ".."):
         raise ValueError(f"output name {stem!r} is not a plain file stem")
     written = render_all(diag, Path(job["outdir"]), stem, tuple(job["formats"]))
@@ -144,11 +169,14 @@ def _work(job: dict[str, Any]) -> dict[str, Any]:
 
 
 def _main(argv: list[str]) -> int:
+    from diagrams_as_code.agent_api import script_line
+
     job = json.loads(argv[1])
     try:
         out = _work(job)
     except BaseException as exc:  # includes SystemExit from a script
-        out = {"error": f"{type(exc).__name__}: {exc}"}
+        out = {"error": f"{type(exc).__name__}: {exc}", "code": "script_error",
+               "line": script_line(exc, job["script"])}
     Path(job["result"]).write_text(json.dumps(out), encoding="utf-8")
     return 0
 
