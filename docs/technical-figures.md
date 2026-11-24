@@ -149,7 +149,7 @@ Two helper classes draw onto a `Diagram` with its own paths, polygons and text, 
 - `diagrams_as_code.plot.Plot` maps data coordinates to canvas pixels: axes, grid, functions, areas, bars, slope and vector fields, phase-plane orbits, candlesticks and legends. See the textbook galleries in [`examples/calculus_math/`](../examples/calculus_math/), [`examples/differential_equations/`](../examples/differential_equations/), [`examples/physics/`](../examples/physics/), [`examples/finance/`](../examples/finance/) (the [`logic`](../examples/logic/) gallery is built from shapes and edges instead).
 - `diagrams_as_code.draft.Draft` works in canvas pixels: dimensions, section hatching, centre and hidden lines, section arrows, GD&T frames, leaders and organic outlines. See [`examples/engineering/`](../examples/engineering/), [`examples/cad/`](../examples/cad/) and [`examples/medical/`](../examples/medical/).
 
-Short examples of both are in the [user guide](user-guide.md#data-plots-and-drafting-views).
+Short examples of both are in the [user guide](user-guide.md#data-plots-and-drafting-views). The newer paper-theme galleries ([`chemistry`](../examples/chemistry/), [`biology`](../examples/biology/), [`electronics`](../examples/electronics/), [`semiconductor`](../examples/semiconductor/), [`chemical_engineering`](../examples/chemical_engineering/), [`ml_models`](../examples/ml_models/), [`org`](../examples/org/)) are built the same way, and formulas in chemistry figures use `\ce{}` and `\rightleftharpoons` (see the [math markup reference](math-markup.md)).
 
 ## Limits to know about
 

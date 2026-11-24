@@ -121,9 +121,9 @@ Lists every built-in theme name, one per line.
 Lists every built-in icon as `name<TAB>domain<TAB>description`; `--domain`
 filters to one domain.
 
-**`mcp [--root DIR]`**
+**`mcp [--root DIR] [--timeout SECONDS] [--memory-mb MB]`**
 
-Serves render, lint and listing tools over stdio for MCP clients (see [§7](#7-driving-it-from-an-mcp-client)).
+Serves render, lint and listing tools over stdio for MCP clients (see [§7](#7-driving-it-from-an-mcp-client)). `--timeout` (default 60) and `--memory-mb` (default 2048) limit each script run.
 
 **Exit codes:** `0` success; `1` one or more scripts failed to load, render,
 or write (each failure is reported, and the command continues with the
@@ -194,7 +194,7 @@ The `diagrams-as-code` CLI (§3.4) returns:
 `list_examples` (optional `path`, `domain`), `render` (`path`, optional `out`, `formats`, `theme`), `lint` (`path`, optional `ignore`), `list_themes` and `list_icons` (optional `domain`). They map onto the CLI
 (`render`, `lint`, `themes`, `icons`) and the Python API (`render_all`, `audit_findings`).
 `render` writes beside the script unless `out` is given. Because rendering imports the script, which is arbitrary Python,
-all script and output paths are confined to `--root` (default: the current directory); run it only over scripts you trust.
+all script and output paths are confined to `--root` (default: the current directory). Each script runs in a resource-limited child process (`diagrams_as_code.sandbox`): a wall-clock `--timeout` kills the whole process group, CPU and memory caps apply on POSIX (`--memory-mb`; address space is only enforced on Linux), stdin is closed, stdout is discarded, stderr is capped and the environment is scrubbed. That limits resources and protects the protocol stream; it is not file or network isolation, so run it only over scripts you trust, or in a container.
 
 ```json
 {"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}

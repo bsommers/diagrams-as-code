@@ -393,7 +393,27 @@ uv run diagrams-as-code mcp --root .     # stdio server; confine it to this dire
 {"mcpServers": {"diagrams-as-code": {"command": "uv", "args": ["run", "diagrams-as-code", "mcp"]}}}
 ```
 
-It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Rendering imports the script, which is arbitrary Python, so every path is confined to `--root` (default: the current directory); only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
+It offers five tools: `list_examples`, `render`, `lint`, `list_themes` and `list_icons`, which map onto the CLI commands of the same names. `render` writes beside the script unless `out` is given. Every path is confined to `--root` (default: the current directory), and each script runs in a resource-limited child process (`--timeout`, default 60 s; `--memory-mb`, default 2048). That is a resource limit, not file or network isolation, so only point it at scripts you trust. Details: [running.md](running.md#7-driving-it-from-an-mcp-client).
+
+---
+
+## Recipe 13: Sequence Diagrams, Gantt Charts and Timelines
+
+```python
+from datetime import date
+from diagrams_as_code import Diagram
+from diagrams_as_code.gantt import GanttChart
+
+with Diagram("Launch plan", theme="pastel_light") as diag:
+    g = GanttChart(diag, today=date(2026, 3, 30))
+    g.task("spec", "Spec", start=date(2026, 3, 2), duration=5)
+    g.task("build", "Build", after="spec", duration=10)
+    g.milestone("ga", "Release", after="build")
+    print(g.draw().schedule.critical_path)
+diag.render_svg("plan.svg")
+```
+
+The critical path is computed and highlighted. For UML interactions use `diagrams_as_code.sequence.SequenceDiagram` (`seq.message`, `seq.reply`, `with seq.loop(...)`), whose layout needs no coordinates. See [sequence-diagrams.md](sequence-diagrams.md) and [gantt-timelines.md](gantt-timelines.md); both kits are in the [gallery](../examples/README.md).
 
 ---
 

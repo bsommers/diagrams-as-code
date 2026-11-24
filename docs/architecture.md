@@ -277,7 +277,7 @@ src/
 
 ## 5. Domain Hierarchy
 
-IIoT is one of thirteen first-class architectural domains, alongside the technical-figure, textbook, medical, engineering and CAD galleries. Rendered SVG, PNG and BOM files live next to each script (there is no top-level `output/` directory):
+IIoT is one of thirteen first-class architectural domains, alongside the technical-figure, textbook, medical, engineering, CAD and newer domain galleries (agentic development, semiconductor, chemistry, data engineering, ML models, DevOps, biology, chemical engineering, organisations, electronics, sequence, project management). Rendered SVG, PNG and BOM files live next to each script (there is no top-level `output/` directory):
 
 ```
 examples/
@@ -298,11 +298,15 @@ examples/
 ├── technical/                      # 11 complete paper-style figures
 ├── calculus_math/ differential_equations/ physics/ finance/ logic/   # 50 textbook figures (10 each, Plot-based)
 ├── medical/ engineering/ cad/      # 30 Draft/Plot figures (10 each)
+├── agentic_dev/ data_engineering/ ml_models/ devops/   # 10 figures each (agent patterns, pipelines, models, delivery)
+├── semiconductor/ chemistry/ biology/ chemical_engineering/ electronics/   # 10 figures each (Draft/Plot, paper theme)
+├── org/                            # 10 organisation figures (paper theme)
 ├── sequence/                       # 3 SequenceDiagram figures
+├── project_management/             # 11 figures (3 GanttChart/Timeline, 8 delivery figures)
 └── 01_*.py ... 04_*.py             # 4 top-level reference scripts
 ```
 
-In total 250 example scripts: 143 domain diagrams, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures, 30 medical, engineering and CAD figures and 3 sequence diagrams.
+In total 361 example scripts in 35 directories: 143 domain diagrams, 100 in the ten newer domain galleries, 3 sequence diagrams, 11 project-management figures, 4 top-level scripts, 9 primitives, 11 technical figures, 50 textbook figures and 30 medical, engineering and CAD figures.
 
 ---
 

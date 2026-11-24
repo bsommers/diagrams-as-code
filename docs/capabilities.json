@@ -3,10 +3,10 @@
   "version": "0.17.0",
   "project_name": "Diagrams as Code - Directed IIoT Engine",
   "repository": "ai/diagrams-as-code",
-  "last_updated": "2026-11-19T00:00:00Z",
+  "last_updated": "2026-11-23T00:00:00Z",
   "summary": {
-    "total_capabilities": 25,
-    "operational": 25,
+    "total_capabilities": 28,
+    "operational": 28,
     "beta": 0,
     "planned": 0,
     "categories": [
@@ -24,7 +24,10 @@
       "Technical Drawing Primitives",
       "Technical Figures & Visual Regression",
       "Vector PDF Export",
-      "Model Context Protocol Server"
+      "Model Context Protocol Server",
+      "Math Markup",
+      "Sequence Diagrams",
+      "Gantt Charts & Timelines"
     ]
   },
   "quick_answers": {
@@ -57,6 +60,18 @@
       "capability_id": "CAP-DIAG-BOM",
       "python_api": "diag.generate_readme(image_file, output_path)",
       "details": "Extracts diagram inventory, group affiliations, connection topology, and technical metadata into Markdown tables and JSON catalogs."
+    },
+    "can_draw_sequence_diagrams": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-SEQUENCE",
+      "python_api": "SequenceDiagram(title)",
+      "details": "Participants, messages, replies, self-calls, activations, notes and loop/alt/opt/par/critical/break frames, laid out from the events with the standard library alone."
+    },
+    "can_draw_gantt_charts_and_timelines": {
+      "supported": true,
+      "capability_id": "CAP-DIAG-GANTT",
+      "python_api": "GanttChart(diag) / Timeline(diag)",
+      "details": "Tasks with dependencies and lag, phases, milestones, progress and a computed critical path; dated events with non-overlapping labels."
     },
     "has_auto_layout": {
       "supported": true,
@@ -174,8 +189,8 @@
       "target_release": "v0.1.0",
       "python_api": "examples/",
       "classes": ["Diagram"],
-      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification.",
-      "verification": "uv run pytest tests/test_domain_examples.py"
+      "details": "143 executable domain reference diagrams across cloud, ai, computer, datacenter, business_process, cybersecurity, network_engineering, iiot, database, enterprise_architecture, manufacturing, mind_map, and computer_science demonstrating multi-theme styling, BOM generation, and automated test verification. Twelve newer galleries add 114 more (agentic_dev, semiconductor, chemistry, data_engineering, ml_models, devops, biology, chemical_engineering, org, electronics at 10 each; sequence 3; project_management 11), for 361 example scripts in all.",
+      "verification": "uv run pytest tests/test_domain_examples.py tests/test_textbook_examples.py"
     },
     {
       "id": "CAP-DIAG-LAYOUT",
@@ -349,8 +364,40 @@
       "target_release": "v0.17.0",
       "python_api": "diagrams_as_code.mcp.serve",
       "classes": ["Server", "serve", "ToolError"],
-      "details": "A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18), started with `diagrams-as-code mcp [--root DIR]`. Tools: list_examples, render, lint, list_themes, list_icons. Script and output paths are confined to --root (symlinks re-resolved, script-chosen output names must be plain stems), messages are size-capped, malformed input never ends the session, and errors do not leak absolute paths. Rendering executes the diagram script, which is arbitrary Python: this is path confinement, not a sandbox, so point --root only at trusted content or run the server in a container.",
+      "details": "A stdlib-only JSON-RPC 2.0 server over stdio (MCP revision 2025-06-18), started with `diagrams-as-code mcp [--root DIR]`. Tools: list_examples, render, lint, list_themes, list_icons. Script and output paths are confined to --root (symlinks re-resolved, script-chosen output names must be plain stems), messages are size-capped, malformed input never ends the session, and errors do not leak absolute paths. Each script runs in a resource-limited child process (sandbox.py): wall-clock timeout (--timeout, default 60 s, process group killed), CPU and memory caps on POSIX (--memory-mb, default 2048; address space is only enforced on Linux), stdin closed, stdout discarded, stderr capped, scrubbed environment. This limits resources and protects the protocol stream; it is not file or network isolation, so for untrusted scripts also run the server in a container.",
       "verification": "uv run pytest tests/test_mcp.py"
+    },
+    {
+      "id": "CAP-DIAG-MATH",
+      "name": "TeX-like Math Markup in Labels and Captions",
+      "category": "Math Markup",
+      "status": "OPERATIONAL",
+      "target_release": "v0.19.0",
+      "python_api": "$...$ in labels, captions and Diagram.text()",
+      "details": "Frac, binom, sqrt with an index (sqrt[n]{x}), the accents hat, widehat, tilde, widetilde, dot, ddot, vec and grave, the equilibrium signs rightleftharpoons and rightleftarrows (two stacked arrows, not harpoons), and \\ce{H2O} for chemical formulas with computed subscripts and charges. acute, check and breve are unsupported (no outlines) and raise MathError. Reference: docs/math-markup.md.",
+      "verification": "uv run pytest tests/test_text_engine.py tests/test_textbook_examples.py"
+    },
+    {
+      "id": "CAP-DIAG-SEQUENCE",
+      "name": "UML Sequence Diagram Kit",
+      "category": "Sequence Diagrams",
+      "status": "OPERATIONAL",
+      "target_release": "v0.19.0",
+      "python_api": "diagrams_as_code.sequence.SequenceDiagram",
+      "classes": ["SequenceDiagram", "Participant", "Frame", "SequenceLayout"],
+      "details": "Participants, synchronous, asynchronous and reply messages, self-calls, activation bars, notes and loop, alt, opt, par, critical and break frames, placed by a computed layout with the standard library alone. Draws onto an ordinary Diagram, so themes, lint, SVG, PNG and PDF apply. Horizontal messages only; no lost/found messages, create/destroy or ref frames. Three examples in examples/sequence; guide: docs/sequence-diagrams.md.",
+      "verification": "uv run pytest tests/test_sequence.py tests/test_domain_examples.py && uv run diagrams-as-code lint examples/sequence"
+    },
+    {
+      "id": "CAP-DIAG-GANTT",
+      "name": "Gantt Chart and Timeline Kit",
+      "category": "Gantt Charts & Timelines",
+      "status": "OPERATIONAL",
+      "target_release": "v0.19.0",
+      "python_api": "diagrams_as_code.gantt.GanttChart",
+      "classes": ["GanttChart", "Timeline", "Task", "schedule"],
+      "details": "GanttChart schedules tasks from durations and finish-to-start dependencies with lag, groups them in phases, draws milestones, percent done and a status line, and computes and highlights the critical path with orthogonal dependency arrows. Timeline places dated events on a ruler with labels stacked so none overlap. Calendar days only; about 0.5% of arrows on dense random charts can be unroutable (a warning is raised). Eleven examples in examples/project_management; guide: docs/gantt-timelines.md.",
+      "verification": "uv run pytest tests/test_gantt.py tests/test_domain_examples.py && uv run diagrams-as-code lint examples/project_management"
     }
   ]
 }
