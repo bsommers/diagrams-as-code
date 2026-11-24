@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1290 830" width="1290" height="830">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-B03A2E" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B03A2E"/>
+    </marker>
+    <marker id="arrow-B03A2E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B03A2E"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="group_1">
+    <rect x="40" y="70" width="170" height="325" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="56" y="94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">1 Commit stage</text>
+  </g>
+  <g id="group_2">
+    <rect x="280" y="70" width="170" height="235" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="296" y="94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">2 Build stage</text>
+  </g>
+  <g id="group_3">
+    <rect x="520" y="70" width="170" height="325" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="536" y="94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">3 Verify stage</text>
+  </g>
+  <g id="group_4">
+    <rect x="520" y="455" width="490" height="195" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="536" y="479" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">4 Quality gates</text>
+  </g>
+  <g id="group_5">
+    <rect x="1080" y="455" width="170" height="235" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="6,4" />
+    <text x="1096" y="479" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">5 Publish</text>
+  </g>
+  <path d="M 125 190 L 125 220" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 125 280 L 125 310" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 185 340 L 245 340 L 245 160 L 305 160" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 365 190 L 365 220" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 425 250 L 485 250 L 485 160 L 545 160" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 605 190 L 605 220" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 605 280 L 605 310" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 605 370 L 605 442.5 L 640 442.5 L 640 515" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 735 570 L 795 570" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 985 570 L 1045 570 L 1045 545 L 1105 545" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 1165 575 L 1165 605" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 640 625 L 640 662.5 L 765 662.5 L 765 700" fill="none" stroke="#B03A2E" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow-B03A2E)" />
+  <path d="M 890 625 L 890 662.5 L 765 662.5 L 765 700" fill="none" stroke="#B03A2E" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow-B03A2E)" />
+  <g class="badge">
+  <rect x="102.83" y="196" width="44.34" height="18" rx="9" fill="#FFFFFF" />
+  <text x="125" y="208.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">trigger</text>
+</g>
+  <g class="badge">
+  <rect x="106.44" y="286" width="37.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="125" y="298.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">pass</text>
+</g>
+  <g class="badge">
+  <rect x="226.44" y="241" width="37.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="245" y="253.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">pass</text>
+</g>
+  <g class="badge">
+  <rect x="342" y="196" width="46.01" height="18" rx="9" fill="#FFFFFF" />
+  <text x="365" y="208.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">artifact</text>
+</g>
+  <g class="badge">
+  <rect x="463.38" y="196" width="43.24" height="18" rx="9" fill="#FFFFFF" />
+  <text x="485" y="208.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">image</text>
+</g>
+  <g class="badge">
+  <rect x="583.94" y="196" width="42.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="605" y="208.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">report</text>
+</g>
+  <g class="badge">
+  <rect x="583.94" y="286" width="42.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="605" y="298.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">report</text>
+</g>
+  <g class="badge">
+  <rect x="592.55" y="433.5" width="59.91" height="18" rx="9" fill="#FFFFFF" />
+  <text x="622.5" y="445.94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">all reports</text>
+</g>
+  <g class="badge">
+  <rect x="749.22" y="561" width="31.56" height="18" rx="9" fill="#FFFFFF" />
+  <text x="765" y="573.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">yes</text>
+</g>
+  <g class="badge">
+  <rect x="1029.22" y="548.5" width="31.56" height="18" rx="9" fill="#FFFFFF" />
+  <text x="1045" y="560.94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">yes</text>
+</g>
+  <g class="badge">
+  <rect x="1138.66" y="581" width="52.68" height="18" rx="9" fill="#FFFFFF" />
+  <text x="1165" y="593.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">promote</text>
+</g>
+  <g class="badge">
+  <rect x="688.94" y="653.5" width="27.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="702.5" y="665.94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no</text>
+</g>
+  <g class="badge">
+  <rect x="813.94" y="653.5" width="27.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="827.5" y="665.94" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">no</text>
+</g>
+  <g id="pr">
+    <rect x="65" y="130" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-document" transform="translate(113.6, 139.8) scale(0.95)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#000000" stroke-width="2"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="125" y="176.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Pull Request</text>
+  </g>
+  <g id="lint">
+    <rect x="65" y="220" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-terminal" transform="translate(113.6, 229.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <polyline points="7,9 10,12 7,15" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="15" x2="17" y2="15" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="125" y="266.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Lint and Format</text>
+  </g>
+  <g id="unit">
+    <rect x="65" y="310" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-terminal" transform="translate(113.6, 319.8) scale(0.95)">
+  <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <polyline points="7,9 10,12 7,15" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="12" y1="15" x2="17" y2="15" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="125" y="356.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Unit Tests</text>
+  </g>
+  <g id="compile">
+    <rect x="305" y="130" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-server" transform="translate(353.6, 133.2) scale(0.95)">
+  <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <rect x="3" y="14" width="18" height="6" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <circle cx="6" cy="7" r="1" fill="#000000"/>
+  <circle cx="9" cy="7" r="1" fill="#000000"/>
+  <circle cx="6" cy="17" r="1" fill="#000000"/>
+  <circle cx="9" cy="17" r="1" fill="#000000"/>
+</g>
+    <text x="365" y="169.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="365" dy="0">Compile and</tspan> <tspan x="365" dy="14.4">Package</tspan></text>
+  </g>
+  <g id="image">
+    <rect x="305" y="220" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-container" transform="translate(353.6, 223.2) scale(0.95)">
+  <path d="M 3 7 L 12 2 L 21 7 L 12 12 Z M 3 7 V 16 L 12 21 V 12 M 21 7 V 16 L 12 21" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+</g>
+    <text x="365" y="259.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="365" dy="0">Build Container</tspan> <tspan x="365" dy="14.4">Image</tspan></text>
+  </g>
+  <g id="integ">
+    <rect x="545" y="130" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-database" transform="translate(593.6, 139.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 4 12 C 4 15 20 15 20 12" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 4 18 C 4 21 20 21 20 18" fill="none" stroke="#000000" stroke-width="2"/>
+  <line x1="4" y1="6" x2="4" y2="18" stroke="#000000" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="18" stroke="#000000" stroke-width="2"/>
+</g>
+    <text x="605" y="176.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Integration Tests</text>
+  </g>
+  <g id="sast">
+    <rect x="545" y="220" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-shield" transform="translate(593.6, 223.2) scale(0.95)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="605" y="259.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="605" dy="0">Static Analysis</tspan> <tspan x="605" dy="14.4">(SAST)</tspan></text>
+  </g>
+  <g id="deps">
+    <rect x="545" y="310" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-malware_scan" transform="translate(593.6, 313.2) scale(0.95)">
+  <path d="M 4 8 V 4 H 8" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 16 4 H 20 V 8" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 4 16 V 20 H 8" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 16 20 H 20 V 16" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="4" fill="none" stroke="#000000" stroke-width="2"/>
+  <line x1="8" y1="12" x2="6" y2="12" stroke="#000000" stroke-width="2"/>
+  <line x1="16" y1="12" x2="18" y2="12" stroke="#000000" stroke-width="2"/>
+  <line x1="12" y1="8" x2="12" y2="6" stroke="#000000" stroke-width="2"/>
+  <line x1="12" y1="16" x2="12" y2="18" stroke="#000000" stroke-width="2"/>
+</g>
+    <text x="605" y="349.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="605" dy="0">Dependency</tspan> <tspan x="605" dy="14.4">and Image Scan</tspan></text>
+  </g>
+  <g id="gate_cov">
+    <path d="M 640 515 L 735 570 L 640 625 L 545 570 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="640" y="567.44" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="500"><tspan x="640" dy="0">Coverage at least 80%</tspan> <tspan x="640" dy="12">and tests green?</tspan></text>
+  </g>
+  <g id="gate_sec">
+    <path d="M 890 515 L 985 570 L 890 625 L 795 570 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="890" y="566.67" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500"><tspan x="890" dy="0">No critical CVEs</tspan> <tspan x="890" dy="15.6">or code smells?</tspan></text>
+  </g>
+  <g id="registry">
+    <rect x="1105" y="515" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-storage" transform="translate(1153.6, 524.8) scale(0.95)">
+  <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#000000" stroke-width="2"/>
+</g>
+    <text x="1165" y="561.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Artifact Registry</text>
+  </g>
+  <g id="deploy">
+    <rect x="1105" y="605" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-cloud" transform="translate(1153.6, 614.8) scale(0.95)">
+  <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+</g>
+    <text x="1165" y="651.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Deploy to Staging</text>
+  </g>
+  <g id="blocked">
+    <rect x="705" y="700" width="120" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-lock" transform="translate(753.6, 705.6) scale(0.95)">
+  <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#000000" stroke-width="2"/>
+  <circle cx="12" cy="16" r="1.5" fill="#000000"/>
+</g>
+    <text x="765" y="739.84" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="500"><tspan x="765" dy="0">Merge Blocked</tspan> <tspan x="765" dy="12">author notified in the PR</tspan></text>
+  </g>
+</svg>
