@@ -4,6 +4,11 @@ All notable changes, architectural milestones, and capability updates to the pur
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), adhering to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), Standard 44 (*Pre-Commit Changelog & Documentation Synchronization*), and Standard 45 (*Continuous Capability Manifest Synchronization*).
 
+## [Unreleased]
+
+### Changed
+- **MCP server runs each script in a resource-limited child process** (`diagrams_as_code.sandbox`). `render` and `lint` no longer execute diagram scripts in the server process: a script that never returns is killed at a wall-clock timeout (whole process group), CPU and address-space caps apply on POSIX (address space is only enforced on Linux), stdin is closed, stdout is discarded so a script cannot write into the JSON-RPC stream, stderr is capped, and the environment is scrubbed. New flags `diagrams-as-code mcp --timeout SECONDS --memory-mb MB` (defaults 60 s, 2048 MB). This is resource and stream isolation, not file or network isolation; use a container for that. Closes the "no timeout / fd 1 / stdin" known limits from v0.17.
+
 ## [v0.18.0] - 2026-11-23
 
 ### Added

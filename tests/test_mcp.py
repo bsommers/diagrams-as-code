@@ -142,3 +142,67 @@ def test_oversized_message_is_rejected_and_skipped(monkeypatch):
     mcp.serve(REPO, io.StringIO(big + "\n" + ok + "\n"), out)
     replies = [json.loads(l) for l in out.getvalue().splitlines()]
     assert replies[0]["error"]["code"] == -32600 and replies[1]["id"] == 2
+
+
+# --- sandbox: a script cannot hang, flood or corrupt the server --------------
+
+def _script(tmp_path, body):
+    (tmp_path / "s.py").write_text(
+        "from diagrams_as_code import Diagram\n" + body +
+        "\ndef diagram():\n    d = Diagram('t')\n    d.add_node('a', 'A')\n    return d\n")
+
+
+def test_script_that_never_returns_is_killed_at_the_timeout(tmp_path):
+    import time
+    from diagrams_as_code.sandbox import Limits
+    _script(tmp_path, "while True:\n    pass")
+    t0 = time.monotonic()
+    res = call(Server(tmp_path, Limits(timeout=1.5, cpu=60)), "render", path="s.py")
+    assert res["isError"] and "time limit" in res["content"][0]["text"]
+    assert time.monotonic() - t0 < 10
+
+
+def test_script_cannot_write_to_stdout_or_read_stdin(tmp_path):
+    _script(tmp_path, "import os, sys\nos.write(1, b'{garbage}\\n')\nsys.stdin.read()")
+    out = io.StringIO()
+    req = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                      "params": {"name": "lint", "arguments": {"path": "s.py"}}})
+    serve(tmp_path, io.StringIO(req + "\n"), out)
+    lines = out.getvalue().splitlines()
+    assert len(lines) == 1 and json.loads(lines[0])["id"] == 1
+
+
+def test_script_exit_or_crash_is_a_tool_error_not_a_server_crash(tmp_path):
+    _script(tmp_path, "import sys\nsys.exit(3)")
+    s = Server(tmp_path)
+    assert call(s, "render", path="s.py")["isError"]
+    assert call(s, "list_themes")["isError"] is False  # server still serving
+
+
+def test_script_over_the_cpu_limit_is_stopped(tmp_path):
+    import os
+    import pytest
+    if os.name != "posix":
+        pytest.skip("rlimits are POSIX only")
+    from diagrams_as_code.sandbox import Limits
+    _script(tmp_path, "while True:\n    pass")
+    res = call(Server(tmp_path, Limits(timeout=30, cpu=1)), "lint", path="s.py")
+    assert res["structuredContent"]["failed"] and res["structuredContent"]["checked"] == 0
+
+
+def test_script_over_the_memory_limit_fails_cleanly(tmp_path):
+    import sys
+    import pytest
+    if sys.platform != "linux":
+        pytest.skip("address-space limits are only enforced on Linux")
+    from diagrams_as_code.sandbox import Limits
+    _script(tmp_path, "x = bytearray(1 << 30)")
+    res = call(Server(tmp_path, Limits(timeout=30, memory_mb=256)), "lint", path="s.py")
+    assert res["structuredContent"]["failed"]
+
+
+def test_cli_passes_limits_through(monkeypatch):
+    seen = {}
+    monkeypatch.setattr("diagrams_as_code.mcp.serve", lambda root, **kw: seen.update(kw) or 0)
+    assert cli.main(["mcp", "--timeout", "5", "--memory-mb", "512"]) == 0
+    assert seen == {"timeout": 5.0, "memory_mb": 512}

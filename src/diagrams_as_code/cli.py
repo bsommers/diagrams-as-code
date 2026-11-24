@@ -114,6 +114,10 @@ def build_parser() -> argparse.ArgumentParser:
     mcp = sub.add_parser("mcp", help="serve render/lint/list tools over MCP (stdio)")
     mcp.add_argument("--root", type=Path, default=Path("."),
                      help="directory scripts and outputs are confined to (default: .)")
+    mcp.add_argument("--timeout", type=float, default=60.0, metavar="SECONDS",
+                     help="wall-clock limit for one script (default: 60)")
+    mcp.add_argument("--memory-mb", type=int, default=2048, metavar="MB",
+                     help="memory limit for one script, POSIX (default: 2048)")
 
     sub.add_parser("themes", help="list built-in themes")
     icons = sub.add_parser("icons", help="list built-in icons")
@@ -336,7 +340,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     if args.command == "mcp":
         from diagrams_as_code.mcp import serve  # late: mcp imports this module
 
-        return serve(args.root)
+        return serve(args.root, timeout=args.timeout, memory_mb=args.memory_mb)
     if args.command == "themes":
         print("\n".join(list_themes()))
         return 0
