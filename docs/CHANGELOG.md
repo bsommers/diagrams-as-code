@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+- Math markup: `\binom{n}{k}`, the accents `\hat \widehat \tilde \widetilde \dot \ddot \vec \grave`, and `\sqrt[n]{x}` with an index. `\acute`, `\check`, `\breve` stay unsupported (no outlines).
+
 ### Changed
 - **MCP server runs each script in a resource-limited child process** (`diagrams_as_code.sandbox`). `render` and `lint` no longer execute diagram scripts in the server process: a script that never returns is killed at a wall-clock timeout (whole process group), CPU and address-space caps apply on POSIX (address space is only enforced on Linux), stdin is closed, stdout is discarded so a script cannot write into the JSON-RPC stream, stderr is capped, and the environment is scrubbed. New flags `diagrams-as-code mcp --timeout SECONDS --memory-mb MB` (defaults 60 s, 2048 MB). This is resource and stream isolation, not file or network isolation; use a container for that. Closes the "no timeout / fd 1 / stdin" known limits from v0.17.
 
