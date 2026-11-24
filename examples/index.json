@@ -264,7 +264,6 @@
    "theme": "synthwave",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/01_simple_rag_pipeline.svg",
@@ -283,7 +282,6 @@
    "theme": "synthwave",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/02_multimodal_vision_inference.svg",
@@ -302,7 +300,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/03_agentic_tool_orchestration.svg",
@@ -321,7 +318,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/04_distributed_training_cluster.svg",
@@ -340,7 +336,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/05_feature_store_mlops.svg",
@@ -359,7 +354,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/06_fine_tuning_lora_pipeline.svg",
@@ -378,7 +372,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/07_enterprise_knowledge_graph_llm.svg",
@@ -397,7 +390,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/08_ai_guardrails_safety_eval.svg",
@@ -416,7 +408,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/09_autonomous_robotics_slam.svg",
@@ -435,7 +426,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/10_self_hosted_vllm_cluster.svg",
@@ -454,7 +444,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/ai/11_auto_training_pipeline.svg",
@@ -653,7 +642,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/01_order_to_cash.svg",
@@ -672,7 +660,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/02_employee_onboarding.svg",
@@ -691,7 +678,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/03_it_incident_escalation.svg",
@@ -710,7 +696,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/04_procure_to_pay.svg",
@@ -729,7 +714,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/05_regulatory_compliance_audit.svg",
@@ -748,7 +732,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/06_software_release_gate.svg",
@@ -767,7 +750,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/07_customer_loan_origination.svg",
@@ -786,7 +768,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/08_supply_chain_rfq_fulfillment.svg",
@@ -805,7 +786,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/09_claims_processing_fraud_detection.svg",
@@ -824,7 +804,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/10_enterprise_change_management.svg",
@@ -843,7 +822,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/business_process/11_auto_order_to_cash.svg",
@@ -1582,7 +1560,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/01_simple_vpc_web.svg",
@@ -1601,7 +1578,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/02_serverless_event_pipeline.svg",
@@ -1620,7 +1596,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/03_cdn_multi_region_edge.svg",
@@ -1639,7 +1614,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/04_hybrid_cloud_vpn.svg",
@@ -1658,7 +1632,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/05_microservices_service_mesh.svg",
@@ -1677,7 +1650,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/06_multi_cloud_dr_failover.svg",
@@ -1696,7 +1668,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/07_data_lakehouse_ingest.svg",
@@ -1715,7 +1686,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/08_zero_trust_ingress_security.svg",
@@ -1734,7 +1704,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/09_iot_cloud_fleet_management.svg",
@@ -1753,7 +1722,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/10_global_enterprise_backbone.svg",
@@ -1772,7 +1740,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cloud/11_auto_serverless_pipeline.svg",
@@ -1791,7 +1758,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/01_workstation_peripherals.svg",
@@ -1810,7 +1776,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/02_home_lab_network.svg",
@@ -1829,7 +1794,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/03_plc_industrial_io.svg",
@@ -1848,7 +1812,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/04_dual_homed_edge_gateway.svg",
@@ -1867,7 +1830,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/05_developer_terminal_environment.svg",
@@ -1886,7 +1848,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/06_mobile_client_sync.svg",
@@ -1905,7 +1866,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/07_embedded_rtos_system.svg",
@@ -1924,7 +1884,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/08_vdi_thin_client_fleet.svg",
@@ -1943,7 +1902,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/09_scada_hmi_control_station.svg",
@@ -1962,7 +1920,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/10_high_performance_workstation_storage.svg",
@@ -1981,7 +1938,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer/11_auto_workstation_stack.svg",
@@ -2000,7 +1956,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/01_hash_table_chaining.svg",
@@ -2019,7 +1974,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/02_red_black_tree.svg",
@@ -2038,7 +1992,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/03_merge_sort_recursion.svg",
@@ -2057,7 +2010,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/04_dijkstra_shortest_paths.svg",
@@ -2076,7 +2028,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/05_regex_nfa_to_dfa.svg",
@@ -2095,7 +2046,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/06_cpu_pipeline_hazards.svg",
@@ -2114,7 +2064,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/07_virtual_memory_and_caches.svg",
@@ -2133,7 +2082,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/08_tcp_connection_lifecycle.svg",
@@ -2152,7 +2100,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/09_cpu_scheduling_gantt.svg",
@@ -2171,7 +2118,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/10_raft_consensus.svg",
@@ -2190,7 +2136,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/computer_science/11_auto_compiler_pass_dag.svg",
@@ -2209,7 +2154,6 @@
    "theme": "crimson",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/01_perimeter_defense_dmz.svg",
@@ -2228,7 +2172,6 @@
    "theme": "crimson",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/02_soc_siem_pipeline.svg",
@@ -2247,7 +2190,6 @@
    "theme": "high_contrast",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/03_zero_trust_ztna.svg",
@@ -2266,7 +2208,6 @@
    "theme": "high_contrast",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/04_pki_ca_hierarchy.svg",
@@ -2285,7 +2226,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/05_edr_threat_hunting.svg",
@@ -2304,7 +2244,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/06_secrets_vault_rotation.svg",
@@ -2323,7 +2262,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/07_honeynet_deception_grid.svg",
@@ -2342,7 +2280,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/08_ids_ips_inline_inspection.svg",
@@ -2361,7 +2298,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/09_iam_federation_saml_oidc.svg",
@@ -2380,7 +2316,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/10_ransomware_containment_airgap.svg",
@@ -2399,7 +2334,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/cybersecurity/11_auto_soc_pipeline.svg",
@@ -2598,7 +2532,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/01_entity_relationship_model.svg",
@@ -2617,7 +2550,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/02_star_schema_warehouse.svg",
@@ -2636,7 +2568,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/03_primary_replica_failover.svg",
@@ -2655,7 +2586,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/04_sharded_cluster.svg",
@@ -2674,7 +2604,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/05_cdc_pipeline.svg",
@@ -2693,7 +2622,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/06_lakehouse_medallion.svg",
@@ -2712,7 +2640,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/07_btree_index_pages.svg",
@@ -2731,7 +2658,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/08_lsm_tree_compaction.svg",
@@ -2750,7 +2676,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/09_query_plan_tree.svg",
@@ -2769,7 +2694,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/10_backup_pitr_strategy.svg",
@@ -2788,7 +2712,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/database/11_auto_cache_aside_read_path.svg",
@@ -2807,7 +2730,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/01_single_rack_blade_chassis.svg",
@@ -2826,7 +2748,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/02_san_storage_fabric.svg",
@@ -2845,7 +2766,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/03_leaf_spine_clos_network.svg",
@@ -2864,7 +2784,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/04_power_distribution_ups.svg",
@@ -2883,7 +2802,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/05_hvac_containment_cooling.svg",
@@ -2902,7 +2820,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/06_kubernetes_bare_metal.svg",
@@ -2921,7 +2838,6 @@
    "theme": "crimson",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/07_disaster_recovery_datacenter_pair.svg",
@@ -2940,7 +2856,6 @@
    "theme": "crimson",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/08_high_density_ai_compute_pod.svg",
@@ -2959,7 +2874,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/09_edge_micro_datacenter.svg",
@@ -2978,7 +2892,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/10_tier4_concurrently_maintainable.svg",
@@ -2997,7 +2910,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/datacenter/11_auto_spine_leaf.svg",
@@ -3736,7 +3648,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/01_c4_system_context.svg",
@@ -3755,7 +3666,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/02_business_capability_map.svg",
@@ -3774,7 +3684,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/03_application_portfolio_time.svg",
@@ -3793,7 +3702,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/04_c4_container_view.svg",
@@ -3812,7 +3720,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/05_archimate_layered_view.svg",
@@ -3831,7 +3738,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/06_integration_architecture.svg",
@@ -3850,7 +3756,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/07_value_stream_capability_map.svg",
@@ -3869,7 +3774,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/08_transition_roadmap.svg",
@@ -3888,7 +3792,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/09_data_governance_mdm.svg",
@@ -3907,7 +3810,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/10_cloud_landing_zone_operating_model.svg",
@@ -3926,7 +3828,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/enterprise_architecture/11_auto_application_landscape.svg",
@@ -4125,7 +4026,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/01_baltimore_plant_to_cloud.svg",
@@ -4144,7 +4044,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/02_high_availability_broker.svg",
@@ -4163,7 +4062,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/03_sparkplug_b_pipeline.svg",
@@ -4182,7 +4080,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/04_predictive_maintenance_vibration.svg",
@@ -4201,7 +4098,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/05_scada_historian_redundancy.svg",
@@ -4220,7 +4116,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/06_opc_ua_edge_aggregation.svg",
@@ -4239,7 +4134,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/07_smart_factory_mes_integration.svg",
@@ -4258,7 +4152,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/08_automated_guided_vehicle_fleet.svg",
@@ -4277,7 +4170,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/09_cold_chain_environmental_telemetry.svg",
@@ -4296,7 +4188,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/10_water_wastewater_remote_rtu.svg",
@@ -4315,7 +4206,6 @@
    "theme": "iiot_dark_gold",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/iiot/11_auto_uns_backbone.svg",
@@ -4514,7 +4404,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/01_wafer_fab_process_loop.svg",
@@ -4533,7 +4422,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/02_lithography_cell.svg",
@@ -4552,7 +4440,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/03_fab_automation_stack.svg",
@@ -4571,7 +4458,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/04_apc_run_to_run_fdc.svg",
@@ -4590,7 +4476,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/05_yield_management.svg",
@@ -4609,7 +4494,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/06_backend_assembly_test.svg",
@@ -4628,7 +4512,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/07_isa95_levels.svg",
@@ -4647,7 +4530,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/08_automotive_assembly_line.svg",
@@ -4666,7 +4548,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/09_oee_loss_waterfall.svg",
@@ -4685,7 +4566,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/10_spc_control_chart_fishbone.svg",
@@ -4704,7 +4584,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/manufacturing/11_auto_isa88_batch_recipe.svg",
@@ -4903,7 +4782,6 @@
    "theme": "pastel_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/01_product_launch_plan.svg",
@@ -4922,7 +4800,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/02_startup_idea_brainstorm.svg",
@@ -4941,7 +4818,6 @@
    "theme": "solarized_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/03_operating_systems_study_notes.svg",
@@ -4960,7 +4836,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/04_meeting_notes_action_items.svg",
@@ -4979,7 +4854,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/05_personal_goals_okrs.svg",
@@ -4998,7 +4872,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/06_project_risk_register.svg",
@@ -5017,7 +4890,6 @@
    "theme": "monochrome",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/07_book_summary.svg",
@@ -5036,7 +4908,6 @@
    "theme": "crimson",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/08_incident_retrospective_five_whys.svg",
@@ -5055,7 +4926,6 @@
    "theme": "dracula",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/09_system_design_interview.svg",
@@ -5074,7 +4944,6 @@
    "theme": "paper",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/10_consistency_concept_map.svg",
@@ -5093,7 +4962,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/mind_map/11_auto_cloud_certification_roadmap.svg",
@@ -5292,7 +5160,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/01_three_tier_campus_lan.svg",
@@ -5311,7 +5178,6 @@
    "theme": "blueprint",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/02_bgp_dual_multihomed_wan.svg",
@@ -5330,7 +5196,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/03_mpls_vpn_backbone.svg",
@@ -5349,7 +5214,6 @@
    "theme": "nord",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/04_vxlan_evpn_datacenter_fabric.svg",
@@ -5368,7 +5232,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/05_sd_wan_hub_and_spoke.svg",
@@ -5387,7 +5250,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/06_ha_firewall_cluster_carp_sync.svg",
@@ -5406,7 +5268,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/07_dwdm_metro_optical_ring.svg",
@@ -5425,7 +5286,6 @@
    "theme": "iiot_light",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/08_ospf_multi_area_enterprise.svg",
@@ -5444,7 +5304,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/09_radius_802_1x_nac.svg",
@@ -5463,7 +5322,6 @@
    "theme": "cyber_slate",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/10_dns_anycast_authoritative_mesh.svg",
@@ -5482,7 +5340,6 @@
    "theme": "emerald",
    "formats": [
     "svg",
-    "png",
     "bom"
    ],
    "svg": "examples/network_engineering/11_auto_campus_core.svg",
