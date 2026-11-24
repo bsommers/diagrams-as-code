@@ -57,3 +57,9 @@ Merge order matters only for the stack: #33 -> #34 -> #39 (retarget each to mast
 - **org (#45):** org chart with dotted lines, matrix org, Team Topologies, RACI (one-A asserted), tribes/squads, span of control, power/interest grid, on-call rotation, hiring funnel, Conway's law. Cut: reporting-tree auto layout, RACI vs DACI vs RAPID. Manual placement throughout; data illustrative.
 - **electronics (#47):** RC+Bode, op-amps, MOSFET CS amp, buck, bridge rectifier, 555, SPI, I2C, PCB stackup, PDN. Figures computed; ideal models stated; no clock-tree.
 - **Final combined test** (all 15 branches merged on master, throwaway worktree): pytest **1862 passed, 1 skipped**; main.py 0; lint **361 diagrams, 0 findings**; audit all 0. Only conflict is #37 vs #44 (resolved by keeping both).
+
+## Outcome (2026-11-23)
+- You approved: merge all in order, cut v0.19.0, and the docs PR.
+- Merged in order: #33, #34, #39, #37, #44 (after merging master into it to resolve the sequence/gantt conflict in docs/architecture.md and LAYERS), #46, then #35 #36 #38 #40 #41 #42 #43 #45 #47. Docs/counts PR #48. Release PR #49 (merge 64c5e70).
+- Tag `v0.19.0` (annotated) pushed on 64c5e70. Final gate on master: pytest 1967 passed, 1 skipped; main.py 0; icons up to date; audit all 0; lint 361 diagrams 0 findings.
+- Merged feature branches are still on origin (branch deletion not authorized). Also still there: origin/main and origin/legacy-master (unmerged, untouched).
