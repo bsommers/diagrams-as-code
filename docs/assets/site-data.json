@@ -1,0 +1,269 @@
+{
+ "version": "0.19.0",
+ "diagrams": 361,
+ "domains": 35,
+ "themes": 14,
+ "icons": 60,
+ "repo": "https://github.com/bsommers/diagrams-as-code",
+ "groups": [
+  "AI & Software",
+  "Cloud & Network",
+  "Industrial & Hardware",
+  "Science & Math",
+  "Business & Org"
+ ],
+ "gallery": [
+  {
+   "group": "AI & Software",
+   "domain": "agentic_dev",
+   "title": "Supervisor vs swarm",
+   "image": "assets/gallery/agentic_dev__06_supervisor_vs_swarm.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/agentic_dev/06_supervisor_vs_swarm.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "agentic_dev",
+   "title": "Coding agent harness",
+   "image": "assets/gallery/agentic_dev__10_coding_agent_harness.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/agentic_dev/10_coding_agent_harness.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "ml_models",
+   "title": "Multi head attention",
+   "image": "assets/gallery/ml_models__02_multi_head_attention.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/ml_models/02_multi_head_attention.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "ml_models",
+   "title": "Mixture of experts",
+   "image": "assets/gallery/ml_models__03_mixture_of_experts.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/ml_models/03_mixture_of_experts.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "ai",
+   "title": "Agentic tool orchestration",
+   "image": "assets/gallery/ai__03_agentic_tool_orchestration.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/ai/03_agentic_tool_orchestration.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "sequence",
+   "title": "Mcp tool call",
+   "image": "assets/gallery/sequence__03_mcp_tool_call.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/sequence/03_mcp_tool_call.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "devops",
+   "title": "Trunk vs gitflow commit graph",
+   "image": "assets/gallery/devops__03_trunk_vs_gitflow_commit_graph.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/devops/03_trunk_vs_gitflow_commit_graph.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "devops",
+   "title": "Observability otel stack",
+   "image": "assets/gallery/devops__07_observability_otel_stack.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/devops/07_observability_otel_stack.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "data_engineering",
+   "title": "Kafka partitions consumer groups",
+   "image": "assets/gallery/data_engineering__03_kafka_partitions_consumer_groups.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/data_engineering/03_kafka_partitions_consumer_groups.py"
+  },
+  {
+   "group": "AI & Software",
+   "domain": "computer_science",
+   "title": "Red black tree",
+   "image": "assets/gallery/computer_science__02_red_black_tree.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/computer_science/02_red_black_tree.py"
+  },
+  {
+   "group": "Cloud & Network",
+   "domain": "cloud",
+   "title": "Cdn multi region edge",
+   "image": "assets/gallery/cloud__03_cdn_multi_region_edge.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/cloud/03_cdn_multi_region_edge.py"
+  },
+  {
+   "group": "Cloud & Network",
+   "domain": "network_engineering",
+   "title": "Vxlan evpn datacenter fabric",
+   "image": "assets/gallery/network_engineering__04_vxlan_evpn_datacenter_fabric.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/network_engineering/04_vxlan_evpn_datacenter_fabric.py"
+  },
+  {
+   "group": "Cloud & Network",
+   "domain": "cybersecurity",
+   "title": "Zero trust ztna",
+   "image": "assets/gallery/cybersecurity__03_zero_trust_ztna.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/cybersecurity/03_zero_trust_ztna.py"
+  },
+  {
+   "group": "Cloud & Network",
+   "domain": "datacenter",
+   "title": "Leaf spine clos network",
+   "image": "assets/gallery/datacenter__03_leaf_spine_clos_network.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/datacenter/03_leaf_spine_clos_network.py"
+  },
+  {
+   "group": "Cloud & Network",
+   "domain": "database",
+   "title": "Primary replica failover",
+   "image": "assets/gallery/database__03_primary_replica_failover.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/database/03_primary_replica_failover.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "semiconductor",
+   "title": "Rtl to gdsii flow",
+   "image": "assets/gallery/semiconductor__01_rtl_to_gdsii_flow.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/semiconductor/01_rtl_to_gdsii_flow.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "semiconductor",
+   "title": "Cowos s package stack",
+   "image": "assets/gallery/semiconductor__08_cowos_s_package_stack.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/semiconductor/08_cowos_s_package_stack.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "electronics",
+   "title": "Buck converter",
+   "image": "assets/gallery/electronics__04_buck_converter.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/electronics/04_buck_converter.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "electronics",
+   "title": "Pdn impedance",
+   "image": "assets/gallery/electronics__10_pdn_impedance.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/electronics/10_pdn_impedance.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "iiot",
+   "title": "Baltimore plant to cloud",
+   "image": "assets/gallery/iiot__01_baltimore_plant_to_cloud.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/iiot/01_baltimore_plant_to_cloud.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "chemical_engineering",
+   "title": "Distillation column",
+   "image": "assets/gallery/chemical_engineering__02_distillation_column.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/chemical_engineering/02_distillation_column.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "cad",
+   "title": "Isometric bracket",
+   "image": "assets/gallery/cad__02_isometric_bracket.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/cad/02_isometric_bracket.py"
+  },
+  {
+   "group": "Industrial & Hardware",
+   "domain": "engineering",
+   "title": "Beam shear moment",
+   "image": "assets/gallery/engineering__03_beam_shear_moment.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/engineering/03_beam_shear_moment.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "chemistry",
+   "title": "Water phase diagram",
+   "image": "assets/gallery/chemistry__05_water_phase_diagram.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/chemistry/05_water_phase_diagram.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "chemistry",
+   "title": "Sn2 mechanism",
+   "image": "assets/gallery/chemistry__06_sn2_mechanism.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/chemistry/06_sn2_mechanism.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "biology",
+   "title": "Glycolysis tca",
+   "image": "assets/gallery/biology__03_glycolysis_tca.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/biology/03_glycolysis_tca.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "physics",
+   "title": "Thin lens rays",
+   "image": "assets/gallery/physics__04_thin_lens_rays.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/physics/04_thin_lens_rays.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "calculus_math",
+   "title": "Riemann sums",
+   "image": "assets/gallery/calculus_math__02_riemann_sums.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/calculus_math/02_riemann_sums.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "differential_equations",
+   "title": "Lotka volterra",
+   "image": "assets/gallery/differential_equations__08_lotka_volterra.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/differential_equations/08_lotka_volterra.py"
+  },
+  {
+   "group": "Science & Math",
+   "domain": "medical",
+   "title": "Heart chambers",
+   "image": "assets/gallery/medical__01_heart_chambers.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/medical/01_heart_chambers.py"
+  },
+  {
+   "group": "Business & Org",
+   "domain": "project_management",
+   "title": "Gantt critical path",
+   "image": "assets/gallery/project_management__01_gantt_critical_path.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/project_management/01_gantt_critical_path.py"
+  },
+  {
+   "group": "Business & Org",
+   "domain": "project_management",
+   "title": "Risk matrix",
+   "image": "assets/gallery/project_management__08_risk_matrix.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/project_management/08_risk_matrix.py"
+  },
+  {
+   "group": "Business & Org",
+   "domain": "org",
+   "title": "Team topologies",
+   "image": "assets/gallery/org__03_team_topologies.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/org/03_team_topologies.py"
+  },
+  {
+   "group": "Business & Org",
+   "domain": "enterprise_architecture",
+   "title": "C4 container view",
+   "image": "assets/gallery/enterprise_architecture__04_c4_container_view.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/enterprise_architecture/04_c4_container_view.py"
+  },
+  {
+   "group": "Business & Org",
+   "domain": "business_process",
+   "title": "Order to cash",
+   "image": "assets/gallery/business_process__01_order_to_cash.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/business_process/01_order_to_cash.py"
+  },
+  {
+   "group": "Business & Org",
+   "domain": "finance",
+   "title": "Candlestick chart",
+   "image": "assets/gallery/finance__01_candlestick_chart.svg",
+   "source": "https://github.com/bsommers/diagrams-as-code/blob/master/examples/finance/01_candlestick_chart.py"
+  }
+ ]
+}

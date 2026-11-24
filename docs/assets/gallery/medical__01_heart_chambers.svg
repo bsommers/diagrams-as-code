@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1044 761" width="1044" height="761">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-3A5FA8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3A5FA8"/>
+    </marker>
+    <marker id="arrow-3A5FA8-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#3A5FA8"/>
+    </marker>
+    <marker id="arrow-B03A3A" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B03A3A"/>
+    </marker>
+    <marker id="arrow-B03A3A-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#B03A3A"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="path_1">
+    <path d="M 379.96 80 C 379.96 90 379.63 117.5 379.96 140 C 380.29 162.5 381.63 202.5 381.96 215" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_3">
+    <path d="M 379.96 505 C 379.96 489.17 379.63 439.17 379.96 410 C 380.29 380.83 380.96 350 381.96 330 C 382.96 310 385.29 296.67 385.96 290" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_5">
+    <path d="M 469.96 400 C 470.96 388.33 473.96 354.17 475.96 330 C 477.96 305.83 479.96 275.83 481.96 255 C 483.96 234.17 486.96 213.33 487.96 205" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_7">
+    <path d="M 487.96 205 C 484.63 198.83 476.63 178.5 467.96 168 C 459.29 157.5 441.29 146.33 435.96 142" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_9">
+    <path d="M 487.96 205 C 490.63 197.5 497.96 175.5 503.96 160 C 509.96 144.5 520.63 120 523.96 112" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_11">
+    <path d="M 549.96 410 C 549.96 396.67 549.63 357.5 549.96 330 C 550.29 302.5 549.96 270.33 551.96 245 C 553.96 219.67 554.29 197.17 561.96 178 C 569.63 158.83 581.63 138.67 597.96 130 C 614.29 121.33 640.63 121.67 659.96 126 C 679.29 130.33 704.96 151 713.96 156" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_13">
+    <path d="M 767.96 238 C 760.63 238.67 739.79 240.33 723.96 242 C 708.13 243.67 681.46 247 672.96 248" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_15">
+    <path d="M 767.96 290 C 760.63 289.33 740.29 287.33 723.96 286 C 707.63 284.67 678.96 282.67 669.96 282" fill="none" stroke="#1F2F57" stroke-width="21.2" stroke-linejoin="round" />
+  </g>
+  <g id="path_2">
+    <path d="M 379.96 80 C 379.96 90 379.63 117.5 379.96 140 C 380.29 162.5 381.63 202.5 381.96 215" fill="none" stroke="#C9D6EE" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_4">
+    <path d="M 379.96 505 C 379.96 489.17 379.63 439.17 379.96 410 C 380.29 380.83 380.96 350 381.96 330 C 382.96 310 385.29 296.67 385.96 290" fill="none" stroke="#C9D6EE" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_6">
+    <path d="M 469.96 400 C 470.96 388.33 473.96 354.17 475.96 330 C 477.96 305.83 479.96 275.83 481.96 255 C 483.96 234.17 486.96 213.33 487.96 205" fill="none" stroke="#C9D6EE" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_8">
+    <path d="M 487.96 205 C 484.63 198.83 476.63 178.5 467.96 168 C 459.29 157.5 441.29 146.33 435.96 142" fill="none" stroke="#C9D6EE" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_10">
+    <path d="M 487.96 205 C 490.63 197.5 497.96 175.5 503.96 160 C 509.96 144.5 520.63 120 523.96 112" fill="none" stroke="#C9D6EE" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_12">
+    <path d="M 549.96 410 C 549.96 396.67 549.63 357.5 549.96 330 C 550.29 302.5 549.96 270.33 551.96 245 C 553.96 219.67 554.29 197.17 561.96 178 C 569.63 158.83 581.63 138.67 597.96 130 C 614.29 121.33 640.63 121.67 659.96 126 C 679.29 130.33 704.96 151 713.96 156" fill="none" stroke="#F0C9C9" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_14">
+    <path d="M 767.96 238 C 760.63 238.67 739.79 240.33 723.96 242 C 708.13 243.67 681.46 247 672.96 248" fill="none" stroke="#F0C9C9" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_16">
+    <path d="M 767.96 290 C 760.63 289.33 740.29 287.33 723.96 286 C 707.63 284.67 678.96 282.67 669.96 282" fill="none" stroke="#F0C9C9" stroke-width="18" stroke-linejoin="round" />
+  </g>
+  <g id="path_17">
+    <path d="M 515.96 304 C 525.63 291.67 559.29 295.67 579.96 298 C 600.63 300.33 626.96 303.67 639.96 318 C 652.96 332.33 659.29 361 657.96 384 C 656.63 407 644.96 434.67 631.96 456 C 618.96 477.33 596.63 499 579.96 512 C 563.29 525 540.63 544.33 531.96 534 C 523.29 523.67 529.63 477 527.96 450 C 526.29 423 523.96 396.33 521.96 372 C 519.96 347.67 506.29 316.33 515.96 304 Z" fill="#F0C9C9" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_18">
+    <path d="M 409.96 322 C 417.29 307 440.29 301 457.96 298 C 475.63 295 505.29 291.67 515.96 304 C 526.63 316.33 519.96 347.67 521.96 372 C 523.96 396.33 526.29 423 527.96 450 C 529.63 477 538.63 525.67 531.96 534 C 525.29 542.33 503.29 514 487.96 500 C 472.63 486 452.29 468.67 439.96 450 C 427.63 431.33 418.96 409.33 413.96 388 C 408.96 366.67 402.63 337 409.96 322 Z" fill="#C9D6EE" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_19">
+    <path d="M 341.96 205 C 350.96 194.33 370.96 184.17 385.96 184 C 400.96 183.83 422.29 192.67 431.96 204 C 441.63 215.33 444.29 235.67 443.96 252 C 443.63 268.33 439.29 290.67 429.96 302 C 420.63 313.33 401.63 321.67 387.96 320 C 374.29 318.33 357.29 304 347.96 292 C 338.63 280 332.96 262.5 331.96 248 C 330.96 233.5 332.96 215.67 341.96 205 Z" fill="#C9D6EE" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_20">
+    <path d="M 585.96 218 C 594.29 209.33 615.29 202 629.96 202 C 644.63 202 663.63 209 673.96 218 C 684.29 227 691.96 243 691.96 256 C 691.96 269 683.96 287.33 673.96 296 C 663.96 304.67 645.29 308.67 631.96 308 C 618.63 307.33 602.63 301 593.96 292 C 585.29 283 581.29 266.33 579.96 254 C 578.63 241.67 577.63 226.67 585.96 218 Z" fill="#F0C9C9" stroke="#1F2F57" stroke-width="1.8" stroke-linejoin="round" />
+  </g>
+  <g id="path_53">
+    <path d="M 357.96 214 L 267.96 175" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_55">
+    <text x="203.66" y="178.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Right atrium</text>
+  </g>
+  <g id="path_56">
+    <path d="M 396.96 311 L 267.96 255" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_58">
+    <text x="189.6" y="258.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Tricuspid valve</text>
+  </g>
+  <g id="path_59">
+    <path d="M 375.96 100 L 267.96 100" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_61">
+    <text x="168.18" y="103.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Superior vena cava</text>
+  </g>
+  <g id="path_62">
+    <path d="M 375.96 470 L 267.96 470" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_64">
+    <text x="175.52" y="473.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Inferior vena cava</text>
+  </g>
+  <g id="path_65">
+    <path d="M 447.96 450 L 417.96 548" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_67">
+    <text x="343.26" y="551.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Right ventricle</text>
+  </g>
+  <g id="path_68">
+    <path d="M 499.96 150 L 479.96 62" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_70">
+    <text x="413.62" y="58.91" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Pulmonary artery (to lungs)</text>
+  </g>
+  <g id="path_71">
+    <path d="M 669.96 226 L 807.96 190" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_73">
+    <text x="812.96" y="193.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Left atrium</text>
+  </g>
+  <g id="path_74">
+    <path d="M 651.96 306 L 807.96 352" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_76">
+    <text x="812.96" y="355.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Mitral valve</text>
+  </g>
+  <g id="path_77">
+    <path d="M 633.96 420 L 807.96 430" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_79">
+    <text x="812.96" y="433.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Left ventricle</text>
+  </g>
+  <g id="path_80">
+    <path d="M 529.96 450 L 529.96 566" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_82">
+    <text x="511" y="576.66" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Septum</text>
+  </g>
+  <g id="path_83">
+    <path d="M 605.96 127 L 807.96 76" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_85">
+    <text x="812.96" y="79.78" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">Aorta</text>
+  </g>
+  <g id="text_86">
+    <text x="742.28" y="258.91" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">from lungs</text>
+  </g>
+  <g id="text_87">
+    <text x="723.96" y="179.78" fill="#B03A3A" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">to body</text>
+  </g>
+  <g id="text_88">
+    <text x="401.21" y="122.91" fill="#3A5FA8" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11" text-anchor="start">to right lung</text>
+  </g>
+  <g id="polygon_89">
+    <path d="M 247.96 615 L 267.96 615 L 267.96 627 L 247.96 627 Z" fill="#C9D6EE" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_90">
+    <text x="275.96" y="625.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Deoxygenated blood</text>
+  </g>
+  <g id="polygon_91">
+    <path d="M 447.96 615 L 467.96 615 L 467.96 627 L 447.96 627 Z" fill="#F0C9C9" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_92">
+    <text x="475.96" y="625.13" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" text-anchor="start">Oxygenated blood</text>
+  </g>
+  <g id="caption_93">
+    <text x="113.37" y="671.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 1:</text>
+    <text x="187.54" y="671.03" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="742.59" lengthAdjust="spacingAndGlyphs"> ANTERIOR VIEW OF THE HEART. DEOXYGENATED BLOOD ENTERS THE RIGHT ATRIUM, PASSES THE</text>
+    <text x="60" y="689.78" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="923.5" lengthAdjust="spacingAndGlyphs">TRICUSPID VALVE TO THE RIGHT VENTRICLE AND LEAVES BY THE PULMONARY ARTERY; OXYGENATED BLOOD RETURNS TO</text>
+    <text x="141.26" y="708.53" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="760.97" lengthAdjust="spacingAndGlyphs">THE LEFT ATRIUM, CROSSES THE MITRAL VALVE TO THE LEFT VENTRICLE AND LEAVES BY THE AORTA</text>
+  </g>
+  <g id="path_54">
+    <path d="M 355.76 214 C 355.76 215.22 356.74 216.2 357.96 216.2 C 359.17 216.2 360.16 215.22 360.16 214 C 360.16 212.78 359.17 211.8 357.96 211.8 C 356.74 211.8 355.76 212.78 355.76 214" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_57">
+    <path d="M 394.76 311 C 394.76 311.79 395.17 312.51 395.86 312.91 C 396.54 313.3 397.37 313.3 398.06 312.91 C 398.74 312.51 399.16 311.79 399.16 311 C 399.16 310.21 398.74 309.49 398.06 309.09 C 397.37 308.7 396.54 308.7 395.86 309.09 C 395.17 309.49 394.76 310.21 394.76 311" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_60">
+    <path d="M 373.76 100 C 373.76 100.79 374.17 101.51 374.86 101.91 C 375.54 102.3 376.37 102.3 377.06 101.91 C 377.74 101.51 378.16 100.79 378.16 100 C 378.16 98.78 377.17 97.8 375.96 97.8 C 374.74 97.8 373.76 98.78 373.76 100" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_63">
+    <path d="M 373.76 470 C 373.76 470.79 374.17 471.51 374.86 471.91 C 375.54 472.3 376.37 472.3 377.06 471.91 C 377.74 471.51 378.16 470.79 378.16 470 C 378.16 468.78 377.17 467.8 375.96 467.8 C 374.74 467.8 373.76 468.78 373.76 470" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_66">
+    <path d="M 445.76 450 C 445.76 450.79 446.17 451.51 446.86 451.91 C 447.54 452.3 448.37 452.3 449.06 451.91 C 449.74 451.51 450.16 450.79 450.16 450 C 450.16 449.21 449.74 448.49 449.06 448.09 C 448.37 447.7 447.54 447.7 446.86 448.09 C 446.17 448.49 445.76 449.21 445.76 450" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_69">
+    <path d="M 497.76 150 C 497.76 150.79 498.17 151.51 498.86 151.91 C 499.54 152.3 500.37 152.3 501.06 151.91 C 501.74 151.51 502.16 150.79 502.16 150 C 502.16 149.21 501.74 148.49 501.06 148.09 C 500.37 147.7 499.54 147.7 498.86 148.09 C 498.17 148.49 497.76 149.21 497.76 150" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_72">
+    <path d="M 667.76 226 C 667.76 226.79 668.17 227.51 668.86 227.91 C 669.54 228.3 670.37 228.3 671.06 227.91 C 671.74 227.51 672.16 226.79 672.16 226 C 672.16 225.21 671.74 224.49 671.06 224.09 C 670.37 223.7 669.54 223.7 668.86 224.09 C 668.17 224.49 667.76 225.21 667.76 226" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_75">
+    <path d="M 649.76 306 C 649.76 306.79 650.17 307.51 650.86 307.91 C 651.54 308.3 652.37 308.3 653.06 307.91 C 653.74 307.51 654.16 306.79 654.16 306 C 654.16 305.21 653.74 304.49 653.06 304.09 C 652.37 303.7 651.54 303.7 650.86 304.09 C 650.17 304.49 649.76 305.21 649.76 306" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_78">
+    <path d="M 631.76 420 C 631.76 420.79 632.17 421.51 632.86 421.91 C 633.54 422.3 634.37 422.3 635.06 421.91 C 635.74 421.51 636.16 420.79 636.16 420 C 636.16 419.21 635.74 418.49 635.06 418.09 C 634.37 417.7 633.54 417.7 632.86 418.09 C 632.17 418.49 631.76 419.21 631.76 420" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_81">
+    <path d="M 527.76 450 C 527.76 450.79 528.17 451.51 528.86 451.91 C 529.54 452.3 530.37 452.3 531.06 451.91 C 531.74 451.51 532.16 450.79 532.16 450 C 532.16 449.21 531.74 448.49 531.06 448.09 C 530.37 447.7 529.54 447.7 528.86 448.09 C 528.17 448.49 527.76 449.21 527.76 450" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_84">
+    <path d="M 603.76 127 C 603.76 127.79 604.17 128.51 604.86 128.91 C 605.54 129.3 606.37 129.3 607.06 128.91 C 607.74 128.51 608.16 127.79 608.16 127 C 608.16 126.21 607.74 125.49 607.06 125.09 C 606.37 124.7 605.54 124.7 604.86 125.09 C 604.17 125.49 603.76 126.21 603.76 127" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_25">
+    <path d="M 379.96 88 C 379.96 96.67 379.63 120.5 379.96 140 C 380.29 159.5 381.63 194.17 381.96 205" fill="none" stroke="#3A5FA8" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_28">
+    <path d="M 379.96 498 C 379.96 483.33 379.63 434.67 379.96 410 C 380.29 385.33 381.29 364 381.96 350 C 382.63 336 383.63 330 383.96 326" fill="none" stroke="#3A5FA8" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_31">
+    <path d="M 415.96 258 C 416.63 268 415.29 298 419.96 318 C 424.63 338 439.96 368 443.96 378" fill="none" stroke="#3A5FA8" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_34">
+    <path d="M 469.96 400 C 470.96 388.33 473.96 354.17 475.96 330 C 477.96 305.83 479.96 275.83 481.96 255 C 483.96 234.17 486.96 213.33 487.96 205" fill="none" stroke="#3A5FA8" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_35">
+    <path d="M 487.96 205 C 484.63 198.83 476.63 178.5 467.96 168 C 459.29 157.5 441.29 146.33 435.96 142" fill="none" stroke="#3A5FA8" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_38">
+    <path d="M 487.96 205 C 490.63 197.5 497.96 175.5 503.96 160 C 509.96 144.5 520.63 120 523.96 112" fill="none" stroke="#3A5FA8" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_41">
+    <path d="M 769.96 238 C 762.29 238.67 739.29 240.33 723.96 242 C 708.63 243.67 685.63 247 677.96 248" fill="none" stroke="#B03A3A" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_44">
+    <path d="M 769.96 290 C 762.29 289.33 739.63 287.33 723.96 286 C 708.29 284.67 683.96 282.67 675.96 282" fill="none" stroke="#B03A3A" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_47">
+    <path d="M 631.96 262 C 630.63 271.33 628.63 297.67 623.96 318 C 619.29 338.33 607.29 373 603.96 384" fill="none" stroke="#B03A3A" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_50">
+    <path d="M 555.96 420 C 554.96 405 550.63 359.17 549.96 330 C 549.29 300.83 549.96 270.33 551.96 245 C 553.96 219.67 554.29 197.17 561.96 178 C 569.63 158.83 581.63 138.67 597.96 130 C 614.29 121.33 640.63 121.67 659.96 126 C 679.29 130.33 704.96 151 713.96 156" fill="none" stroke="#B03A3A" stroke-width="2.6" stroke-linejoin="round" />
+  </g>
+  <g id="path_21">
+    <path d="M 395.96 311 C 406.62 318.67 413.96 328.33 417.96 340" fill="none" stroke="#1F2F57" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="path_22">
+    <path d="M 439.96 311 C 429.29 318.67 421.96 328.33 417.96 340" fill="none" stroke="#1F2F57" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="path_23">
+    <path d="M 595.96 306 C 608.62 313.33 617.96 322.67 623.96 334" fill="none" stroke="#1F2F57" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <g id="path_24">
+    <path d="M 651.96 306 C 639.29 313.33 629.96 322.67 623.96 334" fill="none" stroke="#1F2F57" stroke-width="3" stroke-linejoin="round" />
+  </g>
+  <path d="M 379.96 140 L 381.69 196.42" fill="none" stroke="#3A5FA8" stroke-width="2.6" />
+  <path d="M 381.96 205 L 375.24 189.6 L 381.64 194.86 L 387.71 189.22 Z" fill="#3A5FA8" />
+  <path d="M 381.96 350 L 383.24 334.55" fill="none" stroke="#3A5FA8" stroke-width="2.6" />
+  <path d="M 383.96 326 L 388.88 342.06 L 383.11 336.1 L 376.44 341.03 Z" fill="#3A5FA8" />
+  <path d="M 419.96 318 L 440.77 370.03" fill="none" stroke="#3A5FA8" stroke-width="2.6" />
+  <path d="M 443.96 378 L 432.37 365.83 L 440.19 368.59 L 443.96 361.2 Z" fill="#3A5FA8" />
+  <path d="M 467.96 168 L 442.61 147.41" fill="none" stroke="#3A5FA8" stroke-width="2.6" />
+  <path d="M 435.96 142 L 452 146.99 L 443.83 148.39 L 444.13 156.68 Z" fill="#3A5FA8" />
+  <path d="M 503.96 160 L 520.66 119.92" fill="none" stroke="#3A5FA8" stroke-width="2.6" />
+  <path d="M 523.96 112 L 523.72 128.8 L 520.06 121.36 L 512.2 124 Z" fill="#3A5FA8" />
+  <path d="M 723.96 242 L 686.46 246.89" fill="none" stroke="#B03A3A" stroke-width="2.6" />
+  <path d="M 677.96 248 L 692.62 239.79 L 688.01 246.69 L 694.23 252.17 Z" fill="#B03A3A" />
+  <path d="M 723.96 286 L 684.51 282.71" fill="none" stroke="#B03A3A" stroke-width="2.6" />
+  <path d="M 675.96 282 L 692.02 277.08 L 686.06 282.84 L 690.98 289.51 Z" fill="#B03A3A" />
+  <path d="M 623.96 318 L 606.44 375.79" fill="none" stroke="#B03A3A" stroke-width="2.6" />
+  <path d="M 603.96 384 L 602.51 367.26 L 606.9 374.3 L 614.45 370.88 Z" fill="#B03A3A" />
+  <path d="M 659.96 126 L 706.46 151.83" fill="none" stroke="#B03A3A" stroke-width="2.6" />
+  <path d="M 713.96 156 L 697.29 153.88 L 705.09 151.08 L 703.35 142.97 Z" fill="#B03A3A" />
+</svg>

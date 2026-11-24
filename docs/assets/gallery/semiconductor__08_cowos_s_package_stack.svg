@@ -1,0 +1,504 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1171 512" width="1171" height="512">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <g id="polygon_1">
+    <path d="M 200.91 300 L 960.91 300 L 960.91 360 L 200.91 360 Z" fill="#CFE2C7" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_6">
+    <path d="M 234.91 286 L 926.91 286 L 926.91 300 L 234.91 300 Z" fill="#F5E8B8" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_2">
+    <path d="M 206.91 312 L 954.91 312 L 954.91 314 L 206.91 314 Z" fill="#7FA37A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_3">
+    <path d="M 206.91 324 L 954.91 324 L 954.91 326 L 206.91 326 Z" fill="#7FA37A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_4">
+    <path d="M 206.91 336 L 954.91 336 L 954.91 338 L 206.91 338 Z" fill="#7FA37A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_5">
+    <path d="M 206.91 348 L 954.91 348 L 954.91 350 L 206.91 350 Z" fill="#7FA37A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_7">
+    <path d="M 240.91 236 L 920.91 236 L 920.91 286 L 240.91 286 Z" fill="#D5DAE2" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_8">
+    <path d="M 240.91 218 L 920.91 218 L 920.91 236 L 240.91 236 Z" fill="#E8E1F0" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_9">
+    <path d="M 440.91 140 L 720.91 140 L 720.91 210 L 440.91 210 Z" fill="#9DB7D9" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_11">
+    <path d="M 270.91 196 L 380.91 196 L 380.91 210 L 270.91 210 Z" fill="#8FA6C7" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_16">
+    <path d="M 270.91 178 L 380.91 178 L 380.91 192 L 270.91 192 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_21">
+    <path d="M 270.91 160 L 380.91 160 L 380.91 174 L 270.91 174 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_26">
+    <path d="M 270.91 142 L 380.91 142 L 380.91 156 L 270.91 156 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_31">
+    <path d="M 270.91 124 L 380.91 124 L 380.91 138 L 270.91 138 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_37">
+    <path d="M 750.91 196 L 860.91 196 L 860.91 210 L 750.91 210 Z" fill="#8FA6C7" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_42">
+    <path d="M 750.91 178 L 860.91 178 L 860.91 192 L 750.91 192 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_47">
+    <path d="M 750.91 160 L 860.91 160 L 860.91 174 L 750.91 174 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_52">
+    <path d="M 750.91 142 L 860.91 142 L 860.91 156 L 750.91 156 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_57">
+    <path d="M 750.91 124 L 860.91 124 L 860.91 138 L 750.91 138 Z" fill="#B9CBE3" stroke="#1F2F57" stroke-width="1" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_12">
+    <path d="M 281.91 192 L 291.91 192 L 291.91 196 L 281.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_13">
+    <path d="M 307.91 192 L 317.91 192 L 317.91 196 L 307.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_14">
+    <path d="M 333.91 192 L 343.91 192 L 343.91 196 L 333.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_15">
+    <path d="M 359.91 192 L 369.91 192 L 369.91 196 L 359.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_17">
+    <path d="M 281.91 174 L 291.91 174 L 291.91 178 L 281.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_18">
+    <path d="M 307.91 174 L 317.91 174 L 317.91 178 L 307.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_19">
+    <path d="M 333.91 174 L 343.91 174 L 343.91 178 L 333.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_20">
+    <path d="M 359.91 174 L 369.91 174 L 369.91 178 L 359.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_22">
+    <path d="M 281.91 156 L 291.91 156 L 291.91 160 L 281.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_23">
+    <path d="M 307.91 156 L 317.91 156 L 317.91 160 L 307.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_24">
+    <path d="M 333.91 156 L 343.91 156 L 343.91 160 L 333.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_25">
+    <path d="M 359.91 156 L 369.91 156 L 369.91 160 L 359.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_27">
+    <path d="M 281.91 138 L 291.91 138 L 291.91 142 L 281.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_28">
+    <path d="M 307.91 138 L 317.91 138 L 317.91 142 L 307.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_29">
+    <path d="M 333.91 138 L 343.91 138 L 343.91 142 L 333.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_30">
+    <path d="M 359.91 138 L 369.91 138 L 369.91 142 L 359.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_38">
+    <path d="M 761.91 192 L 771.91 192 L 771.91 196 L 761.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_39">
+    <path d="M 787.91 192 L 797.91 192 L 797.91 196 L 787.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_40">
+    <path d="M 813.91 192 L 823.91 192 L 823.91 196 L 813.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_41">
+    <path d="M 839.91 192 L 849.91 192 L 849.91 196 L 839.91 196 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_43">
+    <path d="M 761.91 174 L 771.91 174 L 771.91 178 L 761.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_44">
+    <path d="M 787.91 174 L 797.91 174 L 797.91 178 L 787.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_45">
+    <path d="M 813.91 174 L 823.91 174 L 823.91 178 L 813.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_46">
+    <path d="M 839.91 174 L 849.91 174 L 849.91 178 L 839.91 178 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_48">
+    <path d="M 761.91 156 L 771.91 156 L 771.91 160 L 761.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_49">
+    <path d="M 787.91 156 L 797.91 156 L 797.91 160 L 787.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_50">
+    <path d="M 813.91 156 L 823.91 156 L 823.91 160 L 813.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_51">
+    <path d="M 839.91 156 L 849.91 156 L 849.91 160 L 839.91 160 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_53">
+    <path d="M 761.91 138 L 771.91 138 L 771.91 142 L 761.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_54">
+    <path d="M 787.91 138 L 797.91 138 L 797.91 142 L 787.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_55">
+    <path d="M 813.91 138 L 823.91 138 L 823.91 142 L 813.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_56">
+    <path d="M 839.91 138 L 849.91 138 L 849.91 142 L 839.91 142 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_63">
+    <path d="M 287.91 210 L 297.91 210 L 297.91 218 L 287.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_64">
+    <path d="M 313.91 210 L 323.91 210 L 323.91 218 L 313.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_65">
+    <path d="M 339.91 210 L 349.91 210 L 349.91 218 L 339.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_66">
+    <path d="M 365.91 210 L 375.91 210 L 375.91 218 L 365.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_67">
+    <path d="M 749.91 210 L 759.91 210 L 759.91 218 L 749.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_68">
+    <path d="M 775.91 210 L 785.91 210 L 785.91 218 L 775.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_69">
+    <path d="M 801.91 210 L 811.91 210 L 811.91 218 L 801.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_70">
+    <path d="M 827.91 210 L 837.91 210 L 837.91 218 L 827.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_71">
+    <path d="M 853.91 210 L 863.91 210 L 863.91 218 L 853.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_72">
+    <path d="M 445.91 210 L 455.91 210 L 455.91 218 L 445.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_73">
+    <path d="M 469.91 210 L 479.91 210 L 479.91 218 L 469.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_74">
+    <path d="M 493.91 210 L 503.91 210 L 503.91 218 L 493.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_75">
+    <path d="M 517.91 210 L 527.91 210 L 527.91 218 L 517.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_76">
+    <path d="M 541.91 210 L 551.91 210 L 551.91 218 L 541.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_77">
+    <path d="M 565.91 210 L 575.91 210 L 575.91 218 L 565.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_78">
+    <path d="M 589.91 210 L 599.91 210 L 599.91 218 L 589.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_79">
+    <path d="M 613.91 210 L 623.91 210 L 623.91 218 L 613.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_80">
+    <path d="M 637.91 210 L 647.91 210 L 647.91 218 L 637.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_81">
+    <path d="M 661.91 210 L 671.91 210 L 671.91 218 L 661.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_82">
+    <path d="M 685.91 210 L 695.91 210 L 695.91 218 L 685.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_83">
+    <path d="M 709.91 210 L 719.91 210 L 719.91 218 L 709.91 218 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.6" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_88">
+    <path d="M 276.91 236 L 284.91 236 L 284.91 286 L 276.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_89">
+    <path d="M 316.91 236 L 324.91 236 L 324.91 286 L 316.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_90">
+    <path d="M 356.91 236 L 364.91 236 L 364.91 286 L 356.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_91">
+    <path d="M 396.91 236 L 404.91 236 L 404.91 286 L 396.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_92">
+    <path d="M 436.91 236 L 444.91 236 L 444.91 286 L 436.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_93">
+    <path d="M 476.91 236 L 484.91 236 L 484.91 286 L 476.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_94">
+    <path d="M 516.91 236 L 524.91 236 L 524.91 286 L 516.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_95">
+    <path d="M 556.91 236 L 564.91 236 L 564.91 286 L 556.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_96">
+    <path d="M 596.91 236 L 604.91 236 L 604.91 286 L 596.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_97">
+    <path d="M 636.91 236 L 644.91 236 L 644.91 286 L 636.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_98">
+    <path d="M 676.91 236 L 684.91 236 L 684.91 286 L 676.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_99">
+    <path d="M 716.91 236 L 724.91 236 L 724.91 286 L 716.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_100">
+    <path d="M 756.91 236 L 764.91 236 L 764.91 286 L 756.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_101">
+    <path d="M 796.91 236 L 804.91 236 L 804.91 286 L 796.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_102">
+    <path d="M 836.91 236 L 844.91 236 L 844.91 286 L 836.91 286 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_103">
+    <path d="M 272.91 293 C 272.91 297.42 276.49 301 280.91 301 C 285.33 301 288.91 297.42 288.91 293 C 288.91 288.58 285.33 285 280.91 285 C 276.49 285 272.91 288.58 272.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_104">
+    <path d="M 312.91 293 C 312.91 297.42 316.49 301 320.91 301 C 325.33 301 328.91 297.42 328.91 293 C 328.91 288.58 325.33 285 320.91 285 C 316.49 285 312.91 288.58 312.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_105">
+    <path d="M 352.91 293 C 352.91 297.42 356.49 301 360.91 301 C 365.33 301 368.91 297.42 368.91 293 C 368.91 288.58 365.33 285 360.91 285 C 356.49 285 352.91 288.58 352.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_106">
+    <path d="M 392.91 293 C 392.91 297.42 396.49 301 400.91 301 C 405.33 301 408.91 297.42 408.91 293 C 408.91 288.58 405.33 285 400.91 285 C 396.49 285 392.91 288.58 392.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_107">
+    <path d="M 432.91 293 C 432.91 297.42 436.49 301 440.91 301 C 445.33 301 448.91 297.42 448.91 293 C 448.91 288.58 445.33 285 440.91 285 C 436.49 285 432.91 288.58 432.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_108">
+    <path d="M 472.91 293 C 472.91 297.42 476.49 301 480.91 301 C 485.33 301 488.91 297.42 488.91 293 C 488.91 288.58 485.33 285 480.91 285 C 476.49 285 472.91 288.58 472.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_109">
+    <path d="M 512.91 293 C 512.91 297.42 516.49 301 520.91 301 C 525.33 301 528.91 297.42 528.91 293 C 528.91 288.58 525.33 285 520.91 285 C 516.49 285 512.91 288.58 512.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_110">
+    <path d="M 552.91 293 C 552.91 297.42 556.49 301 560.91 301 C 565.33 301 568.91 297.42 568.91 293 C 568.91 288.58 565.33 285 560.91 285 C 556.49 285 552.91 288.58 552.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_111">
+    <path d="M 592.91 293 C 592.91 297.42 596.49 301 600.91 301 C 605.33 301 608.91 297.42 608.91 293 C 608.91 288.58 605.33 285 600.91 285 C 596.49 285 592.91 288.58 592.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_112">
+    <path d="M 632.91 293 C 632.91 297.42 636.49 301 640.91 301 C 645.33 301 648.91 297.42 648.91 293 C 648.91 288.58 645.33 285 640.91 285 C 636.49 285 632.91 288.58 632.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_113">
+    <path d="M 672.91 293 C 672.91 297.42 676.49 301 680.91 301 C 685.33 301 688.91 297.42 688.91 293 C 688.91 288.58 685.33 285 680.91 285 C 676.49 285 672.91 288.58 672.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_114">
+    <path d="M 712.91 293 C 712.91 297.42 716.49 301 720.91 301 C 725.33 301 728.91 297.42 728.91 293 C 728.91 288.58 725.33 285 720.91 285 C 716.49 285 712.91 288.58 712.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_115">
+    <path d="M 752.91 293 C 752.91 297.42 756.49 301 760.91 301 C 765.33 301 768.91 297.42 768.91 293 C 768.91 288.58 765.33 285 760.91 285 C 756.49 285 752.91 288.58 752.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_116">
+    <path d="M 792.91 293 C 792.91 297.42 796.49 301 800.91 301 C 805.33 301 808.91 297.42 808.91 293 C 808.91 288.58 805.33 285 800.91 285 C 796.49 285 792.91 288.58 792.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_117">
+    <path d="M 832.91 293 C 832.91 297.42 836.49 301 840.91 301 C 845.33 301 848.91 297.42 848.91 293 C 848.91 288.58 845.33 285 840.91 285 C 836.49 285 832.91 288.58 832.91 293 Z" fill="#9A9A9A" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_118">
+    <path d="M 220.91 370 C 220.91 375.52 225.39 380 230.91 380 C 236.43 380 240.91 375.52 240.91 370 C 240.91 364.48 236.43 360 230.91 360 C 225.39 360 220.91 364.48 220.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_119">
+    <path d="M 270.91 370 C 270.91 375.52 275.39 380 280.91 380 C 286.43 380 290.91 375.52 290.91 370 C 290.91 364.48 286.43 360 280.91 360 C 275.39 360 270.91 364.48 270.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_120">
+    <path d="M 320.91 370 C 320.91 375.52 325.39 380 330.91 380 C 336.43 380 340.91 375.52 340.91 370 C 340.91 364.48 336.43 360 330.91 360 C 325.39 360 320.91 364.48 320.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_121">
+    <path d="M 370.91 370 C 370.91 375.52 375.39 380 380.91 380 C 386.43 380 390.91 375.52 390.91 370 C 390.91 364.48 386.43 360 380.91 360 C 375.39 360 370.91 364.48 370.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_122">
+    <path d="M 420.91 370 C 420.91 375.52 425.39 380 430.91 380 C 436.43 380 440.91 375.52 440.91 370 C 440.91 364.48 436.43 360 430.91 360 C 425.39 360 420.91 364.48 420.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_123">
+    <path d="M 470.91 370 C 470.91 375.52 475.39 380 480.91 380 C 486.43 380 490.91 375.52 490.91 370 C 490.91 364.48 486.43 360 480.91 360 C 475.39 360 470.91 364.48 470.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_124">
+    <path d="M 520.91 370 C 520.91 375.52 525.39 380 530.91 380 C 536.43 380 540.91 375.52 540.91 370 C 540.91 364.48 536.43 360 530.91 360 C 525.39 360 520.91 364.48 520.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_125">
+    <path d="M 570.91 370 C 570.91 375.52 575.39 380 580.91 380 C 586.43 380 590.91 375.52 590.91 370 C 590.91 364.48 586.43 360 580.91 360 C 575.39 360 570.91 364.48 570.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_126">
+    <path d="M 620.91 370 C 620.91 375.52 625.39 380 630.91 380 C 636.43 380 640.91 375.52 640.91 370 C 640.91 364.48 636.43 360 630.91 360 C 625.39 360 620.91 364.48 620.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_127">
+    <path d="M 670.91 370 C 670.91 375.52 675.39 380 680.91 380 C 686.43 380 690.91 375.52 690.91 370 C 690.91 364.48 686.43 360 680.91 360 C 675.39 360 670.91 364.48 670.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_128">
+    <path d="M 720.91 370 C 720.91 375.52 725.39 380 730.91 380 C 736.43 380 740.91 375.52 740.91 370 C 740.91 364.48 736.43 360 730.91 360 C 725.39 360 720.91 364.48 720.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_129">
+    <path d="M 770.91 370 C 770.91 375.52 775.39 380 780.91 380 C 786.43 380 790.91 375.52 790.91 370 C 790.91 364.48 786.43 360 780.91 360 C 775.39 360 770.91 364.48 770.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_130">
+    <path d="M 820.91 370 C 820.91 375.52 825.39 380 830.91 380 C 836.43 380 840.91 375.52 840.91 370 C 840.91 364.48 836.43 360 830.91 360 C 825.39 360 820.91 364.48 820.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_131">
+    <path d="M 870.91 370 C 870.91 375.52 875.39 380 880.91 380 C 886.43 380 890.91 375.52 890.91 370 C 890.91 364.48 886.43 360 880.91 360 C 875.39 360 870.91 364.48 870.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="path_132">
+    <path d="M 920.91 370 C 920.91 375.52 925.39 380 930.91 380 C 936.43 380 940.91 375.52 940.91 370 C 940.91 364.48 936.43 360 930.91 360 C 925.39 360 920.91 364.48 920.91 370 Z" fill="#B0B0B0" stroke="#1F2F57" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_32">
+    <path d="M 284.41 124 L 289.41 124 L 289.41 210 L 284.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_33">
+    <path d="M 310.41 124 L 315.41 124 L 315.41 210 L 310.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_34">
+    <path d="M 336.41 124 L 341.41 124 L 341.41 210 L 336.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_35">
+    <path d="M 362.41 124 L 367.41 124 L 367.41 210 L 362.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_58">
+    <path d="M 764.41 124 L 769.41 124 L 769.41 210 L 764.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_59">
+    <path d="M 790.41 124 L 795.41 124 L 795.41 210 L 790.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_60">
+    <path d="M 816.41 124 L 821.41 124 L 821.41 210 L 816.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polygon_61">
+    <path d="M 842.41 124 L 847.41 124 L 847.41 210 L 842.41 210 Z" fill="#D98B4A" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_84">
+    <path d="M 330.91 223 L 455.91 223" fill="none" stroke="#6B4FA0" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_85">
+    <path d="M 330.91 230 L 455.91 230" fill="none" stroke="#6B4FA0" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_86">
+    <path d="M 705.91 223 L 830.91 223" fill="none" stroke="#6B4FA0" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="polyline_87">
+    <path d="M 705.91 230 L 830.91 230" fill="none" stroke="#6B4FA0" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+  <g id="text_10">
+    <text x="538.28" y="171.35" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13"><tspan x="538.28" dy="0">SoC / GPU die</tspan> <tspan x="538.28" dy="16.25">(logic)</tspan></text>
+  </g>
+  <g id="text_36">
+    <text x="295.7" y="112.49" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12.5" text-anchor="start">HBM stack</text>
+  </g>
+  <g id="text_62">
+    <text x="775.7" y="112.49" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12.5" text-anchor="start">HBM stack</text>
+  </g>
+  <g id="path_133">
+    <path d="M 280.91 203 L 190.91 140" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_135">
+    <text x="86.84" y="136.77" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5"><tspan x="86.84" dy="0">HBM base logic die</tspan> <tspan x="86.84" dy="14.38">(PHY, controller)</tspan></text>
+  </g>
+  <g id="path_136">
+    <path d="M 275.91 160 L 190.91 80" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_138">
+    <text x="99.01" y="83.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">HBM DRAM dies</text>
+  </g>
+  <g id="path_139">
+    <path d="M 290.91 214 L 190.91 250" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_141">
+    <text x="123.28" y="253.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">microbumps</text>
+  </g>
+  <g id="path_142">
+    <path d="M 246.91 260 L 190.91 325" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_144">
+    <text x="99.62" y="328.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">silicon interposer</text>
+  </g>
+  <g id="path_145">
+    <path d="M 312.91 170 L 190.91 195" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_147">
+    <text x="60" y="198.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">TSV through DRAM dies</text>
+  </g>
+  <g id="path_148">
+    <path d="M 915.91 227 L 990.91 210" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_150">
+    <text x="995.91" y="213.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">RDL wiring (die-to-die)</text>
+  </g>
+  <g id="path_151">
+    <path d="M 840.91 260 L 990.91 252" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_153">
+    <text x="995.91" y="255.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">interposer TSV</text>
+  </g>
+  <g id="path_154">
+    <path d="M 840.91 293 L 990.91 292" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_156">
+    <text x="995.91" y="295.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">C4 bumps in underfill</text>
+  </g>
+  <g id="path_157">
+    <path d="M 950.91 335 L 990.91 335" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_159">
+    <text x="995.91" y="331.77" text-anchor="start" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5"><tspan x="995.91" dy="0">organic substrate</tspan> <tspan x="995.91" dy="14.38">(build-up layers)</tspan></text>
+  </g>
+  <g id="path_160">
+    <path d="M 930.91 370 L 990.91 385" fill="none" stroke="#1F2F57" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+  <g id="text_162">
+    <text x="995.91" y="388.96" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="start">BGA balls to board</text>
+  </g>
+  <g id="caption_163">
+    <text x="253.34" y="434.72" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" font-weight="700" textLength="74.17" lengthAdjust="spacingAndGlyphs">FIGURE 8:</text>
+    <text x="327.51" y="434.72" xml:space="preserve" fill="#000000" font-family="'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif" font-size="15" textLength="590.1" lengthAdjust="spacingAndGlyphs"> COWOS-S STYLE 2.5D PACKAGE. SCHEMATIC CROSS-SECTION, NOT TO SCALE.</text>
+  </g>
+  <g id="path_134">
+    <path d="M 278.71 203 C 278.71 204.22 279.7 205.2 280.91 205.2 C 282.13 205.2 283.11 204.22 283.11 203 C 283.11 201.78 282.13 200.8 280.91 200.8 C 279.7 200.8 278.71 201.78 278.71 203" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_137">
+    <path d="M 273.71 160 C 273.71 161.22 274.7 162.2 275.91 162.2 C 277.13 162.2 278.11 161.22 278.11 160 C 278.11 158.78 277.13 157.8 275.91 157.8 C 274.7 157.8 273.71 158.78 273.71 160" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_140">
+    <path d="M 288.71 214 C 288.71 215.22 289.7 216.2 290.91 216.2 C 292.13 216.2 293.11 215.22 293.11 214 C 293.11 212.78 292.13 211.8 290.91 211.8 C 289.7 211.8 288.71 212.78 288.71 214" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_143">
+    <path d="M 244.71 260 C 244.71 261.22 245.7 262.2 246.91 262.2 C 248.13 262.2 249.11 261.22 249.11 260 C 249.11 259.21 248.69 258.49 248.01 258.09 C 247.33 257.7 246.49 257.7 245.81 258.09 C 245.13 258.49 244.71 259.21 244.71 260" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_146">
+    <path d="M 310.71 170 C 310.71 171.22 311.7 172.2 312.91 172.2 C 314.13 172.2 315.11 171.22 315.11 170 C 315.11 168.78 314.13 167.8 312.91 167.8 C 311.7 167.8 310.71 168.78 310.71 170" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_149">
+    <path d="M 913.71 227 C 913.71 227.79 914.13 228.51 914.81 228.91 C 915.49 229.3 916.33 229.3 917.01 228.91 C 917.69 228.51 918.11 227.79 918.11 227 C 918.11 226.21 917.69 225.49 917.01 225.09 C 916.33 224.7 915.49 224.7 914.81 225.09 C 914.13 225.49 913.71 226.21 913.71 227" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_152">
+    <path d="M 838.71 260 C 838.71 260.79 839.13 261.51 839.81 261.91 C 840.49 262.3 841.33 262.3 842.01 261.91 C 842.69 261.51 843.11 260.79 843.11 260 C 843.11 259.21 842.69 258.49 842.01 258.09 C 841.33 257.7 840.49 257.7 839.81 258.09 C 839.13 258.49 838.71 259.21 838.71 260" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_155">
+    <path d="M 838.71 293 C 838.71 293.79 839.13 294.51 839.81 294.91 C 840.49 295.3 841.33 295.3 842.01 294.91 C 842.69 294.51 843.11 293.79 843.11 293 C 843.11 292.21 842.69 291.49 842.01 291.09 C 841.33 290.7 840.49 290.7 839.81 291.09 C 839.13 291.49 838.71 292.21 838.71 293" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_158">
+    <path d="M 948.71 335 C 948.71 335.79 949.13 336.51 949.81 336.91 C 950.49 337.3 951.33 337.3 952.01 336.91 C 952.69 336.51 953.11 335.79 953.11 335 C 953.11 334.21 952.69 333.49 952.01 333.09 C 951.33 332.7 950.49 332.7 949.81 333.09 C 949.13 333.49 948.71 334.21 948.71 335" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+  <g id="path_161">
+    <path d="M 928.71 370 C 928.71 370.79 929.13 371.51 929.81 371.91 C 930.49 372.3 931.33 372.3 932.01 371.91 C 932.69 371.51 933.11 370.79 933.11 370 C 933.11 369.21 932.69 368.49 932.01 368.09 C 931.33 367.7 930.49 367.7 929.81 368.09 C 929.13 368.49 928.71 369.21 928.71 370" fill="#1F2F57" stroke="#1F2F57" stroke-width="0.5" stroke-linejoin="round" />
+  </g>
+</svg>
