@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 320" width="1340" height="320">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#000000"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <path d="M 190 160 L 270 160" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 400 160 L 480 160" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 650 160 L 690 160 L 690 110 L 730 110" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 860 110 L 900 110 L 900 160 L 940 160" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 1070 160 L 1150 160" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 650 160 L 690 160 L 690 210 L 730 210" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <g class="badge">
+  <rect x="212.83" y="151" width="34.34" height="18" rx="9" fill="#FFFFFF" />
+  <text x="230" y="163.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">task</text>
+</g>
+  <g class="badge">
+  <rect x="417.27" y="151" width="45.47" height="18" rx="9" fill="#FFFFFF" />
+  <text x="440" y="163.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">outline</text>
+</g>
+  <g class="badge">
+  <rect x="671.44" y="126" width="37.12" height="18" rx="9" fill="#FFFFFF" />
+  <text x="690" y="138.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">pass</text>
+</g>
+  <g class="badge">
+  <rect x="882" y="126" width="36.01" height="18" rx="9" fill="#FFFFFF" />
+  <text x="900" y="138.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">draft</text>
+</g>
+  <g class="badge">
+  <rect x="1083.38" y="151" width="53.24" height="18" rx="9" fill="#FFFFFF" />
+  <text x="1110" y="163.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">final text</text>
+</g>
+  <g class="badge">
+  <rect x="675.61" y="176" width="28.78" height="18" rx="9" fill="#FFFFFF" />
+  <text x="690" y="188.44" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">fail</text>
+</g>
+  <g id="shape_1">
+    <rect x="60" y="130" width="130" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-user" transform="translate(113.6, 139.8) scale(0.95)">
+  <circle cx="12" cy="7" r="4" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="125" y="176.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Input</text>
+  </g>
+  <g id="shape_2">
+    <rect x="270" y="130" width="130" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-model" transform="translate(323.6, 133.2) scale(0.95)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+</g>
+    <text x="335" y="169.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="335" dy="0">LLM Call 1</tspan> <tspan x="335" dy="14.4">Outline</tspan></text>
+  </g>
+  <g id="shape_3">
+    <path d="M 565 110 L 650 160 L 565 210 L 480 160 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="565" y="157.44" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="10" font-weight="500"><tspan x="565" dy="0">Gate</tspan> <tspan x="565" dy="12">programmatic check</tspan></text>
+  </g>
+  <g id="shape_4">
+    <rect x="730" y="80" width="130" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-model" transform="translate(783.6, 83.2) scale(0.95)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+</g>
+    <text x="795" y="119.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="795" dy="0">LLM Call 2</tspan> <tspan x="795" dy="14.4">Draft from outline</tspan></text>
+  </g>
+  <g id="shape_5">
+    <rect x="940" y="130" width="130" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-model" transform="translate(993.6, 133.2) scale(0.95)">
+  <path d="M 12 2 L 14 8 L 20 10 L 14 12 L 12 18 L 10 12 L 4 10 L 10 8 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M 18 2 L 18.8 4.2 L 21 5 L 18.8 5.8 L 18 8 L 17.2 5.8 L 15 5 L 17.2 4.2 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+</g>
+    <text x="1005" y="169.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="1005" dy="0">LLM Call 3</tspan> <tspan x="1005" dy="14.4">Translate / polish</tspan></text>
+  </g>
+  <g id="shape_6">
+    <rect x="1150" y="130" width="130" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-document" transform="translate(1203.6, 139.8) scale(0.95)">
+  <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="14,2 14,8 20,8" fill="none" stroke="#000000" stroke-width="2"/>
+  <line x1="8" y1="13" x2="16" y2="13" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="17" x2="14" y2="17" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+</g>
+    <text x="1215" y="176.87" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Output</text>
+  </g>
+  <g id="shape_7">
+    <rect x="730" y="180" width="130" height="60" rx="0" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <g class="icon icon-shield" transform="translate(783.6, 183.2) scale(0.95)">
+  <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="9,12 11,14 15,10" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+    <text x="795" y="219.33" text-anchor="middle" fill="#000000" font-family="Arimo, 'Liberation Sans', Helvetica, Arial, sans-serif" font-size="12" font-weight="500"><tspan x="795" dy="0">Exit early</tspan> <tspan x="795" dy="14.4">return error</tspan></text>
+  </g>
+</svg>
