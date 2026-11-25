@@ -1,4 +1,4 @@
-"""Endpoint-native composition enforcement: a four-layer figure in the style of a paper.
+"""Endpoint-native composition enforcement architecture (AI domain): a four-layer paper-style figure.
 
 A reproduction of a reference figure, laid out by hand. Its coordinates were
 measured off the reference at 2000 px wide and are scaled by ``U``. Where the
@@ -14,7 +14,7 @@ from diagrams_as_code import Diagram, Style
 from diagrams_as_code.output import render_all
 from diagrams_as_code.solids import Solid, oblique
 
-U = 0.55  # the reference is 2000 px wide; this figure is 1100
+U = 0.6  # the reference is 2000 px wide; this figure is 1200
 
 BODY = 14.0
 PAD = 10.0
@@ -218,10 +218,10 @@ def substrate_anchor(diag: Diagram, x: float, y: float):
     return diag.point(*u(x, y))
 
 
-def build_diagram(output_dir: Path | str = "examples/technical") -> Path:
-    return render_all(diagram(), output_dir, "01_composition_enforcement")["svg"]
+def build_diagram(output_dir: Path | str = "examples/ai") -> Path:
+    return render_all(diagram(), output_dir, "12_composition_enforcement_architecture")["svg"]
 
 
 if __name__ == "__main__":
-    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/technical")
+    dest = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("examples/ai")
     build_diagram(dest)

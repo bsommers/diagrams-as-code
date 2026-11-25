@@ -1,4 +1,4 @@
-"""Test suite executing and verifying all 143 domain example diagram scripts across 13 domains."""
+"""Test suite executing and verifying all 144 domain example diagram scripts across 13 domains."""
 
 from __future__ import annotations
 
@@ -45,8 +45,8 @@ def _load_diagram(script_path: Path):
 
 
 def test_example_script_discovery() -> None:
-    """Verify that exactly 143 example scripts exist across 13 domains."""
-    assert len(EXAMPLE_SCRIPTS) == 143
+    """Verify that exactly 144 example scripts exist across 13 domains."""
+    assert len(EXAMPLE_SCRIPTS) == 144
     domain_counts: dict[str, int] = {}
     for p in EXAMPLE_SCRIPTS:
         domain = p.parent.name
@@ -54,7 +54,8 @@ def test_example_script_discovery() -> None:
 
     assert set(domain_counts.keys()) == EXPECTED_DOMAINS
     for d, count in domain_counts.items():
-        assert count == 11, f"Domain {d} has {count} scripts, expected 11."
+        expected = 12 if d == "ai" else 11  # ai also holds the composition-enforcement figure
+        assert count == expected, f"Domain {d} has {count} scripts, expected {expected}."
 
 
 @pytest.mark.parametrize(

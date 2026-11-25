@@ -1,6 +1,6 @@
 # Composition enforcement architecture
 
-![Architecture Diagram](./01_composition_enforcement.svg)
+![Architecture Diagram](./12_composition_enforcement_architecture.svg)
 
 ## Bill of Materials
 

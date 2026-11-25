@@ -454,6 +454,24 @@
    "uses_math": false
   },
   {
+   "path": "examples/ai/12_composition_enforcement_architecture.py",
+   "domain": "ai",
+   "number": 12,
+   "title": "Composition enforcement architecture",
+   "description": "Endpoint-native composition enforcement architecture (AI domain): a four-layer paper-style figure.",
+   "theme": "paper",
+   "formats": [
+    "svg",
+    "bom"
+   ],
+   "svg": "examples/ai/12_composition_enforcement_architecture.svg",
+   "uses_plot": false,
+   "uses_draft": false,
+   "uses_sequence": false,
+   "uses_gantt": false,
+   "uses_math": true
+  },
+  {
    "path": "examples/biology/01_central_dogma.py",
    "domain": "biology",
    "number": 1,
@@ -6320,24 +6338,6 @@
    "uses_sequence": true,
    "uses_gantt": false,
    "uses_math": false
-  },
-  {
-   "path": "examples/technical/01_composition_enforcement.py",
-   "domain": "technical",
-   "number": 1,
-   "title": "Composition enforcement architecture",
-   "description": "Endpoint-native composition enforcement: a four-layer figure in the style of a paper.",
-   "theme": "paper",
-   "formats": [
-    "svg",
-    "bom"
-   ],
-   "svg": "examples/technical/01_composition_enforcement.svg",
-   "uses_plot": false,
-   "uses_draft": false,
-   "uses_sequence": false,
-   "uses_gantt": false,
-   "uses_math": true
   },
   {
    "path": "examples/technical/02_control_loop.py",

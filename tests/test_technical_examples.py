@@ -1,4 +1,4 @@
-"""The technical figures: the reference reproduction and ten more (EX-01, EX-02)."""
+"""The technical figures: ten figures; the reference reproduction lives in examples/ai/12 (EX-01, EX-02)."""
 from __future__ import annotations
 
 import importlib.util
@@ -14,7 +14,6 @@ REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = sorted((REPO / "examples" / "technical").glob("*.py"))
 
 FIGURES = [
-    "01_composition_enforcement",
     "02_control_loop",
     "03_transformer_block",
     "04_state_machine",
@@ -61,7 +60,7 @@ def test_committed_output_matches_the_script(script: Path):
 
 
 def _reference():
-    return _load(REPO / "examples" / "technical" / "01_composition_enforcement.py").diagram()
+    return _load(REPO / "examples" / "ai" / "12_composition_enforcement_architecture.py").diagram()
 
 
 def test_reference_figure_has_every_element_of_the_reference():
