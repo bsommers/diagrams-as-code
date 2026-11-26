@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+- **Crisp output by default.** The per-node `feDropShadow` blur made rasterized text soft at small sizes. The new `shadow` option (`none` | `offset` | `soft`, default `none`) removes it; `offset` is a hard unblurred shadow and `soft` restores the previous look. SVG `width`/`height` are now 1.5x the `viewBox` by default (`scale`), so diagrams and PNGs render larger without changing layout geometry; PDFs keep the diagram's own size. Every generated SVG changes.
+- Default font stack is `Inter, 'DejaVu Sans', 'Liberation Sans', ...` (Inter is OFL; no font binary is bundled).
+- `examples/cloud/05_microservices_service_mesh.py`: tighter canvas and symmetric fan-out.
+
 ### Added
+- `Diagram(shadow=, scale=, font_family=, font_file=)` and the same keywords on `Diagram.configure()`; CLI flags `--shadow`, `--scale`, `--font`, `--font-file` on `render`; env vars `DIAGRAMS_AS_CODE_SHADOW`, `DIAGRAMS_AS_CODE_SCALE`, `DIAGRAMS_AS_CODE_FONT`, `DIAGRAMS_AS_CODE_FONT_FILE`. `font_file` embeds a local `.woff2/.woff/.ttf/.otf` as a base64 `@font-face`, or links an http(s) URL.
 - **Moved** the composition-enforcement reference figure from `examples/technical/01` to `examples/ai/12` (technical figures now 10, numbered 02-11).
 - `examples/ai/12_composition_enforcement_architecture.py`: the endpoint-native composition enforcement figure (four dashed layer bands, formulas, cuboid, clipped polyhedron, policy decision function) as a hand-placed `paper` figure in the AI gallery (363 example scripts in all). No engine change.
 
