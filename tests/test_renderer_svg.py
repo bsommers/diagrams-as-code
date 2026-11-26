@@ -46,7 +46,7 @@ def test_svg_render_contains_elements() -> None:
 def test_svg_xml_parse_validation() -> None:
     """Verify rendered SVG is strictly well-formed XML and parseable by standard XML parsers."""
     theme = get_theme("iiot_dark_gold")
-    renderer = SVGRenderer(theme)
+    renderer = SVGRenderer(theme, shadow="soft", scale=1)
 
     s1 = Shape("node_a", label="Sensor Node").at(50, 50)
     s2 = Shape("node_b", label="Gateway Node").at(250, 50)
@@ -65,7 +65,7 @@ def test_svg_xml_parse_validation() -> None:
 def test_svg_structural_elements_existence() -> None:
     """Verify presence of defs, markers, filters, shadow, background rect, and badges."""
     theme = get_theme("iiot_dark_gold")
-    renderer = SVGRenderer(theme)
+    renderer = SVGRenderer(theme, shadow="soft", scale=1)
 
     s1 = Shape("plc", label="ControlLogix").at(50, 80)
     s2 = Shape("scada", label="Ignition SCADA").at(300, 80)
@@ -259,7 +259,7 @@ def test_nested_groups_rendering_order() -> None:
 def test_empty_diagram_renders_valid_svg() -> None:
     """Verify rendering with empty collections produces valid canvas SVG."""
     theme = get_theme("iiot_dark_gold")
-    renderer = SVGRenderer(theme)
+    renderer = SVGRenderer(theme, scale=1)
 
     svg = renderer.render(elements=[], groups=[], edges=[], width=400, height=300)
     root = ET.fromstring(svg)
@@ -1160,7 +1160,7 @@ def test_node_ids_do_not_collide_with_definition_ids(interactive: bool) -> None:
     With two elements sharing an id, resvg resolved the filter reference to the
     node and dropped every shadowed shape from the PNG.
     """
-    renderer = SVGRenderer(get_theme("iiot_dark_gold"))
+    renderer = SVGRenderer(get_theme("iiot_dark_gold"), shadow="soft")
     names = ["shadow", "arrow", "arrow-tail", "arrow-FF0000", "minimap-clip", "shadow-def"]
     shapes = [Shape(name, label=name).at(40 + 200 * i, 80) for i, name in enumerate(names)]
     edges = [
@@ -1185,7 +1185,7 @@ def test_node_ids_do_not_collide_with_definition_ids(interactive: bool) -> None:
 
 
 def test_definition_ids_are_unchanged_without_a_collision() -> None:
-    renderer = SVGRenderer(get_theme("iiot_dark_gold"))
+    renderer = SVGRenderer(get_theme("iiot_dark_gold"), shadow="soft")
     a, b = Shape("a", label="A").at(40, 80), Shape("b", label="B").at(300, 80)
     edge = Edge(a, b, color="#FF0000", arrow_tail=True)
     svg = renderer.render(elements=[a, b], edges=[edge], width=600, height=300, routes=route_all([edge], [a, b]))
@@ -1235,3 +1235,42 @@ def test_interactive_overlay_ids_are_unchanged_without_a_collision() -> None:
     ids = {el.attrib["id"] for el in root.iter() if "id" in el.attrib}
     assert set(OVERLAY_IDS) <= ids
     assert "-def" not in svg
+
+
+def test_default_is_crisp_and_scaled(monkeypatch: pytest.MonkeyPatch) -> None:
+    for var in ("SHADOW", "SCALE", "FONT_FILE"):
+        monkeypatch.delenv(f"DIAGRAMS_AS_CODE_{var}", raising=False)
+    s1 = Shape("a", label="A").at(50, 50)
+    svg = SVGRenderer(get_theme("nord")).render(elements=[s1], width=400, height=300)
+    root = ET.fromstring(svg)
+    assert root.attrib["viewBox"] == "0 0 400 300"
+    assert root.attrib["width"] == "600" and root.attrib["height"] == "450"
+    assert "filter" not in svg and "feDropShadow" not in svg
+
+
+def test_shadow_scale_env_and_validation(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("DIAGRAMS_AS_CODE_SHADOW", "offset")
+    monkeypatch.setenv("DIAGRAMS_AS_CODE_SCALE", "2")
+    s1 = Shape("a", label="A").at(50, 50)
+    svg = SVGRenderer(get_theme("nord")).render(elements=[s1], width=400, height=300)
+    assert 'stdDeviation="0"' in svg and 'width="800"' in svg
+    with pytest.raises(ValueError):
+        SVGRenderer(get_theme("nord"), shadow="glow")
+    with pytest.raises(ValueError):
+        SVGRenderer(get_theme("nord"), scale=0)
+
+
+def test_font_family_and_embedded_font_file(tmp_path, monkeypatch: pytest.MonkeyPatch) -> None:
+    from diagrams_as_code import Diagram
+
+    font = tmp_path / "My.woff2"
+    font.write_bytes(b"wOF2fake")
+    with Diagram("T", theme="nord", font_family="'My Font', sans-serif", font_file=font) as d:
+        d.add(Shape("a", "A"))
+    svg = d.render_svg()
+    assert "font-family=\"'My Font', sans-serif\"" in svg
+    assert "@font-face" in svg and "data:font/woff2;base64," in svg
+    monkeypatch.setenv("DIAGRAMS_AS_CODE_FONT", "Lato, sans-serif")
+    with Diagram("T", theme="nord") as d2:
+        d2.add(Shape("a", "A"))
+    assert 'font-family="Lato, sans-serif"' in d2.render_svg()

@@ -21,7 +21,8 @@ class Theme:
     subtext: str
     edge_color: str
     font_family: str = (
-        "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        "Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, "
+        "'Segoe UI', Roboto, sans-serif"
     )
     #: Line weights, corner radii and effects. The defaults are the look every
     #: theme had before these were configurable.

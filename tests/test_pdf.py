@@ -91,9 +91,11 @@ def test_page_size_is_the_svg_size_in_points() -> None:
     d = _diag()
     pdf = d.render_pdf()
     svg = ET.fromstring(d.render_svg())
+    # The PDF keeps the diagram's own size; the SVG's default 1.5x scale only changes its width/height.
+    _, _, view_w, view_h = (float(v) for v in svg.get("viewBox").split())
     box = re.search(rb"/MediaBox \[0 0 ([\d.]+) ([\d.]+)\]", pdf)
-    assert float(box[1]) == pytest.approx(float(svg.get("width")) * PX_TO_PT, abs=1e-3)
-    assert float(box[2]) == pytest.approx(float(svg.get("height")) * PX_TO_PT, abs=1e-3)
+    assert float(box[1]) == pytest.approx(view_w * PX_TO_PT, abs=1e-3)
+    assert float(box[2]) == pytest.approx(view_h * PX_TO_PT, abs=1e-3)
 
 
 def test_output_is_reproducible_and_has_no_timestamp() -> None:
