@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 982" width="970" height="982">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 982" width="1455" height="1473">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#0066CC"/>
@@ -6,36 +6,33 @@
     <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#0066CC"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#FFFFFF"/>
   <g id="band_1">
     <rect x="70" y="56" width="840" height="134" rx="0" fill="none" stroke="#E0E0E6" stroke-width="1" stroke-dasharray="6,4" />
-    <text x="86" y="80" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 4: Business Planning &amp; Logistics</text>
-    <text x="760" y="133.78" fill="#666666" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Months, weeks, days</text>
+    <text x="86" y="80" fill="#0066CC" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 4: Business Planning &amp; Logistics</text>
+    <text x="760" y="133.78" fill="#666666" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Months, weeks, days</text>
   </g>
   <g id="band_5">
     <rect x="70" y="240" width="840" height="134" rx="0" fill="none" stroke="#E0E0E6" stroke-width="1" stroke-dasharray="6,4" />
-    <text x="86" y="264" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 3: Manufacturing Operations Management</text>
-    <text x="760" y="310.91" fill="#666666" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Days, shifts,</text>
-    <text x="760" y="324.66" fill="#666666" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">hours, minutes</text>
+    <text x="86" y="264" fill="#0066CC" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 3: Manufacturing Operations Management</text>
+    <text x="760" y="310.91" fill="#666666" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Days, shifts,</text>
+    <text x="760" y="324.66" fill="#666666" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">hours, minutes</text>
   </g>
   <g id="band_9">
     <rect x="70" y="424" width="840" height="134" rx="0" fill="none" stroke="#E0E0E6" stroke-width="1" stroke-dasharray="6,4" />
-    <text x="86" y="448" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 2: Monitoring &amp; Supervisory Control</text>
-    <text x="760" y="501.78" fill="#666666" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Hours, minutes, seconds</text>
+    <text x="86" y="448" fill="#0066CC" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 2: Monitoring &amp; Supervisory Control</text>
+    <text x="760" y="501.78" fill="#666666" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Hours, minutes, seconds</text>
   </g>
   <g id="band_13">
     <rect x="70" y="608" width="840" height="134" rx="0" fill="none" stroke="#E0E0E6" stroke-width="1" stroke-dasharray="6,4" />
-    <text x="86" y="632" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 1: Sensing &amp; Manipulation</text>
-    <text x="760" y="685.78" fill="#666666" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Seconds, milliseconds</text>
+    <text x="86" y="632" fill="#0066CC" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 1: Sensing &amp; Manipulation</text>
+    <text x="760" y="685.78" fill="#666666" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Seconds, milliseconds</text>
   </g>
   <g id="band_17">
     <rect x="70" y="792" width="840" height="134" rx="0" fill="none" stroke="#E0E0E6" stroke-width="1" stroke-dasharray="6,4" />
-    <text x="86" y="816" fill="#0066CC" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 0: Physical Production Process</text>
-    <text x="760" y="869.78" fill="#666666" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Continuous</text>
+    <text x="86" y="816" fill="#0066CC" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Level 0: Physical Production Process</text>
+    <text x="760" y="869.78" fill="#666666" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="start">Continuous</text>
   </g>
   <path d="M 612.5 170 L 612.5 294" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 697.5 294 L 697.5 170" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
@@ -47,37 +44,37 @@
   <path d="M 697.5 846 L 697.5 722" fill="none" stroke="#0066CC" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="537.8" y="223" width="149.4" height="18" rx="9" fill="#FFFFFF" />
-  <text x="612.5" y="235.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">production schedule (B2MML)</text>
+  <text x="612.5" y="235.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">production schedule (B2MML)</text>
 </g>
   <g class="badge">
   <rect x="636.69" y="201" width="121.62" height="18" rx="9" fill="#FFFFFF" />
-  <text x="697.5" y="213.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">production performance</text>
+  <text x="697.5" y="213.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">production performance</text>
 </g>
   <g class="badge">
   <rect x="559.49" y="407" width="106.03" height="18" rx="9" fill="#FFFFFF" />
-  <text x="612.5" y="419.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">work orders, recipes</text>
+  <text x="612.5" y="419.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">work orders, recipes</text>
 </g>
   <g class="badge">
   <rect x="647.8" y="385" width="99.39" height="18" rx="9" fill="#FFFFFF" />
-  <text x="697.5" y="397.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">actuals, genealogy</text>
+  <text x="697.5" y="397.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">actuals, genealogy</text>
 </g>
   <g class="badge">
   <rect x="557.52" y="591" width="109.95" height="18" rx="9" fill="#FFFFFF" />
-  <text x="612.5" y="603.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">setpoints, sequences</text>
+  <text x="612.5" y="603.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">setpoints, sequences</text>
 </g>
   <g class="badge">
   <rect x="662.27" y="569" width="70.46" height="18" rx="9" fill="#FFFFFF" />
-  <text x="697.5" y="581.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">tags, alarms</text>
+  <text x="697.5" y="581.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">tags, alarms</text>
 </g>
   <g class="badge">
   <rect x="588.1" y="775" width="48.8" height="18" rx="9" fill="#FFFFFF" />
-  <text x="612.5" y="787.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">outputs</text>
+  <text x="612.5" y="787.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">outputs</text>
 </g>
   <g class="badge">
   <rect x="665.88" y="775" width="63.24" height="18" rx="9" fill="#FFFFFF" />
-  <text x="697.5" y="787.44" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">I/O signals</text>
+  <text x="697.5" y="787.44" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">I/O signals</text>
 </g>
-  <g id="shape_2" filter="url(#shadow)">
+  <g id="shape_2">
     <rect x="90" y="110" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-document" transform="translate(163.6, 119.8) scale(0.95)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#0066CC" stroke-width="2" stroke-linejoin="round"/>
@@ -85,9 +82,9 @@
   <line x1="8" y1="13" x2="16" y2="13" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
   <line x1="8" y1="17" x2="14" y2="17" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="175" y="156.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">PLM</text>
+    <text x="175" y="156.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">PLM</text>
   </g>
-  <g id="shape_3" filter="url(#shadow)">
+  <g id="shape_3">
     <rect x="330" y="110" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-analytics" transform="translate(403.6, 119.8) scale(0.95)">
   <line x1="4" y1="20" x2="20" y2="20" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
@@ -96,9 +93,9 @@
   <rect x="12" y="8" width="3" height="12" rx="0.5" fill="none" stroke="#0066CC" stroke-width="2"/>
   <rect x="17" y="4" width="3" height="16" rx="0.5" fill="none" stroke="#0066CC" stroke-width="2"/>
 </g>
-    <text x="415" y="156.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Supply Chain Planning</text>
+    <text x="415" y="156.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Supply Chain Planning</text>
   </g>
-  <g id="shape_4" filter="url(#shadow)">
+  <g id="shape_4">
     <rect x="570" y="110" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-server" transform="translate(643.6, 119.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -108,17 +105,17 @@
   <circle cx="6" cy="17" r="1" fill="#0066CC"/>
   <circle cx="9" cy="17" r="1" fill="#0066CC"/>
 </g>
-    <text x="655" y="156.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">ERP</text>
+    <text x="655" y="156.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">ERP</text>
   </g>
-  <g id="shape_6" filter="url(#shadow)">
+  <g id="shape_6">
     <rect x="90" y="294" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-shield_check" transform="translate(163.6, 303.8) scale(0.95)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#0066CC" stroke-width="2" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,9" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="175" y="340.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Quality / LIMS</text>
+    <text x="175" y="340.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Quality / LIMS</text>
   </g>
-  <g id="shape_7" filter="url(#shadow)">
+  <g id="shape_7">
     <rect x="330" y="294" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-historian" transform="translate(403.6, 303.8) scale(0.95)">
   <ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -127,9 +124,9 @@
   <circle cx="16" cy="16" r="4" fill="none" stroke="#0066CC" stroke-width="1.5"/>
   <polyline points="16 14 16 16 18 16" fill="none" stroke="#0066CC" stroke-width="2"/>
 </g>
-    <text x="415" y="340.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Plant Historian</text>
+    <text x="415" y="340.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Plant Historian</text>
   </g>
-  <g id="shape_8" filter="url(#shadow)">
+  <g id="shape_8">
     <rect x="570" y="294" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-server" transform="translate(643.6, 303.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -139,9 +136,9 @@
   <circle cx="6" cy="17" r="1" fill="#0066CC"/>
   <circle cx="9" cy="17" r="1" fill="#0066CC"/>
 </g>
-    <text x="655" y="340.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">MES / Dispatch</text>
+    <text x="655" y="340.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">MES / Dispatch</text>
   </g>
-  <g id="shape_10" filter="url(#shadow)">
+  <g id="shape_10">
     <rect x="90" y="478" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-hmi" transform="translate(163.6, 487.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -151,9 +148,9 @@
   <circle cx="18" cy="20" r="1" fill="#0066CC"/>
   <rect x="6" y="7" width="12" height="8" rx="1" fill="none" stroke="#0066CC" stroke-width="2"/>
 </g>
-    <text x="175" y="524.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Operator HMI</text>
+    <text x="175" y="524.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Operator HMI</text>
   </g>
-  <g id="shape_11" filter="url(#shadow)">
+  <g id="shape_11">
     <rect x="330" y="478" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(403.6, 487.8) scale(0.95)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -161,9 +158,9 @@
   <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#0066CC" stroke-width="2"/>
   <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#0066CC" stroke-width="2"/>
 </g>
-    <text x="415" y="524.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Batch Sequencer</text>
+    <text x="415" y="524.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Batch Sequencer</text>
   </g>
-  <g id="shape_12" filter="url(#shadow)">
+  <g id="shape_12">
     <rect x="570" y="478" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-scada" transform="translate(643.6, 487.8) scale(0.95)">
   <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -171,17 +168,17 @@
   <line x1="12" y1="17" x2="12" y2="21" stroke="#0066CC" stroke-width="2"/>
   <polyline points="5 11 8 8 12 12 16 7 19 10" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="655" y="524.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">SCADA</text>
+    <text x="655" y="524.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">SCADA</text>
   </g>
-  <g id="shape_14" filter="url(#shadow)">
+  <g id="shape_14">
     <rect x="90" y="662" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-shield" transform="translate(163.6, 671.8) scale(0.95)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#0066CC" stroke-width="2" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="175" y="708.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Safety PLC</text>
+    <text x="175" y="708.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Safety PLC</text>
   </g>
-  <g id="shape_15" filter="url(#shadow)">
+  <g id="shape_15">
     <rect x="330" y="662" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-plc" transform="translate(403.6, 671.8) scale(0.95)">
   <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -193,9 +190,9 @@
   <circle cx="12" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="16" cy="15" r="1.5" fill="#0066CC"/>
 </g>
-    <text x="415" y="708.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DCS Controller</text>
+    <text x="415" y="708.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DCS Controller</text>
   </g>
-  <g id="shape_16" filter="url(#shadow)">
+  <g id="shape_16">
     <rect x="570" y="662" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-plc" transform="translate(643.6, 671.8) scale(0.95)">
   <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -207,9 +204,9 @@
   <circle cx="12" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="16" cy="15" r="1.5" fill="#0066CC"/>
 </g>
-    <text x="655" y="708.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">PLC</text>
+    <text x="655" y="708.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">PLC</text>
   </g>
-  <g id="shape_18" filter="url(#shadow)">
+  <g id="shape_18">
     <rect x="90" y="846" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-robot" transform="translate(163.6, 855.8) scale(0.95)">
   <rect x="5" y="6" width="14" height="12" rx="3" fill="none" stroke="#0066CC" stroke-width="2"/>
@@ -221,9 +218,9 @@
   <line x1="2" y1="12" x2="5" y2="12" stroke="#0066CC" stroke-width="2"/>
   <line x1="19" y1="12" x2="22" y2="12" stroke="#0066CC" stroke-width="2"/>
 </g>
-    <text x="175" y="892.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Robots</text>
+    <text x="175" y="892.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Robots</text>
   </g>
-  <g id="shape_19" filter="url(#shadow)">
+  <g id="shape_19">
     <rect x="330" y="846" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-gateway" transform="translate(403.6, 855.8) scale(0.95)">
   <line x1="6" y1="9" x2="6" y2="3" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
@@ -233,9 +230,9 @@
   <circle cx="12" cy="15" r="1.5" fill="#0066CC"/>
   <circle cx="17" cy="15" r="1.5" fill="#0066CC"/>
 </g>
-    <text x="415" y="892.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Drives &amp; Valves</text>
+    <text x="415" y="892.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Drives &amp; Valves</text>
   </g>
-  <g id="shape_20" filter="url(#shadow)">
+  <g id="shape_20">
     <rect x="570" y="846" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
     <g class="icon icon-sensor" transform="translate(643.6, 855.8) scale(0.95)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
@@ -243,6 +240,6 @@
   <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#0066CC" stroke-width="2"/>
   <line x1="8" y1="17" x2="16" y2="17" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="655" y="892.87" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Sensors &amp; Actuators</text>
+    <text x="655" y="892.87" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Sensors &amp; Actuators</text>
   </g>
 </svg>

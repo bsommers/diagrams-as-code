@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 485" width="790" height="485">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 485" width="1185" height="727.5">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
@@ -6,22 +6,19 @@
     <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#00E5A3"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#181B20"/>
   <g id="group_1">
     <rect x="60" y="80" width="170" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="76" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Perimeter Ingress</text>
+    <text x="76" y="104" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Perimeter Ingress</text>
   </g>
   <g id="group_2">
     <rect x="310" y="80" width="170" height="325" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="326" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Inspection Network</text>
+    <text x="326" y="104" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Inspection Network</text>
   </g>
   <g id="group_3">
     <rect x="560" y="80" width="170" height="145" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="576" y="104" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Internal Core Fabric</text>
+    <text x="576" y="104" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Internal Core Fabric</text>
   </g>
   <path d="M 205 170 L 335 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 375 200 L 375 215 L 395 215 L 395 230" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
@@ -30,25 +27,25 @@
   <path d="M 455 170 L 585 170" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="234.21" y="161" width="71.58" height="18" rx="9" fill="#2B313B" />
-  <text x="270" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Raw Ingress</text>
+  <text x="270" y="173.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Raw Ingress</text>
 </g>
   <g class="badge">
   <rect x="303.85" y="207" width="87.15" height="18" rx="9" fill="#2B313B" />
-  <text x="347.43" y="219.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Encrypted Copy</text>
+  <text x="347.43" y="219.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Encrypted Copy</text>
 </g>
   <g class="badge">
   <rect x="294.41" y="293" width="96.59" height="18" rx="9" fill="#2B313B" />
-  <text x="342.71" y="305.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Decrypted Stream</text>
+  <text x="342.71" y="305.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Decrypted Stream</text>
 </g>
   <g class="badge">
   <rect x="428.65" y="210" width="82.7" height="18" rx="9" fill="#2B313B" />
-  <text x="470" y="222.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
+  <text x="470" y="222.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Scrubbed Flow</text>
 </g>
   <g class="badge">
   <rect x="471.43" y="161" width="97.14" height="18" rx="9" fill="#2B313B" />
-  <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Permitted Packets</text>
+  <text x="520" y="173.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Permitted Packets</text>
 </g>
-  <g id="border_rtr" filter="url(#shadow)">
+  <g id="border_rtr">
     <rect x="85" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-core_router" transform="translate(133.6, 143.2) scale(0.95)">
   <circle cx="12" cy="12" r="9.5" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -59,9 +56,9 @@
   <polyline points="7,9.5 4.5,12 7,14.5" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="17,9.5 19.5,12 17,14.5" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="145" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Border Transit</tspan> <tspan x="145" dy="14.4">Router</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Border Transit</tspan> <tspan x="145" dy="14.4">Router</tspan></text>
   </g>
-  <g id="npb" filter="url(#shadow)">
+  <g id="npb">
     <rect x="335" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-switch" transform="translate(383.6, 150.4) scale(0.95)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -70,9 +67,9 @@
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="395" y="186.53" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Packet Broker TAP</text>
+    <text x="395" y="186.53" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Packet Broker TAP</text>
   </g>
-  <g id="decryptor" filter="url(#shadow)">
+  <g id="decryptor">
     <rect x="335" y="230" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-key" transform="translate(383.6, 240.4) scale(0.95)">
   <circle cx="8" cy="14" r="5" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -80,9 +77,9 @@
   <line x1="17" y1="5" x2="19" y2="7" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
   <line x1="19" y1="7" x2="21" y2="9" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="395" y="276.53" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">SSL/TLS Decryptor</text>
+    <text x="395" y="276.53" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">SSL/TLS Decryptor</text>
   </g>
-  <g id="suricata_ips" filter="url(#shadow)">
+  <g id="suricata_ips">
     <rect x="335" y="320" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-malware_scan" transform="translate(383.6, 323.2) scale(0.95)">
   <path d="M 4 8 V 4 H 8" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
@@ -95,9 +92,9 @@
   <line x1="12" y1="8" x2="12" y2="6" stroke="#00E5A3" stroke-width="2"/>
   <line x1="12" y1="16" x2="12" y2="18" stroke="#00E5A3" stroke-width="2"/>
 </g>
-    <text x="395" y="359.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Suricata</tspan> <tspan x="395" dy="14.4">IPS Cluster</tspan></text>
+    <text x="395" y="359.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Suricata</tspan> <tspan x="395" dy="14.4">IPS Cluster</tspan></text>
   </g>
-  <g id="core_sw" filter="url(#shadow)">
+  <g id="core_sw">
     <rect x="585" y="140" width="120" height="60" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-switch" transform="translate(633.6, 143.2) scale(0.95)">
   <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -106,6 +103,6 @@
   <line x1="18" y1="14" x2="11" y2="14" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
   <polyline points="13,12 11,14 13,16" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="645" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Campus</tspan> <tspan x="645" dy="14.4">Core Switch</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">Campus</tspan> <tspan x="645" dy="14.4">Core Switch</tspan></text>
   </g>
 </svg>

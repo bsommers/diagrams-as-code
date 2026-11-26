@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1650 805" width="1650" height="805">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1650 805" width="2475" height="1207.5">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00E5A3"/>
@@ -6,38 +6,35 @@
     <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#00E5A3"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#181B20"/>
   <g id="group_1">
     <rect x="35" y="60" width="260" height="330" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="51" y="84" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Operating Model</text>
+    <text x="51" y="84" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Operating Model</text>
   </g>
   <g id="group_4">
     <rect x="365" y="60" width="260" height="460" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="381" y="84" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Management Account</text>
+    <text x="381" y="84" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Management Account</text>
   </g>
   <g id="group_8">
     <rect x="695" y="60" width="590" height="155" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="711" y="84" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Security OU</text>
+    <text x="711" y="84" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Security OU</text>
   </g>
   <g id="group_11">
     <rect x="695" y="235" width="590" height="285" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="711" y="259" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Workloads OU: Retail and Wholesale BUs</text>
+    <text x="711" y="259" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Workloads OU: Retail and Wholesale BUs</text>
   </g>
   <g id="group_16">
     <rect x="695" y="590" width="590" height="155" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="711" y="614" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Infrastructure OU</text>
+    <text x="711" y="614" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Infrastructure OU</text>
   </g>
   <g id="group_19">
     <rect x="1355" y="60" width="260" height="460" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="1371" y="84" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Identity Federation</text>
+    <text x="1371" y="84" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Identity Federation</text>
   </g>
   <g id="group_23">
     <rect x="35" y="590" width="260" height="155" rx="8" fill="#22262E" stroke="#363C48" stroke-width="1.5" />
-    <text x="51" y="614" fill="#00E5A3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">On-Premises</text>
+    <text x="51" y="614" fill="#00E5A3" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">On-Premises</text>
   </g>
   <path d="M 270 155 L 390 155" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 165 190 L 165 295" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
@@ -53,81 +50,81 @@
   <path d="M 1380 460 L 1260 460" fill="none" stroke="#00E5A3" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="300.04" y="146" width="59.91" height="18" rx="9" fill="#2B313B" />
-  <text x="330" y="158.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">guardrails</text>
+  <text x="330" y="158.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">guardrails</text>
 </g>
   <g class="badge">
   <rect x="135.04" y="233.5" width="59.92" height="18" rx="9" fill="#2B313B" />
-  <text x="165" y="245.94" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">standards</text>
+  <text x="165" y="245.94" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">standards</text>
 </g>
   <g class="badge">
   <rect x="300.05" y="321" width="59.89" height="18" rx="9" fill="#2B313B" />
-  <text x="330" y="333.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Terraform</text>
+  <text x="330" y="333.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Terraform</text>
 </g>
   <g class="badge">
   <rect x="635.33" y="146" width="49.34" height="18" rx="9" fill="#2B313B" />
-  <text x="660" y="158.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">org trail</text>
+  <text x="660" y="158.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">org trail</text>
 </g>
   <g class="badge">
   <rect x="964.77" y="146" width="50.47" height="18" rx="9" fill="#2B313B" />
-  <text x="990" y="158.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">findings</text>
+  <text x="990" y="158.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">findings</text>
 </g>
   <g class="badge">
   <rect x="617.26" y="321" width="85.49" height="18" rx="9" fill="#2B313B" />
-  <text x="660" y="333.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">vends accounts</text>
+  <text x="660" y="333.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">vends accounts</text>
 </g>
   <g class="badge">
   <rect x="623.09" y="451" width="73.81" height="18" rx="9" fill="#2B313B" />
-  <text x="660" y="463.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">cost &amp; usage</text>
+  <text x="660" y="463.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">cost &amp; usage</text>
 </g>
   <g class="badge">
   <rect x="443.09" y="676" width="103.82" height="18" rx="9" fill="#2B313B" />
-  <text x="495" y="688.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Direct Connect 10G</text>
+  <text x="495" y="688.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Direct Connect 10G</text>
 </g>
   <g class="badge">
   <rect x="829.21" y="563.5" width="96.58" height="18" rx="9" fill="#2B313B" />
-  <text x="877.5" y="575.94" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">TGW attachments</text>
+  <text x="877.5" y="575.94" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">TGW attachments</text>
 </g>
   <g class="badge">
   <rect x="1454.76" y="233.5" width="60.48" height="18" rx="9" fill="#2B313B" />
-  <text x="1485" y="245.94" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">federation</text>
+  <text x="1485" y="245.94" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">federation</text>
 </g>
   <g class="badge">
   <rect x="1445.19" y="386" width="79.63" height="18" rx="9" fill="#2B313B" />
-  <text x="1485" y="398.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SAML + SCIM</text>
+  <text x="1485" y="398.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">SAML + SCIM</text>
 </g>
   <g class="badge">
   <rect x="1277.27" y="451" width="85.47" height="18" rx="9" fill="#2B313B" />
-  <text x="1320" y="463.44" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">permission sets</text>
+  <text x="1320" y="463.44" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">permission sets</text>
 </g>
-  <g id="shape_2" filter="url(#shadow)">
+  <g id="shape_2">
     <rect x="60" y="120" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-user" transform="translate(153, 126.4) scale(1)">
   <circle cx="12" cy="7" r="4" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 5 21 C 5 16.5 8 14 12 14 C 16 14 19 16.5 19 21" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="165" y="164.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Cloud Centre of Excellence</text>
-    <text x="165" y="180.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">policy and standards</text>
+    <text x="165" y="164.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Cloud Centre of Excellence</text>
+    <text x="165" y="180.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">policy and standards</text>
   </g>
-  <g id="shape_3" filter="url(#shadow)">
+  <g id="shape_3">
     <rect x="60" y="295" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(153, 301.4) scale(1)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="15" x2="17" y2="15" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="165" y="339.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Platform Engineering</text>
-    <text x="165" y="355.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">landing zone as code</text>
+    <text x="165" y="339.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Platform Engineering</text>
+    <text x="165" y="355.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">landing zone as code</text>
   </g>
-  <g id="shape_5" filter="url(#shadow)">
+  <g id="shape_5">
     <rect x="390" y="120" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-shield_check" transform="translate(483, 126.4) scale(1)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,9" fill="none" stroke="#00E5A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="495" y="164.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Control Tower</text>
-    <text x="495" y="180.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">preventive guardrails</text>
+    <text x="495" y="164.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Control Tower</text>
+    <text x="495" y="180.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">preventive guardrails</text>
   </g>
-  <g id="shape_6" filter="url(#shadow)">
+  <g id="shape_6">
     <rect x="390" y="295" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-workflow" transform="translate(483, 301.4) scale(1)">
   <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -135,10 +132,10 @@
   <rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 6 9 V 12 H 12 V 15 M 18 9 V 12 H 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
 </g>
-    <text x="495" y="339.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Account Vending</text>
-    <text x="495" y="355.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">AFT pipeline</text>
+    <text x="495" y="339.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Account Vending</text>
+    <text x="495" y="355.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">AFT pipeline</text>
   </g>
-  <g id="shape_7" filter="url(#shadow)">
+  <g id="shape_7">
     <rect x="390" y="425" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-analytics" transform="translate(483, 431.4) scale(1)">
   <line x1="4" y1="20" x2="20" y2="20" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
@@ -147,20 +144,20 @@
   <rect x="12" y="8" width="3" height="12" rx="0.5" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <rect x="17" y="4" width="3" height="16" rx="0.5" fill="none" stroke="#00E5A3" stroke-width="2"/>
 </g>
-    <text x="495" y="469.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">FinOps &amp; Budgets</text>
-    <text x="495" y="485.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">showback per BU</text>
+    <text x="495" y="469.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">FinOps &amp; Budgets</text>
+    <text x="495" y="485.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">showback per BU</text>
   </g>
-  <g id="shape_9" filter="url(#shadow)">
+  <g id="shape_9">
     <rect x="720" y="120" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(813, 126.4) scale(1)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
 </g>
-    <text x="825" y="164.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Log Archive</text>
-    <text x="825" y="180.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">immutable, 7 years</text>
+    <text x="825" y="164.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Log Archive</text>
+    <text x="825" y="180.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">immutable, 7 years</text>
   </g>
-  <g id="shape_10" filter="url(#shadow)">
+  <g id="shape_10">
     <rect x="1050" y="120" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-siem" transform="translate(1143, 126.4) scale(1)">
   <circle cx="12" cy="12" r="9" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -168,50 +165,50 @@
   <line x1="12" y1="12" x2="18" y2="8" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
   <circle cx="12" cy="12" r="2" fill="#00E5A3"/>
 </g>
-    <text x="1155" y="164.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Security Tooling</text>
-    <text x="1155" y="180.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">GuardDuty, Security Hub</text>
+    <text x="1155" y="164.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Security Tooling</text>
+    <text x="1155" y="180.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">GuardDuty, Security Hub</text>
   </g>
-  <g id="shape_12" filter="url(#shadow)">
+  <g id="shape_12">
     <rect x="720" y="295" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(813, 301.4) scale(1)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#00E5A3"/>
 </g>
-    <text x="825" y="339.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Retail BU: Prod</text>
-    <text x="825" y="355.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">14 accounts</text>
+    <text x="825" y="339.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Retail BU: Prod</text>
+    <text x="825" y="355.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">14 accounts</text>
   </g>
-  <g id="shape_13" filter="url(#shadow)">
+  <g id="shape_13">
     <rect x="1050" y="295" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(1143, 301.4) scale(1)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#00E5A3"/>
 </g>
-    <text x="1155" y="339.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Wholesale BU: Prod</text>
-    <text x="1155" y="355.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">6 accounts (acquired)</text>
+    <text x="1155" y="339.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Wholesale BU: Prod</text>
+    <text x="1155" y="355.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">6 accounts (acquired)</text>
   </g>
-  <g id="shape_14" filter="url(#shadow)">
+  <g id="shape_14">
     <rect x="720" y="425" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-vpc" transform="translate(813, 431.4) scale(1)">
   <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#00E5A3" stroke-width="2" stroke-dasharray="3,3"/>
   <rect x="7" y="7" width="10" height="10" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#00E5A3"/>
 </g>
-    <text x="825" y="469.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Retail BU: Non-prod</text>
-    <text x="825" y="485.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">22 accounts</text>
+    <text x="825" y="469.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Retail BU: Non-prod</text>
+    <text x="825" y="485.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">22 accounts</text>
   </g>
-  <g id="shape_15" filter="url(#shadow)">
+  <g id="shape_15">
     <rect x="1050" y="425" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-storage" transform="translate(1143, 431.4) scale(1)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 4 6 V 18 C 4 20 20 20 20 18 V 6" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 4 12 C 4 14 20 14 20 12" fill="none" stroke="#00E5A3" stroke-width="2"/>
 </g>
-    <text x="1155" y="469.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Shared Data Platform</text>
-    <text x="1155" y="485.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">lakehouse accounts</text>
+    <text x="1155" y="469.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Shared Data Platform</text>
+    <text x="1155" y="485.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">lakehouse accounts</text>
   </g>
-  <g id="shape_17" filter="url(#shadow)">
+  <g id="shape_17">
     <rect x="720" y="650" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-router" transform="translate(813, 656.4) scale(1)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -223,10 +220,10 @@
   <circle cx="12" cy="16" r="1.2" fill="#00E5A3"/>
   <circle cx="16" cy="16" r="1.2" fill="#00E5A3"/>
 </g>
-    <text x="825" y="694.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Network Hub</text>
-    <text x="825" y="710.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Transit Gateway, egress</text>
+    <text x="825" y="694.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Network Hub</text>
+    <text x="825" y="710.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Transit Gateway, egress</text>
   </g>
-  <g id="shape_18" filter="url(#shadow)">
+  <g id="shape_18">
     <rect x="1050" y="650" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-dns" transform="translate(1143, 656.4) scale(1)">
   <rect x="3" y="4" width="18" height="6" rx="1" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -236,10 +233,10 @@
   <line x1="14" y1="7" x2="18" y2="7" stroke="#00E5A3" stroke-width="2"/>
   <line x1="14" y1="17" x2="18" y2="17" stroke="#00E5A3" stroke-width="2"/>
 </g>
-    <text x="1155" y="694.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Shared Services</text>
-    <text x="1155" y="710.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DNS, directory, CI runners</text>
+    <text x="1155" y="694.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Shared Services</text>
+    <text x="1155" y="710.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DNS, directory, CI runners</text>
   </g>
-  <g id="shape_20" filter="url(#shadow)">
+  <g id="shape_20">
     <rect x="1380" y="120" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-key" transform="translate(1473, 126.4) scale(1)">
   <circle cx="8" cy="14" r="5" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -247,10 +244,10 @@
   <line x1="17" y1="5" x2="19" y2="7" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
   <line x1="19" y1="7" x2="21" y2="9" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="1485" y="164.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Okta (Wholesale BU)</text>
-    <text x="1485" y="180.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">acquired directory</text>
+    <text x="1485" y="164.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Okta (Wholesale BU)</text>
+    <text x="1485" y="180.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">acquired directory</text>
   </g>
-  <g id="shape_21" filter="url(#shadow)">
+  <g id="shape_21">
     <rect x="1380" y="295" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-key" transform="translate(1473, 301.4) scale(1)">
   <circle cx="8" cy="14" r="5" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -258,20 +255,20 @@
   <line x1="17" y1="5" x2="19" y2="7" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
   <line x1="19" y1="7" x2="21" y2="9" stroke="#00E5A3" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="1485" y="339.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Microsoft Entra ID</text>
-    <text x="1485" y="355.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">corporate directory</text>
+    <text x="1485" y="339.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Microsoft Entra ID</text>
+    <text x="1485" y="355.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">corporate directory</text>
   </g>
-  <g id="shape_22" filter="url(#shadow)">
+  <g id="shape_22">
     <rect x="1380" y="425" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-lock" transform="translate(1473, 431.4) scale(1)">
   <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <path d="M 8 11 V 7 A 4 4 0 0 1 16 7 V 11" fill="none" stroke="#00E5A3" stroke-width="2"/>
   <circle cx="12" cy="16" r="1.5" fill="#00E5A3"/>
 </g>
-    <text x="1485" y="469.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">IAM Identity Center</text>
-    <text x="1485" y="485.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">permission sets</text>
+    <text x="1485" y="469.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">IAM Identity Center</text>
+    <text x="1485" y="485.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">permission sets</text>
   </g>
-  <g id="shape_24" filter="url(#shadow)">
+  <g id="shape_24">
     <rect x="60" y="650" width="210" height="70" rx="6" fill="#2B313B" stroke="#00E5A3" stroke-width="2" />
     <g class="icon icon-server_rack" transform="translate(153, 656.4) scale(1)">
   <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#00E5A3" stroke-width="2"/>
@@ -283,7 +280,7 @@
   <circle cx="7" cy="14.5" r="0.8" fill="#00E5A3"/>
   <circle cx="7" cy="19.5" r="0.8" fill="#00E5A3"/>
 </g>
-    <text x="165" y="694.67" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Corporate Data Centre</text>
-    <text x="165" y="710.27" fill="#F0F3F6" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">SAP, mainframe</text>
+    <text x="165" y="694.67" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Corporate Data Centre</text>
+    <text x="165" y="710.27" fill="#F0F3F6" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">SAP, mainframe</text>
   </g>
 </svg>

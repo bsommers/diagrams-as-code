@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 395" width="1040" height="395">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 395" width="1560" height="592.5">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
@@ -6,26 +6,23 @@
     <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#00D2FF"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <g id="group_1">
     <rect x="58.21" y="80" width="173.57" height="235" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="74.21" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Facilities Automation</text>
+    <text x="74.21" y="104" fill="#00D2FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Facilities Automation</text>
   </g>
   <g id="group_2">
     <rect x="310" y="80" width="170" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="326" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Critical Power</text>
+    <text x="326" y="104" fill="#00D2FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Critical Power</text>
   </g>
   <g id="group_3">
     <rect x="545.78" y="80" width="198.45" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="561.78" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Compute &amp; Virtualization</text>
+    <text x="561.78" y="104" fill="#00D2FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Compute &amp; Virtualization</text>
   </g>
   <g id="group_4">
     <rect x="808.6" y="80" width="172.81" height="145" rx="8" fill="#0E2A4D" stroke="#1D4573" stroke-width="1.5" />
-    <text x="824.6" y="104" fill="#00D2FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Remote Management</text>
+    <text x="824.6" y="104" fill="#00D2FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Remote Management</text>
   </g>
   <path d="M 145 200 L 145 230" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <path d="M 455 170 L 585 170" fill="none" stroke="#00D2FF" stroke-width="2" marker-end="url(#arrow)" />
@@ -33,21 +30,21 @@
   <path d="M 205 170 L 295 170 L 295 240 L 820 240 L 820 170 L 835 170" fill="none" stroke="#00D2FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="100.88" y="206" width="88.25" height="18" rx="9" fill="#133663" />
-  <text x="145" y="218.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Interlock Trigger</text>
+  <text x="145" y="218.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Interlock Trigger</text>
 </g>
   <g class="badge">
   <rect x="476.71" y="161" width="86.59" height="18" rx="9" fill="#133663" />
-  <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">AC Power Feed</text>
+  <text x="520" y="173.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">AC Power Feed</text>
 </g>
   <g class="badge">
   <rect x="714.09" y="148" width="113.82" height="18" rx="9" fill="#133663" />
-  <text x="771" y="160.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Remote IPMI Console</text>
+  <text x="771" y="160.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Remote IPMI Console</text>
 </g>
   <g class="badge">
   <rect x="503.66" y="231" width="107.68" height="18" rx="9" fill="#133663" />
-  <text x="557.5" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Telemetry Telemetry</text>
+  <text x="557.5" y="243.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Telemetry Telemetry</text>
 </g>
-  <g id="env_sensors" filter="url(#shadow)">
+  <g id="env_sensors">
     <rect x="85" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-sensor" transform="translate(133.6, 143.2) scale(0.95)">
   <path d="M 4 4 A 11 11 0 0 1 20 4" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
@@ -55,17 +52,17 @@
   <rect x="10" y="10" width="4" height="11" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
   <line x1="8" y1="17" x2="16" y2="17" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Environmental &amp;</tspan> <tspan x="145" dy="14.4">Smoke Sensors</tspan></text>
+    <text x="145" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Environmental &amp;</tspan> <tspan x="145" dy="14.4">Smoke Sensors</tspan></text>
   </g>
-  <g id="fire_suppress" filter="url(#shadow)">
+  <g id="fire_suppress">
     <rect x="85" y="230" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-shield" transform="translate(133.6, 233.2) scale(0.95)">
   <path d="M 12 2 L 20 6 V 12 C 20 17 12 22 12 22 C 12 22 4 17 4 12 V 6 Z" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linejoin="round"/>
   <polyline points="9,12 11,14 15,10" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-    <text x="145" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Clean Agent Fire</tspan> <tspan x="145" dy="14.4">Extinguishing</tspan></text>
+    <text x="145" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="145" dy="0">Clean Agent Fire</tspan> <tspan x="145" dy="14.4">Extinguishing</tspan></text>
   </g>
-  <g id="ups_lithium" filter="url(#shadow)">
+  <g id="ups_lithium">
     <rect x="335" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-ups" transform="translate(383.6, 143.2) scale(0.95)">
   <rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
@@ -73,9 +70,9 @@
   <line x1="16" y1="2" x2="16" y2="5" stroke="#00D2FF" stroke-width="2"/>
   <polygon points="12,8 9,13 12,13 11,17 15,12 12,12" fill="#00D2FF"/>
 </g>
-    <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Modular Lithium-Ion</tspan> <tspan x="395" dy="14.4">UPS (10kVA)</tspan></text>
+    <text x="395" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="395" dy="0">Modular Lithium-Ion</tspan> <tspan x="395" dy="14.4">UPS (10kVA)</tspan></text>
   </g>
-  <g id="hyperconverged" filter="url(#shadow)">
+  <g id="hyperconverged">
     <rect x="585" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-cluster" transform="translate(633.6, 143.2) scale(0.95)">
   <rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#00D2FF" stroke-width="2"/>
@@ -84,9 +81,9 @@
   <line x1="12" y1="10" x2="6.5" y2="13" stroke="#00D2FF" stroke-width="2"/>
   <line x1="12" y1="10" x2="17.5" y2="13" stroke="#00D2FF" stroke-width="2"/>
 </g>
-    <text x="645" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">3-Node Proxmox</tspan> <tspan x="645" dy="14.4">Micro-Cluster</tspan></text>
+    <text x="645" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="645" dy="0">3-Node Proxmox</tspan> <tspan x="645" dy="14.4">Micro-Cluster</tspan></text>
   </g>
-  <g id="cellular_oob" filter="url(#shadow)">
+  <g id="cellular_oob">
     <rect x="835" y="140" width="120" height="60" rx="6" fill="#133663" stroke="#4DA6FF" stroke-width="2" />
     <g class="icon icon-router" transform="translate(883.6, 143.2) scale(0.95)">
   <rect x="3" y="12" width="18" height="8" rx="2" fill="none" stroke="#00D2FF" stroke-width="2"/>
@@ -98,6 +95,6 @@
   <circle cx="12" cy="16" r="1.2" fill="#00D2FF"/>
   <circle cx="16" cy="16" r="1.2" fill="#00D2FF"/>
 </g>
-    <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">5G Out-of-Band</tspan> <tspan x="895" dy="14.4">Gateway</tspan></text>
+    <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">5G Out-of-Band</tspan> <tspan x="895" dy="14.4">Gateway</tspan></text>
   </g>
 </svg>

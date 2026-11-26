@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 395" width="1040" height="395">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 395" width="1560" height="592.5">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFFF00"/>
@@ -6,26 +6,23 @@
     <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#FFFF00"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#000000"/>
   <g id="group_1">
     <rect x="60" y="80" width="170" height="145" rx="8" fill="#121212" stroke="#FFFFFF" stroke-width="1.5" />
-    <text x="76" y="104" fill="#FFFF00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Tier 0 Root Trust</text>
+    <text x="76" y="104" fill="#FFFF00" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Tier 0 Root Trust</text>
   </g>
   <g id="group_2">
     <rect x="302.38" y="80" width="185.25" height="235" rx="8" fill="#121212" stroke="#FFFFFF" stroke-width="1.5" />
-    <text x="318.38" y="104" fill="#FFFF00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Tier 1 Issuing Sub-CAs</text>
+    <text x="318.38" y="104" fill="#FFFF00" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Tier 1 Issuing Sub-CAs</text>
   </g>
   <g id="group_3">
     <rect x="560" y="80" width="170" height="145" rx="8" fill="#121212" stroke="#FFFFFF" stroke-width="1.5" />
-    <text x="576" y="104" fill="#FFFF00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Revocation Services</text>
+    <text x="576" y="104" fill="#FFFF00" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Revocation Services</text>
   </g>
   <g id="group_4">
     <rect x="810" y="80" width="170" height="235" rx="8" fill="#121212" stroke="#FFFFFF" stroke-width="1.5" />
-    <text x="826" y="104" fill="#FFFF00" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Tier 2 End Entities</text>
+    <text x="826" y="104" fill="#FFFF00" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Tier 2 End Entities</text>
   </g>
   <path d="M 205 170 L 335 170" fill="none" stroke="#FFFF00" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 205 170 L 270 170 L 270 260 L 335 260" fill="none" stroke="#FFFF00" stroke-width="2" marker-end="url(#arrow)" />
@@ -34,21 +31,21 @@
   <path d="M 455 260 L 835 260" fill="none" stroke="#FFFF00" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="230.6" y="161" width="78.81" height="18" rx="9" fill="#000000" />
-  <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Signs Sub-CA</text>
+  <text x="270" y="173.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Signs Sub-CA</text>
 </g>
   <g class="badge">
   <rect x="479.93" y="148" width="82.14" height="18" rx="9" fill="#000000" />
-  <text x="521" y="160.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Publishes CRL</text>
+  <text x="521" y="160.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Publishes CRL</text>
 </g>
   <g class="badge">
   <rect x="701.16" y="231" width="87.69" height="18" rx="9" fill="#000000" />
-  <text x="745" y="243.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issues TLS Cert</text>
+  <text x="745" y="243.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issues TLS Cert</text>
 </g>
   <g class="badge">
   <rect x="593.65" y="251" width="102.71" height="18" rx="9" fill="#000000" />
-  <text x="645" y="263.44" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issues Signing Cert</text>
+  <text x="645" y="263.44" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Issues Signing Cert</text>
 </g>
-  <g id="root_ca" filter="url(#shadow)">
+  <g id="root_ca">
     <rect x="85" y="140" width="120" height="60" rx="6" fill="#000000" stroke="#FFFF00" stroke-width="2" />
     <g class="icon icon-vault" transform="translate(133.6, 149.8) scale(0.95)">
   <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#FFFF00" stroke-width="2"/>
@@ -59,9 +56,9 @@
   <line x1="15" y1="12" x2="17" y2="12" stroke="#FFFF00" stroke-width="2"/>
   <circle cx="12" cy="12" r="1.5" fill="#FFFF00"/>
 </g>
-    <text x="145" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Offline Root CA</text>
+    <text x="145" y="186.87" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Offline Root CA</text>
   </g>
-  <g id="tls_ca" filter="url(#shadow)">
+  <g id="tls_ca">
     <rect x="335" y="140" width="120" height="60" rx="6" fill="#000000" stroke="#FFFF00" stroke-width="2" />
     <g class="icon icon-key" transform="translate(383.6, 149.8) scale(0.95)">
   <circle cx="8" cy="14" r="5" fill="none" stroke="#FFFF00" stroke-width="2"/>
@@ -69,9 +66,9 @@
   <line x1="17" y1="5" x2="19" y2="7" stroke="#FFFF00" stroke-width="2" stroke-linecap="round"/>
   <line x1="19" y1="7" x2="21" y2="9" stroke="#FFFF00" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="395" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">TLS Issuing CA</text>
+    <text x="395" y="186.87" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">TLS Issuing CA</text>
   </g>
-  <g id="code_ca" filter="url(#shadow)">
+  <g id="code_ca">
     <rect x="335" y="230" width="120" height="60" rx="6" fill="#000000" stroke="#FFFF00" stroke-width="2" />
     <g class="icon icon-key" transform="translate(383.6, 239.8) scale(0.95)">
   <circle cx="8" cy="14" r="5" fill="none" stroke="#FFFF00" stroke-width="2"/>
@@ -79,9 +76,9 @@
   <line x1="17" y1="5" x2="19" y2="7" stroke="#FFFF00" stroke-width="2" stroke-linecap="round"/>
   <line x1="19" y1="7" x2="21" y2="9" stroke="#FFFF00" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="395" y="276.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Code Signing CA</text>
+    <text x="395" y="276.87" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Code Signing CA</text>
   </g>
-  <g id="ocsp" filter="url(#shadow)">
+  <g id="ocsp">
     <rect x="585" y="140" width="120" height="60" rx="6" fill="#000000" stroke="#FFFF00" stroke-width="2" />
     <g class="icon icon-server" transform="translate(633.6, 149.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFFF00" stroke-width="2"/>
@@ -91,9 +88,9 @@
   <circle cx="6" cy="17" r="1" fill="#FFFF00"/>
   <circle cx="9" cy="17" r="1" fill="#FFFF00"/>
 </g>
-    <text x="645" y="186.87" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">OCSP Responder</text>
+    <text x="645" y="186.87" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">OCSP Responder</text>
   </g>
-  <g id="web_svr" filter="url(#shadow)">
+  <g id="web_svr">
     <rect x="835" y="140" width="120" height="60" rx="6" fill="#000000" stroke="#FFFF00" stroke-width="2" />
     <g class="icon icon-server" transform="translate(883.6, 143.2) scale(0.95)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#FFFF00" stroke-width="2"/>
@@ -103,14 +100,14 @@
   <circle cx="6" cy="17" r="1" fill="#FFFF00"/>
   <circle cx="9" cy="17" r="1" fill="#FFFF00"/>
 </g>
-    <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Production</tspan> <tspan x="895" dy="14.4">Web Host</tspan></text>
+    <text x="895" y="179.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Production</tspan> <tspan x="895" dy="14.4">Web Host</tspan></text>
   </g>
-  <g id="dev_ws" filter="url(#shadow)">
+  <g id="dev_ws">
     <rect x="835" y="230" width="120" height="60" rx="6" fill="#000000" stroke="#FFFF00" stroke-width="2" />
     <g class="icon icon-laptop" transform="translate(883.6, 233.2) scale(0.95)">
   <rect x="4" y="5" width="16" height="11" rx="1" fill="none" stroke="#FFFF00" stroke-width="2"/>
   <path d="M 2 19 H 22 L 20 16 H 4 Z" fill="none" stroke="#FFFF00" stroke-width="2" stroke-linejoin="round"/>
 </g>
-    <text x="895" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Developer</tspan> <tspan x="895" dy="14.4">Workstation</tspan></text>
+    <text x="895" y="269.33" text-anchor="middle" fill="#FFFFFF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="895" dy="0">Developer</tspan> <tspan x="895" dy="14.4">Workstation</tspan></text>
   </g>
 </svg>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1022 518" width="1022" height="518">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1022 518" width="1533" height="777">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#0066CC"/>
@@ -6,141 +6,138 @@
     <marker id="arrow-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#0066CC"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#FFFFFF"/>
-  <g id="tbl_customers" filter="url(#shadow)">
+  <g id="tbl_customers">
     <rect x="60" y="90" width="222" height="116" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <text x="171" y="109.22" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">customers</text>
+    <text x="171" y="109.22" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">customers</text>
   </g>
-  <g id="tbl_orders" filter="url(#shadow)">
+  <g id="tbl_orders">
     <rect x="400" y="72" width="222" height="134" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <text x="511" y="91.22" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">orders</text>
+    <text x="511" y="91.22" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">orders</text>
   </g>
-  <g id="tbl_order_items" filter="url(#shadow)">
+  <g id="tbl_order_items">
     <rect x="740" y="72" width="222" height="134" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <text x="851" y="91.22" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">order_items</text>
+    <text x="851" y="91.22" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">order_items</text>
   </g>
-  <g id="tbl_addresses" filter="url(#shadow)">
+  <g id="tbl_addresses">
     <rect x="60" y="330" width="222" height="116" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <text x="171" y="349.22" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">addresses</text>
+    <text x="171" y="349.22" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">addresses</text>
   </g>
-  <g id="tbl_products" filter="url(#shadow)">
+  <g id="tbl_products">
     <rect x="740" y="330" width="222" height="116" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2" />
-    <text x="851" y="349.22" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">products</text>
+    <text x="851" y="349.22" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">products</text>
   </g>
   <path d="M 282 137 L 400 137" fill="none" stroke="#0066CC" stroke-width="1.3" />
   <path d="M 622 119 L 740 119" fill="none" stroke="#0066CC" stroke-width="1.3" />
   <path d="M 851 206 L 851 330" fill="none" stroke="#0066CC" stroke-width="1.3" />
   <path d="M 171 206 L 171 330" fill="none" stroke="#0066CC" stroke-width="1.3" />
   <g id="text_2">
-    <text x="70" y="137.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
-    <text x="70" y="155.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">UQ</text>
-    <text x="70" y="173.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
-    <text x="70" y="191.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="70" y="137.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
+    <text x="70" y="155.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">UQ</text>
+    <text x="70" y="173.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="70" y="191.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
   </g>
   <g id="text_3">
-    <text x="116" y="137.13" text-anchor="start" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="116" dy="0">customer_id</tspan> <tspan x="116" dy="18">email</tspan> <tspan x="116" dy="18">full_name</tspan> <tspan x="116" dy="18">created_at</tspan></text>
+    <text x="116" y="137.13" text-anchor="start" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="116" dy="0">customer_id</tspan> <tspan x="116" dy="18">email</tspan> <tspan x="116" dy="18">full_name</tspan> <tspan x="116" dy="18">created_at</tspan></text>
   </g>
   <g id="text_4">
-    <text x="198" y="137.13" text-anchor="start" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="198" dy="0">bigint</tspan> <tspan x="198" dy="18">varchar(255)</tspan> <tspan x="198" dy="18">varchar(120)</tspan> <tspan x="198" dy="18">timestamptz</tspan></text>
+    <text x="198" y="137.13" text-anchor="start" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="198" dy="0">bigint</tspan> <tspan x="198" dy="18">varchar(255)</tspan> <tspan x="198" dy="18">varchar(120)</tspan> <tspan x="198" dy="18">timestamptz</tspan></text>
   </g>
   <g id="text_6">
-    <text x="410" y="119.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
-    <text x="410" y="137.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">FK</text>
-    <text x="410" y="155.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
-    <text x="410" y="173.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
-    <text x="410" y="191.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="410" y="119.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
+    <text x="410" y="137.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">FK</text>
+    <text x="410" y="155.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="410" y="173.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="410" y="191.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
   </g>
   <g id="text_7">
-    <text x="456" y="119.13" text-anchor="start" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="456" dy="0">order_id</tspan> <tspan x="456" dy="18">customer_id</tspan> <tspan x="456" dy="18">status</tspan> <tspan x="456" dy="18">placed_at</tspan> <tspan x="456" dy="18">total_cents</tspan></text>
+    <text x="456" y="119.13" text-anchor="start" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="456" dy="0">order_id</tspan> <tspan x="456" dy="18">customer_id</tspan> <tspan x="456" dy="18">status</tspan> <tspan x="456" dy="18">placed_at</tspan> <tspan x="456" dy="18">total_cents</tspan></text>
   </g>
   <g id="text_8">
-    <text x="538" y="119.13" text-anchor="start" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="538" dy="0">bigint</tspan> <tspan x="538" dy="18">bigint</tspan> <tspan x="538" dy="18">order_status</tspan> <tspan x="538" dy="18">timestamptz</tspan> <tspan x="538" dy="18">integer</tspan></text>
+    <text x="538" y="119.13" text-anchor="start" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="538" dy="0">bigint</tspan> <tspan x="538" dy="18">bigint</tspan> <tspan x="538" dy="18">order_status</tspan> <tspan x="538" dy="18">timestamptz</tspan> <tspan x="538" dy="18">integer</tspan></text>
   </g>
   <g id="text_10">
-    <text x="750" y="119.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK FK</text>
-    <text x="750" y="137.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
-    <text x="750" y="155.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">FK</text>
-    <text x="750" y="173.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
-    <text x="750" y="191.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="750" y="119.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK FK</text>
+    <text x="750" y="137.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
+    <text x="750" y="155.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">FK</text>
+    <text x="750" y="173.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="750" y="191.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
   </g>
   <g id="text_11">
-    <text x="796" y="119.13" text-anchor="start" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="796" dy="0">order_id</tspan> <tspan x="796" dy="18">line_no</tspan> <tspan x="796" dy="18">product_id</tspan> <tspan x="796" dy="18">quantity</tspan> <tspan x="796" dy="18">unit_cents</tspan></text>
+    <text x="796" y="119.13" text-anchor="start" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="796" dy="0">order_id</tspan> <tspan x="796" dy="18">line_no</tspan> <tspan x="796" dy="18">product_id</tspan> <tspan x="796" dy="18">quantity</tspan> <tspan x="796" dy="18">unit_cents</tspan></text>
   </g>
   <g id="text_12">
-    <text x="878" y="119.13" text-anchor="start" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="878" dy="0">bigint</tspan> <tspan x="878" dy="18">smallint</tspan> <tspan x="878" dy="18">bigint</tspan> <tspan x="878" dy="18">integer</tspan> <tspan x="878" dy="18">integer</tspan></text>
+    <text x="878" y="119.13" text-anchor="start" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="878" dy="0">bigint</tspan> <tspan x="878" dy="18">smallint</tspan> <tspan x="878" dy="18">bigint</tspan> <tspan x="878" dy="18">integer</tspan> <tspan x="878" dy="18">integer</tspan></text>
   </g>
   <g id="text_14">
-    <text x="70" y="377.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
-    <text x="70" y="395.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">FK</text>
-    <text x="70" y="413.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
-    <text x="70" y="431.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="70" y="377.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
+    <text x="70" y="395.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">FK</text>
+    <text x="70" y="413.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="70" y="431.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
   </g>
   <g id="text_15">
-    <text x="116" y="377.13" text-anchor="start" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="116" dy="0">address_id</tspan> <tspan x="116" dy="18">customer_id</tspan> <tspan x="116" dy="18">line1</tspan> <tspan x="116" dy="18">postcode</tspan></text>
+    <text x="116" y="377.13" text-anchor="start" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="116" dy="0">address_id</tspan> <tspan x="116" dy="18">customer_id</tspan> <tspan x="116" dy="18">line1</tspan> <tspan x="116" dy="18">postcode</tspan></text>
   </g>
   <g id="text_16">
-    <text x="198" y="377.13" text-anchor="start" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="198" dy="0">bigint</tspan> <tspan x="198" dy="18">bigint</tspan> <tspan x="198" dy="18">varchar(200)</tspan> <tspan x="198" dy="18">varchar(16)</tspan></text>
+    <text x="198" y="377.13" text-anchor="start" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="198" dy="0">bigint</tspan> <tspan x="198" dy="18">bigint</tspan> <tspan x="198" dy="18">varchar(200)</tspan> <tspan x="198" dy="18">varchar(16)</tspan></text>
   </g>
   <g id="text_18">
-    <text x="750" y="377.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
-    <text x="750" y="395.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">UQ</text>
-    <text x="750" y="413.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
-    <text x="750" y="431.13" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="750" y="377.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">PK</text>
+    <text x="750" y="395.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">UQ</text>
+    <text x="750" y="413.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
+    <text x="750" y="431.13" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start"> </text>
   </g>
   <g id="text_19">
-    <text x="796" y="377.13" text-anchor="start" fill="#111111" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="796" dy="0">product_id</tspan> <tspan x="796" dy="18">sku</tspan> <tspan x="796" dy="18">title</tspan> <tspan x="796" dy="18">price_cents</tspan></text>
+    <text x="796" y="377.13" text-anchor="start" fill="#111111" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="796" dy="0">product_id</tspan> <tspan x="796" dy="18">sku</tspan> <tspan x="796" dy="18">title</tspan> <tspan x="796" dy="18">price_cents</tspan></text>
   </g>
   <g id="text_20">
-    <text x="878" y="377.13" text-anchor="start" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="878" dy="0">bigint</tspan> <tspan x="878" dy="18">varchar(32)</tspan> <tspan x="878" dy="18">varchar(200)</tspan> <tspan x="878" dy="18">integer</tspan></text>
+    <text x="878" y="377.13" text-anchor="start" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan x="878" dy="0">bigint</tspan> <tspan x="878" dy="18">varchar(32)</tspan> <tspan x="878" dy="18">varchar(200)</tspan> <tspan x="878" dy="18">integer</tspan></text>
   </g>
   <g id="text_21">
-    <text x="288" y="130.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
+    <text x="288" y="130.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
   </g>
   <g id="text_22">
-    <text x="371.99" y="130.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">0..N</text>
+    <text x="371.99" y="130.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">0..N</text>
   </g>
   <g id="text_23">
-    <text x="323.66" y="152.63" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">places</text>
+    <text x="323.66" y="152.63" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">places</text>
   </g>
   <g id="text_24">
-    <text x="628" y="112.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
+    <text x="628" y="112.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
   </g>
   <g id="text_25">
-    <text x="711.99" y="112.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1..N</text>
+    <text x="711.99" y="112.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1..N</text>
   </g>
   <g id="text_26">
-    <text x="658.65" y="134.63" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">contains</text>
+    <text x="658.65" y="134.63" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">contains</text>
   </g>
   <g id="text_27">
-    <text x="862" y="223.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">0..N</text>
+    <text x="862" y="223.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">0..N</text>
   </g>
   <g id="text_28">
-    <text x="862" y="320.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
+    <text x="862" y="320.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
   </g>
   <g id="text_29">
-    <text x="810.98" y="272.13" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">sold as</text>
+    <text x="810.98" y="272.13" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">sold as</text>
   </g>
   <g id="text_30">
-    <text x="182" y="223.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
+    <text x="182" y="223.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">1</text>
   </g>
   <g id="text_31">
-    <text x="182" y="320.63" fill="#B03A2E" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">0..N</text>
+    <text x="182" y="320.63" fill="#B03A2E" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="start">0..N</text>
   </g>
   <g id="text_32">
-    <text x="127.64" y="272.13" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">ships to</text>
+    <text x="127.64" y="272.13" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" text-anchor="start">ships to</text>
   </g>
   <g id="text_33">
-    <text x="345" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="16.67" lengthAdjust="spacingAndGlyphs">PK</text>
-    <text x="361.67" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="78.68" lengthAdjust="spacingAndGlyphs"> primary key    </text>
-    <text x="440.35" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" textLength="15.33" lengthAdjust="spacingAndGlyphs">FK</text>
-    <text x="455.68" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="75.37" lengthAdjust="spacingAndGlyphs"> foreign key    </text>
-    <text x="531.05" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" textLength="18" lengthAdjust="spacingAndGlyphs">UQ</text>
-    <text x="549.05" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="39.37" lengthAdjust="spacingAndGlyphs"> unique</text>
-    <text x="345" y="329.33" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Read each end: one customer places 0..N orders;</text>
-    <text x="345" y="346.13" fill="#5A6478" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">every order contains at least one item.</text>
+    <text x="345" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" textLength="16.67" lengthAdjust="spacingAndGlyphs">PK</text>
+    <text x="361.67" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="78.68" lengthAdjust="spacingAndGlyphs"> primary key    </text>
+    <text x="440.35" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" textLength="15.33" lengthAdjust="spacingAndGlyphs">FK</text>
+    <text x="455.68" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="75.37" lengthAdjust="spacingAndGlyphs"> foreign key    </text>
+    <text x="531.05" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" textLength="18" lengthAdjust="spacingAndGlyphs">UQ</text>
+    <text x="549.05" y="312.53" xml:space="preserve" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" textLength="39.37" lengthAdjust="spacingAndGlyphs"> unique</text>
+    <text x="345" y="329.33" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">Read each end: one customer places 0..N orders;</text>
+    <text x="345" y="346.13" fill="#5A6478" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="start">every order contains at least one item.</text>
   </g>
 </svg>

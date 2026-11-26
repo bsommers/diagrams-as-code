@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 934" width="830" height="934">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 934" width="1245" height="1401">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00D2FF"/>
@@ -30,9 +30,6 @@
     <marker id="arrow-F9A8D4-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#F9A8D4"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#0B1E36"/>
   <path d="M 270 467 C 310 467, 310 338, 350 338" fill="none" stroke="#7DD3FC" stroke-width="3.5" />
@@ -50,69 +47,69 @@
   <path d="M 500 596 C 540 596, 540 689, 580 689" fill="none" stroke="#F9A8D4" stroke-width="1.8" />
   <path d="M 500 596 C 541.75 596, 538.25 763, 580 763" fill="none" stroke="#F9A8D4" stroke-width="1.8" />
   <path d="M 500 596 C 560.25 596, 519.75 837, 580 837" fill="none" stroke="#F9A8D4" stroke-width="1.8" />
-  <g id="shape_1" filter="url(#shadow)">
+  <g id="shape_1">
     <rect x="60" y="430" width="210" height="74" rx="37" fill="#E0F2FE" stroke="#E0F2FE" stroke-width="2" />
-    <text x="165" y="462.65" fill="#0C2340" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Cloud Certification</text>
-    <text x="165" y="483.05" fill="#0C2340" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Roadmap</text>
+    <text x="165" y="462.65" fill="#0C2340" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Cloud Certification</text>
+    <text x="165" y="483.05" fill="#0C2340" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Roadmap</text>
   </g>
-  <g id="shape_2" filter="url(#shadow)">
+  <g id="shape_2">
     <rect x="350" y="315" width="150" height="46" rx="23" fill="#7DD3FC" stroke="#7DD3FC" stroke-width="2" />
-    <text x="425" y="343.16" fill="#0C2340" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Foundations</text>
+    <text x="425" y="343.16" fill="#0C2340" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Foundations</text>
   </g>
-  <g id="shape_3" filter="url(#shadow)">
+  <g id="shape_3">
     <rect x="580" y="80" width="190" height="34" rx="17" fill="#0C2340" stroke="#7DD3FC" stroke-width="1.5" />
-    <text x="675" y="101.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cloud Concepts</text>
+    <text x="675" y="101.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cloud Concepts</text>
   </g>
-  <g id="shape_4" filter="url(#shadow)">
+  <g id="shape_4">
     <rect x="580" y="154" width="190" height="34" rx="17" fill="#0C2340" stroke="#7DD3FC" stroke-width="1.5" />
-    <text x="675" y="175.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Billing &amp; Pricing</text>
+    <text x="675" y="175.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Billing &amp; Pricing</text>
   </g>
-  <g id="shape_5" filter="url(#shadow)">
+  <g id="shape_5">
     <rect x="580" y="228" width="190" height="34" rx="17" fill="#0C2340" stroke="#7DD3FC" stroke-width="1.5" />
-    <text x="675" y="249.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Shared Responsibility</text>
+    <text x="675" y="249.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Shared Responsibility</text>
   </g>
-  <g id="shape_6" filter="url(#shadow)">
+  <g id="shape_6">
     <rect x="350" y="401" width="150" height="46" rx="23" fill="#86EFAC" stroke="#86EFAC" stroke-width="2" />
-    <text x="425" y="429.16" fill="#0C2340" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Associate</text>
+    <text x="425" y="429.16" fill="#0C2340" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Associate</text>
   </g>
-  <g id="shape_7" filter="url(#shadow)">
+  <g id="shape_7">
     <rect x="580" y="302" width="190" height="34" rx="17" fill="#0C2340" stroke="#86EFAC" stroke-width="1.5" />
-    <text x="675" y="323.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Solutions Architect</text>
+    <text x="675" y="323.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Solutions Architect</text>
   </g>
-  <g id="shape_8" filter="url(#shadow)">
+  <g id="shape_8">
     <rect x="580" y="376" width="190" height="34" rx="17" fill="#0C2340" stroke="#86EFAC" stroke-width="1.5" />
-    <text x="675" y="397.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Developer</text>
+    <text x="675" y="397.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Developer</text>
   </g>
-  <g id="shape_9" filter="url(#shadow)">
+  <g id="shape_9">
     <rect x="580" y="450" width="190" height="34" rx="17" fill="#0C2340" stroke="#86EFAC" stroke-width="1.5" />
-    <text x="675" y="471.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">SysOps Admin</text>
+    <text x="675" y="471.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">SysOps Admin</text>
   </g>
-  <g id="shape_10" filter="url(#shadow)">
+  <g id="shape_10">
     <rect x="350" y="487" width="150" height="46" rx="23" fill="#FDE047" stroke="#FDE047" stroke-width="2" />
-    <text x="425" y="515.16" fill="#0C2340" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Professional</text>
+    <text x="425" y="515.16" fill="#0C2340" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Professional</text>
   </g>
-  <g id="shape_11" filter="url(#shadow)">
+  <g id="shape_11">
     <rect x="580" y="524" width="190" height="34" rx="17" fill="#0C2340" stroke="#FDE047" stroke-width="1.5" />
-    <text x="675" y="545.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Architect Pro</text>
+    <text x="675" y="545.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Architect Pro</text>
   </g>
-  <g id="shape_12" filter="url(#shadow)">
+  <g id="shape_12">
     <rect x="580" y="598" width="190" height="34" rx="17" fill="#0C2340" stroke="#FDE047" stroke-width="1.5" />
-    <text x="675" y="619.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DevOps Engineer Pro</text>
+    <text x="675" y="619.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">DevOps Engineer Pro</text>
   </g>
-  <g id="shape_13" filter="url(#shadow)">
+  <g id="shape_13">
     <rect x="350" y="573" width="150" height="46" rx="23" fill="#F9A8D4" stroke="#F9A8D4" stroke-width="2" />
-    <text x="425" y="601.16" fill="#0C2340" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Specialty</text>
+    <text x="425" y="601.16" fill="#0C2340" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Specialty</text>
   </g>
-  <g id="shape_14" filter="url(#shadow)">
+  <g id="shape_14">
     <rect x="580" y="672" width="190" height="34" rx="17" fill="#0C2340" stroke="#F9A8D4" stroke-width="1.5" />
-    <text x="675" y="693.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Security</text>
+    <text x="675" y="693.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Security</text>
   </g>
-  <g id="shape_15" filter="url(#shadow)">
+  <g id="shape_15">
     <rect x="580" y="746" width="190" height="34" rx="17" fill="#0C2340" stroke="#F9A8D4" stroke-width="1.5" />
-    <text x="675" y="767.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Advanced Networking</text>
+    <text x="675" y="767.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Advanced Networking</text>
   </g>
-  <g id="shape_16" filter="url(#shadow)">
+  <g id="shape_16">
     <rect x="580" y="820" width="190" height="34" rx="17" fill="#0C2340" stroke="#F9A8D4" stroke-width="1.5" />
-    <text x="675" y="841.47" fill="#F0F9FF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Machine Learning</text>
+    <text x="675" y="841.47" fill="#F0F9FF" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Machine Learning</text>
   </g>
 </svg>

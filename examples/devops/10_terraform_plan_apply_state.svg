@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1474 520" width="1474" height="520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1474 520" width="2211" height="780">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#268BD2"/>
@@ -12,26 +12,23 @@
     <marker id="arrow-B03A2E-tail" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 10 1 L 0 5 L 10 9 z" fill="#B03A2E"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
   <rect width="100%" height="100%" fill="#FDF6E3"/>
   <g id="group_1">
     <rect x="22.36" y="60" width="255.28" height="255" rx="8" fill="#EEE8D5" stroke="#93A1A1" stroke-width="1.5" />
-    <text x="38.36" y="84" fill="#268BD2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Desired state (version-controlled)</text>
+    <text x="38.36" y="84" fill="#268BD2" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Desired state (version-controlled)</text>
   </g>
   <g id="group_2">
     <rect x="330" y="60" width="810" height="185" rx="8" fill="#EEE8D5" stroke="#93A1A1" stroke-width="1.5" />
-    <text x="346" y="84" fill="#268BD2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Terraform workflow (CI job or workstation)</text>
+    <text x="346" y="84" fill="#268BD2" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Terraform workflow (CI job or workstation)</text>
   </g>
   <g id="group_3">
     <rect x="330" y="315" width="810" height="145" rx="8" fill="#EEE8D5" stroke="#93A1A1" stroke-width="1.5" />
-    <text x="346" y="339" fill="#268BD2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">State</text>
+    <text x="346" y="339" fill="#268BD2" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">State</text>
   </g>
   <g id="group_4">
     <rect x="1210" y="60" width="240" height="317.5" rx="8" fill="#EEE8D5" stroke="#93A1A1" stroke-width="1.5" />
-    <text x="1226" y="84" fill="#268BD2" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Real world</text>
+    <text x="1226" y="84" fill="#268BD2" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="start">Real world</text>
   </g>
   <path d="M 235 150 L 295 150 L 295 170 L 355 170" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
   <path d="M 235 260 L 295 260 L 295 170 L 355 170" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
@@ -46,45 +43,45 @@
   <path d="M 1330 180 L 1330 250" fill="none" stroke="#268BD2" stroke-width="2" marker-end="url(#arrow)" />
   <g class="badge">
   <rect x="276.99" y="151" width="36.01" height="18" rx="9" fill="#FFFFFF" />
-  <text x="295" y="163.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">read</text>
+  <text x="295" y="163.44" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">read</text>
 </g>
   <g class="badge">
   <rect x="276.99" y="206" width="36.01" height="18" rx="9" fill="#FFFFFF" />
-  <text x="295" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">read</text>
+  <text x="295" y="218.44" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">read</text>
 </g>
   <g class="badge">
   <rect x="724.77" y="161" width="40.46" height="18" rx="9" fill="#FFFFFF" />
-  <text x="745" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">tfplan</text>
+  <text x="745" y="173.44" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">tfplan</text>
 </g>
   <g class="badge">
   <rect x="906.15" y="161" width="57.7" height="18" rx="9" fill="#FFFFFF" />
-  <text x="935" y="173.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">approved</text>
+  <text x="935" y="173.44" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">approved</text>
 </g>
   <g class="badge">
   <rect x="444.47" y="96" width="101.06" height="18" rx="9" fill="#FFFFFF" />
-  <text x="495" y="108.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">changes requested</text>
+  <text x="495" y="108.44" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">changes requested</text>
 </g>
   <g class="badge">
   <rect x="381.64" y="278.5" width="97.72" height="18" rx="9" fill="#FFFFFF" />
-  <text x="430.5" y="290.94" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">configure backend</text>
+  <text x="430.5" y="290.94" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">configure backend</text>
 </g>
   <g class="badge">
   <rect x="609.76" y="278.5" width="60.47" height="18" rx="9" fill="#FFFFFF" />
-  <text x="640" y="290.94" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">read state</text>
+  <text x="640" y="290.94" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">read state</text>
 </g>
   <g class="badge">
   <rect x="986.48" y="278.5" width="106.03" height="18" rx="9" fill="#FFFFFF" />
-  <text x="1039.5" y="290.94" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">lock, write new state</text>
+  <text x="1039.5" y="290.94" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">lock, write new state</text>
 </g>
   <g class="badge">
   <rect x="1148.93" y="139.25" width="52.14" height="41.5" rx="9" fill="#FFFFFF" />
-  <text x="1175" y="150.94" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="1175" dy="0">create /</tspan> <tspan x="1175" dy="12.5">update /</tspan> <tspan x="1175" dy="12.5">destroy</tspan></text>
+  <text x="1175" y="150.94" text-anchor="middle" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600"><tspan x="1175" dy="0">create /</tspan> <tspan x="1175" dy="12.5">update /</tspan> <tspan x="1175" dy="12.5">destroy</tspan></text>
 </g>
   <g class="badge">
   <rect x="1301.99" y="206" width="56.02" height="18" rx="9" fill="#FFFFFF" />
-  <text x="1330" y="218.44" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">reconcile</text>
+  <text x="1330" y="218.44" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" text-anchor="middle">reconcile</text>
 </g>
-  <g id="config" filter="url(#shadow)">
+  <g id="config">
     <rect x="65" y="120" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-document" transform="translate(138.6, 129.8) scale(0.95)">
   <path d="M 14 2 H 6 A 2 2 0 0 0 4 4 V 20 A 2 2 0 0 0 6 22 H 18 A 2 2 0 0 0 20 20 V 8 Z" fill="none" stroke="#268BD2" stroke-width="2" stroke-linejoin="round"/>
@@ -92,9 +89,9 @@
   <line x1="8" y1="13" x2="16" y2="13" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
   <line x1="8" y1="17" x2="14" y2="17" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="150" y="166.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Configuration .tf</text>
+    <text x="150" y="166.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Configuration .tf</text>
   </g>
-  <g id="tfvars" filter="url(#shadow)">
+  <g id="tfvars">
     <rect x="65" y="230" width="170" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-key" transform="translate(138.6, 239.8) scale(0.95)">
   <circle cx="8" cy="14" r="5" fill="none" stroke="#268BD2" stroke-width="2"/>
@@ -102,40 +99,40 @@
   <line x1="17" y1="5" x2="19" y2="7" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
   <line x1="19" y1="7" x2="21" y2="9" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="150" y="276.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Variables and tfvars</text>
+    <text x="150" y="276.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Variables and tfvars</text>
   </g>
-  <g id="init" filter="url(#shadow)">
+  <g id="init">
     <rect x="355" y="140" width="150" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(418.6, 149.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#268BD2" stroke-width="2"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#268BD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="15" x2="17" y2="15" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="430" y="186.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">terraform init</text>
+    <text x="430" y="186.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">terraform init</text>
   </g>
-  <g id="plan" filter="url(#shadow)">
+  <g id="plan">
     <rect x="565" y="140" width="150" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(628.6, 149.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#268BD2" stroke-width="2"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#268BD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="15" x2="17" y2="15" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="640" y="186.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">terraform plan</text>
+    <text x="640" y="186.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">terraform plan</text>
   </g>
-  <g id="review" filter="url(#shadow)">
+  <g id="review">
     <path d="M 840 120 L 905 170 L 840 220 L 775 170 Z" fill="#FFFFFF" stroke="#268BD2" stroke-width="2"/>
-    <text x="840" y="166.93" text-anchor="middle" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="840" dy="0">Plan</tspan> <tspan x="840" dy="14.4">reviewed?</tspan></text>
+    <text x="840" y="166.93" text-anchor="middle" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500"><tspan x="840" dy="0">Plan</tspan> <tspan x="840" dy="14.4">reviewed?</tspan></text>
   </g>
-  <g id="apply" filter="url(#shadow)">
+  <g id="apply">
     <rect x="965" y="140" width="150" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-terminal" transform="translate(1028.6, 149.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#268BD2" stroke-width="2"/>
   <polyline points="7,9 10,12 7,15" fill="none" stroke="#268BD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="12" y1="15" x2="17" y2="15" stroke="#268BD2" stroke-width="2" stroke-linecap="round"/>
 </g>
-    <text x="1040" y="186.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">terraform apply</text>
+    <text x="1040" y="186.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">terraform apply</text>
   </g>
-  <g id="state" filter="url(#shadow)">
+  <g id="state">
     <rect x="355" y="375" width="760" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-database" transform="translate(723.6, 384.8) scale(0.95)">
   <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#268BD2" stroke-width="2"/>
@@ -144,16 +141,16 @@
   <line x1="4" y1="6" x2="4" y2="18" stroke="#268BD2" stroke-width="2"/>
   <line x1="20" y1="6" x2="20" y2="18" stroke="#268BD2" stroke-width="2"/>
 </g>
-    <text x="735" y="421.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Remote State Backend with state lock (versioned, encrypted)</text>
+    <text x="735" y="421.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Remote State Backend with state lock (versioned, encrypted)</text>
   </g>
-  <g id="api" filter="url(#shadow)">
+  <g id="api">
     <rect x="1235" y="120" width="190" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-cloud" transform="translate(1318.6, 129.8) scale(0.95)">
   <path d="M 6.5 19 H 17.5 A 4 4 0 0 0 17.5 11 A 5.5 5.5 0 0 0 7 12 A 4 4 0 0 0 6.5 19 Z" fill="none" stroke="#268BD2" stroke-width="2" stroke-linejoin="round"/>
 </g>
-    <text x="1330" y="166.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cloud Provider API</text>
+    <text x="1330" y="166.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Cloud Provider API</text>
   </g>
-  <g id="infra" filter="url(#shadow)">
+  <g id="infra">
     <rect x="1235" y="250" width="190" height="60" rx="6" fill="#FFFFFF" stroke="#268BD2" stroke-width="2" />
     <g class="icon icon-server" transform="translate(1318.6, 259.8) scale(0.95)">
   <rect x="3" y="4" width="18" height="6" rx="2" fill="none" stroke="#268BD2" stroke-width="2"/>
@@ -163,9 +160,9 @@
   <circle cx="6" cy="17" r="1" fill="#268BD2"/>
   <circle cx="9" cy="17" r="1" fill="#268BD2"/>
 </g>
-    <text x="1330" y="296.87" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Real Infrastructure</text>
+    <text x="1330" y="296.87" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Real Infrastructure</text>
   </g>
   <g id="text_5">
-    <text x="1255.09" y="335.66" text-anchor="start" fill="#073642" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic"><tspan x="1255.09" dy="0">plan also refreshes against the</tspan> <tspan x="1255.09" dy="13.75">API with read-only calls</tspan></text>
+    <text x="1255.09" y="335.66" text-anchor="start" fill="#073642" font-family="Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-style="italic"><tspan x="1255.09" dy="0">plan also refreshes against the</tspan> <tspan x="1255.09" dy="13.75">API with read-only calls</tspan></text>
   </g>
 </svg>
