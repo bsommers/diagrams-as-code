@@ -26,6 +26,7 @@ from diagrams_as_code.diagram import Diagram
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.sidecar import export_layout
 from diagrams_as_code.output import FORMATS, render_all
+from diagrams_as_code.renderer_svg import SHADOWS
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import list_themes
 
@@ -110,6 +111,10 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_false",
         help="disable interactive SVG output",
     )
+    render.add_argument("--shadow", choices=SHADOWS, help="node shadow style (default: none)")
+    render.add_argument("--scale", type=float, help="output size multiple of the viewBox (default: 1.5)")
+    render.add_argument("--font", help="font-family stack (env DIAGRAMS_AS_CODE_FONT)")
+    render.add_argument("--font-file", help="font file (.woff2/.woff/.ttf/.otf) to embed, or an http(s) URL")
     _add_layout_flags(render)
     _add_json_flag(render)
 
@@ -259,6 +264,10 @@ def _configure(diag: Diagram, args: argparse.Namespace, theme: Optional[str] = N
         layout_file=args.layout_file,
         theme=theme,
         interactive=getattr(args, "interactive", None),
+        shadow=getattr(args, "shadow", None),
+        scale=getattr(args, "scale", None),
+        font_family=getattr(args, "font", None),
+        font_file=getattr(args, "font_file", None),
     )
 
 

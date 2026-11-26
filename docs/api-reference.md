@@ -209,7 +209,7 @@ A built-in theme, `Theme.name` = `dracula`.
 
 ### `Diagram`
 
-`class Diagram(title: str = 'IIoT Architecture', width: Optional[float] = None, height: Optional[float] = None, theme: Union[Theme, str] = 'iiot_dark_gold', theme_overrides: Optional[dict[str, str]] = None, label_position: str = 'inside', layout: str = 'manual', direction: str = 'LR', layout_file: Optional[Union[str, Path]] = None, rank_gap: float = 80.0, node_gap: float = 40.0, interactive: bool = False, corner_radius: Optional[float] = None, arc_radius: Optional[float] = None, clearance: Optional[float] = None, routing: Optional[Union[Routing, str]] = None, fit_labels: bool = True, precision: int = 2, pixel_snap: bool = False, grid: float = 0.0) -> None`
+`class Diagram(title: str = 'IIoT Architecture', width: Optional[float] = None, height: Optional[float] = None, theme: Union[Theme, str] = 'iiot_dark_gold', theme_overrides: Optional[dict[str, str]] = None, label_position: str = 'inside', layout: str = 'manual', direction: str = 'LR', layout_file: Optional[Union[str, Path]] = None, rank_gap: float = 80.0, node_gap: float = 40.0, interactive: bool = False, corner_radius: Optional[float] = None, arc_radius: Optional[float] = None, clearance: Optional[float] = None, routing: Optional[Union[Routing, str]] = None, fit_labels: bool = True, precision: int = 2, pixel_snap: bool = False, shadow: Optional[str] = None, scale: Optional[float] = None, font_family: Optional[str] = None, font_file: Optional[Union[str, Path]] = None, grid: float = 0.0) -> None`
 
 Defined in `src/diagrams_as_code/diagram.py`; import with `from diagrams_as_code import Diagram`.
 
@@ -222,7 +222,7 @@ Public members:
 - `arc_radius` (property): Backward-compatible alias for corner_radius.
 - `clearance` (property): Default obstacle clearance buffer for edges in this diagram.
 - `routing` (property): Default routing strategy for edges in this diagram.
-- `configure(self, *, layout: Optional[str] = None, direction: Optional[str] = None, theme: Optional[Union[Theme, str]] = None, layout_file: Optional[Union[str, Path]] = None, rank_gap: Optional[float] = None, node_gap: Optional[float] = None, interactive: Optional[bool] = None, corner_radius: Optional[float] = None, arc_radius: Optional[float] = None, clearance: Optional[float] = None, routing: Optional[Union[Routing, str]] = None) -> Diagram`: Change layout or theme settings; layout changes re-solve on next render.
+- `configure(self, *, layout: Optional[str] = None, direction: Optional[str] = None, theme: Optional[Union[Theme, str]] = None, layout_file: Optional[Union[str, Path]] = None, rank_gap: Optional[float] = None, node_gap: Optional[float] = None, interactive: Optional[bool] = None, corner_radius: Optional[float] = None, arc_radius: Optional[float] = None, clearance: Optional[float] = None, routing: Optional[Union[Routing, str]] = None, shadow: Optional[str] = None, scale: Optional[float] = None, font_family: Optional[str] = None, font_file: Optional[Union[str, Path]] = None) -> Diagram`: Change layout, theme or render-style settings; layout changes re-solve on next render.
 - `all_elements(self) -> list[Element]`: Every shape and group, groups before their children, in declaration order.
 - `unit_basis` (property): UnitBasis coordinate converter for this diagram canvas.
 - `shape(self, label: str, width: float = 130.0, height: float = 60.0, kind: str = 'box', icon: Optional[str] = None, id: Optional[str] = None, metadata: Optional[dict[str, Any]] = None, **kwargs: Any) -> Shape`: Create, track, and return a visual Shape node.
@@ -681,7 +681,7 @@ A built-in theme, `Theme.name` = `solarized_light`.
 
 ### `SVGRenderer`
 
-`class SVGRenderer(theme: Theme, precision: int = 2, crisp: bool = False) -> None` extends `InteractiveOverlay`
+`class SVGRenderer(theme: Theme, precision: int = 2, crisp: bool = False, *, shadow: Optional[str] = None, scale: Optional[float] = None, font_file: Optional[str] = None) -> None` extends `InteractiveOverlay`
 
 Defined in `src/diagrams_as_code/renderer_svg.py`; import with `from diagrams_as_code import SVGRenderer`.
 
@@ -893,7 +893,7 @@ Public members:
 
 ### `Theme`
 
-`class Theme(name: str, background: str, group_bg: str, group_stroke: str, node_fill: str, node_stroke: str, accent: str, text: str, subtext: str, edge_color: str, font_family: str = "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", node_stroke_width: float = 2.0, node_radius: float = 6.0, group_stroke_width: float = 1.5, group_radius: float = 8.0, group_dash: str = '', edge_width: float = 2.0, shadow: bool = True, serif_family: str = "'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif") -> None`
+`class Theme(name: str, background: str, group_bg: str, group_stroke: str, node_fill: str, node_stroke: str, accent: str, text: str, subtext: str, edge_color: str, font_family: str = "Inter, 'DejaVu Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", node_stroke_width: float = 2.0, node_radius: float = 6.0, group_stroke_width: float = 1.5, group_radius: float = 8.0, group_dash: str = '', edge_width: float = 2.0, shadow: bool = True, serif_family: str = "'STIX Two Text', 'Times New Roman', Times, 'Liberation Serif', serif") -> None`
 
 Defined in `src/diagrams_as_code/theme.py`; import with `from diagrams_as_code import Theme`.
 

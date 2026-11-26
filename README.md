@@ -203,6 +203,35 @@ command line:
 uv run diagrams-as-code render my_diagram.py
 ```
 
+### Rendering style: shadow, scale and fonts
+
+Defaults are crisp: no blurred node shadow, and the SVG `width`/`height` are
+1.5x the `viewBox` (vector, so no quality loss). Every option can be set per
+diagram (`Diagram(..., shadow=, scale=, font_family=, font_file=)` or
+`diag.configure(...)`), on the CLI, or through an environment variable. Explicit
+arguments win over env vars.
+
+| Option | CLI flag | Env var | Values / default |
+|---|---|---|---|
+| Node shadow | `--shadow` | `DIAGRAMS_AS_CODE_SHADOW` | `none` (default), `offset` (hard 3px shadow), `soft` (legacy blur) |
+| Output scale | `--scale` | `DIAGRAMS_AS_CODE_SCALE` | positive number, default `1.5` |
+| Font family | `--font` | `DIAGRAMS_AS_CODE_FONT` | CSS stack, default `Inter, 'DejaVu Sans', 'Liberation Sans', ..., sans-serif` |
+| Font file | `--font-file` | `DIAGRAMS_AS_CODE_FONT_FILE` | `.woff2/.woff/.ttf/.otf` path (embedded as base64) or http(s) URL (linked) |
+
+The default stack names only freely licensed fonts first (Inter, SIL OFL 1.1;
+DejaVu Sans and Liberation Sans, free licenses) and falls back to system fonts;
+no font binary is bundled. To get identical text everywhere, install Inter or
+supply your own font; the first family in the stack is the name the embedded
+`@font-face` is registered under:
+
+```bash
+uv run diagrams-as-code render examples --font "'Inter', sans-serif" --font-file ./Inter.woff2
+DIAGRAMS_AS_CODE_FONT="Lato, sans-serif" DIAGRAMS_AS_CODE_SCALE=2 uv run python main.py
+```
+
+PNG output uses the same SVG, so it is scaled too; fonts must be installed on
+the rasterizing machine (resvg/cairosvg may ignore embedded `@font-face`).
+
 ### 4. Run and Verify
 
 ```bash

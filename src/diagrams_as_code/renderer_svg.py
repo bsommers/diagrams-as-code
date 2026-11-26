@@ -1,9 +1,12 @@
 """Pure-Python standalone SVG renderer for IIoT diagrams."""
 from __future__ import annotations
 
+import base64
 import html
 import math
+import os
 import re
+from pathlib import Path
 from typing import Any, Mapping, Optional, Sequence
 
 import dataclasses
@@ -32,6 +35,63 @@ from diagrams_as_code.metrics import wrap_text
 from diagrams_as_code.text import TextStyle, layout
 from diagrams_as_code.shapes import ShapeLibrary
 from diagrams_as_code.theme import Theme
+
+
+ENV_FONT = "DIAGRAMS_AS_CODE_FONT"
+ENV_FONT_FILE = "DIAGRAMS_AS_CODE_FONT_FILE"
+ENV_SHADOW = "DIAGRAMS_AS_CODE_SHADOW"
+ENV_SCALE = "DIAGRAMS_AS_CODE_SCALE"
+
+#: Node shadow styles. ``none`` is crisp (default); ``offset`` is a hard,
+#: unblurred drop shadow; ``soft`` is the legacy blurred shadow.
+SHADOWS: tuple[str, ...] = ("none", "offset", "soft")
+DEFAULT_SHADOW = "none"
+#: Default output scale: the SVG width/height attributes are this multiple of
+#: the viewBox, so diagrams display larger without changing layout geometry.
+DEFAULT_SCALE = 1.5
+
+_FONT_MIME = {
+    ".woff2": ("font/woff2", "woff2"),
+    ".woff": ("font/woff", "woff"),
+    ".ttf": ("font/ttf", "truetype"),
+    ".otf": ("font/otf", "opentype"),
+}
+
+
+def resolve_shadow(value: Optional[str] = None) -> str:
+    """Return a validated shadow style from ``value`` or ``DIAGRAMS_AS_CODE_SHADOW``."""
+    shadow = (value if value is not None else os.environ.get(ENV_SHADOW) or DEFAULT_SHADOW).lower()
+    if shadow not in SHADOWS:
+        raise ValueError(f"shadow must be one of {SHADOWS}, got {shadow!r}")
+    return shadow
+
+
+def resolve_scale(value: Optional[float] = None) -> float:
+    """Return a positive output scale from ``value`` or ``DIAGRAMS_AS_CODE_SCALE``."""
+    raw = value if value is not None else os.environ.get(ENV_SCALE) or DEFAULT_SCALE
+    try:
+        scale = float(raw)
+    except (TypeError, ValueError):
+        raise ValueError(f"scale must be a positive number, got {raw!r}") from None
+    if not scale > 0:
+        raise ValueError(f"scale must be a positive number, got {raw!r}")
+    return scale
+
+
+def font_face_css(font_file: str, family: str) -> str:
+    """Build an ``@font-face`` rule for a local font file (embedded) or http(s) URL (linked)."""
+    if font_file.startswith(("http://", "https://")):
+        suffix = Path(font_file.split("?")[0]).suffix.lower()
+        fmt = _FONT_MIME.get(suffix, (None, None))[1]
+        src = f"url('{font_file}')" + (f" format('{fmt}')" if fmt else "")
+    else:
+        path = Path(font_file)
+        mime, fmt = _FONT_MIME.get(path.suffix.lower(), (None, None))
+        if mime is None:
+            raise ValueError(f"unsupported font file type {path.suffix!r}; use {sorted(_FONT_MIME)}")
+        data = base64.b64encode(path.read_bytes()).decode("ascii")
+        src = f"url('data:{mime};base64,{data}') format('{fmt}')"
+    return f"@font-face {{ font-family: '{family}'; src: {src}; font-weight: 100 900; }}"
 
 
 def _num(value: Any) -> str:
@@ -87,8 +147,23 @@ def fix_precision(markup: str, places: int = 2) -> str:
 class SVGRenderer(InteractiveOverlay):
     """Renderer converting diagram elements, groups, and edges into crisp SVG XML."""
 
-    def __init__(self, theme: Theme, precision: int = 2, crisp: bool = False) -> None:
+    def __init__(
+        self,
+        theme: Theme,
+        precision: int = 2,
+        crisp: bool = False,
+        *,
+        shadow: Optional[str] = None,
+        scale: Optional[float] = None,
+        font_file: Optional[str] = None,
+    ) -> None:
         self.theme = theme
+        #: Node shadow style: ``none`` (default), ``offset`` or ``soft``.
+        self.shadow = resolve_shadow(shadow)
+        #: Output size as a multiple of the viewBox.
+        self.scale = resolve_scale(scale)
+        #: Font file (embedded) or URL (linked) declared with ``@font-face``.
+        self.font_file = font_file or os.environ.get(ENV_FONT_FILE) or None
         #: Decimal places kept in coordinates and lengths.
         self.precision = max(0, int(precision))
         #: Shift the drawing half a pixel so odd-width strokes on whole-pixel
@@ -170,9 +245,13 @@ class SVGRenderer(InteractiveOverlay):
         w_val = int(width) if isinstance(width, (int, float)) and float(width).is_integer() else width
         h_val = int(height) if isinstance(height, (int, float)) and float(height).is_integer() else height
 
+        out_w = round(float(width) * self.scale, 2)
+        out_h = round(float(height) * self.scale, 2)
+        out_w = int(out_w) if out_w.is_integer() else out_w
+        out_h = int(out_h) if out_h.is_integer() else out_h
         svg_class = ' class="diagram-interactive"' if interactive else ""
         lines: list[str] = [
-            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_val} {h_val}" width="{w_val}" height="{h_val}"{svg_class}>',
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_val} {h_val}" width="{out_w}" height="{out_h}"{svg_class}>',
         ]
         lines.extend(self._defs(edge_list, interactive))
 
@@ -252,11 +331,20 @@ class SVGRenderer(InteractiveOverlay):
                 )
                 lines.append("    </marker>")
 
-        lines.append(f'    <filter id="{self._def_id("shadow")}" x="-10%" y="-10%" width="120%" height="120%">')
-        lines.append(
-            '      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>'
-        )
-        lines.append("    </filter>")
+        if self.shadow in ("soft", "offset"):
+            soft = self.shadow == "soft"
+            extent = "120%" if soft else "125%"
+            drop = (
+                '<feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>'
+                if soft
+                else '<feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="#000000" flood-opacity="0.35"/>'
+            )
+            lines.append(f'    <filter id="{self._def_id("shadow")}" x="-10%" y="-10%" width="{extent}" height="{extent}">')
+            lines.append(f"      {drop}")
+            lines.append("    </filter>")
+        if self.font_file:
+            family = self.theme.font_family.split(",")[0].strip().strip("'\"")
+            lines.append(f"    <style>{font_face_css(self.font_file, family)}</style>")
         if interactive:
             lines.append(f'    <clipPath id="{self._def_id("minimap-clip")}"><rect x="0" y="0" width="160" height="100" rx="6"/></clipPath>')
             lines.append(self._render_interactive_styles())
@@ -546,7 +634,7 @@ class SVGRenderer(InteractiveOverlay):
             items = el.draw(style, self.theme) if hasattr(el, "draw") else None
             if items is not None and not items:
                 continue  # an element that draws itself and has nothing to show
-            node_attrs = f' filter="url(#{self._def_id("shadow")})"' if style.shadow and items is None else ""
+            node_attrs = f' filter="url(#{self._def_id("shadow")})"' if style.shadow and items is None and self.shadow != "none" else ""
             if style.opacity is not None and style.opacity < 1.0:
                 node_attrs += f' opacity="{_num(style.opacity)}"'
             if interactive:

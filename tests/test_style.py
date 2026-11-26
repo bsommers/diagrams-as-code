@@ -73,6 +73,7 @@ def test_existing_themes_keep_their_look():
             a = d.shape("A", id="a").at(100, 150)
             b = d.shape("B", id="b").right_of(a, margin=120)
         d.connect(a, b)
+    d.configure(shadow="soft")
     svg = d.render_svg()
     node = _node_svg(svg, "a")
     assert 'filter="url(#shadow)"' in svg and 'rx="6"' in node and 'stroke-width="2"' in node

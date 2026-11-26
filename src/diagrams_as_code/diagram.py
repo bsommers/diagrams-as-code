@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 import dataclasses
+import os
 from pathlib import Path
 from typing import Any, Literal, Optional, Sequence, Union
 
@@ -26,7 +27,7 @@ from diagrams_as_code.primitives import (
 )
 from diagrams_as_code.layout.layered import DIRECTIONS
 from diagrams_as_code.layout.pipeline import run_layout
-from diagrams_as_code.renderer_svg import SVGRenderer
+from diagrams_as_code.renderer_svg import ENV_FONT, SVGRenderer
 from diagrams_as_code.style import Style
 from diagrams_as_code.theme import Theme, get_theme
 
@@ -378,6 +379,10 @@ class Diagram:
         fit_labels: bool = True,
         precision: int = 2,
         pixel_snap: bool = False,
+        shadow: Optional[str] = None,
+        scale: Optional[float] = None,
+        font_family: Optional[str] = None,
+        font_file: Optional[Union[str, Path]] = None,
         grid: float = 0.0,
     ) -> None:
         self.title = title
@@ -405,6 +410,11 @@ class Diagram:
             self.theme = base_t
         self.label_position = label_position
         self.interactive = bool(interactive)
+        # Render style: None means "defer to env var / built-in default" at render time.
+        self.shadow: Optional[str] = shadow
+        self.scale: Optional[float] = scale
+        self.font_family: Optional[str] = font_family
+        self.font_file: Optional[str] = str(font_file) if font_file is not None else None
         effective_r = corner_radius if corner_radius is not None else arc_radius
         self._corner_radius: Optional[float] = Edge._validate_corner_radius(effective_r)
         self._clearance: Optional[float] = (
@@ -491,8 +501,20 @@ class Diagram:
         arc_radius: Optional[float] = None,
         clearance: Optional[float] = None,
         routing: Optional[Union[Routing, str]] = None,
+        shadow: Optional[str] = None,
+        scale: Optional[float] = None,
+        font_family: Optional[str] = None,
+        font_file: Optional[Union[str, Path]] = None,
     ) -> Diagram:
-        """Change layout or theme settings; layout changes re-solve on next render."""
+        """Change layout, theme or render-style settings; layout changes re-solve on next render."""
+        if shadow is not None:
+            self.shadow = shadow
+        if scale is not None:
+            self.scale = scale
+        if font_family is not None:
+            self.font_family = font_family
+        if font_file is not None:
+            self.font_file = str(font_file)
         if interactive is not None:
             self.interactive = bool(interactive)
         if layout is not None and layout not in self.LAYOUT_MODES:
@@ -873,10 +895,25 @@ class Diagram:
         if not self._is_solved or getattr(self, "_solved_signature", None) != self._signature():
             self.solve()
 
+    def _renderer(self, scale: Optional[float] = None) -> SVGRenderer:
+        """An SVG renderer carrying this diagram's precision, shadow, scale and font options."""
+        theme = self.theme
+        family = self.font_family or os.environ.get(ENV_FONT)
+        if family:
+            theme = dataclasses.replace(theme, font_family=family)
+        return SVGRenderer(
+            theme,
+            precision=self.precision,
+            crisp=self.pixel_snap,
+            shadow=self.shadow,
+            scale=self.scale if scale is None else scale,
+            font_file=self.font_file,
+        )
+
     def render_svg(self, path: Optional[Union[str, Path]] = None) -> str:
         """Render diagram to SVG string and optionally write to file."""
         self._ensure_solved()
-        renderer = SVGRenderer(self.theme, precision=self.precision, crisp=self.pixel_snap)
+        renderer = self._renderer()
         svg = renderer.render(
             elements=self.shapes,
             groups=self.groups,
@@ -906,7 +943,7 @@ class Diagram:
         interactive overlay), at 0.75 pt per px. Pure standard library.
         """
         self._ensure_solved()
-        renderer = SVGRenderer(self.theme, precision=self.precision, crisp=self.pixel_snap)
+        renderer = self._renderer(scale=1.0)
         svg = renderer.render(
             elements=self.shapes,
             groups=self.groups,
