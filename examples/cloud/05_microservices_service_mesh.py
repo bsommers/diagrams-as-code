@@ -9,7 +9,7 @@ from diagrams_as_code.output import render_all
 
 
 def diagram() -> Diagram:
-    with Diagram("Microservices Service Mesh Architecture", theme="nord") as diag:
+    with Diagram("Microservices Service Mesh Architecture", theme="nord", width=900, height=520) as diag:
         with diag.group("Edge Routing") as g_1:
             ingress = diag.add(Shape("ingress", "Ingress Envoy Gateway", icon="api_gateway", protocol="HTTP/2 gRPC"))
 
@@ -26,11 +26,11 @@ def diagram() -> Diagram:
             db_orders.below(redis, margin=30)
 
         # Position starting group
-        g_1.at(60.0, 80.0)
+        g_1.at(40.0, 210.0)
 
-        # Arrange groups in horizontal sequence
-        g_2.right_of(g_1, margin=80)
-        g_3.right_of(g_2, margin=80)
+        # Edge group sits level with the middle service so the fan-out is symmetric
+        g_2.at(360.0, 120.0)
+        g_3.at(680.0, 120.0)
 
         # Establish inter-element connections with protocol annotations
         ingress >> diag.edge("Validate JWT", style="solid") >> auth_svc
